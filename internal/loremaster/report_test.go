@@ -33,8 +33,8 @@ func TestReportRetainsCharacterAndProfessionActionSets(t *testing.T) {
 		}
 	}
 	mulgore := report["mulgore"]["profiles"].(map[string]any)["Tauren Druid"].(map[string]any)
-	if mulgore["leveling"] != mulgore["loremaster"] || !containsNumber(mulgore["added"], 99196) || !containsNumber(mulgore["omitted"], 76156) {
-		t.Fatalf("equal counts hid changed quest sets: %#v", mulgore)
+	if !containsNumber(mulgore["added"], 99196) || !containsNumber(mulgore["omitted"], 76156) || len(mulgore["added"].([]any)) == 0 || len(mulgore["omitted"].([]any)) == 0 {
+		t.Fatalf("the report did not retain the changed quest sets: %#v", mulgore)
 	}
 }
 

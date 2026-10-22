@@ -9,7 +9,6 @@ import (
 	"strings"
 )
 
-const foreverPatch = 16001
 const levelLineGap = 5
 
 func object(value any) map[string]any { result, _ := value.(map[string]any); return result }
@@ -82,10 +81,6 @@ func StepLevel(record map[string]any) int {
 	if !ok {
 		minimum, ok = intValue(listed["reqlevel"])
 	}
-	recommended, recOK := intValue(listed["level"])
-	if !recOK {
-		recommended, recOK = intValue(record["level"])
-	}
 	reqclass, _ := intValue(listed["reqclass"])
 	if reqclass == 0 {
 		reqclass, _ = intValue(record["reqclass"])
@@ -111,10 +106,6 @@ func StepLevel(record map[string]any) int {
 		if n, yes := positive(fields["requiredLevel"]); yes {
 			return n
 		}
-	}
-	patch, _ := intValue(listed["firstseenpatch"])
-	if patch == foreverPatch && !isClass && recOK && recommended > 1 && (!ok || minimum <= 0 || recommended-minimum >= levelLineGap) {
-		return recommended
 	}
 	if ok && minimum > 0 {
 		return minimum

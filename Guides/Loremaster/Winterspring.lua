@@ -6,7 +6,7 @@ ns:RegisterGuide({
     id = "loremaster-winterspring",
     title = "Winterspring",
     category = "Loremaster Guides",
-    revision = 1,
+    revision = 2,
     routeMode = "ordered",
     loremasterExpanded = true,
     goals = {
@@ -3392,48 +3392,130 @@ ns:RegisterGuide({
                                                                                                             {
                                                                                                                 any = {
                                                                                                                     {
-                                                                                                                        ["not"] = {
-                                                                                                                            any = {
-                                                                                                                                { quest = { id = 5121, state = "activeOrCompleted" } },
-                                                                                                                                {
+                                                                                                                        any = {
+                                                                                                                            {
+                                                                                                                                ["not"] = {
                                                                                                                                     any = {
                                                                                                                                         { quest = { id = 5121, state = "activeOrCompleted" } },
                                                                                                                                         {
-                                                                                                                                            all = {
+                                                                                                                                            any = {
+                                                                                                                                                { quest = { id = 5121, state = "activeOrCompleted" } },
                                                                                                                                                 {
-                                                                                                                                                    any = {
+                                                                                                                                                    all = {
                                                                                                                                                         {
                                                                                                                                                             any = {
-                                                                                                                                                                { quest = { id = 5087, state = "activeOrCompleted" } },
                                                                                                                                                                 {
-                                                                                                                                                                    all = {
+                                                                                                                                                                    any = {
+                                                                                                                                                                        { quest = { id = 5087, state = "activeOrCompleted" } },
                                                                                                                                                                         {
-                                                                                                                                                                            any = {
+                                                                                                                                                                            all = {
                                                                                                                                                                                 {
                                                                                                                                                                                     any = {
-                                                                                                                                                                                        { quest = { id = 5086, state = "activeOrCompleted" } },
                                                                                                                                                                                         {
-                                                                                                                                                                                            all = {
+                                                                                                                                                                                            any = {
+                                                                                                                                                                                                { quest = { id = 5086, state = "activeOrCompleted" } },
                                                                                                                                                                                                 {
-                                                                                                                                                                                                    any = {
+                                                                                                                                                                                                    all = {
                                                                                                                                                                                                         {
                                                                                                                                                                                                             any = {
-                                                                                                                                                                                                                { quest = { id = 5085, state = "activeOrCompleted" } },
                                                                                                                                                                                                                 {
-                                                                                                                                                                                                                    all = {
+                                                                                                                                                                                                                    any = {
+                                                                                                                                                                                                                        { quest = { id = 5085, state = "activeOrCompleted" } },
                                                                                                                                                                                                                         {
-                                                                                                                                                                                                                            any = {
+                                                                                                                                                                                                                            all = {
                                                                                                                                                                                                                                 {
                                                                                                                                                                                                                                     any = {
-                                                                                                                                                                                                                                        { quest = { id = 5084, state = "activeOrCompleted" } },
                                                                                                                                                                                                                                         {
-                                                                                                                                                                                                                                            all = {
+                                                                                                                                                                                                                                            any = {
+                                                                                                                                                                                                                                                { quest = { id = 5084, state = "activeOrCompleted" } },
                                                                                                                                                                                                                                                 {
-                                                                                                                                                                                                                                                    any = {
+                                                                                                                                                                                                                                                    all = {
                                                                                                                                                                                                                                                         {
                                                                                                                                                                                                                                                             any = {
-                                                                                                                                                                                                                                                                { quest = { id = 5083, state = "activeOrCompleted" } },
-                                                                                                                                                                                                                                                                { all = { { item = { minCount = 1, name = "Empty Firewater Flask" } } } },
+                                                                                                                                                                                                                                                                {
+                                                                                                                                                                                                                                                                    any = {
+                                                                                                                                                                                                                                                                        { quest = { id = 5083, state = "activeOrCompleted" } },
+                                                                                                                                                                                                                                                                        { all = { { item = { minCount = 1, name = "Empty Firewater Flask" } } } },
+                                                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                },
+                                                                                                                                                                                                            },
+                                                                                                                                                                                                        },
+                                                                                                                                                                                                    },
+                                                                                                                                                                                                },
+                                                                                                                                                                                            },
+                                                                                                                                                                                        },
+                                                                                                                                                                                    },
+                                                                                                                                                                                },
+                                                                                                                                                                            },
+                                                                                                                                                                        },
+                                                                                                                                                                    },
+                                                                                                                                                                },
+                                                                                                                                                            },
+                                                                                                                                                        },
+                                                                                                                                                    },
+                                                                                                                                                },
+                                                                                                                                            },
+                                                                                                                                        },
+                                                                                                                                    },
+                                                                                                                                },
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                                ["not"] = {
+                                                                                                                                    any = {
+                                                                                                                                        { quest = { id = 5121, state = "activeOrCompleted" } },
+                                                                                                                                        {
+                                                                                                                                            any = {
+                                                                                                                                                { quest = { id = 5121, state = "activeOrCompleted" } },
+                                                                                                                                                {
+                                                                                                                                                    all = {
+                                                                                                                                                        {
+                                                                                                                                                            any = {
+                                                                                                                                                                {
+                                                                                                                                                                    any = {
+                                                                                                                                                                        { quest = { id = 5087, state = "activeOrCompleted" } },
+                                                                                                                                                                        {
+                                                                                                                                                                            all = {
+                                                                                                                                                                                {
+                                                                                                                                                                                    any = {
+                                                                                                                                                                                        {
+                                                                                                                                                                                            any = {
+                                                                                                                                                                                                { quest = { id = 5086, state = "activeOrCompleted" } },
+                                                                                                                                                                                                {
+                                                                                                                                                                                                    all = {
+                                                                                                                                                                                                        {
+                                                                                                                                                                                                            any = {
+                                                                                                                                                                                                                {
+                                                                                                                                                                                                                    any = {
+                                                                                                                                                                                                                        { quest = { id = 5085, state = "activeOrCompleted" } },
+                                                                                                                                                                                                                        {
+                                                                                                                                                                                                                            all = {
+                                                                                                                                                                                                                                {
+                                                                                                                                                                                                                                    any = {
+                                                                                                                                                                                                                                        {
+                                                                                                                                                                                                                                            any = {
+                                                                                                                                                                                                                                                { quest = { id = 5084, state = "activeOrCompleted" } },
+                                                                                                                                                                                                                                                {
+                                                                                                                                                                                                                                                    all = {
+                                                                                                                                                                                                                                                        {
+                                                                                                                                                                                                                                                            any = {
+                                                                                                                                                                                                                                                                {
+                                                                                                                                                                                                                                                                    any = {
+                                                                                                                                                                                                                                                                        { quest = { id = 5083, state = "activeOrCompleted" } },
+                                                                                                                                                                                                                                                                        { all = { { item = { minCount = 1, name = "Empty Firewater Flask" } } } },
+                                                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                                                },
                                                                                                                                                                                                                                                             },
                                                                                                                                                                                                                                                         },
                                                                                                                                                                                                                                                     },
@@ -4459,6 +4541,7 @@ ns:RegisterGuide({
                                                                                                                 { quest = { id = 5085, state = "activeOrCompleted" } },
                                                                                                                 {
                                                                                                                     all = {
+                                                                                                                        { item = { minCount = 1, name = "Flask of Mystery Goo" } },
                                                                                                                         {
                                                                                                                             any = {
                                                                                                                                 {
@@ -4471,7 +4554,7 @@ ns:RegisterGuide({
                                                                                                                                                         {
                                                                                                                                                             any = {
                                                                                                                                                                 { quest = { id = 5083, state = "activeOrCompleted" } },
-                                                                                                                                                                { all = { { item = { name = "Empty Firewater Flask", minCount = 1 } } } },
+                                                                                                                                                                { all = { { item = { minCount = 1, name = "Empty Firewater Flask" } } } },
                                                                                                                                                             },
                                                                                                                                                         },
                                                                                                                                                     },
@@ -4555,48 +4638,130 @@ ns:RegisterGuide({
                                                                                                             {
                                                                                                                 any = {
                                                                                                                     {
-                                                                                                                        ["not"] = {
-                                                                                                                            any = {
-                                                                                                                                { quest = { id = 5121, state = "activeOrCompleted" } },
-                                                                                                                                {
+                                                                                                                        any = {
+                                                                                                                            {
+                                                                                                                                ["not"] = {
                                                                                                                                     any = {
                                                                                                                                         { quest = { id = 5121, state = "activeOrCompleted" } },
                                                                                                                                         {
-                                                                                                                                            all = {
+                                                                                                                                            any = {
+                                                                                                                                                { quest = { id = 5121, state = "activeOrCompleted" } },
                                                                                                                                                 {
-                                                                                                                                                    any = {
+                                                                                                                                                    all = {
                                                                                                                                                         {
                                                                                                                                                             any = {
-                                                                                                                                                                { quest = { id = 5087, state = "activeOrCompleted" } },
                                                                                                                                                                 {
-                                                                                                                                                                    all = {
+                                                                                                                                                                    any = {
+                                                                                                                                                                        { quest = { id = 5087, state = "activeOrCompleted" } },
                                                                                                                                                                         {
-                                                                                                                                                                            any = {
+                                                                                                                                                                            all = {
                                                                                                                                                                                 {
                                                                                                                                                                                     any = {
-                                                                                                                                                                                        { quest = { id = 5086, state = "activeOrCompleted" } },
                                                                                                                                                                                         {
-                                                                                                                                                                                            all = {
+                                                                                                                                                                                            any = {
+                                                                                                                                                                                                { quest = { id = 5086, state = "activeOrCompleted" } },
                                                                                                                                                                                                 {
-                                                                                                                                                                                                    any = {
+                                                                                                                                                                                                    all = {
                                                                                                                                                                                                         {
                                                                                                                                                                                                             any = {
-                                                                                                                                                                                                                { quest = { id = 5085, state = "activeOrCompleted" } },
                                                                                                                                                                                                                 {
-                                                                                                                                                                                                                    all = {
+                                                                                                                                                                                                                    any = {
+                                                                                                                                                                                                                        { quest = { id = 5085, state = "activeOrCompleted" } },
                                                                                                                                                                                                                         {
-                                                                                                                                                                                                                            any = {
+                                                                                                                                                                                                                            all = {
                                                                                                                                                                                                                                 {
                                                                                                                                                                                                                                     any = {
-                                                                                                                                                                                                                                        { quest = { id = 5084, state = "activeOrCompleted" } },
                                                                                                                                                                                                                                         {
-                                                                                                                                                                                                                                            all = {
+                                                                                                                                                                                                                                            any = {
+                                                                                                                                                                                                                                                { quest = { id = 5084, state = "activeOrCompleted" } },
                                                                                                                                                                                                                                                 {
-                                                                                                                                                                                                                                                    any = {
+                                                                                                                                                                                                                                                    all = {
                                                                                                                                                                                                                                                         {
                                                                                                                                                                                                                                                             any = {
-                                                                                                                                                                                                                                                                { quest = { id = 5083, state = "activeOrCompleted" } },
-                                                                                                                                                                                                                                                                { all = { { item = { minCount = 1, name = "Empty Firewater Flask" } } } },
+                                                                                                                                                                                                                                                                {
+                                                                                                                                                                                                                                                                    any = {
+                                                                                                                                                                                                                                                                        { quest = { id = 5083, state = "activeOrCompleted" } },
+                                                                                                                                                                                                                                                                        { all = { { item = { minCount = 1, name = "Empty Firewater Flask" } } } },
+                                                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                },
+                                                                                                                                                                                                            },
+                                                                                                                                                                                                        },
+                                                                                                                                                                                                    },
+                                                                                                                                                                                                },
+                                                                                                                                                                                            },
+                                                                                                                                                                                        },
+                                                                                                                                                                                    },
+                                                                                                                                                                                },
+                                                                                                                                                                            },
+                                                                                                                                                                        },
+                                                                                                                                                                    },
+                                                                                                                                                                },
+                                                                                                                                                            },
+                                                                                                                                                        },
+                                                                                                                                                    },
+                                                                                                                                                },
+                                                                                                                                            },
+                                                                                                                                        },
+                                                                                                                                    },
+                                                                                                                                },
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                                ["not"] = {
+                                                                                                                                    any = {
+                                                                                                                                        { quest = { id = 5121, state = "activeOrCompleted" } },
+                                                                                                                                        {
+                                                                                                                                            any = {
+                                                                                                                                                { quest = { id = 5121, state = "activeOrCompleted" } },
+                                                                                                                                                {
+                                                                                                                                                    all = {
+                                                                                                                                                        {
+                                                                                                                                                            any = {
+                                                                                                                                                                {
+                                                                                                                                                                    any = {
+                                                                                                                                                                        { quest = { id = 5087, state = "activeOrCompleted" } },
+                                                                                                                                                                        {
+                                                                                                                                                                            all = {
+                                                                                                                                                                                {
+                                                                                                                                                                                    any = {
+                                                                                                                                                                                        {
+                                                                                                                                                                                            any = {
+                                                                                                                                                                                                { quest = { id = 5086, state = "activeOrCompleted" } },
+                                                                                                                                                                                                {
+                                                                                                                                                                                                    all = {
+                                                                                                                                                                                                        {
+                                                                                                                                                                                                            any = {
+                                                                                                                                                                                                                {
+                                                                                                                                                                                                                    any = {
+                                                                                                                                                                                                                        { quest = { id = 5085, state = "activeOrCompleted" } },
+                                                                                                                                                                                                                        {
+                                                                                                                                                                                                                            all = {
+                                                                                                                                                                                                                                {
+                                                                                                                                                                                                                                    any = {
+                                                                                                                                                                                                                                        {
+                                                                                                                                                                                                                                            any = {
+                                                                                                                                                                                                                                                { quest = { id = 5084, state = "activeOrCompleted" } },
+                                                                                                                                                                                                                                                {
+                                                                                                                                                                                                                                                    all = {
+                                                                                                                                                                                                                                                        {
+                                                                                                                                                                                                                                                            any = {
+                                                                                                                                                                                                                                                                {
+                                                                                                                                                                                                                                                                    any = {
+                                                                                                                                                                                                                                                                        { quest = { id = 5083, state = "activeOrCompleted" } },
+                                                                                                                                                                                                                                                                        { all = { { item = { minCount = 1, name = "Empty Firewater Flask" } } } },
+                                                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                                                },
                                                                                                                                                                                                                                                             },
                                                                                                                                                                                                                                                         },
                                                                                                                                                                                                                                                     },
@@ -5622,6 +5787,7 @@ ns:RegisterGuide({
                                                                                                                 { quest = { id = 5085, state = "activeOrCompleted" } },
                                                                                                                 {
                                                                                                                     all = {
+                                                                                                                        { item = { minCount = 1, name = "Flask of Mystery Goo" } },
                                                                                                                         {
                                                                                                                             any = {
                                                                                                                                 {
@@ -5634,7 +5800,7 @@ ns:RegisterGuide({
                                                                                                                                                         {
                                                                                                                                                             any = {
                                                                                                                                                                 { quest = { id = 5083, state = "activeOrCompleted" } },
-                                                                                                                                                                { all = { { item = { name = "Empty Firewater Flask", minCount = 1 } } } },
+                                                                                                                                                                { all = { { item = { minCount = 1, name = "Empty Firewater Flask" } } } },
                                                                                                                                                             },
                                                                                                                                                         },
                                                                                                                                                     },
@@ -5989,13 +6155,30 @@ ns:RegisterGuide({
                                                                                                             {
                                                                                                                 any = {
                                                                                                                     {
-                                                                                                                        ["not"] = {
-                                                                                                                            any = {
-                                                                                                                                { quest = { id = 975, state = "activeOrCompleted" } },
-                                                                                                                                {
+                                                                                                                        any = {
+                                                                                                                            {
+                                                                                                                                ["not"] = {
                                                                                                                                     any = {
                                                                                                                                         { quest = { id = 975, state = "activeOrCompleted" } },
-                                                                                                                                        { all = { { any = { { any = { { quest = { id = 969, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                                                                                                        {
+                                                                                                                                            any = {
+                                                                                                                                                { quest = { id = 975, state = "activeOrCompleted" } },
+                                                                                                                                                { all = { { any = { { any = { { quest = { id = 969, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                                                                                                            },
+                                                                                                                                        },
+                                                                                                                                    },
+                                                                                                                                },
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                                ["not"] = {
+                                                                                                                                    any = {
+                                                                                                                                        { quest = { id = 975, state = "activeOrCompleted" } },
+                                                                                                                                        {
+                                                                                                                                            any = {
+                                                                                                                                                { quest = { id = 975, state = "activeOrCompleted" } },
+                                                                                                                                                { all = { { any = { { any = { { quest = { id = 969, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                                                                                                            },
+                                                                                                                                        },
                                                                                                                                     },
                                                                                                                                 },
                                                                                                                             },
@@ -6242,48 +6425,130 @@ ns:RegisterGuide({
                                                                                                             {
                                                                                                                 any = {
                                                                                                                     {
-                                                                                                                        ["not"] = {
-                                                                                                                            any = {
-                                                                                                                                { quest = { id = 5121, state = "activeOrCompleted" } },
-                                                                                                                                {
+                                                                                                                        any = {
+                                                                                                                            {
+                                                                                                                                ["not"] = {
                                                                                                                                     any = {
                                                                                                                                         { quest = { id = 5121, state = "activeOrCompleted" } },
                                                                                                                                         {
-                                                                                                                                            all = {
+                                                                                                                                            any = {
+                                                                                                                                                { quest = { id = 5121, state = "activeOrCompleted" } },
                                                                                                                                                 {
-                                                                                                                                                    any = {
+                                                                                                                                                    all = {
                                                                                                                                                         {
                                                                                                                                                             any = {
-                                                                                                                                                                { quest = { id = 5087, state = "activeOrCompleted" } },
                                                                                                                                                                 {
-                                                                                                                                                                    all = {
+                                                                                                                                                                    any = {
+                                                                                                                                                                        { quest = { id = 5087, state = "activeOrCompleted" } },
                                                                                                                                                                         {
-                                                                                                                                                                            any = {
+                                                                                                                                                                            all = {
                                                                                                                                                                                 {
                                                                                                                                                                                     any = {
-                                                                                                                                                                                        { quest = { id = 5086, state = "activeOrCompleted" } },
                                                                                                                                                                                         {
-                                                                                                                                                                                            all = {
+                                                                                                                                                                                            any = {
+                                                                                                                                                                                                { quest = { id = 5086, state = "activeOrCompleted" } },
                                                                                                                                                                                                 {
-                                                                                                                                                                                                    any = {
+                                                                                                                                                                                                    all = {
                                                                                                                                                                                                         {
                                                                                                                                                                                                             any = {
-                                                                                                                                                                                                                { quest = { id = 5085, state = "activeOrCompleted" } },
                                                                                                                                                                                                                 {
-                                                                                                                                                                                                                    all = {
+                                                                                                                                                                                                                    any = {
+                                                                                                                                                                                                                        { quest = { id = 5085, state = "activeOrCompleted" } },
                                                                                                                                                                                                                         {
-                                                                                                                                                                                                                            any = {
+                                                                                                                                                                                                                            all = {
                                                                                                                                                                                                                                 {
                                                                                                                                                                                                                                     any = {
-                                                                                                                                                                                                                                        { quest = { id = 5084, state = "activeOrCompleted" } },
                                                                                                                                                                                                                                         {
-                                                                                                                                                                                                                                            all = {
+                                                                                                                                                                                                                                            any = {
+                                                                                                                                                                                                                                                { quest = { id = 5084, state = "activeOrCompleted" } },
                                                                                                                                                                                                                                                 {
-                                                                                                                                                                                                                                                    any = {
+                                                                                                                                                                                                                                                    all = {
                                                                                                                                                                                                                                                         {
                                                                                                                                                                                                                                                             any = {
-                                                                                                                                                                                                                                                                { quest = { id = 5083, state = "activeOrCompleted" } },
-                                                                                                                                                                                                                                                                { all = { { item = { minCount = 1, name = "Empty Firewater Flask" } } } },
+                                                                                                                                                                                                                                                                {
+                                                                                                                                                                                                                                                                    any = {
+                                                                                                                                                                                                                                                                        { quest = { id = 5083, state = "activeOrCompleted" } },
+                                                                                                                                                                                                                                                                        { all = { { item = { minCount = 1, name = "Empty Firewater Flask" } } } },
+                                                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                },
+                                                                                                                                                                                                            },
+                                                                                                                                                                                                        },
+                                                                                                                                                                                                    },
+                                                                                                                                                                                                },
+                                                                                                                                                                                            },
+                                                                                                                                                                                        },
+                                                                                                                                                                                    },
+                                                                                                                                                                                },
+                                                                                                                                                                            },
+                                                                                                                                                                        },
+                                                                                                                                                                    },
+                                                                                                                                                                },
+                                                                                                                                                            },
+                                                                                                                                                        },
+                                                                                                                                                    },
+                                                                                                                                                },
+                                                                                                                                            },
+                                                                                                                                        },
+                                                                                                                                    },
+                                                                                                                                },
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                                ["not"] = {
+                                                                                                                                    any = {
+                                                                                                                                        { quest = { id = 5121, state = "activeOrCompleted" } },
+                                                                                                                                        {
+                                                                                                                                            any = {
+                                                                                                                                                { quest = { id = 5121, state = "activeOrCompleted" } },
+                                                                                                                                                {
+                                                                                                                                                    all = {
+                                                                                                                                                        {
+                                                                                                                                                            any = {
+                                                                                                                                                                {
+                                                                                                                                                                    any = {
+                                                                                                                                                                        { quest = { id = 5087, state = "activeOrCompleted" } },
+                                                                                                                                                                        {
+                                                                                                                                                                            all = {
+                                                                                                                                                                                {
+                                                                                                                                                                                    any = {
+                                                                                                                                                                                        {
+                                                                                                                                                                                            any = {
+                                                                                                                                                                                                { quest = { id = 5086, state = "activeOrCompleted" } },
+                                                                                                                                                                                                {
+                                                                                                                                                                                                    all = {
+                                                                                                                                                                                                        {
+                                                                                                                                                                                                            any = {
+                                                                                                                                                                                                                {
+                                                                                                                                                                                                                    any = {
+                                                                                                                                                                                                                        { quest = { id = 5085, state = "activeOrCompleted" } },
+                                                                                                                                                                                                                        {
+                                                                                                                                                                                                                            all = {
+                                                                                                                                                                                                                                {
+                                                                                                                                                                                                                                    any = {
+                                                                                                                                                                                                                                        {
+                                                                                                                                                                                                                                            any = {
+                                                                                                                                                                                                                                                { quest = { id = 5084, state = "activeOrCompleted" } },
+                                                                                                                                                                                                                                                {
+                                                                                                                                                                                                                                                    all = {
+                                                                                                                                                                                                                                                        {
+                                                                                                                                                                                                                                                            any = {
+                                                                                                                                                                                                                                                                {
+                                                                                                                                                                                                                                                                    any = {
+                                                                                                                                                                                                                                                                        { quest = { id = 5083, state = "activeOrCompleted" } },
+                                                                                                                                                                                                                                                                        { all = { { item = { minCount = 1, name = "Empty Firewater Flask" } } } },
+                                                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                                                },
                                                                                                                                                                                                                                                             },
                                                                                                                                                                                                                                                         },
                                                                                                                                                                                                                                                     },
@@ -7309,6 +7574,7 @@ ns:RegisterGuide({
                                                                                                                 { quest = { id = 5085, state = "activeOrCompleted" } },
                                                                                                                 {
                                                                                                                     all = {
+                                                                                                                        { item = { minCount = 1, name = "Flask of Mystery Goo" } },
                                                                                                                         {
                                                                                                                             any = {
                                                                                                                                 {
@@ -7321,7 +7587,7 @@ ns:RegisterGuide({
                                                                                                                                                         {
                                                                                                                                                             any = {
                                                                                                                                                                 { quest = { id = 5083, state = "activeOrCompleted" } },
-                                                                                                                                                                { all = { { item = { name = "Empty Firewater Flask", minCount = 1 } } } },
+                                                                                                                                                                { all = { { item = { minCount = 1, name = "Empty Firewater Flask" } } } },
                                                                                                                                                             },
                                                                                                                                                         },
                                                                                                                                                     },
@@ -7407,13 +7673,30 @@ ns:RegisterGuide({
                                                                                                             {
                                                                                                                 any = {
                                                                                                                     {
-                                                                                                                        ["not"] = {
-                                                                                                                            any = {
-                                                                                                                                { quest = { id = 975, state = "activeOrCompleted" } },
-                                                                                                                                {
+                                                                                                                        any = {
+                                                                                                                            {
+                                                                                                                                ["not"] = {
                                                                                                                                     any = {
                                                                                                                                         { quest = { id = 975, state = "activeOrCompleted" } },
-                                                                                                                                        { all = { { any = { { any = { { quest = { id = 969, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                                                                                                        {
+                                                                                                                                            any = {
+                                                                                                                                                { quest = { id = 975, state = "activeOrCompleted" } },
+                                                                                                                                                { all = { { any = { { any = { { quest = { id = 969, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                                                                                                            },
+                                                                                                                                        },
+                                                                                                                                    },
+                                                                                                                                },
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                                ["not"] = {
+                                                                                                                                    any = {
+                                                                                                                                        { quest = { id = 975, state = "activeOrCompleted" } },
+                                                                                                                                        {
+                                                                                                                                            any = {
+                                                                                                                                                { quest = { id = 975, state = "activeOrCompleted" } },
+                                                                                                                                                { all = { { any = { { any = { { quest = { id = 969, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                                                                                                            },
+                                                                                                                                        },
                                                                                                                                     },
                                                                                                                                 },
                                                                                                                             },
@@ -7653,13 +7936,30 @@ ns:RegisterGuide({
                                                                                                             {
                                                                                                                 any = {
                                                                                                                     {
-                                                                                                                        ["not"] = {
-                                                                                                                            any = {
-                                                                                                                                { quest = { id = 975, state = "activeOrCompleted" } },
-                                                                                                                                {
+                                                                                                                        any = {
+                                                                                                                            {
+                                                                                                                                ["not"] = {
                                                                                                                                     any = {
                                                                                                                                         { quest = { id = 975, state = "activeOrCompleted" } },
-                                                                                                                                        { all = { { any = { { any = { { quest = { id = 969, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                                                                                                        {
+                                                                                                                                            any = {
+                                                                                                                                                { quest = { id = 975, state = "activeOrCompleted" } },
+                                                                                                                                                { all = { { any = { { any = { { quest = { id = 969, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                                                                                                            },
+                                                                                                                                        },
+                                                                                                                                    },
+                                                                                                                                },
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                                ["not"] = {
+                                                                                                                                    any = {
+                                                                                                                                        { quest = { id = 975, state = "activeOrCompleted" } },
+                                                                                                                                        {
+                                                                                                                                            any = {
+                                                                                                                                                { quest = { id = 975, state = "activeOrCompleted" } },
+                                                                                                                                                { all = { { any = { { any = { { quest = { id = 969, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                                                                                                            },
+                                                                                                                                        },
                                                                                                                                     },
                                                                                                                                 },
                                                                                                                             },
@@ -10369,13 +10669,30 @@ ns:RegisterGuide({
                                                                                                             {
                                                                                                                 any = {
                                                                                                                     {
-                                                                                                                        ["not"] = {
-                                                                                                                            any = {
-                                                                                                                                { quest = { id = 975, state = "activeOrCompleted" } },
-                                                                                                                                {
+                                                                                                                        any = {
+                                                                                                                            {
+                                                                                                                                ["not"] = {
                                                                                                                                     any = {
                                                                                                                                         { quest = { id = 975, state = "activeOrCompleted" } },
-                                                                                                                                        { all = { { any = { { any = { { quest = { id = 969, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                                                                                                        {
+                                                                                                                                            any = {
+                                                                                                                                                { quest = { id = 975, state = "activeOrCompleted" } },
+                                                                                                                                                { all = { { any = { { any = { { quest = { id = 969, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                                                                                                            },
+                                                                                                                                        },
+                                                                                                                                    },
+                                                                                                                                },
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                                ["not"] = {
+                                                                                                                                    any = {
+                                                                                                                                        { quest = { id = 975, state = "activeOrCompleted" } },
+                                                                                                                                        {
+                                                                                                                                            any = {
+                                                                                                                                                { quest = { id = 975, state = "activeOrCompleted" } },
+                                                                                                                                                { all = { { any = { { any = { { quest = { id = 969, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                                                                                                            },
+                                                                                                                                        },
                                                                                                                                     },
                                                                                                                                 },
                                                                                                                             },
@@ -10622,13 +10939,30 @@ ns:RegisterGuide({
                                                                                                             {
                                                                                                                 any = {
                                                                                                                     {
-                                                                                                                        ["not"] = {
-                                                                                                                            any = {
-                                                                                                                                { quest = { id = 975, state = "activeOrCompleted" } },
-                                                                                                                                {
+                                                                                                                        any = {
+                                                                                                                            {
+                                                                                                                                ["not"] = {
                                                                                                                                     any = {
                                                                                                                                         { quest = { id = 975, state = "activeOrCompleted" } },
-                                                                                                                                        { all = { { any = { { any = { { quest = { id = 969, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                                                                                                        {
+                                                                                                                                            any = {
+                                                                                                                                                { quest = { id = 975, state = "activeOrCompleted" } },
+                                                                                                                                                { all = { { any = { { any = { { quest = { id = 969, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                                                                                                            },
+                                                                                                                                        },
+                                                                                                                                    },
+                                                                                                                                },
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                                ["not"] = {
+                                                                                                                                    any = {
+                                                                                                                                        { quest = { id = 975, state = "activeOrCompleted" } },
+                                                                                                                                        {
+                                                                                                                                            any = {
+                                                                                                                                                { quest = { id = 975, state = "activeOrCompleted" } },
+                                                                                                                                                { all = { { any = { { any = { { quest = { id = 969, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                                                                                                            },
+                                                                                                                                        },
                                                                                                                                     },
                                                                                                                                 },
                                                                                                                             },
@@ -10868,13 +11202,30 @@ ns:RegisterGuide({
                                                                                                             {
                                                                                                                 any = {
                                                                                                                     {
-                                                                                                                        ["not"] = {
-                                                                                                                            any = {
-                                                                                                                                { quest = { id = 975, state = "activeOrCompleted" } },
-                                                                                                                                {
+                                                                                                                        any = {
+                                                                                                                            {
+                                                                                                                                ["not"] = {
                                                                                                                                     any = {
                                                                                                                                         { quest = { id = 975, state = "activeOrCompleted" } },
-                                                                                                                                        { all = { { any = { { any = { { quest = { id = 969, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                                                                                                        {
+                                                                                                                                            any = {
+                                                                                                                                                { quest = { id = 975, state = "activeOrCompleted" } },
+                                                                                                                                                { all = { { any = { { any = { { quest = { id = 969, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                                                                                                            },
+                                                                                                                                        },
+                                                                                                                                    },
+                                                                                                                                },
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                                ["not"] = {
+                                                                                                                                    any = {
+                                                                                                                                        { quest = { id = 975, state = "activeOrCompleted" } },
+                                                                                                                                        {
+                                                                                                                                            any = {
+                                                                                                                                                { quest = { id = 975, state = "activeOrCompleted" } },
+                                                                                                                                                { all = { { any = { { any = { { quest = { id = 969, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                                                                                                            },
+                                                                                                                                        },
                                                                                                                                     },
                                                                                                                                 },
                                                                                                                             },
@@ -11212,17 +11563,41 @@ ns:RegisterGuide({
                                                                                                             {
                                                                                                                 any = {
                                                                                                                     {
-                                                                                                                        ["not"] = {
-                                                                                                                            any = {
-                                                                                                                                { quest = { id = 5055, state = "activeOrCompleted" } },
-                                                                                                                                {
+                                                                                                                        any = {
+                                                                                                                            {
+                                                                                                                                ["not"] = {
                                                                                                                                     any = {
                                                                                                                                         { quest = { id = 5055, state = "activeOrCompleted" } },
                                                                                                                                         {
-                                                                                                                                            all = {
-                                                                                                                                                { faction = "Horde" },
+                                                                                                                                            any = {
+                                                                                                                                                { quest = { id = 5055, state = "activeOrCompleted" } },
                                                                                                                                                 {
-                                                                                                                                                    any = { { any = { { quest = { id = 5054, state = "activeOrCompleted" } }, { all = { { faction = "Horde" } } } } } },
+                                                                                                                                                    all = {
+                                                                                                                                                        { faction = "Horde" },
+                                                                                                                                                        {
+                                                                                                                                                            any = { { any = { { quest = { id = 5054, state = "activeOrCompleted" } }, { all = { { faction = "Horde" } } } } } },
+                                                                                                                                                        },
+                                                                                                                                                    },
+                                                                                                                                                },
+                                                                                                                                            },
+                                                                                                                                        },
+                                                                                                                                    },
+                                                                                                                                },
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                                ["not"] = {
+                                                                                                                                    any = {
+                                                                                                                                        { quest = { id = 5055, state = "activeOrCompleted" } },
+                                                                                                                                        {
+                                                                                                                                            any = {
+                                                                                                                                                { quest = { id = 5055, state = "activeOrCompleted" } },
+                                                                                                                                                {
+                                                                                                                                                    all = {
+                                                                                                                                                        { faction = "Horde" },
+                                                                                                                                                        {
+                                                                                                                                                            any = { { any = { { quest = { id = 5054, state = "activeOrCompleted" } }, { all = { { faction = "Horde" } } } } } },
+                                                                                                                                                        },
+                                                                                                                                                    },
                                                                                                                                                 },
                                                                                                                                             },
                                                                                                                                         },
@@ -11505,8 +11880,16 @@ ns:RegisterGuide({
                                         {
                                             all = {
                                                 { faction = "Horde" },
+                                                { race = { 2, 5, 6, 8 } },
                                                 {
-                                                    any = { { any = { { quest = { id = 5054, state = "activeOrCompleted" } }, { all = { { faction = "Horde" } } } } } },
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 5054, state = "activeOrCompleted" } },
+                                                                { all = { { faction = "Horde" }, { race = { 2, 5, 6, 8 } } } },
+                                                            },
+                                                        },
+                                                    },
                                                 },
                                             },
                                         },
@@ -11563,17 +11946,41 @@ ns:RegisterGuide({
                                                                                                             {
                                                                                                                 any = {
                                                                                                                     {
-                                                                                                                        ["not"] = {
-                                                                                                                            any = {
-                                                                                                                                { quest = { id = 5055, state = "activeOrCompleted" } },
-                                                                                                                                {
+                                                                                                                        any = {
+                                                                                                                            {
+                                                                                                                                ["not"] = {
                                                                                                                                     any = {
                                                                                                                                         { quest = { id = 5055, state = "activeOrCompleted" } },
                                                                                                                                         {
-                                                                                                                                            all = {
-                                                                                                                                                { faction = "Horde" },
+                                                                                                                                            any = {
+                                                                                                                                                { quest = { id = 5055, state = "activeOrCompleted" } },
                                                                                                                                                 {
-                                                                                                                                                    any = { { any = { { quest = { id = 5054, state = "activeOrCompleted" } }, { all = { { faction = "Horde" } } } } } },
+                                                                                                                                                    all = {
+                                                                                                                                                        { faction = "Horde" },
+                                                                                                                                                        {
+                                                                                                                                                            any = { { any = { { quest = { id = 5054, state = "activeOrCompleted" } }, { all = { { faction = "Horde" } } } } } },
+                                                                                                                                                        },
+                                                                                                                                                    },
+                                                                                                                                                },
+                                                                                                                                            },
+                                                                                                                                        },
+                                                                                                                                    },
+                                                                                                                                },
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                                ["not"] = {
+                                                                                                                                    any = {
+                                                                                                                                        { quest = { id = 5055, state = "activeOrCompleted" } },
+                                                                                                                                        {
+                                                                                                                                            any = {
+                                                                                                                                                { quest = { id = 5055, state = "activeOrCompleted" } },
+                                                                                                                                                {
+                                                                                                                                                    all = {
+                                                                                                                                                        { faction = "Horde" },
+                                                                                                                                                        {
+                                                                                                                                                            any = { { any = { { quest = { id = 5054, state = "activeOrCompleted" } }, { all = { { faction = "Horde" } } } } } },
+                                                                                                                                                        },
+                                                                                                                                                    },
                                                                                                                                                 },
                                                                                                                                             },
                                                                                                                                         },
@@ -11856,8 +12263,16 @@ ns:RegisterGuide({
                                         {
                                             all = {
                                                 { faction = "Horde" },
+                                                { race = { 2, 5, 6, 8 } },
                                                 {
-                                                    any = { { any = { { quest = { id = 5054, state = "activeOrCompleted" } }, { all = { { faction = "Horde" } } } } } },
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 5054, state = "activeOrCompleted" } },
+                                                                { all = { { faction = "Horde" }, { race = { 2, 5, 6, 8 } } } },
+                                                            },
+                                                        },
+                                                    },
                                                 },
                                             },
                                         },
@@ -11909,17 +12324,41 @@ ns:RegisterGuide({
                                                                                                             {
                                                                                                                 any = {
                                                                                                                     {
-                                                                                                                        ["not"] = {
-                                                                                                                            any = {
-                                                                                                                                { quest = { id = 5055, state = "activeOrCompleted" } },
-                                                                                                                                {
+                                                                                                                        any = {
+                                                                                                                            {
+                                                                                                                                ["not"] = {
                                                                                                                                     any = {
                                                                                                                                         { quest = { id = 5055, state = "activeOrCompleted" } },
                                                                                                                                         {
-                                                                                                                                            all = {
-                                                                                                                                                { faction = "Horde" },
+                                                                                                                                            any = {
+                                                                                                                                                { quest = { id = 5055, state = "activeOrCompleted" } },
                                                                                                                                                 {
-                                                                                                                                                    any = { { any = { { quest = { id = 5054, state = "activeOrCompleted" } }, { all = { { faction = "Horde" } } } } } },
+                                                                                                                                                    all = {
+                                                                                                                                                        { faction = "Horde" },
+                                                                                                                                                        {
+                                                                                                                                                            any = { { any = { { quest = { id = 5054, state = "activeOrCompleted" } }, { all = { { faction = "Horde" } } } } } },
+                                                                                                                                                        },
+                                                                                                                                                    },
+                                                                                                                                                },
+                                                                                                                                            },
+                                                                                                                                        },
+                                                                                                                                    },
+                                                                                                                                },
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                                ["not"] = {
+                                                                                                                                    any = {
+                                                                                                                                        { quest = { id = 5055, state = "activeOrCompleted" } },
+                                                                                                                                        {
+                                                                                                                                            any = {
+                                                                                                                                                { quest = { id = 5055, state = "activeOrCompleted" } },
+                                                                                                                                                {
+                                                                                                                                                    all = {
+                                                                                                                                                        { faction = "Horde" },
+                                                                                                                                                        {
+                                                                                                                                                            any = { { any = { { quest = { id = 5054, state = "activeOrCompleted" } }, { all = { { faction = "Horde" } } } } } },
+                                                                                                                                                        },
+                                                                                                                                                    },
                                                                                                                                                 },
                                                                                                                                             },
                                                                                                                                         },
@@ -12202,8 +12641,16 @@ ns:RegisterGuide({
                                         {
                                             all = {
                                                 { faction = "Horde" },
+                                                { race = { 2, 5, 6, 8 } },
                                                 {
-                                                    any = { { any = { { quest = { id = 5054, state = "activeOrCompleted" } }, { all = { { faction = "Horde" } } } } } },
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 5054, state = "activeOrCompleted" } },
+                                                                { all = { { faction = "Horde" }, { race = { 2, 5, 6, 8 } } } },
+                                                            },
+                                                        },
+                                                    },
                                                 },
                                             },
                                         },
@@ -12305,25 +12752,63 @@ ns:RegisterGuide({
                                                                                                             {
                                                                                                                 any = {
                                                                                                                     {
-                                                                                                                        ["not"] = {
-                                                                                                                            any = {
-                                                                                                                                { quest = { id = 5056, state = "activeOrCompleted" } },
-                                                                                                                                {
+                                                                                                                        any = {
+                                                                                                                            {
+                                                                                                                                ["not"] = {
                                                                                                                                     any = {
                                                                                                                                         { quest = { id = 5056, state = "activeOrCompleted" } },
                                                                                                                                         {
-                                                                                                                                            all = {
-                                                                                                                                                { faction = "Horde" },
+                                                                                                                                            any = {
+                                                                                                                                                { quest = { id = 5056, state = "activeOrCompleted" } },
                                                                                                                                                 {
-                                                                                                                                                    any = {
+                                                                                                                                                    all = {
+                                                                                                                                                        { faction = "Horde" },
                                                                                                                                                         {
                                                                                                                                                             any = {
-                                                                                                                                                                { quest = { id = 5055, state = "activeOrCompleted" } },
                                                                                                                                                                 {
-                                                                                                                                                                    all = {
-                                                                                                                                                                        { faction = "Horde" },
+                                                                                                                                                                    any = {
+                                                                                                                                                                        { quest = { id = 5055, state = "activeOrCompleted" } },
                                                                                                                                                                         {
-                                                                                                                                                                            any = { { any = { { quest = { id = 5054, state = "activeOrCompleted" } }, { all = { { faction = "Horde" } } } } } },
+                                                                                                                                                                            all = {
+                                                                                                                                                                                { faction = "Horde" },
+                                                                                                                                                                                {
+                                                                                                                                                                                    any = { { any = { { quest = { id = 5054, state = "activeOrCompleted" } }, { all = { { faction = "Horde" } } } } } },
+                                                                                                                                                                                },
+                                                                                                                                                                            },
+                                                                                                                                                                        },
+                                                                                                                                                                    },
+                                                                                                                                                                },
+                                                                                                                                                            },
+                                                                                                                                                        },
+                                                                                                                                                    },
+                                                                                                                                                },
+                                                                                                                                            },
+                                                                                                                                        },
+                                                                                                                                    },
+                                                                                                                                },
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                                ["not"] = {
+                                                                                                                                    any = {
+                                                                                                                                        { quest = { id = 5056, state = "activeOrCompleted" } },
+                                                                                                                                        {
+                                                                                                                                            any = {
+                                                                                                                                                { quest = { id = 5056, state = "activeOrCompleted" } },
+                                                                                                                                                {
+                                                                                                                                                    all = {
+                                                                                                                                                        { faction = "Horde" },
+                                                                                                                                                        {
+                                                                                                                                                            any = {
+                                                                                                                                                                {
+                                                                                                                                                                    any = {
+                                                                                                                                                                        { quest = { id = 5055, state = "activeOrCompleted" } },
+                                                                                                                                                                        {
+                                                                                                                                                                            all = {
+                                                                                                                                                                                { faction = "Horde" },
+                                                                                                                                                                                {
+                                                                                                                                                                                    any = { { any = { { quest = { id = 5054, state = "activeOrCompleted" } }, { all = { { faction = "Horde" } } } } } },
+                                                                                                                                                                                },
+                                                                                                                                                                            },
                                                                                                                                                                         },
                                                                                                                                                                     },
                                                                                                                                                                 },
@@ -12780,6 +13265,7 @@ ns:RegisterGuide({
                                         {
                                             all = {
                                                 { faction = "Horde" },
+                                                { race = { 2, 5, 6, 8 } },
                                                 {
                                                     any = {
                                                         {
@@ -12788,8 +13274,16 @@ ns:RegisterGuide({
                                                                 {
                                                                     all = {
                                                                         { faction = "Horde" },
+                                                                        { race = { 2, 5, 6, 8 } },
                                                                         {
-                                                                            any = { { any = { { quest = { id = 5054, state = "activeOrCompleted" } }, { all = { { faction = "Horde" } } } } } },
+                                                                            any = {
+                                                                                {
+                                                                                    any = {
+                                                                                        { quest = { id = 5054, state = "activeOrCompleted" } },
+                                                                                        { all = { { faction = "Horde" }, { race = { 2, 5, 6, 8 } } } },
+                                                                                    },
+                                                                                },
+                                                                            },
                                                                         },
                                                                     },
                                                                 },
@@ -12852,25 +13346,63 @@ ns:RegisterGuide({
                                                                                                             {
                                                                                                                 any = {
                                                                                                                     {
-                                                                                                                        ["not"] = {
-                                                                                                                            any = {
-                                                                                                                                { quest = { id = 5056, state = "activeOrCompleted" } },
-                                                                                                                                {
+                                                                                                                        any = {
+                                                                                                                            {
+                                                                                                                                ["not"] = {
                                                                                                                                     any = {
                                                                                                                                         { quest = { id = 5056, state = "activeOrCompleted" } },
                                                                                                                                         {
-                                                                                                                                            all = {
-                                                                                                                                                { faction = "Horde" },
+                                                                                                                                            any = {
+                                                                                                                                                { quest = { id = 5056, state = "activeOrCompleted" } },
                                                                                                                                                 {
-                                                                                                                                                    any = {
+                                                                                                                                                    all = {
+                                                                                                                                                        { faction = "Horde" },
                                                                                                                                                         {
                                                                                                                                                             any = {
-                                                                                                                                                                { quest = { id = 5055, state = "activeOrCompleted" } },
                                                                                                                                                                 {
-                                                                                                                                                                    all = {
-                                                                                                                                                                        { faction = "Horde" },
+                                                                                                                                                                    any = {
+                                                                                                                                                                        { quest = { id = 5055, state = "activeOrCompleted" } },
                                                                                                                                                                         {
-                                                                                                                                                                            any = { { any = { { quest = { id = 5054, state = "activeOrCompleted" } }, { all = { { faction = "Horde" } } } } } },
+                                                                                                                                                                            all = {
+                                                                                                                                                                                { faction = "Horde" },
+                                                                                                                                                                                {
+                                                                                                                                                                                    any = { { any = { { quest = { id = 5054, state = "activeOrCompleted" } }, { all = { { faction = "Horde" } } } } } },
+                                                                                                                                                                                },
+                                                                                                                                                                            },
+                                                                                                                                                                        },
+                                                                                                                                                                    },
+                                                                                                                                                                },
+                                                                                                                                                            },
+                                                                                                                                                        },
+                                                                                                                                                    },
+                                                                                                                                                },
+                                                                                                                                            },
+                                                                                                                                        },
+                                                                                                                                    },
+                                                                                                                                },
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                                ["not"] = {
+                                                                                                                                    any = {
+                                                                                                                                        { quest = { id = 5056, state = "activeOrCompleted" } },
+                                                                                                                                        {
+                                                                                                                                            any = {
+                                                                                                                                                { quest = { id = 5056, state = "activeOrCompleted" } },
+                                                                                                                                                {
+                                                                                                                                                    all = {
+                                                                                                                                                        { faction = "Horde" },
+                                                                                                                                                        {
+                                                                                                                                                            any = {
+                                                                                                                                                                {
+                                                                                                                                                                    any = {
+                                                                                                                                                                        { quest = { id = 5055, state = "activeOrCompleted" } },
+                                                                                                                                                                        {
+                                                                                                                                                                            all = {
+                                                                                                                                                                                { faction = "Horde" },
+                                                                                                                                                                                {
+                                                                                                                                                                                    any = { { any = { { quest = { id = 5054, state = "activeOrCompleted" } }, { all = { { faction = "Horde" } } } } } },
+                                                                                                                                                                                },
+                                                                                                                                                                            },
                                                                                                                                                                         },
                                                                                                                                                                     },
                                                                                                                                                                 },
@@ -13327,6 +13859,7 @@ ns:RegisterGuide({
                                         {
                                             all = {
                                                 { faction = "Horde" },
+                                                { race = { 2, 5, 6, 8 } },
                                                 {
                                                     any = {
                                                         {
@@ -13335,8 +13868,16 @@ ns:RegisterGuide({
                                                                 {
                                                                     all = {
                                                                         { faction = "Horde" },
+                                                                        { race = { 2, 5, 6, 8 } },
                                                                         {
-                                                                            any = { { any = { { quest = { id = 5054, state = "activeOrCompleted" } }, { all = { { faction = "Horde" } } } } } },
+                                                                            any = {
+                                                                                {
+                                                                                    any = {
+                                                                                        { quest = { id = 5054, state = "activeOrCompleted" } },
+                                                                                        { all = { { faction = "Horde" }, { race = { 2, 5, 6, 8 } } } },
+                                                                                    },
+                                                                                },
+                                                                            },
                                                                         },
                                                                     },
                                                                 },
@@ -13394,25 +13935,63 @@ ns:RegisterGuide({
                                                                                                             {
                                                                                                                 any = {
                                                                                                                     {
-                                                                                                                        ["not"] = {
-                                                                                                                            any = {
-                                                                                                                                { quest = { id = 5056, state = "activeOrCompleted" } },
-                                                                                                                                {
+                                                                                                                        any = {
+                                                                                                                            {
+                                                                                                                                ["not"] = {
                                                                                                                                     any = {
                                                                                                                                         { quest = { id = 5056, state = "activeOrCompleted" } },
                                                                                                                                         {
-                                                                                                                                            all = {
-                                                                                                                                                { faction = "Horde" },
+                                                                                                                                            any = {
+                                                                                                                                                { quest = { id = 5056, state = "activeOrCompleted" } },
                                                                                                                                                 {
-                                                                                                                                                    any = {
+                                                                                                                                                    all = {
+                                                                                                                                                        { faction = "Horde" },
                                                                                                                                                         {
                                                                                                                                                             any = {
-                                                                                                                                                                { quest = { id = 5055, state = "activeOrCompleted" } },
                                                                                                                                                                 {
-                                                                                                                                                                    all = {
-                                                                                                                                                                        { faction = "Horde" },
+                                                                                                                                                                    any = {
+                                                                                                                                                                        { quest = { id = 5055, state = "activeOrCompleted" } },
                                                                                                                                                                         {
-                                                                                                                                                                            any = { { any = { { quest = { id = 5054, state = "activeOrCompleted" } }, { all = { { faction = "Horde" } } } } } },
+                                                                                                                                                                            all = {
+                                                                                                                                                                                { faction = "Horde" },
+                                                                                                                                                                                {
+                                                                                                                                                                                    any = { { any = { { quest = { id = 5054, state = "activeOrCompleted" } }, { all = { { faction = "Horde" } } } } } },
+                                                                                                                                                                                },
+                                                                                                                                                                            },
+                                                                                                                                                                        },
+                                                                                                                                                                    },
+                                                                                                                                                                },
+                                                                                                                                                            },
+                                                                                                                                                        },
+                                                                                                                                                    },
+                                                                                                                                                },
+                                                                                                                                            },
+                                                                                                                                        },
+                                                                                                                                    },
+                                                                                                                                },
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                                ["not"] = {
+                                                                                                                                    any = {
+                                                                                                                                        { quest = { id = 5056, state = "activeOrCompleted" } },
+                                                                                                                                        {
+                                                                                                                                            any = {
+                                                                                                                                                { quest = { id = 5056, state = "activeOrCompleted" } },
+                                                                                                                                                {
+                                                                                                                                                    all = {
+                                                                                                                                                        { faction = "Horde" },
+                                                                                                                                                        {
+                                                                                                                                                            any = {
+                                                                                                                                                                {
+                                                                                                                                                                    any = {
+                                                                                                                                                                        { quest = { id = 5055, state = "activeOrCompleted" } },
+                                                                                                                                                                        {
+                                                                                                                                                                            all = {
+                                                                                                                                                                                { faction = "Horde" },
+                                                                                                                                                                                {
+                                                                                                                                                                                    any = { { any = { { quest = { id = 5054, state = "activeOrCompleted" } }, { all = { { faction = "Horde" } } } } } },
+                                                                                                                                                                                },
+                                                                                                                                                                            },
                                                                                                                                                                         },
                                                                                                                                                                     },
                                                                                                                                                                 },
@@ -13869,6 +14448,7 @@ ns:RegisterGuide({
                                         {
                                             all = {
                                                 { faction = "Horde" },
+                                                { race = { 2, 5, 6, 8 } },
                                                 {
                                                     any = {
                                                         {
@@ -13877,8 +14457,16 @@ ns:RegisterGuide({
                                                                 {
                                                                     all = {
                                                                         { faction = "Horde" },
+                                                                        { race = { 2, 5, 6, 8 } },
                                                                         {
-                                                                            any = { { any = { { quest = { id = 5054, state = "activeOrCompleted" } }, { all = { { faction = "Horde" } } } } } },
+                                                                            any = {
+                                                                                {
+                                                                                    any = {
+                                                                                        { quest = { id = 5054, state = "activeOrCompleted" } },
+                                                                                        { all = { { faction = "Horde" }, { race = { 2, 5, 6, 8 } } } },
+                                                                                    },
+                                                                                },
+                                                                            },
                                                                         },
                                                                     },
                                                                 },
@@ -14030,48 +14618,130 @@ ns:RegisterGuide({
                                                                                                             {
                                                                                                                 any = {
                                                                                                                     {
-                                                                                                                        ["not"] = {
-                                                                                                                            any = {
-                                                                                                                                { quest = { id = 5121, state = "activeOrCompleted" } },
-                                                                                                                                {
+                                                                                                                        any = {
+                                                                                                                            {
+                                                                                                                                ["not"] = {
                                                                                                                                     any = {
                                                                                                                                         { quest = { id = 5121, state = "activeOrCompleted" } },
                                                                                                                                         {
-                                                                                                                                            all = {
+                                                                                                                                            any = {
+                                                                                                                                                { quest = { id = 5121, state = "activeOrCompleted" } },
                                                                                                                                                 {
-                                                                                                                                                    any = {
+                                                                                                                                                    all = {
                                                                                                                                                         {
                                                                                                                                                             any = {
-                                                                                                                                                                { quest = { id = 5087, state = "activeOrCompleted" } },
                                                                                                                                                                 {
-                                                                                                                                                                    all = {
+                                                                                                                                                                    any = {
+                                                                                                                                                                        { quest = { id = 5087, state = "activeOrCompleted" } },
                                                                                                                                                                         {
-                                                                                                                                                                            any = {
+                                                                                                                                                                            all = {
                                                                                                                                                                                 {
                                                                                                                                                                                     any = {
-                                                                                                                                                                                        { quest = { id = 5086, state = "activeOrCompleted" } },
                                                                                                                                                                                         {
-                                                                                                                                                                                            all = {
+                                                                                                                                                                                            any = {
+                                                                                                                                                                                                { quest = { id = 5086, state = "activeOrCompleted" } },
                                                                                                                                                                                                 {
-                                                                                                                                                                                                    any = {
+                                                                                                                                                                                                    all = {
                                                                                                                                                                                                         {
                                                                                                                                                                                                             any = {
-                                                                                                                                                                                                                { quest = { id = 5085, state = "activeOrCompleted" } },
                                                                                                                                                                                                                 {
-                                                                                                                                                                                                                    all = {
+                                                                                                                                                                                                                    any = {
+                                                                                                                                                                                                                        { quest = { id = 5085, state = "activeOrCompleted" } },
                                                                                                                                                                                                                         {
-                                                                                                                                                                                                                            any = {
+                                                                                                                                                                                                                            all = {
                                                                                                                                                                                                                                 {
                                                                                                                                                                                                                                     any = {
-                                                                                                                                                                                                                                        { quest = { id = 5084, state = "activeOrCompleted" } },
                                                                                                                                                                                                                                         {
-                                                                                                                                                                                                                                            all = {
+                                                                                                                                                                                                                                            any = {
+                                                                                                                                                                                                                                                { quest = { id = 5084, state = "activeOrCompleted" } },
                                                                                                                                                                                                                                                 {
-                                                                                                                                                                                                                                                    any = {
+                                                                                                                                                                                                                                                    all = {
                                                                                                                                                                                                                                                         {
                                                                                                                                                                                                                                                             any = {
-                                                                                                                                                                                                                                                                { quest = { id = 5083, state = "activeOrCompleted" } },
-                                                                                                                                                                                                                                                                { all = { { item = { minCount = 1, name = "Empty Firewater Flask" } } } },
+                                                                                                                                                                                                                                                                {
+                                                                                                                                                                                                                                                                    any = {
+                                                                                                                                                                                                                                                                        { quest = { id = 5083, state = "activeOrCompleted" } },
+                                                                                                                                                                                                                                                                        { all = { { item = { minCount = 1, name = "Empty Firewater Flask" } } } },
+                                                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                },
+                                                                                                                                                                                                            },
+                                                                                                                                                                                                        },
+                                                                                                                                                                                                    },
+                                                                                                                                                                                                },
+                                                                                                                                                                                            },
+                                                                                                                                                                                        },
+                                                                                                                                                                                    },
+                                                                                                                                                                                },
+                                                                                                                                                                            },
+                                                                                                                                                                        },
+                                                                                                                                                                    },
+                                                                                                                                                                },
+                                                                                                                                                            },
+                                                                                                                                                        },
+                                                                                                                                                    },
+                                                                                                                                                },
+                                                                                                                                            },
+                                                                                                                                        },
+                                                                                                                                    },
+                                                                                                                                },
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                                ["not"] = {
+                                                                                                                                    any = {
+                                                                                                                                        { quest = { id = 5121, state = "activeOrCompleted" } },
+                                                                                                                                        {
+                                                                                                                                            any = {
+                                                                                                                                                { quest = { id = 5121, state = "activeOrCompleted" } },
+                                                                                                                                                {
+                                                                                                                                                    all = {
+                                                                                                                                                        {
+                                                                                                                                                            any = {
+                                                                                                                                                                {
+                                                                                                                                                                    any = {
+                                                                                                                                                                        { quest = { id = 5087, state = "activeOrCompleted" } },
+                                                                                                                                                                        {
+                                                                                                                                                                            all = {
+                                                                                                                                                                                {
+                                                                                                                                                                                    any = {
+                                                                                                                                                                                        {
+                                                                                                                                                                                            any = {
+                                                                                                                                                                                                { quest = { id = 5086, state = "activeOrCompleted" } },
+                                                                                                                                                                                                {
+                                                                                                                                                                                                    all = {
+                                                                                                                                                                                                        {
+                                                                                                                                                                                                            any = {
+                                                                                                                                                                                                                {
+                                                                                                                                                                                                                    any = {
+                                                                                                                                                                                                                        { quest = { id = 5085, state = "activeOrCompleted" } },
+                                                                                                                                                                                                                        {
+                                                                                                                                                                                                                            all = {
+                                                                                                                                                                                                                                {
+                                                                                                                                                                                                                                    any = {
+                                                                                                                                                                                                                                        {
+                                                                                                                                                                                                                                            any = {
+                                                                                                                                                                                                                                                { quest = { id = 5084, state = "activeOrCompleted" } },
+                                                                                                                                                                                                                                                {
+                                                                                                                                                                                                                                                    all = {
+                                                                                                                                                                                                                                                        {
+                                                                                                                                                                                                                                                            any = {
+                                                                                                                                                                                                                                                                {
+                                                                                                                                                                                                                                                                    any = {
+                                                                                                                                                                                                                                                                        { quest = { id = 5083, state = "activeOrCompleted" } },
+                                                                                                                                                                                                                                                                        { all = { { item = { minCount = 1, name = "Empty Firewater Flask" } } } },
+                                                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                                                },
                                                                                                                                                                                                                                                             },
                                                                                                                                                                                                                                                         },
                                                                                                                                                                                                                                                     },
@@ -15097,6 +15767,7 @@ ns:RegisterGuide({
                                                                                                                 { quest = { id = 5085, state = "activeOrCompleted" } },
                                                                                                                 {
                                                                                                                     all = {
+                                                                                                                        { item = { minCount = 1, name = "Flask of Mystery Goo" } },
                                                                                                                         {
                                                                                                                             any = {
                                                                                                                                 {
@@ -15109,7 +15780,7 @@ ns:RegisterGuide({
                                                                                                                                                         {
                                                                                                                                                             any = {
                                                                                                                                                                 { quest = { id = 5083, state = "activeOrCompleted" } },
-                                                                                                                                                                { all = { { item = { name = "Empty Firewater Flask", minCount = 1 } } } },
+                                                                                                                                                                { all = { { item = { minCount = 1, name = "Empty Firewater Flask" } } } },
                                                                                                                                                             },
                                                                                                                                                         },
                                                                                                                                                     },
@@ -15193,48 +15864,130 @@ ns:RegisterGuide({
                                                                                                             {
                                                                                                                 any = {
                                                                                                                     {
-                                                                                                                        ["not"] = {
-                                                                                                                            any = {
-                                                                                                                                { quest = { id = 5121, state = "activeOrCompleted" } },
-                                                                                                                                {
+                                                                                                                        any = {
+                                                                                                                            {
+                                                                                                                                ["not"] = {
                                                                                                                                     any = {
                                                                                                                                         { quest = { id = 5121, state = "activeOrCompleted" } },
                                                                                                                                         {
-                                                                                                                                            all = {
+                                                                                                                                            any = {
+                                                                                                                                                { quest = { id = 5121, state = "activeOrCompleted" } },
                                                                                                                                                 {
-                                                                                                                                                    any = {
+                                                                                                                                                    all = {
                                                                                                                                                         {
                                                                                                                                                             any = {
-                                                                                                                                                                { quest = { id = 5087, state = "activeOrCompleted" } },
                                                                                                                                                                 {
-                                                                                                                                                                    all = {
+                                                                                                                                                                    any = {
+                                                                                                                                                                        { quest = { id = 5087, state = "activeOrCompleted" } },
                                                                                                                                                                         {
-                                                                                                                                                                            any = {
+                                                                                                                                                                            all = {
                                                                                                                                                                                 {
                                                                                                                                                                                     any = {
-                                                                                                                                                                                        { quest = { id = 5086, state = "activeOrCompleted" } },
                                                                                                                                                                                         {
-                                                                                                                                                                                            all = {
+                                                                                                                                                                                            any = {
+                                                                                                                                                                                                { quest = { id = 5086, state = "activeOrCompleted" } },
                                                                                                                                                                                                 {
-                                                                                                                                                                                                    any = {
+                                                                                                                                                                                                    all = {
                                                                                                                                                                                                         {
                                                                                                                                                                                                             any = {
-                                                                                                                                                                                                                { quest = { id = 5085, state = "activeOrCompleted" } },
                                                                                                                                                                                                                 {
-                                                                                                                                                                                                                    all = {
+                                                                                                                                                                                                                    any = {
+                                                                                                                                                                                                                        { quest = { id = 5085, state = "activeOrCompleted" } },
                                                                                                                                                                                                                         {
-                                                                                                                                                                                                                            any = {
+                                                                                                                                                                                                                            all = {
                                                                                                                                                                                                                                 {
                                                                                                                                                                                                                                     any = {
-                                                                                                                                                                                                                                        { quest = { id = 5084, state = "activeOrCompleted" } },
                                                                                                                                                                                                                                         {
-                                                                                                                                                                                                                                            all = {
+                                                                                                                                                                                                                                            any = {
+                                                                                                                                                                                                                                                { quest = { id = 5084, state = "activeOrCompleted" } },
                                                                                                                                                                                                                                                 {
-                                                                                                                                                                                                                                                    any = {
+                                                                                                                                                                                                                                                    all = {
                                                                                                                                                                                                                                                         {
                                                                                                                                                                                                                                                             any = {
-                                                                                                                                                                                                                                                                { quest = { id = 5083, state = "activeOrCompleted" } },
-                                                                                                                                                                                                                                                                { all = { { item = { minCount = 1, name = "Empty Firewater Flask" } } } },
+                                                                                                                                                                                                                                                                {
+                                                                                                                                                                                                                                                                    any = {
+                                                                                                                                                                                                                                                                        { quest = { id = 5083, state = "activeOrCompleted" } },
+                                                                                                                                                                                                                                                                        { all = { { item = { minCount = 1, name = "Empty Firewater Flask" } } } },
+                                                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                },
+                                                                                                                                                                                                            },
+                                                                                                                                                                                                        },
+                                                                                                                                                                                                    },
+                                                                                                                                                                                                },
+                                                                                                                                                                                            },
+                                                                                                                                                                                        },
+                                                                                                                                                                                    },
+                                                                                                                                                                                },
+                                                                                                                                                                            },
+                                                                                                                                                                        },
+                                                                                                                                                                    },
+                                                                                                                                                                },
+                                                                                                                                                            },
+                                                                                                                                                        },
+                                                                                                                                                    },
+                                                                                                                                                },
+                                                                                                                                            },
+                                                                                                                                        },
+                                                                                                                                    },
+                                                                                                                                },
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                                ["not"] = {
+                                                                                                                                    any = {
+                                                                                                                                        { quest = { id = 5121, state = "activeOrCompleted" } },
+                                                                                                                                        {
+                                                                                                                                            any = {
+                                                                                                                                                { quest = { id = 5121, state = "activeOrCompleted" } },
+                                                                                                                                                {
+                                                                                                                                                    all = {
+                                                                                                                                                        {
+                                                                                                                                                            any = {
+                                                                                                                                                                {
+                                                                                                                                                                    any = {
+                                                                                                                                                                        { quest = { id = 5087, state = "activeOrCompleted" } },
+                                                                                                                                                                        {
+                                                                                                                                                                            all = {
+                                                                                                                                                                                {
+                                                                                                                                                                                    any = {
+                                                                                                                                                                                        {
+                                                                                                                                                                                            any = {
+                                                                                                                                                                                                { quest = { id = 5086, state = "activeOrCompleted" } },
+                                                                                                                                                                                                {
+                                                                                                                                                                                                    all = {
+                                                                                                                                                                                                        {
+                                                                                                                                                                                                            any = {
+                                                                                                                                                                                                                {
+                                                                                                                                                                                                                    any = {
+                                                                                                                                                                                                                        { quest = { id = 5085, state = "activeOrCompleted" } },
+                                                                                                                                                                                                                        {
+                                                                                                                                                                                                                            all = {
+                                                                                                                                                                                                                                {
+                                                                                                                                                                                                                                    any = {
+                                                                                                                                                                                                                                        {
+                                                                                                                                                                                                                                            any = {
+                                                                                                                                                                                                                                                { quest = { id = 5084, state = "activeOrCompleted" } },
+                                                                                                                                                                                                                                                {
+                                                                                                                                                                                                                                                    all = {
+                                                                                                                                                                                                                                                        {
+                                                                                                                                                                                                                                                            any = {
+                                                                                                                                                                                                                                                                {
+                                                                                                                                                                                                                                                                    any = {
+                                                                                                                                                                                                                                                                        { quest = { id = 5083, state = "activeOrCompleted" } },
+                                                                                                                                                                                                                                                                        { all = { { item = { minCount = 1, name = "Empty Firewater Flask" } } } },
+                                                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                                                },
                                                                                                                                                                                                                                                             },
                                                                                                                                                                                                                                                         },
                                                                                                                                                                                                                                                     },
@@ -16260,6 +17013,7 @@ ns:RegisterGuide({
                                                                                                                 { quest = { id = 5085, state = "activeOrCompleted" } },
                                                                                                                 {
                                                                                                                     all = {
+                                                                                                                        { item = { minCount = 1, name = "Flask of Mystery Goo" } },
                                                                                                                         {
                                                                                                                             any = {
                                                                                                                                 {
@@ -16272,7 +17026,7 @@ ns:RegisterGuide({
                                                                                                                                                         {
                                                                                                                                                             any = {
                                                                                                                                                                 { quest = { id = 5083, state = "activeOrCompleted" } },
-                                                                                                                                                                { all = { { item = { name = "Empty Firewater Flask", minCount = 1 } } } },
+                                                                                                                                                                { all = { { item = { minCount = 1, name = "Empty Firewater Flask" } } } },
                                                                                                                                                             },
                                                                                                                                                         },
                                                                                                                                                     },
@@ -16357,48 +17111,130 @@ ns:RegisterGuide({
                                                                                                             {
                                                                                                                 any = {
                                                                                                                     {
-                                                                                                                        ["not"] = {
-                                                                                                                            any = {
-                                                                                                                                { quest = { id = 5121, state = "activeOrCompleted" } },
-                                                                                                                                {
+                                                                                                                        any = {
+                                                                                                                            {
+                                                                                                                                ["not"] = {
                                                                                                                                     any = {
                                                                                                                                         { quest = { id = 5121, state = "activeOrCompleted" } },
                                                                                                                                         {
-                                                                                                                                            all = {
+                                                                                                                                            any = {
+                                                                                                                                                { quest = { id = 5121, state = "activeOrCompleted" } },
                                                                                                                                                 {
-                                                                                                                                                    any = {
+                                                                                                                                                    all = {
                                                                                                                                                         {
                                                                                                                                                             any = {
-                                                                                                                                                                { quest = { id = 5087, state = "activeOrCompleted" } },
                                                                                                                                                                 {
-                                                                                                                                                                    all = {
+                                                                                                                                                                    any = {
+                                                                                                                                                                        { quest = { id = 5087, state = "activeOrCompleted" } },
                                                                                                                                                                         {
-                                                                                                                                                                            any = {
+                                                                                                                                                                            all = {
                                                                                                                                                                                 {
                                                                                                                                                                                     any = {
-                                                                                                                                                                                        { quest = { id = 5086, state = "activeOrCompleted" } },
                                                                                                                                                                                         {
-                                                                                                                                                                                            all = {
+                                                                                                                                                                                            any = {
+                                                                                                                                                                                                { quest = { id = 5086, state = "activeOrCompleted" } },
                                                                                                                                                                                                 {
-                                                                                                                                                                                                    any = {
+                                                                                                                                                                                                    all = {
                                                                                                                                                                                                         {
                                                                                                                                                                                                             any = {
-                                                                                                                                                                                                                { quest = { id = 5085, state = "activeOrCompleted" } },
                                                                                                                                                                                                                 {
-                                                                                                                                                                                                                    all = {
+                                                                                                                                                                                                                    any = {
+                                                                                                                                                                                                                        { quest = { id = 5085, state = "activeOrCompleted" } },
                                                                                                                                                                                                                         {
-                                                                                                                                                                                                                            any = {
+                                                                                                                                                                                                                            all = {
                                                                                                                                                                                                                                 {
                                                                                                                                                                                                                                     any = {
-                                                                                                                                                                                                                                        { quest = { id = 5084, state = "activeOrCompleted" } },
                                                                                                                                                                                                                                         {
-                                                                                                                                                                                                                                            all = {
+                                                                                                                                                                                                                                            any = {
+                                                                                                                                                                                                                                                { quest = { id = 5084, state = "activeOrCompleted" } },
                                                                                                                                                                                                                                                 {
-                                                                                                                                                                                                                                                    any = {
+                                                                                                                                                                                                                                                    all = {
                                                                                                                                                                                                                                                         {
                                                                                                                                                                                                                                                             any = {
-                                                                                                                                                                                                                                                                { quest = { id = 5083, state = "activeOrCompleted" } },
-                                                                                                                                                                                                                                                                { all = { { item = { minCount = 1, name = "Empty Firewater Flask" } } } },
+                                                                                                                                                                                                                                                                {
+                                                                                                                                                                                                                                                                    any = {
+                                                                                                                                                                                                                                                                        { quest = { id = 5083, state = "activeOrCompleted" } },
+                                                                                                                                                                                                                                                                        { all = { { item = { minCount = 1, name = "Empty Firewater Flask" } } } },
+                                                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                },
+                                                                                                                                                                                                            },
+                                                                                                                                                                                                        },
+                                                                                                                                                                                                    },
+                                                                                                                                                                                                },
+                                                                                                                                                                                            },
+                                                                                                                                                                                        },
+                                                                                                                                                                                    },
+                                                                                                                                                                                },
+                                                                                                                                                                            },
+                                                                                                                                                                        },
+                                                                                                                                                                    },
+                                                                                                                                                                },
+                                                                                                                                                            },
+                                                                                                                                                        },
+                                                                                                                                                    },
+                                                                                                                                                },
+                                                                                                                                            },
+                                                                                                                                        },
+                                                                                                                                    },
+                                                                                                                                },
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                                ["not"] = {
+                                                                                                                                    any = {
+                                                                                                                                        { quest = { id = 5121, state = "activeOrCompleted" } },
+                                                                                                                                        {
+                                                                                                                                            any = {
+                                                                                                                                                { quest = { id = 5121, state = "activeOrCompleted" } },
+                                                                                                                                                {
+                                                                                                                                                    all = {
+                                                                                                                                                        {
+                                                                                                                                                            any = {
+                                                                                                                                                                {
+                                                                                                                                                                    any = {
+                                                                                                                                                                        { quest = { id = 5087, state = "activeOrCompleted" } },
+                                                                                                                                                                        {
+                                                                                                                                                                            all = {
+                                                                                                                                                                                {
+                                                                                                                                                                                    any = {
+                                                                                                                                                                                        {
+                                                                                                                                                                                            any = {
+                                                                                                                                                                                                { quest = { id = 5086, state = "activeOrCompleted" } },
+                                                                                                                                                                                                {
+                                                                                                                                                                                                    all = {
+                                                                                                                                                                                                        {
+                                                                                                                                                                                                            any = {
+                                                                                                                                                                                                                {
+                                                                                                                                                                                                                    any = {
+                                                                                                                                                                                                                        { quest = { id = 5085, state = "activeOrCompleted" } },
+                                                                                                                                                                                                                        {
+                                                                                                                                                                                                                            all = {
+                                                                                                                                                                                                                                {
+                                                                                                                                                                                                                                    any = {
+                                                                                                                                                                                                                                        {
+                                                                                                                                                                                                                                            any = {
+                                                                                                                                                                                                                                                { quest = { id = 5084, state = "activeOrCompleted" } },
+                                                                                                                                                                                                                                                {
+                                                                                                                                                                                                                                                    all = {
+                                                                                                                                                                                                                                                        {
+                                                                                                                                                                                                                                                            any = {
+                                                                                                                                                                                                                                                                {
+                                                                                                                                                                                                                                                                    any = {
+                                                                                                                                                                                                                                                                        { quest = { id = 5083, state = "activeOrCompleted" } },
+                                                                                                                                                                                                                                                                        { all = { { item = { minCount = 1, name = "Empty Firewater Flask" } } } },
+                                                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                                                },
                                                                                                                                                                                                                                                             },
                                                                                                                                                                                                                                                         },
                                                                                                                                                                                                                                                     },
@@ -17424,6 +18260,7 @@ ns:RegisterGuide({
                                                                                                                 { quest = { id = 5085, state = "activeOrCompleted" } },
                                                                                                                 {
                                                                                                                     all = {
+                                                                                                                        { item = { minCount = 1, name = "Flask of Mystery Goo" } },
                                                                                                                         {
                                                                                                                             any = {
                                                                                                                                 {
@@ -17436,7 +18273,7 @@ ns:RegisterGuide({
                                                                                                                                                         {
                                                                                                                                                             any = {
                                                                                                                                                                 { quest = { id = 5083, state = "activeOrCompleted" } },
-                                                                                                                                                                { all = { { item = { name = "Empty Firewater Flask", minCount = 1 } } } },
+                                                                                                                                                                { all = { { item = { minCount = 1, name = "Empty Firewater Flask" } } } },
                                                                                                                                                             },
                                                                                                                                                         },
                                                                                                                                                     },

@@ -6,10 +6,501 @@ ns:RegisterGuide({
     id = "loremaster-swamp-of-sorrows",
     title = "Swamp of Sorrows",
     category = "Loremaster Guides",
-    revision = 1,
+    revision = 2,
     routeMode = "ordered",
     loremasterExpanded = true,
     goals = {
+        {
+            complete = { level = { min = 33 } },
+            conditions = { all = { { faction = "Alliance" } } },
+            excludeWhen = { ["not"] = { all = { { faction = "Alliance" } } } },
+            id = "visit-entry-leveling-era-alliance-dustwallow-marsh-and-thousand-needles",
+            kind = "note",
+            requiredLevel = 33,
+            text = "Reach level 33 before the Dustwallow Marsh & Thousand Needles visit.",
+            visitSourceGuide = "leveling-era-alliance-dustwallow-marsh-and-thousand-needles",
+        },
+        {
+            complete = { quest = { id = 1111, state = "activeOrCompleted" } },
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 30 } } } },
+            dependsOn = {},
+            id = "alliance-leveling-era-alliance-dustwallow-marsh-and-thousand-needles-accept-1111-wharfmaster-dizzywig",
+            kind = "accept",
+            requiredQuests = {},
+            route = {
+                {
+                    label = "Kravel Koalbeard",
+                    mapID = 1441,
+                    offMapText = "Travel to Kravel Koalbeard in Thousand Needles.",
+                    x = 0.788,
+                    y = 0.773,
+                },
+            },
+            sourceActionID = "accept-1111-wharfmaster-dizzywig",
+            sourceGuide = "leveling-era-alliance-dustwallow-marsh-and-thousand-needles",
+            sourceStep = 41,
+            text = "Accept Wharfmaster Dizzywig from Kravel Koalbeard.",
+            useClientPin = false,
+            useClientText = false,
+        },
+        {
+            complete = { quest = { id = 1111, state = "completed" } },
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 30 } } } },
+            dependsOn = { "alliance-leveling-era-alliance-dustwallow-marsh-and-thousand-needles-accept-1111-wharfmaster-dizzywig" },
+            id = "alliance-leveling-era-alliance-dustwallow-marsh-and-thousand-needles-turnin-1111-wharfmaster-dizzywig",
+            kind = "turnin",
+            requiredQuests = {},
+            route = {
+                {
+                    label = "Wharfmaster Dizzywig",
+                    mapID = 1413,
+                    offMapText = "Travel to Wharfmaster Dizzywig in The Barrens.",
+                    x = 0.6335,
+                    y = 0.3845,
+                },
+            },
+            sourceActionID = "turnin-1111-wharfmaster-dizzywig",
+            sourceGuide = "leveling-era-alliance-dustwallow-marsh-and-thousand-needles",
+            sourceStep = 61,
+            text = "Turn in Wharfmaster Dizzywig to Wharfmaster Dizzywig.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
+        },
+        {
+            complete = { quest = { id = 1112, state = "activeOrCompleted" } },
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 30 } } } },
+            dependsOn = {},
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 1112, state = "activeOrCompleted" } },
+                        {
+                            any = {
+                                { quest = { id = 1112, state = "activeOrCompleted" } },
+                                { all = { { any = { { any = { { quest = { id = 1111, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                            },
+                        },
+                    },
+                },
+            },
+            id = "alliance-leveling-era-alliance-dustwallow-marsh-and-thousand-needles-accept-1112-parts-for-kravel",
+            kind = "accept",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 1111 } } },
+            route = {
+                {
+                    label = "Wharfmaster Dizzywig",
+                    mapID = 1413,
+                    offMapText = "Travel to Wharfmaster Dizzywig in The Barrens.",
+                    x = 0.6335,
+                    y = 0.3845,
+                },
+            },
+            sourceActionID = "accept-1112-parts-for-kravel",
+            sourceGuide = "leveling-era-alliance-dustwallow-marsh-and-thousand-needles",
+            sourceStep = 61,
+            text = "Accept Parts for Kravel from Wharfmaster Dizzywig.",
+            useClientPin = false,
+            useClientText = false,
+        },
+        {
+            complete = { level = { min = 35 } },
+            conditions = { all = { { faction = "Alliance" } } },
+            excludeWhen = { ["not"] = { all = { { faction = "Alliance" } } } },
+            id = "visit-entry-leveling-era-alliance-desolace",
+            kind = "note",
+            requiredLevel = 35,
+            text = "Reach level 35 before the Desolace visit.",
+            visitSourceGuide = "leveling-era-alliance-desolace",
+        },
+        {
+            complete = { quest = { id = 1112, state = "completed" } },
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 30 } } } },
+            dependsOn = {},
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 1112, state = "activeOrCompleted" } },
+                        {
+                            any = {
+                                { quest = { id = 1112, state = "activeOrCompleted" } },
+                                { all = { { any = { { any = { { quest = { id = 1111, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                            },
+                        },
+                    },
+                },
+            },
+            id = "alliance-leveling-era-alliance-desolace-turnin-1112-parts-for-kravel",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 1111 } } },
+            route = {
+                {
+                    label = "Kravel Koalbeard",
+                    mapID = 1441,
+                    offMapText = "Travel to Kravel Koalbeard in Thousand Needles.",
+                    x = 0.7779,
+                    y = 0.7726,
+                },
+            },
+            sourceActionID = "turnin-1112-parts-for-kravel",
+            sourceGuide = "leveling-era-alliance-desolace",
+            sourceStep = 54,
+            text = "Turn in Parts for Kravel to Kravel Koalbeard.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
+        },
+        {
+            complete = { quest = { id = 1114, state = "activeOrCompleted" } },
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 30 } } } },
+            dependsOn = {},
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 1114, state = "activeOrCompleted" } },
+                        {
+                            any = {
+                                { quest = { id = 1114, state = "activeOrCompleted" } },
+                                {
+                                    all = {
+                                        {
+                                            any = {
+                                                {
+                                                    any = {
+                                                        { quest = { id = 1112, state = "activeOrCompleted" } },
+                                                        { all = { { any = { { any = { { quest = { id = 1111, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
+            id = "alliance-leveling-era-alliance-desolace-accept-1114-delivery-to-the-gnomes",
+            kind = "accept",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 1112 } } },
+            route = {
+                {
+                    label = "Kravel Koalbeard",
+                    mapID = 1441,
+                    offMapText = "Travel to Kravel Koalbeard in Thousand Needles.",
+                    x = 0.788,
+                    y = 0.773,
+                },
+            },
+            sourceActionID = "accept-1114-delivery-to-the-gnomes",
+            sourceGuide = "leveling-era-alliance-desolace",
+            sourceStep = 55,
+            text = "Accept Delivery to the Gnomes from Kravel Koalbeard.",
+            useClientPin = false,
+            useClientText = false,
+        },
+        {
+            complete = { quest = { id = 1114, state = "completed" } },
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 30 } } } },
+            dependsOn = { "alliance-leveling-era-alliance-desolace-accept-1114-delivery-to-the-gnomes" },
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 1114, state = "activeOrCompleted" } },
+                        {
+                            any = {
+                                { quest = { id = 1114, state = "activeOrCompleted" } },
+                                {
+                                    all = {
+                                        {
+                                            any = {
+                                                {
+                                                    any = {
+                                                        { quest = { id = 1112, state = "activeOrCompleted" } },
+                                                        { all = { { any = { { any = { { quest = { id = 1111, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
+            id = "alliance-leveling-era-alliance-desolace-turnin-1114-delivery-to-the-gnomes",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 1112 } } },
+            route = {
+                {
+                    label = "Fizzle Brassbolts",
+                    mapID = 1441,
+                    offMapText = "Travel to Fizzle Brassbolts in Thousand Needles.",
+                    x = 0.7806,
+                    y = 0.7712,
+                },
+            },
+            sourceActionID = "turnin-1114-delivery-to-the-gnomes",
+            sourceGuide = "leveling-era-alliance-desolace",
+            sourceStep = 56,
+            text = "Turn in Delivery to the Gnomes to Fizzle Brassbolts.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
+        },
+        {
+            complete = { quest = { id = 1115, state = "activeOrCompleted" } },
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 30 } } } },
+            dependsOn = {},
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 1115, state = "activeOrCompleted" } },
+                        {
+                            any = {
+                                { quest = { id = 1115, state = "activeOrCompleted" } },
+                                {
+                                    all = {
+                                        {
+                                            any = {
+                                                {
+                                                    any = {
+                                                        { quest = { id = 1114, state = "activeOrCompleted" } },
+                                                        {
+                                                            all = {
+                                                                {
+                                                                    any = {
+                                                                        {
+                                                                            any = {
+                                                                                { quest = { id = 1112, state = "activeOrCompleted" } },
+                                                                                { all = { { any = { { any = { { quest = { id = 1111, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
+            id = "alliance-leveling-era-alliance-desolace-accept-1115-the-rumormonger",
+            kind = "accept",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 1114 } } },
+            route = {
+                {
+                    label = "Kravel Koalbeard",
+                    mapID = 1441,
+                    offMapText = "Travel to Kravel Koalbeard in Thousand Needles.",
+                    x = 0.788,
+                    y = 0.773,
+                },
+            },
+            sourceActionID = "accept-1115-the-rumormonger",
+            sourceGuide = "leveling-era-alliance-desolace",
+            sourceStep = 57,
+            text = "Accept The Rumormonger from Kravel Koalbeard.",
+            useClientPin = false,
+            useClientText = false,
+        },
+        {
+            complete = { level = { min = 37 } },
+            conditions = { all = { { faction = "Alliance" } } },
+            excludeWhen = { ["not"] = { all = { { faction = "Alliance" } } } },
+            id = "visit-entry-leveling-era-alliance-stranglethorn-vale-part-2",
+            kind = "note",
+            requiredLevel = 37,
+            text = "Reach level 37 before the Stranglethorn Vale visit.",
+            visitSourceGuide = "leveling-era-alliance-stranglethorn-vale-part-2",
+        },
+        {
+            checkpointQuest = 1115,
+            complete = { level = { min = 30 } },
+            conditions = { faction = "Alliance" },
+            dependsOn = {},
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 1115, state = "activeOrCompleted" } },
+                        {
+                            any = {
+                                { quest = { id = 1115, state = "activeOrCompleted" } },
+                                {
+                                    all = {
+                                        {
+                                            any = {
+                                                {
+                                                    any = {
+                                                        { quest = { id = 1114, state = "activeOrCompleted" } },
+                                                        {
+                                                            all = {
+                                                                {
+                                                                    any = {
+                                                                        {
+                                                                            any = {
+                                                                                { quest = { id = 1112, state = "activeOrCompleted" } },
+                                                                                { all = { { any = { { any = { { quest = { id = 1111, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
+            id = "alliance-leveling-era-alliance-stranglethorn-vale-part-2-level-before-turnin-1115-the-rumormonger",
+            kind = "note",
+            requiredLevel = 30,
+            requiredQuests = {},
+            sourceActionID = "level-before-turnin-1115-the-rumormonger",
+            sourceGuide = "leveling-era-alliance-stranglethorn-vale-part-2",
+            text = "Reach level 30 before continuing. Choose how to gain XP, then return to this route.",
+            useClientPin = false,
+            useClientText = false,
+        },
+        {
+            complete = { quest = { id = 1115, state = "completed" } },
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 30 } } } },
+            dependsOn = {},
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 1115, state = "activeOrCompleted" } },
+                        {
+                            any = {
+                                { quest = { id = 1115, state = "activeOrCompleted" } },
+                                {
+                                    all = {
+                                        {
+                                            any = {
+                                                {
+                                                    any = {
+                                                        { quest = { id = 1114, state = "activeOrCompleted" } },
+                                                        {
+                                                            all = {
+                                                                {
+                                                                    any = {
+                                                                        {
+                                                                            any = {
+                                                                                { quest = { id = 1112, state = "activeOrCompleted" } },
+                                                                                { all = { { any = { { any = { { quest = { id = 1111, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
+            id = "alliance-leveling-era-alliance-stranglethorn-vale-part-2-turnin-1115-the-rumormonger",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 1114 } } },
+            route = {
+                { label = "Krazek", mapID = 1434, offMapText = "Travel to Krazek in Stranglethorn Vale.", x = 0.2694, y = 0.7721 },
+            },
+            sourceActionID = "turnin-1115-the-rumormonger",
+            sourceGuide = "leveling-era-alliance-stranglethorn-vale-part-2",
+            sourceStep = 3,
+            text = "Turn in The Rumormonger to Krazek.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
+        },
+        {
+            complete = { quest = { id = 1116, state = "activeOrCompleted" } },
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 30 } } } },
+            dependsOn = {},
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 1116, state = "activeOrCompleted" } },
+                        {
+                            any = {
+                                { quest = { id = 1116, state = "activeOrCompleted" } },
+                                {
+                                    all = {
+                                        {
+                                            any = {
+                                                {
+                                                    any = {
+                                                        { quest = { id = 1115, state = "activeOrCompleted" } },
+                                                        {
+                                                            all = {
+                                                                {
+                                                                    any = {
+                                                                        {
+                                                                            any = {
+                                                                                { quest = { id = 1114, state = "activeOrCompleted" } },
+                                                                                {
+                                                                                    all = {
+                                                                                        {
+                                                                                            any = {
+                                                                                                {
+                                                                                                    any = {
+                                                                                                        { quest = { id = 1112, state = "activeOrCompleted" } },
+                                                                                                        { all = { { any = { { any = { { quest = { id = 1111, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                                                                    },
+                                                                                                },
+                                                                                            },
+                                                                                        },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
+            id = "alliance-leveling-era-alliance-stranglethorn-vale-part-2-accept-1116-dream-dust-in-the-swamp",
+            kind = "accept",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 1115 } } },
+            route = {
+                { label = "Krazek", mapID = 1434, offMapText = "Travel to Krazek in Stranglethorn Vale.", x = 0.2694, y = 0.7721 },
+            },
+            sourceActionID = "accept-1116-dream-dust-in-the-swamp",
+            sourceGuide = "leveling-era-alliance-stranglethorn-vale-part-2",
+            sourceStep = 52,
+            text = "Accept Dream Dust in the Swamp from Krazek.",
+            useClientPin = false,
+            useClientText = false,
+        },
         {
             id = "visit-entry-leveling-era-alliance-swamp-of-sorrows",
             kind = "note",
@@ -19,6 +510,327 @@ ns:RegisterGuide({
             excludeWhen = { ["not"] = { all = { { faction = "Alliance" } } } },
             complete = { level = { min = 38 } },
             requiredLevel = 38,
+        },
+        {
+            checkpointQuest = 1363,
+            complete = { level = { min = 37 } },
+            conditions = { all = { { class = { 8 } }, { faction = "Alliance" }, { race = { 1, 3, 4, 7, 95 } } } },
+            dependsOn = {},
+            id = "alliance-leveling-era-alliance-swamp-of-sorrows-level-before-accept-1363-mazen-s-behest",
+            kind = "note",
+            requiredLevel = 37,
+            requiredQuests = {},
+            sourceActionID = "level-before-accept-1363-mazen-s-behest",
+            sourceGuide = "leveling-era-alliance-swamp-of-sorrows",
+            text = "Reach level 37 before continuing. Choose how to gain XP, then return to this route.",
+            useClientPin = false,
+            useClientText = false,
+        },
+        {
+            complete = { quest = { id = 1363, state = "activeOrCompleted" } },
+            conditions = {
+                all = { { class = { 8 } }, { faction = "Alliance" }, { level = { min = 37 } }, { race = { 1, 3, 4, 7, 95 } } },
+            },
+            dependsOn = {},
+            id = "alliance-leveling-era-alliance-swamp-of-sorrows-accept-1363-mazen-s-behest",
+            kind = "accept",
+            requiredQuests = {},
+            route = {
+                {
+                    label = "Mazen Mac'Nadir",
+                    mapID = 1453,
+                    offMapText = "Travel to Mazen Mac'Nadir in Stormwind City.",
+                    x = 0.518,
+                    y = 0.743,
+                },
+            },
+            sourceActionID = "accept-1363-mazen-s-behest",
+            sourceGuide = "leveling-era-alliance-swamp-of-sorrows",
+            sourceStep = 3,
+            text = "Accept Mazen's Behest from Mazen Mac'Nadir.",
+            useClientPin = false,
+            useClientText = false,
+        },
+        {
+            complete = { quest = { id = 1363, state = "completed" } },
+            conditions = {
+                all = { { class = { 8 } }, { faction = "Alliance" }, { level = { min = 37 } }, { race = { 1, 3, 4, 7, 95 } } },
+            },
+            dependsOn = { "alliance-leveling-era-alliance-swamp-of-sorrows-accept-1363-mazen-s-behest" },
+            id = "alliance-leveling-era-alliance-swamp-of-sorrows-turnin-1363-mazen-s-behest",
+            kind = "turnin",
+            requiredQuests = {},
+            route = {
+                {
+                    label = "Acolyte Dellis",
+                    mapID = 1453,
+                    offMapText = "Travel to Acolyte Dellis in Stormwind City.",
+                    x = 0.4097,
+                    y = 0.6383,
+                },
+            },
+            sourceActionID = "turnin-1363-mazen-s-behest",
+            sourceGuide = "leveling-era-alliance-swamp-of-sorrows",
+            sourceStep = 4,
+            text = "Turn in Mazen's Behest to Acolyte Dellis.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
+        },
+        {
+            complete = { quest = { id = 1364, state = "activeOrCompleted" } },
+            conditions = {
+                all = { { class = { 8 } }, { faction = "Alliance" }, { level = { min = 37 } }, { race = { 1, 3, 4, 7, 95 } } },
+            },
+            dependsOn = { "alliance-leveling-era-alliance-swamp-of-sorrows-turnin-1363-mazen-s-behest" },
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 1364, state = "activeOrCompleted" } },
+                        {
+                            any = {
+                                { quest = { id = 1364, state = "activeOrCompleted" } },
+                                {
+                                    all = {
+                                        { faction = "Alliance" },
+                                        { race = { 1, 3, 4, 7 } },
+                                        {
+                                            any = {
+                                                {
+                                                    any = {
+                                                        { quest = { id = 1363, state = "activeOrCompleted" } },
+                                                        { all = { { faction = "Alliance" }, { race = { 1, 3, 4, 7 } } } },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
+            id = "alliance-leveling-era-alliance-swamp-of-sorrows-accept-1364-mazen-s-behest",
+            kind = "accept",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 1363 } } },
+            route = {
+                {
+                    label = "Acolyte Dellis",
+                    mapID = 1453,
+                    offMapText = "Travel to Acolyte Dellis in Stormwind City.",
+                    x = 0.514,
+                    y = 0.738,
+                },
+            },
+            sourceActionID = "accept-1364-mazen-s-behest",
+            sourceGuide = "leveling-era-alliance-swamp-of-sorrows",
+            sourceStep = 4,
+            text = "Accept Mazen's Behest from Acolyte Dellis.",
+            useClientPin = false,
+            useClientText = false,
+        },
+        {
+            checkpointQuest = 1363,
+            complete = { level = { min = 37 } },
+            conditions = { all = { { faction = "Alliance" }, { race = { 1, 3, 4, 7, 95 } } } },
+            dependsOn = {},
+            id = "alliance-leveling-era-alliance-swamp-of-sorrows-level-before-accept-1363-mazen-s-behest-2",
+            kind = "note",
+            requiredLevel = 37,
+            requiredQuests = {},
+            sourceActionID = "level-before-accept-1363-mazen-s-behest-2",
+            sourceGuide = "leveling-era-alliance-swamp-of-sorrows",
+            text = "Reach level 37 before continuing. Choose how to gain XP, then return to this route.",
+            useClientPin = false,
+            useClientText = false,
+        },
+        {
+            complete = { quest = { id = 1363, state = "activeOrCompleted" } },
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 37 } }, { race = { 1, 3, 4, 7, 95 } } } },
+            dependsOn = {},
+            id = "alliance-leveling-era-alliance-swamp-of-sorrows-accept-1363-mazen-s-behest-2",
+            kind = "accept",
+            requiredQuests = {},
+            route = {
+                {
+                    label = "Mazen Mac'Nadir",
+                    mapID = 1453,
+                    offMapText = "Travel to Mazen Mac'Nadir in Stormwind City.",
+                    x = 0.518,
+                    y = 0.743,
+                },
+            },
+            sourceActionID = "accept-1363-mazen-s-behest-2",
+            sourceGuide = "leveling-era-alliance-swamp-of-sorrows",
+            sourceStep = 5,
+            text = "Accept Mazen's Behest from Mazen Mac'Nadir.",
+            useClientPin = false,
+            useClientText = false,
+        },
+        {
+            complete = { quest = { id = 1363, state = "completed" } },
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 37 } }, { race = { 1, 3, 4, 7, 95 } } } },
+            dependsOn = {
+                "alliance-leveling-era-alliance-swamp-of-sorrows-accept-1363-mazen-s-behest-2",
+                "alliance-leveling-era-alliance-swamp-of-sorrows-accept-1363-mazen-s-behest",
+            },
+            id = "alliance-leveling-era-alliance-swamp-of-sorrows-turnin-1363-mazen-s-behest-2",
+            kind = "turnin",
+            requiredQuests = {},
+            route = {
+                {
+                    label = "Acolyte Dellis",
+                    mapID = 1453,
+                    offMapText = "Travel to Acolyte Dellis in Stormwind City.",
+                    x = 0.4097,
+                    y = 0.6383,
+                },
+            },
+            sourceActionID = "turnin-1363-mazen-s-behest-2",
+            sourceGuide = "leveling-era-alliance-swamp-of-sorrows",
+            sourceStep = 6,
+            text = "Turn in Mazen's Behest to Acolyte Dellis.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
+        },
+        {
+            checkpointQuest = 1116,
+            complete = { level = { min = 30 } },
+            conditions = { faction = "Alliance" },
+            dependsOn = {},
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 1116, state = "activeOrCompleted" } },
+                        {
+                            any = {
+                                { quest = { id = 1116, state = "activeOrCompleted" } },
+                                {
+                                    all = {
+                                        {
+                                            any = {
+                                                {
+                                                    any = {
+                                                        { quest = { id = 1115, state = "activeOrCompleted" } },
+                                                        {
+                                                            all = {
+                                                                {
+                                                                    any = {
+                                                                        {
+                                                                            any = {
+                                                                                { quest = { id = 1114, state = "activeOrCompleted" } },
+                                                                                {
+                                                                                    all = {
+                                                                                        {
+                                                                                            any = {
+                                                                                                {
+                                                                                                    any = {
+                                                                                                        { quest = { id = 1112, state = "activeOrCompleted" } },
+                                                                                                        { all = { { any = { { any = { { quest = { id = 1111, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                                                                    },
+                                                                                                },
+                                                                                            },
+                                                                                        },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
+            id = "alliance-leveling-era-alliance-swamp-of-sorrows-level-before-objective-1116-1-adolescent-whelp",
+            kind = "note",
+            requiredLevel = 30,
+            requiredQuests = {},
+            sourceActionID = "level-before-objective-1116-1-adolescent-whelp",
+            sourceGuide = "leveling-era-alliance-swamp-of-sorrows",
+            text = "Reach level 30 before continuing. Choose how to gain XP, then return to this route.",
+            useClientPin = false,
+            useClientText = false,
+        },
+        {
+            complete = { questObjective = { count = 10, id = 1116, index = 1, text = "Adolescent Whelp" } },
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 30 } } } },
+            dependsOn = {},
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 1116, state = "activeOrCompleted" } },
+                        {
+                            any = {
+                                { quest = { id = 1116, state = "activeOrCompleted" } },
+                                {
+                                    all = {
+                                        {
+                                            any = {
+                                                {
+                                                    any = {
+                                                        { quest = { id = 1115, state = "activeOrCompleted" } },
+                                                        {
+                                                            all = {
+                                                                {
+                                                                    any = {
+                                                                        {
+                                                                            any = {
+                                                                                { quest = { id = 1114, state = "activeOrCompleted" } },
+                                                                                {
+                                                                                    all = {
+                                                                                        {
+                                                                                            any = {
+                                                                                                {
+                                                                                                    any = {
+                                                                                                        { quest = { id = 1112, state = "activeOrCompleted" } },
+                                                                                                        { all = { { any = { { any = { { quest = { id = 1111, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                                                                    },
+                                                                                                },
+                                                                                            },
+                                                                                        },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
+            id = "alliance-leveling-era-alliance-swamp-of-sorrows-objective-1116-1-adolescent-whelp",
+            kind = "objective",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 1115 } } },
+            route = {
+                { label = "Adolescent Whelp", mapID = 1435, offMapText = "Travel to Adolescent Whelp.", x = 0.124, y = 0.574 },
+            },
+            sourceActionID = "objective-1116-1-adolescent-whelp",
+            sourceGuide = "leveling-era-alliance-swamp-of-sorrows",
+            sourceStep = 18,
+            text = "Collect 10 Speck of Dream Dust.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 1396, state = "activeOrCompleted" } },
@@ -67,13 +879,13 @@ ns:RegisterGuide({
             route = {
                 { label = "Magtoor", mapID = 1435, offMapText = "Travel to Magtoor in Swamp of Sorrows.", x = 0.2599, y = 0.314 },
             },
+            sourceActionID = "turnin-1392-noboru-the-cudgel",
+            sourceGuide = "leveling-era-alliance-swamp-of-sorrows",
             sourceStep = 21,
             text = "Turn in Noboru the Cudgel to Magtoor.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-swamp-of-sorrows",
-            sourceActionID = "turnin-1392-noboru-the-cudgel",
         },
         {
             complete = { quest = { id = 1389, state = "activeOrCompleted" } },
@@ -91,6 +903,76 @@ ns:RegisterGuide({
             useClientText = false,
             sourceGuide = "leveling-era-alliance-swamp-of-sorrows",
             sourceActionID = "accept-1389-draenethyst-crystals",
+        },
+        {
+            complete = { questObjective = { count = 10, id = 1116, index = 1, text = "Adolescent Whelp" } },
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 30 } } } },
+            dependsOn = {},
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 1116, state = "activeOrCompleted" } },
+                        {
+                            any = {
+                                { quest = { id = 1116, state = "activeOrCompleted" } },
+                                {
+                                    all = {
+                                        {
+                                            any = {
+                                                {
+                                                    any = {
+                                                        { quest = { id = 1115, state = "activeOrCompleted" } },
+                                                        {
+                                                            all = {
+                                                                {
+                                                                    any = {
+                                                                        {
+                                                                            any = {
+                                                                                { quest = { id = 1114, state = "activeOrCompleted" } },
+                                                                                {
+                                                                                    all = {
+                                                                                        {
+                                                                                            any = {
+                                                                                                {
+                                                                                                    any = {
+                                                                                                        { quest = { id = 1112, state = "activeOrCompleted" } },
+                                                                                                        { all = { { any = { { any = { { quest = { id = 1111, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                                                                    },
+                                                                                                },
+                                                                                            },
+                                                                                        },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
+            id = "alliance-leveling-era-alliance-swamp-of-sorrows-objective-1116-1-adolescent-whelp-2",
+            kind = "objective",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 1115 } } },
+            route = {
+                { label = "Adolescent Whelp", mapID = 1435, offMapText = "Travel to Adolescent Whelp.", x = 0.168, y = 0.584 },
+            },
+            sourceActionID = "objective-1116-1-adolescent-whelp-2",
+            sourceGuide = "leveling-era-alliance-swamp-of-sorrows",
+            sourceStep = 22,
+            text = "Collect 10 Speck of Dream Dust.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { questObjective = { count = 8, id = 1396, index = 1, text = "Young Sawtooth Crocolisk" } },
@@ -169,13 +1051,13 @@ ns:RegisterGuide({
                     y = 0.5983,
                 },
             },
+            sourceActionID = "turnin-1396-encroaching-wildlife",
+            sourceGuide = "leveling-era-alliance-swamp-of-sorrows",
             sourceStep = 26,
             text = "Turn in Encroaching Wildlife to Watcher Biggs.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-swamp-of-sorrows",
-            sourceActionID = "turnin-1396-encroaching-wildlife",
         },
         {
             complete = { quest = { id = 1421, state = "activeOrCompleted" } },
@@ -325,13 +1207,13 @@ ns:RegisterGuide({
             kind = "turnin",
             requiredQuests = {},
             route = { { label = "Galen's Escape", mapID = 1435, offMapText = "Travel to Galen's Escape.", x = 0.4781, y = 0.3976 } },
+            sourceActionID = "turnin-1393-galen-s-escape",
+            sourceGuide = "leveling-era-alliance-swamp-of-sorrows",
             sourceStep = 33,
             text = "Turn in Galen's Escape.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-swamp-of-sorrows",
-            sourceActionID = "turnin-1393-galen-s-escape",
         },
         {
             complete = { quest = { id = 1389, state = "completed" } },
@@ -346,13 +1228,13 @@ ns:RegisterGuide({
             route = {
                 { label = "Magtoor", mapID = 1435, offMapText = "Travel to Magtoor in Swamp of Sorrows.", x = 0.2599, y = 0.314 },
             },
+            sourceActionID = "turnin-1389-draenethyst-crystals",
+            sourceGuide = "leveling-era-alliance-swamp-of-sorrows",
             sourceStep = 34,
             text = "Turn in Draenethyst Crystals to Magtoor.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-swamp-of-sorrows",
-            sourceActionID = "turnin-1389-draenethyst-crystals",
         },
         {
             complete = { quest = { id = 1421, state = "completed" } },
@@ -361,25 +1243,6 @@ ns:RegisterGuide({
                 "alliance-leveling-era-alliance-swamp-of-sorrows-accept-1421-the-lost-caravan",
                 "alliance-leveling-era-alliance-swamp-of-sorrows-objective-1421-1-caravan-chest",
             },
-            id = "alliance-leveling-era-alliance-swamp-of-sorrows-turnin-1421-the-lost-caravan",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 1396 } } },
-            route = {
-                {
-                    label = "Watcher Biggs",
-                    mapID = 1435,
-                    offMapText = "Travel to Watcher Biggs in Swamp of Sorrows.",
-                    x = 0.2674,
-                    y = 0.5983,
-                },
-            },
-            sourceStep = 35,
-            text = "Turn in The Lost Caravan to Watcher Biggs.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-swamp-of-sorrows",
-            sourceActionID = "turnin-1421-the-lost-caravan",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -400,6 +1263,159 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-swamp-of-sorrows-turnin-1421-the-lost-caravan",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 1396 } } },
+            route = {
+                {
+                    label = "Watcher Biggs",
+                    mapID = 1435,
+                    offMapText = "Travel to Watcher Biggs in Swamp of Sorrows.",
+                    x = 0.2674,
+                    y = 0.5983,
+                },
+            },
+            sourceActionID = "turnin-1421-the-lost-caravan",
+            sourceGuide = "leveling-era-alliance-swamp-of-sorrows",
+            sourceStep = 35,
+            text = "Turn in The Lost Caravan to Watcher Biggs.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
+        },
+        {
+            complete = { quest = { id = 1116, state = "completed" } },
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 30 } } } },
+            dependsOn = {
+                "alliance-leveling-era-alliance-swamp-of-sorrows-objective-1116-1-adolescent-whelp",
+                "alliance-leveling-era-alliance-swamp-of-sorrows-objective-1116-1-adolescent-whelp-2",
+            },
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 1116, state = "activeOrCompleted" } },
+                        {
+                            any = {
+                                { quest = { id = 1116, state = "activeOrCompleted" } },
+                                {
+                                    all = {
+                                        {
+                                            any = {
+                                                {
+                                                    any = {
+                                                        { quest = { id = 1115, state = "activeOrCompleted" } },
+                                                        {
+                                                            all = {
+                                                                {
+                                                                    any = {
+                                                                        {
+                                                                            any = {
+                                                                                { quest = { id = 1114, state = "activeOrCompleted" } },
+                                                                                {
+                                                                                    all = {
+                                                                                        {
+                                                                                            any = {
+                                                                                                {
+                                                                                                    any = {
+                                                                                                        { quest = { id = 1112, state = "activeOrCompleted" } },
+                                                                                                        { all = { { any = { { any = { { quest = { id = 1111, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                                                                    },
+                                                                                                },
+                                                                                            },
+                                                                                        },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
+            id = "alliance-leveling-era-alliance-swamp-of-sorrows-turnin-1116-dream-dust-in-the-swamp",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 1115 } } },
+            route = {
+                { label = "Krazek", mapID = 1434, offMapText = "Travel to Krazek in Stranglethorn Vale.", x = 0.2694, y = 0.7721 },
+            },
+            sourceActionID = "turnin-1116-dream-dust-in-the-swamp",
+            sourceGuide = "leveling-era-alliance-swamp-of-sorrows",
+            sourceStep = 38,
+            text = "Turn in Dream Dust in the Swamp to Krazek.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
+        },
+        {
+            complete = { level = { min = 42 } },
+            conditions = { all = { { faction = "Alliance" } } },
+            excludeWhen = { ["not"] = { all = { { faction = "Alliance" } } } },
+            id = "visit-entry-leveling-era-alliance-stranglethorn-vale-part-3",
+            kind = "note",
+            requiredLevel = 42,
+            text = "Reach level 42 before the Stranglethorn Vale visit.",
+            visitSourceGuide = "leveling-era-alliance-stranglethorn-vale-part-3",
+        },
+        {
+            complete = { quest = { id = 1364, state = "activeOrCompleted" } },
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 37 } }, { race = { 1, 3, 4, 7, 95 } } } },
+            dependsOn = {},
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 1364, state = "activeOrCompleted" } },
+                        {
+                            any = {
+                                { quest = { id = 1364, state = "activeOrCompleted" } },
+                                {
+                                    all = {
+                                        { faction = "Alliance" },
+                                        { race = { 1, 3, 4, 7 } },
+                                        {
+                                            any = {
+                                                {
+                                                    any = {
+                                                        { quest = { id = 1363, state = "activeOrCompleted" } },
+                                                        { all = { { faction = "Alliance" }, { race = { 1, 3, 4, 7 } } } },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
+            id = "alliance-leveling-era-alliance-stranglethorn-vale-part-3-accept-1364-mazen-s-behest",
+            kind = "accept",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 1363 } } },
+            route = {
+                {
+                    label = "Acolyte Dellis",
+                    mapID = 1453,
+                    offMapText = "Travel to Acolyte Dellis in Stormwind City.",
+                    x = 0.514,
+                    y = 0.738,
+                },
+            },
+            sourceActionID = "accept-1364-mazen-s-behest",
+            sourceGuide = "leveling-era-alliance-stranglethorn-vale-part-3",
+            sourceStep = 6,
+            text = "Accept Mazen's Behest from Acolyte Dellis.",
+            useClientPin = false,
+            useClientText = false,
         },
         {
             id = "visit-entry-leveling-era-alliance-swamp-of-sorrows-part-2",
@@ -521,31 +1537,107 @@ ns:RegisterGuide({
             },
         },
         {
+            complete = { questObjective = { count = 1, id = 1364, index = 1, text = "Khadgar's Essays on Dimensional Convergence" } },
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 37 } }, { race = { 1, 3, 4, 7, 95 } } } },
+            dependsOn = {},
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 1364, state = "activeOrCompleted" } },
+                        {
+                            any = {
+                                { quest = { id = 1364, state = "activeOrCompleted" } },
+                                {
+                                    all = {
+                                        { faction = "Alliance" },
+                                        { race = { 1, 3, 4, 7 } },
+                                        {
+                                            any = {
+                                                {
+                                                    any = {
+                                                        { quest = { id = 1363, state = "activeOrCompleted" } },
+                                                        { all = { { faction = "Alliance" }, { race = { 1, 3, 4, 7 } } } },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
+            id = "alliance-leveling-era-alliance-swamp-of-sorrows-part-2-objective-1364-1-khadgar-s-essays-on-dimensional-converge",
+            kind = "objective",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 1363 } } },
+            sourceActionID = "objective-1364-1-khadgar-s-essays-on-dimensional-converge",
+            sourceGuide = "leveling-era-alliance-swamp-of-sorrows-part-2",
+            sourceStep = 6,
+            text = "Collect 1 Khadgar's Essays on Dimensional Convergence.",
+            useClientPin = true,
+            useClientText = false,
+            useQuestNavigation = true,
+        },
+        {
+            complete = { questObjective = { count = 1, id = 1364, index = 1, text = "Khadgar's Essays on Dimensional Convergence" } },
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 37 } }, { race = { 1, 3, 4, 7, 95 } } } },
+            dependsOn = {},
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 1364, state = "activeOrCompleted" } },
+                        {
+                            any = {
+                                { quest = { id = 1364, state = "activeOrCompleted" } },
+                                {
+                                    all = {
+                                        { faction = "Alliance" },
+                                        { race = { 1, 3, 4, 7 } },
+                                        {
+                                            any = {
+                                                {
+                                                    any = {
+                                                        { quest = { id = 1363, state = "activeOrCompleted" } },
+                                                        { all = { { faction = "Alliance" }, { race = { 1, 3, 4, 7 } } } },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
+            id = "alliance-leveling-era-alliance-swamp-of-sorrows-part-2-objective-1364-1-khadgar-s-essays-on-dimensional-converge-2",
+            kind = "objective",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 1363 } } },
+            route = {
+                {
+                    label = "Khadgar's Essays on Dimensional Convergence",
+                    mapID = 1435,
+                    offMapText = "Travel to Khadgar's Essays on Dimensional Convergence.",
+                    x = 0.134,
+                    y = 0.374,
+                },
+            },
+            sourceActionID = "objective-1364-1-khadgar-s-essays-on-dimensional-converge-2",
+            sourceGuide = "leveling-era-alliance-swamp-of-sorrows-part-2",
+            sourceStep = 7,
+            text = "Collect 1 Khadgar's Essays on Dimensional Convergence.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
+        },
+        {
             complete = { quest = { id = 1398, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 30 } }, { race = { 1, 3, 4, 7, 95 } } } },
             dependsOn = {
                 "alliance-leveling-era-alliance-swamp-of-sorrows-part-2-accept-1398-driftwood",
                 "alliance-leveling-era-alliance-swamp-of-sorrows-part-2-objective-1398-1-sundried-driftwood",
             },
-            id = "alliance-leveling-era-alliance-swamp-of-sorrows-part-2-turnin-1398-driftwood",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 1421 } } },
-            route = {
-                {
-                    label = "Watcher Biggs",
-                    mapID = 1435,
-                    offMapText = "Travel to Watcher Biggs in Swamp of Sorrows.",
-                    x = 0.2674,
-                    y = 0.5983,
-                },
-            },
-            sourceStep = 8,
-            text = "Turn in Driftwood to Watcher Biggs.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-swamp-of-sorrows-part-2",
-            sourceActionID = "turnin-1398-driftwood",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -580,6 +1672,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-swamp-of-sorrows-part-2-turnin-1398-driftwood",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 1421 } } },
+            route = {
+                {
+                    label = "Watcher Biggs",
+                    mapID = 1435,
+                    offMapText = "Travel to Watcher Biggs in Swamp of Sorrows.",
+                    x = 0.2674,
+                    y = 0.5983,
+                },
+            },
+            sourceActionID = "turnin-1398-driftwood",
+            sourceGuide = "leveling-era-alliance-swamp-of-sorrows-part-2",
+            sourceStep = 8,
+            text = "Turn in Driftwood to Watcher Biggs.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 1425, state = "activeOrCompleted" } },
@@ -653,28 +1764,64 @@ ns:RegisterGuide({
             },
         },
         {
-            complete = { quest = { id = 1425, state = "completed" } },
-            conditions = { all = { { faction = "Alliance" }, { level = { min = 30 } }, { race = { 1, 3, 4, 7, 95 } } } },
-            dependsOn = { "alliance-leveling-era-alliance-swamp-of-sorrows-part-2-accept-1425-deliver-the-shipment" },
-            id = "alliance-leveling-era-alliance-swamp-of-sorrows-part-2-turnin-1425-deliver-the-shipment",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 1398 } } },
-            route = {
-                {
-                    label = "Quartermaster Lungertz",
-                    mapID = 1419,
-                    offMapText = "Travel to Quartermaster Lungertz in Blasted Lands.",
-                    x = 0.6652,
-                    y = 0.2138,
+            complete = { quest = { id = 1364, state = "completed" } },
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 37 } }, { race = { 1, 3, 4, 7, 95 } } } },
+            dependsOn = {
+                "alliance-leveling-era-alliance-swamp-of-sorrows-part-2-objective-1364-1-khadgar-s-essays-on-dimensional-converge",
+                "alliance-leveling-era-alliance-swamp-of-sorrows-part-2-objective-1364-1-khadgar-s-essays-on-dimensional-converge-2",
+            },
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 1364, state = "activeOrCompleted" } },
+                        {
+                            any = {
+                                { quest = { id = 1364, state = "activeOrCompleted" } },
+                                {
+                                    all = {
+                                        { faction = "Alliance" },
+                                        { race = { 1, 3, 4, 7 } },
+                                        {
+                                            any = {
+                                                {
+                                                    any = {
+                                                        { quest = { id = 1363, state = "activeOrCompleted" } },
+                                                        { all = { { faction = "Alliance" }, { race = { 1, 3, 4, 7 } } } },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
                 },
             },
-            sourceStep = 10,
-            text = "Turn in Deliver the Shipment to Quartermaster Lungertz.",
+            id = "alliance-leveling-era-alliance-swamp-of-sorrows-part-2-turnin-1364-mazen-s-behest",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 1363 } } },
+            route = {
+                {
+                    label = "Watcher Mahar Ba",
+                    mapID = 1419,
+                    offMapText = "Travel to Watcher Mahar Ba in Blasted Lands.",
+                    x = 0.6765,
+                    y = 0.1916,
+                },
+            },
+            sourceActionID = "turnin-1364-mazen-s-behest",
+            sourceGuide = "leveling-era-alliance-swamp-of-sorrows-part-2",
+            sourceStep = 9,
+            text = "Turn in Mazen's Behest to Watcher Mahar Ba.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-swamp-of-sorrows-part-2",
-            sourceActionID = "turnin-1425-deliver-the-shipment",
+        },
+        {
+            complete = { quest = { id = 1425, state = "completed" } },
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 30 } }, { race = { 1, 3, 4, 7, 95 } } } },
+            dependsOn = { "alliance-leveling-era-alliance-swamp-of-sorrows-part-2-accept-1425-deliver-the-shipment" },
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -723,15 +1870,34 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-swamp-of-sorrows-part-2-turnin-1425-deliver-the-shipment",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 1398 } } },
+            route = {
+                {
+                    label = "Quartermaster Lungertz",
+                    mapID = 1419,
+                    offMapText = "Travel to Quartermaster Lungertz in Blasted Lands.",
+                    x = 0.6652,
+                    y = 0.2138,
+                },
+            },
+            sourceActionID = "turnin-1425-deliver-the-shipment",
+            sourceGuide = "leveling-era-alliance-swamp-of-sorrows-part-2",
+            sourceStep = 10,
+            text = "Turn in Deliver the Shipment to Quartermaster Lungertz.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
+            checkpointQuest = 93429,
+            complete = { level = { min = 30 } },
+            conditions = { all = { { faction = "Alliance" } } },
             id = "alliance-extra-93429-level",
             kind = "note",
-            checkpointQuest = 93429,
-            text = "Reach level 35 before this visit.",
-            conditions = { all = { { faction = "Alliance" } } },
-            complete = { level = { min = 35 } },
-            requiredLevel = 35,
+            requiredLevel = 30,
+            text = "Reach level 30 before this visit.",
         },
         {
             id = "alliance-extra-93429-accept",
@@ -766,17 +1932,420 @@ ns:RegisterGuide({
             dependsOn = { "alliance-extra-93429-accept" },
         },
         {
+            complete = { quest = { id = 93429, state = "completed" } },
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 30 } } } },
+            dependsOn = { "alliance-extra-93429-objective" },
             id = "alliance-extra-93429-turnin",
             kind = "turnin",
-            text = "Turn in Blood of My Blood to Karana.",
-            conditions = { all = { { faction = "Alliance" }, { level = { min = 30 } } } },
-            route = {
-                { mapID = 1435, x = 0.248, y = 0.324, label = "Karana", offMapText = "Travel to Karana in Swamp of Sorrows." },
-            },
-            complete = { quest = { id = 93429, state = "completed" } },
             requiredQuests = {},
+            route = {
+                { label = "Karana", mapID = 1435, offMapText = "Travel to Karana in Swamp of Sorrows.", x = 0.248, y = 0.324 },
+            },
+            text = "Turn in Blood of My Blood to Karana.",
+            useClientPin = true,
             useClientText = false,
-            dependsOn = { "alliance-extra-93429-objective" },
+            useQuestNavigation = true,
+        },
+        {
+            complete = { level = { min = 28 } },
+            conditions = { all = { { faction = "Horde" } } },
+            excludeWhen = { ["not"] = { all = { { faction = "Horde" } } } },
+            id = "visit-entry-leveling-era-horde-thousand-needles",
+            kind = "note",
+            requiredLevel = 28,
+            text = "Reach level 28 before the Thousand Needles visit.",
+            visitSourceGuide = "leveling-era-horde-thousand-needles",
+        },
+        {
+            checkpointQuest = 1111,
+            complete = { level = { min = 30 } },
+            conditions = { faction = "Horde" },
+            dependsOn = {},
+            id = "horde-leveling-era-horde-thousand-needles-level-before-accept-1111-wharfmaster-dizzywig",
+            kind = "note",
+            requiredLevel = 30,
+            requiredQuests = {},
+            sourceActionID = "level-before-accept-1111-wharfmaster-dizzywig",
+            sourceGuide = "leveling-era-horde-thousand-needles",
+            text = "Reach level 30 before continuing. Choose how to gain XP, then return to this route.",
+            useClientPin = false,
+            useClientText = false,
+        },
+        {
+            complete = { quest = { id = 1111, state = "activeOrCompleted" } },
+            conditions = { all = { { faction = "Horde" }, { level = { min = 30 } } } },
+            dependsOn = {},
+            id = "horde-leveling-era-horde-thousand-needles-accept-1111-wharfmaster-dizzywig",
+            kind = "accept",
+            requiredQuests = {},
+            route = {
+                {
+                    label = "Kravel Koalbeard",
+                    mapID = 1441,
+                    offMapText = "Travel to Kravel Koalbeard in Thousand Needles.",
+                    x = 0.788,
+                    y = 0.773,
+                },
+            },
+            sourceActionID = "accept-1111-wharfmaster-dizzywig",
+            sourceGuide = "leveling-era-horde-thousand-needles",
+            sourceStep = 58,
+            text = "Accept Wharfmaster Dizzywig from Kravel Koalbeard.",
+            useClientPin = false,
+            useClientText = false,
+        },
+        {
+            complete = { quest = { id = 1111, state = "completed" } },
+            conditions = { all = { { faction = "Horde" }, { level = { min = 30 } } } },
+            dependsOn = { "horde-leveling-era-horde-thousand-needles-accept-1111-wharfmaster-dizzywig" },
+            id = "horde-leveling-era-horde-thousand-needles-turnin-1111-wharfmaster-dizzywig",
+            kind = "turnin",
+            requiredQuests = {},
+            route = {
+                {
+                    label = "Wharfmaster Dizzywig",
+                    mapID = 1413,
+                    offMapText = "Travel to Wharfmaster Dizzywig in The Barrens.",
+                    x = 0.6335,
+                    y = 0.3845,
+                },
+            },
+            sourceActionID = "turnin-1111-wharfmaster-dizzywig",
+            sourceGuide = "leveling-era-horde-thousand-needles",
+            sourceStep = 65,
+            text = "Turn in Wharfmaster Dizzywig to Wharfmaster Dizzywig.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
+        },
+        {
+            complete = { quest = { id = 1112, state = "activeOrCompleted" } },
+            conditions = { all = { { faction = "Horde" }, { level = { min = 30 } } } },
+            dependsOn = {},
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 1112, state = "activeOrCompleted" } },
+                        {
+                            any = {
+                                { quest = { id = 1112, state = "activeOrCompleted" } },
+                                { all = { { any = { { any = { { quest = { id = 1111, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                            },
+                        },
+                    },
+                },
+            },
+            id = "horde-leveling-era-horde-thousand-needles-accept-1112-parts-for-kravel",
+            kind = "accept",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 1111 } } },
+            route = {
+                {
+                    label = "Wharfmaster Dizzywig",
+                    mapID = 1413,
+                    offMapText = "Travel to Wharfmaster Dizzywig in The Barrens.",
+                    x = 0.6335,
+                    y = 0.3845,
+                },
+            },
+            sourceActionID = "accept-1112-parts-for-kravel",
+            sourceGuide = "leveling-era-horde-thousand-needles",
+            sourceStep = 65,
+            text = "Accept Parts for Kravel from Wharfmaster Dizzywig.",
+            useClientPin = false,
+            useClientText = false,
+        },
+        {
+            complete = { level = { min = 33 } },
+            conditions = { all = { { faction = "Horde" } } },
+            excludeWhen = { ["not"] = { all = { { faction = "Horde" } } } },
+            id = "visit-entry-leveling-era-horde-thousand-needles-part-2",
+            kind = "note",
+            requiredLevel = 33,
+            text = "Reach level 33 before the Thousand Needles visit.",
+            visitSourceGuide = "leveling-era-horde-thousand-needles-part-2",
+        },
+        {
+            checkpointQuest = 1112,
+            complete = { level = { min = 30 } },
+            conditions = { faction = "Horde" },
+            dependsOn = {},
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 1112, state = "activeOrCompleted" } },
+                        {
+                            any = {
+                                { quest = { id = 1112, state = "activeOrCompleted" } },
+                                { all = { { any = { { any = { { quest = { id = 1111, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                            },
+                        },
+                    },
+                },
+            },
+            id = "horde-leveling-era-horde-thousand-needles-part-2-level-before-turnin-1112-parts-for-kravel",
+            kind = "note",
+            requiredLevel = 30,
+            requiredQuests = {},
+            sourceActionID = "level-before-turnin-1112-parts-for-kravel",
+            sourceGuide = "leveling-era-horde-thousand-needles-part-2",
+            text = "Reach level 30 before continuing. Choose how to gain XP, then return to this route.",
+            useClientPin = false,
+            useClientText = false,
+        },
+        {
+            complete = { quest = { id = 1112, state = "completed" } },
+            conditions = { all = { { faction = "Horde" }, { level = { min = 30 } } } },
+            dependsOn = {},
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 1112, state = "activeOrCompleted" } },
+                        {
+                            any = {
+                                { quest = { id = 1112, state = "activeOrCompleted" } },
+                                { all = { { any = { { any = { { quest = { id = 1111, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                            },
+                        },
+                    },
+                },
+            },
+            id = "horde-leveling-era-horde-thousand-needles-part-2-turnin-1112-parts-for-kravel",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 1111 } } },
+            route = {
+                {
+                    label = "Kravel Koalbeard",
+                    mapID = 1441,
+                    offMapText = "Travel to Kravel Koalbeard in Thousand Needles.",
+                    x = 0.7779,
+                    y = 0.7727,
+                },
+            },
+            sourceActionID = "turnin-1112-parts-for-kravel",
+            sourceGuide = "leveling-era-horde-thousand-needles-part-2",
+            sourceStep = 4,
+            text = "Turn in Parts for Kravel to Kravel Koalbeard.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
+        },
+        {
+            complete = { quest = { id = 1114, state = "activeOrCompleted" } },
+            conditions = { all = { { faction = "Horde" }, { level = { min = 30 } } } },
+            dependsOn = {},
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 1114, state = "activeOrCompleted" } },
+                        {
+                            any = {
+                                { quest = { id = 1114, state = "activeOrCompleted" } },
+                                {
+                                    all = {
+                                        {
+                                            any = {
+                                                {
+                                                    any = {
+                                                        { quest = { id = 1112, state = "activeOrCompleted" } },
+                                                        { all = { { any = { { any = { { quest = { id = 1111, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
+            id = "horde-leveling-era-horde-thousand-needles-part-2-accept-1114-delivery-to-the-gnomes",
+            kind = "accept",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 1112 } } },
+            route = {
+                {
+                    label = "Kravel Koalbeard",
+                    mapID = 1441,
+                    offMapText = "Travel to Kravel Koalbeard in Thousand Needles.",
+                    x = 0.788,
+                    y = 0.773,
+                },
+            },
+            sourceActionID = "accept-1114-delivery-to-the-gnomes",
+            sourceGuide = "leveling-era-horde-thousand-needles-part-2",
+            sourceStep = 5,
+            text = "Accept Delivery to the Gnomes from Kravel Koalbeard.",
+            useClientPin = false,
+            useClientText = false,
+        },
+        {
+            complete = { quest = { id = 1114, state = "completed" } },
+            conditions = { all = { { faction = "Horde" }, { level = { min = 30 } } } },
+            dependsOn = { "horde-leveling-era-horde-thousand-needles-part-2-accept-1114-delivery-to-the-gnomes" },
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 1114, state = "activeOrCompleted" } },
+                        {
+                            any = {
+                                { quest = { id = 1114, state = "activeOrCompleted" } },
+                                {
+                                    all = {
+                                        {
+                                            any = {
+                                                {
+                                                    any = {
+                                                        { quest = { id = 1112, state = "activeOrCompleted" } },
+                                                        { all = { { any = { { any = { { quest = { id = 1111, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
+            id = "horde-leveling-era-horde-thousand-needles-part-2-turnin-1114-delivery-to-the-gnomes",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 1112 } } },
+            route = {
+                {
+                    label = "Fizzle Brassbolts",
+                    mapID = 1441,
+                    offMapText = "Travel to Fizzle Brassbolts in Thousand Needles.",
+                    x = 0.7806,
+                    y = 0.7713,
+                },
+            },
+            sourceActionID = "turnin-1114-delivery-to-the-gnomes",
+            sourceGuide = "leveling-era-horde-thousand-needles-part-2",
+            sourceStep = 6,
+            text = "Turn in Delivery to the Gnomes to Fizzle Brassbolts.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
+        },
+        {
+            complete = { quest = { id = 1115, state = "activeOrCompleted" } },
+            conditions = { all = { { faction = "Horde" }, { level = { min = 30 } } } },
+            dependsOn = {},
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 1115, state = "activeOrCompleted" } },
+                        {
+                            any = {
+                                { quest = { id = 1115, state = "activeOrCompleted" } },
+                                {
+                                    all = {
+                                        {
+                                            any = {
+                                                {
+                                                    any = {
+                                                        { quest = { id = 1114, state = "activeOrCompleted" } },
+                                                        {
+                                                            all = {
+                                                                {
+                                                                    any = {
+                                                                        {
+                                                                            any = {
+                                                                                { quest = { id = 1112, state = "activeOrCompleted" } },
+                                                                                { all = { { any = { { any = { { quest = { id = 1111, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
+            id = "horde-leveling-era-horde-thousand-needles-part-2-accept-1115-the-rumormonger",
+            kind = "accept",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 1114 } } },
+            route = {
+                {
+                    label = "Kravel Koalbeard",
+                    mapID = 1441,
+                    offMapText = "Travel to Kravel Koalbeard in Thousand Needles.",
+                    x = 0.788,
+                    y = 0.773,
+                },
+            },
+            sourceActionID = "accept-1115-the-rumormonger",
+            sourceGuide = "leveling-era-horde-thousand-needles-part-2",
+            sourceStep = 7,
+            text = "Accept The Rumormonger from Kravel Koalbeard.",
+            useClientPin = false,
+            useClientText = false,
+        },
+        {
+            complete = { quest = { id = 1115, state = "completed" } },
+            conditions = { all = { { faction = "Horde" }, { level = { min = 30 } } } },
+            dependsOn = { "horde-leveling-era-horde-thousand-needles-part-2-accept-1115-the-rumormonger" },
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 1115, state = "activeOrCompleted" } },
+                        {
+                            any = {
+                                { quest = { id = 1115, state = "activeOrCompleted" } },
+                                {
+                                    all = {
+                                        {
+                                            any = {
+                                                {
+                                                    any = {
+                                                        { quest = { id = 1114, state = "activeOrCompleted" } },
+                                                        {
+                                                            all = {
+                                                                {
+                                                                    any = {
+                                                                        {
+                                                                            any = {
+                                                                                { quest = { id = 1112, state = "activeOrCompleted" } },
+                                                                                { all = { { any = { { any = { { quest = { id = 1111, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
+            id = "horde-leveling-era-horde-thousand-needles-part-2-turnin-1115-the-rumormonger",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 1114 } } },
+            route = {
+                { label = "Krazek", mapID = 1434, offMapText = "Travel to Krazek in Stranglethorn Vale.", x = 0.2694, y = 0.7721 },
+            },
+            sourceActionID = "turnin-1115-the-rumormonger",
+            sourceGuide = "leveling-era-horde-thousand-needles-part-2",
+            sourceStep = 41,
+            text = "Turn in The Rumormonger to Krazek.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             id = "visit-entry-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows",
@@ -787,6 +2356,145 @@ ns:RegisterGuide({
             excludeWhen = { ["not"] = { all = { { faction = "Horde" } } } },
             complete = { level = { min = 40 } },
             requiredLevel = 40,
+        },
+        {
+            complete = { quest = { id = 1116, state = "activeOrCompleted" } },
+            conditions = { all = { { faction = "Horde" }, { level = { min = 30 } } } },
+            dependsOn = {},
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 1116, state = "activeOrCompleted" } },
+                        {
+                            any = {
+                                { quest = { id = 1116, state = "activeOrCompleted" } },
+                                {
+                                    all = {
+                                        {
+                                            any = {
+                                                {
+                                                    any = {
+                                                        { quest = { id = 1115, state = "activeOrCompleted" } },
+                                                        {
+                                                            all = {
+                                                                {
+                                                                    any = {
+                                                                        {
+                                                                            any = {
+                                                                                { quest = { id = 1114, state = "activeOrCompleted" } },
+                                                                                {
+                                                                                    all = {
+                                                                                        {
+                                                                                            any = {
+                                                                                                {
+                                                                                                    any = {
+                                                                                                        { quest = { id = 1112, state = "activeOrCompleted" } },
+                                                                                                        { all = { { any = { { any = { { quest = { id = 1111, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                                                                    },
+                                                                                                },
+                                                                                            },
+                                                                                        },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
+            id = "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-accept-1116-dream-dust-in-the-swamp",
+            kind = "accept",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 1115 } } },
+            route = {
+                { label = "Krazek", mapID = 1434, offMapText = "Travel to Krazek in Stranglethorn Vale.", x = 0.2694, y = 0.7721 },
+            },
+            sourceActionID = "accept-1116-dream-dust-in-the-swamp",
+            sourceGuide = "leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows",
+            sourceStep = 26,
+            text = "Accept Dream Dust in the Swamp from Krazek.",
+            useClientPin = false,
+            useClientText = false,
+        },
+        {
+            complete = { questObjective = { count = 10, id = 1116, index = 1, text = "Adolescent Whelp" } },
+            conditions = { all = { { faction = "Horde" }, { level = { min = 30 } } } },
+            dependsOn = { "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-accept-1116-dream-dust-in-the-swamp" },
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 1116, state = "activeOrCompleted" } },
+                        {
+                            any = {
+                                { quest = { id = 1116, state = "activeOrCompleted" } },
+                                {
+                                    all = {
+                                        {
+                                            any = {
+                                                {
+                                                    any = {
+                                                        { quest = { id = 1115, state = "activeOrCompleted" } },
+                                                        {
+                                                            all = {
+                                                                {
+                                                                    any = {
+                                                                        {
+                                                                            any = {
+                                                                                { quest = { id = 1114, state = "activeOrCompleted" } },
+                                                                                {
+                                                                                    all = {
+                                                                                        {
+                                                                                            any = {
+                                                                                                {
+                                                                                                    any = {
+                                                                                                        { quest = { id = 1112, state = "activeOrCompleted" } },
+                                                                                                        { all = { { any = { { any = { { quest = { id = 1111, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                                                                    },
+                                                                                                },
+                                                                                            },
+                                                                                        },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
+            id = "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-objective-1116-1-adolescent-whelp",
+            kind = "objective",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 1115 } } },
+            route = {
+                { label = "Adolescent Whelp", mapID = 1435, offMapText = "Travel to Adolescent Whelp.", x = 0.124, y = 0.574 },
+            },
+            sourceActionID = "objective-1116-1-adolescent-whelp",
+            sourceGuide = "leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows",
+            sourceStep = 33,
+            text = "Collect 10 Speck of Dream Dust.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 698, state = "activeOrCompleted" } },
@@ -859,13 +2567,13 @@ ns:RegisterGuide({
             route = {
                 { label = "Magtoor", mapID = 1435, offMapText = "Travel to Magtoor in Swamp of Sorrows.", x = 0.2599, y = 0.314 },
             },
+            sourceActionID = "turnin-1392-noboru-the-cudgel",
+            sourceGuide = "leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows",
             sourceStep = 39,
             text = "Turn in Noboru the Cudgel to Magtoor.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows",
-            sourceActionID = "turnin-1392-noboru-the-cudgel",
         },
         {
             complete = { quest = { id = 1389, state = "activeOrCompleted" } },
@@ -933,13 +2641,13 @@ ns:RegisterGuide({
             kind = "turnin",
             requiredQuests = {},
             route = { { label = "Galen's Escape", mapID = 1435, offMapText = "Travel to Galen's Escape.", x = 0.4781, y = 0.3976 } },
+            sourceActionID = "turnin-1393-galen-s-escape",
+            sourceGuide = "leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows",
             sourceStep = 44,
             text = "Turn in Galen's Escape.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows",
-            sourceActionID = "turnin-1393-galen-s-escape",
         },
         {
             complete = { questObjective = { count = 8, id = 698, index = 1, text = "Unprepared Sawtooth Flank" } },
@@ -1002,13 +2710,13 @@ ns:RegisterGuide({
             route = {
                 { label = "Tok'Kar", mapID = 1435, offMapText = "Travel to Tok'Kar in Swamp of Sorrows.", x = 0.8132, y = 0.8097 },
             },
+            sourceActionID = "turnin-698-lack-of-surplus",
+            sourceGuide = "leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows",
             sourceStep = 47,
             text = "Turn in Lack of Surplus to Tok'Kar.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows",
-            sourceActionID = "turnin-698-lack-of-surplus",
         },
         {
             complete = { quest = { id = 1424, state = "completed" } },
@@ -1023,13 +2731,13 @@ ns:RegisterGuide({
             route = {
                 { label = "Fel'zerul", mapID = 1435, offMapText = "Travel to Fel'zerul in Swamp of Sorrows.", x = 0.4793, y = 0.5479 },
             },
+            sourceActionID = "turnin-1424-pool-of-tears",
+            sourceGuide = "leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows",
             sourceStep = 48,
             text = "Turn in Pool of Tears to Fel'zerul.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows",
-            sourceActionID = "turnin-1424-pool-of-tears",
         },
         {
             complete = { quest = { id = 1389, state = "completed" } },
@@ -1044,13 +2752,86 @@ ns:RegisterGuide({
             route = {
                 { label = "Magtoor", mapID = 1435, offMapText = "Travel to Magtoor in Swamp of Sorrows.", x = 0.2599, y = 0.314 },
             },
+            sourceActionID = "turnin-1389-draenethyst-crystals",
+            sourceGuide = "leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows",
             sourceStep = 49,
             text = "Turn in Draenethyst Crystals to Magtoor.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
+        },
+        {
+            complete = { quest = { id = 1116, state = "completed" } },
+            conditions = { all = { { faction = "Horde" }, { level = { min = 30 } } } },
+            dependsOn = {
+                "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-accept-1116-dream-dust-in-the-swamp",
+                "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-objective-1116-1-adolescent-whelp",
+            },
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 1116, state = "activeOrCompleted" } },
+                        {
+                            any = {
+                                { quest = { id = 1116, state = "activeOrCompleted" } },
+                                {
+                                    all = {
+                                        {
+                                            any = {
+                                                {
+                                                    any = {
+                                                        { quest = { id = 1115, state = "activeOrCompleted" } },
+                                                        {
+                                                            all = {
+                                                                {
+                                                                    any = {
+                                                                        {
+                                                                            any = {
+                                                                                { quest = { id = 1114, state = "activeOrCompleted" } },
+                                                                                {
+                                                                                    all = {
+                                                                                        {
+                                                                                            any = {
+                                                                                                {
+                                                                                                    any = {
+                                                                                                        { quest = { id = 1112, state = "activeOrCompleted" } },
+                                                                                                        { all = { { any = { { any = { { quest = { id = 1111, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                                                                    },
+                                                                                                },
+                                                                                            },
+                                                                                        },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
+            id = "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-turnin-1116-dream-dust-in-the-swamp",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 1115 } } },
+            route = {
+                { label = "Krazek", mapID = 1434, offMapText = "Travel to Krazek in Stranglethorn Vale.", x = 0.2694, y = 0.7721 },
+            },
+            sourceActionID = "turnin-1116-dream-dust-in-the-swamp",
             sourceGuide = "leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows",
-            sourceActionID = "turnin-1389-draenethyst-crystals",
+            sourceStep = 51,
+            text = "Turn in Dream Dust in the Swamp to Krazek.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             id = "visit-entry-leveling-era-horde-swamp-of-sorrows",
@@ -1133,13 +2914,13 @@ ns:RegisterGuide({
                     y = 0.6613,
                 },
             },
+            sourceActionID = "turnin-2784-fall-from-grace",
+            sourceGuide = "leveling-era-horde-swamp-of-sorrows",
             sourceStep = 3,
             text = "Turn in Fall From Grace to Fallen Hero of the Horde.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-swamp-of-sorrows",
-            sourceActionID = "turnin-2784-fall-from-grace",
         },
         {
             complete = { quest = { id = 2621, state = "activeOrCompleted" } },
@@ -1186,25 +2967,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 2621, state = "completed" } },
             conditions = { all = { { faction = "Horde" }, { level = { min = 45 } }, { race = { 2, 5, 6, 8, 96 } } } },
             dependsOn = { "horde-leveling-era-horde-swamp-of-sorrows-accept-2621-the-disgraced-one" },
-            id = "horde-leveling-era-horde-swamp-of-sorrows-turnin-2621-the-disgraced-one",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 2784 } } },
-            route = {
-                {
-                    label = "Dispatch Commander Ruag",
-                    mapID = 1435,
-                    offMapText = "Travel to Dispatch Commander Ruag in Swamp of Sorrows.",
-                    x = 0.4779,
-                    y = 0.5495,
-                },
-            },
-            sourceStep = 4,
-            text = "Turn in The Disgraced One to Dispatch Commander Ruag.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-swamp-of-sorrows",
-            sourceActionID = "turnin-2621-the-disgraced-one",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -1223,6 +2985,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-swamp-of-sorrows-turnin-2621-the-disgraced-one",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 2784 } } },
+            route = {
+                {
+                    label = "Dispatch Commander Ruag",
+                    mapID = 1435,
+                    offMapText = "Travel to Dispatch Commander Ruag in Swamp of Sorrows.",
+                    x = 0.4779,
+                    y = 0.5495,
+                },
+            },
+            sourceActionID = "turnin-2621-the-disgraced-one",
+            sourceGuide = "leveling-era-horde-swamp-of-sorrows",
+            sourceStep = 4,
+            text = "Turn in The Disgraced One to Dispatch Commander Ruag.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 2622, state = "activeOrCompleted" } },
@@ -1318,19 +3099,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 2622, state = "completed" } },
             conditions = { all = { { faction = "Horde" }, { level = { min = 45 } }, { race = { 2, 5, 6, 8, 96 } } } },
             dependsOn = { "horde-leveling-era-horde-swamp-of-sorrows-accept-2622-the-missing-orders" },
-            id = "horde-leveling-era-horde-swamp-of-sorrows-turnin-2622-the-missing-orders",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 2621 } } },
-            route = {
-                { label = "Bengor", mapID = 1435, offMapText = "Travel to Bengor in Swamp of Sorrows.", x = 0.4498, y = 0.5734 },
-            },
-            sourceStep = 6,
-            text = "Turn in The Missing Orders to Bengor.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-swamp-of-sorrows",
-            sourceActionID = "turnin-2622-the-missing-orders",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -1363,6 +3131,19 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-swamp-of-sorrows-turnin-2622-the-missing-orders",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 2621 } } },
+            route = {
+                { label = "Bengor", mapID = 1435, offMapText = "Travel to Bengor in Swamp of Sorrows.", x = 0.4498, y = 0.5734 },
+            },
+            sourceActionID = "turnin-2622-the-missing-orders",
+            sourceGuide = "leveling-era-horde-swamp-of-sorrows",
+            sourceStep = 6,
+            text = "Turn in The Missing Orders to Bengor.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 699, state = "activeOrCompleted" } },
@@ -1440,19 +3221,6 @@ ns:RegisterGuide({
                 "horde-leveling-era-horde-swamp-of-sorrows-accept-699-lack-of-surplus",
                 "horde-leveling-era-horde-swamp-of-sorrows-objective-699-1-sawtooth-snapper",
             },
-            id = "horde-leveling-era-horde-swamp-of-sorrows-turnin-699-lack-of-surplus",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 698 } } },
-            route = {
-                { label = "Tok'Kar", mapID = 1435, offMapText = "Travel to Tok'Kar in Swamp of Sorrows.", x = 0.8132, y = 0.8097 },
-            },
-            sourceStep = 9,
-            text = "Turn in Lack of Surplus to Tok'Kar.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-swamp-of-sorrows",
-            sourceActionID = "turnin-699-lack-of-surplus",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -1471,6 +3239,19 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-swamp-of-sorrows-turnin-699-lack-of-surplus",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 698 } } },
+            route = {
+                { label = "Tok'Kar", mapID = 1435, offMapText = "Travel to Tok'Kar in Swamp of Sorrows.", x = 0.8132, y = 0.8097 },
+            },
+            sourceActionID = "turnin-699-lack-of-surplus",
+            sourceGuide = "leveling-era-horde-swamp-of-sorrows",
+            sourceStep = 9,
+            text = "Turn in Lack of Surplus to Tok'Kar.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 1422, state = "activeOrCompleted" } },
@@ -1525,19 +3306,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 1422, state = "completed" } },
             conditions = { all = { { faction = "Horde" }, { level = { min = 35 } }, { race = { 2, 5, 6, 8, 96 } } } },
             dependsOn = { "horde-leveling-era-horde-swamp-of-sorrows-accept-1422-threat-from-the-sea" },
-            id = "horde-leveling-era-horde-swamp-of-sorrows-turnin-1422-threat-from-the-sea",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 699 } } },
-            route = {
-                { label = "Katar", mapID = 1435, offMapText = "Travel to Katar in Swamp of Sorrows.", x = 0.8375, y = 0.8042 },
-            },
-            sourceStep = 10,
-            text = "Turn in Threat From the Sea to Katar.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-swamp-of-sorrows",
-            sourceActionID = "turnin-1422-threat-from-the-sea",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -1570,6 +3338,19 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-swamp-of-sorrows-turnin-1422-threat-from-the-sea",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 699 } } },
+            route = {
+                { label = "Katar", mapID = 1435, offMapText = "Travel to Katar in Swamp of Sorrows.", x = 0.8375, y = 0.8042 },
+            },
+            sourceActionID = "turnin-1422-threat-from-the-sea",
+            sourceGuide = "leveling-era-horde-swamp-of-sorrows",
+            sourceStep = 10,
+            text = "Turn in Threat From the Sea to Katar.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 1426, state = "activeOrCompleted" } },
@@ -1829,19 +3610,6 @@ ns:RegisterGuide({
                 "horde-leveling-era-horde-swamp-of-sorrows-objective-1426-3-marsh-flesheater",
                 "horde-leveling-era-horde-swamp-of-sorrows-objective-1426-2-marsh-inkspewer",
             },
-            id = "horde-leveling-era-horde-swamp-of-sorrows-turnin-1426-threat-from-the-sea",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 1422 } } },
-            route = {
-                { label = "Katar", mapID = 1435, offMapText = "Travel to Katar in Swamp of Sorrows.", x = 0.8376, y = 0.8043 },
-            },
-            sourceStep = 14,
-            text = "Turn in Threat From the Sea to Katar.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-swamp-of-sorrows",
-            sourceActionID = "turnin-1426-threat-from-the-sea",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -1888,6 +3656,19 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-swamp-of-sorrows-turnin-1426-threat-from-the-sea",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 1422 } } },
+            route = {
+                { label = "Katar", mapID = 1435, offMapText = "Travel to Katar in Swamp of Sorrows.", x = 0.8376, y = 0.8043 },
+            },
+            sourceActionID = "turnin-1426-threat-from-the-sea",
+            sourceGuide = "leveling-era-horde-swamp-of-sorrows",
+            sourceStep = 14,
+            text = "Turn in Threat From the Sea to Katar.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 1427, state = "activeOrCompleted" } },
@@ -1970,19 +3751,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 1427, state = "completed" } },
             conditions = { all = { { faction = "Horde" }, { level = { min = 35 } }, { race = { 2, 5, 6, 8, 96 } } } },
             dependsOn = { "horde-leveling-era-horde-swamp-of-sorrows-accept-1427-threat-from-the-sea" },
-            id = "horde-leveling-era-horde-swamp-of-sorrows-turnin-1427-threat-from-the-sea",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 1426 } } },
-            route = {
-                { label = "Tok'Kar", mapID = 1435, offMapText = "Travel to Tok'Kar in Swamp of Sorrows.", x = 0.8131, y = 0.8097 },
-            },
-            sourceStep = 15,
-            text = "Turn in Threat From the Sea to Tok'Kar.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-swamp-of-sorrows",
-            sourceActionID = "turnin-1427-threat-from-the-sea",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -2043,6 +3811,19 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-swamp-of-sorrows-turnin-1427-threat-from-the-sea",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 1426 } } },
+            route = {
+                { label = "Tok'Kar", mapID = 1435, offMapText = "Travel to Tok'Kar in Swamp of Sorrows.", x = 0.8131, y = 0.8097 },
+            },
+            sourceActionID = "turnin-1427-threat-from-the-sea",
+            sourceGuide = "leveling-era-horde-swamp-of-sorrows",
+            sourceStep = 15,
+            text = "Turn in Threat From the Sea to Tok'Kar.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 1428, state = "activeOrCompleted" } },
@@ -2418,19 +4199,6 @@ ns:RegisterGuide({
                 "horde-leveling-era-horde-swamp-of-sorrows-objective-1428-2-marsh-flesheater",
                 "horde-leveling-era-horde-swamp-of-sorrows-objective-1428-3-marsh-oracle",
             },
-            id = "horde-leveling-era-horde-swamp-of-sorrows-turnin-1428-continued-threat",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 1427 } } },
-            route = {
-                { label = "Katar", mapID = 1435, offMapText = "Travel to Katar in Swamp of Sorrows.", x = 0.8375, y = 0.8042 },
-            },
-            sourceStep = 19,
-            text = "Turn in Continued Threat to Katar.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-swamp-of-sorrows",
-            sourceActionID = "turnin-1428-continued-threat",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -2505,6 +4273,19 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-swamp-of-sorrows-turnin-1428-continued-threat",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 1427 } } },
+            route = {
+                { label = "Katar", mapID = 1435, offMapText = "Travel to Katar in Swamp of Sorrows.", x = 0.8375, y = 0.8042 },
+            },
+            sourceActionID = "turnin-1428-continued-threat",
+            sourceGuide = "leveling-era-horde-swamp-of-sorrows",
+            sourceStep = 19,
+            text = "Turn in Continued Threat to Katar.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             id = "visit-entry-leveling-era-horde-the-hinterlands",
@@ -2520,25 +4301,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 1429, state = "completed" } },
             conditions = { all = { { faction = "Horde" }, { level = { min = 38 } }, { race = { 2, 5, 6, 8, 96 } } } },
             dependsOn = {},
-            id = "horde-leveling-era-horde-the-hinterlands-turnin-1429-the-atal-ai-exile",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 1424 } } },
-            route = {
-                {
-                    label = "Atal'ai Exile",
-                    mapID = 1425,
-                    offMapText = "Travel to Atal'ai Exile in The Hinterlands.",
-                    x = 0.3375,
-                    y = 0.7521,
-                },
-            },
-            sourceStep = 54,
-            text = "Turn in The Atal'ai Exile to Atal'ai Exile.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-the-hinterlands",
-            sourceActionID = "turnin-1429-the-atal-ai-exile",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -2557,6 +4319,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-the-hinterlands-turnin-1429-the-atal-ai-exile",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 1424 } } },
+            route = {
+                {
+                    label = "Atal'ai Exile",
+                    mapID = 1425,
+                    offMapText = "Travel to Atal'ai Exile in The Hinterlands.",
+                    x = 0.3375,
+                    y = 0.7521,
+                },
+            },
+            sourceActionID = "turnin-1429-the-atal-ai-exile",
+            sourceGuide = "leveling-era-horde-the-hinterlands",
+            sourceStep = 54,
+            text = "Turn in The Atal'ai Exile to Atal'ai Exile.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             id = "visit-entry-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-part-2",
@@ -2763,25 +4544,6 @@ ns:RegisterGuide({
                 "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-part-2-accept-2623-the-swamp-talker",
                 "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-part-2-objective-2623-1-swamp-talker",
             },
-            id = "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-part-2-turnin-2623-the-swamp-talker",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 2622 } } },
-            route = {
-                {
-                    label = "Fallen Hero of the Horde",
-                    mapID = 1435,
-                    offMapText = "Travel to Fallen Hero of the Horde in Swamp of Sorrows.",
-                    x = 0.3429,
-                    y = 0.6613,
-                },
-            },
-            sourceStep = 31,
-            text = "Turn in The Swamp Talker to Fallen Hero of the Horde.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-part-2",
-            sourceActionID = "turnin-2623-the-swamp-talker",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -2828,16 +4590,35 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-part-2-turnin-2623-the-swamp-talker",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 2622 } } },
+            route = {
+                {
+                    label = "Fallen Hero of the Horde",
+                    mapID = 1435,
+                    offMapText = "Travel to Fallen Hero of the Horde in Swamp of Sorrows.",
+                    x = 0.3429,
+                    y = 0.6613,
+                },
+            },
+            sourceActionID = "turnin-2623-the-swamp-talker",
+            sourceGuide = "leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-part-2",
+            sourceStep = 31,
+            text = "Turn in The Swamp Talker to Fallen Hero of the Horde.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
+            alternativeQuests = { 1420 },
+            checkpointQuest = 1418,
+            complete = { level = { min = 30 } },
+            conditions = { all = { { faction = "Horde" } } },
             id = "horde-extra-1418-level",
             kind = "note",
-            checkpointQuest = 1418,
-            text = "Reach level 35 before this visit.",
-            conditions = { all = { { faction = "Horde" } } },
-            complete = { level = { min = 35 } },
-            requiredLevel = 35,
-            alternativeQuests = { 1420 },
+            requiredLevel = 30,
+            text = "Reach level 30 before this visit.",
         },
         {
             id = "horde-extra-1418-accept",
@@ -2873,27 +4654,29 @@ ns:RegisterGuide({
             useClientPin = true,
         },
         {
+            alternativeQuests = { 1420 },
+            complete = { quest = { id = 1418, state = "completed" } },
+            conditions = { all = { { faction = "Horde" }, { level = { min = 30 } } } },
+            dependsOn = { "horde-extra-1418-objective" },
             id = "horde-extra-1418-turnin",
             kind = "turnin",
-            text = "Turn in Neeka Bloodscar to Neeka Bloodscar.",
-            conditions = { all = { { faction = "Horde" }, { level = { min = 30 } } } },
-            route = {
-                { mapID = 1418, x = 0.064, y = 0.47, label = "Neeka Bloodscar", offMapText = "Travel to Neeka Bloodscar in Badlands." },
-            },
-            complete = { quest = { id = 1418, state = "completed" } },
             requiredQuests = {},
+            route = {
+                { label = "Neeka Bloodscar", mapID = 1418, offMapText = "Travel to Neeka Bloodscar in Badlands.", x = 0.064, y = 0.47 },
+            },
+            text = "Turn in Neeka Bloodscar to Neeka Bloodscar.",
+            useClientPin = true,
             useClientText = false,
-            alternativeQuests = { 1420 },
-            dependsOn = { "horde-extra-1418-objective" },
+            useQuestNavigation = true,
         },
         {
+            checkpointQuest = 1430,
+            complete = { level = { min = 35 } },
+            conditions = { all = { { faction = "Horde" } } },
             id = "horde-extra-1430-level",
             kind = "note",
-            checkpointQuest = 1430,
-            text = "Reach level 44 before this visit.",
-            conditions = { all = { { faction = "Horde" } } },
-            complete = { level = { min = 44 } },
-            requiredLevel = 44,
+            requiredLevel = 35,
+            text = "Reach level 35 before this visit.",
         },
         {
             id = "horde-extra-1430-accept",
@@ -2934,23 +4717,17 @@ ns:RegisterGuide({
             dependsOn = { "horde-extra-1430-accept" },
         },
         {
+            complete = { quest = { id = 1430, state = "completed" } },
+            conditions = { all = { { faction = "Horde" }, { level = { min = 35 } } } },
+            dependsOn = { "horde-extra-1430-objective" },
             id = "horde-extra-1430-turnin",
             kind = "turnin",
-            text = "Turn in Fresh Meat to Dar.",
-            conditions = { all = { { faction = "Horde" }, { level = { min = 35 } } } },
-            route = {
-                {
-                    mapID = 1435,
-                    x = 0.44799999999999995,
-                    y = 0.5720000000000001,
-                    label = "Dar",
-                    offMapText = "Travel to Dar in Swamp of Sorrows.",
-                },
-            },
-            complete = { quest = { id = 1430, state = "completed" } },
             requiredQuests = {},
+            route = { { label = "Dar", mapID = 1435, offMapText = "Travel to Dar in Swamp of Sorrows.", x = 0.448, y = 0.572 } },
+            text = "Turn in Fresh Meat to Dar.",
+            useClientPin = true,
             useClientText = false,
-            dependsOn = { "horde-extra-1430-objective" },
+            useQuestNavigation = true,
         },
     },
 })

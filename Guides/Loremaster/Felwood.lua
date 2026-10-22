@@ -6,10 +6,43 @@ ns:RegisterGuide({
     id = "loremaster-felwood",
     title = "Felwood",
     category = "Loremaster Guides",
-    revision = 1,
+    revision = 2,
     routeMode = "ordered",
     loremasterExpanded = true,
     goals = {
+        {
+            complete = { level = { min = 51 } },
+            conditions = { all = { { faction = "Alliance" } } },
+            excludeWhen = { ["not"] = { all = { { faction = "Alliance" } } } },
+            id = "visit-entry-leveling-era-alliance-blasted-lands-and-burning-steppes",
+            kind = "note",
+            requiredLevel = 51,
+            text = "Reach level 51 before the Blasted Lands & Burning Steppes visit.",
+            visitSourceGuide = "leveling-era-alliance-blasted-lands-and-burning-steppes",
+        },
+        {
+            complete = { quest = { id = 4512, state = "activeOrCompleted" } },
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 48 } }, { race = { 1, 3, 4, 7, 95 } } } },
+            dependsOn = {},
+            id = "alliance-leveling-era-alliance-blasted-lands-and-burning-steppes-accept-4512-a-little-slime-goes-a-long-way",
+            kind = "accept",
+            requiredQuests = {},
+            route = {
+                {
+                    label = "Laris Geardawdle",
+                    mapID = 1455,
+                    offMapText = "Travel to Laris Geardawdle in Ironforge.",
+                    x = 0.7577,
+                    y = 0.2337,
+                },
+            },
+            sourceActionID = "accept-4512-a-little-slime-goes-a-long-way",
+            sourceGuide = "leveling-era-alliance-blasted-lands-and-burning-steppes",
+            sourceStep = 23,
+            text = "Accept A Little Slime Goes a Long Way from Laris Geardawdle.",
+            useClientPin = false,
+            useClientText = false,
+        },
         {
             id = "visit-entry-leveling-era-alliance-azshara-and-felwood",
             kind = "note",
@@ -174,13 +207,13 @@ ns:RegisterGuide({
             kind = "turnin",
             requiredQuests = {},
             route = { { label = "Grazle", mapID = 1448, offMapText = "Travel to Grazle in Felwood.", x = 0.5093, y = 0.8502 } },
+            sourceActionID = "turnin-8460-timbermaw-ally",
+            sourceGuide = "leveling-era-alliance-azshara-and-felwood",
             sourceStep = 20,
             text = "Turn in Timbermaw Ally to Grazle.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-azshara-and-felwood",
-            sourceActionID = "turnin-8460-timbermaw-ally",
         },
         {
             complete = { quest = { id = 8462, state = "activeOrCompleted" } },
@@ -209,6 +242,43 @@ ns:RegisterGuide({
                     },
                 },
             },
+        },
+        {
+            checkpointQuest = 4512,
+            complete = {
+                any = {
+                    {
+                        all = {
+                            { item = { minCount = 6, name = "Empty Cursed Ooze Jar" } },
+                            { item = { minCount = 6, name = "Empty Tainted Ooze Jar" } },
+                        },
+                    },
+                    { quest = { id = 4512, state = "complete" } },
+                },
+            },
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 48 } }, { race = { 1, 3, 4, 7, 95 } } } },
+            dependsOn = {},
+            id = "alliance-leveling-era-alliance-azshara-and-felwood-objective-4512-1-package-of-empty-ooze-containers",
+            instructionOnly = true,
+            kind = "note",
+            rememberPreparation = 4512,
+            requiredQuests = {},
+            route = {
+                {
+                    label = "Filled Cursed Ooze Jar",
+                    mapID = 1448,
+                    offMapText = "Travel to Filled Cursed Ooze Jar.",
+                    x = 0.416,
+                    y = 0.716,
+                },
+            },
+            sourceActionID = "objective-4512-1-package-of-empty-ooze-containers",
+            sourceGuide = "leveling-era-alliance-azshara-and-felwood",
+            sourceInstructionIndex = 1,
+            sourceInstructionStep = 23,
+            text = "Open the Package of Empty Ooze Containers to obtain 6 Empty Cursed Ooze Jars and 6 Empty Tainted Ooze Jars.",
+            useClientPin = false,
+            useClientText = false,
         },
         {
             complete = { questObjective = { count = 1, id = 4421, index = 4 } },
@@ -251,6 +321,21 @@ ns:RegisterGuide({
             sourceActionID = "objective-4421-2-jadefire-shadowstalker",
         },
         {
+            complete = { questObjective = { count = 6, id = 4512, index = 1 } },
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 48 } }, { race = { 1, 3, 4, 7, 95 } } } },
+            dependsOn = {},
+            id = "alliance-leveling-era-alliance-azshara-and-felwood-objective-4512-1-cursed-ooze",
+            kind = "objective",
+            requiredQuests = {},
+            route = { { label = "Cursed Oozes", mapID = 1448, offMapText = "Travel to Cursed Oozes.", x = 0.416, y = 0.716 } },
+            sourceActionID = "objective-4512-1-cursed-ooze",
+            sourceGuide = "leveling-era-alliance-azshara-and-felwood",
+            text = "Kill Cursed Oozes in Felwood. Use an Empty Cursed Ooze Jar on each corpse to make 6 Filled Cursed Ooze Jars.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
+        },
+        {
             complete = { questObjective = { count = 9, id = 4421, index = 3, text = "Jadefire Rogue" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 49 } }, { race = { 1, 3, 4, 7, 95 } } } },
             dependsOn = { "alliance-leveling-era-alliance-azshara-and-felwood-accept-4421-the-corruption-of-the-jadefire" },
@@ -283,6 +368,22 @@ ns:RegisterGuide({
             useQuestNavigation = true,
             sourceGuide = "leveling-era-alliance-azshara-and-felwood",
             sourceActionID = "objective-4421-1-jadefire-felsworn",
+        },
+        {
+            complete = { questObjective = { count = 6, id = 4512, index = 2 } },
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 48 } }, { race = { 1, 3, 4, 7, 95 } } } },
+            dependsOn = {},
+            id = "alliance-leveling-era-alliance-azshara-and-felwood-objective-4512-2-tainted-ooze",
+            kind = "objective",
+            requiredQuests = {},
+            route = { { label = "Tainted Oozes", mapID = 1448, offMapText = "Travel to Tainted Oozes.", x = 0.408, y = 0.59 } },
+            sourceActionID = "objective-4512-2-tainted-ooze",
+            sourceGuide = "leveling-era-alliance-azshara-and-felwood",
+            sourceStep = 26,
+            text = "Kill Tainted Oozes in Felwood. Use an Empty Tainted Ooze Jar on each corpse to make 6 Filled Tainted Ooze Jars.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { questObjective = { count = 4, id = 5155, index = 1, text = "Jaedenar Hound" } },
@@ -368,13 +469,13 @@ ns:RegisterGuide({
             route = {
                 { label = "Greta Mosshoof", mapID = 1448, offMapText = "Travel to Greta Mosshoof in Felwood.", x = 0.5121, y = 0.8211 },
             },
+            sourceActionID = "turnin-5155-forces-of-jaedenar",
+            sourceGuide = "leveling-era-alliance-azshara-and-felwood",
             sourceStep = 28,
             text = "Turn in Forces of Jaedenar to Greta Mosshoof.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-azshara-and-felwood",
-            sourceActionID = "turnin-5155-forces-of-jaedenar",
         },
         {
             complete = { quest = { id = 5157, state = "activeOrCompleted" } },
@@ -422,13 +523,13 @@ ns:RegisterGuide({
             route = {
                 { label = "Eridan Bluewind", mapID = 1448, offMapText = "Travel to Eridan Bluewind in Felwood.", x = 0.5135, y = 0.8151 },
             },
+            sourceActionID = "turnin-4421-the-corruption-of-the-jadefire",
+            sourceGuide = "leveling-era-alliance-azshara-and-felwood",
             sourceStep = 29,
             text = "Turn in The Corruption of the Jadefire to Eridan Bluewind.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-azshara-and-felwood",
-            sourceActionID = "turnin-4421-the-corruption-of-the-jadefire",
         },
         {
             complete = { quest = { id = 4906, state = "activeOrCompleted" } },
@@ -726,17 +827,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 8462, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 45 } } } },
             dependsOn = { "alliance-leveling-era-alliance-azshara-and-felwood-accept-8462-speak-to-nafien" },
-            id = "alliance-leveling-era-alliance-azshara-and-felwood-turnin-8462-speak-to-nafien",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 8460 } } },
-            route = { { label = "Nafien", mapID = 1448, offMapText = "Travel to Nafien in Felwood.", x = 0.6477, y = 0.0813 } },
-            sourceStep = 40,
-            text = "Turn in Speak to Nafien to Nafien.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-azshara-and-felwood",
-            sourceActionID = "turnin-8462-speak-to-nafien",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -750,6 +840,17 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-azshara-and-felwood-turnin-8462-speak-to-nafien",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 8460 } } },
+            route = { { label = "Nafien", mapID = 1448, offMapText = "Travel to Nafien in Felwood.", x = 0.6477, y = 0.0813 } },
+            sourceActionID = "turnin-8462-speak-to-nafien",
+            sourceGuide = "leveling-era-alliance-azshara-and-felwood",
+            sourceStep = 40,
+            text = "Turn in Speak to Nafien to Nafien.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 5156, state = "completed" } },
@@ -771,13 +872,13 @@ ns:RegisterGuide({
                     y = 0.8162,
                 },
             },
+            sourceActionID = "turnin-5156-verifying-the-corruption",
+            sourceGuide = "leveling-era-alliance-azshara-and-felwood",
             sourceStep = 46,
             text = "Turn in Verifying the Corruption to Taronn Redfeather.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-azshara-and-felwood",
-            sourceActionID = "turnin-5156-verifying-the-corruption",
         },
         {
             complete = { quest = { id = 939, state = "completed" } },
@@ -792,13 +893,13 @@ ns:RegisterGuide({
             route = {
                 { label = "Eridan Bluewind", mapID = 1448, offMapText = "Travel to Eridan Bluewind in Felwood.", x = 0.5135, y = 0.8151 },
             },
+            sourceActionID = "turnin-939-flute-of-xavaric",
+            sourceGuide = "leveling-era-alliance-azshara-and-felwood",
             sourceStep = 47,
             text = "Turn in Flute of Xavaric to Eridan Bluewind.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-azshara-and-felwood",
-            sourceActionID = "turnin-939-flute-of-xavaric",
         },
         {
             complete = { quest = { id = 4441, state = "activeOrCompleted" } },
@@ -854,19 +955,6 @@ ns:RegisterGuide({
                 "alliance-leveling-era-alliance-azshara-and-felwood-objective-4906-3-jadefire-trickster",
                 "alliance-leveling-era-alliance-azshara-and-felwood-objective-4906-reviewed-4",
             },
-            id = "alliance-leveling-era-alliance-azshara-and-felwood-turnin-4906-further-corruption",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 4421 } } },
-            route = {
-                { label = "Eridan Bluewind", mapID = 1448, offMapText = "Travel to Eridan Bluewind in Felwood.", x = 0.5135, y = 0.8151 },
-            },
-            sourceStep = 47,
-            text = "Turn in Further Corruption to Eridan Bluewind.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-azshara-and-felwood",
-            sourceActionID = "turnin-4906-further-corruption",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -887,6 +975,19 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-azshara-and-felwood-turnin-4906-further-corruption",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 4421 } } },
+            route = {
+                { label = "Eridan Bluewind", mapID = 1448, offMapText = "Travel to Eridan Bluewind in Felwood.", x = 0.5135, y = 0.8151 },
+            },
+            sourceActionID = "turnin-4906-further-corruption",
+            sourceGuide = "leveling-era-alliance-azshara-and-felwood",
+            sourceStep = 47,
+            text = "Turn in Further Corruption to Eridan Bluewind.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { questObjective = { count = 1, id = 5157, index = 1 } },
@@ -932,19 +1033,6 @@ ns:RegisterGuide({
                 "alliance-leveling-era-alliance-azshara-and-felwood-accept-5157-collection-of-the-corrupt-water",
                 "alliance-leveling-era-alliance-azshara-and-felwood-objective-5157-quest-work",
             },
-            id = "alliance-leveling-era-alliance-azshara-and-felwood-turnin-5157-collection-of-the-corrupt-water",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 5155 } } },
-            route = {
-                { label = "Greta Mosshoof", mapID = 1448, offMapText = "Travel to Greta Mosshoof in Felwood.", x = 0.5121, y = 0.8211 },
-            },
-            sourceStep = 48,
-            text = "Turn in Collection of the Corrupt Water to Greta Mosshoof.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-azshara-and-felwood",
-            sourceActionID = "turnin-5157-collection-of-the-corrupt-water",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -958,6 +1046,19 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-azshara-and-felwood-turnin-5157-collection-of-the-corrupt-water",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 5155 } } },
+            route = {
+                { label = "Greta Mosshoof", mapID = 1448, offMapText = "Travel to Greta Mosshoof in Felwood.", x = 0.5121, y = 0.8211 },
+            },
+            sourceActionID = "turnin-5157-collection-of-the-corrupt-water",
+            sourceGuide = "leveling-era-alliance-azshara-and-felwood",
+            sourceStep = 48,
+            text = "Turn in Collection of the Corrupt Water to Greta Mosshoof.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 5158, state = "activeOrCompleted" } },
@@ -1021,13 +1122,13 @@ ns:RegisterGuide({
                     y = 0.8683,
                 },
             },
+            sourceActionID = "turnin-4101-cleansing-felwood",
+            sourceGuide = "leveling-era-alliance-azshara-and-felwood",
             sourceStep = 49,
             text = "Turn in Cleansing Felwood to Arathandris Silversky.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-azshara-and-felwood",
-            sourceActionID = "turnin-4101-cleansing-felwood",
         },
         {
             id = "visit-entry-leveling-era-alliance-feralas-and-azshara",
@@ -1084,25 +1185,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 5158, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 48 } } } },
             dependsOn = {},
-            id = "alliance-leveling-era-alliance-feralas-and-azshara-turnin-5158-seeking-spiritual-aid",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 5157 } } },
-            route = {
-                {
-                    label = "Islen Waterseer",
-                    mapID = 1413,
-                    offMapText = "Travel to Islen Waterseer in The Barrens.",
-                    x = 0.6583,
-                    y = 0.4378,
-                },
-            },
-            sourceStep = 28,
-            text = "Turn in Seeking Spiritual Aid to Islen Waterseer.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-feralas-and-azshara",
-            sourceActionID = "turnin-5158-seeking-spiritual-aid",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -1129,6 +1211,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-feralas-and-azshara-turnin-5158-seeking-spiritual-aid",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 5157 } } },
+            route = {
+                {
+                    label = "Islen Waterseer",
+                    mapID = 1413,
+                    offMapText = "Travel to Islen Waterseer in The Barrens.",
+                    x = 0.6583,
+                    y = 0.4378,
+                },
+            },
+            sourceActionID = "turnin-5158-seeking-spiritual-aid",
+            sourceGuide = "leveling-era-alliance-feralas-and-azshara",
+            sourceStep = 28,
+            text = "Turn in Seeking Spiritual Aid to Islen Waterseer.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             id = "visit-entry-leveling-era-alliance-ungoro-crater-part-2",
@@ -1291,15 +1392,15 @@ ns:RegisterGuide({
             },
         },
         {
+            alternativeQuests = { 5244 },
+            checkpointQuest = 5249,
+            complete = { level = { min = 53 } },
+            conditions = { all = { { faction = "Alliance" } } },
+            excludeWhen = { any = { { quest = { id = 5250, state = "activeOrCompleted" } } } },
             id = "alliance-extra-5249-level",
             kind = "note",
-            checkpointQuest = 5249,
-            text = "Reach level 56 before this visit.",
-            conditions = { all = { { faction = "Alliance" } } },
-            complete = { level = { min = 56 } },
-            requiredLevel = 56,
-            excludeWhen = { any = { { quest = { id = 5250, state = "activeOrCompleted" } } } },
-            alternativeQuests = { 5244 },
+            requiredLevel = 53,
+            text = "Reach level 53 before this visit.",
         },
         {
             id = "alliance-extra-5249-accept",
@@ -1410,19 +1511,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 5159, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 48 } } } },
             dependsOn = {},
-            id = "alliance-leveling-era-alliance-winterspring-and-felwood-turnin-5159-cleansed-water-returns-to-felwood",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 5158 } } },
-            route = {
-                { label = "Greta Mosshoof", mapID = 1448, offMapText = "Travel to Greta Mosshoof in Felwood.", x = 0.5121, y = 0.8211 },
-            },
-            sourceStep = 2,
-            text = "Turn in Cleansed Water Returns to Felwood to Greta Mosshoof.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-winterspring-and-felwood",
-            sourceActionID = "turnin-5159-cleansed-water-returns-to-felwood",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -1462,6 +1550,19 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-winterspring-and-felwood-turnin-5159-cleansed-water-returns-to-felwood",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 5158 } } },
+            route = {
+                { label = "Greta Mosshoof", mapID = 1448, offMapText = "Travel to Greta Mosshoof in Felwood.", x = 0.5121, y = 0.8211 },
+            },
+            sourceActionID = "turnin-5159-cleansed-water-returns-to-felwood",
+            sourceGuide = "leveling-era-alliance-winterspring-and-felwood",
+            sourceStep = 2,
+            text = "Turn in Cleansed Water Returns to Felwood to Greta Mosshoof.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 5165, state = "activeOrCompleted" } },
@@ -1631,19 +1732,6 @@ ns:RegisterGuide({
                 "alliance-leveling-era-alliance-winterspring-and-felwood-objective-4441-quest-work",
                 "alliance-leveling-era-alliance-ungoro-crater-part-2-objective-4441-1-eridan-s-vial",
             },
-            id = "alliance-leveling-era-alliance-winterspring-and-felwood-turnin-4441-felbound-ancients",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 939 } } },
-            route = {
-                { label = "Eridan Bluewind", mapID = 1448, offMapText = "Travel to Eridan Bluewind in Felwood.", x = 0.5135, y = 0.8151 },
-            },
-            sourceStep = 3,
-            text = "Turn in Felbound Ancients to Eridan Bluewind.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-winterspring-and-felwood",
-            sourceActionID = "turnin-4441-felbound-ancients",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -1659,7 +1747,7 @@ ns:RegisterGuide({
                                                 {
                                                     any = {
                                                         { quest = { id = 939, state = "activeOrCompleted" } },
-                                                        { all = { { item = { name = "Flute of Xavaric", minCount = 1 } }, { faction = "Alliance" } } },
+                                                        { all = { { item = { minCount = 1, name = "Flute of Xavaric" } }, { faction = "Alliance" } } },
                                                     },
                                                 },
                                             },
@@ -1671,6 +1759,19 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-winterspring-and-felwood-turnin-4441-felbound-ancients",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 939 } } },
+            route = {
+                { label = "Eridan Bluewind", mapID = 1448, offMapText = "Travel to Eridan Bluewind in Felwood.", x = 0.5135, y = 0.8151 },
+            },
+            sourceActionID = "turnin-4441-felbound-ancients",
+            sourceGuide = "leveling-era-alliance-winterspring-and-felwood",
+            sourceStep = 3,
+            text = "Turn in Felbound Ancients to Eridan Bluewind.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 4442, state = "activeOrCompleted" } },
@@ -1734,19 +1835,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 4442, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 49 } }, { race = { 1, 3, 4, 7, 95 } } } },
             dependsOn = { "alliance-leveling-era-alliance-winterspring-and-felwood-accept-4442-purified" },
-            id = "alliance-leveling-era-alliance-winterspring-and-felwood-turnin-4442-purified",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 4441 } } },
-            route = {
-                { label = "Eridan Bluewind", mapID = 1448, offMapText = "Travel to Eridan Bluewind in Felwood.", x = 0.5135, y = 0.8151 },
-            },
-            sourceStep = 5,
-            text = "Turn in Purified! to Eridan Bluewind.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-winterspring-and-felwood",
-            sourceActionID = "turnin-4442-purified",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -1770,7 +1858,7 @@ ns:RegisterGuide({
                                                                         {
                                                                             any = {
                                                                                 { quest = { id = 939, state = "activeOrCompleted" } },
-                                                                                { all = { { item = { name = "Flute of Xavaric", minCount = 1 } }, { faction = "Alliance" } } },
+                                                                                { all = { { item = { minCount = 1, name = "Flute of Xavaric" } }, { faction = "Alliance" } } },
                                                                             },
                                                                         },
                                                                     },
@@ -1788,115 +1876,184 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-winterspring-and-felwood-turnin-4442-purified",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 4441 } } },
+            route = {
+                { label = "Eridan Bluewind", mapID = 1448, offMapText = "Travel to Eridan Bluewind in Felwood.", x = 0.5135, y = 0.8151 },
+            },
+            sourceActionID = "turnin-4442-purified",
+            sourceGuide = "leveling-era-alliance-winterspring-and-felwood",
+            sourceStep = 5,
+            text = "Turn in Purified! to Eridan Bluewind.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
+            checkpointQuest = 4261,
+            complete = { level = { min = 49 } },
+            conditions = { all = { { faction = "Alliance" } } },
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 4261, state = "activeOrCompleted" } },
+                        {
+                            any = {
+                                { quest = { id = 4261, state = "activeOrCompleted" } },
+                                {
+                                    all = {
+                                        { faction = "Alliance" },
+                                        {
+                                            any = {
+                                                {
+                                                    any = {
+                                                        { quest = { id = 4442, state = "activeOrCompleted" } },
+                                                        {
+                                                            all = {
+                                                                { faction = "Alliance" },
+                                                                {
+                                                                    any = {
+                                                                        {
+                                                                            any = {
+                                                                                { quest = { id = 4441, state = "activeOrCompleted" } },
+                                                                                {
+                                                                                    all = {
+                                                                                        { faction = "Alliance" },
+                                                                                        {
+                                                                                            any = {
+                                                                                                {
+                                                                                                    any = {
+                                                                                                        { quest = { id = 939, state = "activeOrCompleted" } },
+                                                                                                        { all = { { item = { minCount = 1, name = "Flute of Xavaric" } }, { faction = "Alliance" } } },
+                                                                                                    },
+                                                                                                },
+                                                                                            },
+                                                                                        },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
             id = "alliance-extra-4261-level",
             kind = "note",
-            checkpointQuest = 4261,
-            text = "Reach level 56 before this visit.",
-            conditions = { all = { { faction = "Alliance" } } },
-            complete = { level = { min = 56 } },
-            requiredLevel = 56,
-            excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 4261, state = "activeOrCompleted" } },
-                        {
-                            any = {
-                                { quest = { id = 4261, state = "activeOrCompleted" } },
-                                {
-                                    all = {
-                                        { faction = "Alliance" },
-                                        {
-                                            any = {
-                                                {
-                                                    any = {
-                                                        { quest = { id = 4442, state = "activeOrCompleted" } },
-                                                        {
-                                                            all = {
-                                                                { faction = "Alliance" },
-                                                                {
-                                                                    any = {
-                                                                        {
-                                                                            any = {
-                                                                                { quest = { id = 4441, state = "activeOrCompleted" } },
-                                                                                {
-                                                                                    all = {
-                                                                                        { faction = "Alliance" },
-                                                                                        {
-                                                                                            any = {
-                                                                                                {
-                                                                                                    any = {
-                                                                                                        { quest = { id = 939, state = "activeOrCompleted" } },
-                                                                                                        { all = { { item = { name = "Flute of Xavaric", minCount = 1 } }, { faction = "Alliance" } } },
-                                                                                                    },
-                                                                                                },
-                                                                                            },
-                                                                                        },
-                                                                                    },
-                                                                                },
-                                                                            },
-                                                                        },
-                                                                    },
-                                                                },
-                                                            },
-                                                        },
-                                                    },
-                                                },
-                                            },
-                                        },
-                                    },
-                                },
-                            },
-                        },
-                    },
-                },
-            },
+            requiredLevel = 49,
+            text = "Reach level 49 before this visit.",
         },
         {
-            id = "alliance-extra-4261-accept",
-            kind = "accept",
-            text = "Accept Ancient Spirit from Arei.",
-            conditions = { all = { { faction = "Alliance" }, { level = { min = 49 } } } },
-            route = {
-                { mapID = 1448, x = 0.494, y = 0.14400000000000002, label = "Arei", offMapText = "Travel to Arei in Felwood." },
-            },
             complete = { quest = { id = 4261, state = "activeOrCompleted" } },
-            requiredQuests = { { mode = "any", quests = { 4442 } } },
-            useClientText = false,
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 49 } } } },
             dependsOn = { "alliance-extra-4261-level" },
             excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 4261, state = "activeOrCompleted" } },
-                        {
+                any = {
+                    {
+                        ["not"] = {
                             any = {
                                 { quest = { id = 4261, state = "activeOrCompleted" } },
                                 {
-                                    all = {
-                                        { faction = "Alliance" },
+                                    any = {
+                                        { quest = { id = 4261, state = "activeOrCompleted" } },
                                         {
-                                            any = {
+                                            all = {
+                                                { faction = "Alliance" },
                                                 {
                                                     any = {
-                                                        { quest = { id = 4442, state = "activeOrCompleted" } },
                                                         {
-                                                            all = {
-                                                                { faction = "Alliance" },
+                                                            any = {
+                                                                { quest = { id = 4442, state = "activeOrCompleted" } },
                                                                 {
-                                                                    any = {
+                                                                    all = {
+                                                                        { faction = "Alliance" },
                                                                         {
                                                                             any = {
-                                                                                { quest = { id = 4441, state = "activeOrCompleted" } },
                                                                                 {
-                                                                                    all = {
-                                                                                        { faction = "Alliance" },
+                                                                                    any = {
+                                                                                        { quest = { id = 4441, state = "activeOrCompleted" } },
                                                                                         {
-                                                                                            any = {
+                                                                                            all = {
+                                                                                                { faction = "Alliance" },
                                                                                                 {
                                                                                                     any = {
-                                                                                                        { quest = { id = 939, state = "activeOrCompleted" } },
-                                                                                                        { all = { { item = { name = "Flute of Xavaric", minCount = 1 } }, { faction = "Alliance" } } },
+                                                                                                        {
+                                                                                                            any = {
+                                                                                                                { quest = { id = 939, state = "activeOrCompleted" } },
+                                                                                                                { all = { { item = { minCount = 1, name = "Flute of Xavaric" } }, { faction = "Alliance" } } },
+                                                                                                            },
+                                                                                                        },
+                                                                                                    },
+                                                                                                },
+                                                                                            },
+                                                                                        },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 4261, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 4261, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                { faction = "Alliance" },
+                                                { race = { 1, 3, 4, 7 } },
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 4442, state = "activeOrCompleted" } },
+                                                                {
+                                                                    all = {
+                                                                        { faction = "Alliance" },
+                                                                        { race = { 1, 3, 4, 7 } },
+                                                                        {
+                                                                            any = {
+                                                                                {
+                                                                                    any = {
+                                                                                        { quest = { id = 4441, state = "activeOrCompleted" } },
+                                                                                        {
+                                                                                            all = {
+                                                                                                { faction = "Alliance" },
+                                                                                                { race = { 1, 3, 4, 7 } },
+                                                                                                {
+                                                                                                    any = {
+                                                                                                        {
+                                                                                                            any = {
+                                                                                                                { quest = { id = 939, state = "activeOrCompleted" } },
+                                                                                                                {
+                                                                                                                    all = { { item = { minCount = 1, name = "Flute of Xavaric" } }, { faction = "Alliance" }, { race = { 1, 3, 4, 7 } } },
+                                                                                                                },
+                                                                                                            },
+                                                                                                        },
                                                                                                     },
                                                                                                 },
                                                                                             },
@@ -1920,124 +2077,244 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-extra-4261-accept",
+            kind = "accept",
+            requiredQuests = { { mode = "any", quests = { 4442 } } },
+            route = { { label = "Arei", mapID = 1448, offMapText = "Travel to Arei in Felwood.", x = 0.494, y = 0.144 } },
+            text = "Accept Ancient Spirit from Arei.",
+            useClientText = false,
         },
         {
+            complete = { quest = { id = 4261, state = "complete" } },
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 49 } } } },
+            dependsOn = { "alliance-extra-4261-accept" },
+            excludeWhen = {
+                any = {
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 4261, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 4261, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                { faction = "Alliance" },
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 4442, state = "activeOrCompleted" } },
+                                                                {
+                                                                    all = {
+                                                                        { faction = "Alliance" },
+                                                                        {
+                                                                            any = {
+                                                                                {
+                                                                                    any = {
+                                                                                        { quest = { id = 4441, state = "activeOrCompleted" } },
+                                                                                        {
+                                                                                            all = {
+                                                                                                { faction = "Alliance" },
+                                                                                                {
+                                                                                                    any = {
+                                                                                                        {
+                                                                                                            any = {
+                                                                                                                { quest = { id = 939, state = "activeOrCompleted" } },
+                                                                                                                { all = { { item = { minCount = 1, name = "Flute of Xavaric" } }, { faction = "Alliance" } } },
+                                                                                                            },
+                                                                                                        },
+                                                                                                    },
+                                                                                                },
+                                                                                            },
+                                                                                        },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 4261, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 4261, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                { faction = "Alliance" },
+                                                { race = { 1, 3, 4, 7 } },
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 4442, state = "activeOrCompleted" } },
+                                                                {
+                                                                    all = {
+                                                                        { faction = "Alliance" },
+                                                                        { race = { 1, 3, 4, 7 } },
+                                                                        {
+                                                                            any = {
+                                                                                {
+                                                                                    any = {
+                                                                                        { quest = { id = 4441, state = "activeOrCompleted" } },
+                                                                                        {
+                                                                                            all = {
+                                                                                                { faction = "Alliance" },
+                                                                                                { race = { 1, 3, 4, 7 } },
+                                                                                                {
+                                                                                                    any = {
+                                                                                                        {
+                                                                                                            any = {
+                                                                                                                { quest = { id = 939, state = "activeOrCompleted" } },
+                                                                                                                {
+                                                                                                                    all = { { item = { minCount = 1, name = "Flute of Xavaric" } }, { faction = "Alliance" }, { race = { 1, 3, 4, 7 } } },
+                                                                                                                },
+                                                                                                            },
+                                                                                                        },
+                                                                                                    },
+                                                                                                },
+                                                                                            },
+                                                                                        },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
             id = "alliance-extra-4261-objective",
             kind = "objective",
-            text = "Escort Arei to safety. Follow the quest log for the destination.",
-            conditions = { all = { { faction = "Alliance" }, { level = { min = 49 } } } },
-            route = {},
-            complete = { quest = { id = 4261, state = "complete" } },
             requiredQuests = { { mode = "any", quests = { 4442 } } },
-            useClientText = false,
-            dependsOn = { "alliance-extra-4261-accept" },
+            route = {},
+            text = "Escort Arei to safety. Follow the quest log for the destination.",
             useClientPin = true,
-            excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 4261, state = "activeOrCompleted" } },
-                        {
-                            any = {
-                                { quest = { id = 4261, state = "activeOrCompleted" } },
-                                {
-                                    all = {
-                                        { faction = "Alliance" },
-                                        {
-                                            any = {
-                                                {
-                                                    any = {
-                                                        { quest = { id = 4442, state = "activeOrCompleted" } },
-                                                        {
-                                                            all = {
-                                                                { faction = "Alliance" },
-                                                                {
-                                                                    any = {
-                                                                        {
-                                                                            any = {
-                                                                                { quest = { id = 4441, state = "activeOrCompleted" } },
-                                                                                {
-                                                                                    all = {
-                                                                                        { faction = "Alliance" },
-                                                                                        {
-                                                                                            any = {
-                                                                                                {
-                                                                                                    any = {
-                                                                                                        { quest = { id = 939, state = "activeOrCompleted" } },
-                                                                                                        { all = { { item = { name = "Flute of Xavaric", minCount = 1 } }, { faction = "Alliance" } } },
-                                                                                                    },
-                                                                                                },
-                                                                                            },
-                                                                                        },
-                                                                                    },
-                                                                                },
-                                                                            },
-                                                                        },
-                                                                    },
-                                                                },
-                                                            },
-                                                        },
-                                                    },
-                                                },
-                                            },
-                                        },
-                                    },
-                                },
-                            },
-                        },
-                    },
-                },
-            },
+            useClientText = false,
         },
         {
-            id = "alliance-extra-4261-turnin",
-            kind = "turnin",
-            text = "Turn in Ancient Spirit to Kayneth Stillwind.",
-            conditions = { all = { { faction = "Alliance" }, { level = { min = 49 } } } },
-            route = {
-                {
-                    mapID = 1440,
-                    x = 0.852,
-                    y = 0.446,
-                    label = "Kayneth Stillwind",
-                    offMapText = "Travel to Kayneth Stillwind in Ashenvale.",
-                },
-            },
             complete = { quest = { id = 4261, state = "completed" } },
-            requiredQuests = { { mode = "any", quests = { 4442 } } },
-            useClientText = false,
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 49 } } } },
             dependsOn = { "alliance-extra-4261-objective" },
             excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 4261, state = "activeOrCompleted" } },
-                        {
+                any = {
+                    {
+                        ["not"] = {
                             any = {
                                 { quest = { id = 4261, state = "activeOrCompleted" } },
                                 {
-                                    all = {
-                                        { faction = "Alliance" },
+                                    any = {
+                                        { quest = { id = 4261, state = "activeOrCompleted" } },
                                         {
-                                            any = {
+                                            all = {
+                                                { faction = "Alliance" },
                                                 {
                                                     any = {
-                                                        { quest = { id = 4442, state = "activeOrCompleted" } },
                                                         {
-                                                            all = {
-                                                                { faction = "Alliance" },
+                                                            any = {
+                                                                { quest = { id = 4442, state = "activeOrCompleted" } },
                                                                 {
-                                                                    any = {
+                                                                    all = {
+                                                                        { faction = "Alliance" },
                                                                         {
                                                                             any = {
-                                                                                { quest = { id = 4441, state = "activeOrCompleted" } },
                                                                                 {
-                                                                                    all = {
-                                                                                        { faction = "Alliance" },
+                                                                                    any = {
+                                                                                        { quest = { id = 4441, state = "activeOrCompleted" } },
                                                                                         {
-                                                                                            any = {
+                                                                                            all = {
+                                                                                                { faction = "Alliance" },
                                                                                                 {
                                                                                                     any = {
-                                                                                                        { quest = { id = 939, state = "activeOrCompleted" } },
-                                                                                                        { all = { { item = { name = "Flute of Xavaric", minCount = 1 } }, { faction = "Alliance" } } },
+                                                                                                        {
+                                                                                                            any = {
+                                                                                                                { quest = { id = 939, state = "activeOrCompleted" } },
+                                                                                                                { all = { { item = { minCount = 1, name = "Flute of Xavaric" } }, { faction = "Alliance" } } },
+                                                                                                            },
+                                                                                                        },
+                                                                                                    },
+                                                                                                },
+                                                                                            },
+                                                                                        },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 4261, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 4261, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                { faction = "Alliance" },
+                                                { race = { 1, 3, 4, 7 } },
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 4442, state = "activeOrCompleted" } },
+                                                                {
+                                                                    all = {
+                                                                        { faction = "Alliance" },
+                                                                        { race = { 1, 3, 4, 7 } },
+                                                                        {
+                                                                            any = {
+                                                                                {
+                                                                                    any = {
+                                                                                        { quest = { id = 4441, state = "activeOrCompleted" } },
+                                                                                        {
+                                                                                            all = {
+                                                                                                { faction = "Alliance" },
+                                                                                                { race = { 1, 3, 4, 7 } },
+                                                                                                {
+                                                                                                    any = {
+                                                                                                        {
+                                                                                                            any = {
+                                                                                                                { quest = { id = 939, state = "activeOrCompleted" } },
+                                                                                                                {
+                                                                                                                    all = { { item = { minCount = 1, name = "Flute of Xavaric" } }, { faction = "Alliance" }, { race = { 1, 3, 4, 7 } } },
+                                                                                                                },
+                                                                                                            },
+                                                                                                        },
                                                                                                     },
                                                                                                 },
                                                                                             },
@@ -2061,6 +2338,22 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-extra-4261-turnin",
+            kind = "turnin",
+            requiredQuests = { { mode = "any", quests = { 4442 } } },
+            route = {
+                {
+                    label = "Kayneth Stillwind",
+                    mapID = 1440,
+                    offMapText = "Travel to Kayneth Stillwind in Ashenvale.",
+                    x = 0.852,
+                    y = 0.446,
+                },
+            },
+            text = "Turn in Ancient Spirit to Kayneth Stillwind.",
+            useClientPin = true,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 5882, state = "activeOrCompleted" } },
@@ -2150,13 +2443,13 @@ ns:RegisterGuide({
                     y = 0.555,
                 },
             },
+            sourceActionID = "turnin-5202-a-strange-red-key",
+            sourceGuide = "leveling-era-alliance-winterspring-and-felwood",
             sourceStep = 14,
             text = "Turn in A Strange Red Key to Captured Arko'narin.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-winterspring-and-felwood",
-            sourceActionID = "turnin-5202-a-strange-red-key",
         },
         {
             complete = { quest = { id = 8461, state = "activeOrCompleted" } },
@@ -2238,13 +2531,13 @@ ns:RegisterGuide({
             kind = "turnin",
             requiredQuests = {},
             route = { { label = "Nafien", mapID = 1448, offMapText = "Travel to Nafien in Felwood.", x = 0.6477, y = 0.0813 } },
+            sourceActionID = "turnin-8461-deadwood-of-the-north",
+            sourceGuide = "leveling-era-alliance-winterspring-and-felwood",
             sourceStep = 18,
             text = "Turn in Deadwood of the North to Nafien.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-winterspring-and-felwood",
-            sourceActionID = "turnin-8461-deadwood-of-the-north",
         },
         {
             complete = { quest = { id = 8465, state = "activeOrCompleted" } },
@@ -2278,17 +2571,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 8465, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 45 } } } },
             dependsOn = { "alliance-leveling-era-alliance-winterspring-and-felwood-accept-8465-speak-to-salfa" },
-            id = "alliance-leveling-era-alliance-winterspring-and-felwood-turnin-8465-speak-to-salfa",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 8461 } } },
-            route = { { label = "Salfa", mapID = 1452, offMapText = "Travel to Salfa in Winterspring.", x = 0.2774, y = 0.345 } },
-            sourceStep = 19,
-            text = "Turn in Speak to Salfa to Salfa.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-winterspring-and-felwood",
-            sourceActionID = "turnin-8465-speak-to-salfa",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -2302,6 +2584,17 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-winterspring-and-felwood-turnin-8465-speak-to-salfa",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 8461 } } },
+            route = { { label = "Salfa", mapID = 1452, offMapText = "Travel to Salfa in Winterspring.", x = 0.2774, y = 0.345 } },
+            sourceActionID = "turnin-8465-speak-to-salfa",
+            sourceGuide = "leveling-era-alliance-winterspring-and-felwood",
+            sourceStep = 19,
+            text = "Turn in Speak to Salfa to Salfa.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { questObjective = { count = 1, id = 5165, index = 1 } },
@@ -2589,19 +2882,6 @@ ns:RegisterGuide({
                 "alliance-leveling-era-alliance-winterspring-and-felwood-objective-5165-3-authored-Brazier-of-Suffering",
                 "alliance-leveling-era-alliance-winterspring-and-felwood-objective-5165-2-authored-Brazier-of-Malice",
             },
-            id = "alliance-leveling-era-alliance-winterspring-and-felwood-turnin-5165-dousing-the-flames-of-protection",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 5159 } } },
-            route = {
-                { label = "Greta Mosshoof", mapID = 1448, offMapText = "Travel to Greta Mosshoof in Felwood.", x = 0.5121, y = 0.8211 },
-            },
-            sourceStep = 36,
-            text = "Turn in Dousing the Flames of Protection to Greta Mosshoof.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-winterspring-and-felwood",
-            sourceActionID = "turnin-5165-dousing-the-flames-of-protection",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -2654,6 +2934,34 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-winterspring-and-felwood-turnin-5165-dousing-the-flames-of-protection",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 5159 } } },
+            route = {
+                { label = "Greta Mosshoof", mapID = 1448, offMapText = "Travel to Greta Mosshoof in Felwood.", x = 0.5121, y = 0.8211 },
+            },
+            sourceActionID = "turnin-5165-dousing-the-flames-of-protection",
+            sourceGuide = "leveling-era-alliance-winterspring-and-felwood",
+            sourceStep = 36,
+            text = "Turn in Dousing the Flames of Protection to Greta Mosshoof.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
+        },
+        {
+            complete = { quest = { id = 8464, state = "activeOrCompleted" } },
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 45 } } } },
+            dependsOn = {},
+            id = "alliance-leveling-era-alliance-winterspring-and-felwood-accept-8464-winterfall-activity",
+            kind = "accept",
+            requiredQuests = {},
+            route = { { label = "Salfa", mapID = 1452, offMapText = "Travel to Salfa in Winterspring.", x = 0.2774, y = 0.345 } },
+            sourceActionID = "accept-8464-winterfall-activity",
+            sourceGuide = "leveling-era-alliance-winterspring-and-felwood",
+            sourceStep = 62,
+            text = "Accept Winterfall Activity from Salfa.",
+            useClientPin = false,
+            useClientText = false,
         },
         {
             complete = {
@@ -2746,142 +3054,310 @@ ns:RegisterGuide({
             kind = "turnin",
             requiredQuests = {},
             route = { { label = "Kernda", mapID = 1448, offMapText = "Travel to Kernda in Felwood.", x = 0.6549, y = 0.0348 } },
+            sourceActionID = "turnin-8470-deadwood-ritual-totem",
+            sourceGuide = "leveling-era-alliance-winterspring-and-felwood",
             sourceStep = 69,
             text = "Turn in Deadwood Ritual Totem to Kernda.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-winterspring-and-felwood",
-            sourceActionID = "turnin-8470-deadwood-ritual-totem",
         },
         {
+            complete = { questObjective = { id = 4512, index = 1, text = "Filled Cursed Ooze Jar" } },
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 48 } }, { race = { 1, 3, 4, 7, 95 } } } },
+            dependsOn = {},
+            id = "alliance-leveling-era-alliance-winterspring-and-felwood-objective-4512-1-filled-cursed-ooze-jar",
+            kind = "objective",
+            requiredQuests = {},
+            route = {
+                {
+                    label = "Filled Cursed Ooze Jar",
+                    mapID = 1457,
+                    offMapText = "Travel to Filled Cursed Ooze Jar.",
+                    x = 0.396,
+                    y = 0.4199,
+                },
+            },
+            sourceActionID = "objective-4512-1-filled-cursed-ooze-jar",
+            sourceGuide = "leveling-era-alliance-winterspring-and-felwood",
+            text = "Collect 6 Filled Cursed Ooze Jar.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
+        },
+        {
+            complete = { level = { min = 56 } },
+            conditions = { all = { { faction = "Alliance" } } },
+            excludeWhen = { ["not"] = { all = { { faction = "Alliance" } } } },
+            id = "visit-entry-leveling-era-alliance-burning-steppes",
+            kind = "note",
+            requiredLevel = 56,
+            text = "Reach level 56 before the Burning Steppes visit.",
+            visitSourceGuide = "leveling-era-alliance-burning-steppes",
+        },
+        {
+            complete = { quest = { id = 4512, state = "complete" } },
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 48 } }, { race = { 1, 3, 4, 7, 95 } } } },
+            dependsOn = {},
+            id = "alliance-leveling-era-alliance-burning-steppes-objective-4512-quest-work",
+            kind = "objective",
+            requiredQuests = {},
+            route = {
+                {
+                    label = "Filled Cursed Ooze Jar",
+                    mapID = 1448,
+                    offMapText = "Travel to Filled Cursed Ooze Jar.",
+                    x = 0.416,
+                    y = 0.716,
+                },
+            },
+            sourceActionID = "objective-4512-quest-work",
+            sourceGuide = "leveling-era-alliance-burning-steppes",
+            sourceStep = 9,
+            text = "For A Little Slime Goes a Long Way: Bring 6 Filled Cursed Ooze Jars and 6 Filled Tainted Ooze Jars to Laris Geardawdle in Ironforge.",
+            useClientPin = false,
+            useClientText = false,
+        },
+        {
+            complete = { quest = { id = 4512, state = "completed" } },
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 48 } }, { race = { 1, 3, 4, 7, 95 } } } },
+            dependsOn = {
+                "alliance-leveling-era-alliance-burning-steppes-objective-4512-quest-work",
+                "alliance-leveling-era-alliance-azshara-and-felwood-objective-4512-1-cursed-ooze",
+                "alliance-leveling-era-alliance-azshara-and-felwood-objective-4512-2-tainted-ooze",
+                "alliance-leveling-era-alliance-winterspring-and-felwood-objective-4512-1-filled-cursed-ooze-jar",
+            },
+            id = "alliance-leveling-era-alliance-burning-steppes-turnin-4512-a-little-slime-goes-a-long-way",
+            kind = "turnin",
+            requiredQuests = {},
+            route = {
+                {
+                    label = "Laris Geardawdle",
+                    mapID = 1455,
+                    offMapText = "Travel to Laris Geardawdle in Ironforge.",
+                    x = 0.7577,
+                    y = 0.2337,
+                },
+            },
+            sourceActionID = "turnin-4512-a-little-slime-goes-a-long-way",
+            sourceGuide = "leveling-era-alliance-burning-steppes",
+            sourceStep = 9,
+            text = "Turn in A Little Slime Goes a Long Way to Laris Geardawdle.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
+        },
+        {
+            complete = { level = { min = 58 } },
+            conditions = { all = { { faction = "Alliance" } } },
+            excludeWhen = { ["not"] = { all = { { faction = "Alliance" } } } },
+            id = "visit-entry-leveling-era-alliance-winterspring",
+            kind = "note",
+            requiredLevel = 58,
+            text = "Reach level 58 before the Winterspring visit.",
+            visitSourceGuide = "leveling-era-alliance-winterspring",
+        },
+        {
+            complete = { questObjective = { count = 8, id = 8464, index = 1, text = "Winterfall Shaman" } },
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 45 } } } },
+            dependsOn = {},
+            id = "alliance-leveling-era-alliance-winterspring-objective-8464-1-winterfall-shaman",
+            kind = "objective",
+            requiredQuests = {},
+            route = {
+                { label = "Winterfall Shaman", mapID = 1452, offMapText = "Travel to Winterfall Shaman.", x = 0.678, y = 0.378 },
+            },
+            sourceActionID = "objective-8464-1-winterfall-shaman",
+            sourceGuide = "leveling-era-alliance-winterspring",
+            sourceStep = 13,
+            text = "Kill 8 Winterfall Shaman.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
+        },
+        {
+            checkpointQuest = 5242,
+            complete = { level = { min = 48 } },
+            conditions = { all = { { faction = "Alliance" } } },
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 5242, state = "activeOrCompleted" } },
+                        {
+                            any = {
+                                { quest = { id = 5242, state = "activeOrCompleted" } },
+                                {
+                                    all = {
+                                        {
+                                            any = {
+                                                {
+                                                    any = {
+                                                        { quest = { id = 5165, state = "activeOrCompleted" } },
+                                                        {
+                                                            all = {
+                                                                {
+                                                                    any = {
+                                                                        {
+                                                                            any = {
+                                                                                { quest = { id = 5159, state = "activeOrCompleted" } },
+                                                                                {
+                                                                                    all = {
+                                                                                        {
+                                                                                            any = {
+                                                                                                {
+                                                                                                    any = {
+                                                                                                        { quest = { id = 5158, state = "activeOrCompleted" } },
+                                                                                                        {
+                                                                                                            all = {
+                                                                                                                {
+                                                                                                                    any = {
+                                                                                                                        {
+                                                                                                                            any = {
+                                                                                                                                { quest = { id = 5157, state = "activeOrCompleted" } },
+                                                                                                                                { all = { { any = { { any = { { quest = { id = 5155, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                                                                                            },
+                                                                                                                        },
+                                                                                                                    },
+                                                                                                                },
+                                                                                                            },
+                                                                                                        },
+                                                                                                    },
+                                                                                                },
+                                                                                            },
+                                                                                        },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
             id = "alliance-extra-5242-level",
             kind = "note",
-            checkpointQuest = 5242,
-            text = "Reach level 58 before this visit.",
-            conditions = { all = { { faction = "Alliance" } } },
-            complete = { level = { min = 58 } },
-            requiredLevel = 58,
-            excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 5242, state = "activeOrCompleted" } },
-                        {
-                            any = {
-                                { quest = { id = 5242, state = "activeOrCompleted" } },
-                                {
-                                    all = {
-                                        {
-                                            any = {
-                                                {
-                                                    any = {
-                                                        { quest = { id = 5165, state = "activeOrCompleted" } },
-                                                        {
-                                                            all = {
-                                                                {
-                                                                    any = {
-                                                                        {
-                                                                            any = {
-                                                                                { quest = { id = 5159, state = "activeOrCompleted" } },
-                                                                                {
-                                                                                    all = {
-                                                                                        {
-                                                                                            any = {
-                                                                                                {
-                                                                                                    any = {
-                                                                                                        { quest = { id = 5158, state = "activeOrCompleted" } },
-                                                                                                        {
-                                                                                                            all = {
-                                                                                                                {
-                                                                                                                    any = {
-                                                                                                                        {
-                                                                                                                            any = {
-                                                                                                                                { quest = { id = 5157, state = "activeOrCompleted" } },
-                                                                                                                                { all = { { any = { { any = { { quest = { id = 5155, state = "activeOrCompleted" } }, { all = {} } } } } } } },
-                                                                                                                            },
-                                                                                                                        },
-                                                                                                                    },
-                                                                                                                },
-                                                                                                            },
-                                                                                                        },
-                                                                                                    },
-                                                                                                },
-                                                                                            },
-                                                                                        },
-                                                                                    },
-                                                                                },
-                                                                            },
-                                                                        },
-                                                                    },
-                                                                },
-                                                            },
-                                                        },
-                                                    },
-                                                },
-                                            },
-                                        },
-                                    },
-                                },
-                            },
-                        },
-                    },
-                },
-            },
+            requiredLevel = 48,
+            text = "Reach level 48 before this visit.",
         },
         {
-            id = "alliance-extra-5242-accept",
-            kind = "accept",
-            text = "Accept A Final Blow from Greta Mosshoof.",
-            conditions = { all = { { faction = "Alliance" }, { level = { min = 48 } } } },
-            route = {
-                {
-                    mapID = 1448,
-                    x = 0.512,
-                    y = 0.8220000000000001,
-                    label = "Greta Mosshoof",
-                    offMapText = "Travel to Greta Mosshoof in Felwood.",
-                },
-            },
             complete = { quest = { id = 5242, state = "activeOrCompleted" } },
-            requiredQuests = { { mode = "any", quests = { 5165 } } },
-            useClientText = false,
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 48 } } } },
             dependsOn = { "alliance-extra-5242-level" },
             excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 5242, state = "activeOrCompleted" } },
-                        {
+                any = {
+                    {
+                        ["not"] = {
                             any = {
                                 { quest = { id = 5242, state = "activeOrCompleted" } },
                                 {
-                                    all = {
+                                    any = {
+                                        { quest = { id = 5242, state = "activeOrCompleted" } },
                                         {
-                                            any = {
+                                            all = {
                                                 {
                                                     any = {
-                                                        { quest = { id = 5165, state = "activeOrCompleted" } },
                                                         {
-                                                            all = {
+                                                            any = {
+                                                                { quest = { id = 5165, state = "activeOrCompleted" } },
                                                                 {
-                                                                    any = {
+                                                                    all = {
                                                                         {
                                                                             any = {
-                                                                                { quest = { id = 5159, state = "activeOrCompleted" } },
                                                                                 {
-                                                                                    all = {
+                                                                                    any = {
+                                                                                        { quest = { id = 5159, state = "activeOrCompleted" } },
                                                                                         {
-                                                                                            any = {
+                                                                                            all = {
                                                                                                 {
                                                                                                     any = {
-                                                                                                        { quest = { id = 5158, state = "activeOrCompleted" } },
                                                                                                         {
-                                                                                                            all = {
+                                                                                                            any = {
+                                                                                                                { quest = { id = 5158, state = "activeOrCompleted" } },
                                                                                                                 {
-                                                                                                                    any = {
+                                                                                                                    all = {
                                                                                                                         {
                                                                                                                             any = {
-                                                                                                                                { quest = { id = 5157, state = "activeOrCompleted" } },
-                                                                                                                                { all = { { any = { { any = { { quest = { id = 5155, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                                                                                                {
+                                                                                                                                    any = {
+                                                                                                                                        { quest = { id = 5157, state = "activeOrCompleted" } },
+                                                                                                                                        { all = { { any = { { any = { { quest = { id = 5155, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                                                                                                    },
+                                                                                                                                },
+                                                                                                                            },
+                                                                                                                        },
+                                                                                                                    },
+                                                                                                                },
+                                                                                                            },
+                                                                                                        },
+                                                                                                    },
+                                                                                                },
+                                                                                            },
+                                                                                        },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 5242, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 5242, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 5165, state = "activeOrCompleted" } },
+                                                                {
+                                                                    all = {
+                                                                        {
+                                                                            any = {
+                                                                                {
+                                                                                    any = {
+                                                                                        { quest = { id = 5159, state = "activeOrCompleted" } },
+                                                                                        {
+                                                                                            all = {
+                                                                                                {
+                                                                                                    any = {
+                                                                                                        {
+                                                                                                            any = {
+                                                                                                                { quest = { id = 5158, state = "activeOrCompleted" } },
+                                                                                                                {
+                                                                                                                    all = {
+                                                                                                                        {
+                                                                                                                            any = {
+                                                                                                                                {
+                                                                                                                                    any = {
+                                                                                                                                        { quest = { id = 5157, state = "activeOrCompleted" } },
+                                                                                                                                        { all = { { any = { { any = { { quest = { id = 5155, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                                                                                                    },
+                                                                                                                                },
                                                                                                                             },
                                                                                                                         },
                                                                                                                     },
@@ -2911,61 +3387,124 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-extra-5242-accept",
+            kind = "accept",
+            requiredQuests = { { mode = "any", quests = { 5165 } } },
+            route = {
+                { label = "Greta Mosshoof", mapID = 1448, offMapText = "Travel to Greta Mosshoof in Felwood.", x = 0.512, y = 0.822 },
+            },
+            text = "Accept A Final Blow from Greta Mosshoof.",
+            useClientText = false,
         },
         {
-            id = "alliance-extra-5242-objective",
-            kind = "objective",
-            text = "Kill Moora and Salia. Kill Shadow Lord Fel'dan and loot his head.",
-            conditions = { all = { { faction = "Alliance" }, { level = { min = 48 } } } },
-            route = {
-                {
-                    mapID = 1448,
-                    x = 0.38799999999999996,
-                    y = 0.46799999999999997,
-                    label = "Salia",
-                    offMapText = "Travel to Salia in Felwood.",
-                },
-            },
             complete = { quest = { id = 5242, state = "complete" } },
-            requiredQuests = { { mode = "any", quests = { 5165 } } },
-            useClientText = false,
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 48 } } } },
             dependsOn = { "alliance-extra-5242-accept" },
             excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 5242, state = "activeOrCompleted" } },
-                        {
+                any = {
+                    {
+                        ["not"] = {
                             any = {
                                 { quest = { id = 5242, state = "activeOrCompleted" } },
                                 {
-                                    all = {
+                                    any = {
+                                        { quest = { id = 5242, state = "activeOrCompleted" } },
                                         {
-                                            any = {
+                                            all = {
                                                 {
                                                     any = {
-                                                        { quest = { id = 5165, state = "activeOrCompleted" } },
                                                         {
-                                                            all = {
+                                                            any = {
+                                                                { quest = { id = 5165, state = "activeOrCompleted" } },
                                                                 {
-                                                                    any = {
+                                                                    all = {
                                                                         {
                                                                             any = {
-                                                                                { quest = { id = 5159, state = "activeOrCompleted" } },
                                                                                 {
-                                                                                    all = {
+                                                                                    any = {
+                                                                                        { quest = { id = 5159, state = "activeOrCompleted" } },
                                                                                         {
-                                                                                            any = {
+                                                                                            all = {
                                                                                                 {
                                                                                                     any = {
-                                                                                                        { quest = { id = 5158, state = "activeOrCompleted" } },
                                                                                                         {
-                                                                                                            all = {
+                                                                                                            any = {
+                                                                                                                { quest = { id = 5158, state = "activeOrCompleted" } },
                                                                                                                 {
-                                                                                                                    any = {
+                                                                                                                    all = {
                                                                                                                         {
                                                                                                                             any = {
-                                                                                                                                { quest = { id = 5157, state = "activeOrCompleted" } },
-                                                                                                                                { all = { { any = { { any = { { quest = { id = 5155, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                                                                                                {
+                                                                                                                                    any = {
+                                                                                                                                        { quest = { id = 5157, state = "activeOrCompleted" } },
+                                                                                                                                        { all = { { any = { { any = { { quest = { id = 5155, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                                                                                                    },
+                                                                                                                                },
+                                                                                                                            },
+                                                                                                                        },
+                                                                                                                    },
+                                                                                                                },
+                                                                                                            },
+                                                                                                        },
+                                                                                                    },
+                                                                                                },
+                                                                                            },
+                                                                                        },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 5242, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 5242, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 5165, state = "activeOrCompleted" } },
+                                                                {
+                                                                    all = {
+                                                                        {
+                                                                            any = {
+                                                                                {
+                                                                                    any = {
+                                                                                        { quest = { id = 5159, state = "activeOrCompleted" } },
+                                                                                        {
+                                                                                            all = {
+                                                                                                {
+                                                                                                    any = {
+                                                                                                        {
+                                                                                                            any = {
+                                                                                                                { quest = { id = 5158, state = "activeOrCompleted" } },
+                                                                                                                {
+                                                                                                                    all = {
+                                                                                                                        {
+                                                                                                                            any = {
+                                                                                                                                {
+                                                                                                                                    any = {
+                                                                                                                                        { quest = { id = 5157, state = "activeOrCompleted" } },
+                                                                                                                                        { all = { { any = { { any = { { quest = { id = 5155, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                                                                                                    },
+                                                                                                                                },
                                                                                                                             },
                                                                                                                         },
                                                                                                                     },
@@ -2995,61 +3534,123 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-extra-5242-objective",
+            kind = "objective",
+            requiredQuests = { { mode = "any", quests = { 5165 } } },
+            route = { { label = "Salia", mapID = 1448, offMapText = "Travel to Salia in Felwood.", x = 0.388, y = 0.468 } },
+            text = "Kill Moora and Salia. Kill Shadow Lord Fel'dan and loot his head.",
+            useClientPin = true,
+            useClientText = false,
         },
         {
-            id = "alliance-extra-5242-turnin",
-            kind = "turnin",
-            text = "Turn in A Final Blow to Greta Mosshoof.",
-            conditions = { all = { { faction = "Alliance" }, { level = { min = 48 } } } },
-            route = {
-                {
-                    mapID = 1448,
-                    x = 0.512,
-                    y = 0.8220000000000001,
-                    label = "Greta Mosshoof",
-                    offMapText = "Travel to Greta Mosshoof in Felwood.",
-                },
-            },
             complete = { quest = { id = 5242, state = "completed" } },
-            requiredQuests = { { mode = "any", quests = { 5165 } } },
-            useClientText = false,
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 48 } } } },
             dependsOn = { "alliance-extra-5242-objective" },
             excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 5242, state = "activeOrCompleted" } },
-                        {
+                any = {
+                    {
+                        ["not"] = {
                             any = {
                                 { quest = { id = 5242, state = "activeOrCompleted" } },
                                 {
-                                    all = {
+                                    any = {
+                                        { quest = { id = 5242, state = "activeOrCompleted" } },
                                         {
-                                            any = {
+                                            all = {
                                                 {
                                                     any = {
-                                                        { quest = { id = 5165, state = "activeOrCompleted" } },
                                                         {
-                                                            all = {
+                                                            any = {
+                                                                { quest = { id = 5165, state = "activeOrCompleted" } },
                                                                 {
-                                                                    any = {
+                                                                    all = {
                                                                         {
                                                                             any = {
-                                                                                { quest = { id = 5159, state = "activeOrCompleted" } },
                                                                                 {
-                                                                                    all = {
+                                                                                    any = {
+                                                                                        { quest = { id = 5159, state = "activeOrCompleted" } },
                                                                                         {
-                                                                                            any = {
+                                                                                            all = {
                                                                                                 {
                                                                                                     any = {
-                                                                                                        { quest = { id = 5158, state = "activeOrCompleted" } },
                                                                                                         {
-                                                                                                            all = {
+                                                                                                            any = {
+                                                                                                                { quest = { id = 5158, state = "activeOrCompleted" } },
                                                                                                                 {
-                                                                                                                    any = {
+                                                                                                                    all = {
                                                                                                                         {
                                                                                                                             any = {
-                                                                                                                                { quest = { id = 5157, state = "activeOrCompleted" } },
-                                                                                                                                { all = { { any = { { any = { { quest = { id = 5155, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                                                                                                {
+                                                                                                                                    any = {
+                                                                                                                                        { quest = { id = 5157, state = "activeOrCompleted" } },
+                                                                                                                                        { all = { { any = { { any = { { quest = { id = 5155, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                                                                                                    },
+                                                                                                                                },
+                                                                                                                            },
+                                                                                                                        },
+                                                                                                                    },
+                                                                                                                },
+                                                                                                            },
+                                                                                                        },
+                                                                                                    },
+                                                                                                },
+                                                                                            },
+                                                                                        },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 5242, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 5242, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 5165, state = "activeOrCompleted" } },
+                                                                {
+                                                                    all = {
+                                                                        {
+                                                                            any = {
+                                                                                {
+                                                                                    any = {
+                                                                                        { quest = { id = 5159, state = "activeOrCompleted" } },
+                                                                                        {
+                                                                                            all = {
+                                                                                                {
+                                                                                                    any = {
+                                                                                                        {
+                                                                                                            any = {
+                                                                                                                { quest = { id = 5158, state = "activeOrCompleted" } },
+                                                                                                                {
+                                                                                                                    all = {
+                                                                                                                        {
+                                                                                                                            any = {
+                                                                                                                                {
+                                                                                                                                    any = {
+                                                                                                                                        { quest = { id = 5157, state = "activeOrCompleted" } },
+                                                                                                                                        { all = { { any = { { any = { { quest = { id = 5155, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                                                                                                    },
+                                                                                                                                },
                                                                                                                             },
                                                                                                                         },
                                                                                                                     },
@@ -3079,6 +3680,76 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-extra-5242-turnin",
+            kind = "turnin",
+            requiredQuests = { { mode = "any", quests = { 5165 } } },
+            route = {
+                { label = "Greta Mosshoof", mapID = 1448, offMapText = "Travel to Greta Mosshoof in Felwood.", x = 0.512, y = 0.822 },
+            },
+            text = "Turn in A Final Blow to Greta Mosshoof.",
+            useClientPin = true,
+            useClientText = false,
+            useQuestNavigation = true,
+        },
+        {
+            complete = { questObjective = { count = 8, id = 8464, index = 2, text = "Winterfall Den Watcher" } },
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 45 } } } },
+            dependsOn = {},
+            id = "alliance-leveling-era-alliance-winterspring-objective-8464-2-winterfall-den-watcher",
+            kind = "objective",
+            requiredQuests = {},
+            route = {
+                {
+                    label = "Winterfall Den Watcher",
+                    mapID = 1452,
+                    offMapText = "Travel to Winterfall Den Watcher.",
+                    x = 0.678,
+                    y = 0.378,
+                },
+            },
+            sourceActionID = "objective-8464-2-winterfall-den-watcher",
+            sourceGuide = "leveling-era-alliance-winterspring",
+            sourceStep = 13,
+            text = "Kill 8 Winterfall Den Watcher.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
+        },
+        {
+            complete = { questObjective = { count = 8, id = 8464, index = 3, text = "Winterfall Ursa" } },
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 45 } } } },
+            dependsOn = {},
+            id = "alliance-leveling-era-alliance-winterspring-objective-8464-3-winterfall-ursa",
+            kind = "objective",
+            requiredQuests = {},
+            route = { { label = "Winterfall Ursa", mapID = 1452, offMapText = "Travel to Winterfall Ursa.", x = 0.678, y = 0.378 } },
+            sourceActionID = "objective-8464-3-winterfall-ursa",
+            sourceGuide = "leveling-era-alliance-winterspring",
+            sourceStep = 13,
+            text = "Kill 8 Winterfall Ursa.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
+        },
+        {
+            complete = { quest = { id = 8464, state = "completed" } },
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 45 } } } },
+            dependsOn = {
+                "alliance-leveling-era-alliance-winterspring-objective-8464-1-winterfall-shaman",
+                "alliance-leveling-era-alliance-winterspring-objective-8464-2-winterfall-den-watcher",
+                "alliance-leveling-era-alliance-winterspring-objective-8464-3-winterfall-ursa",
+            },
+            id = "alliance-leveling-era-alliance-winterspring-turnin-8464-winterfall-activity",
+            kind = "turnin",
+            requiredQuests = {},
+            route = { { label = "Salfa", mapID = 1452, offMapText = "Travel to Salfa in Winterspring.", x = 0.2774, y = 0.345 } },
+            sourceActionID = "turnin-8464-winterfall-activity",
+            sourceGuide = "leveling-era-alliance-winterspring",
+            sourceStep = 19,
+            text = "Turn in Winterfall Activity to Salfa.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             id = "alliance-extra-5249-objective",
@@ -3095,25 +3766,27 @@ ns:RegisterGuide({
             useClientPin = true,
         },
         {
+            alternativeQuests = { 5244 },
+            complete = { quest = { id = 5249, state = "completed" } },
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 53 } } } },
+            dependsOn = { "alliance-extra-5249-objective" },
+            excludeWhen = { any = { { quest = { id = 5250, state = "activeOrCompleted" } } } },
             id = "alliance-extra-5249-turnin",
             kind = "turnin",
-            text = "Turn in To Winterspring! to Wynd Nightchaser.",
-            conditions = { all = { { faction = "Alliance" }, { level = { min = 53 } } } },
+            requiredQuests = {},
             route = {
                 {
+                    label = "Wynd Nightchaser",
                     mapID = 1452,
+                    offMapText = "Travel to Wynd Nightchaser in Winterspring.",
                     x = 0.52,
                     y = 0.302,
-                    label = "Wynd Nightchaser",
-                    offMapText = "Travel to Wynd Nightchaser in Winterspring.",
                 },
             },
-            complete = { quest = { id = 5249, state = "completed" } },
-            requiredQuests = {},
+            text = "Turn in To Winterspring! to Wynd Nightchaser.",
+            useClientPin = true,
             useClientText = false,
-            excludeWhen = { any = { { quest = { id = 5250, state = "activeOrCompleted" } } } },
-            alternativeQuests = { 5244 },
-            dependsOn = { "alliance-extra-5249-objective" },
+            useQuestNavigation = true,
         },
         {
             id = "visit-entry-leveling-era-horde-felwood-and-winterspring",
@@ -3262,13 +3935,13 @@ ns:RegisterGuide({
             kind = "turnin",
             requiredQuests = {},
             route = { { label = "Grazle", mapID = 1448, offMapText = "Travel to Grazle in Felwood.", x = 0.5093, y = 0.8502 } },
+            sourceActionID = "turnin-8460-timbermaw-ally",
+            sourceGuide = "leveling-era-horde-felwood-and-winterspring",
             sourceStep = 6,
             text = "Turn in Timbermaw Ally to Grazle.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-felwood-and-winterspring",
-            sourceActionID = "turnin-8460-timbermaw-ally",
         },
         {
             complete = { quest = { id = 8462, state = "activeOrCompleted" } },
@@ -3501,13 +4174,13 @@ ns:RegisterGuide({
             route = {
                 { label = "Greta Mosshoof", mapID = 1448, offMapText = "Travel to Greta Mosshoof in Felwood.", x = 0.5121, y = 0.8211 },
             },
+            sourceActionID = "turnin-5155-forces-of-jaedenar",
+            sourceGuide = "leveling-era-horde-felwood-and-winterspring",
             sourceStep = 17,
             text = "Turn in Forces of Jaedenar to Greta Mosshoof.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-felwood-and-winterspring",
-            sourceActionID = "turnin-5155-forces-of-jaedenar",
         },
         {
             complete = { quest = { id = 5157, state = "activeOrCompleted" } },
@@ -3593,17 +4266,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 8462, state = "completed" } },
             conditions = { all = { { faction = "Horde" }, { level = { min = 45 } } } },
             dependsOn = { "horde-leveling-era-horde-felwood-and-winterspring-accept-8462-speak-to-nafien" },
-            id = "horde-leveling-era-horde-felwood-and-winterspring-turnin-8462-speak-to-nafien",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 8460 } } },
-            route = { { label = "Nafien", mapID = 1448, offMapText = "Travel to Nafien in Felwood.", x = 0.6477, y = 0.0813 } },
-            sourceStep = 23,
-            text = "Turn in Speak to Nafien to Nafien.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-felwood-and-winterspring",
-            sourceActionID = "turnin-8462-speak-to-nafien",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -3617,6 +4279,17 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-felwood-and-winterspring-turnin-8462-speak-to-nafien",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 8460 } } },
+            route = { { label = "Nafien", mapID = 1448, offMapText = "Travel to Nafien in Felwood.", x = 0.6477, y = 0.0813 } },
+            sourceActionID = "turnin-8462-speak-to-nafien",
+            sourceGuide = "leveling-era-horde-felwood-and-winterspring",
+            sourceStep = 23,
+            text = "Turn in Speak to Nafien to Nafien.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 6162, state = "completed" } },
@@ -3629,13 +4302,13 @@ ns:RegisterGuide({
             kind = "turnin",
             requiredQuests = {},
             route = { { label = "Dreka'Sur", mapID = 1448, offMapText = "Travel to Dreka'Sur in Felwood.", x = 0.348, y = 0.5273 } },
+            sourceActionID = "turnin-6162-a-husband-s-last-battle",
+            sourceGuide = "leveling-era-horde-felwood-and-winterspring",
             sourceStep = 33,
             text = "Turn in A Husband's Last Battle to Dreka'Sur.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-felwood-and-winterspring",
-            sourceActionID = "turnin-6162-a-husband-s-last-battle",
         },
         {
             complete = { quest = { id = 4505, state = "completed" } },
@@ -3650,13 +4323,13 @@ ns:RegisterGuide({
             route = {
                 { label = "Winna Hazzard", mapID = 1448, offMapText = "Travel to Winna Hazzard in Felwood.", x = 0.3421, y = 0.5234 },
             },
+            sourceActionID = "turnin-4505-well-of-corruption",
+            sourceGuide = "leveling-era-horde-felwood-and-winterspring",
             sourceStep = 34,
             text = "Turn in Well of Corruption to Winna Hazzard.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-felwood-and-winterspring",
-            sourceActionID = "turnin-4505-well-of-corruption",
         },
         {
             complete = { quest = { id = 4102, state = "completed" } },
@@ -3677,13 +4350,13 @@ ns:RegisterGuide({
                     y = 0.8307,
                 },
             },
+            sourceActionID = "turnin-4102-cleansing-felwood",
+            sourceGuide = "leveling-era-horde-felwood-and-winterspring",
             sourceStep = 36,
             text = "Turn in Cleansing Felwood to Maybess Riverbreeze.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-felwood-and-winterspring",
-            sourceActionID = "turnin-4102-cleansing-felwood",
         },
         {
             complete = { questObjective = { count = 1, id = 5157, index = 1 } },
@@ -3729,19 +4402,6 @@ ns:RegisterGuide({
                 "horde-leveling-era-horde-felwood-and-winterspring-accept-5157-collection-of-the-corrupt-water",
                 "horde-leveling-era-horde-felwood-and-winterspring-objective-5157-quest-work",
             },
-            id = "horde-leveling-era-horde-felwood-and-winterspring-turnin-5157-collection-of-the-corrupt-water",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 5155 } } },
-            route = {
-                { label = "Greta Mosshoof", mapID = 1448, offMapText = "Travel to Greta Mosshoof in Felwood.", x = 0.5121, y = 0.8211 },
-            },
-            sourceStep = 38,
-            text = "Turn in Collection of the Corrupt Water to Greta Mosshoof.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-felwood-and-winterspring",
-            sourceActionID = "turnin-5157-collection-of-the-corrupt-water",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -3755,6 +4415,19 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-felwood-and-winterspring-turnin-5157-collection-of-the-corrupt-water",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 5155 } } },
+            route = {
+                { label = "Greta Mosshoof", mapID = 1448, offMapText = "Travel to Greta Mosshoof in Felwood.", x = 0.5121, y = 0.8211 },
+            },
+            sourceActionID = "turnin-5157-collection-of-the-corrupt-water",
+            sourceGuide = "leveling-era-horde-felwood-and-winterspring",
+            sourceStep = 38,
+            text = "Turn in Collection of the Corrupt Water to Greta Mosshoof.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 5158, state = "activeOrCompleted" } },
@@ -3819,13 +4492,13 @@ ns:RegisterGuide({
                     y = 0.8162,
                 },
             },
+            sourceActionID = "turnin-5156-verifying-the-corruption",
+            sourceGuide = "leveling-era-horde-felwood-and-winterspring",
             sourceStep = 39,
             text = "Turn in Verifying the Corruption to Taronn Redfeather.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-felwood-and-winterspring",
-            sourceActionID = "turnin-5156-verifying-the-corruption",
         },
         {
             id = "visit-entry-leveling-era-horde-ungoro-crater",
@@ -3841,25 +4514,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 5158, state = "completed" } },
             conditions = { all = { { faction = "Horde" }, { level = { min = 48 } } } },
             dependsOn = {},
-            id = "horde-leveling-era-horde-ungoro-crater-turnin-5158-seeking-spiritual-aid",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 5157 } } },
-            route = {
-                {
-                    label = "Islen Waterseer",
-                    mapID = 1413,
-                    offMapText = "Travel to Islen Waterseer in The Barrens.",
-                    x = 0.6583,
-                    y = 0.4378,
-                },
-            },
-            sourceStep = 79,
-            text = "Turn in Seeking Spiritual Aid to Islen Waterseer.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-ungoro-crater",
-            sourceActionID = "turnin-5158-seeking-spiritual-aid",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -3886,6 +4540,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-ungoro-crater-turnin-5158-seeking-spiritual-aid",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 5157 } } },
+            route = {
+                {
+                    label = "Islen Waterseer",
+                    mapID = 1413,
+                    offMapText = "Travel to Islen Waterseer in The Barrens.",
+                    x = 0.6583,
+                    y = 0.4378,
+                },
+            },
+            sourceActionID = "turnin-5158-seeking-spiritual-aid",
+            sourceGuide = "leveling-era-horde-ungoro-crater",
+            sourceStep = 79,
+            text = "Turn in Seeking Spiritual Aid to Islen Waterseer.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 5159, state = "activeOrCompleted" } },
@@ -4125,19 +4798,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 5159, state = "completed" } },
             conditions = { all = { { faction = "Horde" }, { level = { min = 48 } } } },
             dependsOn = {},
-            id = "horde-leveling-era-horde-felwood-and-winterspring-part-2-turnin-5159-cleansed-water-returns-to-felwood",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 5158 } } },
-            route = {
-                { label = "Greta Mosshoof", mapID = 1448, offMapText = "Travel to Greta Mosshoof in Felwood.", x = 0.5121, y = 0.8211 },
-            },
-            sourceStep = 2,
-            text = "Turn in Cleansed Water Returns to Felwood to Greta Mosshoof.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-felwood-and-winterspring-part-2",
-            sourceActionID = "turnin-5159-cleansed-water-returns-to-felwood",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -4177,6 +4837,19 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-felwood-and-winterspring-part-2-turnin-5159-cleansed-water-returns-to-felwood",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 5158 } } },
+            route = {
+                { label = "Greta Mosshoof", mapID = 1448, offMapText = "Travel to Greta Mosshoof in Felwood.", x = 0.5121, y = 0.8211 },
+            },
+            sourceActionID = "turnin-5159-cleansed-water-returns-to-felwood",
+            sourceGuide = "leveling-era-horde-felwood-and-winterspring-part-2",
+            sourceStep = 2,
+            text = "Turn in Cleansed Water Returns to Felwood to Greta Mosshoof.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 5165, state = "activeOrCompleted" } },
@@ -4371,13 +5044,13 @@ ns:RegisterGuide({
                     y = 0.555,
                 },
             },
+            sourceActionID = "turnin-5202-a-strange-red-key",
+            sourceGuide = "leveling-era-horde-felwood-and-winterspring-part-2",
             sourceStep = 12,
             text = "Turn in A Strange Red Key to Captured Arko'narin.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-felwood-and-winterspring-part-2",
-            sourceActionID = "turnin-5202-a-strange-red-key",
         },
         {
             complete = { quest = { id = 4506, state = "completed" } },
@@ -4386,19 +5059,6 @@ ns:RegisterGuide({
                 "horde-leveling-era-horde-felwood-and-winterspring-part-2-accept-4506-corrupted-sabers",
                 "horde-leveling-era-horde-felwood-and-winterspring-part-2-objective-4506-authored-escort",
             },
-            id = "horde-leveling-era-horde-felwood-and-winterspring-part-2-turnin-4506-corrupted-sabers",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 4505 } } },
-            route = {
-                { label = "Winna Hazzard", mapID = 1448, offMapText = "Travel to Winna Hazzard in Felwood.", x = 0.3421, y = 0.5234 },
-            },
-            sourceStep = 16,
-            text = "Turn in Corrupted Sabers to Winna Hazzard.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-felwood-and-winterspring-part-2",
-            sourceActionID = "turnin-4506-corrupted-sabers",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -4419,6 +5079,19 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-felwood-and-winterspring-part-2-turnin-4506-corrupted-sabers",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 4505 } } },
+            route = {
+                { label = "Winna Hazzard", mapID = 1448, offMapText = "Travel to Winna Hazzard in Felwood.", x = 0.3421, y = 0.5234 },
+            },
+            sourceActionID = "turnin-4506-corrupted-sabers",
+            sourceGuide = "leveling-era-horde-felwood-and-winterspring-part-2",
+            sourceStep = 16,
+            text = "Turn in Corrupted Sabers to Winna Hazzard.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 8461, state = "activeOrCompleted" } },
@@ -4500,13 +5173,13 @@ ns:RegisterGuide({
             kind = "turnin",
             requiredQuests = {},
             route = { { label = "Nafien", mapID = 1448, offMapText = "Travel to Nafien in Felwood.", x = 0.6477, y = 0.0813 } },
+            sourceActionID = "turnin-8461-deadwood-of-the-north",
+            sourceGuide = "leveling-era-horde-felwood-and-winterspring-part-2",
             sourceStep = 23,
             text = "Turn in Deadwood of the North to Nafien.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-felwood-and-winterspring-part-2",
-            sourceActionID = "turnin-8461-deadwood-of-the-north",
         },
         {
             complete = { quest = { id = 8465, state = "activeOrCompleted" } },
@@ -4540,17 +5213,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 8465, state = "completed" } },
             conditions = { all = { { faction = "Horde" }, { level = { min = 45 } } } },
             dependsOn = { "horde-leveling-era-horde-felwood-and-winterspring-part-2-accept-8465-speak-to-salfa" },
-            id = "horde-leveling-era-horde-felwood-and-winterspring-part-2-turnin-8465-speak-to-salfa",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 8461 } } },
-            route = { { label = "Salfa", mapID = 1452, offMapText = "Travel to Salfa in Winterspring.", x = 0.2774, y = 0.345 } },
-            sourceStep = 27,
-            text = "Turn in Speak to Salfa to Salfa.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-felwood-and-winterspring-part-2",
-            sourceActionID = "turnin-8465-speak-to-salfa",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -4564,6 +5226,17 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-felwood-and-winterspring-part-2-turnin-8465-speak-to-salfa",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 8461 } } },
+            route = { { label = "Salfa", mapID = 1452, offMapText = "Travel to Salfa in Winterspring.", x = 0.2774, y = 0.345 } },
+            sourceActionID = "turnin-8465-speak-to-salfa",
+            sourceGuide = "leveling-era-horde-felwood-and-winterspring-part-2",
+            sourceStep = 27,
+            text = "Turn in Speak to Salfa to Salfa.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { questObjective = { count = 1, id = 5165, index = 1 } },
@@ -4851,19 +5524,6 @@ ns:RegisterGuide({
                 "horde-leveling-era-horde-felwood-and-winterspring-part-2-objective-5165-3-authored-Brazier-of-Suffering",
                 "horde-leveling-era-horde-felwood-and-winterspring-part-2-objective-5165-2-authored-Brazier-of-Malice",
             },
-            id = "horde-leveling-era-horde-felwood-and-winterspring-part-2-turnin-5165-dousing-the-flames-of-protection",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 5159 } } },
-            route = {
-                { label = "Greta Mosshoof", mapID = 1448, offMapText = "Travel to Greta Mosshoof in Felwood.", x = 0.5121, y = 0.8211 },
-            },
-            sourceStep = 54,
-            text = "Turn in Dousing the Flames of Protection to Greta Mosshoof.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-felwood-and-winterspring-part-2",
-            sourceActionID = "turnin-5165-dousing-the-flames-of-protection",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -4916,6 +5576,19 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-felwood-and-winterspring-part-2-turnin-5165-dousing-the-flames-of-protection",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 5159 } } },
+            route = {
+                { label = "Greta Mosshoof", mapID = 1448, offMapText = "Travel to Greta Mosshoof in Felwood.", x = 0.5121, y = 0.8211 },
+            },
+            sourceActionID = "turnin-5165-dousing-the-flames-of-protection",
+            sourceGuide = "leveling-era-horde-felwood-and-winterspring-part-2",
+            sourceStep = 54,
+            text = "Turn in Dousing the Flames of Protection to Greta Mosshoof.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = {
@@ -5008,13 +5681,28 @@ ns:RegisterGuide({
             kind = "turnin",
             requiredQuests = {},
             route = { { label = "Kernda", mapID = 1448, offMapText = "Travel to Kernda in Felwood.", x = 0.6549, y = 0.0348 } },
+            sourceActionID = "turnin-8470-deadwood-ritual-totem",
+            sourceGuide = "leveling-era-horde-felwood-and-winterspring-part-2",
             sourceStep = 64,
             text = "Turn in Deadwood Ritual Totem to Kernda.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
+        },
+        {
+            complete = { quest = { id = 8464, state = "activeOrCompleted" } },
+            conditions = { all = { { faction = "Horde" }, { level = { min = 45 } } } },
+            dependsOn = {},
+            id = "horde-leveling-era-horde-felwood-and-winterspring-part-2-accept-8464-winterfall-activity",
+            kind = "accept",
+            requiredQuests = {},
+            route = { { label = "Salfa", mapID = 1452, offMapText = "Travel to Salfa in Winterspring.", x = 0.2774, y = 0.345 } },
+            sourceActionID = "accept-8464-winterfall-activity",
             sourceGuide = "leveling-era-horde-felwood-and-winterspring-part-2",
-            sourceActionID = "turnin-8470-deadwood-ritual-totem",
+            sourceStep = 68,
+            text = "Accept Winterfall Activity from Salfa.",
+            useClientPin = false,
+            useClientText = false,
         },
         {
             id = "visit-entry-leveling-era-horde-winterspring",
@@ -5027,133 +5715,313 @@ ns:RegisterGuide({
             requiredLevel = 58,
         },
         {
+            complete = { questObjective = { count = 8, id = 8464, index = 1, text = "Winterfall Shaman" } },
+            conditions = { all = { { faction = "Horde" }, { level = { min = 45 } } } },
+            dependsOn = {},
+            id = "horde-leveling-era-horde-winterspring-objective-8464-1-winterfall-shaman",
+            kind = "objective",
+            requiredQuests = {},
+            route = {
+                { label = "Winterfall Shaman", mapID = 1452, offMapText = "Travel to Winterfall Shaman.", x = 0.678, y = 0.378 },
+            },
+            sourceActionID = "objective-8464-1-winterfall-shaman",
+            sourceGuide = "leveling-era-horde-winterspring",
+            sourceStep = 10,
+            text = "Kill 8 Winterfall Shaman.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
+        },
+        {
+            complete = { questObjective = { count = 8, id = 8464, index = 2, text = "Winterfall Den Watcher" } },
+            conditions = { all = { { faction = "Horde" }, { level = { min = 45 } } } },
+            dependsOn = {},
+            id = "horde-leveling-era-horde-winterspring-objective-8464-2-winterfall-den-watcher",
+            kind = "objective",
+            requiredQuests = {},
+            route = {
+                {
+                    label = "Winterfall Den Watcher",
+                    mapID = 1452,
+                    offMapText = "Travel to Winterfall Den Watcher.",
+                    x = 0.678,
+                    y = 0.378,
+                },
+            },
+            sourceActionID = "objective-8464-2-winterfall-den-watcher",
+            sourceGuide = "leveling-era-horde-winterspring",
+            sourceStep = 10,
+            text = "Kill 8 Winterfall Den Watcher.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
+        },
+        {
+            complete = { questObjective = { count = 8, id = 8464, index = 3, text = "Winterfall Ursa" } },
+            conditions = { all = { { faction = "Horde" }, { level = { min = 45 } } } },
+            dependsOn = {},
+            id = "horde-leveling-era-horde-winterspring-objective-8464-3-winterfall-ursa",
+            kind = "objective",
+            requiredQuests = {},
+            route = { { label = "Winterfall Ursa", mapID = 1452, offMapText = "Travel to Winterfall Ursa.", x = 0.678, y = 0.378 } },
+            sourceActionID = "objective-8464-3-winterfall-ursa",
+            sourceGuide = "leveling-era-horde-winterspring",
+            sourceStep = 10,
+            text = "Kill 8 Winterfall Ursa.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
+        },
+        {
+            complete = { quest = { id = 8464, state = "completed" } },
+            conditions = { all = { { faction = "Horde" }, { level = { min = 45 } } } },
+            dependsOn = {
+                "horde-leveling-era-horde-winterspring-objective-8464-1-winterfall-shaman",
+                "horde-leveling-era-horde-winterspring-objective-8464-2-winterfall-den-watcher",
+                "horde-leveling-era-horde-winterspring-objective-8464-3-winterfall-ursa",
+            },
+            id = "horde-leveling-era-horde-winterspring-turnin-8464-winterfall-activity",
+            kind = "turnin",
+            requiredQuests = {},
+            route = { { label = "Salfa", mapID = 1452, offMapText = "Travel to Salfa in Winterspring.", x = 0.2774, y = 0.345 } },
+            sourceActionID = "turnin-8464-winterfall-activity",
+            sourceGuide = "leveling-era-horde-winterspring",
+            sourceStep = 22,
+            text = "Turn in Winterfall Activity to Salfa.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
+        },
+        {
+            complete = { quest = { id = 6031, state = "activeOrCompleted" } },
+            conditions = { all = { { faction = "Horde" }, { level = { min = 50 } } } },
+            dependsOn = {},
+            id = "horde-leveling-era-horde-winterspring-objective-6031-1-deadwood-den-watcher",
+            kind = "note",
+            requiredQuests = {},
+            route = {
+                { label = "Deadwood Den Watcher", mapID = 1448, offMapText = "Travel to Deadwood Den Watcher.", x = 0.636, y = 0.096 },
+            },
+            sourceActionID = "objective-6031-1-deadwood-den-watcher",
+            sourceGuide = "leveling-era-horde-winterspring",
+            text = "Kill Deadwood Den Watcher. Loot the starter item here, then use it to accept the quest.",
+            useClientPin = false,
+            useClientText = false,
+        },
+        {
+            complete = { quest = { id = 6031, state = "activeOrCompleted" } },
+            conditions = { all = { { faction = "Horde" }, { level = { min = 50 } } } },
+            dependsOn = {},
+            id = "horde-leveling-era-horde-winterspring-accept-6031-runecloth",
+            kind = "accept",
+            requiredQuests = {},
+            route = { { label = "Meilosh", mapID = 1448, offMapText = "Travel to Meilosh in Felwood.", x = 0.6569, y = 0.0281 } },
+            sourceActionID = "accept-6031-runecloth",
+            sourceGuide = "leveling-era-horde-winterspring",
+            sourceStep = 34,
+            text = "Accept Runecloth from Meilosh.",
+            useClientPin = false,
+            useClientText = false,
+        },
+        {
+            complete = { quest = { id = 6031, state = "completed" } },
+            conditions = { all = { { faction = "Horde" }, { level = { min = 50 } } } },
+            dependsOn = { "horde-leveling-era-horde-winterspring-accept-6031-runecloth" },
+            id = "horde-leveling-era-horde-winterspring-turnin-6031-runecloth",
+            kind = "turnin",
+            requiredQuests = {},
+            route = { { label = "Meilosh", mapID = 1448, offMapText = "Travel to Meilosh in Felwood.", x = 0.6569, y = 0.0281 } },
+            sourceActionID = "turnin-6031-runecloth",
+            sourceGuide = "leveling-era-horde-winterspring",
+            sourceStep = 35,
+            text = "Turn in Runecloth to Meilosh.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
+        },
+        {
+            checkpointQuest = 5242,
+            complete = { level = { min = 48 } },
+            conditions = { all = { { faction = "Horde" } } },
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 5242, state = "activeOrCompleted" } },
+                        {
+                            any = {
+                                { quest = { id = 5242, state = "activeOrCompleted" } },
+                                {
+                                    all = {
+                                        {
+                                            any = {
+                                                {
+                                                    any = {
+                                                        { quest = { id = 5165, state = "activeOrCompleted" } },
+                                                        {
+                                                            all = {
+                                                                {
+                                                                    any = {
+                                                                        {
+                                                                            any = {
+                                                                                { quest = { id = 5159, state = "activeOrCompleted" } },
+                                                                                {
+                                                                                    all = {
+                                                                                        {
+                                                                                            any = {
+                                                                                                {
+                                                                                                    any = {
+                                                                                                        { quest = { id = 5158, state = "activeOrCompleted" } },
+                                                                                                        {
+                                                                                                            all = {
+                                                                                                                {
+                                                                                                                    any = {
+                                                                                                                        {
+                                                                                                                            any = {
+                                                                                                                                { quest = { id = 5157, state = "activeOrCompleted" } },
+                                                                                                                                { all = { { any = { { any = { { quest = { id = 5155, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                                                                                            },
+                                                                                                                        },
+                                                                                                                    },
+                                                                                                                },
+                                                                                                            },
+                                                                                                        },
+                                                                                                    },
+                                                                                                },
+                                                                                            },
+                                                                                        },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
             id = "horde-extra-5242-level",
             kind = "note",
-            checkpointQuest = 5242,
-            text = "Reach level 58 before this visit.",
-            conditions = { all = { { faction = "Horde" } } },
-            complete = { level = { min = 58 } },
-            requiredLevel = 58,
-            excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 5242, state = "activeOrCompleted" } },
-                        {
-                            any = {
-                                { quest = { id = 5242, state = "activeOrCompleted" } },
-                                {
-                                    all = {
-                                        {
-                                            any = {
-                                                {
-                                                    any = {
-                                                        { quest = { id = 5165, state = "activeOrCompleted" } },
-                                                        {
-                                                            all = {
-                                                                {
-                                                                    any = {
-                                                                        {
-                                                                            any = {
-                                                                                { quest = { id = 5159, state = "activeOrCompleted" } },
-                                                                                {
-                                                                                    all = {
-                                                                                        {
-                                                                                            any = {
-                                                                                                {
-                                                                                                    any = {
-                                                                                                        { quest = { id = 5158, state = "activeOrCompleted" } },
-                                                                                                        {
-                                                                                                            all = {
-                                                                                                                {
-                                                                                                                    any = {
-                                                                                                                        {
-                                                                                                                            any = {
-                                                                                                                                { quest = { id = 5157, state = "activeOrCompleted" } },
-                                                                                                                                { all = { { any = { { any = { { quest = { id = 5155, state = "activeOrCompleted" } }, { all = {} } } } } } } },
-                                                                                                                            },
-                                                                                                                        },
-                                                                                                                    },
-                                                                                                                },
-                                                                                                            },
-                                                                                                        },
-                                                                                                    },
-                                                                                                },
-                                                                                            },
-                                                                                        },
-                                                                                    },
-                                                                                },
-                                                                            },
-                                                                        },
-                                                                    },
-                                                                },
-                                                            },
-                                                        },
-                                                    },
-                                                },
-                                            },
-                                        },
-                                    },
-                                },
-                            },
-                        },
-                    },
-                },
-            },
+            requiredLevel = 48,
+            text = "Reach level 48 before this visit.",
         },
         {
-            id = "horde-extra-5242-accept",
-            kind = "accept",
-            text = "Accept A Final Blow from Greta Mosshoof.",
-            conditions = { all = { { faction = "Horde" }, { level = { min = 48 } } } },
-            route = {
-                {
-                    mapID = 1448,
-                    x = 0.512,
-                    y = 0.8220000000000001,
-                    label = "Greta Mosshoof",
-                    offMapText = "Travel to Greta Mosshoof in Felwood.",
-                },
-            },
             complete = { quest = { id = 5242, state = "activeOrCompleted" } },
-            requiredQuests = { { mode = "any", quests = { 5165 } } },
-            useClientText = false,
+            conditions = { all = { { faction = "Horde" }, { level = { min = 48 } } } },
             dependsOn = { "horde-extra-5242-level" },
             excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 5242, state = "activeOrCompleted" } },
-                        {
+                any = {
+                    {
+                        ["not"] = {
                             any = {
                                 { quest = { id = 5242, state = "activeOrCompleted" } },
                                 {
-                                    all = {
+                                    any = {
+                                        { quest = { id = 5242, state = "activeOrCompleted" } },
                                         {
-                                            any = {
+                                            all = {
                                                 {
                                                     any = {
-                                                        { quest = { id = 5165, state = "activeOrCompleted" } },
                                                         {
-                                                            all = {
+                                                            any = {
+                                                                { quest = { id = 5165, state = "activeOrCompleted" } },
                                                                 {
-                                                                    any = {
+                                                                    all = {
                                                                         {
                                                                             any = {
-                                                                                { quest = { id = 5159, state = "activeOrCompleted" } },
                                                                                 {
-                                                                                    all = {
+                                                                                    any = {
+                                                                                        { quest = { id = 5159, state = "activeOrCompleted" } },
                                                                                         {
-                                                                                            any = {
+                                                                                            all = {
                                                                                                 {
                                                                                                     any = {
-                                                                                                        { quest = { id = 5158, state = "activeOrCompleted" } },
                                                                                                         {
-                                                                                                            all = {
+                                                                                                            any = {
+                                                                                                                { quest = { id = 5158, state = "activeOrCompleted" } },
                                                                                                                 {
-                                                                                                                    any = {
+                                                                                                                    all = {
                                                                                                                         {
                                                                                                                             any = {
-                                                                                                                                { quest = { id = 5157, state = "activeOrCompleted" } },
-                                                                                                                                { all = { { any = { { any = { { quest = { id = 5155, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                                                                                                {
+                                                                                                                                    any = {
+                                                                                                                                        { quest = { id = 5157, state = "activeOrCompleted" } },
+                                                                                                                                        { all = { { any = { { any = { { quest = { id = 5155, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                                                                                                    },
+                                                                                                                                },
+                                                                                                                            },
+                                                                                                                        },
+                                                                                                                    },
+                                                                                                                },
+                                                                                                            },
+                                                                                                        },
+                                                                                                    },
+                                                                                                },
+                                                                                            },
+                                                                                        },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 5242, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 5242, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 5165, state = "activeOrCompleted" } },
+                                                                {
+                                                                    all = {
+                                                                        {
+                                                                            any = {
+                                                                                {
+                                                                                    any = {
+                                                                                        { quest = { id = 5159, state = "activeOrCompleted" } },
+                                                                                        {
+                                                                                            all = {
+                                                                                                {
+                                                                                                    any = {
+                                                                                                        {
+                                                                                                            any = {
+                                                                                                                { quest = { id = 5158, state = "activeOrCompleted" } },
+                                                                                                                {
+                                                                                                                    all = {
+                                                                                                                        {
+                                                                                                                            any = {
+                                                                                                                                {
+                                                                                                                                    any = {
+                                                                                                                                        { quest = { id = 5157, state = "activeOrCompleted" } },
+                                                                                                                                        { all = { { any = { { any = { { quest = { id = 5155, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                                                                                                    },
+                                                                                                                                },
                                                                                                                             },
                                                                                                                         },
                                                                                                                     },
@@ -5183,61 +6051,124 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-extra-5242-accept",
+            kind = "accept",
+            requiredQuests = { { mode = "any", quests = { 5165 } } },
+            route = {
+                { label = "Greta Mosshoof", mapID = 1448, offMapText = "Travel to Greta Mosshoof in Felwood.", x = 0.512, y = 0.822 },
+            },
+            text = "Accept A Final Blow from Greta Mosshoof.",
+            useClientText = false,
         },
         {
-            id = "horde-extra-5242-objective",
-            kind = "objective",
-            text = "Kill Moora and Salia. Kill Shadow Lord Fel'dan and loot his head.",
-            conditions = { all = { { faction = "Horde" }, { level = { min = 48 } } } },
-            route = {
-                {
-                    mapID = 1448,
-                    x = 0.38799999999999996,
-                    y = 0.46799999999999997,
-                    label = "Salia",
-                    offMapText = "Travel to Salia in Felwood.",
-                },
-            },
             complete = { quest = { id = 5242, state = "complete" } },
-            requiredQuests = { { mode = "any", quests = { 5165 } } },
-            useClientText = false,
+            conditions = { all = { { faction = "Horde" }, { level = { min = 48 } } } },
             dependsOn = { "horde-extra-5242-accept" },
             excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 5242, state = "activeOrCompleted" } },
-                        {
+                any = {
+                    {
+                        ["not"] = {
                             any = {
                                 { quest = { id = 5242, state = "activeOrCompleted" } },
                                 {
-                                    all = {
+                                    any = {
+                                        { quest = { id = 5242, state = "activeOrCompleted" } },
                                         {
-                                            any = {
+                                            all = {
                                                 {
                                                     any = {
-                                                        { quest = { id = 5165, state = "activeOrCompleted" } },
                                                         {
-                                                            all = {
+                                                            any = {
+                                                                { quest = { id = 5165, state = "activeOrCompleted" } },
                                                                 {
-                                                                    any = {
+                                                                    all = {
                                                                         {
                                                                             any = {
-                                                                                { quest = { id = 5159, state = "activeOrCompleted" } },
                                                                                 {
-                                                                                    all = {
+                                                                                    any = {
+                                                                                        { quest = { id = 5159, state = "activeOrCompleted" } },
                                                                                         {
-                                                                                            any = {
+                                                                                            all = {
                                                                                                 {
                                                                                                     any = {
-                                                                                                        { quest = { id = 5158, state = "activeOrCompleted" } },
                                                                                                         {
-                                                                                                            all = {
+                                                                                                            any = {
+                                                                                                                { quest = { id = 5158, state = "activeOrCompleted" } },
                                                                                                                 {
-                                                                                                                    any = {
+                                                                                                                    all = {
                                                                                                                         {
                                                                                                                             any = {
-                                                                                                                                { quest = { id = 5157, state = "activeOrCompleted" } },
-                                                                                                                                { all = { { any = { { any = { { quest = { id = 5155, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                                                                                                {
+                                                                                                                                    any = {
+                                                                                                                                        { quest = { id = 5157, state = "activeOrCompleted" } },
+                                                                                                                                        { all = { { any = { { any = { { quest = { id = 5155, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                                                                                                    },
+                                                                                                                                },
+                                                                                                                            },
+                                                                                                                        },
+                                                                                                                    },
+                                                                                                                },
+                                                                                                            },
+                                                                                                        },
+                                                                                                    },
+                                                                                                },
+                                                                                            },
+                                                                                        },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 5242, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 5242, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 5165, state = "activeOrCompleted" } },
+                                                                {
+                                                                    all = {
+                                                                        {
+                                                                            any = {
+                                                                                {
+                                                                                    any = {
+                                                                                        { quest = { id = 5159, state = "activeOrCompleted" } },
+                                                                                        {
+                                                                                            all = {
+                                                                                                {
+                                                                                                    any = {
+                                                                                                        {
+                                                                                                            any = {
+                                                                                                                { quest = { id = 5158, state = "activeOrCompleted" } },
+                                                                                                                {
+                                                                                                                    all = {
+                                                                                                                        {
+                                                                                                                            any = {
+                                                                                                                                {
+                                                                                                                                    any = {
+                                                                                                                                        { quest = { id = 5157, state = "activeOrCompleted" } },
+                                                                                                                                        { all = { { any = { { any = { { quest = { id = 5155, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                                                                                                    },
+                                                                                                                                },
                                                                                                                             },
                                                                                                                         },
                                                                                                                     },
@@ -5267,61 +6198,123 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-extra-5242-objective",
+            kind = "objective",
+            requiredQuests = { { mode = "any", quests = { 5165 } } },
+            route = { { label = "Salia", mapID = 1448, offMapText = "Travel to Salia in Felwood.", x = 0.388, y = 0.468 } },
+            text = "Kill Moora and Salia. Kill Shadow Lord Fel'dan and loot his head.",
+            useClientPin = true,
+            useClientText = false,
         },
         {
-            id = "horde-extra-5242-turnin",
-            kind = "turnin",
-            text = "Turn in A Final Blow to Greta Mosshoof.",
-            conditions = { all = { { faction = "Horde" }, { level = { min = 48 } } } },
-            route = {
-                {
-                    mapID = 1448,
-                    x = 0.512,
-                    y = 0.8220000000000001,
-                    label = "Greta Mosshoof",
-                    offMapText = "Travel to Greta Mosshoof in Felwood.",
-                },
-            },
             complete = { quest = { id = 5242, state = "completed" } },
-            requiredQuests = { { mode = "any", quests = { 5165 } } },
-            useClientText = false,
+            conditions = { all = { { faction = "Horde" }, { level = { min = 48 } } } },
             dependsOn = { "horde-extra-5242-objective" },
             excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 5242, state = "activeOrCompleted" } },
-                        {
+                any = {
+                    {
+                        ["not"] = {
                             any = {
                                 { quest = { id = 5242, state = "activeOrCompleted" } },
                                 {
-                                    all = {
+                                    any = {
+                                        { quest = { id = 5242, state = "activeOrCompleted" } },
                                         {
-                                            any = {
+                                            all = {
                                                 {
                                                     any = {
-                                                        { quest = { id = 5165, state = "activeOrCompleted" } },
                                                         {
-                                                            all = {
+                                                            any = {
+                                                                { quest = { id = 5165, state = "activeOrCompleted" } },
                                                                 {
-                                                                    any = {
+                                                                    all = {
                                                                         {
                                                                             any = {
-                                                                                { quest = { id = 5159, state = "activeOrCompleted" } },
                                                                                 {
-                                                                                    all = {
+                                                                                    any = {
+                                                                                        { quest = { id = 5159, state = "activeOrCompleted" } },
                                                                                         {
-                                                                                            any = {
+                                                                                            all = {
                                                                                                 {
                                                                                                     any = {
-                                                                                                        { quest = { id = 5158, state = "activeOrCompleted" } },
                                                                                                         {
-                                                                                                            all = {
+                                                                                                            any = {
+                                                                                                                { quest = { id = 5158, state = "activeOrCompleted" } },
                                                                                                                 {
-                                                                                                                    any = {
+                                                                                                                    all = {
                                                                                                                         {
                                                                                                                             any = {
-                                                                                                                                { quest = { id = 5157, state = "activeOrCompleted" } },
-                                                                                                                                { all = { { any = { { any = { { quest = { id = 5155, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                                                                                                {
+                                                                                                                                    any = {
+                                                                                                                                        { quest = { id = 5157, state = "activeOrCompleted" } },
+                                                                                                                                        { all = { { any = { { any = { { quest = { id = 5155, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                                                                                                    },
+                                                                                                                                },
+                                                                                                                            },
+                                                                                                                        },
+                                                                                                                    },
+                                                                                                                },
+                                                                                                            },
+                                                                                                        },
+                                                                                                    },
+                                                                                                },
+                                                                                            },
+                                                                                        },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 5242, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 5242, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 5165, state = "activeOrCompleted" } },
+                                                                {
+                                                                    all = {
+                                                                        {
+                                                                            any = {
+                                                                                {
+                                                                                    any = {
+                                                                                        { quest = { id = 5159, state = "activeOrCompleted" } },
+                                                                                        {
+                                                                                            all = {
+                                                                                                {
+                                                                                                    any = {
+                                                                                                        {
+                                                                                                            any = {
+                                                                                                                { quest = { id = 5158, state = "activeOrCompleted" } },
+                                                                                                                {
+                                                                                                                    all = {
+                                                                                                                        {
+                                                                                                                            any = {
+                                                                                                                                {
+                                                                                                                                    any = {
+                                                                                                                                        { quest = { id = 5157, state = "activeOrCompleted" } },
+                                                                                                                                        { all = { { any = { { any = { { quest = { id = 5155, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                                                                                                    },
+                                                                                                                                },
                                                                                                                             },
                                                                                                                         },
                                                                                                                     },
@@ -5351,6 +6344,16 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-extra-5242-turnin",
+            kind = "turnin",
+            requiredQuests = { { mode = "any", quests = { 5165 } } },
+            route = {
+                { label = "Greta Mosshoof", mapID = 1448, offMapText = "Travel to Greta Mosshoof in Felwood.", x = 0.512, y = 0.822 },
+            },
+            text = "Turn in A Final Blow to Greta Mosshoof.",
+            useClientPin = true,
+            useClientText = false,
+            useQuestNavigation = true,
         },
     },
 })

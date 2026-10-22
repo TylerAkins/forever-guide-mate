@@ -28,7 +28,8 @@ type inventory struct {
 func run(args []string) error {
 	flags := flag.NewFlagSet("author-zone-loremaster", flag.ContinueOnError)
 	root := flags.String("root", ".", "repository root")
-	database := flags.String("database", "", "wow-database checkout (default ../wow-database)")
+	questieExport := flags.String("questie-export", "", "QuestieDB export (default .compiled/questiedb/export.json under --root)")
+	questiePolicy := flags.String("questie-policy", "", "QuestieDB policy export (default .compiled/questiedb/policy.json under --root)")
 	upstream := flags.String("upstream", "", "clean Zygor Guides Remaster checkout at the pinned revision")
 	lua := flags.String("lua", "luajit", "Lua interpreter used to export the guide snapshot")
 	write := flags.Bool("write", false, "write the one zone candidate for review")
@@ -45,8 +46,11 @@ func run(args []string) error {
 	if *upstream == "" {
 		return errors.New("--upstream is required")
 	}
-	if *database == "" {
-		*database = filepath.Join(*root, "..", "wow-database")
+	if *questieExport == "" {
+		*questieExport = filepath.Join(*root, ".compiled", "questiedb", "export.json")
+	}
+	if *questiePolicy == "" {
+		*questiePolicy = filepath.Join(*root, ".compiled", "questiedb", "policy.json")
 	}
 
 	spec, err := loadSpec(*root, rest[0])
@@ -59,18 +63,16 @@ func run(args []string) error {
 	}
 
 	env := zoneauthoring.Environment{
-		Root:     *root,
-		Database: *database,
-		Upstream: *upstream,
-		Snapshot: snapshot,
+		Root:          *root,
+		QuestieExport: *questieExport,
+		QuestiePolicy: *questiePolicy,
+		Upstream:      *upstream,
+		Snapshot:      snapshot,
 		UpstreamRevision: func() (string, error) {
 			return zoneauthoring.UpstreamRevision(*upstream)
 		},
 		VerifyUpstream: func() error {
 			return zoneauthoring.VerifyUpstreamClean(*upstream)
-		},
-		DatabaseRevision: func() (string, error) {
-			return zoneauthoring.DatabaseRevision(*database)
 		},
 	}
 	text, audit, err := zoneauthoring.Prepare(spec, env)

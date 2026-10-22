@@ -6,7 +6,7 @@ ns:RegisterGuide({
     id = "loremaster-feralas",
     title = "Feralas",
     category = "Loremaster Guides",
-    revision = 1,
+    revision = 2,
     routeMode = "ordered",
     loremasterExpanded = true,
     goals = {
@@ -145,13 +145,13 @@ ns:RegisterGuide({
                     y = 0.4513,
                 },
             },
+            sourceActionID = "turnin-4124-the-missing-courier",
+            sourceGuide = "leveling-era-alliance-feralas-and-tanaris",
             sourceStep = 10,
             text = "Turn in The Missing Courier to Ginro Hearthkindle.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-feralas-and-tanaris",
-            sourceActionID = "turnin-4124-the-missing-courier",
         },
         {
             complete = { quest = { id = 4125, state = "activeOrCompleted" } },
@@ -212,13 +212,13 @@ ns:RegisterGuide({
                     y = 0.5234,
                 },
             },
+            sourceActionID = "turnin-2866-the-ruins-of-solarsal",
+            sourceGuide = "leveling-era-alliance-feralas-and-tanaris",
             sourceStep = 11,
             text = "Turn in The Ruins of Solarsal.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-feralas-and-tanaris",
-            sourceActionID = "turnin-2866-the-ruins-of-solarsal",
         },
         {
             complete = { quest = { id = 2867, state = "activeOrCompleted" } },
@@ -267,25 +267,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 2867, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 40 } }, { race = { 1, 3, 4, 7, 95 } } } },
             dependsOn = { "alliance-leveling-era-alliance-feralas-and-tanaris-accept-2867-return-to-feathermoon-stronghold" },
-            id = "alliance-leveling-era-alliance-feralas-and-tanaris-turnin-2867-return-to-feathermoon-stronghold",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 2866 } } },
-            route = {
-                {
-                    label = "Shandris Feathermoon",
-                    mapID = 1444,
-                    offMapText = "Travel to Shandris Feathermoon in Feralas.",
-                    x = 0.3028,
-                    y = 0.4617,
-                },
-            },
-            sourceStep = 12,
-            text = "Turn in Return to Feathermoon Stronghold to Shandris Feathermoon.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-feralas-and-tanaris",
-            sourceActionID = "turnin-2867-return-to-feathermoon-stronghold",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -306,6 +287,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-feralas-and-tanaris-turnin-2867-return-to-feathermoon-stronghold",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 2866 } } },
+            route = {
+                {
+                    label = "Shandris Feathermoon",
+                    mapID = 1444,
+                    offMapText = "Travel to Shandris Feathermoon in Feralas.",
+                    x = 0.3028,
+                    y = 0.4617,
+                },
+            },
+            sourceActionID = "turnin-2867-return-to-feathermoon-stronghold",
+            sourceGuide = "leveling-era-alliance-feralas-and-tanaris",
+            sourceStep = 12,
+            text = "Turn in Return to Feathermoon Stronghold to Shandris Feathermoon.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 3130, state = "activeOrCompleted" } },
@@ -368,25 +368,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 3130, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 40 } }, { race = { 1, 3, 4, 7, 95 } } } },
             dependsOn = { "alliance-leveling-era-alliance-feralas-and-tanaris-accept-3130-against-the-hatecrest" },
-            id = "alliance-leveling-era-alliance-feralas-and-tanaris-turnin-3130-against-the-hatecrest",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 2867 } } },
-            route = {
-                {
-                    label = "Latronicus Moonspear",
-                    mapID = 1444,
-                    offMapText = "Travel to Latronicus Moonspear in Feralas.",
-                    x = 0.3038,
-                    y = 0.4617,
-                },
-            },
-            sourceStep = 13,
-            text = "Turn in Against the Hatecrest to Latronicus Moonspear.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-feralas-and-tanaris",
-            sourceActionID = "turnin-3130-against-the-hatecrest",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -421,6 +402,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-feralas-and-tanaris-turnin-3130-against-the-hatecrest",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 2867 } } },
+            route = {
+                {
+                    label = "Latronicus Moonspear",
+                    mapID = 1444,
+                    offMapText = "Travel to Latronicus Moonspear in Feralas.",
+                    x = 0.3038,
+                    y = 0.4617,
+                },
+            },
+            sourceActionID = "turnin-3130-against-the-hatecrest",
+            sourceGuide = "leveling-era-alliance-feralas-and-tanaris",
+            sourceStep = 13,
+            text = "Turn in Against the Hatecrest to Latronicus Moonspear.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 2869, state = "activeOrCompleted" } },
@@ -566,25 +566,6 @@ ns:RegisterGuide({
                 "alliance-leveling-era-alliance-feralas-and-tanaris-accept-2869-against-the-hatecrest",
                 "alliance-leveling-era-alliance-feralas-and-tanaris-objective-2869-1-hatecrest-screamer",
             },
-            id = "alliance-leveling-era-alliance-feralas-and-tanaris-turnin-2869-against-the-hatecrest",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 3130 } } },
-            route = {
-                {
-                    label = "Latronicus Moonspear",
-                    mapID = 1444,
-                    offMapText = "Travel to Latronicus Moonspear in Feralas.",
-                    x = 0.3038,
-                    y = 0.4617,
-                },
-            },
-            sourceStep = 16,
-            text = "Turn in Against the Hatecrest to Latronicus Moonspear.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-feralas-and-tanaris",
-            sourceActionID = "turnin-2869-against-the-hatecrest",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -633,6 +614,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-feralas-and-tanaris-turnin-2869-against-the-hatecrest",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 3130 } } },
+            route = {
+                {
+                    label = "Latronicus Moonspear",
+                    mapID = 1444,
+                    offMapText = "Travel to Latronicus Moonspear in Feralas.",
+                    x = 0.3038,
+                    y = 0.4617,
+                },
+            },
+            sourceActionID = "turnin-2869-against-the-hatecrest",
+            sourceGuide = "leveling-era-alliance-feralas-and-tanaris",
+            sourceStep = 16,
+            text = "Turn in Against the Hatecrest to Latronicus Moonspear.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 2870, state = "activeOrCompleted" } },
@@ -876,19 +876,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 4125, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 40 } }, { race = { 1, 3, 4, 7, 95 } } } },
             dependsOn = { "alliance-leveling-era-alliance-feralas-and-tanaris-accept-4125-the-missing-courier" },
-            id = "alliance-leveling-era-alliance-feralas-and-tanaris-turnin-4125-the-missing-courier",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 4124 } } },
-            route = {
-                { label = "The Missing Courier", mapID = 1444, offMapText = "Travel to The Missing Courier.", x = 0.4545, y = 0.6497 },
-            },
-            sourceStep = 22,
-            text = "Turn in The Missing Courier.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-feralas-and-tanaris",
-            sourceActionID = "turnin-4125-the-missing-courier",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -909,6 +896,19 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-feralas-and-tanaris-turnin-4125-the-missing-courier",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 4124 } } },
+            route = {
+                { label = "The Missing Courier", mapID = 1444, offMapText = "Travel to The Missing Courier.", x = 0.4545, y = 0.6497 },
+            },
+            sourceActionID = "turnin-4125-the-missing-courier",
+            sourceGuide = "leveling-era-alliance-feralas-and-tanaris",
+            sourceStep = 22,
+            text = "Turn in The Missing Courier.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 4127, state = "activeOrCompleted" } },
@@ -963,25 +963,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 4127, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 40 } }, { race = { 1, 3, 4, 7, 95 } } } },
             dependsOn = { "alliance-leveling-era-alliance-feralas-and-tanaris-accept-4127-boat-wreckage" },
-            id = "alliance-leveling-era-alliance-feralas-and-tanaris-turnin-4127-boat-wreckage",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 4125 } } },
-            route = {
-                {
-                    label = "Ginro Hearthkindle",
-                    mapID = 1444,
-                    offMapText = "Travel to Ginro Hearthkindle in Feralas.",
-                    x = 0.3186,
-                    y = 0.4513,
-                },
-            },
-            sourceStep = 25,
-            text = "Turn in Boat Wreckage to Ginro Hearthkindle.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-feralas-and-tanaris",
-            sourceActionID = "turnin-4127-boat-wreckage",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -1016,6 +997,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-feralas-and-tanaris-turnin-4127-boat-wreckage",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 4125 } } },
+            route = {
+                {
+                    label = "Ginro Hearthkindle",
+                    mapID = 1444,
+                    offMapText = "Travel to Ginro Hearthkindle in Feralas.",
+                    x = 0.3186,
+                    y = 0.4513,
+                },
+            },
+            sourceActionID = "turnin-4127-boat-wreckage",
+            sourceGuide = "leveling-era-alliance-feralas-and-tanaris",
+            sourceStep = 25,
+            text = "Turn in Boat Wreckage to Ginro Hearthkindle.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 4129, state = "activeOrCompleted" } },
@@ -1092,25 +1092,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 4129, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 40 } }, { race = { 1, 3, 4, 7, 95 } } } },
             dependsOn = { "alliance-leveling-era-alliance-feralas-and-tanaris-accept-4129-the-knife-revealed" },
-            id = "alliance-leveling-era-alliance-feralas-and-tanaris-turnin-4129-the-knife-revealed",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 4127 } } },
-            route = {
-                {
-                    label = "Quintis Jonespyre",
-                    mapID = 1444,
-                    offMapText = "Travel to Quintis Jonespyre in Feralas.",
-                    x = 0.3245,
-                    y = 0.4379,
-                },
-            },
-            sourceStep = 26,
-            text = "Turn in The Knife Revealed to Quintis Jonespyre.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-feralas-and-tanaris",
-            sourceActionID = "turnin-4129-the-knife-revealed",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -1159,6 +1140,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-feralas-and-tanaris-turnin-4129-the-knife-revealed",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 4127 } } },
+            route = {
+                {
+                    label = "Quintis Jonespyre",
+                    mapID = 1444,
+                    offMapText = "Travel to Quintis Jonespyre in Feralas.",
+                    x = 0.3245,
+                    y = 0.4379,
+                },
+            },
+            sourceActionID = "turnin-4129-the-knife-revealed",
+            sourceGuide = "leveling-era-alliance-feralas-and-tanaris",
+            sourceStep = 26,
+            text = "Turn in The Knife Revealed to Quintis Jonespyre.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 4130, state = "activeOrCompleted" } },
@@ -1249,25 +1249,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 4130, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 40 } }, { race = { 1, 3, 4, 7, 95 } } } },
             dependsOn = { "alliance-leveling-era-alliance-feralas-and-tanaris-accept-4130-psychometric-reading" },
-            id = "alliance-leveling-era-alliance-feralas-and-tanaris-turnin-4130-psychometric-reading",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 4129 } } },
-            route = {
-                {
-                    label = "Ginro Hearthkindle",
-                    mapID = 1444,
-                    offMapText = "Travel to Ginro Hearthkindle in Feralas.",
-                    x = 0.3186,
-                    y = 0.4513,
-                },
-            },
-            sourceStep = 28,
-            text = "Turn in Psychometric Reading to Ginro Hearthkindle.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-feralas-and-tanaris",
-            sourceActionID = "turnin-4130-psychometric-reading",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -1330,6 +1311,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-feralas-and-tanaris-turnin-4130-psychometric-reading",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 4129 } } },
+            route = {
+                {
+                    label = "Ginro Hearthkindle",
+                    mapID = 1444,
+                    offMapText = "Travel to Ginro Hearthkindle in Feralas.",
+                    x = 0.3186,
+                    y = 0.4513,
+                },
+            },
+            sourceActionID = "turnin-4130-psychometric-reading",
+            sourceGuide = "leveling-era-alliance-feralas-and-tanaris",
+            sourceStep = 28,
+            text = "Turn in Psychometric Reading to Ginro Hearthkindle.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 4131, state = "activeOrCompleted" } },
@@ -1437,25 +1437,6 @@ ns:RegisterGuide({
                 "alliance-leveling-era-alliance-feralas-and-tanaris-accept-2870-against-lord-shalzaru",
                 "alliance-leveling-era-alliance-feralas-and-tanaris-objective-2870-1-lord-shalzaru",
             },
-            id = "alliance-leveling-era-alliance-feralas-and-tanaris-turnin-2870-against-lord-shalzaru",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 2869 } } },
-            route = {
-                {
-                    label = "Latronicus Moonspear",
-                    mapID = 1444,
-                    offMapText = "Travel to Latronicus Moonspear in Feralas.",
-                    x = 0.3038,
-                    y = 0.4617,
-                },
-            },
-            sourceStep = 29,
-            text = "Turn in Against Lord Shalzaru to Latronicus Moonspear.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-feralas-and-tanaris",
-            sourceActionID = "turnin-2870-against-lord-shalzaru",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -1518,6 +1499,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-feralas-and-tanaris-turnin-2870-against-lord-shalzaru",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 2869 } } },
+            route = {
+                {
+                    label = "Latronicus Moonspear",
+                    mapID = 1444,
+                    offMapText = "Travel to Latronicus Moonspear in Feralas.",
+                    x = 0.3038,
+                    y = 0.4617,
+                },
+            },
+            sourceActionID = "turnin-2870-against-lord-shalzaru",
+            sourceGuide = "leveling-era-alliance-feralas-and-tanaris",
+            sourceStep = 29,
+            text = "Turn in Against Lord Shalzaru to Latronicus Moonspear.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 2871, state = "activeOrCompleted" } },
@@ -1622,25 +1622,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 2871, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 40 } }, { race = { 1, 3, 4, 7, 95 } } } },
             dependsOn = { "alliance-leveling-era-alliance-feralas-and-tanaris-accept-2871-delivering-the-relic" },
-            id = "alliance-leveling-era-alliance-feralas-and-tanaris-turnin-2871-delivering-the-relic",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 2870 } } },
-            route = {
-                {
-                    label = "Vestia Moonspear",
-                    mapID = 1444,
-                    offMapText = "Travel to Vestia Moonspear in Feralas.",
-                    x = 0.3008,
-                    y = 0.4506,
-                },
-            },
-            sourceStep = 30,
-            text = "Turn in Delivering the Relic to Vestia Moonspear.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-feralas-and-tanaris",
-            sourceActionID = "turnin-2871-delivering-the-relic",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -1717,6 +1698,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-feralas-and-tanaris-turnin-2871-delivering-the-relic",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 2870 } } },
+            route = {
+                {
+                    label = "Vestia Moonspear",
+                    mapID = 1444,
+                    offMapText = "Travel to Vestia Moonspear in Feralas.",
+                    x = 0.3008,
+                    y = 0.4506,
+                },
+            },
+            sourceActionID = "turnin-2871-delivering-the-relic",
+            sourceGuide = "leveling-era-alliance-feralas-and-tanaris",
+            sourceStep = 30,
+            text = "Turn in Delivering the Relic to Vestia Moonspear.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 2766, state = "completed" } },
@@ -1742,82 +1742,98 @@ ns:RegisterGuide({
                     y = 0.557,
                 },
             },
+            sourceActionID = "turnin-2766-find-oox-22-fe",
+            sourceGuide = "leveling-era-alliance-feralas-and-tanaris",
             sourceStep = 49,
             text = "Turn in Find OOX-22/FE! to Homing Robot OOX-22/FE.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-feralas-and-tanaris",
-            sourceActionID = "turnin-2766-find-oox-22-fe",
         },
         {
+            checkpointQuest = 2767,
+            complete = { level = { min = 40 } },
+            conditions = { all = { { faction = "Alliance" } } },
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 2767, state = "activeOrCompleted" } },
+                        {
+                            any = {
+                                { quest = { id = 2767, state = "activeOrCompleted" } },
+                                {
+                                    all = {
+                                        {
+                                            any = {
+                                                {
+                                                    any = {
+                                                        { quest = { id = 2766, state = "activeOrCompleted" } },
+                                                        { all = { { item = { minCount = 1, name = "OOX-22/FE Distress Beacon" } } } },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
             id = "alliance-extra-2767-level",
             kind = "note",
-            checkpointQuest = 2767,
-            text = "Reach level 45 before this visit.",
-            conditions = { all = { { faction = "Alliance" } } },
-            complete = { level = { min = 45 } },
-            requiredLevel = 45,
-            excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 2767, state = "activeOrCompleted" } },
-                        {
-                            any = {
-                                { quest = { id = 2767, state = "activeOrCompleted" } },
-                                {
-                                    all = {
-                                        {
-                                            any = {
-                                                {
-                                                    any = {
-                                                        { quest = { id = 2766, state = "activeOrCompleted" } },
-                                                        { all = { { item = { name = "OOX-22/FE Distress Beacon", minCount = 1 } } } },
-                                                    },
-                                                },
-                                            },
-                                        },
-                                    },
-                                },
-                            },
-                        },
-                    },
-                },
-            },
+            requiredLevel = 40,
+            text = "Reach level 40 before this visit.",
         },
         {
-            id = "alliance-extra-2767-accept",
-            kind = "accept",
-            text = "Accept Rescue OOX-22/FE! from Homing Robot OOX-22/FE.",
-            conditions = { all = { { faction = "Alliance" }, { level = { min = 40 } } } },
-            route = {
-                {
-                    mapID = 1444,
-                    x = 0.534,
-                    y = 0.556,
-                    label = "Homing Robot OOX-22/FE",
-                    offMapText = "Travel to Homing Robot OOX-22/FE in Feralas.",
-                },
-            },
             complete = { quest = { id = 2767, state = "activeOrCompleted" } },
-            requiredQuests = { { mode = "any", quests = { 2766 } } },
-            useClientText = false,
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 40 } } } },
             dependsOn = { "alliance-extra-2767-level" },
             excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 2767, state = "activeOrCompleted" } },
-                        {
+                any = {
+                    {
+                        ["not"] = {
                             any = {
                                 { quest = { id = 2767, state = "activeOrCompleted" } },
                                 {
-                                    all = {
+                                    any = {
+                                        { quest = { id = 2767, state = "activeOrCompleted" } },
                                         {
-                                            any = {
+                                            all = {
                                                 {
                                                     any = {
-                                                        { quest = { id = 2766, state = "activeOrCompleted" } },
-                                                        { all = { { item = { name = "OOX-22/FE Distress Beacon", minCount = 1 } } } },
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 2766, state = "activeOrCompleted" } },
+                                                                { all = { { item = { minCount = 1, name = "OOX-22/FE Distress Beacon" } } } },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 2767, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 2767, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 2766, state = "activeOrCompleted" } },
+                                                                { all = { { item = { minCount = 1, name = "OOX-22/FE Distress Beacon" } } } },
+                                                            },
+                                                        },
                                                     },
                                                 },
                                             },
@@ -1829,33 +1845,70 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-extra-2767-accept",
+            kind = "accept",
+            requiredQuests = { { mode = "any", quests = { 2766 } } },
+            route = {
+                {
+                    label = "Homing Robot OOX-22/FE",
+                    mapID = 1444,
+                    offMapText = "Travel to Homing Robot OOX-22/FE in Feralas.",
+                    x = 0.534,
+                    y = 0.556,
+                },
+            },
+            text = "Accept Rescue OOX-22/FE! from Homing Robot OOX-22/FE.",
+            useClientText = false,
         },
         {
-            id = "alliance-extra-2767-objective",
-            kind = "objective",
-            text = "Escort OOX-22/FE to the dock along the Forgotten Coast.",
-            conditions = { all = { { faction = "Alliance" }, { level = { min = 40 } } } },
-            route = {},
             complete = { quest = { id = 2767, state = "complete" } },
-            requiredQuests = { { mode = "any", quests = { 2766 } } },
-            useClientText = false,
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 40 } } } },
             dependsOn = { "alliance-extra-2767-accept" },
-            useClientPin = true,
             excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 2767, state = "activeOrCompleted" } },
-                        {
+                any = {
+                    {
+                        ["not"] = {
                             any = {
                                 { quest = { id = 2767, state = "activeOrCompleted" } },
                                 {
-                                    all = {
+                                    any = {
+                                        { quest = { id = 2767, state = "activeOrCompleted" } },
                                         {
-                                            any = {
+                                            all = {
                                                 {
                                                     any = {
-                                                        { quest = { id = 2766, state = "activeOrCompleted" } },
-                                                        { all = { { item = { name = "OOX-22/FE Distress Beacon", minCount = 1 } } } },
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 2766, state = "activeOrCompleted" } },
+                                                                { all = { { item = { minCount = 1, name = "OOX-22/FE Distress Beacon" } } } },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 2767, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 2767, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 2766, state = "activeOrCompleted" } },
+                                                                { all = { { item = { minCount = 1, name = "OOX-22/FE Distress Beacon" } } } },
+                                                            },
+                                                        },
                                                     },
                                                 },
                                             },
@@ -1867,6 +1920,13 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-extra-2767-objective",
+            kind = "objective",
+            requiredQuests = { { mode = "any", quests = { 2766 } } },
+            route = {},
+            text = "Escort OOX-22/FE to the dock along the Forgotten Coast.",
+            useClientPin = true,
+            useClientText = false,
         },
         {
             complete = { questObjective = { count = 10, id = 2821, index = 1, text = "Thick Yeti Hide" } },
@@ -1956,38 +2016,54 @@ ns:RegisterGuide({
             sourceActionID = "accept-2969-freedom-for-all-creatures",
         },
         {
-            id = "alliance-extra-2767-turnin",
-            kind = "turnin",
-            text = "Turn in Rescue OOX-22/FE! to Oglethorpe Obnoticus.",
-            conditions = { all = { { faction = "Alliance" }, { level = { min = 40 } } } },
-            route = {
-                {
-                    mapID = 1434,
-                    x = 0.282,
-                    y = 0.762,
-                    label = "Oglethorpe Obnoticus",
-                    offMapText = "Travel to Oglethorpe Obnoticus in Stranglethorn Vale.",
-                },
-            },
             complete = { quest = { id = 2767, state = "completed" } },
-            requiredQuests = { { mode = "any", quests = { 2766 } } },
-            useClientText = false,
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 40 } } } },
             dependsOn = { "alliance-extra-2767-objective" },
             excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 2767, state = "activeOrCompleted" } },
-                        {
+                any = {
+                    {
+                        ["not"] = {
                             any = {
                                 { quest = { id = 2767, state = "activeOrCompleted" } },
                                 {
-                                    all = {
+                                    any = {
+                                        { quest = { id = 2767, state = "activeOrCompleted" } },
                                         {
-                                            any = {
+                                            all = {
                                                 {
                                                     any = {
-                                                        { quest = { id = 2766, state = "activeOrCompleted" } },
-                                                        { all = { { item = { name = "OOX-22/FE Distress Beacon", minCount = 1 } } } },
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 2766, state = "activeOrCompleted" } },
+                                                                { all = { { item = { minCount = 1, name = "OOX-22/FE Distress Beacon" } } } },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 2767, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 2767, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 2766, state = "activeOrCompleted" } },
+                                                                { all = { { item = { minCount = 1, name = "OOX-22/FE Distress Beacon" } } } },
+                                                            },
+                                                        },
                                                     },
                                                 },
                                             },
@@ -1999,6 +2075,22 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-extra-2767-turnin",
+            kind = "turnin",
+            requiredQuests = { { mode = "any", quests = { 2766 } } },
+            route = {
+                {
+                    label = "Oglethorpe Obnoticus",
+                    mapID = 1434,
+                    offMapText = "Travel to Oglethorpe Obnoticus in Stranglethorn Vale.",
+                    x = 0.282,
+                    y = 0.762,
+                },
+            },
+            text = "Turn in Rescue OOX-22/FE! to Oglethorpe Obnoticus.",
+            useClientPin = true,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 2969, state = "complete" } },
@@ -2036,13 +2128,13 @@ ns:RegisterGuide({
                     y = 0.4565,
                 },
             },
+            sourceActionID = "turnin-2969-freedom-for-all-creatures",
+            sourceGuide = "leveling-era-alliance-feralas-and-tanaris",
             sourceStep = 60,
             text = "Turn in Freedom for All Creatures to Kindal Moonweaver.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-feralas-and-tanaris",
-            sourceActionID = "turnin-2969-freedom-for-all-creatures",
         },
         {
             complete = { quest = { id = 2970, state = "activeOrCompleted" } },
@@ -2210,25 +2302,6 @@ ns:RegisterGuide({
                 "alliance-leveling-era-alliance-feralas-and-tanaris-objective-2970-2-grimtotem-raider",
                 "alliance-leveling-era-alliance-feralas-and-tanaris-objective-2970-1-grimtotem-naturalist",
             },
-            id = "alliance-leveling-era-alliance-feralas-and-tanaris-turnin-2970-doling-justice",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 2969 } } },
-            route = {
-                {
-                    label = "Jer'kai Moonweaver",
-                    mapID = 1444,
-                    offMapText = "Travel to Jer'kai Moonweaver in Feralas.",
-                    x = 0.6595,
-                    y = 0.4561,
-                },
-            },
-            sourceStep = 63,
-            text = "Turn in Doling Justice to Jer'kai Moonweaver.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-feralas-and-tanaris",
-            sourceActionID = "turnin-2970-doling-justice",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -2249,6 +2322,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-feralas-and-tanaris-turnin-2970-doling-justice",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 2969 } } },
+            route = {
+                {
+                    label = "Jer'kai Moonweaver",
+                    mapID = 1444,
+                    offMapText = "Travel to Jer'kai Moonweaver in Feralas.",
+                    x = 0.6595,
+                    y = 0.4561,
+                },
+            },
+            sourceActionID = "turnin-2970-doling-justice",
+            sourceGuide = "leveling-era-alliance-feralas-and-tanaris",
+            sourceStep = 63,
+            text = "Turn in Doling Justice to Jer'kai Moonweaver.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 2972, state = "activeOrCompleted" } },
@@ -2311,19 +2403,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 4131, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 40 } }, { race = { 1, 3, 4, 7, 95 } } } },
             dependsOn = { "alliance-leveling-era-alliance-feralas-and-tanaris-accept-4131-the-woodpaw-gnolls" },
-            id = "alliance-leveling-era-alliance-feralas-and-tanaris-turnin-4131-the-woodpaw-gnolls",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 4130 } } },
-            route = {
-                { label = "The Woodpaw Gnolls", mapID = 1444, offMapText = "Travel to The Woodpaw Gnolls.", x = 0.7331, y = 0.5631 },
-            },
-            sourceStep = 64,
-            text = "Turn in The Woodpaw Gnolls.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-feralas-and-tanaris",
-            sourceActionID = "turnin-4131-the-woodpaw-gnolls",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -2400,6 +2479,19 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-feralas-and-tanaris-turnin-4131-the-woodpaw-gnolls",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 4130 } } },
+            route = {
+                { label = "The Woodpaw Gnolls", mapID = 1444, offMapText = "Travel to The Woodpaw Gnolls.", x = 0.7331, y = 0.5631 },
+            },
+            sourceActionID = "turnin-4131-the-woodpaw-gnolls",
+            sourceGuide = "leveling-era-alliance-feralas-and-tanaris",
+            sourceStep = 64,
+            text = "Turn in The Woodpaw Gnolls.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 4135, state = "activeOrCompleted" } },
@@ -2908,19 +3000,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 4135, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 40 } }, { race = { 1, 3, 4, 7, 95 } } } },
             dependsOn = { "alliance-leveling-era-alliance-feralas-and-tanaris-accept-4135-the-writhing-deep" },
-            id = "alliance-leveling-era-alliance-feralas-and-tanaris-turnin-4135-the-writhing-deep",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 4131 } } },
-            route = {
-                { label = "The Writhing Deep", mapID = 1444, offMapText = "Travel to The Writhing Deep.", x = 0.7208, y = 0.6375 },
-            },
-            sourceStep = 67,
-            text = "Turn in The Writhing Deep.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-feralas-and-tanaris",
-            sourceActionID = "turnin-4135-the-writhing-deep",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -3011,6 +3090,19 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-feralas-and-tanaris-turnin-4135-the-writhing-deep",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 4131 } } },
+            route = {
+                { label = "The Writhing Deep", mapID = 1444, offMapText = "Travel to The Writhing Deep.", x = 0.7208, y = 0.6375 },
+            },
+            sourceActionID = "turnin-4135-the-writhing-deep",
+            sourceGuide = "leveling-era-alliance-feralas-and-tanaris",
+            sourceStep = 67,
+            text = "Turn in The Writhing Deep.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 4265, state = "activeOrCompleted" } },
@@ -3146,13 +3238,13 @@ ns:RegisterGuide({
             route = {
                 { label = "Pratt McGrubben", mapID = 1444, offMapText = "Travel to Pratt McGrubben in Feralas.", x = 0.3063, y = 0.4271 },
             },
+            sourceActionID = "turnin-2821-the-mark-of-quality",
+            sourceGuide = "leveling-era-alliance-feralas-and-tanaris",
             sourceStep = 69,
             text = "Turn in The Mark of Quality to Pratt McGrubben.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-feralas-and-tanaris",
-            sourceActionID = "turnin-2821-the-mark-of-quality",
         },
         {
             complete = { quest = { id = 2982, state = "completed" } },
@@ -3175,13 +3267,13 @@ ns:RegisterGuide({
                     y = 0.4561,
                 },
             },
+            sourceActionID = "turnin-2982-the-high-wilderness",
+            sourceGuide = "leveling-era-alliance-feralas-and-tanaris",
             sourceStep = 70,
             text = "Turn in The High Wilderness to Angelas Moonbreeze.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-feralas-and-tanaris",
-            sourceActionID = "turnin-2982-the-high-wilderness",
         },
         {
             checkpointQuest = 3445,
@@ -3225,25 +3317,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 4265, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 40 } }, { race = { 1, 3, 4, 7, 95 } } } },
             dependsOn = { "alliance-leveling-era-alliance-feralas-and-tanaris-accept-4265-freed-from-the-hive" },
-            id = "alliance-leveling-era-alliance-feralas-and-tanaris-turnin-4265-freed-from-the-hive",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 4135 } } },
-            route = {
-                {
-                    label = "Ginro Hearthkindle",
-                    mapID = 1444,
-                    offMapText = "Travel to Ginro Hearthkindle in Feralas.",
-                    x = 0.3186,
-                    y = 0.4513,
-                },
-            },
-            sourceStep = 71,
-            text = "Turn in Freed from the Hive to Ginro Hearthkindle.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-feralas-and-tanaris",
-            sourceActionID = "turnin-4265-freed-from-the-hive",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -3348,6 +3421,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-feralas-and-tanaris-turnin-4265-freed-from-the-hive",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 4135 } } },
+            route = {
+                {
+                    label = "Ginro Hearthkindle",
+                    mapID = 1444,
+                    offMapText = "Travel to Ginro Hearthkindle in Feralas.",
+                    x = 0.3186,
+                    y = 0.4513,
+                },
+            },
+            sourceActionID = "turnin-4265-freed-from-the-hive",
+            sourceGuide = "leveling-era-alliance-feralas-and-tanaris",
+            sourceStep = 71,
+            text = "Turn in Freed from the Hive to Ginro Hearthkindle.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 4266, state = "activeOrCompleted" } },
@@ -3494,25 +3586,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 4266, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 40 } }, { race = { 1, 3, 4, 7, 95 } } } },
             dependsOn = { "alliance-leveling-era-alliance-feralas-and-tanaris-accept-4266-a-hero-s-welcome" },
-            id = "alliance-leveling-era-alliance-feralas-and-tanaris-turnin-4266-a-hero-s-welcome",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 4265 } } },
-            route = {
-                {
-                    label = "Shandris Feathermoon",
-                    mapID = 1444,
-                    offMapText = "Travel to Shandris Feathermoon in Feralas.",
-                    x = 0.3028,
-                    y = 0.4617,
-                },
-            },
-            sourceStep = 72,
-            text = "Turn in A Hero's Welcome to Shandris Feathermoon.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-feralas-and-tanaris",
-            sourceActionID = "turnin-4266-a-hero-s-welcome",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -3631,6 +3704,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-feralas-and-tanaris-turnin-4266-a-hero-s-welcome",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 4265 } } },
+            route = {
+                {
+                    label = "Shandris Feathermoon",
+                    mapID = 1444,
+                    offMapText = "Travel to Shandris Feathermoon in Feralas.",
+                    x = 0.3028,
+                    y = 0.4617,
+                },
+            },
+            sourceActionID = "turnin-4266-a-hero-s-welcome",
+            sourceGuide = "leveling-era-alliance-feralas-and-tanaris",
+            sourceStep = 72,
+            text = "Turn in A Hero's Welcome to Shandris Feathermoon.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 4267, state = "activeOrCompleted" } },
@@ -3803,13 +3895,13 @@ ns:RegisterGuide({
                     y = 0.9223,
                 },
             },
+            sourceActionID = "turnin-2939-in-search-of-knowledge",
+            sourceGuide = "leveling-era-alliance-feralas-and-tanaris",
             sourceStep = 74,
             text = "Turn in In Search of Knowledge to Daryn Lightwind.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-feralas-and-tanaris",
-            sourceActionID = "turnin-2939-in-search-of-knowledge",
         },
         {
             complete = { quest = { id = 2940, state = "activeOrCompleted" } },
@@ -3852,25 +3944,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 2940, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 42 } }, { race = { 1, 3, 4, 7, 95 } } } },
             dependsOn = { "alliance-leveling-era-alliance-feralas-and-tanaris-accept-2940-feralas-a-history" },
-            id = "alliance-leveling-era-alliance-feralas-and-tanaris-turnin-2940-feralas-a-history",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 2939 } } },
-            route = {
-                {
-                    label = "Daryn Lightwind",
-                    mapID = 1438,
-                    offMapText = "Travel to Daryn Lightwind in Teldrassil.",
-                    x = 0.5541,
-                    y = 0.9223,
-                },
-            },
-            sourceStep = 76,
-            text = "Turn in Feralas: A History to Daryn Lightwind.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-feralas-and-tanaris",
-            sourceActionID = "turnin-2940-feralas-a-history",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -3891,6 +3964,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-feralas-and-tanaris-turnin-2940-feralas-a-history",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 2939 } } },
+            route = {
+                {
+                    label = "Daryn Lightwind",
+                    mapID = 1438,
+                    offMapText = "Travel to Daryn Lightwind in Teldrassil.",
+                    x = 0.5541,
+                    y = 0.9223,
+                },
+            },
+            sourceActionID = "turnin-2940-feralas-a-history",
+            sourceGuide = "leveling-era-alliance-feralas-and-tanaris",
+            sourceStep = 76,
+            text = "Turn in Feralas: A History to Daryn Lightwind.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 2941, state = "activeOrCompleted" } },
@@ -3953,25 +4045,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 4267, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 40 } }, { race = { 1, 3, 4, 7, 95 } } } },
             dependsOn = { "alliance-leveling-era-alliance-feralas-and-tanaris-accept-4267-rise-of-the-silithid" },
-            id = "alliance-leveling-era-alliance-feralas-and-tanaris-turnin-4267-rise-of-the-silithid",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 4266 } } },
-            route = {
-                {
-                    label = "Gracina Spiritmight",
-                    mapID = 1457,
-                    offMapText = "Travel to Gracina Spiritmight in Darnassus.",
-                    x = 0.4185,
-                    y = 0.8562,
-                },
-            },
-            sourceStep = 84,
-            text = "Turn in Rise of the Silithid to Gracina Spiritmight.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-feralas-and-tanaris",
-            sourceActionID = "turnin-4267-rise-of-the-silithid",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -4104,30 +4177,30 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-feralas-and-tanaris-turnin-4267-rise-of-the-silithid",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 4266 } } },
+            route = {
+                {
+                    label = "Gracina Spiritmight",
+                    mapID = 1457,
+                    offMapText = "Travel to Gracina Spiritmight in Darnassus.",
+                    x = 0.4185,
+                    y = 0.8562,
+                },
+            },
+            sourceActionID = "turnin-4267-rise-of-the-silithid",
+            sourceGuide = "leveling-era-alliance-feralas-and-tanaris",
+            sourceStep = 84,
+            text = "Turn in Rise of the Silithid to Gracina Spiritmight.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 2972, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 38 } }, { race = { 1, 3, 4, 7, 95 } } } },
             dependsOn = { "alliance-leveling-era-alliance-feralas-and-tanaris-accept-2972-doling-justice" },
-            id = "alliance-leveling-era-alliance-feralas-and-tanaris-turnin-2972-doling-justice",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 2970 } } },
-            route = {
-                {
-                    label = "Tyrande Whisperwind",
-                    mapID = 1457,
-                    offMapText = "Travel to Tyrande Whisperwind in Darnassus.",
-                    x = 0.391,
-                    y = 0.8159,
-                },
-            },
-            sourceStep = 85,
-            text = "Turn in Doling Justice to Tyrande Whisperwind.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-feralas-and-tanaris",
-            sourceActionID = "turnin-2972-doling-justice",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -4162,82 +4235,30 @@ ns:RegisterGuide({
                     },
                 },
             },
-        },
-        {
-            id = "alliance-extra-3841-level",
-            kind = "note",
-            checkpointQuest = 3841,
-            text = "Reach level 47 before this visit.",
-            conditions = { all = { { faction = "Alliance" } } },
-            complete = { level = { min = 47 } },
-            requiredLevel = 47,
-            excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 3841, state = "activeOrCompleted" } },
-                        {
-                            any = {
-                                { quest = { id = 3841, state = "activeOrCompleted" } },
-                                {
-                                    all = {
-                                        { faction = "Alliance" },
-                                        {
-                                            any = {
-                                                {
-                                                    any = {
-                                                        { quest = { id = 2972, state = "activeOrCompleted" } },
-                                                        {
-                                                            all = {
-                                                                { faction = "Alliance" },
-                                                                {
-                                                                    any = {
-                                                                        {
-                                                                            any = {
-                                                                                { quest = { id = 2970, state = "activeOrCompleted" } },
-                                                                                {
-                                                                                    all = {
-                                                                                        { faction = "Alliance" },
-                                                                                        {
-                                                                                            any = { { any = { { quest = { id = 2969, state = "activeOrCompleted" } }, { all = { { faction = "Alliance" } } } } } },
-                                                                                        },
-                                                                                    },
-                                                                                },
-                                                                            },
-                                                                        },
-                                                                    },
-                                                                },
-                                                            },
-                                                        },
-                                                    },
-                                                },
-                                            },
-                                        },
-                                    },
-                                },
-                            },
-                        },
-                    },
-                },
-            },
-        },
-        {
-            id = "alliance-extra-3841-accept",
-            kind = "accept",
-            text = "Accept An Orphan Looking For a Home from Kindal Moonweaver.",
-            conditions = { all = { { faction = "Alliance" }, { level = { min = 38 } } } },
+            id = "alliance-leveling-era-alliance-feralas-and-tanaris-turnin-2972-doling-justice",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 2970 } } },
             route = {
                 {
-                    mapID = 1444,
-                    x = 0.6579999999999999,
-                    y = 0.456,
-                    label = "Kindal Moonweaver",
-                    offMapText = "Travel to Kindal Moonweaver in Feralas.",
+                    label = "Tyrande Whisperwind",
+                    mapID = 1457,
+                    offMapText = "Travel to Tyrande Whisperwind in Darnassus.",
+                    x = 0.391,
+                    y = 0.8159,
                 },
             },
-            complete = { quest = { id = 3841, state = "activeOrCompleted" } },
-            requiredQuests = { { mode = "any", quests = { 2972 } } },
+            sourceActionID = "turnin-2972-doling-justice",
+            sourceGuide = "leveling-era-alliance-feralas-and-tanaris",
+            sourceStep = 85,
+            text = "Turn in Doling Justice to Tyrande Whisperwind.",
+            useClientPin = false,
             useClientText = false,
-            dependsOn = { "alliance-extra-3841-level" },
+            useQuestNavigation = true,
+        },
+        {
+            checkpointQuest = 3841,
+            complete = { level = { min = 38 } },
+            conditions = { all = { { faction = "Alliance" } } },
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -4286,6 +4307,139 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-extra-3841-level",
+            kind = "note",
+            requiredLevel = 38,
+            text = "Reach level 38 before this visit.",
+        },
+        {
+            complete = { quest = { id = 3841, state = "activeOrCompleted" } },
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 38 } } } },
+            dependsOn = { "alliance-extra-3841-level" },
+            excludeWhen = {
+                any = {
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 3841, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 3841, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                { faction = "Alliance" },
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 2972, state = "activeOrCompleted" } },
+                                                                {
+                                                                    all = {
+                                                                        { faction = "Alliance" },
+                                                                        {
+                                                                            any = {
+                                                                                {
+                                                                                    any = {
+                                                                                        { quest = { id = 2970, state = "activeOrCompleted" } },
+                                                                                        {
+                                                                                            all = {
+                                                                                                { faction = "Alliance" },
+                                                                                                {
+                                                                                                    any = { { any = { { quest = { id = 2969, state = "activeOrCompleted" } }, { all = { { faction = "Alliance" } } } } } },
+                                                                                                },
+                                                                                            },
+                                                                                        },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 3841, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 3841, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                { faction = "Alliance" },
+                                                { race = { 1, 3, 4, 7 } },
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 2972, state = "activeOrCompleted" } },
+                                                                {
+                                                                    all = {
+                                                                        { faction = "Alliance" },
+                                                                        { race = { 1, 3, 4, 7 } },
+                                                                        {
+                                                                            any = {
+                                                                                {
+                                                                                    any = {
+                                                                                        { quest = { id = 2970, state = "activeOrCompleted" } },
+                                                                                        {
+                                                                                            all = {
+                                                                                                { faction = "Alliance" },
+                                                                                                { race = { 1, 3, 4, 7 } },
+                                                                                                {
+                                                                                                    any = {
+                                                                                                        {
+                                                                                                            any = {
+                                                                                                                { quest = { id = 2969, state = "activeOrCompleted" } },
+                                                                                                                { all = { { faction = "Alliance" }, { race = { 1, 3, 4, 7 } } } },
+                                                                                                            },
+                                                                                                        },
+                                                                                                    },
+                                                                                                },
+                                                                                            },
+                                                                                        },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
+            id = "alliance-extra-3841-accept",
+            kind = "accept",
+            requiredQuests = { { mode = "any", quests = { 2972 } } },
+            route = {
+                {
+                    label = "Kindal Moonweaver",
+                    mapID = 1444,
+                    offMapText = "Travel to Kindal Moonweaver in Feralas.",
+                    x = 0.658,
+                    y = 0.456,
+                },
+            },
+            text = "Accept An Orphan Looking For a Home from Kindal Moonweaver.",
+            useClientText = false,
         },
         {
             complete = { quest = { id = 4281, state = "completed" } },
@@ -4388,7 +4542,7 @@ ns:RegisterGuide({
                                         { quest = { id = 4281, state = "activeOrCompleted" } },
                                         {
                                             all = {
-                                                { item = { name = "Undelivered Parcel", minCount = 1 } },
+                                                { item = { minCount = 1, name = "Undelivered Parcel" } },
                                                 { faction = "Alliance" },
                                                 {
                                                     any = {
@@ -4484,37 +4638,18 @@ ns:RegisterGuide({
                     y = 0.4657,
                 },
             },
+            sourceActionID = "turnin-4281-thalanaar-delivery",
+            sourceGuide = "leveling-era-alliance-feralas-and-tanaris",
             sourceStep = 97,
             text = "Turn in Thalanaar Delivery to Falfindel Waywarder.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-feralas-and-tanaris",
-            sourceActionID = "turnin-4281-thalanaar-delivery",
         },
         {
             complete = { quest = { id = 2941, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 42 } }, { race = { 1, 3, 4, 7, 95 } } } },
             dependsOn = { "alliance-leveling-era-alliance-feralas-and-tanaris-accept-2941-the-borrower" },
-            id = "alliance-leveling-era-alliance-feralas-and-tanaris-turnin-2941-the-borrower",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 2940 } } },
-            route = {
-                {
-                    label = "Curgle Cranklehop",
-                    mapID = 1446,
-                    offMapText = "Travel to Curgle Cranklehop in Tanaris.",
-                    x = 0.5236,
-                    y = 0.269,
-                },
-            },
-            sourceStep = 100,
-            text = "Turn in The Borrower to Curgle Cranklehop.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-feralas-and-tanaris",
-            sourceActionID = "turnin-2941-the-borrower",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -4549,6 +4684,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-feralas-and-tanaris-turnin-2941-the-borrower",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 2940 } } },
+            route = {
+                {
+                    label = "Curgle Cranklehop",
+                    mapID = 1446,
+                    offMapText = "Travel to Curgle Cranklehop in Tanaris.",
+                    x = 0.5236,
+                    y = 0.269,
+                },
+            },
+            sourceActionID = "turnin-2941-the-borrower",
+            sourceGuide = "leveling-era-alliance-feralas-and-tanaris",
+            sourceStep = 100,
+            text = "Turn in The Borrower to Curgle Cranklehop.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 2944, state = "activeOrCompleted" } },
@@ -4662,13 +4816,13 @@ ns:RegisterGuide({
                     y = 0.4593,
                 },
             },
+            sourceActionID = "turnin-3445-the-sunken-temple",
+            sourceGuide = "leveling-era-alliance-tanaris-part-2",
             sourceStep = 5,
             text = "Turn in The Sunken Temple to Marvon Rivetseeker.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-tanaris-part-2",
-            sourceActionID = "turnin-3445-the-sunken-temple",
         },
         {
             id = "visit-entry-leveling-era-alliance-azshara-and-felwood",
@@ -4746,25 +4900,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 2944, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 42 } }, { race = { 1, 3, 4, 7, 95 } } } },
             dependsOn = { "alliance-leveling-era-alliance-azshara-and-felwood-objective-2944-quest-work" },
-            id = "alliance-leveling-era-alliance-azshara-and-felwood-turnin-2944-the-super-snapper-fx",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 2941 } } },
-            route = {
-                {
-                    label = "Daryn Lightwind",
-                    mapID = 1438,
-                    offMapText = "Travel to Daryn Lightwind in Teldrassil.",
-                    x = 0.5541,
-                    y = 0.9223,
-                },
-            },
-            sourceStep = 2,
-            text = "Turn in The Super Snapper FX to Daryn Lightwind.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-azshara-and-felwood",
-            sourceActionID = "turnin-2944-the-super-snapper-fx",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -4813,6 +4948,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-azshara-and-felwood-turnin-2944-the-super-snapper-fx",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 2941 } } },
+            route = {
+                {
+                    label = "Daryn Lightwind",
+                    mapID = 1438,
+                    offMapText = "Travel to Daryn Lightwind in Teldrassil.",
+                    x = 0.5541,
+                    y = 0.9223,
+                },
+            },
+            sourceActionID = "turnin-2944-the-super-snapper-fx",
+            sourceGuide = "leveling-era-alliance-azshara-and-felwood",
+            sourceStep = 2,
+            text = "Turn in The Super Snapper FX to Daryn Lightwind.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 2943, state = "activeOrCompleted" } },
@@ -4944,13 +5098,13 @@ ns:RegisterGuide({
             kind = "turnin",
             requiredQuests = {},
             route = { { label = "Jenal", mapID = 1457, offMapText = "Travel to Jenal in Darnassus.", x = 0.3149, y = 0.0823 } },
+            sourceActionID = "turnin-3764-un-goro-soil",
+            sourceGuide = "leveling-era-alliance-azshara-and-felwood",
             sourceStep = 6,
             text = "Turn in Un'Goro Soil to Jenal.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-azshara-and-felwood",
-            sourceActionID = "turnin-3764-un-goro-soil",
         },
         {
             id = "visit-entry-leveling-era-alliance-feralas-and-azshara",
@@ -5115,25 +5269,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 2943, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 42 } }, { race = { 1, 3, 4, 7, 95 } } } },
             dependsOn = {},
-            id = "alliance-leveling-era-alliance-feralas-and-azshara-turnin-2943-return-to-troyas",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 2944 } } },
-            route = {
-                {
-                    label = "Troyas Moonbreeze",
-                    mapID = 1444,
-                    offMapText = "Travel to Troyas Moonbreeze in Feralas.",
-                    x = 0.3178,
-                    y = 0.455,
-                },
-            },
-            sourceStep = 2,
-            text = "Turn in Return to Troyas to Troyas Moonbreeze.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-feralas-and-azshara",
-            sourceActionID = "turnin-2943-return-to-troyas",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -5196,6 +5331,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-feralas-and-azshara-turnin-2943-return-to-troyas",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 2944 } } },
+            route = {
+                {
+                    label = "Troyas Moonbreeze",
+                    mapID = 1444,
+                    offMapText = "Travel to Troyas Moonbreeze in Feralas.",
+                    x = 0.3178,
+                    y = 0.455,
+                },
+            },
+            sourceActionID = "turnin-2943-return-to-troyas",
+            sourceGuide = "leveling-era-alliance-feralas-and-azshara",
+            sourceStep = 2,
+            text = "Turn in Return to Troyas to Troyas Moonbreeze.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 2879, state = "activeOrCompleted" } },
@@ -5418,13 +5572,13 @@ ns:RegisterGuide({
                     y = 0.4342,
                 },
             },
+            sourceActionID = "turnin-7003-zapped-giants",
+            sourceGuide = "leveling-era-alliance-feralas-and-azshara",
             sourceStep = 7,
             text = "Turn in Zapped Giants to Zorbin Fandazzle.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-feralas-and-azshara",
-            sourceActionID = "turnin-7003-zapped-giants",
         },
         {
             complete = { quest = { id = 7721, state = "completed" } },
@@ -5445,13 +5599,13 @@ ns:RegisterGuide({
                     y = 0.4342,
                 },
             },
+            sourceActionID = "turnin-7721-fuel-for-the-zapping",
+            sourceGuide = "leveling-era-alliance-feralas-and-azshara",
             sourceStep = 7,
             text = "Turn in Fuel for the Zapping to Zorbin Fandazzle.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-feralas-and-azshara",
-            sourceActionID = "turnin-7721-fuel-for-the-zapping",
         },
         {
             complete = {
@@ -6138,19 +6292,6 @@ ns:RegisterGuide({
                 "alliance-leveling-era-alliance-feralas-and-azshara-objective-2879-1-flame-of-byltan",
                 "alliance-leveling-era-alliance-feralas-and-azshara-objective-2879-1-troyas-stave",
             },
-            id = "alliance-leveling-era-alliance-feralas-and-azshara-turnin-2879-the-stave-of-equinex",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 2943 } } },
-            route = {
-                { label = "The Stave of Equinex", mapID = 1444, offMapText = "Travel to The Stave of Equinex.", x = 0.3887, y = 0.1323 },
-            },
-            sourceStep = 19,
-            text = "Touch the Equinex Monolith to turn in The Stave of Equinex.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-feralas-and-azshara",
-            sourceActionID = "turnin-2879-the-stave-of-equinex",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -6227,6 +6368,19 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-feralas-and-azshara-turnin-2879-the-stave-of-equinex",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 2943 } } },
+            route = {
+                { label = "The Stave of Equinex", mapID = 1444, offMapText = "Travel to The Stave of Equinex.", x = 0.3887, y = 0.1323 },
+            },
+            sourceActionID = "turnin-2879-the-stave-of-equinex",
+            sourceGuide = "leveling-era-alliance-feralas-and-azshara",
+            sourceStep = 19,
+            text = "Touch the Equinex Monolith to turn in The Stave of Equinex.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 2942, state = "activeOrCompleted" } },
@@ -6345,13 +6499,13 @@ ns:RegisterGuide({
             route = {
                 { label = "Shay Leafrunner", mapID = 1444, offMapText = "Travel to Shay Leafrunner in Feralas.", x = 0.3822, y = 0.103 },
             },
+            sourceActionID = "turnin-2844-the-giant-guardian",
+            sourceGuide = "leveling-era-alliance-feralas-and-azshara",
             sourceStep = 20,
             text = "Turn in The Giant Guardian to Shay Leafrunner.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-feralas-and-azshara",
-            sourceActionID = "turnin-2844-the-giant-guardian",
         },
         {
             complete = { quest = { id = 2845, state = "activeOrCompleted" } },
@@ -6471,17 +6625,6 @@ ns:RegisterGuide({
                 "alliance-leveling-era-alliance-feralas-and-azshara-objective-2845-1-shay-s-chest",
                 "alliance-leveling-era-alliance-feralas-and-azshara-objective-2845-reviewed-escort",
             },
-            id = "alliance-leveling-era-alliance-feralas-and-azshara-turnin-2845-wandering-shay",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 2844 } } },
-            route = { { label = "Rockbiter", mapID = 1444, offMapText = "Travel to Rockbiter in Feralas.", x = 0.4238, y = 0.22 } },
-            sourceStep = 23,
-            text = "Turn in Wandering Shay to Rockbiter.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-feralas-and-azshara",
-            sourceActionID = "turnin-2845-wandering-shay",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -6502,6 +6645,17 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-feralas-and-azshara-turnin-2845-wandering-shay",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 2844 } } },
+            route = { { label = "Rockbiter", mapID = 1444, offMapText = "Travel to Rockbiter in Feralas.", x = 0.4238, y = 0.22 } },
+            sourceActionID = "turnin-2845-wandering-shay",
+            sourceGuide = "leveling-era-alliance-feralas-and-azshara",
+            sourceStep = 23,
+            text = "Turn in Wandering Shay to Rockbiter.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 2942, state = "complete" } },
@@ -6614,25 +6768,6 @@ ns:RegisterGuide({
                 "alliance-leveling-era-alliance-feralas-and-azshara-accept-2942-the-morrow-stone",
                 "alliance-leveling-era-alliance-feralas-and-azshara-objective-2942-quest-work",
             },
-            id = "alliance-leveling-era-alliance-feralas-and-azshara-turnin-2942-the-morrow-stone",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 2879 } } },
-            route = {
-                {
-                    label = "Troyas Moonbreeze",
-                    mapID = 1444,
-                    offMapText = "Travel to Troyas Moonbreeze in Feralas.",
-                    x = 0.3178,
-                    y = 0.455,
-                },
-            },
-            sourceStep = 26,
-            text = "Turn in The Morrow Stone to Troyas Moonbreeze.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-feralas-and-azshara",
-            sourceActionID = "turnin-2942-the-morrow-stone",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -6723,6 +6858,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-feralas-and-azshara-turnin-2942-the-morrow-stone",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 2879 } } },
+            route = {
+                {
+                    label = "Troyas Moonbreeze",
+                    mapID = 1444,
+                    offMapText = "Travel to Troyas Moonbreeze in Feralas.",
+                    x = 0.3178,
+                    y = 0.455,
+                },
+            },
+            sourceActionID = "turnin-2942-the-morrow-stone",
+            sourceGuide = "leveling-era-alliance-feralas-and-azshara",
+            sourceStep = 26,
+            text = "Turn in The Morrow Stone to Troyas Moonbreeze.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 7733, state = "completed" } },
@@ -6731,19 +6885,6 @@ ns:RegisterGuide({
                 "alliance-leveling-era-alliance-feralas-and-azshara-accept-7733-improved-quality",
                 "alliance-leveling-era-alliance-feralas-and-azshara-objective-7733-1-rage-scar-yeti-hide",
             },
-            id = "alliance-leveling-era-alliance-feralas-and-azshara-turnin-7733-improved-quality",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 2821 } } },
-            route = {
-                { label = "Pratt McGrubben", mapID = 1444, offMapText = "Travel to Pratt McGrubben in Feralas.", x = 0.3063, y = 0.4271 },
-            },
-            sourceStep = 27,
-            text = "Turn in Improved Quality to Pratt McGrubben.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-feralas-and-azshara",
-            sourceActionID = "turnin-7733-improved-quality",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -6764,6 +6905,19 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-feralas-and-azshara-turnin-7733-improved-quality",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 2821 } } },
+            route = {
+                { label = "Pratt McGrubben", mapID = 1444, offMapText = "Travel to Pratt McGrubben in Feralas.", x = 0.3063, y = 0.4271 },
+            },
+            sourceActionID = "turnin-7733-improved-quality",
+            sourceGuide = "leveling-era-alliance-feralas-and-azshara",
+            sourceStep = 27,
+            text = "Turn in Improved Quality to Pratt McGrubben.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 7735, state = "completed" } },
@@ -6796,7 +6950,7 @@ ns:RegisterGuide({
                                         { quest = { id = 7735, state = "activeOrCompleted" } },
                                         {
                                             all = {
-                                                { item = { name = "Pristine Yeti Hide", minCount = 1 } },
+                                                { item = { minCount = 1, name = "Pristine Yeti Hide" } },
                                                 { faction = "Alliance" },
                                                 {
                                                     any = { { any = { { quest = { id = 2821, state = "activeOrCompleted" } }, { all = { { faction = "Alliance" } } } } } },
@@ -6816,13 +6970,13 @@ ns:RegisterGuide({
             route = {
                 { label = "Pratt McGrubben", mapID = 1444, offMapText = "Travel to Pratt McGrubben in Feralas.", x = 0.3063, y = 0.4271 },
             },
+            sourceActionID = "turnin-7735-pristine-yeti-hide",
+            sourceGuide = "leveling-era-alliance-feralas-and-azshara",
             sourceStep = 27,
             text = "Turn in Pristine Yeti Hide to Pratt McGrubben.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-feralas-and-azshara",
-            sourceActionID = "turnin-7735-pristine-yeti-hide",
         },
         {
             id = "visit-entry-leveling-era-alliance-ungoro-crater-part-2",
@@ -6881,25 +7035,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 3781, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 47 } }, { race = { 1, 3, 4, 7, 95 } } } },
             dependsOn = { "alliance-leveling-era-alliance-ungoro-crater-part-2-accept-3781-morrowgrain-research" },
-            id = "alliance-leveling-era-alliance-ungoro-crater-part-2-turnin-3781-morrowgrain-research",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 3764 } } },
-            route = {
-                {
-                    label = "Mathrengyl Bearwalker",
-                    mapID = 1457,
-                    offMapText = "Travel to Mathrengyl Bearwalker in Darnassus.",
-                    x = 0.354,
-                    y = 0.0842,
-                },
-            },
-            sourceStep = 80,
-            text = "Turn in Morrowgrain Research to Mathrengyl Bearwalker.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-ungoro-crater-part-2",
-            sourceActionID = "turnin-3781-morrowgrain-research",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -6920,18 +7055,121 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-ungoro-crater-part-2-turnin-3781-morrowgrain-research",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 3764 } } },
+            route = {
+                {
+                    label = "Mathrengyl Bearwalker",
+                    mapID = 1457,
+                    offMapText = "Travel to Mathrengyl Bearwalker in Darnassus.",
+                    x = 0.354,
+                    y = 0.0842,
+                },
+            },
+            sourceActionID = "turnin-3781-morrowgrain-research",
+            sourceGuide = "leveling-era-alliance-ungoro-crater-part-2",
+            sourceStep = 80,
+            text = "Turn in Morrowgrain Research to Mathrengyl Bearwalker.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
+            alternativeQuests = { 3791 },
+            checkpointQuest = 3788,
+            complete = { level = { min = 47 } },
+            conditions = { all = { { faction = "Alliance" } } },
+            excludeWhen = {
+                any = {
+                    { any = { { quest = { id = 3787, state = "activeOrCompleted" } } } },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 3788, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 3788, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                { faction = "Alliance" },
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 3781, state = "activeOrCompleted" } },
+                                                                {
+                                                                    all = {
+                                                                        { faction = "Alliance" },
+                                                                        {
+                                                                            any = { { any = { { quest = { id = 3764, state = "activeOrCompleted" } }, { all = { { faction = "Alliance" } } } } } },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
             id = "alliance-extra-3788-level",
             kind = "note",
-            checkpointQuest = 3788,
-            text = "Reach level 50 before this visit.",
-            conditions = { all = { { faction = "Alliance" } } },
-            complete = { level = { min = 50 } },
-            requiredLevel = 50,
+            requiredLevel = 47,
+            text = "Reach level 47 before this visit.",
+        },
+        {
+            alternativeQuests = { 3791 },
+            complete = { quest = { id = 3788, state = "activeOrCompleted" } },
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 47 } } } },
+            dependsOn = { "alliance-extra-3788-level" },
             excludeWhen = {
                 any = {
-                    { any = { { quest = { id = 3787, state = "activeOrCompleted" } } } },
+                    {
+                        any = {
+                            { any = { { quest = { id = 3787, state = "activeOrCompleted" } } } },
+                            {
+                                ["not"] = {
+                                    any = {
+                                        { quest = { id = 3788, state = "activeOrCompleted" } },
+                                        {
+                                            any = {
+                                                { quest = { id = 3788, state = "activeOrCompleted" } },
+                                                {
+                                                    all = {
+                                                        { faction = "Alliance" },
+                                                        {
+                                                            any = {
+                                                                {
+                                                                    any = {
+                                                                        { quest = { id = 3781, state = "activeOrCompleted" } },
+                                                                        {
+                                                                            all = {
+                                                                                { faction = "Alliance" },
+                                                                                {
+                                                                                    any = { { any = { { quest = { id = 3764, state = "activeOrCompleted" } }, { all = { { faction = "Alliance" } } } } } },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
                     {
                         ["not"] = {
                             any = {
@@ -6942,6 +7180,7 @@ ns:RegisterGuide({
                                         {
                                             all = {
                                                 { faction = "Alliance" },
+                                                { race = { 1, 3, 4, 7 } },
                                                 {
                                                     any = {
                                                         {
@@ -6950,8 +7189,16 @@ ns:RegisterGuide({
                                                                 {
                                                                     all = {
                                                                         { faction = "Alliance" },
+                                                                        { race = { 1, 3, 4, 7 } },
                                                                         {
-                                                                            any = { { any = { { quest = { id = 3764, state = "activeOrCompleted" } }, { all = { { faction = "Alliance" } } } } } },
+                                                                            any = {
+                                                                                {
+                                                                                    any = {
+                                                                                        { quest = { id = 3764, state = "activeOrCompleted" } },
+                                                                                        { all = { { faction = "Alliance" }, { race = { 1, 3, 4, 7 } } } },
+                                                                                    },
+                                                                                },
+                                                                            },
                                                                         },
                                                                     },
                                                                 },
@@ -6968,29 +7215,30 @@ ns:RegisterGuide({
                     },
                 },
             },
-            alternativeQuests = { 3791 },
-        },
-        {
             id = "alliance-extra-3788-accept",
             kind = "accept",
-            text = "Accept Jonespyre's Request from Innkeeper Shyria.",
-            conditions = { all = { { faction = "Alliance" }, { level = { min = 47 } } } },
-            route = {
-                { mapID = 1444, x = 0.31, y = 0.434, label = "Innkeeper Shyria", offMapText = "Travel to Innkeeper Shyria in Feralas." },
-            },
-            complete = { quest = { id = 3788, state = "activeOrCompleted" } },
             requiredQuests = { { mode = "any", quests = { 3781 } } },
+            route = {
+                { label = "Innkeeper Shyria", mapID = 1444, offMapText = "Travel to Innkeeper Shyria in Feralas.", x = 0.31, y = 0.434 },
+            },
+            text = "Accept Jonespyre's Request from Innkeeper Shyria.",
             useClientText = false,
+        },
+        {
+            alternativeQuests = { 3791 },
+            checkpointQuest = 3787,
+            complete = { level = { min = 47 } },
+            conditions = { all = { { faction = "Alliance" } } },
             excludeWhen = {
                 any = {
-                    { any = { { quest = { id = 3787, state = "activeOrCompleted" } } } },
+                    { any = { { quest = { id = 3788, state = "activeOrCompleted" } } } },
                     {
                         ["not"] = {
                             any = {
-                                { quest = { id = 3788, state = "activeOrCompleted" } },
+                                { quest = { id = 3787, state = "activeOrCompleted" } },
                                 {
                                     any = {
-                                        { quest = { id = 3788, state = "activeOrCompleted" } },
+                                        { quest = { id = 3787, state = "activeOrCompleted" } },
                                         {
                                             all = {
                                                 { faction = "Alliance" },
@@ -7020,20 +7268,57 @@ ns:RegisterGuide({
                     },
                 },
             },
-            alternativeQuests = { 3791 },
-            dependsOn = { "alliance-extra-3788-level" },
-        },
-        {
             id = "alliance-extra-3787-level",
             kind = "note",
-            checkpointQuest = 3787,
-            text = "Reach level 50 before this visit.",
-            conditions = { all = { { faction = "Alliance" } } },
-            complete = { level = { min = 50 } },
-            requiredLevel = 50,
+            requiredLevel = 47,
+            text = "Reach level 47 before this visit.",
+        },
+        {
+            alternativeQuests = { 3791 },
+            complete = { quest = { id = 3787, state = "activeOrCompleted" } },
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 47 } } } },
+            dependsOn = { "alliance-extra-3787-level" },
             excludeWhen = {
                 any = {
-                    { any = { { quest = { id = 3788, state = "activeOrCompleted" } } } },
+                    {
+                        any = {
+                            { any = { { quest = { id = 3788, state = "activeOrCompleted" } } } },
+                            {
+                                ["not"] = {
+                                    any = {
+                                        { quest = { id = 3787, state = "activeOrCompleted" } },
+                                        {
+                                            any = {
+                                                { quest = { id = 3787, state = "activeOrCompleted" } },
+                                                {
+                                                    all = {
+                                                        { faction = "Alliance" },
+                                                        {
+                                                            any = {
+                                                                {
+                                                                    any = {
+                                                                        { quest = { id = 3781, state = "activeOrCompleted" } },
+                                                                        {
+                                                                            all = {
+                                                                                { faction = "Alliance" },
+                                                                                {
+                                                                                    any = { { any = { { quest = { id = 3764, state = "activeOrCompleted" } }, { all = { { faction = "Alliance" } } } } } },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
                     {
                         ["not"] = {
                             any = {
@@ -7044,6 +7329,7 @@ ns:RegisterGuide({
                                         {
                                             all = {
                                                 { faction = "Alliance" },
+                                                { race = { 1, 3, 4, 7 } },
                                                 {
                                                     any = {
                                                         {
@@ -7052,8 +7338,16 @@ ns:RegisterGuide({
                                                                 {
                                                                     all = {
                                                                         { faction = "Alliance" },
+                                                                        { race = { 1, 3, 4, 7 } },
                                                                         {
-                                                                            any = { { any = { { quest = { id = 3764, state = "activeOrCompleted" } }, { all = { { faction = "Alliance" } } } } } },
+                                                                            any = {
+                                                                                {
+                                                                                    any = {
+                                                                                        { quest = { id = 3764, state = "activeOrCompleted" } },
+                                                                                        { all = { { faction = "Alliance" }, { race = { 1, 3, 4, 7 } } } },
+                                                                                    },
+                                                                                },
+                                                                            },
                                                                         },
                                                                     },
                                                                 },
@@ -7070,28 +7364,59 @@ ns:RegisterGuide({
                     },
                 },
             },
-            alternativeQuests = { 3791 },
-        },
-        {
             id = "alliance-extra-3787-accept",
             kind = "accept",
-            text = "Accept Jonespyre's Request from Tannysa.",
-            conditions = { all = { { faction = "Alliance" }, { level = { min = 47 } } } },
-            route = {
-                {
-                    mapID = 1453,
-                    x = 0.44799999999999995,
-                    y = 0.77,
-                    label = "Tannysa",
-                    offMapText = "Travel to Tannysa in Stormwind City.",
-                },
-            },
-            complete = { quest = { id = 3787, state = "activeOrCompleted" } },
             requiredQuests = { { mode = "any", quests = { 3781 } } },
+            route = { { label = "Tannysa", mapID = 1453, offMapText = "Travel to Tannysa in Stormwind City.", x = 0.448, y = 0.77 } },
+            text = "Accept Jonespyre's Request from Tannysa.",
             useClientText = false,
+        },
+        {
+            alternativeQuests = { 3791 },
+            complete = { quest = { id = 3787, state = "complete" } },
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 47 } } } },
+            dependsOn = { "alliance-extra-3787-accept" },
             excludeWhen = {
                 any = {
-                    { any = { { quest = { id = 3788, state = "activeOrCompleted" } } } },
+                    {
+                        any = {
+                            { any = { { quest = { id = 3788, state = "activeOrCompleted" } } } },
+                            {
+                                ["not"] = {
+                                    any = {
+                                        { quest = { id = 3787, state = "activeOrCompleted" } },
+                                        {
+                                            any = {
+                                                { quest = { id = 3787, state = "activeOrCompleted" } },
+                                                {
+                                                    all = {
+                                                        { faction = "Alliance" },
+                                                        {
+                                                            any = {
+                                                                {
+                                                                    any = {
+                                                                        { quest = { id = 3781, state = "activeOrCompleted" } },
+                                                                        {
+                                                                            all = {
+                                                                                { faction = "Alliance" },
+                                                                                {
+                                                                                    any = { { any = { { quest = { id = 3764, state = "activeOrCompleted" } }, { all = { { faction = "Alliance" } } } } } },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
                     {
                         ["not"] = {
                             any = {
@@ -7102,6 +7427,7 @@ ns:RegisterGuide({
                                         {
                                             all = {
                                                 { faction = "Alliance" },
+                                                { race = { 1, 3, 4, 7 } },
                                                 {
                                                     any = {
                                                         {
@@ -7110,8 +7436,16 @@ ns:RegisterGuide({
                                                                 {
                                                                     all = {
                                                                         { faction = "Alliance" },
+                                                                        { race = { 1, 3, 4, 7 } },
                                                                         {
-                                                                            any = { { any = { { quest = { id = 3764, state = "activeOrCompleted" } }, { all = { { faction = "Alliance" } } } } } },
+                                                                            any = {
+                                                                                {
+                                                                                    any = {
+                                                                                        { quest = { id = 3764, state = "activeOrCompleted" } },
+                                                                                        { all = { { faction = "Alliance" }, { race = { 1, 3, 4, 7 } } } },
+                                                                                    },
+                                                                                },
+                                                                            },
                                                                         },
                                                                     },
                                                                 },
@@ -7128,21 +7462,60 @@ ns:RegisterGuide({
                     },
                 },
             },
-            alternativeQuests = { 3791 },
-            dependsOn = { "alliance-extra-3787-level" },
-        },
-        {
             id = "alliance-extra-3787-objective",
             kind = "objective",
-            text = "Speak with Quintis Jonespyre in Feathermoon Stronghold. Follow the quest log for the destination.",
-            conditions = { all = { { faction = "Alliance" }, { level = { min = 47 } } } },
-            route = {},
-            complete = { quest = { id = 3787, state = "complete" } },
             requiredQuests = { { mode = "any", quests = { 3781 } } },
+            route = {},
+            text = "Speak with Quintis Jonespyre in Feathermoon Stronghold. Follow the quest log for the destination.",
+            useClientPin = true,
             useClientText = false,
+        },
+        {
+            alternativeQuests = { 3791 },
+            complete = { quest = { id = 3787, state = "completed" } },
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 47 } } } },
+            dependsOn = { "alliance-extra-3787-objective" },
             excludeWhen = {
                 any = {
-                    { any = { { quest = { id = 3788, state = "activeOrCompleted" } } } },
+                    {
+                        any = {
+                            { any = { { quest = { id = 3788, state = "activeOrCompleted" } } } },
+                            {
+                                ["not"] = {
+                                    any = {
+                                        { quest = { id = 3787, state = "activeOrCompleted" } },
+                                        {
+                                            any = {
+                                                { quest = { id = 3787, state = "activeOrCompleted" } },
+                                                {
+                                                    all = {
+                                                        { faction = "Alliance" },
+                                                        {
+                                                            any = {
+                                                                {
+                                                                    any = {
+                                                                        { quest = { id = 3781, state = "activeOrCompleted" } },
+                                                                        {
+                                                                            all = {
+                                                                                { faction = "Alliance" },
+                                                                                {
+                                                                                    any = { { any = { { quest = { id = 3764, state = "activeOrCompleted" } }, { all = { { faction = "Alliance" } } } } } },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
                     {
                         ["not"] = {
                             any = {
@@ -7153,6 +7526,7 @@ ns:RegisterGuide({
                                         {
                                             all = {
                                                 { faction = "Alliance" },
+                                                { race = { 1, 3, 4, 7 } },
                                                 {
                                                     any = {
                                                         {
@@ -7161,8 +7535,16 @@ ns:RegisterGuide({
                                                                 {
                                                                     all = {
                                                                         { faction = "Alliance" },
+                                                                        { race = { 1, 3, 4, 7 } },
                                                                         {
-                                                                            any = { { any = { { quest = { id = 3764, state = "activeOrCompleted" } }, { all = { { faction = "Alliance" } } } } } },
+                                                                            any = {
+                                                                                {
+                                                                                    any = {
+                                                                                        { quest = { id = 3764, state = "activeOrCompleted" } },
+                                                                                        { all = { { faction = "Alliance" }, { race = { 1, 3, 4, 7 } } } },
+                                                                                    },
+                                                                                },
+                                                                            },
                                                                         },
                                                                     },
                                                                 },
@@ -7179,40 +7561,80 @@ ns:RegisterGuide({
                     },
                 },
             },
-            alternativeQuests = { 3791 },
-            dependsOn = { "alliance-extra-3787-accept" },
-            useClientPin = true,
-        },
-        {
             id = "alliance-extra-3787-turnin",
             kind = "turnin",
-            text = "Turn in Jonespyre's Request to Quintis Jonespyre.",
-            conditions = { all = { { faction = "Alliance" }, { level = { min = 47 } } } },
+            requiredQuests = { { mode = "any", quests = { 3781 } } },
             route = {
                 {
-                    mapID = 1444,
-                    x = 0.324,
-                    y = 0.43799999999999994,
                     label = "Quintis Jonespyre",
+                    mapID = 1444,
                     offMapText = "Travel to Quintis Jonespyre in Feralas.",
+                    x = 0.324,
+                    y = 0.438,
                 },
             },
-            complete = { quest = { id = 3787, state = "completed" } },
-            requiredQuests = { { mode = "any", quests = { 3781 } } },
+            text = "Turn in Jonespyre's Request to Quintis Jonespyre.",
+            useClientPin = true,
             useClientText = false,
+            useQuestNavigation = true,
+        },
+        {
+            alternativeQuests = { 3791 },
+            complete = { quest = { id = 3788, state = "complete" } },
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 47 } } } },
+            dependsOn = { "alliance-extra-3788-accept" },
             excludeWhen = {
                 any = {
-                    { any = { { quest = { id = 3788, state = "activeOrCompleted" } } } },
+                    {
+                        any = {
+                            { any = { { quest = { id = 3787, state = "activeOrCompleted" } } } },
+                            {
+                                ["not"] = {
+                                    any = {
+                                        { quest = { id = 3788, state = "activeOrCompleted" } },
+                                        {
+                                            any = {
+                                                { quest = { id = 3788, state = "activeOrCompleted" } },
+                                                {
+                                                    all = {
+                                                        { faction = "Alliance" },
+                                                        {
+                                                            any = {
+                                                                {
+                                                                    any = {
+                                                                        { quest = { id = 3781, state = "activeOrCompleted" } },
+                                                                        {
+                                                                            all = {
+                                                                                { faction = "Alliance" },
+                                                                                {
+                                                                                    any = { { any = { { quest = { id = 3764, state = "activeOrCompleted" } }, { all = { { faction = "Alliance" } } } } } },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
                     {
                         ["not"] = {
                             any = {
-                                { quest = { id = 3787, state = "activeOrCompleted" } },
+                                { quest = { id = 3788, state = "activeOrCompleted" } },
                                 {
                                     any = {
-                                        { quest = { id = 3787, state = "activeOrCompleted" } },
+                                        { quest = { id = 3788, state = "activeOrCompleted" } },
                                         {
                                             all = {
                                                 { faction = "Alliance" },
+                                                { race = { 1, 3, 4, 7 } },
                                                 {
                                                     any = {
                                                         {
@@ -7221,8 +7643,16 @@ ns:RegisterGuide({
                                                                 {
                                                                     all = {
                                                                         { faction = "Alliance" },
+                                                                        { race = { 1, 3, 4, 7 } },
                                                                         {
-                                                                            any = { { any = { { quest = { id = 3764, state = "activeOrCompleted" } }, { all = { { faction = "Alliance" } } } } } },
+                                                                            any = {
+                                                                                {
+                                                                                    any = {
+                                                                                        { quest = { id = 3764, state = "activeOrCompleted" } },
+                                                                                        { all = { { faction = "Alliance" }, { race = { 1, 3, 4, 7 } } } },
+                                                                                    },
+                                                                                },
+                                                                            },
                                                                         },
                                                                     },
                                                                 },
@@ -7239,21 +7669,60 @@ ns:RegisterGuide({
                     },
                 },
             },
-            alternativeQuests = { 3791 },
-            dependsOn = { "alliance-extra-3787-objective" },
-        },
-        {
             id = "alliance-extra-3788-objective",
             kind = "objective",
-            text = "Speak with Quintis Jonespyre in Feathermoon Stronghold. Follow the quest log for the destination.",
-            conditions = { all = { { faction = "Alliance" }, { level = { min = 47 } } } },
-            route = {},
-            complete = { quest = { id = 3788, state = "complete" } },
             requiredQuests = { { mode = "any", quests = { 3781 } } },
+            route = {},
+            text = "Speak with Quintis Jonespyre in Feathermoon Stronghold. Follow the quest log for the destination.",
+            useClientPin = true,
             useClientText = false,
+        },
+        {
+            alternativeQuests = { 3791 },
+            complete = { quest = { id = 3788, state = "completed" } },
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 47 } } } },
+            dependsOn = { "alliance-extra-3788-objective" },
             excludeWhen = {
                 any = {
-                    { any = { { quest = { id = 3787, state = "activeOrCompleted" } } } },
+                    {
+                        any = {
+                            { any = { { quest = { id = 3787, state = "activeOrCompleted" } } } },
+                            {
+                                ["not"] = {
+                                    any = {
+                                        { quest = { id = 3788, state = "activeOrCompleted" } },
+                                        {
+                                            any = {
+                                                { quest = { id = 3788, state = "activeOrCompleted" } },
+                                                {
+                                                    all = {
+                                                        { faction = "Alliance" },
+                                                        {
+                                                            any = {
+                                                                {
+                                                                    any = {
+                                                                        { quest = { id = 3781, state = "activeOrCompleted" } },
+                                                                        {
+                                                                            all = {
+                                                                                { faction = "Alliance" },
+                                                                                {
+                                                                                    any = { { any = { { quest = { id = 3764, state = "activeOrCompleted" } }, { all = { { faction = "Alliance" } } } } } },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
                     {
                         ["not"] = {
                             any = {
@@ -7264,6 +7733,7 @@ ns:RegisterGuide({
                                         {
                                             all = {
                                                 { faction = "Alliance" },
+                                                { race = { 1, 3, 4, 7 } },
                                                 {
                                                     any = {
                                                         {
@@ -7272,8 +7742,16 @@ ns:RegisterGuide({
                                                                 {
                                                                     all = {
                                                                         { faction = "Alliance" },
+                                                                        { race = { 1, 3, 4, 7 } },
                                                                         {
-                                                                            any = { { any = { { quest = { id = 3764, state = "activeOrCompleted" } }, { all = { { faction = "Alliance" } } } } } },
+                                                                            any = {
+                                                                                {
+                                                                                    any = {
+                                                                                        { quest = { id = 3764, state = "activeOrCompleted" } },
+                                                                                        { all = { { faction = "Alliance" }, { race = { 1, 3, 4, 7 } } } },
+                                                                                    },
+                                                                                },
+                                                                            },
                                                                         },
                                                                     },
                                                                 },
@@ -7290,37 +7768,36 @@ ns:RegisterGuide({
                     },
                 },
             },
-            alternativeQuests = { 3791 },
-            dependsOn = { "alliance-extra-3788-accept" },
-            useClientPin = true,
-        },
-        {
             id = "alliance-extra-3788-turnin",
             kind = "turnin",
-            text = "Turn in Jonespyre's Request to Quintis Jonespyre.",
-            conditions = { all = { { faction = "Alliance" }, { level = { min = 47 } } } },
+            requiredQuests = { { mode = "any", quests = { 3781 } } },
             route = {
                 {
-                    mapID = 1444,
-                    x = 0.324,
-                    y = 0.43799999999999994,
                     label = "Quintis Jonespyre",
+                    mapID = 1444,
                     offMapText = "Travel to Quintis Jonespyre in Feralas.",
+                    x = 0.324,
+                    y = 0.438,
                 },
             },
-            complete = { quest = { id = 3788, state = "completed" } },
-            requiredQuests = { { mode = "any", quests = { 3781 } } },
+            text = "Turn in Jonespyre's Request to Quintis Jonespyre.",
+            useClientPin = true,
             useClientText = false,
+            useQuestNavigation = true,
+        },
+        {
+            complete = { quest = { id = 3841, state = "complete" } },
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 38 } } } },
+            dependsOn = { "alliance-extra-3841-accept" },
             excludeWhen = {
                 any = {
-                    { any = { { quest = { id = 3787, state = "activeOrCompleted" } } } },
                     {
                         ["not"] = {
                             any = {
-                                { quest = { id = 3788, state = "activeOrCompleted" } },
+                                { quest = { id = 3841, state = "activeOrCompleted" } },
                                 {
                                     any = {
-                                        { quest = { id = 3788, state = "activeOrCompleted" } },
+                                        { quest = { id = 3841, state = "activeOrCompleted" } },
                                         {
                                             all = {
                                                 { faction = "Alliance" },
@@ -7328,12 +7805,84 @@ ns:RegisterGuide({
                                                     any = {
                                                         {
                                                             any = {
-                                                                { quest = { id = 3781, state = "activeOrCompleted" } },
+                                                                { quest = { id = 2972, state = "activeOrCompleted" } },
                                                                 {
                                                                     all = {
                                                                         { faction = "Alliance" },
                                                                         {
-                                                                            any = { { any = { { quest = { id = 3764, state = "activeOrCompleted" } }, { all = { { faction = "Alliance" } } } } } },
+                                                                            any = {
+                                                                                {
+                                                                                    any = {
+                                                                                        { quest = { id = 2970, state = "activeOrCompleted" } },
+                                                                                        {
+                                                                                            all = {
+                                                                                                { faction = "Alliance" },
+                                                                                                {
+                                                                                                    any = { { any = { { quest = { id = 2969, state = "activeOrCompleted" } }, { all = { { faction = "Alliance" } } } } } },
+                                                                                                },
+                                                                                            },
+                                                                                        },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 3841, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 3841, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                { faction = "Alliance" },
+                                                { race = { 1, 3, 4, 7 } },
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 2972, state = "activeOrCompleted" } },
+                                                                {
+                                                                    all = {
+                                                                        { faction = "Alliance" },
+                                                                        { race = { 1, 3, 4, 7 } },
+                                                                        {
+                                                                            any = {
+                                                                                {
+                                                                                    any = {
+                                                                                        { quest = { id = 2970, state = "activeOrCompleted" } },
+                                                                                        {
+                                                                                            all = {
+                                                                                                { faction = "Alliance" },
+                                                                                                { race = { 1, 3, 4, 7 } },
+                                                                                                {
+                                                                                                    any = {
+                                                                                                        {
+                                                                                                            any = {
+                                                                                                                { quest = { id = 2969, state = "activeOrCompleted" } },
+                                                                                                                { all = { { faction = "Alliance" }, { race = { 1, 3, 4, 7 } } } },
+                                                                                                            },
+                                                                                                        },
+                                                                                                    },
+                                                                                                },
+                                                                                            },
+                                                                                        },
+                                                                                    },
+                                                                                },
+                                                                            },
                                                                         },
                                                                     },
                                                                 },
@@ -7350,109 +7899,108 @@ ns:RegisterGuide({
                     },
                 },
             },
-            alternativeQuests = { 3791 },
-            dependsOn = { "alliance-extra-3788-objective" },
-        },
-        {
             id = "alliance-extra-3841-objective",
             kind = "objective",
-            text = "Speak to Quentin in Thousand Needles. Follow the quest log for the destination.",
-            conditions = { all = { { faction = "Alliance" }, { level = { min = 38 } } } },
-            route = {},
-            complete = { quest = { id = 3841, state = "complete" } },
             requiredQuests = { { mode = "any", quests = { 2972 } } },
-            useClientText = false,
-            dependsOn = { "alliance-extra-3841-accept" },
+            route = {},
+            text = "Speak to Quentin in Thousand Needles. Follow the quest log for the destination.",
             useClientPin = true,
-            excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 3841, state = "activeOrCompleted" } },
-                        {
-                            any = {
-                                { quest = { id = 3841, state = "activeOrCompleted" } },
-                                {
-                                    all = {
-                                        { faction = "Alliance" },
-                                        {
-                                            any = {
-                                                {
-                                                    any = {
-                                                        { quest = { id = 2972, state = "activeOrCompleted" } },
-                                                        {
-                                                            all = {
-                                                                { faction = "Alliance" },
-                                                                {
-                                                                    any = {
-                                                                        {
-                                                                            any = {
-                                                                                { quest = { id = 2970, state = "activeOrCompleted" } },
-                                                                                {
-                                                                                    all = {
-                                                                                        { faction = "Alliance" },
-                                                                                        {
-                                                                                            any = { { any = { { quest = { id = 2969, state = "activeOrCompleted" } }, { all = { { faction = "Alliance" } } } } } },
-                                                                                        },
-                                                                                    },
-                                                                                },
-                                                                            },
-                                                                        },
-                                                                    },
-                                                                },
-                                                            },
-                                                        },
-                                                    },
-                                                },
-                                            },
-                                        },
-                                    },
-                                },
-                            },
-                        },
-                    },
-                },
-            },
+            useClientText = false,
         },
         {
-            id = "alliance-extra-3841-turnin",
-            kind = "turnin",
-            text = "Turn in An Orphan Looking For a Home to Quentin.",
-            conditions = { all = { { faction = "Alliance" }, { level = { min = 38 } } } },
-            route = {
-                { mapID = 1441, x = 0.784, y = 0.748, label = "Quentin", offMapText = "Travel to Quentin in Thousand Needles." },
-            },
             complete = { quest = { id = 3841, state = "completed" } },
-            requiredQuests = { { mode = "any", quests = { 2972 } } },
-            useClientText = false,
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 38 } } } },
             dependsOn = { "alliance-extra-3841-objective" },
             excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 3841, state = "activeOrCompleted" } },
-                        {
+                any = {
+                    {
+                        ["not"] = {
                             any = {
                                 { quest = { id = 3841, state = "activeOrCompleted" } },
                                 {
-                                    all = {
-                                        { faction = "Alliance" },
+                                    any = {
+                                        { quest = { id = 3841, state = "activeOrCompleted" } },
                                         {
-                                            any = {
+                                            all = {
+                                                { faction = "Alliance" },
                                                 {
                                                     any = {
-                                                        { quest = { id = 2972, state = "activeOrCompleted" } },
                                                         {
-                                                            all = {
-                                                                { faction = "Alliance" },
+                                                            any = {
+                                                                { quest = { id = 2972, state = "activeOrCompleted" } },
                                                                 {
-                                                                    any = {
+                                                                    all = {
+                                                                        { faction = "Alliance" },
                                                                         {
                                                                             any = {
-                                                                                { quest = { id = 2970, state = "activeOrCompleted" } },
                                                                                 {
-                                                                                    all = {
-                                                                                        { faction = "Alliance" },
+                                                                                    any = {
+                                                                                        { quest = { id = 2970, state = "activeOrCompleted" } },
                                                                                         {
-                                                                                            any = { { any = { { quest = { id = 2969, state = "activeOrCompleted" } }, { all = { { faction = "Alliance" } } } } } },
+                                                                                            all = {
+                                                                                                { faction = "Alliance" },
+                                                                                                {
+                                                                                                    any = { { any = { { quest = { id = 2969, state = "activeOrCompleted" } }, { all = { { faction = "Alliance" } } } } } },
+                                                                                                },
+                                                                                            },
+                                                                                        },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 3841, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 3841, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                { faction = "Alliance" },
+                                                { race = { 1, 3, 4, 7 } },
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 2972, state = "activeOrCompleted" } },
+                                                                {
+                                                                    all = {
+                                                                        { faction = "Alliance" },
+                                                                        { race = { 1, 3, 4, 7 } },
+                                                                        {
+                                                                            any = {
+                                                                                {
+                                                                                    any = {
+                                                                                        { quest = { id = 2970, state = "activeOrCompleted" } },
+                                                                                        {
+                                                                                            all = {
+                                                                                                { faction = "Alliance" },
+                                                                                                { race = { 1, 3, 4, 7 } },
+                                                                                                {
+                                                                                                    any = {
+                                                                                                        {
+                                                                                                            any = {
+                                                                                                                { quest = { id = 2969, state = "activeOrCompleted" } },
+                                                                                                                { all = { { faction = "Alliance" }, { race = { 1, 3, 4, 7 } } } },
+                                                                                                            },
+                                                                                                        },
+                                                                                                    },
+                                                                                                },
+                                                                                            },
                                                                                         },
                                                                                     },
                                                                                 },
@@ -7473,6 +8021,16 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-extra-3841-turnin",
+            kind = "turnin",
+            requiredQuests = { { mode = "any", quests = { 2972 } } },
+            route = {
+                { label = "Quentin", mapID = 1441, offMapText = "Travel to Quentin in Thousand Needles.", x = 0.784, y = 0.748 },
+            },
+            text = "Turn in An Orphan Looking For a Home to Quentin.",
+            useClientPin = true,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             id = "visit-entry-leveling-era-horde-dustwallow-marsh-part-2",
@@ -7656,13 +8214,13 @@ ns:RegisterGuide({
             kind = "turnin",
             requiredQuests = {},
             route = { { label = "Rok Orhan", mapID = 1444, offMapText = "Travel to Rok Orhan in Feralas.", x = 0.756, y = 0.436 } },
+            sourceActionID = "turnin-2981-a-threat-in-feralas",
+            sourceGuide = "leveling-era-horde-feralas",
             sourceStep = 6,
             text = "Turn in A Threat in Feralas to Rok Orhan.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-feralas",
-            sourceActionID = "turnin-2981-a-threat-in-feralas",
         },
         {
             complete = { quest = { id = 2975, state = "activeOrCompleted" } },
@@ -7849,13 +8407,13 @@ ns:RegisterGuide({
                     y = 0.4247,
                 },
             },
+            sourceActionID = "turnin-2862-war-on-the-woodpaw",
+            sourceGuide = "leveling-era-horde-feralas",
             sourceStep = 11,
             text = "Turn in War on the Woodpaw to Hadoken Swiftstrider.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-feralas",
-            sourceActionID = "turnin-2862-war-on-the-woodpaw",
         },
         {
             complete = { quest = { id = 2863, state = "activeOrCompleted" } },
@@ -7913,13 +8471,13 @@ ns:RegisterGuide({
             route = {
                 { label = "Orwin Gizzmick", mapID = 1444, offMapText = "Travel to Orwin Gizzmick in Feralas.", x = 0.757, y = 0.4431 },
             },
+            sourceActionID = "turnin-2987-gordunni-cobalt",
+            sourceGuide = "leveling-era-horde-feralas",
             sourceStep = 12,
             text = "Turn in Gordunni Cobalt to Orwin Gizzmick.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-feralas",
-            sourceActionID = "turnin-2987-gordunni-cobalt",
         },
         {
             complete = { quest = { id = 2975, state = "completed" } },
@@ -7934,13 +8492,13 @@ ns:RegisterGuide({
             kind = "turnin",
             requiredQuests = {},
             route = { { label = "Rok Orhan", mapID = 1444, offMapText = "Travel to Rok Orhan in Feralas.", x = 0.756, y = 0.436 } },
+            sourceActionID = "turnin-2975-the-ogres-of-feralas",
+            sourceGuide = "leveling-era-horde-feralas",
             sourceStep = 13,
             text = "Turn in The Ogres of Feralas to Rok Orhan.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-feralas",
-            sourceActionID = "turnin-2975-the-ogres-of-feralas",
         },
         {
             complete = { quest = { id = 2980, state = "activeOrCompleted" } },
@@ -7993,13 +8551,13 @@ ns:RegisterGuide({
             kind = "turnin",
             requiredQuests = {},
             route = { { label = "Rok Orhan", mapID = 1444, offMapText = "Travel to Rok Orhan in Feralas.", x = 0.756, y = 0.436 } },
+            sourceActionID = "turnin-2978-the-gordunni-scroll",
+            sourceGuide = "leveling-era-horde-feralas",
             sourceStep = 13,
             text = "Turn in The Gordunni Scroll to Rok Orhan.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-feralas",
-            sourceActionID = "turnin-2978-the-gordunni-scroll",
         },
         {
             complete = { quest = { id = 2979, state = "activeOrCompleted" } },
@@ -8128,25 +8686,6 @@ ns:RegisterGuide({
                 "horde-leveling-era-horde-feralas-accept-2863-alpha-strike",
                 "horde-leveling-era-horde-feralas-objective-2863-1-woodpaw-alpha",
             },
-            id = "horde-leveling-era-horde-feralas-turnin-2863-alpha-strike",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 2862 } } },
-            route = {
-                {
-                    label = "Hadoken Swiftstrider",
-                    mapID = 1444,
-                    offMapText = "Travel to Hadoken Swiftstrider in Feralas.",
-                    x = 0.7491,
-                    y = 0.4246,
-                },
-            },
-            sourceStep = 17,
-            text = "Turn in Alpha Strike to Hadoken Swiftstrider.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-feralas",
-            sourceActionID = "turnin-2863-alpha-strike",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -8167,6 +8706,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-feralas-turnin-2863-alpha-strike",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 2862 } } },
+            route = {
+                {
+                    label = "Hadoken Swiftstrider",
+                    mapID = 1444,
+                    offMapText = "Travel to Hadoken Swiftstrider in Feralas.",
+                    x = 0.7491,
+                    y = 0.4246,
+                },
+            },
+            sourceActionID = "turnin-2863-alpha-strike",
+            sourceGuide = "leveling-era-horde-feralas",
+            sourceStep = 17,
+            text = "Turn in Alpha Strike to Hadoken Swiftstrider.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 2902, state = "activeOrCompleted" } },
@@ -8244,13 +8802,13 @@ ns:RegisterGuide({
                     y = 0.4274,
                 },
             },
+            sourceActionID = "turnin-2973-a-new-cloak-s-sheen",
+            sourceGuide = "leveling-era-horde-feralas",
             sourceStep = 18,
             text = "Turn in A New Cloak's Sheen to Krueg Skullsplitter.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-feralas",
-            sourceActionID = "turnin-2973-a-new-cloak-s-sheen",
         },
         {
             complete = { quest = { id = 2974, state = "activeOrCompleted" } },
@@ -8299,25 +8857,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 2902, state = "completed" } },
             conditions = { all = { { faction = "Horde" }, { level = { min = 39 } }, { race = { 2, 5, 6, 8, 96 } } } },
             dependsOn = { "horde-leveling-era-horde-feralas-accept-2902-woodpaw-investigation" },
-            id = "horde-leveling-era-horde-feralas-turnin-2902-woodpaw-investigation",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 2863 } } },
-            route = {
-                {
-                    label = "Woodpaw Investigation",
-                    mapID = 1444,
-                    offMapText = "Travel to Woodpaw Investigation.",
-                    x = 0.7163,
-                    y = 0.5592,
-                },
-            },
-            sourceStep = 20,
-            text = "Turn in Woodpaw Investigation.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-feralas",
-            sourceActionID = "turnin-2902-woodpaw-investigation",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -8352,6 +8891,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-feralas-turnin-2902-woodpaw-investigation",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 2863 } } },
+            route = {
+                {
+                    label = "Woodpaw Investigation",
+                    mapID = 1444,
+                    offMapText = "Travel to Woodpaw Investigation.",
+                    x = 0.7163,
+                    y = 0.5592,
+                },
+            },
+            sourceActionID = "turnin-2902-woodpaw-investigation",
+            sourceGuide = "leveling-era-horde-feralas",
+            sourceStep = 20,
+            text = "Turn in Woodpaw Investigation.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 2903, state = "activeOrCompleted" } },
@@ -8460,25 +9018,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 2903, state = "completed" } },
             conditions = { all = { { faction = "Horde" }, { level = { min = 39 } }, { race = { 2, 5, 6, 8, 96 } } } },
             dependsOn = { "horde-leveling-era-horde-feralas-accept-2903-the-battle-plans" },
-            id = "horde-leveling-era-horde-feralas-turnin-2903-the-battle-plans",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 2902 } } },
-            route = {
-                {
-                    label = "Hadoken Swiftstrider",
-                    mapID = 1444,
-                    offMapText = "Travel to Hadoken Swiftstrider in Feralas.",
-                    x = 0.7491,
-                    y = 0.4247,
-                },
-            },
-            sourceStep = 22,
-            text = "Turn in The Battle Plans to Hadoken Swiftstrider.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-feralas",
-            sourceActionID = "turnin-2903-the-battle-plans",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -8527,6 +9066,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-feralas-turnin-2903-the-battle-plans",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 2902 } } },
+            route = {
+                {
+                    label = "Hadoken Swiftstrider",
+                    mapID = 1444,
+                    offMapText = "Travel to Hadoken Swiftstrider in Feralas.",
+                    x = 0.7491,
+                    y = 0.4247,
+                },
+            },
+            sourceActionID = "turnin-2903-the-battle-plans",
+            sourceGuide = "leveling-era-horde-feralas",
+            sourceStep = 22,
+            text = "Turn in The Battle Plans to Hadoken Swiftstrider.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 7730, state = "activeOrCompleted" } },
@@ -8705,25 +9263,6 @@ ns:RegisterGuide({
                 "horde-leveling-era-horde-feralas-accept-2974-a-grim-discovery",
                 "horde-leveling-era-horde-feralas-objective-2974-1-grimtotem-shaman",
             },
-            id = "horde-leveling-era-horde-feralas-turnin-2974-a-grim-discovery",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 2973 } } },
-            route = {
-                {
-                    label = "Krueg Skullsplitter",
-                    mapID = 1444,
-                    offMapText = "Travel to Krueg Skullsplitter in Feralas.",
-                    x = 0.7594,
-                    y = 0.4274,
-                },
-            },
-            sourceStep = 23,
-            text = "Turn in A Grim Discovery to Krueg Skullsplitter.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-feralas",
-            sourceActionID = "turnin-2974-a-grim-discovery",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -8744,6 +9283,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-feralas-turnin-2974-a-grim-discovery",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 2973 } } },
+            route = {
+                {
+                    label = "Krueg Skullsplitter",
+                    mapID = 1444,
+                    offMapText = "Travel to Krueg Skullsplitter in Feralas.",
+                    x = 0.7594,
+                    y = 0.4274,
+                },
+            },
+            sourceActionID = "turnin-2974-a-grim-discovery",
+            sourceGuide = "leveling-era-horde-feralas",
+            sourceStep = 23,
+            text = "Turn in A Grim Discovery to Krueg Skullsplitter.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 2976, state = "activeOrCompleted" } },
@@ -9254,13 +9812,13 @@ ns:RegisterGuide({
                     y = 0.557,
                 },
             },
+            sourceActionID = "turnin-2766-find-oox-22-fe",
+            sourceGuide = "leveling-era-horde-feralas",
             sourceStep = 40,
             text = "Turn in Find OOX-22/FE! to Homing Robot OOX-22/FE.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-feralas",
-            sourceActionID = "turnin-2766-find-oox-22-fe",
         },
         {
             complete = { quest = { id = 3121, state = "activeOrCompleted" } },
@@ -9304,13 +9862,13 @@ ns:RegisterGuide({
                     y = 0.4291,
                 },
             },
+            sourceActionID = "turnin-2822-the-mark-of-quality",
+            sourceGuide = "leveling-era-horde-feralas",
             sourceStep = 43,
             text = "Turn in The Mark of Quality to Jangdor Swiftstrider.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-feralas",
-            sourceActionID = "turnin-2822-the-mark-of-quality",
         },
         {
             complete = { quest = { id = 7730, state = "completed" } },
@@ -9319,25 +9877,6 @@ ns:RegisterGuide({
                 "horde-leveling-era-horde-feralas-accept-7730-zukk-ash-infestation",
                 "horde-leveling-era-horde-feralas-objective-7730-1-zukk-ash-carapace",
             },
-            id = "horde-leveling-era-horde-feralas-turnin-7730-zukk-ash-infestation",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 2903 } } },
-            route = {
-                {
-                    label = "Hadoken Swiftstrider",
-                    mapID = 1444,
-                    offMapText = "Travel to Hadoken Swiftstrider in Feralas.",
-                    x = 0.7491,
-                    y = 0.4247,
-                },
-            },
-            sourceStep = 44,
-            text = "Turn in Zukk'ash Infestation to Hadoken Swiftstrider.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-feralas",
-            sourceActionID = "turnin-7730-zukk-ash-infestation",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -9400,15 +9939,7 @@ ns:RegisterGuide({
                     },
                 },
             },
-        },
-        {
-            complete = { quest = { id = 7731, state = "completed" } },
-            conditions = { all = { { faction = "Horde" }, { level = { min = 39 } }, { race = { 2, 5, 6, 8, 96 } } } },
-            dependsOn = {
-                "horde-leveling-era-horde-feralas-accept-7731-stinglasher",
-                "horde-leveling-era-horde-feralas-objective-7731-1-stinglasher",
-            },
-            id = "horde-leveling-era-horde-feralas-turnin-7731-stinglasher",
+            id = "horde-leveling-era-horde-feralas-turnin-7730-zukk-ash-infestation",
             kind = "turnin",
             requiredQuests = { { conditions = {}, mode = "any", quests = { 2903 } } },
             route = {
@@ -9420,13 +9951,21 @@ ns:RegisterGuide({
                     y = 0.4247,
                 },
             },
+            sourceActionID = "turnin-7730-zukk-ash-infestation",
+            sourceGuide = "leveling-era-horde-feralas",
             sourceStep = 44,
-            text = "Turn in Stinglasher to Hadoken Swiftstrider.",
+            text = "Turn in Zukk'ash Infestation to Hadoken Swiftstrider.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-feralas",
-            sourceActionID = "turnin-7731-stinglasher",
+        },
+        {
+            complete = { quest = { id = 7731, state = "completed" } },
+            conditions = { all = { { faction = "Horde" }, { level = { min = 39 } }, { race = { 2, 5, 6, 8, 96 } } } },
+            dependsOn = {
+                "horde-leveling-era-horde-feralas-accept-7731-stinglasher",
+                "horde-leveling-era-horde-feralas-objective-7731-1-stinglasher",
+            },
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -9489,6 +10028,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-feralas-turnin-7731-stinglasher",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 2903 } } },
+            route = {
+                {
+                    label = "Hadoken Swiftstrider",
+                    mapID = 1444,
+                    offMapText = "Travel to Hadoken Swiftstrider in Feralas.",
+                    x = 0.7491,
+                    y = 0.4247,
+                },
+            },
+            sourceActionID = "turnin-7731-stinglasher",
+            sourceGuide = "leveling-era-horde-feralas",
+            sourceStep = 44,
+            text = "Turn in Stinglasher to Hadoken Swiftstrider.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 7732, state = "activeOrCompleted" } },
@@ -9653,17 +10211,6 @@ ns:RegisterGuide({
                 "horde-leveling-era-horde-feralas-objective-2980-1-gordunni-shaman",
                 "horde-leveling-era-horde-feralas-objective-2980-2-gordunni-warlock",
             },
-            id = "horde-leveling-era-horde-feralas-turnin-2980-the-ogres-of-feralas",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 2975 } } },
-            route = { { label = "Rok Orhan", mapID = 1444, offMapText = "Travel to Rok Orhan in Feralas.", x = 0.756, y = 0.436 } },
-            sourceStep = 45,
-            text = "Turn in The Ogres of Feralas to Rok Orhan.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-feralas",
-            sourceActionID = "turnin-2980-the-ogres-of-feralas",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -9684,6 +10231,17 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-feralas-turnin-2980-the-ogres-of-feralas",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 2975 } } },
+            route = { { label = "Rok Orhan", mapID = 1444, offMapText = "Travel to Rok Orhan in Feralas.", x = 0.756, y = 0.436 } },
+            sourceActionID = "turnin-2980-the-ogres-of-feralas",
+            sourceGuide = "leveling-era-horde-feralas",
+            sourceStep = 45,
+            text = "Turn in The Ogres of Feralas to Rok Orhan.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 2979, state = "completed" } },
@@ -9731,7 +10289,7 @@ ns:RegisterGuide({
                                                         {
                                                             any = {
                                                                 { quest = { id = 2978, state = "activeOrCompleted" } },
-                                                                { all = { { item = { name = "Gordunni Scroll", minCount = 1 } }, { faction = "Horde" } } },
+                                                                { all = { { item = { minCount = 1, name = "Gordunni Scroll" } }, { faction = "Horde" } } },
                                                             },
                                                         },
                                                     },
@@ -9749,13 +10307,13 @@ ns:RegisterGuide({
             kind = "turnin",
             requiredQuests = { { conditions = {}, mode = "any", quests = { 2978 } } },
             route = { { label = "Rok Orhan", mapID = 1444, offMapText = "Travel to Rok Orhan in Feralas.", x = 0.756, y = 0.436 } },
+            sourceActionID = "turnin-2979-dark-ceremony",
+            sourceGuide = "leveling-era-horde-feralas",
             sourceStep = 45,
             text = "Turn in Dark Ceremony to Rok Orhan.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-feralas",
-            sourceActionID = "turnin-2979-dark-ceremony",
         },
         {
             complete = { quest = { id = 3002, state = "activeOrCompleted" } },
@@ -9918,7 +10476,7 @@ ns:RegisterGuide({
                                                                                 {
                                                                                     any = {
                                                                                         { quest = { id = 2978, state = "activeOrCompleted" } },
-                                                                                        { all = { { item = { name = "Gordunni Scroll", minCount = 1 } }, { faction = "Horde" } } },
+                                                                                        { all = { { item = { minCount = 1, name = "Gordunni Scroll" } }, { faction = "Horde" } } },
                                                                                     },
                                                                                 },
                                                                             },
@@ -9944,13 +10502,13 @@ ns:RegisterGuide({
             route = {
                 { label = "Uthel'nay", mapID = 1454, offMapText = "Travel to Uthel'nay in Orgrimmar.", x = 0.3916, y = 0.8624 },
             },
+            sourceActionID = "turnin-3002-the-gordunni-orb",
+            sourceGuide = "leveling-era-horde-feralas",
             sourceStep = 51,
             text = "Turn in The Gordunni Orb to Uthel'nay.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-feralas",
-            sourceActionID = "turnin-3002-the-gordunni-orb",
         },
         {
             complete = { quest = { id = 3121, state = "completed" } },
@@ -9968,13 +10526,13 @@ ns:RegisterGuide({
                     y = 0.5059,
                 },
             },
+            sourceActionID = "turnin-3121-a-strange-request",
+            sourceGuide = "leveling-era-horde-feralas",
             sourceStep = 57,
             text = "Turn in A Strange Request to Neeru Fireblade.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-feralas",
-            sourceActionID = "turnin-3121-a-strange-request",
         },
         {
             complete = { quest = { id = 3122, state = "activeOrCompleted" } },
@@ -10023,25 +10581,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 2976, state = "completed" } },
             conditions = { all = { { faction = "Horde" }, { level = { min = 37 } }, { race = { 2, 5, 6, 8, 96 } } } },
             dependsOn = { "horde-leveling-era-horde-feralas-accept-2976-a-grim-discovery" },
-            id = "horde-leveling-era-horde-feralas-turnin-2976-a-grim-discovery",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 2974 } } },
-            route = {
-                {
-                    label = "Belgrom Rockmaul",
-                    mapID = 1454,
-                    offMapText = "Travel to Belgrom Rockmaul in Orgrimmar.",
-                    x = 0.7523,
-                    y = 0.3424,
-                },
-            },
-            sourceStep = 58,
-            text = "Turn in A Grim Discovery to Belgrom Rockmaul.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-feralas",
-            sourceActionID = "turnin-2976-a-grim-discovery",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -10076,30 +10615,30 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-feralas-turnin-2976-a-grim-discovery",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 2974 } } },
+            route = {
+                {
+                    label = "Belgrom Rockmaul",
+                    mapID = 1454,
+                    offMapText = "Travel to Belgrom Rockmaul in Orgrimmar.",
+                    x = 0.7523,
+                    y = 0.3424,
+                },
+            },
+            sourceActionID = "turnin-2976-a-grim-discovery",
+            sourceGuide = "leveling-era-horde-feralas",
+            sourceStep = 58,
+            text = "Turn in A Grim Discovery to Belgrom Rockmaul.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 7732, state = "completed" } },
             conditions = { all = { { faction = "Horde" }, { level = { min = 39 } }, { race = { 2, 5, 6, 8, 96 } } } },
             dependsOn = { "horde-leveling-era-horde-feralas-accept-7732-zukk-ash-report" },
-            id = "horde-leveling-era-horde-feralas-turnin-7732-zukk-ash-report",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "all", quests = { 7730, 7731 } } },
-            route = {
-                {
-                    label = "Zilzibin Drumlore",
-                    mapID = 1454,
-                    offMapText = "Travel to Zilzibin Drumlore in Orgrimmar.",
-                    x = 0.5628,
-                    y = 0.4667,
-                },
-            },
-            sourceStep = 62,
-            text = "Turn in Zukk'ash Report to Zilzibin Drumlore.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-feralas",
-            sourceActionID = "turnin-7732-zukk-ash-report",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -10231,6 +10770,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-feralas-turnin-7732-zukk-ash-report",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "all", quests = { 7730, 7731 } } },
+            route = {
+                {
+                    label = "Zilzibin Drumlore",
+                    mapID = 1454,
+                    offMapText = "Travel to Zilzibin Drumlore in Orgrimmar.",
+                    x = 0.5628,
+                    y = 0.4667,
+                },
+            },
+            sourceActionID = "turnin-7732-zukk-ash-report",
+            sourceGuide = "leveling-era-horde-feralas",
+            sourceStep = 62,
+            text = "Turn in Zukk'ash Report to Zilzibin Drumlore.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             id = "visit-entry-leveling-era-horde-swamp-of-sorrows",
@@ -10246,25 +10804,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 3122, state = "completed" } },
             conditions = { all = { { faction = "Horde" }, { level = { min = 40 } }, { race = { 2, 5, 6, 8, 96 } } } },
             dependsOn = {},
-            id = "horde-leveling-era-horde-swamp-of-sorrows-turnin-3122-return-to-witch-doctor-uzer-i",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 3121 } } },
-            route = {
-                {
-                    label = "Witch Doctor Uzer'i",
-                    mapID = 1444,
-                    offMapText = "Travel to Witch Doctor Uzer'i in Feralas.",
-                    x = 0.7442,
-                    y = 0.4336,
-                },
-            },
-            sourceStep = 37,
-            text = "Turn in Return to Witch Doctor Uzer'i to Witch Doctor Uzer'i.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-swamp-of-sorrows",
-            sourceActionID = "turnin-3122-return-to-witch-doctor-uzer-i",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -10285,6 +10824,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-swamp-of-sorrows-turnin-3122-return-to-witch-doctor-uzer-i",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 3121 } } },
+            route = {
+                {
+                    label = "Witch Doctor Uzer'i",
+                    mapID = 1444,
+                    offMapText = "Travel to Witch Doctor Uzer'i in Feralas.",
+                    x = 0.7442,
+                    y = 0.4336,
+                },
+            },
+            sourceActionID = "turnin-3122-return-to-witch-doctor-uzer-i",
+            sourceGuide = "leveling-era-horde-swamp-of-sorrows",
+            sourceStep = 37,
+            text = "Turn in Return to Witch Doctor Uzer'i to Witch Doctor Uzer'i.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 3123, state = "activeOrCompleted" } },
@@ -10561,25 +11119,6 @@ ns:RegisterGuide({
                 "horde-leveling-era-horde-feralas-and-ungoro-crater-objective-3123-quest-work",
                 "horde-leveling-era-horde-the-hinterlands-objective-3123-1-wildkin-muisek",
             },
-            id = "horde-leveling-era-horde-feralas-and-ungoro-crater-turnin-3123-testing-the-vessel",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 3122 } } },
-            route = {
-                {
-                    label = "Witch Doctor Uzer'i",
-                    mapID = 1444,
-                    offMapText = "Travel to Witch Doctor Uzer'i in Feralas.",
-                    x = 0.7442,
-                    y = 0.4336,
-                },
-            },
-            sourceStep = 5,
-            text = "Turn in Testing the Vessel to Witch Doctor Uzer'i.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-feralas-and-ungoro-crater",
-            sourceActionID = "turnin-3123-testing-the-vessel",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -10614,6 +11153,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-feralas-and-ungoro-crater-turnin-3123-testing-the-vessel",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 3122 } } },
+            route = {
+                {
+                    label = "Witch Doctor Uzer'i",
+                    mapID = 1444,
+                    offMapText = "Travel to Witch Doctor Uzer'i in Feralas.",
+                    x = 0.7442,
+                    y = 0.4336,
+                },
+            },
+            sourceActionID = "turnin-3123-testing-the-vessel",
+            sourceGuide = "leveling-era-horde-feralas-and-ungoro-crater",
+            sourceStep = 5,
+            text = "Turn in Testing the Vessel to Witch Doctor Uzer'i.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 3124, state = "activeOrCompleted" } },
@@ -10918,25 +11476,6 @@ ns:RegisterGuide({
                 "horde-leveling-era-horde-feralas-and-ungoro-crater-accept-3124-hippogryph-muisek",
                 "horde-leveling-era-horde-feralas-and-ungoro-crater-objective-3124-1-frayfeather-patriarch",
             },
-            id = "horde-leveling-era-horde-feralas-and-ungoro-crater-turnin-3124-hippogryph-muisek",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 3123 } } },
-            route = {
-                {
-                    label = "Witch Doctor Uzer'i",
-                    mapID = 1444,
-                    offMapText = "Travel to Witch Doctor Uzer'i in Feralas.",
-                    x = 0.7442,
-                    y = 0.4336,
-                },
-            },
-            sourceStep = 7,
-            text = "Turn in Hippogryph Muisek to Witch Doctor Uzer'i.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-feralas-and-ungoro-crater",
-            sourceActionID = "turnin-3124-hippogryph-muisek",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -10985,6 +11524,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-feralas-and-ungoro-crater-turnin-3124-hippogryph-muisek",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 3123 } } },
+            route = {
+                {
+                    label = "Witch Doctor Uzer'i",
+                    mapID = 1444,
+                    offMapText = "Travel to Witch Doctor Uzer'i in Feralas.",
+                    x = 0.7442,
+                    y = 0.4336,
+                },
+            },
+            sourceActionID = "turnin-3124-hippogryph-muisek",
+            sourceGuide = "leveling-era-horde-feralas-and-ungoro-crater",
+            sourceStep = 7,
+            text = "Turn in Hippogryph Muisek to Witch Doctor Uzer'i.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 3125, state = "activeOrCompleted" } },
@@ -11208,25 +11766,6 @@ ns:RegisterGuide({
                 "horde-leveling-era-horde-feralas-and-ungoro-crater-accept-3125-faerie-dragon-muisek",
                 "horde-leveling-era-horde-feralas-and-ungoro-crater-objective-3125-1-sprite-darter",
             },
-            id = "horde-leveling-era-horde-feralas-and-ungoro-crater-turnin-3125-faerie-dragon-muisek",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 3124 } } },
-            route = {
-                {
-                    label = "Witch Doctor Uzer'i",
-                    mapID = 1444,
-                    offMapText = "Travel to Witch Doctor Uzer'i in Feralas.",
-                    x = 0.7442,
-                    y = 0.4336,
-                },
-            },
-            sourceStep = 9,
-            text = "Turn in Faerie Dragon Muisek to Witch Doctor Uzer'i.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-feralas-and-ungoro-crater",
-            sourceActionID = "turnin-3125-faerie-dragon-muisek",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -11289,6 +11828,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-feralas-and-ungoro-crater-turnin-3125-faerie-dragon-muisek",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 3124 } } },
+            route = {
+                {
+                    label = "Witch Doctor Uzer'i",
+                    mapID = 1444,
+                    offMapText = "Travel to Witch Doctor Uzer'i in Feralas.",
+                    x = 0.7442,
+                    y = 0.4336,
+                },
+            },
+            sourceActionID = "turnin-3125-faerie-dragon-muisek",
+            sourceGuide = "leveling-era-horde-feralas-and-ungoro-crater",
+            sourceStep = 9,
+            text = "Turn in Faerie Dragon Muisek to Witch Doctor Uzer'i.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 3126, state = "activeOrCompleted" } },
@@ -11536,25 +12094,6 @@ ns:RegisterGuide({
                 "horde-leveling-era-horde-feralas-and-ungoro-crater-accept-3126-treant-muisek",
                 "horde-leveling-era-horde-feralas-and-ungoro-crater-objective-3126-1-wandering-forest-walker",
             },
-            id = "horde-leveling-era-horde-feralas-and-ungoro-crater-turnin-3126-treant-muisek",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 3125 } } },
-            route = {
-                {
-                    label = "Witch Doctor Uzer'i",
-                    mapID = 1444,
-                    offMapText = "Travel to Witch Doctor Uzer'i in Feralas.",
-                    x = 0.7442,
-                    y = 0.4336,
-                },
-            },
-            sourceStep = 11,
-            text = "Turn in Treant Muisek to Witch Doctor Uzer'i.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-feralas-and-ungoro-crater",
-            sourceActionID = "turnin-3126-treant-muisek",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -11631,6 +12170,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-feralas-and-ungoro-crater-turnin-3126-treant-muisek",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 3125 } } },
+            route = {
+                {
+                    label = "Witch Doctor Uzer'i",
+                    mapID = 1444,
+                    offMapText = "Travel to Witch Doctor Uzer'i in Feralas.",
+                    x = 0.7442,
+                    y = 0.4336,
+                },
+            },
+            sourceActionID = "turnin-3126-treant-muisek",
+            sourceGuide = "leveling-era-horde-feralas-and-ungoro-crater",
+            sourceStep = 11,
+            text = "Turn in Treant Muisek to Witch Doctor Uzer'i.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 3127, state = "activeOrCompleted" } },
@@ -11755,25 +12313,6 @@ ns:RegisterGuide({
                 "horde-leveling-era-horde-feralas-and-ungoro-crater-objective-3128-2-encrusted-minerals",
                 "horde-leveling-era-horde-feralas-and-ungoro-crater-objective-3128-1-splintered-log",
             },
-            id = "horde-leveling-era-horde-feralas-and-ungoro-crater-turnin-3128-natural-materials",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 3122 } } },
-            route = {
-                {
-                    label = "Witch Doctor Uzer'i",
-                    mapID = 1444,
-                    offMapText = "Travel to Witch Doctor Uzer'i in Feralas.",
-                    x = 0.7442,
-                    y = 0.4336,
-                },
-            },
-            sourceStep = 11,
-            text = "Turn in Natural Materials to Witch Doctor Uzer'i.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-feralas-and-ungoro-crater",
-            sourceActionID = "turnin-3128-natural-materials",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -11808,6 +12347,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-feralas-and-ungoro-crater-turnin-3128-natural-materials",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 3122 } } },
+            route = {
+                {
+                    label = "Witch Doctor Uzer'i",
+                    mapID = 1444,
+                    offMapText = "Travel to Witch Doctor Uzer'i in Feralas.",
+                    x = 0.7442,
+                    y = 0.4336,
+                },
+            },
+            sourceActionID = "turnin-3128-natural-materials",
+            sourceGuide = "leveling-era-horde-feralas-and-ungoro-crater",
+            sourceStep = 11,
+            text = "Turn in Natural Materials to Witch Doctor Uzer'i.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             checkpointQuest = 7003,
@@ -11931,13 +12489,13 @@ ns:RegisterGuide({
                     y = 0.4342,
                 },
             },
+            sourceActionID = "turnin-7003-zapped-giants",
+            sourceGuide = "leveling-era-horde-feralas-and-ungoro-crater",
             sourceStep = 15,
             text = "Turn in Zapped Giants to Zorbin Fandazzle.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-feralas-and-ungoro-crater",
-            sourceActionID = "turnin-7003-zapped-giants",
         },
         {
             complete = { quest = { id = 7721, state = "completed" } },
@@ -11958,13 +12516,13 @@ ns:RegisterGuide({
                     y = 0.4342,
                 },
             },
+            sourceActionID = "turnin-7721-fuel-for-the-zapping",
+            sourceGuide = "leveling-era-horde-feralas-and-ungoro-crater",
             sourceStep = 15,
             text = "Turn in Fuel for the Zapping to Zorbin Fandazzle.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-feralas-and-ungoro-crater",
-            sourceActionID = "turnin-7721-fuel-for-the-zapping",
         },
         {
             complete = {
@@ -12362,13 +12920,13 @@ ns:RegisterGuide({
             route = {
                 { label = "Talo Thornhoof", mapID = 1444, offMapText = "Travel to Talo Thornhoof in Feralas.", x = 0.7618, y = 0.4383 },
             },
+            sourceActionID = "turnin-3063-vengeance-on-the-northspring",
+            sourceGuide = "leveling-era-horde-feralas-and-ungoro-crater",
             sourceStep = 76,
             text = "Turn in Vengeance on the Northspring to Talo Thornhoof.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-feralas-and-ungoro-crater",
-            sourceActionID = "turnin-3063-vengeance-on-the-northspring",
         },
         {
             complete = { quest = { id = 3062, state = "completed" } },
@@ -12384,13 +12942,13 @@ ns:RegisterGuide({
             route = {
                 { label = "Talo Thornhoof", mapID = 1444, offMapText = "Travel to Talo Thornhoof in Feralas.", x = 0.7618, y = 0.4383 },
             },
+            sourceActionID = "turnin-3062-dark-heart",
+            sourceGuide = "leveling-era-horde-feralas-and-ungoro-crater",
             sourceStep = 76,
             text = "Turn in Dark Heart to Talo Thornhoof.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-feralas-and-ungoro-crater",
-            sourceActionID = "turnin-3062-dark-heart",
         },
         {
             complete = { quest = { id = 7734, state = "completed" } },
@@ -12399,25 +12957,6 @@ ns:RegisterGuide({
                 "horde-leveling-era-horde-feralas-and-ungoro-crater-accept-7734-improved-quality",
                 "horde-leveling-era-horde-feralas-and-ungoro-crater-objective-7734-1-rage-scar-yeti-hide",
             },
-            id = "horde-leveling-era-horde-feralas-and-ungoro-crater-turnin-7734-improved-quality",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 2822 } } },
-            route = {
-                {
-                    label = "Jangdor Swiftstrider",
-                    mapID = 1444,
-                    offMapText = "Travel to Jangdor Swiftstrider in Feralas.",
-                    x = 0.7443,
-                    y = 0.4291,
-                },
-            },
-            sourceStep = 77,
-            text = "Turn in Improved Quality to Jangdor Swiftstrider.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-feralas-and-ungoro-crater",
-            sourceActionID = "turnin-7734-improved-quality",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -12438,6 +12977,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-feralas-and-ungoro-crater-turnin-7734-improved-quality",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 2822 } } },
+            route = {
+                {
+                    label = "Jangdor Swiftstrider",
+                    mapID = 1444,
+                    offMapText = "Travel to Jangdor Swiftstrider in Feralas.",
+                    x = 0.7443,
+                    y = 0.4291,
+                },
+            },
+            sourceActionID = "turnin-7734-improved-quality",
+            sourceGuide = "leveling-era-horde-feralas-and-ungoro-crater",
+            sourceStep = 77,
+            text = "Turn in Improved Quality to Jangdor Swiftstrider.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 7738, state = "completed" } },
@@ -12470,7 +13028,7 @@ ns:RegisterGuide({
                                         { quest = { id = 7738, state = "activeOrCompleted" } },
                                         {
                                             all = {
-                                                { item = { name = "Perfect Yeti Hide", minCount = 1 } },
+                                                { item = { minCount = 1, name = "Perfect Yeti Hide" } },
                                                 { faction = "Horde" },
                                                 {
                                                     any = { { any = { { quest = { id = 2822, state = "activeOrCompleted" } }, { all = { { faction = "Horde" } } } } } },
@@ -12496,13 +13054,13 @@ ns:RegisterGuide({
                     y = 0.4291,
                 },
             },
+            sourceActionID = "turnin-7738-perfect-yeti-hide",
+            sourceGuide = "leveling-era-horde-feralas-and-ungoro-crater",
             sourceStep = 77,
             text = "Turn in Perfect Yeti Hide to Jangdor Swiftstrider.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-feralas-and-ungoro-crater",
-            sourceActionID = "turnin-7738-perfect-yeti-hide",
         },
         {
             complete = { quest = { id = 3127, state = "completed" } },
@@ -12511,25 +13069,6 @@ ns:RegisterGuide({
                 "horde-leveling-era-horde-feralas-and-ungoro-crater-accept-3127-mountain-giant-muisek",
                 "horde-leveling-era-horde-feralas-and-ungoro-crater-objective-3127-1-zorbin-s-ultra-shrinker",
             },
-            id = "horde-leveling-era-horde-feralas-and-ungoro-crater-turnin-3127-mountain-giant-muisek",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 3126 } } },
-            route = {
-                {
-                    label = "Witch Doctor Uzer'i",
-                    mapID = 1444,
-                    offMapText = "Travel to Witch Doctor Uzer'i in Feralas.",
-                    x = 0.7442,
-                    y = 0.4337,
-                },
-            },
-            sourceStep = 78,
-            text = "Turn in Mountain Giant Muisek to Witch Doctor Uzer'i.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-feralas-and-ungoro-crater",
-            sourceActionID = "turnin-3127-mountain-giant-muisek",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -12620,6 +13159,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-feralas-and-ungoro-crater-turnin-3127-mountain-giant-muisek",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 3126 } } },
+            route = {
+                {
+                    label = "Witch Doctor Uzer'i",
+                    mapID = 1444,
+                    offMapText = "Travel to Witch Doctor Uzer'i in Feralas.",
+                    x = 0.7442,
+                    y = 0.4337,
+                },
+            },
+            sourceActionID = "turnin-3127-mountain-giant-muisek",
+            sourceGuide = "leveling-era-horde-feralas-and-ungoro-crater",
+            sourceStep = 78,
+            text = "Turn in Mountain Giant Muisek to Witch Doctor Uzer'i.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 3129, state = "activeOrCompleted" } },
@@ -12779,25 +13337,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 3129, state = "completed" } },
             conditions = { all = { { faction = "Horde" }, { level = { min = 40 } }, { race = { 2, 5, 6, 8, 96 } } } },
             dependsOn = { "horde-leveling-era-horde-feralas-and-ungoro-crater-accept-3129-weapons-of-spirit" },
-            id = "horde-leveling-era-horde-feralas-and-ungoro-crater-turnin-3129-weapons-of-spirit",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "all", quests = { 3127, 3128 } } },
-            route = {
-                {
-                    label = "Witch Doctor Uzer'i",
-                    mapID = 1444,
-                    offMapText = "Travel to Witch Doctor Uzer'i in Feralas.",
-                    x = 0.7442,
-                    y = 0.4337,
-                },
-            },
-            sourceStep = 79,
-            text = "Turn in Weapons of Spirit to Witch Doctor Uzer'i.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-feralas-and-ungoro-crater",
-            sourceActionID = "turnin-3129-weapons-of-spirit",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -12929,75 +13468,110 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-feralas-and-ungoro-crater-turnin-3129-weapons-of-spirit",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "all", quests = { 3127, 3128 } } },
+            route = {
+                {
+                    label = "Witch Doctor Uzer'i",
+                    mapID = 1444,
+                    offMapText = "Travel to Witch Doctor Uzer'i in Feralas.",
+                    x = 0.7442,
+                    y = 0.4337,
+                },
+            },
+            sourceActionID = "turnin-3129-weapons-of-spirit",
+            sourceGuide = "leveling-era-horde-feralas-and-ungoro-crater",
+            sourceStep = 79,
+            text = "Turn in Weapons of Spirit to Witch Doctor Uzer'i.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
+            checkpointQuest = 2767,
+            complete = { level = { min = 40 } },
+            conditions = { all = { { faction = "Horde" } } },
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 2767, state = "activeOrCompleted" } },
+                        {
+                            any = {
+                                { quest = { id = 2767, state = "activeOrCompleted" } },
+                                {
+                                    all = {
+                                        {
+                                            any = {
+                                                {
+                                                    any = {
+                                                        { quest = { id = 2766, state = "activeOrCompleted" } },
+                                                        { all = { { item = { minCount = 1, name = "OOX-22/FE Distress Beacon" } } } },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
             id = "horde-extra-2767-level",
             kind = "note",
-            checkpointQuest = 2767,
-            text = "Reach level 45 before this visit.",
-            conditions = { all = { { faction = "Horde" } } },
-            complete = { level = { min = 45 } },
-            requiredLevel = 45,
-            excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 2767, state = "activeOrCompleted" } },
-                        {
-                            any = {
-                                { quest = { id = 2767, state = "activeOrCompleted" } },
-                                {
-                                    all = {
-                                        {
-                                            any = {
-                                                {
-                                                    any = {
-                                                        { quest = { id = 2766, state = "activeOrCompleted" } },
-                                                        { all = { { item = { name = "OOX-22/FE Distress Beacon", minCount = 1 } } } },
-                                                    },
-                                                },
-                                            },
-                                        },
-                                    },
-                                },
-                            },
-                        },
-                    },
-                },
-            },
+            requiredLevel = 40,
+            text = "Reach level 40 before this visit.",
         },
         {
-            id = "horde-extra-2767-accept",
-            kind = "accept",
-            text = "Accept Rescue OOX-22/FE! from Homing Robot OOX-22/FE.",
-            conditions = { all = { { faction = "Horde" }, { level = { min = 40 } } } },
-            route = {
-                {
-                    mapID = 1444,
-                    x = 0.534,
-                    y = 0.556,
-                    label = "Homing Robot OOX-22/FE",
-                    offMapText = "Travel to Homing Robot OOX-22/FE in Feralas.",
-                },
-            },
             complete = { quest = { id = 2767, state = "activeOrCompleted" } },
-            requiredQuests = { { mode = "any", quests = { 2766 } } },
-            useClientText = false,
+            conditions = { all = { { faction = "Horde" }, { level = { min = 40 } } } },
             dependsOn = { "horde-extra-2767-level" },
             excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 2767, state = "activeOrCompleted" } },
-                        {
+                any = {
+                    {
+                        ["not"] = {
                             any = {
                                 { quest = { id = 2767, state = "activeOrCompleted" } },
                                 {
-                                    all = {
+                                    any = {
+                                        { quest = { id = 2767, state = "activeOrCompleted" } },
                                         {
-                                            any = {
+                                            all = {
                                                 {
                                                     any = {
-                                                        { quest = { id = 2766, state = "activeOrCompleted" } },
-                                                        { all = { { item = { name = "OOX-22/FE Distress Beacon", minCount = 1 } } } },
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 2766, state = "activeOrCompleted" } },
+                                                                { all = { { item = { minCount = 1, name = "OOX-22/FE Distress Beacon" } } } },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 2767, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 2767, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 2766, state = "activeOrCompleted" } },
+                                                                { all = { { item = { minCount = 1, name = "OOX-22/FE Distress Beacon" } } } },
+                                                            },
+                                                        },
                                                     },
                                                 },
                                             },
@@ -13009,78 +13583,70 @@ ns:RegisterGuide({
                     },
                 },
             },
-        },
-        {
-            id = "horde-extra-2767-objective",
-            kind = "objective",
-            text = "Escort OOX-22/FE to the dock along the Forgotten Coast.",
-            conditions = { all = { { faction = "Horde" }, { level = { min = 40 } } } },
-            route = {},
-            complete = { quest = { id = 2767, state = "complete" } },
+            id = "horde-extra-2767-accept",
+            kind = "accept",
             requiredQuests = { { mode = "any", quests = { 2766 } } },
-            useClientText = false,
-            dependsOn = { "horde-extra-2767-accept" },
-            useClientPin = true,
-            excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 2767, state = "activeOrCompleted" } },
-                        {
-                            any = {
-                                { quest = { id = 2767, state = "activeOrCompleted" } },
-                                {
-                                    all = {
-                                        {
-                                            any = {
-                                                {
-                                                    any = {
-                                                        { quest = { id = 2766, state = "activeOrCompleted" } },
-                                                        { all = { { item = { name = "OOX-22/FE Distress Beacon", minCount = 1 } } } },
-                                                    },
-                                                },
-                                            },
-                                        },
-                                    },
-                                },
-                            },
-                        },
-                    },
-                },
-            },
-        },
-        {
-            id = "horde-extra-2767-turnin",
-            kind = "turnin",
-            text = "Turn in Rescue OOX-22/FE! to Oglethorpe Obnoticus.",
-            conditions = { all = { { faction = "Horde" }, { level = { min = 40 } } } },
             route = {
                 {
-                    mapID = 1434,
-                    x = 0.282,
-                    y = 0.762,
-                    label = "Oglethorpe Obnoticus",
-                    offMapText = "Travel to Oglethorpe Obnoticus in Stranglethorn Vale.",
+                    label = "Homing Robot OOX-22/FE",
+                    mapID = 1444,
+                    offMapText = "Travel to Homing Robot OOX-22/FE in Feralas.",
+                    x = 0.534,
+                    y = 0.556,
                 },
             },
-            complete = { quest = { id = 2767, state = "completed" } },
-            requiredQuests = { { mode = "any", quests = { 2766 } } },
+            text = "Accept Rescue OOX-22/FE! from Homing Robot OOX-22/FE.",
             useClientText = false,
-            dependsOn = { "horde-extra-2767-objective" },
+        },
+        {
+            complete = { quest = { id = 2767, state = "complete" } },
+            conditions = { all = { { faction = "Horde" }, { level = { min = 40 } } } },
+            dependsOn = { "horde-extra-2767-accept" },
             excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 2767, state = "activeOrCompleted" } },
-                        {
+                any = {
+                    {
+                        ["not"] = {
                             any = {
                                 { quest = { id = 2767, state = "activeOrCompleted" } },
                                 {
-                                    all = {
+                                    any = {
+                                        { quest = { id = 2767, state = "activeOrCompleted" } },
                                         {
-                                            any = {
+                                            all = {
                                                 {
                                                     any = {
-                                                        { quest = { id = 2766, state = "activeOrCompleted" } },
-                                                        { all = { { item = { name = "OOX-22/FE Distress Beacon", minCount = 1 } } } },
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 2766, state = "activeOrCompleted" } },
+                                                                { all = { { item = { minCount = 1, name = "OOX-22/FE Distress Beacon" } } } },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 2767, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 2767, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 2766, state = "activeOrCompleted" } },
+                                                                { all = { { item = { minCount = 1, name = "OOX-22/FE Distress Beacon" } } } },
+                                                            },
+                                                        },
                                                     },
                                                 },
                                             },
@@ -13092,6 +13658,90 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-extra-2767-objective",
+            kind = "objective",
+            requiredQuests = { { mode = "any", quests = { 2766 } } },
+            route = {},
+            text = "Escort OOX-22/FE to the dock along the Forgotten Coast.",
+            useClientPin = true,
+            useClientText = false,
+        },
+        {
+            complete = { quest = { id = 2767, state = "completed" } },
+            conditions = { all = { { faction = "Horde" }, { level = { min = 40 } } } },
+            dependsOn = { "horde-extra-2767-objective" },
+            excludeWhen = {
+                any = {
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 2767, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 2767, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 2766, state = "activeOrCompleted" } },
+                                                                { all = { { item = { minCount = 1, name = "OOX-22/FE Distress Beacon" } } } },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 2767, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 2767, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 2766, state = "activeOrCompleted" } },
+                                                                { all = { { item = { minCount = 1, name = "OOX-22/FE Distress Beacon" } } } },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
+            id = "horde-extra-2767-turnin",
+            kind = "turnin",
+            requiredQuests = { { mode = "any", quests = { 2766 } } },
+            route = {
+                {
+                    label = "Oglethorpe Obnoticus",
+                    mapID = 1434,
+                    offMapText = "Travel to Oglethorpe Obnoticus in Stranglethorn Vale.",
+                    x = 0.282,
+                    y = 0.762,
+                },
+            },
+            text = "Turn in Rescue OOX-22/FE! to Oglethorpe Obnoticus.",
+            useClientPin = true,
+            useClientText = false,
+            useQuestNavigation = true,
         },
     },
 })

@@ -118,7 +118,7 @@ func main() {
 		}
 	}
 	if !anyMissing {
-		fmt.Println("No missing Forever zone quests in configured level bands.")
+		fmt.Println("No missing zone quests in configured level bands.")
 	}
 }
 

@@ -11,8 +11,6 @@ import (
 	"github.com/TylerAkins/forever-guide-mate/internal/loremaster"
 )
 
-const foreverPatch = 16001
-
 var (
 	classicRaces   = intSetOf(1, 2, 3, 4, 5, 6, 7, 8)
 	classicClasses = intSetOf(1, 2, 3, 4, 5, 7, 8, 9, 11)
@@ -232,12 +230,7 @@ func CatalogQuest(questID int, record map[string]any) Catalog {
 	} else if id := positive(skill); id > 0 {
 		skills = []int{id}
 	}
-	patch := listed["firstseenpatch"]
-	if patch == nil {
-		patch = recordValue(record, "firstseenpatch")
-	}
-	firstSeen, _ := intValue(patch)
-	forever := firstSeen == foreverPatch || questID >= 90000
+	forever := false
 	name, _ := listed["name"].(string)
 	if name == "" {
 		name, _ = fields["name"].(string)

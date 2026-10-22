@@ -11,11 +11,8 @@
     "leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows"
   ],
   "spineActions": [
-    "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-level-before-accept-66-the-legend-of-stalvan",
-    "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-accept-66-the-legend-of-stalvan",
     "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-accept-101-the-totem-of-infliction",
     "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-accept-56-the-night-watch",
-    "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-turnin-66-the-legend-of-stalvan",
     "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-accept-67-the-legend-of-stalvan",
     "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-accept-163-raven-hill",
     "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-accept-165-the-hermit",
@@ -114,12 +111,9 @@
     "alliance-leveling-era-alliance-wetlands-part-2-objective-324-1-bluegill-raider",
     "alliance-leveling-era-alliance-wetlands-part-2-turnin-324-the-lost-ingots",
     "alliance-leveling-era-alliance-wetlands-part-2-accept-322-blessed-arm",
-    "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-level-before-accept-1274-the-missing-diplomat",
-    "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-accept-1274-the-missing-diplomat",
     "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-turnin-322-blessed-arm",
     "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-accept-325-armed-and-ready",
     "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-accept-337-an-old-history-book",
-    "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-turnin-1274-the-missing-diplomat",
     "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-accept-1241-the-missing-diplomat",
     "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-turnin-337-an-old-history-book",
     "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-turnin-1241-the-missing-diplomat",
@@ -185,56 +179,14 @@
     "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-accept-223-worgen-in-the-woods",
     "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-turnin-223-worgen-in-the-woods",
     "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-turnin-337-an-old-history-book-2",
-    "alliance-leveling-era-alliance-stranglethorn-vale-part-3-level-before-accept-1477-vital-supplies",
-    "alliance-leveling-era-alliance-stranglethorn-vale-part-3-accept-1477-vital-supplies",
-    "alliance-leveling-era-alliance-swamp-of-sorrows-part-2-level-before-turnin-1477-vital-supplies",
-    "alliance-leveling-era-alliance-swamp-of-sorrows-part-2-turnin-1477-vital-supplies",
     "alliance-leveling-era-alliance-swamp-of-sorrows-part-2-accept-1395-supplies-for-nethergarde",
-    "alliance-leveling-era-alliance-swamp-of-sorrows-part-2-turnin-1395-supplies-for-nethergarde",
-    "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-level-before-accept-1372-nothing-but-the-truth",
-    "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-accept-1372-nothing-but-the-truth",
-    "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-turnin-1372-nothing-but-the-truth"
+    "alliance-leveling-era-alliance-swamp-of-sorrows-part-2-turnin-1395-supplies-for-nethergarde"
   ],
   "placements": [
     {
-      "anchor": "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-level-before-accept-66-the-legend-of-stalvan",
-      "actions": [
-        "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-level-before-accept-66-the-legend-of-stalvan"
-      ],
-      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
-    },
-    {
-      "anchor": "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-level-before-accept-66-the-legend-of-stalvan",
-      "actions": [
-        "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-accept-66-the-legend-of-stalvan"
-      ],
-      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
-    },
-    {
-      "anchor": "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-accept-66-the-legend-of-stalvan",
-      "actions": [
-        "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-accept-101-the-totem-of-infliction"
-      ],
-      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
-    },
-    {
       "anchor": "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-accept-101-the-totem-of-infliction",
       "actions": [
         "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-accept-56-the-night-watch"
-      ],
-      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
-    },
-    {
-      "anchor": "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-accept-56-the-night-watch",
-      "actions": [
-        "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-turnin-66-the-legend-of-stalvan"
-      ],
-      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
-    },
-    {
-      "anchor": "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-turnin-66-the-legend-of-stalvan",
-      "actions": [
-        "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-accept-67-the-legend-of-stalvan"
       ],
       "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
     },
@@ -932,27 +884,6 @@
       "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
     },
     {
-      "anchor": "alliance-leveling-era-alliance-wetlands-part-2-accept-322-blessed-arm",
-      "actions": [
-        "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-level-before-accept-1274-the-missing-diplomat"
-      ],
-      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
-    },
-    {
-      "anchor": "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-level-before-accept-1274-the-missing-diplomat",
-      "actions": [
-        "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-accept-1274-the-missing-diplomat"
-      ],
-      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
-    },
-    {
-      "anchor": "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-accept-1274-the-missing-diplomat",
-      "actions": [
-        "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-turnin-322-blessed-arm"
-      ],
-      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
-    },
-    {
       "anchor": "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-turnin-322-blessed-arm",
       "actions": [
         "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-accept-325-armed-and-ready"
@@ -963,20 +894,6 @@
       "anchor": "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-accept-325-armed-and-ready",
       "actions": [
         "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-accept-337-an-old-history-book"
-      ],
-      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
-    },
-    {
-      "anchor": "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-accept-337-an-old-history-book",
-      "actions": [
-        "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-turnin-1274-the-missing-diplomat"
-      ],
-      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
-    },
-    {
-      "anchor": "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-turnin-1274-the-missing-diplomat",
-      "actions": [
-        "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-accept-1241-the-missing-diplomat"
       ],
       "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
     },
@@ -1457,41 +1374,6 @@
       "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
     },
     {
-      "anchor": "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-turnin-337-an-old-history-book-2",
-      "actions": [
-        "alliance-leveling-era-alliance-stranglethorn-vale-part-3-level-before-accept-1477-vital-supplies"
-      ],
-      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
-    },
-    {
-      "anchor": "alliance-leveling-era-alliance-stranglethorn-vale-part-3-level-before-accept-1477-vital-supplies",
-      "actions": [
-        "alliance-leveling-era-alliance-stranglethorn-vale-part-3-accept-1477-vital-supplies"
-      ],
-      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
-    },
-    {
-      "anchor": "alliance-leveling-era-alliance-stranglethorn-vale-part-3-accept-1477-vital-supplies",
-      "actions": [
-        "alliance-leveling-era-alliance-swamp-of-sorrows-part-2-level-before-turnin-1477-vital-supplies"
-      ],
-      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
-    },
-    {
-      "anchor": "alliance-leveling-era-alliance-swamp-of-sorrows-part-2-level-before-turnin-1477-vital-supplies",
-      "actions": [
-        "alliance-leveling-era-alliance-swamp-of-sorrows-part-2-turnin-1477-vital-supplies"
-      ],
-      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
-    },
-    {
-      "anchor": "alliance-leveling-era-alliance-swamp-of-sorrows-part-2-turnin-1477-vital-supplies",
-      "actions": [
-        "alliance-extra-228-level"
-      ],
-      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
-    },
-    {
       "anchor": "alliance-extra-228-level",
       "actions": [
         "alliance-extra-228-accept"
@@ -1583,58 +1465,9 @@
       "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
     },
     {
-      "anchor": "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-level-before-accept-1372-nothing-but-the-truth",
-      "actions": [
-        "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-accept-1372-nothing-but-the-truth"
-      ],
-      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
-    },
-    {
-      "anchor": "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-accept-1372-nothing-but-the-truth",
-      "actions": [
-        "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-turnin-1372-nothing-but-the-truth"
-      ],
-      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
-    },
-    {
-      "anchor": "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-level-before-accept-66-the-legend-of-stalvan",
-      "actions": [
-        "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-level-before-accept-66-the-legend-of-stalvan"
-      ],
-      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
-    },
-    {
-      "anchor": "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-level-before-accept-66-the-legend-of-stalvan",
-      "actions": [
-        "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-accept-66-the-legend-of-stalvan"
-      ],
-      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
-    },
-    {
-      "anchor": "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-accept-66-the-legend-of-stalvan",
-      "actions": [
-        "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-accept-101-the-totem-of-infliction"
-      ],
-      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
-    },
-    {
       "anchor": "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-accept-101-the-totem-of-infliction",
       "actions": [
         "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-accept-56-the-night-watch"
-      ],
-      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
-    },
-    {
-      "anchor": "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-accept-56-the-night-watch",
-      "actions": [
-        "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-turnin-66-the-legend-of-stalvan"
-      ],
-      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
-    },
-    {
-      "anchor": "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-turnin-66-the-legend-of-stalvan",
-      "actions": [
-        "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-accept-67-the-legend-of-stalvan"
       ],
       "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
     },
@@ -2332,27 +2165,6 @@
       "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
     },
     {
-      "anchor": "alliance-leveling-era-alliance-wetlands-part-2-accept-322-blessed-arm",
-      "actions": [
-        "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-level-before-accept-1274-the-missing-diplomat"
-      ],
-      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
-    },
-    {
-      "anchor": "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-level-before-accept-1274-the-missing-diplomat",
-      "actions": [
-        "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-accept-1274-the-missing-diplomat"
-      ],
-      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
-    },
-    {
-      "anchor": "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-accept-1274-the-missing-diplomat",
-      "actions": [
-        "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-turnin-322-blessed-arm"
-      ],
-      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
-    },
-    {
       "anchor": "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-turnin-322-blessed-arm",
       "actions": [
         "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-accept-325-armed-and-ready"
@@ -2363,20 +2175,6 @@
       "anchor": "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-accept-325-armed-and-ready",
       "actions": [
         "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-accept-337-an-old-history-book"
-      ],
-      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
-    },
-    {
-      "anchor": "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-accept-337-an-old-history-book",
-      "actions": [
-        "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-turnin-1274-the-missing-diplomat"
-      ],
-      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
-    },
-    {
-      "anchor": "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-turnin-1274-the-missing-diplomat",
-      "actions": [
-        "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-accept-1241-the-missing-diplomat"
       ],
       "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
     },
@@ -2857,41 +2655,6 @@
       "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
     },
     {
-      "anchor": "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-turnin-337-an-old-history-book-2",
-      "actions": [
-        "alliance-leveling-era-alliance-stranglethorn-vale-part-3-level-before-accept-1477-vital-supplies"
-      ],
-      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
-    },
-    {
-      "anchor": "alliance-leveling-era-alliance-stranglethorn-vale-part-3-level-before-accept-1477-vital-supplies",
-      "actions": [
-        "alliance-leveling-era-alliance-stranglethorn-vale-part-3-accept-1477-vital-supplies"
-      ],
-      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
-    },
-    {
-      "anchor": "alliance-leveling-era-alliance-stranglethorn-vale-part-3-accept-1477-vital-supplies",
-      "actions": [
-        "alliance-leveling-era-alliance-swamp-of-sorrows-part-2-level-before-turnin-1477-vital-supplies"
-      ],
-      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
-    },
-    {
-      "anchor": "alliance-leveling-era-alliance-swamp-of-sorrows-part-2-level-before-turnin-1477-vital-supplies",
-      "actions": [
-        "alliance-leveling-era-alliance-swamp-of-sorrows-part-2-turnin-1477-vital-supplies"
-      ],
-      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
-    },
-    {
-      "anchor": "alliance-leveling-era-alliance-swamp-of-sorrows-part-2-turnin-1477-vital-supplies",
-      "actions": [
-        "alliance-extra-228-level"
-      ],
-      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
-    },
-    {
       "anchor": "alliance-extra-228-level",
       "actions": [
         "alliance-extra-228-accept"
@@ -2983,24 +2746,38 @@
       "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
     },
     {
+      "actions": [
+        "visit-entry-leveling-era-alliance-duskwood-and-redridge-mountains"
+      ],
+      "anchor": "visit-entry-leveling-era-alliance-duskwood-and-redridge-mountains",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "visit-entry-leveling-era-alliance-wetlands-part-2"
+      ],
+      "anchor": "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-woven-turnin-96137-iras-dagger",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "visit-entry-leveling-era-alliance-duskwood-and-stranglethorn-vale"
+      ],
+      "anchor": "alliance-leveling-era-alliance-wetlands-part-2-accept-322-blessed-arm",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "visit-entry-leveling-era-alliance-stranglethorn-vale-part-3"
+      ],
+      "anchor": "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-turnin-337-an-old-history-book-2",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "visit-entry-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows"
+      ],
       "anchor": "alliance-extra-229-turnin",
-      "actions": [
-        "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-level-before-accept-1372-nothing-but-the-truth"
-      ],
-      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
-    },
-    {
-      "anchor": "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-level-before-accept-1372-nothing-but-the-truth",
-      "actions": [
-        "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-accept-1372-nothing-but-the-truth"
-      ],
-      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
-    },
-    {
-      "anchor": "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-accept-1372-nothing-but-the-truth",
-      "actions": [
-        "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-turnin-1372-nothing-but-the-truth"
-      ],
       "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
     }
   ],
@@ -36967,1273 +36744,778 @@
       "supporting": false,
       "status": "unresolved",
       "reason": "Objective materials are named but acquisition sources and visits need review"
+    },
+    "335": {
+      "catalogs": [
+        "stormwind-city"
+      ],
+      "evidence": {
+        "artifactVersion": "1.0.6-dev.f844007",
+        "buildCommit": "f844007b329b72f18cf2bda3d87540012294732a",
+        "source": "QuestieDB"
+      },
+      "locations": [
+        {
+          "coord": [
+            40.14,
+            85.31
+          ],
+          "id": 1435,
+          "name": "Zardeth of the Black Claw",
+          "point": "start",
+          "reactalliance": 1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Stormwind City"
+        },
+        {
+          "coord": [
+            40.14,
+            85.31
+          ],
+          "id": 1435,
+          "name": "Zardeth of the Black Claw",
+          "point": "end",
+          "reactalliance": 1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Stormwind City"
+        },
+        {
+          "coord": [
+            78.35,
+            35.95
+          ],
+          "id": 321,
+          "item": "Tear of Tilloa",
+          "name": "Tear of Tilloa",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "Duskwood"
+        },
+        {
+          "coord": [
+            64.78,
+            75.32
+          ],
+          "id": 2084,
+          "item": "Musquash Root",
+          "name": "Musquash Root",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "Wetlands"
+        }
+      ],
+      "supporting": false,
+      "status": "spine",
+      "reason": "Preserved faction Casual actions."
     }
   },
   "supportingQuests": [
     1241,
-    1242,
-    1274
+    1242
   ],
   "clientWalkthrough": "unverified",
   "sourcePriority": [
-    "wowhead",
-    "questiedb",
-    "allthethings",
-    "foreverclient"
+    "questiedb"
   ],
   "sources": {
-    "databaseCommit": "5c92953420ab4a710fda39581a405a72a89b8c0d",
-    "compilation": {
-      "schemaVersion": 1,
-      "compilationFormatVersion": 2,
-      "flavor": "forever",
-      "source": "compilation",
-      "sourceRevision": "991cc5841d7b79dc85613431aa8ecf6f4c34070753426d60f323e321532d4b66",
-      "recordCount": 107209,
-      "recordsSha256": "9ab82625871b9df3a0ac5781bb194be6d8211a4a6337258fbf82224e00416727",
-      "status": "generated"
+    "questiedb": {
+      "artifactVersion": "1.0.6-dev.f844007",
+      "buildCommit": "f844007b329b72f18cf2bda3d87540012294732a",
+      "counts": {
+        "Item": 21294,
+        "Npc": 13393,
+        "Object": 7035,
+        "Quest": 5232
+      }
     },
     "sourceHashes": {
-      "data/forever/compilation/records.jsonl.gz": "35c74cb11823db372dc0bc289d5ffaf8296ca9d1c370e4f7b794a29af7f84b47"
+      "questiedb/export.json": "e26090e90df3aa2e94be4c13feb001390068b84c249ff2443c629d26a408e704",
+      "questiedb/policy.json": "835ba8f6361ef37bda275859bdb48852001c3ce2b6a2b3ecff586283633e2ad4"
     },
     "upstreamCommit": "9087c457e20fb96e73e5b362dd6fc50324b75718"
   },
   "coverageMode": "zone",
   "orderingEligibility": {
-    "79362": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
-      }
-    },
-    "79363": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
-      }
-    },
     "5": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "526": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
       },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+      "Alliance": {
+        "inCasual": true
       }
     },
     "55": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
       }
     },
     "56": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
       }
     },
     "57": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
       }
     },
     "58": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
       }
     },
     "66": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
       }
     },
     "67": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
       }
     },
     "68": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
       }
     },
     "69": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
       }
     },
     "70": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
       }
     },
     "72": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
       }
     },
     "74": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
       }
     },
     "75": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
       }
     },
     "78": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
       }
     },
     "79": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
       }
     },
     "80": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
       }
     },
     "90": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
       }
     },
     "93": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
       }
     },
     "95": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
       }
     },
     "97": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
       }
     },
     "98": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
       }
     },
     "101": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
       }
     },
     "133": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
       }
     },
     "134": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "98447": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
+        "inCasual": false
       },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
+      "Alliance": {
+        "inCasual": true
       }
     },
     "148": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
       }
     },
     "149": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
       }
     },
     "154": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
       }
     },
     "156": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
       }
     },
     "157": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
       }
     },
     "158": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
       }
     },
     "159": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
       }
     },
     "160": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
       }
     },
     "163": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
       }
     },
     "164": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
       }
     },
     "165": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
       }
     },
     "173": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
       }
     },
     "174": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
       }
     },
     "175": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
       }
     },
     "177": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
       }
     },
     "181": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "1243": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
+        "inCasual": false
       },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "1244": {
       "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": true
       }
     },
     "221": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
       }
     },
     "222": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
       }
     },
     "223": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
       }
     },
     "225": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
       }
     },
     "226": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
       }
     },
     "227": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
       }
     },
     "228": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
       }
     },
     "229": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
       }
     },
     "230": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
       }
     },
     "231": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
       }
     },
     "240": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
       }
     },
     "245": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
       }
     },
     "251": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
       }
     },
     "252": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
       }
     },
     "253": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
       }
     },
     "254": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
       }
     },
     "262": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
       }
     },
     "265": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
       }
     },
     "266": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
       }
     },
     "268": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
       }
     },
     "269": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
       }
     },
     "270": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
       }
     },
     "321": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
       }
     },
     "322": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
       }
     },
     "323": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
       }
     },
     "324": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
       }
     },
     "325": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
       }
     },
-    "81730": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
+    "335": {
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "81731": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
       },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "81732": {
       "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "81733": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "81734": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "81735": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "81736": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "81737": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "81738": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "81739": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "81740": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": true
       }
     },
     "337": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "81741": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
       },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "81742": {
       "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "81743": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "81744": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "81745": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "81746": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "81747": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "1372": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      }
-    },
-    "1383": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "1388": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "1391": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "1395": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "96137": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
-      }
-    },
-    "96138": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
-      }
-    },
-    "96139": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
+        "inCasual": true
       }
     },
     "401": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
       }
     },
     "453": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "526": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "1243": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "1244": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "1372": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "1383": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "1388": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "1391": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "1395": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
       }
     },
     "1477": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "79362": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "79363": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "96137": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "96138": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "96139": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
       }
     }
   },
@@ -38242,111 +37524,12 @@
     "commit": "9087c457e20fb96e73e5b362dd6fc50324b75718",
     "strict": false,
     "sourceHashes": {
+      "ZygorGuidesViewerRM/Guides/Leveling/ZygorGuidesHorde.lua": "2eaf5adb4865936cdb4257451c3ce920fdaff1c0ec17216c36e055480f389e54",
       "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-EasternKingdoms.lua": "8a5ec87d31698c612e50eb0655f5c1f28d723c3068552c1295d79ddcd934270f",
       "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-Kalimdor.lua": "4fb7b7f5bb2702dfe36ed33de31b4d3105153bfba62b7a14a7ab73386e2087fa",
-      "ZygorGuidesViewerRM/Guides/Leveling/ZygorGuidesAlliance.lua": "ffb9b7828817e098d74ee5931e15a64ce773142a4c1e60f9775d0713121ba67d",
-      "ZygorGuidesViewerRM/Guides/Leveling/ZygorGuidesHorde.lua": "2eaf5adb4865936cdb4257451c3ce920fdaff1c0ec17216c36e055480f389e54"
+      "ZygorGuidesViewerRM/Guides/Leveling/ZygorGuidesAlliance.lua": "ffb9b7828817e098d74ee5931e15a64ce773142a4c1e60f9775d0713121ba67d"
     },
     "matches": {
-      "alliance-extra-90-level": {
-        "quest": 90,
-        "kind": "accept",
-        "index": 0,
-        "faction": "Alliance",
-        "chapter": "Ding80's Loremaster Alliance Guides\\\\Eastern Kingdoms\\\\[30] Duskwood",
-        "source": "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-EasternKingdoms.lua",
-        "line": 1397
-      },
-      "alliance-extra-90-accept": {
-        "quest": 90,
-        "kind": "accept",
-        "index": 0,
-        "faction": "Alliance",
-        "chapter": "Ding80's Loremaster Alliance Guides\\\\Eastern Kingdoms\\\\[30] Duskwood",
-        "source": "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-EasternKingdoms.lua",
-        "line": 1397
-      },
-      "alliance-extra-90-objective": {
-        "quest": 90,
-        "kind": "objective",
-        "index": 1,
-        "faction": "Alliance",
-        "chapter": "Ding80's Loremaster Alliance Guides\\\\Eastern Kingdoms\\\\[30] Duskwood",
-        "source": "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-EasternKingdoms.lua",
-        "line": 1550
-      },
-      "alliance-extra-90-turnin": {
-        "quest": 90,
-        "kind": "turnin",
-        "index": 0,
-        "faction": "Alliance",
-        "chapter": "Ding80's Loremaster Alliance Guides\\\\Eastern Kingdoms\\\\[30] Duskwood",
-        "source": "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-EasternKingdoms.lua",
-        "line": 1591
-      },
-      "alliance-extra-228-level": {
-        "quest": 228,
-        "kind": "accept",
-        "index": 0,
-        "faction": "Alliance",
-        "chapter": "Ding80's Loremaster Alliance Guides\\\\Eastern Kingdoms\\\\[30] Duskwood",
-        "source": "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-EasternKingdoms.lua",
-        "line": 1454
-      },
-      "alliance-extra-228-accept": {
-        "quest": 228,
-        "kind": "accept",
-        "index": 0,
-        "faction": "Alliance",
-        "chapter": "Ding80's Loremaster Alliance Guides\\\\Eastern Kingdoms\\\\[30] Duskwood",
-        "source": "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-EasternKingdoms.lua",
-        "line": 1454
-      },
-      "alliance-extra-228-objective": {
-        "quest": 228,
-        "kind": "objective",
-        "index": 1,
-        "faction": "Alliance",
-        "chapter": "Ding80's Loremaster Alliance Guides\\\\Eastern Kingdoms\\\\[30] Duskwood",
-        "source": "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-EasternKingdoms.lua",
-        "line": 1616
-      },
-      "alliance-extra-228-turnin": {
-        "quest": 228,
-        "kind": "turnin",
-        "index": 0,
-        "faction": "Alliance",
-        "chapter": "Ding80's Loremaster Alliance Guides\\\\Eastern Kingdoms\\\\[30] Duskwood",
-        "source": "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-EasternKingdoms.lua",
-        "line": 1651
-      },
-      "alliance-extra-229-level": {
-        "quest": 229,
-        "kind": "accept",
-        "index": 0,
-        "faction": "Alliance",
-        "chapter": "Ding80's Loremaster Alliance Guides\\\\Eastern Kingdoms\\\\[30] Duskwood",
-        "source": "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-EasternKingdoms.lua",
-        "line": 1653
-      },
-      "alliance-extra-229-accept": {
-        "quest": 229,
-        "kind": "accept",
-        "index": 0,
-        "faction": "Alliance",
-        "chapter": "Ding80's Loremaster Alliance Guides\\\\Eastern Kingdoms\\\\[30] Duskwood",
-        "source": "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-EasternKingdoms.lua",
-        "line": 1653
-      },
-      "alliance-extra-229-turnin": {
-        "quest": 229,
-        "kind": "turnin",
-        "index": 0,
-        "faction": "Alliance",
-        "chapter": "Ding80's Loremaster Alliance Guides\\\\Eastern Kingdoms\\\\[30] Duskwood",
-        "source": "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-EasternKingdoms.lua",
-        "line": 1657
-      },
       "alliance-extra-245-level": {
         "quest": 245,
         "kind": "accept",
@@ -38418,6 +37601,69 @@
         "chapter": "Ding80's Loremaster Alliance Guides\\\\Eastern Kingdoms\\\\[30] Duskwood",
         "source": "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-EasternKingdoms.lua",
         "line": 1729
+      },
+      "alliance-extra-228-level": {
+        "quest": 228,
+        "kind": "accept",
+        "index": 0,
+        "faction": "Alliance",
+        "chapter": "Ding80's Loremaster Alliance Guides\\\\Eastern Kingdoms\\\\[30] Duskwood",
+        "source": "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-EasternKingdoms.lua",
+        "line": 1454
+      },
+      "alliance-extra-228-accept": {
+        "quest": 228,
+        "kind": "accept",
+        "index": 0,
+        "faction": "Alliance",
+        "chapter": "Ding80's Loremaster Alliance Guides\\\\Eastern Kingdoms\\\\[30] Duskwood",
+        "source": "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-EasternKingdoms.lua",
+        "line": 1454
+      },
+      "alliance-extra-228-objective": {
+        "quest": 228,
+        "kind": "objective",
+        "index": 1,
+        "faction": "Alliance",
+        "chapter": "Ding80's Loremaster Alliance Guides\\\\Eastern Kingdoms\\\\[30] Duskwood",
+        "source": "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-EasternKingdoms.lua",
+        "line": 1616
+      },
+      "alliance-extra-228-turnin": {
+        "quest": 228,
+        "kind": "turnin",
+        "index": 0,
+        "faction": "Alliance",
+        "chapter": "Ding80's Loremaster Alliance Guides\\\\Eastern Kingdoms\\\\[30] Duskwood",
+        "source": "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-EasternKingdoms.lua",
+        "line": 1651
+      },
+      "alliance-extra-229-level": {
+        "quest": 229,
+        "kind": "accept",
+        "index": 0,
+        "faction": "Alliance",
+        "chapter": "Ding80's Loremaster Alliance Guides\\\\Eastern Kingdoms\\\\[30] Duskwood",
+        "source": "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-EasternKingdoms.lua",
+        "line": 1653
+      },
+      "alliance-extra-229-accept": {
+        "quest": 229,
+        "kind": "accept",
+        "index": 0,
+        "faction": "Alliance",
+        "chapter": "Ding80's Loremaster Alliance Guides\\\\Eastern Kingdoms\\\\[30] Duskwood",
+        "source": "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-EasternKingdoms.lua",
+        "line": 1653
+      },
+      "alliance-extra-229-turnin": {
+        "quest": 229,
+        "kind": "turnin",
+        "index": 0,
+        "faction": "Alliance",
+        "chapter": "Ding80's Loremaster Alliance Guides\\\\Eastern Kingdoms\\\\[30] Duskwood",
+        "source": "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-EasternKingdoms.lua",
+        "line": 1657
       }
     }
   }

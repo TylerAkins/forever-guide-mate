@@ -6,7 +6,7 @@ ns:RegisterGuide({
     id = "loremaster-arathi-highlands",
     title = "Arathi Highlands",
     category = "Loremaster Guides",
-    revision = 1,
+    revision = 2,
     routeMode = "ordered",
     loremasterExpanded = true,
     goals = {
@@ -194,13 +194,13 @@ ns:RegisterGuide({
                     y = 0.4755,
                 },
             },
+            sourceActionID = "turnin-681-northfold-manor",
+            sourceGuide = "leveling-era-alliance-hillsbrad-foothills-and-arathi-highlands",
             sourceStep = 36,
             text = "Turn in Northfold Manor to Captain Nials.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-hillsbrad-foothills-and-arathi-highlands",
-            sourceActionID = "turnin-681-northfold-manor",
         },
         {
             id = "visit-entry-leveling-era-alliance-arathi-highlands-and-alterac-mountains",
@@ -213,19 +213,76 @@ ns:RegisterGuide({
             requiredLevel = 39,
         },
         {
+            alternativeQuests = { 691 },
+            complete = { quest = { id = 690, state = "completed" } },
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 30 } } } },
+            dependsOn = {},
             id = "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-turnin-690-malin-s-request",
             kind = "turnin",
+            requiredQuests = {},
+            route = { { label = "Skuerto", mapID = 1417, offMapText = "Travel to Skuerto at Refuge Pointe.", x = 0.466, y = 0.47 } },
+            sourceActionID = "turnin-690-malin-s-request",
+            sourceGuide = "leveling-era-alliance-arathi-highlands-and-alterac-mountains",
             text = "Turn in Malin's Request to Skuerto at Refuge Pointe.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
+        },
+        {
+            checkpointQuest = 684,
+            complete = { level = { min = 30 } },
+            conditions = { all = { { faction = "Alliance" } } },
+            id = "alliance-extra-684-level",
+            kind = "note",
+            requiredLevel = 30,
+            text = "Reach level 30 before this visit.",
+        },
+        {
+            id = "alliance-extra-684-accept",
+            kind = "accept",
+            text = "Accept Wanted! Marez Cowl from Wanted Board.",
             conditions = { all = { { faction = "Alliance" }, { level = { min = 30 } } } },
-            complete = { quest = { id = 690, state = "completed" } },
-            alternativeQuests = { 691 },
-            route = { { mapID = 1417, x = 0.466, y = 0.47, label = "Skuerto", offMapText = "Travel to Skuerto at Refuge Pointe." } },
-            dependsOn = {},
+            route = {
+                {
+                    mapID = 1417,
+                    x = 0.46,
+                    y = 0.47700000000000004,
+                    label = "Wanted Board",
+                    offMapText = "Travel to Wanted Board in Arathi Highlands.",
+                },
+            },
+            complete = { quest = { id = 684, state = "activeOrCompleted" } },
             requiredQuests = {},
             useClientText = false,
-            useClientPin = false,
-            sourceGuide = "leveling-era-alliance-arathi-highlands-and-alterac-mountains",
-            sourceActionID = "turnin-690-malin-s-request",
+            dependsOn = { "alliance-extra-684-level" },
+        },
+        {
+            checkpointQuest = 685,
+            complete = { level = { min = 30 } },
+            conditions = { all = { { faction = "Alliance" } } },
+            id = "alliance-extra-685-level",
+            kind = "note",
+            requiredLevel = 30,
+            text = "Reach level 30 before this visit.",
+        },
+        {
+            id = "alliance-extra-685-accept",
+            kind = "accept",
+            text = "Accept Wanted! Otto and Falconcrest from Wanted Board.",
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 30 } } } },
+            route = {
+                {
+                    mapID = 1417,
+                    x = 0.46,
+                    y = 0.47700000000000004,
+                    label = "Wanted Board",
+                    offMapText = "Travel to Wanted Board in Arathi Highlands.",
+                },
+            },
+            complete = { quest = { id = 685, state = "activeOrCompleted" } },
+            requiredQuests = {},
+            useClientText = false,
+            dependsOn = { "alliance-extra-685-level" },
         },
         {
             complete = { quest = { id = 691, state = "activeOrCompleted" } },
@@ -249,62 +306,6 @@ ns:RegisterGuide({
             useClientText = false,
             sourceGuide = "leveling-era-alliance-arathi-highlands-and-alterac-mountains",
             sourceActionID = "accept-691-worth-its-weight-in-gold",
-        },
-        {
-            id = "alliance-extra-684-level",
-            kind = "note",
-            checkpointQuest = 684,
-            text = "Reach level 39 before this visit.",
-            conditions = { all = { { faction = "Alliance" } } },
-            complete = { level = { min = 39 } },
-            requiredLevel = 39,
-        },
-        {
-            id = "alliance-extra-684-accept",
-            kind = "accept",
-            text = "Accept Wanted! Marez Cowl from Wanted Board.",
-            conditions = { all = { { faction = "Alliance" }, { level = { min = 30 } } } },
-            route = {
-                {
-                    mapID = 1417,
-                    x = 0.46,
-                    y = 0.47700000000000004,
-                    label = "Wanted Board",
-                    offMapText = "Travel to Wanted Board in Arathi Highlands.",
-                },
-            },
-            complete = { quest = { id = 684, state = "activeOrCompleted" } },
-            requiredQuests = {},
-            useClientText = false,
-            dependsOn = { "alliance-extra-684-level" },
-        },
-        {
-            id = "alliance-extra-685-level",
-            kind = "note",
-            checkpointQuest = 685,
-            text = "Reach level 40 before this visit.",
-            conditions = { all = { { faction = "Alliance" } } },
-            complete = { level = { min = 40 } },
-            requiredLevel = 40,
-        },
-        {
-            id = "alliance-extra-685-accept",
-            kind = "accept",
-            text = "Accept Wanted! Otto and Falconcrest from Wanted Board.",
-            conditions = { all = { { faction = "Alliance" }, { level = { min = 30 } } } },
-            route = {
-                {
-                    mapID = 1417,
-                    x = 0.46,
-                    y = 0.47700000000000004,
-                    label = "Wanted Board",
-                    offMapText = "Travel to Wanted Board in Arathi Highlands.",
-                },
-            },
-            complete = { quest = { id = 685, state = "activeOrCompleted" } },
-            requiredQuests = {},
-            useClientText = false,
-            dependsOn = { "alliance-extra-685-level" },
         },
         {
             checkpointQuest = 642,
@@ -369,13 +370,13 @@ ns:RegisterGuide({
             route = {
                 { label = "The Princess Trapped", mapID = 1417, offMapText = "Travel to The Princess Trapped.", x = 0.8431, y = 0.3092 },
             },
+            sourceActionID = "turnin-642-the-princess-trapped",
+            sourceGuide = "leveling-era-alliance-arathi-highlands-and-alterac-mountains",
             sourceStep = 5,
             text = "Turn in The Princess Trapped.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-arathi-highlands-and-alterac-mountains",
-            sourceActionID = "turnin-642-the-princess-trapped",
         },
         {
             complete = { quest = { id = 651, state = "activeOrCompleted" } },
@@ -550,13 +551,13 @@ ns:RegisterGuide({
                     y = 0.4775,
                 },
             },
+            sourceActionID = "turnin-691-worth-its-weight-in-gold",
+            sourceGuide = "leveling-era-alliance-arathi-highlands-and-alterac-mountains",
             sourceStep = 17,
             text = "Turn in Worth Its Weight in Gold to Apprentice Kryten.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-arathi-highlands-and-alterac-mountains",
-            sourceActionID = "turnin-691-worth-its-weight-in-gold",
         },
         {
             complete = { quest = { id = 693, state = "activeOrCompleted" } },
@@ -642,19 +643,6 @@ ns:RegisterGuide({
                 "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-accept-693-wand-over-fist",
                 "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-objective-693-1-kor-gresh-coldrage",
             },
-            id = "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-turnin-693-wand-over-fist",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 691 } } },
-            route = {
-                { label = "Skuerto", mapID = 1417, offMapText = "Travel to Skuerto in Arathi Highlands.", x = 0.4665, y = 0.4701 },
-            },
-            sourceStep = 38,
-            text = "Turn in Wand over Fist to Skuerto.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-arathi-highlands-and-alterac-mountains",
-            sourceActionID = "turnin-693-wand-over-fist",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -673,6 +661,19 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-turnin-693-wand-over-fist",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 691 } } },
+            route = {
+                { label = "Skuerto", mapID = 1417, offMapText = "Travel to Skuerto in Arathi Highlands.", x = 0.4665, y = 0.4701 },
+            },
+            sourceActionID = "turnin-693-wand-over-fist",
+            sourceGuide = "leveling-era-alliance-arathi-highlands-and-alterac-mountains",
+            sourceStep = 38,
+            text = "Turn in Wand over Fist to Skuerto.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { questObjective = { count = 1, id = 651, index = 1, text = "Burning Key" } },
@@ -712,19 +713,6 @@ ns:RegisterGuide({
                 "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-objective-651-3-thundering-key",
                 "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-objective-651-1-burning-key",
             },
-            id = "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-turnin-651-stones-of-binding",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 642 } } },
-            route = {
-                { label = "Stones of Binding", mapID = 1417, offMapText = "Travel to Stones of Binding.", x = 0.3619, y = 0.5737 },
-            },
-            sourceStep = 48,
-            text = "Turn in Stones of Binding.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-arathi-highlands-and-alterac-mountains",
-            sourceActionID = "turnin-651-stones-of-binding",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -738,79 +726,131 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-turnin-651-stones-of-binding",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 642 } } },
+            route = {
+                { label = "Stones of Binding", mapID = 1417, offMapText = "Travel to Stones of Binding.", x = 0.3619, y = 0.5737 },
+            },
+            sourceActionID = "turnin-651-stones-of-binding",
+            sourceGuide = "leveling-era-alliance-arathi-highlands-and-alterac-mountains",
+            sourceStep = 48,
+            text = "Turn in Stones of Binding.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
+            checkpointQuest = 694,
+            complete = { level = { min = 30 } },
+            conditions = { all = { { faction = "Alliance" } } },
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 694, state = "activeOrCompleted" } },
+                        {
+                            any = {
+                                { quest = { id = 694, state = "completed" } },
+                                {
+                                    all = {
+                                        { faction = "Alliance" },
+                                        {
+                                            any = {
+                                                {
+                                                    any = {
+                                                        { quest = { id = 693, state = "completed" } },
+                                                        {
+                                                            all = {
+                                                                { faction = "Alliance" },
+                                                                { any = { { any = { { quest = { id = 691, state = "completed" } }, { all = { { faction = "Alliance" } } } } } } },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
             id = "alliance-extra-694-level",
             kind = "note",
-            checkpointQuest = 694,
-            text = "Reach level 39 before this visit.",
-            conditions = { all = { { faction = "Alliance" } } },
-            complete = { level = { min = 39 } },
-            requiredLevel = 39,
-            excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 694, state = "activeOrCompleted" } },
-                        {
-                            any = {
-                                { quest = { id = 694, state = "completed" } },
-                                {
-                                    all = {
-                                        { faction = "Alliance" },
-                                        {
-                                            any = {
-                                                {
-                                                    any = {
-                                                        { quest = { id = 693, state = "completed" } },
-                                                        {
-                                                            all = {
-                                                                { faction = "Alliance" },
-                                                                { any = { { any = { { quest = { id = 691, state = "completed" } }, { all = { { faction = "Alliance" } } } } } } },
-                                                            },
-                                                        },
-                                                    },
-                                                },
-                                            },
-                                        },
-                                    },
-                                },
-                            },
-                        },
-                    },
-                },
-            },
+            requiredLevel = 30,
+            text = "Reach level 30 before this visit.",
         },
         {
-            id = "alliance-extra-694-accept",
-            kind = "accept",
-            text = "Accept Trelane's Defenses from Skuerto.",
-            conditions = { all = { { faction = "Alliance" }, { level = { min = 30 } } } },
-            route = {
-                { mapID = 1417, x = 0.466, y = 0.47, label = "Skuerto", offMapText = "Travel to Skuerto in Arathi Highlands." },
-            },
             complete = { quest = { id = 694, state = "activeOrCompleted" } },
-            requiredQuests = { { mode = "any", quests = { 693 } } },
-            useClientText = false,
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 30 } } } },
             dependsOn = { "alliance-extra-694-level" },
             excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 694, state = "activeOrCompleted" } },
-                        {
+                any = {
+                    {
+                        ["not"] = {
                             any = {
-                                { quest = { id = 694, state = "completed" } },
+                                { quest = { id = 694, state = "activeOrCompleted" } },
                                 {
-                                    all = {
-                                        { faction = "Alliance" },
+                                    any = {
+                                        { quest = { id = 694, state = "completed" } },
                                         {
-                                            any = {
+                                            all = {
+                                                { faction = "Alliance" },
                                                 {
                                                     any = {
-                                                        { quest = { id = 693, state = "completed" } },
                                                         {
-                                                            all = {
-                                                                { faction = "Alliance" },
-                                                                { any = { { any = { { quest = { id = 691, state = "completed" } }, { all = { { faction = "Alliance" } } } } } } },
+                                                            any = {
+                                                                { quest = { id = 693, state = "completed" } },
+                                                                {
+                                                                    all = {
+                                                                        { faction = "Alliance" },
+                                                                        { any = { { any = { { quest = { id = 691, state = "completed" } }, { all = { { faction = "Alliance" } } } } } } },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 694, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 694, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                { faction = "Alliance" },
+                                                { race = { 1, 3, 4, 7 } },
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 693, state = "activeOrCompleted" } },
+                                                                {
+                                                                    all = {
+                                                                        { faction = "Alliance" },
+                                                                        { race = { 1, 3, 4, 7 } },
+                                                                        {
+                                                                            any = {
+                                                                                {
+                                                                                    any = {
+                                                                                        { quest = { id = 691, state = "activeOrCompleted" } },
+                                                                                        { all = { { faction = "Alliance" }, { race = { 1, 3, 4, 7 } } } },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
                                                             },
                                                         },
                                                     },
@@ -824,63 +864,89 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-extra-694-accept",
+            kind = "accept",
+            requiredQuests = { { mode = "any", quests = { 693 } } },
+            route = {
+                { label = "Skuerto", mapID = 1417, offMapText = "Travel to Skuerto in Arathi Highlands.", x = 0.466, y = 0.47 },
+            },
+            text = "Accept Trelane's Defenses from Skuerto.",
+            useClientText = false,
         },
         {
+            checkpointQuest = 682,
+            complete = { level = { min = 30 } },
+            conditions = { all = { { faction = "Alliance" } } },
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 682, state = "activeOrCompleted" } },
+                        {
+                            any = {
+                                { quest = { id = 682, state = "completed" } },
+                                {
+                                    all = {
+                                        { faction = "Alliance" },
+                                        { any = { { any = { { quest = { id = 681, state = "completed" } }, { all = { { faction = "Alliance" } } } } } } },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
             id = "alliance-extra-682-level",
             kind = "note",
-            checkpointQuest = 682,
-            text = "Reach level 37 before this visit.",
-            conditions = { all = { { faction = "Alliance" } } },
-            complete = { level = { min = 37 } },
-            requiredLevel = 37,
-            excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 682, state = "activeOrCompleted" } },
-                        {
-                            any = {
-                                { quest = { id = 682, state = "completed" } },
-                                {
-                                    all = {
-                                        { faction = "Alliance" },
-                                        { any = { { any = { { quest = { id = 681, state = "completed" } }, { all = { { faction = "Alliance" } } } } } } },
-                                    },
-                                },
-                            },
-                        },
-                    },
-                },
-            },
+            requiredLevel = 30,
+            text = "Reach level 30 before this visit.",
         },
         {
-            id = "alliance-extra-682-accept",
-            kind = "accept",
-            text = "Accept Stromgarde Badges from Captain Nials.",
-            conditions = { all = { { faction = "Alliance" }, { level = { min = 30 } } } },
-            route = {
-                {
-                    mapID = 1417,
-                    x = 0.45799999999999996,
-                    y = 0.474,
-                    label = "Captain Nials",
-                    offMapText = "Travel to Captain Nials in Arathi Highlands.",
-                },
-            },
             complete = { quest = { id = 682, state = "activeOrCompleted" } },
-            requiredQuests = { { mode = "any", quests = { 681 } } },
-            useClientText = false,
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 30 } } } },
             dependsOn = { "alliance-extra-682-level" },
             excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 682, state = "activeOrCompleted" } },
-                        {
+                any = {
+                    {
+                        ["not"] = {
                             any = {
-                                { quest = { id = 682, state = "completed" } },
+                                { quest = { id = 682, state = "activeOrCompleted" } },
                                 {
-                                    all = {
-                                        { faction = "Alliance" },
-                                        { any = { { any = { { quest = { id = 681, state = "completed" } }, { all = { { faction = "Alliance" } } } } } } },
+                                    any = {
+                                        { quest = { id = 682, state = "completed" } },
+                                        {
+                                            all = {
+                                                { faction = "Alliance" },
+                                                { any = { { any = { { quest = { id = 681, state = "completed" } }, { all = { { faction = "Alliance" } } } } } } },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 682, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 682, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                { faction = "Alliance" },
+                                                { race = { 1, 3, 4, 7 } },
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 681, state = "activeOrCompleted" } },
+                                                                { all = { { faction = "Alliance" }, { race = { 1, 3, 4, 7 } } } },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
                                     },
                                 },
                             },
@@ -888,6 +954,20 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-extra-682-accept",
+            kind = "accept",
+            requiredQuests = { { mode = "any", quests = { 681 } } },
+            route = {
+                {
+                    label = "Captain Nials",
+                    mapID = 1417,
+                    offMapText = "Travel to Captain Nials in Arathi Highlands.",
+                    x = 0.458,
+                    y = 0.474,
+                },
+            },
+            text = "Accept Stromgarde Badges from Captain Nials.",
+            useClientText = false,
         },
         {
             id = "alliance-extra-684-objective",
@@ -923,79 +1003,46 @@ ns:RegisterGuide({
             dependsOn = { "alliance-extra-685-accept" },
         },
         {
-            id = "alliance-extra-682-objective",
-            kind = "objective",
-            text = "Defeat Syndicate Prowlers and loot 7 Stromgarde Badges. This is an elite. Bring a group.",
-            conditions = { all = { { faction = "Alliance" }, { level = { min = 30 } } } },
-            route = {
-                {
-                    mapID = 1417,
-                    x = 0.292,
-                    y = 0.624,
-                    label = "Syndicate Prowler",
-                    offMapText = "Travel to Syndicate Prowler in Arathi Highlands.",
-                },
-            },
             complete = { quest = { id = 682, state = "complete" } },
-            requiredQuests = { { mode = "any", quests = { 681 } } },
-            useClientText = false,
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 30 } } } },
             dependsOn = { "alliance-extra-682-accept" },
             excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 682, state = "activeOrCompleted" } },
-                        {
+                any = {
+                    {
+                        ["not"] = {
                             any = {
-                                { quest = { id = 682, state = "completed" } },
+                                { quest = { id = 682, state = "activeOrCompleted" } },
                                 {
-                                    all = {
-                                        { faction = "Alliance" },
-                                        { any = { { any = { { quest = { id = 681, state = "completed" } }, { all = { { faction = "Alliance" } } } } } } },
+                                    any = {
+                                        { quest = { id = 682, state = "completed" } },
+                                        {
+                                            all = {
+                                                { faction = "Alliance" },
+                                                { any = { { any = { { quest = { id = 681, state = "completed" } }, { all = { { faction = "Alliance" } } } } } } },
+                                            },
+                                        },
                                     },
                                 },
                             },
                         },
                     },
-                },
-            },
-        },
-        {
-            id = "alliance-extra-694-objective",
-            kind = "objective",
-            text = "Defeat Boulderfist Shamans and loot an Azure Agate. This is an elite. Bring a group.",
-            conditions = { all = { { faction = "Alliance" }, { level = { min = 30 } } } },
-            route = {
-                {
-                    mapID = 1417,
-                    x = 0.21,
-                    y = 0.6579999999999999,
-                    label = "Boulderfist Shaman",
-                    offMapText = "Travel to Boulderfist Shaman in Arathi Highlands.",
-                },
-            },
-            complete = { quest = { id = 694, state = "complete" } },
-            requiredQuests = { { mode = "any", quests = { 693 } } },
-            useClientText = false,
-            dependsOn = { "alliance-extra-694-accept" },
-            excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 694, state = "activeOrCompleted" } },
-                        {
+                    {
+                        ["not"] = {
                             any = {
-                                { quest = { id = 694, state = "completed" } },
+                                { quest = { id = 682, state = "activeOrCompleted" } },
                                 {
-                                    all = {
-                                        { faction = "Alliance" },
+                                    any = {
+                                        { quest = { id = 682, state = "activeOrCompleted" } },
                                         {
-                                            any = {
+                                            all = {
+                                                { faction = "Alliance" },
+                                                { race = { 1, 3, 4, 7 } },
                                                 {
                                                     any = {
-                                                        { quest = { id = 693, state = "completed" } },
                                                         {
-                                                            all = {
-                                                                { faction = "Alliance" },
-                                                                { any = { { any = { { quest = { id = 691, state = "completed" } }, { all = { { faction = "Alliance" } } } } } } },
+                                                            any = {
+                                                                { quest = { id = 681, state = "activeOrCompleted" } },
+                                                                { all = { { faction = "Alliance" }, { race = { 1, 3, 4, 7 } } } },
                                                             },
                                                         },
                                                     },
@@ -1009,6 +1056,120 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-extra-682-objective",
+            kind = "objective",
+            requiredQuests = { { mode = "any", quests = { 681 } } },
+            route = {
+                {
+                    label = "Syndicate Prowler",
+                    mapID = 1417,
+                    offMapText = "Travel to Syndicate Prowler in Arathi Highlands.",
+                    x = 0.292,
+                    y = 0.624,
+                },
+            },
+            text = "Defeat Syndicate Prowlers and loot 7 Stromgarde Badges. This is an elite. Bring a group.",
+            useClientPin = true,
+            useClientText = false,
+        },
+        {
+            complete = { quest = { id = 694, state = "complete" } },
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 30 } } } },
+            dependsOn = { "alliance-extra-694-accept" },
+            excludeWhen = {
+                any = {
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 694, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 694, state = "completed" } },
+                                        {
+                                            all = {
+                                                { faction = "Alliance" },
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 693, state = "completed" } },
+                                                                {
+                                                                    all = {
+                                                                        { faction = "Alliance" },
+                                                                        { any = { { any = { { quest = { id = 691, state = "completed" } }, { all = { { faction = "Alliance" } } } } } } },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 694, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 694, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                { faction = "Alliance" },
+                                                { race = { 1, 3, 4, 7 } },
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 693, state = "activeOrCompleted" } },
+                                                                {
+                                                                    all = {
+                                                                        { faction = "Alliance" },
+                                                                        { race = { 1, 3, 4, 7 } },
+                                                                        {
+                                                                            any = {
+                                                                                {
+                                                                                    any = {
+                                                                                        { quest = { id = 691, state = "activeOrCompleted" } },
+                                                                                        { all = { { faction = "Alliance" }, { race = { 1, 3, 4, 7 } } } },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
+            id = "alliance-extra-694-objective",
+            kind = "objective",
+            requiredQuests = { { mode = "any", quests = { 693 } } },
+            route = {
+                {
+                    label = "Boulderfist Shaman",
+                    mapID = 1417,
+                    offMapText = "Travel to Boulderfist Shaman in Arathi Highlands.",
+                    x = 0.21,
+                    y = 0.658,
+                },
+            },
+            text = "Defeat Boulderfist Shamans and loot an Azure Agate. This is an elite. Bring a group.",
+            useClientPin = true,
+            useClientText = false,
         },
         {
             checkpointQuest = 663,
@@ -1064,13 +1225,13 @@ ns:RegisterGuide({
                     y = 0.8138,
                 },
             },
+            sourceActionID = "turnin-663-land-ho",
+            sourceGuide = "leveling-era-alliance-arathi-highlands-and-alterac-mountains",
             sourceStep = 50,
             text = "Turn in Land Ho! to Shakes O'Breen.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-arathi-highlands-and-alterac-mountains",
-            sourceActionID = "turnin-663-land-ho",
         },
         {
             complete = { quest = { id = 662, state = "activeOrCompleted" } },
@@ -1217,25 +1378,6 @@ ns:RegisterGuide({
                 "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-accept-665-sunken-treasure",
                 "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-objective-665-reviewed-escort",
             },
-            id = "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-turnin-665-sunken-treasure",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 663 } } },
-            route = {
-                {
-                    label = "Doctor Draxlegauge",
-                    mapID = 1417,
-                    offMapText = "Travel to Doctor Draxlegauge in Arathi Highlands.",
-                    x = 0.3386,
-                    y = 0.8045,
-                },
-            },
-            sourceStep = 55,
-            text = "Turn in Sunken Treasure to Doctor Draxlegauge.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-arathi-highlands-and-alterac-mountains",
-            sourceActionID = "turnin-665-sunken-treasure",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -1249,6 +1391,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-turnin-665-sunken-treasure",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 663 } } },
+            route = {
+                {
+                    label = "Doctor Draxlegauge",
+                    mapID = 1417,
+                    offMapText = "Travel to Doctor Draxlegauge in Arathi Highlands.",
+                    x = 0.3386,
+                    y = 0.8045,
+                },
+            },
+            sourceActionID = "turnin-665-sunken-treasure",
+            sourceGuide = "leveling-era-alliance-arathi-highlands-and-alterac-mountains",
+            sourceStep = 55,
+            text = "Turn in Sunken Treasure to Doctor Draxlegauge.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 666, state = "activeOrCompleted" } },
@@ -1561,25 +1722,6 @@ ns:RegisterGuide({
                 "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-objective-662-3-elixir-of-water-breathing",
                 "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-objective-662-4-elixir-of-water-breathing",
             },
-            id = "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-turnin-662-deep-sea-salvage",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 663 } } },
-            route = {
-                {
-                    label = "First Mate Nilzlix",
-                    mapID = 1417,
-                    offMapText = "Travel to First Mate Nilzlix in Arathi Highlands.",
-                    x = 0.328,
-                    y = 0.8148,
-                },
-            },
-            sourceStep = 63,
-            text = "Turn in Deep Sea Salvage to First Mate Nilzlix.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-arathi-highlands-and-alterac-mountains",
-            sourceActionID = "turnin-662-deep-sea-salvage",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -1593,6 +1735,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-turnin-662-deep-sea-salvage",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 663 } } },
+            route = {
+                {
+                    label = "First Mate Nilzlix",
+                    mapID = 1417,
+                    offMapText = "Travel to First Mate Nilzlix in Arathi Highlands.",
+                    x = 0.328,
+                    y = 0.8148,
+                },
+            },
+            sourceActionID = "turnin-662-deep-sea-salvage",
+            sourceGuide = "leveling-era-alliance-arathi-highlands-and-alterac-mountains",
+            sourceStep = 63,
+            text = "Turn in Deep Sea Salvage to First Mate Nilzlix.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 664, state = "completed" } },
@@ -1602,25 +1763,6 @@ ns:RegisterGuide({
                 "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-objective-664-2-daggerspine-sorceress",
                 "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-objective-664-1-daggerspine-raider",
             },
-            id = "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-turnin-664-drowned-sorrows",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 663 } } },
-            route = {
-                {
-                    label = "Captain Steelgut",
-                    mapID = 1417,
-                    offMapText = "Travel to Captain Steelgut in Arathi Highlands.",
-                    x = 0.34,
-                    y = 0.8079,
-                },
-            },
-            sourceStep = 64,
-            text = "Turn in Drowned Sorrows to Captain Steelgut.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-arathi-highlands-and-alterac-mountains",
-            sourceActionID = "turnin-664-drowned-sorrows",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -1634,6 +1776,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-turnin-664-drowned-sorrows",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 663 } } },
+            route = {
+                {
+                    label = "Captain Steelgut",
+                    mapID = 1417,
+                    offMapText = "Travel to Captain Steelgut in Arathi Highlands.",
+                    x = 0.34,
+                    y = 0.8079,
+                },
+            },
+            sourceActionID = "turnin-664-drowned-sorrows",
+            sourceGuide = "leveling-era-alliance-arathi-highlands-and-alterac-mountains",
+            sourceStep = 64,
+            text = "Turn in Drowned Sorrows to Captain Steelgut.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 666, state = "completed" } },
@@ -1642,25 +1803,6 @@ ns:RegisterGuide({
                 "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-accept-666-sunken-treasure",
                 "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-objective-666-1-elven-gem",
             },
-            id = "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-turnin-666-sunken-treasure",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 665 } } },
-            route = {
-                {
-                    label = "Doctor Draxlegauge",
-                    mapID = 1417,
-                    offMapText = "Travel to Doctor Draxlegauge in Arathi Highlands.",
-                    x = 0.3385,
-                    y = 0.8045,
-                },
-            },
-            sourceStep = 65,
-            text = "Turn in Sunken Treasure to Doctor Draxlegauge.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-arathi-highlands-and-alterac-mountains",
-            sourceActionID = "turnin-666-sunken-treasure",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -1687,6 +1829,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-turnin-666-sunken-treasure",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 665 } } },
+            route = {
+                {
+                    label = "Doctor Draxlegauge",
+                    mapID = 1417,
+                    offMapText = "Travel to Doctor Draxlegauge in Arathi Highlands.",
+                    x = 0.3385,
+                    y = 0.8045,
+                },
+            },
+            sourceActionID = "turnin-666-sunken-treasure",
+            sourceGuide = "leveling-era-alliance-arathi-highlands-and-alterac-mountains",
+            sourceStep = 65,
+            text = "Turn in Sunken Treasure to Doctor Draxlegauge.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 668, state = "activeOrCompleted" } },
@@ -1754,25 +1915,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 668, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 35 } } } },
             dependsOn = { "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-accept-668-sunken-treasure" },
-            id = "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-turnin-668-sunken-treasure",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 666 } } },
-            route = {
-                {
-                    label = "Shakes O'Breen",
-                    mapID = 1417,
-                    offMapText = "Travel to Shakes O'Breen in Arathi Highlands.",
-                    x = 0.3229,
-                    y = 0.8138,
-                },
-            },
-            sourceStep = 66,
-            text = "Turn in Sunken Treasure to Shakes O'Breen.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-arathi-highlands-and-alterac-mountains",
-            sourceActionID = "turnin-668-sunken-treasure",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -1812,6 +1954,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-turnin-668-sunken-treasure",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 666 } } },
+            route = {
+                {
+                    label = "Shakes O'Breen",
+                    mapID = 1417,
+                    offMapText = "Travel to Shakes O'Breen in Arathi Highlands.",
+                    x = 0.3229,
+                    y = 0.8138,
+                },
+            },
+            sourceActionID = "turnin-668-sunken-treasure",
+            sourceGuide = "leveling-era-alliance-arathi-highlands-and-alterac-mountains",
+            sourceStep = 66,
+            text = "Turn in Sunken Treasure to Shakes O'Breen.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 669, state = "activeOrCompleted" } },
@@ -1889,117 +2050,46 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "alliance-extra-682-turnin",
-            kind = "turnin",
-            text = "Turn in Stromgarde Badges to Captain Nials.",
-            conditions = { all = { { faction = "Alliance" }, { level = { min = 30 } } } },
-            route = {
-                {
-                    mapID = 1417,
-                    x = 0.45799999999999996,
-                    y = 0.474,
-                    label = "Captain Nials",
-                    offMapText = "Travel to Captain Nials in Arathi Highlands.",
-                },
-            },
             complete = { quest = { id = 682, state = "completed" } },
-            requiredQuests = { { mode = "any", quests = { 681 } } },
-            useClientText = false,
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 30 } } } },
             dependsOn = { "alliance-extra-682-objective" },
             excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 682, state = "activeOrCompleted" } },
-                        {
+                any = {
+                    {
+                        ["not"] = {
                             any = {
-                                { quest = { id = 682, state = "completed" } },
+                                { quest = { id = 682, state = "activeOrCompleted" } },
                                 {
-                                    all = {
-                                        { faction = "Alliance" },
-                                        { any = { { any = { { quest = { id = 681, state = "completed" } }, { all = { { faction = "Alliance" } } } } } } },
+                                    any = {
+                                        { quest = { id = 682, state = "completed" } },
+                                        {
+                                            all = {
+                                                { faction = "Alliance" },
+                                                { any = { { any = { { quest = { id = 681, state = "completed" } }, { all = { { faction = "Alliance" } } } } } } },
+                                            },
+                                        },
                                     },
                                 },
                             },
                         },
                     },
-                },
-            },
-        },
-        {
-            id = "alliance-extra-684-turnin",
-            kind = "turnin",
-            text = "Turn in Wanted! Marez Cowl to Captain Nials.",
-            conditions = { all = { { faction = "Alliance" }, { level = { min = 30 } } } },
-            route = {
-                {
-                    mapID = 1417,
-                    x = 0.45799999999999996,
-                    y = 0.474,
-                    label = "Captain Nials",
-                    offMapText = "Travel to Captain Nials in Arathi Highlands.",
-                },
-            },
-            complete = { quest = { id = 684, state = "completed" } },
-            requiredQuests = {},
-            useClientText = false,
-            dependsOn = { "alliance-extra-684-objective" },
-        },
-        {
-            id = "alliance-extra-685-turnin",
-            kind = "turnin",
-            text = "Turn in Wanted! Otto and Falconcrest to Captain Nials.",
-            conditions = { all = { { faction = "Alliance" }, { level = { min = 30 } } } },
-            route = {
-                {
-                    mapID = 1417,
-                    x = 0.45799999999999996,
-                    y = 0.474,
-                    label = "Captain Nials",
-                    offMapText = "Travel to Captain Nials in Arathi Highlands.",
-                },
-            },
-            complete = { quest = { id = 685, state = "completed" } },
-            requiredQuests = {},
-            useClientText = false,
-            dependsOn = { "alliance-extra-685-objective" },
-        },
-        {
-            id = "alliance-extra-694-turnin",
-            kind = "turnin",
-            text = "Turn in Trelane's Defenses to Apprentice Kryten.",
-            conditions = { all = { { faction = "Alliance" }, { level = { min = 30 } } } },
-            route = {
-                {
-                    mapID = 1417,
-                    x = 0.462,
-                    y = 0.47600000000000003,
-                    label = "Apprentice Kryten",
-                    offMapText = "Travel to Apprentice Kryten in Arathi Highlands.",
-                },
-            },
-            complete = { quest = { id = 694, state = "completed" } },
-            requiredQuests = { { mode = "any", quests = { 693 } } },
-            useClientText = false,
-            dependsOn = { "alliance-extra-694-objective" },
-            excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 694, state = "activeOrCompleted" } },
-                        {
+                    {
+                        ["not"] = {
                             any = {
-                                { quest = { id = 694, state = "completed" } },
+                                { quest = { id = 682, state = "activeOrCompleted" } },
                                 {
-                                    all = {
-                                        { faction = "Alliance" },
+                                    any = {
+                                        { quest = { id = 682, state = "activeOrCompleted" } },
                                         {
-                                            any = {
+                                            all = {
+                                                { faction = "Alliance" },
+                                                { race = { 1, 3, 4, 7 } },
                                                 {
                                                     any = {
-                                                        { quest = { id = 693, state = "completed" } },
                                                         {
-                                                            all = {
-                                                                { faction = "Alliance" },
-                                                                { any = { { any = { { quest = { id = 691, state = "completed" } }, { all = { { faction = "Alliance" } } } } } } },
+                                                            any = {
+                                                                { quest = { id = 681, state = "activeOrCompleted" } },
+                                                                { all = { { faction = "Alliance" }, { race = { 1, 3, 4, 7 } } } },
                                                             },
                                                         },
                                                     },
@@ -2013,6 +2103,164 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-extra-682-turnin",
+            kind = "turnin",
+            requiredQuests = { { mode = "any", quests = { 681 } } },
+            route = {
+                {
+                    label = "Captain Nials",
+                    mapID = 1417,
+                    offMapText = "Travel to Captain Nials in Arathi Highlands.",
+                    x = 0.458,
+                    y = 0.474,
+                },
+            },
+            text = "Turn in Stromgarde Badges to Captain Nials.",
+            useClientPin = true,
+            useClientText = false,
+            useQuestNavigation = true,
+        },
+        {
+            complete = { quest = { id = 684, state = "completed" } },
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 30 } } } },
+            dependsOn = { "alliance-extra-684-objective" },
+            id = "alliance-extra-684-turnin",
+            kind = "turnin",
+            requiredQuests = {},
+            route = {
+                {
+                    label = "Captain Nials",
+                    mapID = 1417,
+                    offMapText = "Travel to Captain Nials in Arathi Highlands.",
+                    x = 0.458,
+                    y = 0.474,
+                },
+            },
+            text = "Turn in Wanted! Marez Cowl to Captain Nials.",
+            useClientPin = true,
+            useClientText = false,
+            useQuestNavigation = true,
+        },
+        {
+            complete = { quest = { id = 685, state = "completed" } },
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 30 } } } },
+            dependsOn = { "alliance-extra-685-objective" },
+            id = "alliance-extra-685-turnin",
+            kind = "turnin",
+            requiredQuests = {},
+            route = {
+                {
+                    label = "Captain Nials",
+                    mapID = 1417,
+                    offMapText = "Travel to Captain Nials in Arathi Highlands.",
+                    x = 0.458,
+                    y = 0.474,
+                },
+            },
+            text = "Turn in Wanted! Otto and Falconcrest to Captain Nials.",
+            useClientPin = true,
+            useClientText = false,
+            useQuestNavigation = true,
+        },
+        {
+            complete = { quest = { id = 694, state = "completed" } },
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 30 } } } },
+            dependsOn = { "alliance-extra-694-objective" },
+            excludeWhen = {
+                any = {
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 694, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 694, state = "completed" } },
+                                        {
+                                            all = {
+                                                { faction = "Alliance" },
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 693, state = "completed" } },
+                                                                {
+                                                                    all = {
+                                                                        { faction = "Alliance" },
+                                                                        { any = { { any = { { quest = { id = 691, state = "completed" } }, { all = { { faction = "Alliance" } } } } } } },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 694, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 694, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                { faction = "Alliance" },
+                                                { race = { 1, 3, 4, 7 } },
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 693, state = "activeOrCompleted" } },
+                                                                {
+                                                                    all = {
+                                                                        { faction = "Alliance" },
+                                                                        { race = { 1, 3, 4, 7 } },
+                                                                        {
+                                                                            any = {
+                                                                                {
+                                                                                    any = {
+                                                                                        { quest = { id = 691, state = "activeOrCompleted" } },
+                                                                                        { all = { { faction = "Alliance" }, { race = { 1, 3, 4, 7 } } } },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
+            id = "alliance-extra-694-turnin",
+            kind = "turnin",
+            requiredQuests = { { mode = "any", quests = { 693 } } },
+            route = {
+                {
+                    label = "Apprentice Kryten",
+                    mapID = 1417,
+                    offMapText = "Travel to Apprentice Kryten in Arathi Highlands.",
+                    x = 0.462,
+                    y = 0.476,
+                },
+            },
+            text = "Turn in Trelane's Defenses to Apprentice Kryten.",
+            useClientPin = true,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             id = "visit-entry-leveling-era-alliance-stranglethorn-vale-part-3",
@@ -2028,25 +2276,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 669, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 35 } } } },
             dependsOn = {},
-            id = "alliance-leveling-era-alliance-stranglethorn-vale-part-3-turnin-669-sunken-treasure",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 668 } } },
-            route = {
-                {
-                    label = "Fleet Master Seahorn",
-                    mapID = 1434,
-                    offMapText = "Travel to Fleet Master Seahorn in Stranglethorn Vale.",
-                    x = 0.2717,
-                    y = 0.7701,
-                },
-            },
-            sourceStep = 9,
-            text = "Turn in Sunken Treasure to Fleet Master Seahorn.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-stranglethorn-vale-part-3",
-            sourceActionID = "turnin-669-sunken-treasure",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -2099,75 +2328,110 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-stranglethorn-vale-part-3-turnin-669-sunken-treasure",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 668 } } },
+            route = {
+                {
+                    label = "Fleet Master Seahorn",
+                    mapID = 1434,
+                    offMapText = "Travel to Fleet Master Seahorn in Stranglethorn Vale.",
+                    x = 0.2717,
+                    y = 0.7701,
+                },
+            },
+            sourceActionID = "turnin-669-sunken-treasure",
+            sourceGuide = "leveling-era-alliance-stranglethorn-vale-part-3",
+            sourceStep = 9,
+            text = "Turn in Sunken Treasure to Fleet Master Seahorn.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
+            checkpointQuest = 652,
+            complete = { level = { min = 30 } },
+            conditions = { all = { { faction = "Alliance" } } },
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 652, state = "activeOrCompleted" } },
+                        {
+                            any = {
+                                { quest = { id = 652, state = "completed" } },
+                                {
+                                    all = {
+                                        {
+                                            any = {
+                                                {
+                                                    any = {
+                                                        { quest = { id = 651, state = "completed" } },
+                                                        { all = { { any = { { any = { { quest = { id = 642, state = "completed" } }, { all = {} } } } } } } },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
             id = "alliance-extra-652-level",
             kind = "note",
-            checkpointQuest = 652,
-            text = "Reach level 42 before this visit.",
-            conditions = { all = { { faction = "Alliance" } } },
-            complete = { level = { min = 42 } },
-            requiredLevel = 42,
-            excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 652, state = "activeOrCompleted" } },
-                        {
-                            any = {
-                                { quest = { id = 652, state = "completed" } },
-                                {
-                                    all = {
-                                        {
-                                            any = {
-                                                {
-                                                    any = {
-                                                        { quest = { id = 651, state = "completed" } },
-                                                        { all = { { any = { { any = { { quest = { id = 642, state = "completed" } }, { all = {} } } } } } } },
-                                                    },
-                                                },
-                                            },
-                                        },
-                                    },
-                                },
-                            },
-                        },
-                    },
-                },
-            },
+            requiredLevel = 30,
+            text = "Reach level 30 before this visit.",
         },
         {
-            id = "alliance-extra-652-accept",
-            kind = "accept",
-            text = "Accept Breaking the Keystone from Stone of Inner Binding.",
-            conditions = { all = { { faction = "Alliance" }, { level = { min = 30 } } } },
-            route = {
-                {
-                    mapID = 1417,
-                    x = 0.36200000000000004,
-                    y = 0.575,
-                    label = "Stone of Inner Binding",
-                    offMapText = "Travel to Stone of Inner Binding in Arathi Highlands.",
-                },
-            },
             complete = { quest = { id = 652, state = "activeOrCompleted" } },
-            requiredQuests = { { mode = "any", quests = { 651 } } },
-            useClientText = false,
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 30 } } } },
             dependsOn = { "alliance-extra-652-level" },
             excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 652, state = "activeOrCompleted" } },
-                        {
+                any = {
+                    {
+                        ["not"] = {
                             any = {
-                                { quest = { id = 652, state = "completed" } },
+                                { quest = { id = 652, state = "activeOrCompleted" } },
                                 {
-                                    all = {
+                                    any = {
+                                        { quest = { id = 652, state = "completed" } },
                                         {
-                                            any = {
+                                            all = {
                                                 {
                                                     any = {
-                                                        { quest = { id = 651, state = "completed" } },
-                                                        { all = { { any = { { any = { { quest = { id = 642, state = "completed" } }, { all = {} } } } } } } },
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 651, state = "completed" } },
+                                                                { all = { { any = { { any = { { quest = { id = 642, state = "completed" } }, { all = {} } } } } } } },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 652, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 652, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 651, state = "activeOrCompleted" } },
+                                                                { all = { { any = { { any = { { quest = { id = 642, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                            },
+                                                        },
                                                     },
                                                 },
                                             },
@@ -2179,40 +2443,70 @@ ns:RegisterGuide({
                     },
                 },
             },
-        },
-        {
-            id = "alliance-extra-652-objective",
-            kind = "objective",
-            text = "Find and kill Fozruk. Loot the Rod of Order. This is an elite. Bring a group.",
-            conditions = { all = { { faction = "Alliance" }, { level = { min = 30 } } } },
+            id = "alliance-extra-652-accept",
+            kind = "accept",
+            requiredQuests = { { mode = "any", quests = { 651 } } },
             route = {
                 {
+                    label = "Stone of Inner Binding",
                     mapID = 1417,
-                    x = 0.43,
-                    y = 0.5379999999999999,
-                    label = "Fozruk",
-                    offMapText = "Travel to Fozruk in Arathi Highlands.",
+                    offMapText = "Travel to Stone of Inner Binding in Arathi Highlands.",
+                    x = 0.362,
+                    y = 0.575,
                 },
             },
-            complete = { quest = { id = 652, state = "complete" } },
-            requiredQuests = { { mode = "any", quests = { 651 } } },
+            text = "Accept Breaking the Keystone from Stone of Inner Binding.",
             useClientText = false,
+        },
+        {
+            complete = { quest = { id = 652, state = "complete" } },
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 30 } } } },
             dependsOn = { "alliance-extra-652-accept" },
             excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 652, state = "activeOrCompleted" } },
-                        {
+                any = {
+                    {
+                        ["not"] = {
                             any = {
-                                { quest = { id = 652, state = "completed" } },
+                                { quest = { id = 652, state = "activeOrCompleted" } },
                                 {
-                                    all = {
+                                    any = {
+                                        { quest = { id = 652, state = "completed" } },
                                         {
-                                            any = {
+                                            all = {
                                                 {
                                                     any = {
-                                                        { quest = { id = 651, state = "completed" } },
-                                                        { all = { { any = { { any = { { quest = { id = 642, state = "completed" } }, { all = {} } } } } } } },
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 651, state = "completed" } },
+                                                                { all = { { any = { { any = { { quest = { id = 642, state = "completed" } }, { all = {} } } } } } } },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 652, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 652, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 651, state = "activeOrCompleted" } },
+                                                                { all = { { any = { { any = { { quest = { id = 642, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                            },
+                                                        },
                                                     },
                                                 },
                                             },
@@ -2224,34 +2518,63 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-extra-652-objective",
+            kind = "objective",
+            requiredQuests = { { mode = "any", quests = { 651 } } },
+            route = { { label = "Fozruk", mapID = 1417, offMapText = "Travel to Fozruk in Arathi Highlands.", x = 0.43, y = 0.538 } },
+            text = "Find and kill Fozruk. Loot the Rod of Order. This is an elite. Bring a group.",
+            useClientPin = true,
+            useClientText = false,
         },
         {
-            id = "alliance-extra-652-turnin",
-            kind = "turnin",
-            text = "Turn in Breaking the Keystone to Keystone.",
-            conditions = { all = { { faction = "Alliance" }, { level = { min = 30 } } } },
-            route = {
-                { mapID = 1417, x = 0.361, y = 0.579, label = "Keystone", offMapText = "Travel to Keystone in Arathi Highlands." },
-            },
             complete = { quest = { id = 652, state = "completed" } },
-            requiredQuests = { { mode = "any", quests = { 651 } } },
-            useClientText = false,
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 30 } } } },
             dependsOn = { "alliance-extra-652-objective" },
             excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 652, state = "activeOrCompleted" } },
-                        {
+                any = {
+                    {
+                        ["not"] = {
                             any = {
-                                { quest = { id = 652, state = "completed" } },
+                                { quest = { id = 652, state = "activeOrCompleted" } },
                                 {
-                                    all = {
+                                    any = {
+                                        { quest = { id = 652, state = "completed" } },
                                         {
-                                            any = {
+                                            all = {
                                                 {
                                                     any = {
-                                                        { quest = { id = 651, state = "completed" } },
-                                                        { all = { { any = { { any = { { quest = { id = 642, state = "completed" } }, { all = {} } } } } } } },
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 651, state = "completed" } },
+                                                                { all = { { any = { { any = { { quest = { id = 642, state = "completed" } }, { all = {} } } } } } } },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 652, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 652, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 651, state = "activeOrCompleted" } },
+                                                                { all = { { any = { { any = { { quest = { id = 642, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                            },
+                                                        },
                                                     },
                                                 },
                                             },
@@ -2263,91 +2586,138 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-extra-652-turnin",
+            kind = "turnin",
+            requiredQuests = { { mode = "any", quests = { 651 } } },
+            route = {
+                { label = "Keystone", mapID = 1417, offMapText = "Travel to Keystone in Arathi Highlands.", x = 0.361, y = 0.579 },
+            },
+            text = "Turn in Breaking the Keystone to Keystone.",
+            useClientPin = true,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
+            checkpointQuest = 653,
+            complete = { level = { min = 30 } },
+            conditions = { all = { { faction = "Alliance" } } },
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 653, state = "activeOrCompleted" } },
+                        {
+                            any = {
+                                { quest = { id = 653, state = "completed" } },
+                                {
+                                    all = {
+                                        { faction = "Alliance" },
+                                        {
+                                            any = {
+                                                {
+                                                    any = {
+                                                        { quest = { id = 652, state = "completed" } },
+                                                        {
+                                                            all = {
+                                                                {
+                                                                    any = {
+                                                                        {
+                                                                            any = {
+                                                                                { quest = { id = 651, state = "completed" } },
+                                                                                { all = { { any = { { any = { { quest = { id = 642, state = "completed" } }, { all = {} } } } } } } },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
             id = "alliance-extra-653-level",
             kind = "note",
-            checkpointQuest = 653,
-            text = "Reach level 40 before this visit.",
-            conditions = { all = { { faction = "Alliance" } } },
-            complete = { level = { min = 40 } },
-            requiredLevel = 40,
-            excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 653, state = "activeOrCompleted" } },
-                        {
-                            any = {
-                                { quest = { id = 653, state = "completed" } },
-                                {
-                                    all = {
-                                        { faction = "Alliance" },
-                                        {
-                                            any = {
-                                                {
-                                                    any = {
-                                                        { quest = { id = 652, state = "completed" } },
-                                                        {
-                                                            all = {
-                                                                {
-                                                                    any = {
-                                                                        {
-                                                                            any = {
-                                                                                { quest = { id = 651, state = "completed" } },
-                                                                                { all = { { any = { { any = { { quest = { id = 642, state = "completed" } }, { all = {} } } } } } } },
-                                                                            },
-                                                                        },
-                                                                    },
-                                                                },
-                                                            },
-                                                        },
-                                                    },
-                                                },
-                                            },
-                                        },
-                                    },
-                                },
-                            },
-                        },
-                    },
-                },
-            },
+            requiredLevel = 30,
+            text = "Reach level 30 before this visit.",
         },
         {
-            id = "alliance-extra-653-accept",
-            kind = "accept",
-            text = "Accept Myzrael's Allies from Keystone.",
-            conditions = { all = { { faction = "Alliance" }, { level = { min = 30 } } } },
-            route = {
-                { mapID = 1417, x = 0.361, y = 0.579, label = "Keystone", offMapText = "Travel to Keystone in Arathi Highlands." },
-            },
             complete = { quest = { id = 653, state = "activeOrCompleted" } },
-            requiredQuests = { { mode = "any", quests = { 652 } } },
-            useClientText = false,
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 30 } } } },
             dependsOn = { "alliance-extra-653-level" },
             excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 653, state = "activeOrCompleted" } },
-                        {
+                any = {
+                    {
+                        ["not"] = {
                             any = {
-                                { quest = { id = 653, state = "completed" } },
+                                { quest = { id = 653, state = "activeOrCompleted" } },
                                 {
-                                    all = {
-                                        { faction = "Alliance" },
+                                    any = {
+                                        { quest = { id = 653, state = "completed" } },
                                         {
-                                            any = {
+                                            all = {
+                                                { faction = "Alliance" },
                                                 {
                                                     any = {
-                                                        { quest = { id = 652, state = "completed" } },
                                                         {
-                                                            all = {
+                                                            any = {
+                                                                { quest = { id = 652, state = "completed" } },
                                                                 {
-                                                                    any = {
+                                                                    all = {
                                                                         {
                                                                             any = {
-                                                                                { quest = { id = 651, state = "completed" } },
-                                                                                { all = { { any = { { any = { { quest = { id = 642, state = "completed" } }, { all = {} } } } } } } },
+                                                                                {
+                                                                                    any = {
+                                                                                        { quest = { id = 651, state = "completed" } },
+                                                                                        { all = { { any = { { any = { { quest = { id = 642, state = "completed" } }, { all = {} } } } } } } },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 653, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 653, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                { faction = "Alliance" },
+                                                { race = { 1, 3, 4, 7 } },
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 652, state = "activeOrCompleted" } },
+                                                                {
+                                                                    all = {
+                                                                        {
+                                                                            any = {
+                                                                                {
+                                                                                    any = {
+                                                                                        { quest = { id = 651, state = "activeOrCompleted" } },
+                                                                                        { all = { { any = { { any = { { quest = { id = 642, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                                                    },
+                                                                                },
                                                                             },
                                                                         },
                                                                     },
@@ -2365,94 +2735,184 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-extra-653-accept",
+            kind = "accept",
+            requiredQuests = { { mode = "any", quests = { 652 } } },
+            route = {
+                { label = "Keystone", mapID = 1417, offMapText = "Travel to Keystone in Arathi Highlands.", x = 0.361, y = 0.579 },
+            },
+            text = "Accept Myzrael's Allies from Keystone.",
+            useClientText = false,
         },
         {
+            complete = { quest = { id = 653, state = "complete" } },
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 30 } } } },
+            dependsOn = { "alliance-extra-653-accept" },
+            excludeWhen = {
+                any = {
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 653, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 653, state = "completed" } },
+                                        {
+                                            all = {
+                                                { faction = "Alliance" },
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 652, state = "completed" } },
+                                                                {
+                                                                    all = {
+                                                                        {
+                                                                            any = {
+                                                                                {
+                                                                                    any = {
+                                                                                        { quest = { id = 651, state = "completed" } },
+                                                                                        { all = { { any = { { any = { { quest = { id = 642, state = "completed" } }, { all = {} } } } } } } },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 653, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 653, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                { faction = "Alliance" },
+                                                { race = { 1, 3, 4, 7 } },
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 652, state = "activeOrCompleted" } },
+                                                                {
+                                                                    all = {
+                                                                        {
+                                                                            any = {
+                                                                                {
+                                                                                    any = {
+                                                                                        { quest = { id = 651, state = "activeOrCompleted" } },
+                                                                                        { all = { { any = { { any = { { quest = { id = 642, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
             id = "alliance-extra-653-objective",
             kind = "objective",
-            text = "Speak with Gerrig Bonegrip in the Forlorn Cavern of Ironforge. Follow the quest log for the destination.",
-            conditions = { all = { { faction = "Alliance" }, { level = { min = 30 } } } },
-            route = {},
-            complete = { quest = { id = 653, state = "complete" } },
             requiredQuests = { { mode = "any", quests = { 652 } } },
-            useClientText = false,
-            dependsOn = { "alliance-extra-653-accept" },
+            route = {},
+            text = "Speak with Gerrig Bonegrip in the Forlorn Cavern of Ironforge. Follow the quest log for the destination.",
             useClientPin = true,
-            excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 653, state = "activeOrCompleted" } },
-                        {
-                            any = {
-                                { quest = { id = 653, state = "completed" } },
-                                {
-                                    all = {
-                                        { faction = "Alliance" },
-                                        {
-                                            any = {
-                                                {
-                                                    any = {
-                                                        { quest = { id = 652, state = "completed" } },
-                                                        {
-                                                            all = {
-                                                                {
-                                                                    any = {
-                                                                        {
-                                                                            any = {
-                                                                                { quest = { id = 651, state = "completed" } },
-                                                                                { all = { { any = { { any = { { quest = { id = 642, state = "completed" } }, { all = {} } } } } } } },
-                                                                            },
-                                                                        },
-                                                                    },
-                                                                },
-                                                            },
-                                                        },
-                                                    },
-                                                },
-                                            },
-                                        },
-                                    },
-                                },
-                            },
-                        },
-                    },
-                },
-            },
+            useClientText = false,
         },
         {
-            id = "alliance-extra-653-turnin",
-            kind = "turnin",
-            text = "Turn in Myzrael's Allies to Gerrig Bonegrip.",
-            conditions = { all = { { faction = "Alliance" }, { level = { min = 30 } } } },
-            route = {
-                { mapID = 1455, x = 0.504, y = 0.06, label = "Gerrig Bonegrip", offMapText = "Travel to Gerrig Bonegrip in Ironforge." },
-            },
             complete = { quest = { id = 653, state = "completed" } },
-            requiredQuests = { { mode = "any", quests = { 652 } } },
-            useClientText = false,
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 30 } } } },
             dependsOn = { "alliance-extra-653-objective" },
             excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 653, state = "activeOrCompleted" } },
-                        {
+                any = {
+                    {
+                        ["not"] = {
                             any = {
-                                { quest = { id = 653, state = "completed" } },
+                                { quest = { id = 653, state = "activeOrCompleted" } },
                                 {
-                                    all = {
-                                        { faction = "Alliance" },
+                                    any = {
+                                        { quest = { id = 653, state = "completed" } },
                                         {
-                                            any = {
+                                            all = {
+                                                { faction = "Alliance" },
                                                 {
                                                     any = {
-                                                        { quest = { id = 652, state = "completed" } },
                                                         {
-                                                            all = {
+                                                            any = {
+                                                                { quest = { id = 652, state = "completed" } },
                                                                 {
-                                                                    any = {
+                                                                    all = {
                                                                         {
                                                                             any = {
-                                                                                { quest = { id = 651, state = "completed" } },
-                                                                                { all = { { any = { { any = { { quest = { id = 642, state = "completed" } }, { all = {} } } } } } } },
+                                                                                {
+                                                                                    any = {
+                                                                                        { quest = { id = 651, state = "completed" } },
+                                                                                        { all = { { any = { { any = { { quest = { id = 642, state = "completed" } }, { all = {} } } } } } } },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 653, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 653, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                { faction = "Alliance" },
+                                                { race = { 1, 3, 4, 7 } },
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 652, state = "activeOrCompleted" } },
+                                                                {
+                                                                    all = {
+                                                                        {
+                                                                            any = {
+                                                                                {
+                                                                                    any = {
+                                                                                        { quest = { id = 651, state = "activeOrCompleted" } },
+                                                                                        { all = { { any = { { any = { { quest = { id = 642, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                                                    },
+                                                                                },
                                                                             },
                                                                         },
                                                                     },
@@ -2470,6 +2930,16 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-extra-653-turnin",
+            kind = "turnin",
+            requiredQuests = { { mode = "any", quests = { 652 } } },
+            route = {
+                { label = "Gerrig Bonegrip", mapID = 1455, offMapText = "Travel to Gerrig Bonegrip in Ironforge.", x = 0.504, y = 0.06 },
+            },
+            text = "Turn in Myzrael's Allies to Gerrig Bonegrip.",
+            useClientPin = true,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             id = "visit-entry-leveling-era-horde-arathi-highlands",
@@ -2557,13 +3027,13 @@ ns:RegisterGuide({
             route = {
                 { label = "Tor'gan", mapID = 1417, offMapText = "Travel to Tor'gan in Arathi Highlands.", x = 0.7471, y = 0.3629 },
             },
+            sourceActionID = "turnin-655-hammerfall",
+            sourceGuide = "leveling-era-horde-arathi-highlands",
             sourceStep = 10,
             text = "Turn in Hammerfall to Tor'gan.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-arathi-highlands",
-            sourceActionID = "turnin-655-hammerfall",
         },
         {
             complete = { quest = { id = 672, state = "activeOrCompleted" } },
@@ -2744,13 +3214,13 @@ ns:RegisterGuide({
             route = {
                 { label = "Tor'gan", mapID = 1417, offMapText = "Travel to Tor'gan in Arathi Highlands.", x = 0.7471, y = 0.3629 },
             },
+            sourceActionID = "turnin-671-foul-magics",
+            sourceGuide = "leveling-era-horde-arathi-highlands",
             sourceStep = 15,
             text = "Turn in Foul Magics to Tor'gan.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-arathi-highlands",
-            sourceActionID = "turnin-671-foul-magics",
         },
         {
             complete = { quest = { id = 672, state = "completed" } },
@@ -2759,19 +3229,6 @@ ns:RegisterGuide({
                 "horde-leveling-era-horde-arathi-highlands-accept-672-raising-spirits",
                 "horde-leveling-era-horde-arathi-highlands-objective-672-1-highland-raptor-eye",
             },
-            id = "horde-leveling-era-horde-arathi-highlands-turnin-672-raising-spirits",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 655 } } },
-            route = {
-                { label = "Tor'gan", mapID = 1417, offMapText = "Travel to Tor'gan in Arathi Highlands.", x = 0.7471, y = 0.3629 },
-            },
-            sourceStep = 15,
-            text = "Turn in Raising Spirits to Tor'gan.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-arathi-highlands",
-            sourceActionID = "turnin-672-raising-spirits",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -2790,6 +3247,19 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-arathi-highlands-turnin-672-raising-spirits",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 655 } } },
+            route = {
+                { label = "Tor'gan", mapID = 1417, offMapText = "Travel to Tor'gan in Arathi Highlands.", x = 0.7471, y = 0.3629 },
+            },
+            sourceActionID = "turnin-672-raising-spirits",
+            sourceGuide = "leveling-era-horde-arathi-highlands",
+            sourceStep = 15,
+            text = "Turn in Raising Spirits to Tor'gan.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 674, state = "activeOrCompleted" } },
@@ -2844,19 +3314,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 674, state = "completed" } },
             conditions = { all = { { faction = "Horde" }, { level = { min = 29 } }, { race = { 2, 5, 6, 8, 96 } } } },
             dependsOn = { "horde-leveling-era-horde-arathi-highlands-accept-674-raising-spirits" },
-            id = "horde-leveling-era-horde-arathi-highlands-turnin-674-raising-spirits",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 672 } } },
-            route = {
-                { label = "Gor'mul", mapID = 1417, offMapText = "Travel to Gor'mul in Arathi Highlands.", x = 0.7267, y = 0.3412 },
-            },
-            sourceStep = 16,
-            text = "Turn in Raising Spirits to Gor'mul.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-arathi-highlands",
-            sourceActionID = "turnin-674-raising-spirits",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -2889,6 +3346,19 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-arathi-highlands-turnin-674-raising-spirits",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 672 } } },
+            route = {
+                { label = "Gor'mul", mapID = 1417, offMapText = "Travel to Gor'mul in Arathi Highlands.", x = 0.7267, y = 0.3412 },
+            },
+            sourceActionID = "turnin-674-raising-spirits",
+            sourceGuide = "leveling-era-horde-arathi-highlands",
+            sourceStep = 16,
+            text = "Turn in Raising Spirits to Gor'mul.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 675, state = "activeOrCompleted" } },
@@ -2957,19 +3427,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 675, state = "completed" } },
             conditions = { all = { { faction = "Horde" }, { level = { min = 29 } }, { race = { 2, 5, 6, 8, 96 } } } },
             dependsOn = { "horde-leveling-era-horde-arathi-highlands-accept-675-raising-spirits" },
-            id = "horde-leveling-era-horde-arathi-highlands-turnin-675-raising-spirits",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 674 } } },
-            route = {
-                { label = "Tor'gan", mapID = 1417, offMapText = "Travel to Tor'gan in Arathi Highlands.", x = 0.7471, y = 0.3629 },
-            },
-            sourceStep = 17,
-            text = "Turn in Raising Spirits to Tor'gan.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-arathi-highlands",
-            sourceActionID = "turnin-675-raising-spirits",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -3016,6 +3473,19 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-arathi-highlands-turnin-675-raising-spirits",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 674 } } },
+            route = {
+                { label = "Tor'gan", mapID = 1417, offMapText = "Travel to Tor'gan in Arathi Highlands.", x = 0.7471, y = 0.3629 },
+            },
+            sourceActionID = "turnin-675-raising-spirits",
+            sourceGuide = "leveling-era-horde-arathi-highlands",
+            sourceStep = 17,
+            text = "Turn in Raising Spirits to Tor'gan.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 677, state = "completed" } },
@@ -3032,13 +3502,13 @@ ns:RegisterGuide({
             route = {
                 { label = "Drum Fel", mapID = 1417, offMapText = "Travel to Drum Fel in Arathi Highlands.", x = 0.7424, y = 0.3391 },
             },
+            sourceActionID = "turnin-677-call-to-arms",
+            sourceGuide = "leveling-era-horde-arathi-highlands",
             sourceStep = 18,
             text = "Turn in Call to Arms to Drum Fel.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-arathi-highlands",
-            sourceActionID = "turnin-677-call-to-arms",
         },
         {
             id = "visit-entry-leveling-era-horde-alterac-mountains-and-arathi-highlands",
@@ -3086,13 +3556,13 @@ ns:RegisterGuide({
             },
         },
         {
+            checkpointQuest = 639,
+            complete = { level = { min = 32 } },
+            conditions = { all = { { faction = "Horde" } } },
             id = "horde-extra-639-level",
             kind = "note",
-            checkpointQuest = 639,
-            text = "Reach level 37 before this visit.",
-            conditions = { all = { { faction = "Horde" } } },
-            complete = { level = { min = 37 } },
-            requiredLevel = 37,
+            requiredLevel = 32,
+            text = "Reach level 32 before this visit.",
         },
         {
             id = "horde-extra-639-accept",
@@ -3233,13 +3703,13 @@ ns:RegisterGuide({
             route = {
                 { label = "The Princess Trapped", mapID = 1417, offMapText = "Travel to The Princess Trapped.", x = 0.8431, y = 0.3092 },
             },
+            sourceActionID = "turnin-642-the-princess-trapped",
+            sourceGuide = "leveling-era-horde-alterac-mountains-and-arathi-highlands",
             sourceStep = 32,
             text = "Turn in The Princess Trapped.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-alterac-mountains-and-arathi-highlands",
-            sourceActionID = "turnin-642-the-princess-trapped",
         },
         {
             complete = { quest = { id = 651, state = "activeOrCompleted" } },
@@ -3291,23 +3761,17 @@ ns:RegisterGuide({
             dependsOn = { "horde-extra-639-accept" },
         },
         {
+            complete = { quest = { id = 639, state = "completed" } },
+            conditions = { all = { { faction = "Horde" }, { level = { min = 32 } } } },
+            dependsOn = { "horde-extra-639-objective" },
             id = "horde-extra-639-turnin",
             kind = "turnin",
-            text = "Turn in Sigil of Strom to Zengu.",
-            conditions = { all = { { faction = "Horde" }, { level = { min = 32 } } } },
-            route = {
-                {
-                    mapID = 1417,
-                    x = 0.738,
-                    y = 0.33799999999999997,
-                    label = "Zengu",
-                    offMapText = "Travel to Zengu in Arathi Highlands.",
-                },
-            },
-            complete = { quest = { id = 639, state = "completed" } },
             requiredQuests = {},
+            route = { { label = "Zengu", mapID = 1417, offMapText = "Travel to Zengu in Arathi Highlands.", x = 0.738, y = 0.338 } },
+            text = "Turn in Sigil of Strom to Zengu.",
+            useClientPin = true,
             useClientText = false,
-            dependsOn = { "horde-extra-639-objective" },
+            useQuestNavigation = true,
         },
         {
             complete = { questObjective = { count = 1, id = 651, index = 2, text = "Cresting Key" } },
@@ -3522,19 +3986,6 @@ ns:RegisterGuide({
                 "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-accept-701-guile-of-the-raptor",
                 "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-objective-701-1-raptor-heart",
             },
-            id = "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-turnin-701-guile-of-the-raptor",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 675 } } },
-            route = {
-                { label = "Tor'gan", mapID = 1417, offMapText = "Travel to Tor'gan in Arathi Highlands.", x = 0.7471, y = 0.3629 },
-            },
-            sourceStep = 37,
-            text = "Turn in Guile of the Raptor to Tor'gan.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-alterac-mountains-and-arathi-highlands",
-            sourceActionID = "turnin-701-guile-of-the-raptor",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -3595,6 +4046,19 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-turnin-701-guile-of-the-raptor",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 675 } } },
+            route = {
+                { label = "Tor'gan", mapID = 1417, offMapText = "Travel to Tor'gan in Arathi Highlands.", x = 0.7471, y = 0.3629 },
+            },
+            sourceActionID = "turnin-701-guile-of-the-raptor",
+            sourceGuide = "leveling-era-horde-alterac-mountains-and-arathi-highlands",
+            sourceStep = 37,
+            text = "Turn in Guile of the Raptor to Tor'gan.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 702, state = "activeOrCompleted" } },
@@ -3691,19 +4155,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 702, state = "completed" } },
             conditions = { all = { { faction = "Horde" }, { level = { min = 29 } }, { race = { 2, 5, 6, 8, 96 } } } },
             dependsOn = { "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-accept-702-guile-of-the-raptor" },
-            id = "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-turnin-702-guile-of-the-raptor",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 701 } } },
-            route = {
-                { label = "Gor'mul", mapID = 1417, offMapText = "Travel to Gor'mul in Arathi Highlands.", x = 0.7255, y = 0.3401 },
-            },
-            sourceStep = 38,
-            text = "Turn in Guile of the Raptor to Gor'mul.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-alterac-mountains-and-arathi-highlands",
-            sourceActionID = "turnin-702-guile-of-the-raptor",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -3778,6 +4229,19 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-turnin-702-guile-of-the-raptor",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 701 } } },
+            route = {
+                { label = "Gor'mul", mapID = 1417, offMapText = "Travel to Gor'mul in Arathi Highlands.", x = 0.7255, y = 0.3401 },
+            },
+            sourceActionID = "turnin-702-guile-of-the-raptor",
+            sourceGuide = "leveling-era-horde-alterac-mountains-and-arathi-highlands",
+            sourceStep = 38,
+            text = "Turn in Guile of the Raptor to Gor'mul.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 847, state = "activeOrCompleted" } },
@@ -3892,19 +4356,6 @@ ns:RegisterGuide({
                 "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-objective-678-2-boulderfist-magus",
                 "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-objective-678-1-boulderfist-brute",
             },
-            id = "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-turnin-678-call-to-arms",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 677 } } },
-            route = {
-                { label = "Drum Fel", mapID = 1417, offMapText = "Travel to Drum Fel in Arathi Highlands.", x = 0.7424, y = 0.3391 },
-            },
-            sourceStep = 40,
-            text = "Turn in Call to Arms to Drum Fel.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-alterac-mountains-and-arathi-highlands",
-            sourceActionID = "turnin-678-call-to-arms",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -3923,24 +4374,24 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-turnin-678-call-to-arms",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 677 } } },
+            route = {
+                { label = "Drum Fel", mapID = 1417, offMapText = "Travel to Drum Fel in Arathi Highlands.", x = 0.7424, y = 0.3391 },
+            },
+            sourceActionID = "turnin-678-call-to-arms",
+            sourceGuide = "leveling-era-horde-alterac-mountains-and-arathi-highlands",
+            sourceStep = 40,
+            text = "Turn in Call to Arms to Drum Fel.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 847, state = "completed" } },
             conditions = { all = { { faction = "Horde" }, { level = { min = 29 } }, { race = { 2, 5, 6, 8, 96 } } } },
             dependsOn = { "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-accept-847-guile-of-the-raptor" },
-            id = "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-turnin-847-guile-of-the-raptor",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 702 } } },
-            route = {
-                { label = "Tor'gan", mapID = 1417, offMapText = "Travel to Tor'gan in Arathi Highlands.", x = 0.7471, y = 0.3629 },
-            },
-            sourceStep = 41,
-            text = "Turn in Guile of the Raptor to Tor'gan.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-alterac-mountains-and-arathi-highlands",
-            sourceActionID = "turnin-847-guile-of-the-raptor",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -4029,6 +4480,19 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-turnin-847-guile-of-the-raptor",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 702 } } },
+            route = {
+                { label = "Tor'gan", mapID = 1417, offMapText = "Travel to Tor'gan in Arathi Highlands.", x = 0.7471, y = 0.3629 },
+            },
+            sourceActionID = "turnin-847-guile-of-the-raptor",
+            sourceGuide = "leveling-era-horde-alterac-mountains-and-arathi-highlands",
+            sourceStep = 41,
+            text = "Turn in Guile of the Raptor to Tor'gan.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { questObjective = { count = 1, id = 651, index = 1, text = "Burning Key" } },
@@ -4068,19 +4532,6 @@ ns:RegisterGuide({
                 "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-objective-651-3-thundering-key",
                 "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-objective-651-1-burning-key",
             },
-            id = "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-turnin-651-stones-of-binding",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 642 } } },
-            route = {
-                { label = "Stones of Binding", mapID = 1417, offMapText = "Travel to Stones of Binding.", x = 0.3619, y = 0.5737 },
-            },
-            sourceStep = 43,
-            text = "Turn in Stones of Binding.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-alterac-mountains-and-arathi-highlands",
-            sourceActionID = "turnin-651-stones-of-binding",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -4094,6 +4545,19 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-turnin-651-stones-of-binding",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 642 } } },
+            route = {
+                { label = "Stones of Binding", mapID = 1417, offMapText = "Travel to Stones of Binding.", x = 0.3619, y = 0.5737 },
+            },
+            sourceActionID = "turnin-651-stones-of-binding",
+            sourceGuide = "leveling-era-horde-alterac-mountains-and-arathi-highlands",
+            sourceStep = 43,
+            text = "Turn in Stones of Binding.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             checkpointQuest = 663,
@@ -4149,13 +4613,13 @@ ns:RegisterGuide({
                     y = 0.8138,
                 },
             },
+            sourceActionID = "turnin-663-land-ho",
+            sourceGuide = "leveling-era-horde-alterac-mountains-and-arathi-highlands",
             sourceStep = 45,
             text = "Turn in Land Ho! to Shakes O'Breen.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-alterac-mountains-and-arathi-highlands",
-            sourceActionID = "turnin-663-land-ho",
         },
         {
             complete = { quest = { id = 662, state = "activeOrCompleted" } },
@@ -4269,25 +4733,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 665, state = "completed" } },
             conditions = { all = { { faction = "Horde" }, { level = { min = 35 } } } },
             dependsOn = { "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-accept-665-sunken-treasure" },
-            id = "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-turnin-665-sunken-treasure",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 663 } } },
-            route = {
-                {
-                    label = "Doctor Draxlegauge",
-                    mapID = 1417,
-                    offMapText = "Travel to Doctor Draxlegauge in Arathi Highlands.",
-                    x = 0.3386,
-                    y = 0.8045,
-                },
-            },
-            sourceStep = 50,
-            text = "Turn in Sunken Treasure to Doctor Draxlegauge.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-alterac-mountains-and-arathi-highlands",
-            sourceActionID = "turnin-665-sunken-treasure",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -4301,6 +4746,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-turnin-665-sunken-treasure",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 663 } } },
+            route = {
+                {
+                    label = "Doctor Draxlegauge",
+                    mapID = 1417,
+                    offMapText = "Travel to Doctor Draxlegauge in Arathi Highlands.",
+                    x = 0.3386,
+                    y = 0.8045,
+                },
+            },
+            sourceActionID = "turnin-665-sunken-treasure",
+            sourceGuide = "leveling-era-horde-alterac-mountains-and-arathi-highlands",
+            sourceStep = 50,
+            text = "Turn in Sunken Treasure to Doctor Draxlegauge.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 666, state = "activeOrCompleted" } },
@@ -4613,25 +5077,6 @@ ns:RegisterGuide({
                 "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-objective-662-3-elixir-of-water-breathing",
                 "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-objective-662-4-elixir-of-water-breathing",
             },
-            id = "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-turnin-662-deep-sea-salvage",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 663 } } },
-            route = {
-                {
-                    label = "First Mate Nilzlix",
-                    mapID = 1417,
-                    offMapText = "Travel to First Mate Nilzlix in Arathi Highlands.",
-                    x = 0.328,
-                    y = 0.8148,
-                },
-            },
-            sourceStep = 58,
-            text = "Turn in Deep Sea Salvage to First Mate Nilzlix.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-alterac-mountains-and-arathi-highlands",
-            sourceActionID = "turnin-662-deep-sea-salvage",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -4645,6 +5090,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-turnin-662-deep-sea-salvage",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 663 } } },
+            route = {
+                {
+                    label = "First Mate Nilzlix",
+                    mapID = 1417,
+                    offMapText = "Travel to First Mate Nilzlix in Arathi Highlands.",
+                    x = 0.328,
+                    y = 0.8148,
+                },
+            },
+            sourceActionID = "turnin-662-deep-sea-salvage",
+            sourceGuide = "leveling-era-horde-alterac-mountains-and-arathi-highlands",
+            sourceStep = 58,
+            text = "Turn in Deep Sea Salvage to First Mate Nilzlix.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 664, state = "completed" } },
@@ -4654,25 +5118,6 @@ ns:RegisterGuide({
                 "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-objective-664-2-daggerspine-sorceress",
                 "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-objective-664-1-daggerspine-raider",
             },
-            id = "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-turnin-664-drowned-sorrows",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 663 } } },
-            route = {
-                {
-                    label = "Captain Steelgut",
-                    mapID = 1417,
-                    offMapText = "Travel to Captain Steelgut in Arathi Highlands.",
-                    x = 0.34,
-                    y = 0.8079,
-                },
-            },
-            sourceStep = 59,
-            text = "Turn in Drowned Sorrows to Captain Steelgut.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-alterac-mountains-and-arathi-highlands",
-            sourceActionID = "turnin-664-drowned-sorrows",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -4686,6 +5131,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-turnin-664-drowned-sorrows",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 663 } } },
+            route = {
+                {
+                    label = "Captain Steelgut",
+                    mapID = 1417,
+                    offMapText = "Travel to Captain Steelgut in Arathi Highlands.",
+                    x = 0.34,
+                    y = 0.8079,
+                },
+            },
+            sourceActionID = "turnin-664-drowned-sorrows",
+            sourceGuide = "leveling-era-horde-alterac-mountains-and-arathi-highlands",
+            sourceStep = 59,
+            text = "Turn in Drowned Sorrows to Captain Steelgut.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 666, state = "completed" } },
@@ -4694,25 +5158,6 @@ ns:RegisterGuide({
                 "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-accept-666-sunken-treasure",
                 "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-objective-666-1-elven-gem",
             },
-            id = "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-turnin-666-sunken-treasure",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 665 } } },
-            route = {
-                {
-                    label = "Doctor Draxlegauge",
-                    mapID = 1417,
-                    offMapText = "Travel to Doctor Draxlegauge in Arathi Highlands.",
-                    x = 0.3385,
-                    y = 0.8045,
-                },
-            },
-            sourceStep = 60,
-            text = "Turn in Sunken Treasure to Doctor Draxlegauge.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-alterac-mountains-and-arathi-highlands",
-            sourceActionID = "turnin-666-sunken-treasure",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -4739,6 +5184,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-turnin-666-sunken-treasure",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 665 } } },
+            route = {
+                {
+                    label = "Doctor Draxlegauge",
+                    mapID = 1417,
+                    offMapText = "Travel to Doctor Draxlegauge in Arathi Highlands.",
+                    x = 0.3385,
+                    y = 0.8045,
+                },
+            },
+            sourceActionID = "turnin-666-sunken-treasure",
+            sourceGuide = "leveling-era-horde-alterac-mountains-and-arathi-highlands",
+            sourceStep = 60,
+            text = "Turn in Sunken Treasure to Doctor Draxlegauge.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 668, state = "activeOrCompleted" } },
@@ -4806,25 +5270,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 668, state = "completed" } },
             conditions = { all = { { faction = "Horde" }, { level = { min = 35 } } } },
             dependsOn = { "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-accept-668-sunken-treasure" },
-            id = "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-turnin-668-sunken-treasure",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 666 } } },
-            route = {
-                {
-                    label = "Shakes O'Breen",
-                    mapID = 1417,
-                    offMapText = "Travel to Shakes O'Breen in Arathi Highlands.",
-                    x = 0.3229,
-                    y = 0.8138,
-                },
-            },
-            sourceStep = 61,
-            text = "Turn in Sunken Treasure to Shakes O'Breen.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-alterac-mountains-and-arathi-highlands",
-            sourceActionID = "turnin-668-sunken-treasure",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -4864,6 +5309,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-turnin-668-sunken-treasure",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 666 } } },
+            route = {
+                {
+                    label = "Shakes O'Breen",
+                    mapID = 1417,
+                    offMapText = "Travel to Shakes O'Breen in Arathi Highlands.",
+                    x = 0.3229,
+                    y = 0.8138,
+                },
+            },
+            sourceActionID = "turnin-668-sunken-treasure",
+            sourceGuide = "leveling-era-horde-alterac-mountains-and-arathi-highlands",
+            sourceStep = 61,
+            text = "Turn in Sunken Treasure to Shakes O'Breen.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 669, state = "activeOrCompleted" } },
@@ -4954,25 +5418,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 669, state = "completed" } },
             conditions = { all = { { faction = "Horde" }, { level = { min = 35 } } } },
             dependsOn = {},
-            id = "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-turnin-669-sunken-treasure",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 668 } } },
-            route = {
-                {
-                    label = "Fleet Master Seahorn",
-                    mapID = 1434,
-                    offMapText = "Travel to Fleet Master Seahorn in Stranglethorn Vale.",
-                    x = 0.2717,
-                    y = 0.7701,
-                },
-            },
-            sourceStep = 5,
-            text = "Turn in Sunken Treasure to Fleet Master Seahorn.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows",
-            sourceActionID = "turnin-669-sunken-treasure",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -5025,63 +5470,100 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-turnin-669-sunken-treasure",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 668 } } },
+            route = {
+                {
+                    label = "Fleet Master Seahorn",
+                    mapID = 1434,
+                    offMapText = "Travel to Fleet Master Seahorn in Stranglethorn Vale.",
+                    x = 0.2717,
+                    y = 0.7701,
+                },
+            },
+            sourceActionID = "turnin-669-sunken-treasure",
+            sourceGuide = "leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows",
+            sourceStep = 5,
+            text = "Turn in Sunken Treasure to Fleet Master Seahorn.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
+            checkpointQuest = 640,
+            complete = { level = { min = 32 } },
+            conditions = { all = { { faction = "Horde" } } },
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 640, state = "activeOrCompleted" } },
+                        {
+                            any = {
+                                { quest = { id = 640, state = "completed" } },
+                                {
+                                    all = {
+                                        { faction = "Horde" },
+                                        { any = { { any = { { quest = { id = 639, state = "completed" } }, { all = { { faction = "Horde" } } } } } } },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
             id = "horde-extra-640-level",
             kind = "note",
-            checkpointQuest = 640,
-            text = "Reach level 40 before this visit.",
-            conditions = { all = { { faction = "Horde" } } },
-            complete = { level = { min = 40 } },
-            requiredLevel = 40,
-            excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 640, state = "activeOrCompleted" } },
-                        {
-                            any = {
-                                { quest = { id = 640, state = "completed" } },
-                                {
-                                    all = {
-                                        { faction = "Horde" },
-                                        { any = { { any = { { quest = { id = 639, state = "completed" } }, { all = { { faction = "Horde" } } } } } } },
-                                    },
-                                },
-                            },
-                        },
-                    },
-                },
-            },
+            requiredLevel = 32,
+            text = "Reach level 32 before this visit.",
         },
         {
-            id = "horde-extra-640-accept",
-            kind = "accept",
-            text = "Accept The Broken Sigil from Zengu.",
-            conditions = { all = { { faction = "Horde" }, { level = { min = 32 } } } },
-            route = {
-                {
-                    mapID = 1417,
-                    x = 0.738,
-                    y = 0.33799999999999997,
-                    label = "Zengu",
-                    offMapText = "Travel to Zengu in Arathi Highlands.",
-                },
-            },
             complete = { quest = { id = 640, state = "activeOrCompleted" } },
-            requiredQuests = { { mode = "any", quests = { 639 } } },
-            useClientText = false,
+            conditions = { all = { { faction = "Horde" }, { level = { min = 32 } } } },
             dependsOn = { "horde-extra-640-level" },
             excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 640, state = "activeOrCompleted" } },
-                        {
+                any = {
+                    {
+                        ["not"] = {
                             any = {
-                                { quest = { id = 640, state = "completed" } },
+                                { quest = { id = 640, state = "activeOrCompleted" } },
                                 {
-                                    all = {
-                                        { faction = "Horde" },
-                                        { any = { { any = { { quest = { id = 639, state = "completed" } }, { all = { { faction = "Horde" } } } } } } },
+                                    any = {
+                                        { quest = { id = 640, state = "completed" } },
+                                        {
+                                            all = {
+                                                { faction = "Horde" },
+                                                { any = { { any = { { quest = { id = 639, state = "completed" } }, { all = { { faction = "Horde" } } } } } } },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 640, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 640, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                { faction = "Horde" },
+                                                { race = { 2, 5, 6, 8 } },
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 639, state = "activeOrCompleted" } },
+                                                                { all = { { faction = "Horde" }, { race = { 2, 5, 6, 8 } } } },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
                                     },
                                 },
                             },
@@ -5089,36 +5571,60 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-extra-640-accept",
+            kind = "accept",
+            requiredQuests = { { mode = "any", quests = { 639 } } },
+            route = { { label = "Zengu", mapID = 1417, offMapText = "Travel to Zengu in Arathi Highlands.", x = 0.738, y = 0.338 } },
+            text = "Accept The Broken Sigil from Zengu.",
+            useClientText = false,
         },
         {
-            id = "horde-extra-640-objective",
-            kind = "objective",
-            text = "Defeat Stromgarde Troll Hunters, Defenders, or Vindicators and loot 11 Sigil Fragments. This is an elite. Bring a group.",
-            conditions = { all = { { faction = "Horde" }, { level = { min = 32 } } } },
-            route = {
-                {
-                    mapID = 1417,
-                    x = 0.222,
-                    y = 0.594,
-                    label = "Stromgarde Troll Hunter",
-                    offMapText = "Travel to Stromgarde Troll Hunter in Arathi Highlands.",
-                },
-            },
             complete = { quest = { id = 640, state = "complete" } },
-            requiredQuests = { { mode = "any", quests = { 639 } } },
-            useClientText = false,
+            conditions = { all = { { faction = "Horde" }, { level = { min = 32 } } } },
             dependsOn = { "horde-extra-640-accept" },
             excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 640, state = "activeOrCompleted" } },
-                        {
+                any = {
+                    {
+                        ["not"] = {
                             any = {
-                                { quest = { id = 640, state = "completed" } },
+                                { quest = { id = 640, state = "activeOrCompleted" } },
                                 {
-                                    all = {
-                                        { faction = "Horde" },
-                                        { any = { { any = { { quest = { id = 639, state = "completed" } }, { all = { { faction = "Horde" } } } } } } },
+                                    any = {
+                                        { quest = { id = 640, state = "completed" } },
+                                        {
+                                            all = {
+                                                { faction = "Horde" },
+                                                { any = { { any = { { quest = { id = 639, state = "completed" } }, { all = { { faction = "Horde" } } } } } } },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 640, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 640, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                { faction = "Horde" },
+                                                { race = { 2, 5, 6, 8 } },
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 639, state = "activeOrCompleted" } },
+                                                                { all = { { faction = "Horde" }, { race = { 2, 5, 6, 8 } } } },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
                                     },
                                 },
                             },
@@ -5126,30 +5632,69 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-extra-640-objective",
+            kind = "objective",
+            requiredQuests = { { mode = "any", quests = { 639 } } },
+            route = {
+                {
+                    label = "Stromgarde Troll Hunter",
+                    mapID = 1417,
+                    offMapText = "Travel to Stromgarde Troll Hunter in Arathi Highlands.",
+                    x = 0.222,
+                    y = 0.594,
+                },
+            },
+            text = "Defeat Stromgarde Troll Hunters, Defenders, or Vindicators and loot 11 Sigil Fragments. This is an elite. Bring a group.",
+            useClientPin = true,
+            useClientText = false,
         },
         {
-            id = "horde-extra-640-turnin",
-            kind = "turnin",
-            text = "Turn in The Broken Sigil to Tor'gan.",
-            conditions = { all = { { faction = "Horde" }, { level = { min = 32 } } } },
-            route = {
-                { mapID = 1417, x = 0.746, y = 0.364, label = "Tor'gan", offMapText = "Travel to Tor'gan in Arathi Highlands." },
-            },
             complete = { quest = { id = 640, state = "completed" } },
-            requiredQuests = { { mode = "any", quests = { 639 } } },
-            useClientText = false,
+            conditions = { all = { { faction = "Horde" }, { level = { min = 32 } } } },
             dependsOn = { "horde-extra-640-objective" },
             excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 640, state = "activeOrCompleted" } },
-                        {
+                any = {
+                    {
+                        ["not"] = {
                             any = {
-                                { quest = { id = 640, state = "completed" } },
+                                { quest = { id = 640, state = "activeOrCompleted" } },
                                 {
-                                    all = {
-                                        { faction = "Horde" },
-                                        { any = { { any = { { quest = { id = 639, state = "completed" } }, { all = { { faction = "Horde" } } } } } } },
+                                    any = {
+                                        { quest = { id = 640, state = "completed" } },
+                                        {
+                                            all = {
+                                                { faction = "Horde" },
+                                                { any = { { any = { { quest = { id = 639, state = "completed" } }, { all = { { faction = "Horde" } } } } } } },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 640, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 640, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                { faction = "Horde" },
+                                                { race = { 2, 5, 6, 8 } },
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 639, state = "activeOrCompleted" } },
+                                                                { all = { { faction = "Horde" }, { race = { 2, 5, 6, 8 } } } },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
                                     },
                                 },
                             },
@@ -5157,75 +5702,101 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-extra-640-turnin",
+            kind = "turnin",
+            requiredQuests = { { mode = "any", quests = { 639 } } },
+            route = {
+                { label = "Tor'gan", mapID = 1417, offMapText = "Travel to Tor'gan in Arathi Highlands.", x = 0.746, y = 0.364 },
+            },
+            text = "Turn in The Broken Sigil to Tor'gan.",
+            useClientPin = true,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
+            checkpointQuest = 652,
+            complete = { level = { min = 30 } },
+            conditions = { all = { { faction = "Horde" } } },
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 652, state = "activeOrCompleted" } },
+                        {
+                            any = {
+                                { quest = { id = 652, state = "completed" } },
+                                {
+                                    all = {
+                                        {
+                                            any = {
+                                                {
+                                                    any = {
+                                                        { quest = { id = 651, state = "completed" } },
+                                                        { all = { { any = { { any = { { quest = { id = 642, state = "completed" } }, { all = {} } } } } } } },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
             id = "horde-extra-652-level",
             kind = "note",
-            checkpointQuest = 652,
-            text = "Reach level 42 before this visit.",
-            conditions = { all = { { faction = "Horde" } } },
-            complete = { level = { min = 42 } },
-            requiredLevel = 42,
-            excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 652, state = "activeOrCompleted" } },
-                        {
-                            any = {
-                                { quest = { id = 652, state = "completed" } },
-                                {
-                                    all = {
-                                        {
-                                            any = {
-                                                {
-                                                    any = {
-                                                        { quest = { id = 651, state = "completed" } },
-                                                        { all = { { any = { { any = { { quest = { id = 642, state = "completed" } }, { all = {} } } } } } } },
-                                                    },
-                                                },
-                                            },
-                                        },
-                                    },
-                                },
-                            },
-                        },
-                    },
-                },
-            },
+            requiredLevel = 30,
+            text = "Reach level 30 before this visit.",
         },
         {
-            id = "horde-extra-652-accept",
-            kind = "accept",
-            text = "Accept Breaking the Keystone from Stone of Inner Binding.",
-            conditions = { all = { { faction = "Horde" }, { level = { min = 30 } } } },
-            route = {
-                {
-                    mapID = 1417,
-                    x = 0.36200000000000004,
-                    y = 0.575,
-                    label = "Stone of Inner Binding",
-                    offMapText = "Travel to Stone of Inner Binding in Arathi Highlands.",
-                },
-            },
             complete = { quest = { id = 652, state = "activeOrCompleted" } },
-            requiredQuests = { { mode = "any", quests = { 651 } } },
-            useClientText = false,
+            conditions = { all = { { faction = "Horde" }, { level = { min = 30 } } } },
             dependsOn = { "horde-extra-652-level" },
             excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 652, state = "activeOrCompleted" } },
-                        {
+                any = {
+                    {
+                        ["not"] = {
                             any = {
-                                { quest = { id = 652, state = "completed" } },
+                                { quest = { id = 652, state = "activeOrCompleted" } },
                                 {
-                                    all = {
+                                    any = {
+                                        { quest = { id = 652, state = "completed" } },
                                         {
-                                            any = {
+                                            all = {
                                                 {
                                                     any = {
-                                                        { quest = { id = 651, state = "completed" } },
-                                                        { all = { { any = { { any = { { quest = { id = 642, state = "completed" } }, { all = {} } } } } } } },
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 651, state = "completed" } },
+                                                                { all = { { any = { { any = { { quest = { id = 642, state = "completed" } }, { all = {} } } } } } } },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 652, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 652, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 651, state = "activeOrCompleted" } },
+                                                                { all = { { any = { { any = { { quest = { id = 642, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                            },
+                                                        },
                                                     },
                                                 },
                                             },
@@ -5237,40 +5808,70 @@ ns:RegisterGuide({
                     },
                 },
             },
-        },
-        {
-            id = "horde-extra-652-objective",
-            kind = "objective",
-            text = "Find and kill Fozruk. Loot the Rod of Order. This is an elite. Bring a group.",
-            conditions = { all = { { faction = "Horde" }, { level = { min = 30 } } } },
+            id = "horde-extra-652-accept",
+            kind = "accept",
+            requiredQuests = { { mode = "any", quests = { 651 } } },
             route = {
                 {
+                    label = "Stone of Inner Binding",
                     mapID = 1417,
-                    x = 0.43,
-                    y = 0.5379999999999999,
-                    label = "Fozruk",
-                    offMapText = "Travel to Fozruk in Arathi Highlands.",
+                    offMapText = "Travel to Stone of Inner Binding in Arathi Highlands.",
+                    x = 0.362,
+                    y = 0.575,
                 },
             },
-            complete = { quest = { id = 652, state = "complete" } },
-            requiredQuests = { { mode = "any", quests = { 651 } } },
+            text = "Accept Breaking the Keystone from Stone of Inner Binding.",
             useClientText = false,
+        },
+        {
+            complete = { quest = { id = 652, state = "complete" } },
+            conditions = { all = { { faction = "Horde" }, { level = { min = 30 } } } },
             dependsOn = { "horde-extra-652-accept" },
             excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 652, state = "activeOrCompleted" } },
-                        {
+                any = {
+                    {
+                        ["not"] = {
                             any = {
-                                { quest = { id = 652, state = "completed" } },
+                                { quest = { id = 652, state = "activeOrCompleted" } },
                                 {
-                                    all = {
+                                    any = {
+                                        { quest = { id = 652, state = "completed" } },
                                         {
-                                            any = {
+                                            all = {
                                                 {
                                                     any = {
-                                                        { quest = { id = 651, state = "completed" } },
-                                                        { all = { { any = { { any = { { quest = { id = 642, state = "completed" } }, { all = {} } } } } } } },
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 651, state = "completed" } },
+                                                                { all = { { any = { { any = { { quest = { id = 642, state = "completed" } }, { all = {} } } } } } } },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 652, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 652, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 651, state = "activeOrCompleted" } },
+                                                                { all = { { any = { { any = { { quest = { id = 642, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                            },
+                                                        },
                                                     },
                                                 },
                                             },
@@ -5282,34 +5883,63 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-extra-652-objective",
+            kind = "objective",
+            requiredQuests = { { mode = "any", quests = { 651 } } },
+            route = { { label = "Fozruk", mapID = 1417, offMapText = "Travel to Fozruk in Arathi Highlands.", x = 0.43, y = 0.538 } },
+            text = "Find and kill Fozruk. Loot the Rod of Order. This is an elite. Bring a group.",
+            useClientPin = true,
+            useClientText = false,
         },
         {
-            id = "horde-extra-652-turnin",
-            kind = "turnin",
-            text = "Turn in Breaking the Keystone to Keystone.",
-            conditions = { all = { { faction = "Horde" }, { level = { min = 30 } } } },
-            route = {
-                { mapID = 1417, x = 0.361, y = 0.579, label = "Keystone", offMapText = "Travel to Keystone in Arathi Highlands." },
-            },
             complete = { quest = { id = 652, state = "completed" } },
-            requiredQuests = { { mode = "any", quests = { 651 } } },
-            useClientText = false,
+            conditions = { all = { { faction = "Horde" }, { level = { min = 30 } } } },
             dependsOn = { "horde-extra-652-objective" },
             excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 652, state = "activeOrCompleted" } },
-                        {
+                any = {
+                    {
+                        ["not"] = {
                             any = {
-                                { quest = { id = 652, state = "completed" } },
+                                { quest = { id = 652, state = "activeOrCompleted" } },
                                 {
-                                    all = {
+                                    any = {
+                                        { quest = { id = 652, state = "completed" } },
                                         {
-                                            any = {
+                                            all = {
                                                 {
                                                     any = {
-                                                        { quest = { id = 651, state = "completed" } },
-                                                        { all = { { any = { { any = { { quest = { id = 642, state = "completed" } }, { all = {} } } } } } } },
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 651, state = "completed" } },
+                                                                { all = { { any = { { any = { { quest = { id = 642, state = "completed" } }, { all = {} } } } } } } },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 652, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 652, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 651, state = "activeOrCompleted" } },
+                                                                { all = { { any = { { any = { { quest = { id = 642, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                            },
+                                                        },
                                                     },
                                                 },
                                             },
@@ -5321,57 +5951,91 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-extra-652-turnin",
+            kind = "turnin",
+            requiredQuests = { { mode = "any", quests = { 651 } } },
+            route = {
+                { label = "Keystone", mapID = 1417, offMapText = "Travel to Keystone in Arathi Highlands.", x = 0.361, y = 0.579 },
+            },
+            text = "Turn in Breaking the Keystone to Keystone.",
+            useClientPin = true,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
+            checkpointQuest = 673,
+            complete = { level = { min = 35 } },
+            conditions = { all = { { faction = "Horde" } } },
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 673, state = "activeOrCompleted" } },
+                        {
+                            any = {
+                                { quest = { id = 673, state = "completed" } },
+                                {
+                                    all = {
+                                        { faction = "Horde" },
+                                        { any = { { any = { { quest = { id = 671, state = "completed" } }, { all = { { faction = "Horde" } } } } } } },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
             id = "horde-extra-673-level",
             kind = "note",
-            checkpointQuest = 673,
-            text = "Reach level 40 before this visit.",
-            conditions = { all = { { faction = "Horde" } } },
-            complete = { level = { min = 40 } },
-            requiredLevel = 40,
-            excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 673, state = "activeOrCompleted" } },
-                        {
-                            any = {
-                                { quest = { id = 673, state = "completed" } },
-                                {
-                                    all = {
-                                        { faction = "Horde" },
-                                        { any = { { any = { { quest = { id = 671, state = "completed" } }, { all = { { faction = "Horde" } } } } } } },
-                                    },
-                                },
-                            },
-                        },
-                    },
-                },
-            },
+            requiredLevel = 35,
+            text = "Reach level 35 before this visit.",
         },
         {
-            id = "horde-extra-673-accept",
-            kind = "accept",
-            text = "Accept Foul Magics from Tor'gan.",
-            conditions = { all = { { faction = "Horde" }, { level = { min = 35 } } } },
-            route = {
-                { mapID = 1417, x = 0.746, y = 0.364, label = "Tor'gan", offMapText = "Travel to Tor'gan in Arathi Highlands." },
-            },
             complete = { quest = { id = 673, state = "activeOrCompleted" } },
-            requiredQuests = { { mode = "any", quests = { 671 } } },
-            useClientText = false,
+            conditions = { all = { { faction = "Horde" }, { level = { min = 35 } } } },
             dependsOn = { "horde-extra-673-level" },
             excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 673, state = "activeOrCompleted" } },
-                        {
+                any = {
+                    {
+                        ["not"] = {
                             any = {
-                                { quest = { id = 673, state = "completed" } },
+                                { quest = { id = 673, state = "activeOrCompleted" } },
                                 {
-                                    all = {
-                                        { faction = "Horde" },
-                                        { any = { { any = { { quest = { id = 671, state = "completed" } }, { all = { { faction = "Horde" } } } } } } },
+                                    any = {
+                                        { quest = { id = 673, state = "completed" } },
+                                        {
+                                            all = {
+                                                { faction = "Horde" },
+                                                { any = { { any = { { quest = { id = 671, state = "completed" } }, { all = { { faction = "Horde" } } } } } } },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 673, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 673, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                { faction = "Horde" },
+                                                { race = { 2, 5, 6, 8 } },
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 671, state = "activeOrCompleted" } },
+                                                                { all = { { faction = "Horde" }, { race = { 2, 5, 6, 8 } } } },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
                                     },
                                 },
                             },
@@ -5379,30 +6043,62 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-extra-673-accept",
+            kind = "accept",
+            requiredQuests = { { mode = "any", quests = { 671 } } },
+            route = {
+                { label = "Tor'gan", mapID = 1417, offMapText = "Travel to Tor'gan in Arathi Highlands.", x = 0.746, y = 0.364 },
+            },
+            text = "Accept Foul Magics from Tor'gan.",
+            useClientText = false,
         },
         {
-            id = "horde-extra-673-objective",
-            kind = "objective",
-            text = "Defeat Marez Cowl and loot the Befouled Bloodstone Orb. This is an elite. Bring a group.",
-            conditions = { all = { { faction = "Horde" }, { level = { min = 35 } } } },
-            route = {
-                { mapID = 1417, x = 0.292, y = 0.64, label = "Marez Cowl", offMapText = "Travel to Marez Cowl in Arathi Highlands." },
-            },
             complete = { quest = { id = 673, state = "complete" } },
-            requiredQuests = { { mode = "any", quests = { 671 } } },
-            useClientText = false,
+            conditions = { all = { { faction = "Horde" }, { level = { min = 35 } } } },
             dependsOn = { "horde-extra-673-accept" },
             excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 673, state = "activeOrCompleted" } },
-                        {
+                any = {
+                    {
+                        ["not"] = {
                             any = {
-                                { quest = { id = 673, state = "completed" } },
+                                { quest = { id = 673, state = "activeOrCompleted" } },
                                 {
-                                    all = {
-                                        { faction = "Horde" },
-                                        { any = { { any = { { quest = { id = 671, state = "completed" } }, { all = { { faction = "Horde" } } } } } } },
+                                    any = {
+                                        { quest = { id = 673, state = "completed" } },
+                                        {
+                                            all = {
+                                                { faction = "Horde" },
+                                                { any = { { any = { { quest = { id = 671, state = "completed" } }, { all = { { faction = "Horde" } } } } } } },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 673, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 673, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                { faction = "Horde" },
+                                                { race = { 2, 5, 6, 8 } },
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 671, state = "activeOrCompleted" } },
+                                                                { all = { { faction = "Horde" }, { race = { 2, 5, 6, 8 } } } },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
                                     },
                                 },
                             },
@@ -5410,30 +6106,63 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-extra-673-objective",
+            kind = "objective",
+            requiredQuests = { { mode = "any", quests = { 671 } } },
+            route = {
+                { label = "Marez Cowl", mapID = 1417, offMapText = "Travel to Marez Cowl in Arathi Highlands.", x = 0.292, y = 0.64 },
+            },
+            text = "Defeat Marez Cowl and loot the Befouled Bloodstone Orb. This is an elite. Bring a group.",
+            useClientPin = true,
+            useClientText = false,
         },
         {
-            id = "horde-extra-673-turnin",
-            kind = "turnin",
-            text = "Turn in Foul Magics to Tor'gan.",
-            conditions = { all = { { faction = "Horde" }, { level = { min = 35 } } } },
-            route = {
-                { mapID = 1417, x = 0.746, y = 0.364, label = "Tor'gan", offMapText = "Travel to Tor'gan in Arathi Highlands." },
-            },
             complete = { quest = { id = 673, state = "completed" } },
-            requiredQuests = { { mode = "any", quests = { 671 } } },
-            useClientText = false,
+            conditions = { all = { { faction = "Horde" }, { level = { min = 35 } } } },
             dependsOn = { "horde-extra-673-objective" },
             excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 673, state = "activeOrCompleted" } },
-                        {
+                any = {
+                    {
+                        ["not"] = {
                             any = {
-                                { quest = { id = 673, state = "completed" } },
+                                { quest = { id = 673, state = "activeOrCompleted" } },
                                 {
-                                    all = {
-                                        { faction = "Horde" },
-                                        { any = { { any = { { quest = { id = 671, state = "completed" } }, { all = { { faction = "Horde" } } } } } } },
+                                    any = {
+                                        { quest = { id = 673, state = "completed" } },
+                                        {
+                                            all = {
+                                                { faction = "Horde" },
+                                                { any = { { any = { { quest = { id = 671, state = "completed" } }, { all = { { faction = "Horde" } } } } } } },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 673, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 673, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                { faction = "Horde" },
+                                                { race = { 2, 5, 6, 8 } },
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 671, state = "activeOrCompleted" } },
+                                                                { all = { { faction = "Horde" }, { race = { 2, 5, 6, 8 } } } },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
                                     },
                                 },
                             },
@@ -5441,85 +6170,128 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-extra-673-turnin",
+            kind = "turnin",
+            requiredQuests = { { mode = "any", quests = { 671 } } },
+            route = {
+                { label = "Tor'gan", mapID = 1417, offMapText = "Travel to Tor'gan in Arathi Highlands.", x = 0.746, y = 0.364 },
+            },
+            text = "Turn in Foul Magics to Tor'gan.",
+            useClientPin = true,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
+            checkpointQuest = 679,
+            complete = { level = { min = 30 } },
+            conditions = { all = { { faction = "Horde" } } },
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 679, state = "activeOrCompleted" } },
+                        {
+                            any = {
+                                { quest = { id = 679, state = "completed" } },
+                                {
+                                    all = {
+                                        { faction = "Horde" },
+                                        {
+                                            any = {
+                                                {
+                                                    any = {
+                                                        { quest = { id = 678, state = "completed" } },
+                                                        {
+                                                            all = {
+                                                                { faction = "Horde" },
+                                                                { any = { { any = { { quest = { id = 677, state = "completed" } }, { all = { { faction = "Horde" } } } } } } },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
             id = "horde-extra-679-level",
             kind = "note",
-            checkpointQuest = 679,
-            text = "Reach level 40 before this visit.",
-            conditions = { all = { { faction = "Horde" } } },
-            complete = { level = { min = 40 } },
-            requiredLevel = 40,
-            excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 679, state = "activeOrCompleted" } },
-                        {
-                            any = {
-                                { quest = { id = 679, state = "completed" } },
-                                {
-                                    all = {
-                                        { faction = "Horde" },
-                                        {
-                                            any = {
-                                                {
-                                                    any = {
-                                                        { quest = { id = 678, state = "completed" } },
-                                                        {
-                                                            all = {
-                                                                { faction = "Horde" },
-                                                                { any = { { any = { { quest = { id = 677, state = "completed" } }, { all = { { faction = "Horde" } } } } } } },
-                                                            },
-                                                        },
-                                                    },
-                                                },
-                                            },
-                                        },
-                                    },
-                                },
-                            },
-                        },
-                    },
-                },
-            },
+            requiredLevel = 30,
+            text = "Reach level 30 before this visit.",
         },
         {
-            id = "horde-extra-679-accept",
-            kind = "accept",
-            text = "Accept Call to Arms from Drum Fel.",
-            conditions = { all = { { faction = "Horde" }, { level = { min = 30 } } } },
-            route = {
-                {
-                    mapID = 1417,
-                    x = 0.742,
-                    y = 0.33799999999999997,
-                    label = "Drum Fel",
-                    offMapText = "Travel to Drum Fel in Arathi Highlands.",
-                },
-            },
             complete = { quest = { id = 679, state = "activeOrCompleted" } },
-            requiredQuests = { { mode = "any", quests = { 678 } } },
-            useClientText = false,
+            conditions = { all = { { faction = "Horde" }, { level = { min = 30 } } } },
             dependsOn = { "horde-extra-679-level" },
             excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 679, state = "activeOrCompleted" } },
-                        {
+                any = {
+                    {
+                        ["not"] = {
                             any = {
-                                { quest = { id = 679, state = "completed" } },
+                                { quest = { id = 679, state = "activeOrCompleted" } },
                                 {
-                                    all = {
-                                        { faction = "Horde" },
+                                    any = {
+                                        { quest = { id = 679, state = "completed" } },
                                         {
-                                            any = {
+                                            all = {
+                                                { faction = "Horde" },
                                                 {
                                                     any = {
-                                                        { quest = { id = 678, state = "completed" } },
                                                         {
-                                                            all = {
-                                                                { faction = "Horde" },
-                                                                { any = { { any = { { quest = { id = 677, state = "completed" } }, { all = { { faction = "Horde" } } } } } } },
+                                                            any = {
+                                                                { quest = { id = 678, state = "completed" } },
+                                                                {
+                                                                    all = {
+                                                                        { faction = "Horde" },
+                                                                        { any = { { any = { { quest = { id = 677, state = "completed" } }, { all = { { faction = "Horde" } } } } } } },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 679, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 679, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                { faction = "Horde" },
+                                                { race = { 2, 5, 6, 8 } },
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 678, state = "activeOrCompleted" } },
+                                                                {
+                                                                    all = {
+                                                                        { faction = "Horde" },
+                                                                        { race = { 2, 5, 6, 8 } },
+                                                                        {
+                                                                            any = {
+                                                                                {
+                                                                                    any = {
+                                                                                        { quest = { id = 677, state = "activeOrCompleted" } },
+                                                                                        { all = { { faction = "Horde" }, { race = { 2, 5, 6, 8 } } } },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
                                                             },
                                                         },
                                                     },
@@ -5533,44 +6305,85 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-extra-679-accept",
+            kind = "accept",
+            requiredQuests = { { mode = "any", quests = { 678 } } },
+            route = {
+                { label = "Drum Fel", mapID = 1417, offMapText = "Travel to Drum Fel in Arathi Highlands.", x = 0.742, y = 0.338 },
+            },
+            text = "Accept Call to Arms from Drum Fel.",
+            useClientText = false,
         },
         {
-            id = "horde-extra-679-objective",
-            kind = "objective",
-            text = "Kill 7 Boulderfist Shaman and 3 Boulderfist Lords. This is an elite. Bring a group.",
-            conditions = { all = { { faction = "Horde" }, { level = { min = 30 } } } },
-            route = {
-                {
-                    mapID = 1417,
-                    x = 0.21,
-                    y = 0.6579999999999999,
-                    label = "Boulderfist Shaman",
-                    offMapText = "Travel to Boulderfist Shaman in Arathi Highlands.",
-                },
-            },
             complete = { quest = { id = 679, state = "complete" } },
-            requiredQuests = { { mode = "any", quests = { 678 } } },
-            useClientText = false,
+            conditions = { all = { { faction = "Horde" }, { level = { min = 30 } } } },
             dependsOn = { "horde-extra-679-accept" },
             excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 679, state = "activeOrCompleted" } },
-                        {
+                any = {
+                    {
+                        ["not"] = {
                             any = {
-                                { quest = { id = 679, state = "completed" } },
+                                { quest = { id = 679, state = "activeOrCompleted" } },
                                 {
-                                    all = {
-                                        { faction = "Horde" },
+                                    any = {
+                                        { quest = { id = 679, state = "completed" } },
                                         {
-                                            any = {
+                                            all = {
+                                                { faction = "Horde" },
                                                 {
                                                     any = {
-                                                        { quest = { id = 678, state = "completed" } },
                                                         {
-                                                            all = {
-                                                                { faction = "Horde" },
-                                                                { any = { { any = { { quest = { id = 677, state = "completed" } }, { all = { { faction = "Horde" } } } } } } },
+                                                            any = {
+                                                                { quest = { id = 678, state = "completed" } },
+                                                                {
+                                                                    all = {
+                                                                        { faction = "Horde" },
+                                                                        { any = { { any = { { quest = { id = 677, state = "completed" } }, { all = { { faction = "Horde" } } } } } } },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 679, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 679, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                { faction = "Horde" },
+                                                { race = { 2, 5, 6, 8 } },
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 678, state = "activeOrCompleted" } },
+                                                                {
+                                                                    all = {
+                                                                        { faction = "Horde" },
+                                                                        { race = { 2, 5, 6, 8 } },
+                                                                        {
+                                                                            any = {
+                                                                                {
+                                                                                    any = {
+                                                                                        { quest = { id = 677, state = "activeOrCompleted" } },
+                                                                                        { all = { { faction = "Horde" }, { race = { 2, 5, 6, 8 } } } },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
                                                             },
                                                         },
                                                     },
@@ -5584,32 +6397,127 @@ ns:RegisterGuide({
                     },
                 },
             },
-        },
-        {
-            id = "horde-extra-679-turnin",
-            kind = "turnin",
-            text = "Turn in Call to Arms to Drum Fel.",
-            conditions = { all = { { faction = "Horde" }, { level = { min = 30 } } } },
+            id = "horde-extra-679-objective",
+            kind = "objective",
+            requiredQuests = { { mode = "any", quests = { 678 } } },
             route = {
                 {
+                    label = "Boulderfist Shaman",
                     mapID = 1417,
-                    x = 0.742,
-                    y = 0.33799999999999997,
-                    label = "Drum Fel",
-                    offMapText = "Travel to Drum Fel in Arathi Highlands.",
+                    offMapText = "Travel to Boulderfist Shaman in Arathi Highlands.",
+                    x = 0.21,
+                    y = 0.658,
                 },
             },
-            complete = { quest = { id = 679, state = "completed" } },
-            requiredQuests = { { mode = "any", quests = { 678 } } },
+            text = "Kill 7 Boulderfist Shaman and 3 Boulderfist Lords. This is an elite. Bring a group.",
+            useClientPin = true,
             useClientText = false,
+        },
+        {
+            complete = { quest = { id = 679, state = "completed" } },
+            conditions = { all = { { faction = "Horde" }, { level = { min = 30 } } } },
             dependsOn = { "horde-extra-679-objective" },
             excludeWhen = {
+                any = {
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 679, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 679, state = "completed" } },
+                                        {
+                                            all = {
+                                                { faction = "Horde" },
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 678, state = "completed" } },
+                                                                {
+                                                                    all = {
+                                                                        { faction = "Horde" },
+                                                                        { any = { { any = { { quest = { id = 677, state = "completed" } }, { all = { { faction = "Horde" } } } } } } },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 679, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 679, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                { faction = "Horde" },
+                                                { race = { 2, 5, 6, 8 } },
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 678, state = "activeOrCompleted" } },
+                                                                {
+                                                                    all = {
+                                                                        { faction = "Horde" },
+                                                                        { race = { 2, 5, 6, 8 } },
+                                                                        {
+                                                                            any = {
+                                                                                {
+                                                                                    any = {
+                                                                                        { quest = { id = 677, state = "activeOrCompleted" } },
+                                                                                        { all = { { faction = "Horde" }, { race = { 2, 5, 6, 8 } } } },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
+            id = "horde-extra-679-turnin",
+            kind = "turnin",
+            requiredQuests = { { mode = "any", quests = { 678 } } },
+            route = {
+                { label = "Drum Fel", mapID = 1417, offMapText = "Travel to Drum Fel in Arathi Highlands.", x = 0.742, y = 0.338 },
+            },
+            text = "Turn in Call to Arms to Drum Fel.",
+            useClientPin = true,
+            useClientText = false,
+            useQuestNavigation = true,
+        },
+        {
+            checkpointQuest = 680,
+            complete = { level = { min = 30 } },
+            conditions = { all = { { faction = "Horde" } } },
+            excludeWhen = {
                 ["not"] = {
                     any = {
-                        { quest = { id = 679, state = "activeOrCompleted" } },
+                        { quest = { id = 680, state = "activeOrCompleted" } },
                         {
                             any = {
-                                { quest = { id = 679, state = "completed" } },
+                                { quest = { id = 680, state = "completed" } },
                                 {
                                     all = {
                                         { faction = "Horde" },
@@ -5635,79 +6543,81 @@ ns:RegisterGuide({
                     },
                 },
             },
-        },
-        {
             id = "horde-extra-680-level",
             kind = "note",
-            checkpointQuest = 680,
-            text = "Reach level 40 before this visit.",
-            conditions = { all = { { faction = "Horde" } } },
-            complete = { level = { min = 40 } },
-            requiredLevel = 40,
-            excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 680, state = "activeOrCompleted" } },
-                        {
-                            any = {
-                                { quest = { id = 680, state = "completed" } },
-                                {
-                                    all = {
-                                        { faction = "Horde" },
-                                        {
-                                            any = {
-                                                {
-                                                    any = {
-                                                        { quest = { id = 678, state = "completed" } },
-                                                        {
-                                                            all = {
-                                                                { faction = "Horde" },
-                                                                { any = { { any = { { quest = { id = 677, state = "completed" } }, { all = { { faction = "Horde" } } } } } } },
-                                                            },
-                                                        },
-                                                    },
-                                                },
-                                            },
-                                        },
-                                    },
-                                },
-                            },
-                        },
-                    },
-                },
-            },
+            requiredLevel = 30,
+            text = "Reach level 30 before this visit.",
         },
         {
-            id = "horde-extra-680-accept",
-            kind = "accept",
-            text = "Accept The Real Threat from Korin Fel.",
-            conditions = { all = { { faction = "Horde" }, { level = { min = 30 } } } },
-            route = {
-                { mapID = 1417, x = 0.74, y = 0.332, label = "Korin Fel", offMapText = "Travel to Korin Fel in Arathi Highlands." },
-            },
             complete = { quest = { id = 680, state = "activeOrCompleted" } },
-            requiredQuests = { { mode = "any", quests = { 678 } } },
-            useClientText = false,
+            conditions = { all = { { faction = "Horde" }, { level = { min = 30 } } } },
             dependsOn = { "horde-extra-680-level" },
             excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 680, state = "activeOrCompleted" } },
-                        {
+                any = {
+                    {
+                        ["not"] = {
                             any = {
-                                { quest = { id = 680, state = "completed" } },
+                                { quest = { id = 680, state = "activeOrCompleted" } },
                                 {
-                                    all = {
-                                        { faction = "Horde" },
+                                    any = {
+                                        { quest = { id = 680, state = "completed" } },
                                         {
-                                            any = {
+                                            all = {
+                                                { faction = "Horde" },
                                                 {
                                                     any = {
-                                                        { quest = { id = 678, state = "completed" } },
                                                         {
-                                                            all = {
-                                                                { faction = "Horde" },
-                                                                { any = { { any = { { quest = { id = 677, state = "completed" } }, { all = { { faction = "Horde" } } } } } } },
+                                                            any = {
+                                                                { quest = { id = 678, state = "completed" } },
+                                                                {
+                                                                    all = {
+                                                                        { faction = "Horde" },
+                                                                        { any = { { any = { { quest = { id = 677, state = "completed" } }, { all = { { faction = "Horde" } } } } } } },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 680, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 680, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                { faction = "Horde" },
+                                                { race = { 2, 5, 6, 8 } },
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 678, state = "activeOrCompleted" } },
+                                                                {
+                                                                    all = {
+                                                                        { faction = "Horde" },
+                                                                        { race = { 2, 5, 6, 8 } },
+                                                                        {
+                                                                            any = {
+                                                                                {
+                                                                                    any = {
+                                                                                        { quest = { id = 677, state = "activeOrCompleted" } },
+                                                                                        { all = { { faction = "Horde" }, { race = { 2, 5, 6, 8 } } } },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
                                                             },
                                                         },
                                                     },
@@ -5721,44 +6631,85 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-extra-680-accept",
+            kind = "accept",
+            requiredQuests = { { mode = "any", quests = { 678 } } },
+            route = {
+                { label = "Korin Fel", mapID = 1417, offMapText = "Travel to Korin Fel in Arathi Highlands.", x = 0.74, y = 0.332 },
+            },
+            text = "Accept The Real Threat from Korin Fel.",
+            useClientText = false,
         },
         {
-            id = "horde-extra-680-objective",
-            kind = "objective",
-            text = "Slay Or'Kalar and loot his head. This is an elite. Bring a group.",
-            conditions = { all = { { faction = "Horde" }, { level = { min = 30 } } } },
-            route = {
-                {
-                    mapID = 1417,
-                    x = 0.20800000000000002,
-                    y = 0.654,
-                    label = "Or'Kalar",
-                    offMapText = "Travel to Or'Kalar in Arathi Highlands.",
-                },
-            },
             complete = { quest = { id = 680, state = "complete" } },
-            requiredQuests = { { mode = "any", quests = { 678 } } },
-            useClientText = false,
+            conditions = { all = { { faction = "Horde" }, { level = { min = 30 } } } },
             dependsOn = { "horde-extra-680-accept" },
             excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 680, state = "activeOrCompleted" } },
-                        {
+                any = {
+                    {
+                        ["not"] = {
                             any = {
-                                { quest = { id = 680, state = "completed" } },
+                                { quest = { id = 680, state = "activeOrCompleted" } },
                                 {
-                                    all = {
-                                        { faction = "Horde" },
+                                    any = {
+                                        { quest = { id = 680, state = "completed" } },
                                         {
-                                            any = {
+                                            all = {
+                                                { faction = "Horde" },
                                                 {
                                                     any = {
-                                                        { quest = { id = 678, state = "completed" } },
                                                         {
-                                                            all = {
-                                                                { faction = "Horde" },
-                                                                { any = { { any = { { quest = { id = 677, state = "completed" } }, { all = { { faction = "Horde" } } } } } } },
+                                                            any = {
+                                                                { quest = { id = 678, state = "completed" } },
+                                                                {
+                                                                    all = {
+                                                                        { faction = "Horde" },
+                                                                        { any = { { any = { { quest = { id = 677, state = "completed" } }, { all = { { faction = "Horde" } } } } } } },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 680, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 680, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                { faction = "Horde" },
+                                                { race = { 2, 5, 6, 8 } },
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 678, state = "activeOrCompleted" } },
+                                                                {
+                                                                    all = {
+                                                                        { faction = "Horde" },
+                                                                        { race = { 2, 5, 6, 8 } },
+                                                                        {
+                                                                            any = {
+                                                                                {
+                                                                                    any = {
+                                                                                        { quest = { id = 677, state = "activeOrCompleted" } },
+                                                                                        { all = { { faction = "Horde" }, { race = { 2, 5, 6, 8 } } } },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
                                                             },
                                                         },
                                                     },
@@ -5772,38 +6723,86 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-extra-680-objective",
+            kind = "objective",
+            requiredQuests = { { mode = "any", quests = { 678 } } },
+            route = {
+                { label = "Or'Kalar", mapID = 1417, offMapText = "Travel to Or'Kalar in Arathi Highlands.", x = 0.208, y = 0.654 },
+            },
+            text = "Slay Or'Kalar and loot his head. This is an elite. Bring a group.",
+            useClientPin = true,
+            useClientText = false,
         },
         {
-            id = "horde-extra-680-turnin",
-            kind = "turnin",
-            text = "Turn in The Real Threat to Korin Fel.",
-            conditions = { all = { { faction = "Horde" }, { level = { min = 30 } } } },
-            route = {
-                { mapID = 1417, x = 0.74, y = 0.332, label = "Korin Fel", offMapText = "Travel to Korin Fel in Arathi Highlands." },
-            },
             complete = { quest = { id = 680, state = "completed" } },
-            requiredQuests = { { mode = "any", quests = { 678 } } },
-            useClientText = false,
+            conditions = { all = { { faction = "Horde" }, { level = { min = 30 } } } },
             dependsOn = { "horde-extra-680-objective" },
             excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 680, state = "activeOrCompleted" } },
-                        {
+                any = {
+                    {
+                        ["not"] = {
                             any = {
-                                { quest = { id = 680, state = "completed" } },
+                                { quest = { id = 680, state = "activeOrCompleted" } },
                                 {
-                                    all = {
-                                        { faction = "Horde" },
+                                    any = {
+                                        { quest = { id = 680, state = "completed" } },
                                         {
-                                            any = {
+                                            all = {
+                                                { faction = "Horde" },
                                                 {
                                                     any = {
-                                                        { quest = { id = 678, state = "completed" } },
                                                         {
-                                                            all = {
-                                                                { faction = "Horde" },
-                                                                { any = { { any = { { quest = { id = 677, state = "completed" } }, { all = { { faction = "Horde" } } } } } } },
+                                                            any = {
+                                                                { quest = { id = 678, state = "completed" } },
+                                                                {
+                                                                    all = {
+                                                                        { faction = "Horde" },
+                                                                        { any = { { any = { { quest = { id = 677, state = "completed" } }, { all = { { faction = "Horde" } } } } } } },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 680, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 680, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                { faction = "Horde" },
+                                                { race = { 2, 5, 6, 8 } },
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 678, state = "activeOrCompleted" } },
+                                                                {
+                                                                    all = {
+                                                                        { faction = "Horde" },
+                                                                        { race = { 2, 5, 6, 8 } },
+                                                                        {
+                                                                            any = {
+                                                                                {
+                                                                                    any = {
+                                                                                        { quest = { id = 677, state = "activeOrCompleted" } },
+                                                                                        { all = { { faction = "Horde" }, { race = { 2, 5, 6, 8 } } } },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
                                                             },
                                                         },
                                                     },
@@ -5817,91 +6816,138 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-extra-680-turnin",
+            kind = "turnin",
+            requiredQuests = { { mode = "any", quests = { 678 } } },
+            route = {
+                { label = "Korin Fel", mapID = 1417, offMapText = "Travel to Korin Fel in Arathi Highlands.", x = 0.74, y = 0.332 },
+            },
+            text = "Turn in The Real Threat to Korin Fel.",
+            useClientPin = true,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
+            checkpointQuest = 688,
+            complete = { level = { min = 30 } },
+            conditions = { all = { { faction = "Horde" } } },
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 688, state = "activeOrCompleted" } },
+                        {
+                            any = {
+                                { quest = { id = 688, state = "completed" } },
+                                {
+                                    all = {
+                                        { faction = "Horde" },
+                                        {
+                                            any = {
+                                                {
+                                                    any = {
+                                                        { quest = { id = 652, state = "completed" } },
+                                                        {
+                                                            all = {
+                                                                {
+                                                                    any = {
+                                                                        {
+                                                                            any = {
+                                                                                { quest = { id = 651, state = "completed" } },
+                                                                                { all = { { any = { { any = { { quest = { id = 642, state = "completed" } }, { all = {} } } } } } } },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
             id = "horde-extra-688-level",
             kind = "note",
-            checkpointQuest = 688,
-            text = "Reach level 40 before this visit.",
-            conditions = { all = { { faction = "Horde" } } },
-            complete = { level = { min = 40 } },
-            requiredLevel = 40,
-            excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 688, state = "activeOrCompleted" } },
-                        {
-                            any = {
-                                { quest = { id = 688, state = "completed" } },
-                                {
-                                    all = {
-                                        { faction = "Horde" },
-                                        {
-                                            any = {
-                                                {
-                                                    any = {
-                                                        { quest = { id = 652, state = "completed" } },
-                                                        {
-                                                            all = {
-                                                                {
-                                                                    any = {
-                                                                        {
-                                                                            any = {
-                                                                                { quest = { id = 651, state = "completed" } },
-                                                                                { all = { { any = { { any = { { quest = { id = 642, state = "completed" } }, { all = {} } } } } } } },
-                                                                            },
-                                                                        },
-                                                                    },
-                                                                },
-                                                            },
-                                                        },
-                                                    },
-                                                },
-                                            },
-                                        },
-                                    },
-                                },
-                            },
-                        },
-                    },
-                },
-            },
+            requiredLevel = 30,
+            text = "Reach level 30 before this visit.",
         },
         {
-            id = "horde-extra-688-accept",
-            kind = "accept",
-            text = "Accept Myzrael's Allies from Keystone.",
-            conditions = { all = { { faction = "Horde" }, { level = { min = 30 } } } },
-            route = {
-                { mapID = 1417, x = 0.361, y = 0.579, label = "Keystone", offMapText = "Travel to Keystone in Arathi Highlands." },
-            },
             complete = { quest = { id = 688, state = "activeOrCompleted" } },
-            requiredQuests = { { mode = "any", quests = { 652 } } },
-            useClientText = false,
+            conditions = { all = { { faction = "Horde" }, { level = { min = 30 } } } },
             dependsOn = { "horde-extra-688-level" },
             excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 688, state = "activeOrCompleted" } },
-                        {
+                any = {
+                    {
+                        ["not"] = {
                             any = {
-                                { quest = { id = 688, state = "completed" } },
+                                { quest = { id = 688, state = "activeOrCompleted" } },
                                 {
-                                    all = {
-                                        { faction = "Horde" },
+                                    any = {
+                                        { quest = { id = 688, state = "completed" } },
                                         {
-                                            any = {
+                                            all = {
+                                                { faction = "Horde" },
                                                 {
                                                     any = {
-                                                        { quest = { id = 652, state = "completed" } },
                                                         {
-                                                            all = {
+                                                            any = {
+                                                                { quest = { id = 652, state = "completed" } },
                                                                 {
-                                                                    any = {
+                                                                    all = {
                                                                         {
                                                                             any = {
-                                                                                { quest = { id = 651, state = "completed" } },
-                                                                                { all = { { any = { { any = { { quest = { id = 642, state = "completed" } }, { all = {} } } } } } } },
+                                                                                {
+                                                                                    any = {
+                                                                                        { quest = { id = 651, state = "completed" } },
+                                                                                        { all = { { any = { { any = { { quest = { id = 642, state = "completed" } }, { all = {} } } } } } } },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 688, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 688, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                { faction = "Horde" },
+                                                { race = { 2, 5, 6, 8 } },
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 652, state = "activeOrCompleted" } },
+                                                                {
+                                                                    all = {
+                                                                        {
+                                                                            any = {
+                                                                                {
+                                                                                    any = {
+                                                                                        { quest = { id = 651, state = "activeOrCompleted" } },
+                                                                                        { all = { { any = { { any = { { quest = { id = 642, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                                                    },
+                                                                                },
                                                                             },
                                                                         },
                                                                     },
@@ -5919,100 +6965,184 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-extra-688-accept",
+            kind = "accept",
+            requiredQuests = { { mode = "any", quests = { 652 } } },
+            route = {
+                { label = "Keystone", mapID = 1417, offMapText = "Travel to Keystone in Arathi Highlands.", x = 0.361, y = 0.579 },
+            },
+            text = "Accept Myzrael's Allies from Keystone.",
+            useClientText = false,
         },
         {
+            complete = { quest = { id = 688, state = "complete" } },
+            conditions = { all = { { faction = "Horde" }, { level = { min = 30 } } } },
+            dependsOn = { "horde-extra-688-accept" },
+            excludeWhen = {
+                any = {
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 688, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 688, state = "completed" } },
+                                        {
+                                            all = {
+                                                { faction = "Horde" },
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 652, state = "completed" } },
+                                                                {
+                                                                    all = {
+                                                                        {
+                                                                            any = {
+                                                                                {
+                                                                                    any = {
+                                                                                        { quest = { id = 651, state = "completed" } },
+                                                                                        { all = { { any = { { any = { { quest = { id = 642, state = "completed" } }, { all = {} } } } } } } },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 688, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 688, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                { faction = "Horde" },
+                                                { race = { 2, 5, 6, 8 } },
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 652, state = "activeOrCompleted" } },
+                                                                {
+                                                                    all = {
+                                                                        {
+                                                                            any = {
+                                                                                {
+                                                                                    any = {
+                                                                                        { quest = { id = 651, state = "activeOrCompleted" } },
+                                                                                        { all = { { any = { { any = { { quest = { id = 642, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
             id = "horde-extra-688-objective",
             kind = "objective",
-            text = "Speak with Zaruk in Hammerfall. Follow the quest log for the destination.",
-            conditions = { all = { { faction = "Horde" }, { level = { min = 30 } } } },
-            route = {},
-            complete = { quest = { id = 688, state = "complete" } },
             requiredQuests = { { mode = "any", quests = { 652 } } },
-            useClientText = false,
-            dependsOn = { "horde-extra-688-accept" },
+            route = {},
+            text = "Speak with Zaruk in Hammerfall. Follow the quest log for the destination.",
             useClientPin = true,
-            excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 688, state = "activeOrCompleted" } },
-                        {
-                            any = {
-                                { quest = { id = 688, state = "completed" } },
-                                {
-                                    all = {
-                                        { faction = "Horde" },
-                                        {
-                                            any = {
-                                                {
-                                                    any = {
-                                                        { quest = { id = 652, state = "completed" } },
-                                                        {
-                                                            all = {
-                                                                {
-                                                                    any = {
-                                                                        {
-                                                                            any = {
-                                                                                { quest = { id = 651, state = "completed" } },
-                                                                                { all = { { any = { { any = { { quest = { id = 642, state = "completed" } }, { all = {} } } } } } } },
-                                                                            },
-                                                                        },
-                                                                    },
-                                                                },
-                                                            },
-                                                        },
-                                                    },
-                                                },
-                                            },
-                                        },
-                                    },
-                                },
-                            },
-                        },
-                    },
-                },
-            },
+            useClientText = false,
         },
         {
-            id = "horde-extra-688-turnin",
-            kind = "turnin",
-            text = "Turn in Myzrael's Allies to Zaruk.",
-            conditions = { all = { { faction = "Horde" }, { level = { min = 30 } } } },
-            route = {
-                {
-                    mapID = 1417,
-                    x = 0.7440000000000001,
-                    y = 0.35600000000000004,
-                    label = "Zaruk",
-                    offMapText = "Travel to Zaruk in Arathi Highlands.",
-                },
-            },
             complete = { quest = { id = 688, state = "completed" } },
-            requiredQuests = { { mode = "any", quests = { 652 } } },
-            useClientText = false,
+            conditions = { all = { { faction = "Horde" }, { level = { min = 30 } } } },
             dependsOn = { "horde-extra-688-objective" },
             excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 688, state = "activeOrCompleted" } },
-                        {
+                any = {
+                    {
+                        ["not"] = {
                             any = {
-                                { quest = { id = 688, state = "completed" } },
+                                { quest = { id = 688, state = "activeOrCompleted" } },
                                 {
-                                    all = {
-                                        { faction = "Horde" },
+                                    any = {
+                                        { quest = { id = 688, state = "completed" } },
                                         {
-                                            any = {
+                                            all = {
+                                                { faction = "Horde" },
                                                 {
                                                     any = {
-                                                        { quest = { id = 652, state = "completed" } },
                                                         {
-                                                            all = {
+                                                            any = {
+                                                                { quest = { id = 652, state = "completed" } },
                                                                 {
-                                                                    any = {
+                                                                    all = {
                                                                         {
                                                                             any = {
-                                                                                { quest = { id = 651, state = "completed" } },
-                                                                                { all = { { any = { { any = { { quest = { id = 642, state = "completed" } }, { all = {} } } } } } } },
+                                                                                {
+                                                                                    any = {
+                                                                                        { quest = { id = 651, state = "completed" } },
+                                                                                        { all = { { any = { { any = { { quest = { id = 642, state = "completed" } }, { all = {} } } } } } } },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 688, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 688, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                { faction = "Horde" },
+                                                { race = { 2, 5, 6, 8 } },
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 652, state = "activeOrCompleted" } },
+                                                                {
+                                                                    all = {
+                                                                        {
+                                                                            any = {
+                                                                                {
+                                                                                    any = {
+                                                                                        { quest = { id = 651, state = "activeOrCompleted" } },
+                                                                                        { all = { { any = { { any = { { quest = { id = 642, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                                                    },
+                                                                                },
                                                                             },
                                                                         },
                                                                     },
@@ -6030,15 +7160,23 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-extra-688-turnin",
+            kind = "turnin",
+            requiredQuests = { { mode = "any", quests = { 652 } } },
+            route = { { label = "Zaruk", mapID = 1417, offMapText = "Travel to Zaruk in Arathi Highlands.", x = 0.744, y = 0.356 } },
+            text = "Turn in Myzrael's Allies to Zaruk.",
+            useClientPin = true,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
+            checkpointQuest = 97539,
+            complete = { level = { min = 30 } },
+            conditions = { all = { { faction = "Horde" } } },
             id = "horde-extra-97539-level",
             kind = "note",
-            checkpointQuest = 97539,
-            text = "Reach level 36 before this visit.",
-            conditions = { all = { { faction = "Horde" } } },
-            complete = { level = { min = 36 } },
-            requiredLevel = 36,
+            requiredLevel = 30,
+            text = "Reach level 30 before this visit.",
         },
         {
             id = "horde-extra-97539-accept",
@@ -6079,23 +7217,25 @@ ns:RegisterGuide({
             dependsOn = { "horde-extra-97539-accept" },
         },
         {
+            complete = { quest = { id = 97539, state = "completed" } },
+            conditions = { all = { { faction = "Horde" }, { level = { min = 30 } } } },
+            dependsOn = { "horde-extra-97539-objective" },
             id = "horde-extra-97539-turnin",
             kind = "turnin",
-            text = "Turn in Silky Sutures to Doctor Gregory Victor.",
-            conditions = { all = { { faction = "Horde" }, { level = { min = 30 } } } },
+            requiredQuests = {},
             route = {
                 {
-                    mapID = 1417,
-                    x = 0.7340000000000001,
-                    y = 0.368,
                     label = "Doctor Gregory Victor",
+                    mapID = 1417,
                     offMapText = "Travel to Doctor Gregory Victor in Arathi Highlands.",
+                    x = 0.734,
+                    y = 0.368,
                 },
             },
-            complete = { quest = { id = 97539, state = "completed" } },
-            requiredQuests = {},
+            text = "Turn in Silky Sutures to Doctor Gregory Victor.",
+            useClientPin = true,
             useClientText = false,
-            dependsOn = { "horde-extra-97539-objective" },
+            useQuestNavigation = true,
         },
     },
 })

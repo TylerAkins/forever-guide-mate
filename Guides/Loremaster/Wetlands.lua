@@ -6,10 +6,20 @@ ns:RegisterGuide({
     id = "loremaster-wetlands",
     title = "Wetlands",
     category = "Loremaster Guides",
-    revision = 1,
+    revision = 2,
     routeMode = "ordered",
     loremasterExpanded = true,
     goals = {
+        {
+            complete = { level = { min = 20 } },
+            conditions = { all = { { faction = "Alliance" } } },
+            excludeWhen = { ["not"] = { all = { { faction = "Alliance" } } } },
+            id = "visit-entry-leveling-era-alliance-darkshore-part-2",
+            kind = "note",
+            requiredLevel = 20,
+            text = "Reach level 20 before the Darkshore visit.",
+            visitSourceGuide = "leveling-era-alliance-darkshore-part-2",
+        },
         {
             checkpointQuest = 98461,
             complete = { level = { min = 18 } },
@@ -27,13 +37,13 @@ ns:RegisterGuide({
         },
         {
             alternativeQuests = { 455 },
+            checkpointQuest = 468,
+            complete = { level = { min = 19 } },
+            conditions = { all = { { faction = "Alliance" } } },
             id = "alliance-extra-468-level",
             kind = "note",
-            checkpointQuest = 468,
-            text = "Reach level 21 before this visit.",
-            conditions = { all = { { faction = "Alliance" } } },
-            complete = { level = { min = 21 } },
-            requiredLevel = 21,
+            requiredLevel = 19,
+            text = "Reach level 19 before this visit.",
         },
         {
             alternativeQuests = { 455 },
@@ -70,6 +80,16 @@ ns:RegisterGuide({
             useClientText = false,
             sourceGuide = "leveling-era-alliance-darkshore-part-2",
             sourceActionID = "woven-accept-98461-unrequited-love",
+        },
+        {
+            complete = { level = { min = 24 } },
+            conditions = { all = { { faction = "Alliance" } } },
+            excludeWhen = { ["not"] = { all = { { faction = "Alliance" } } } },
+            id = "visit-entry-leveling-era-alliance-wetlands",
+            kind = "note",
+            requiredLevel = 24,
+            text = "Reach level 24 before the Wetlands visit.",
+            visitSourceGuide = "leveling-era-alliance-wetlands",
         },
         {
             checkpointQuest = 484,
@@ -229,13 +249,13 @@ ns:RegisterGuide({
                     y = 0.5967,
                 },
             },
+            sourceActionID = "turnin-288-the-third-fleet",
+            sourceGuide = "leveling-era-alliance-wetlands",
             sourceStep = 14,
             text = "Turn in The Third Fleet to First Mate Fitzsimmons.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-wetlands",
-            sourceActionID = "turnin-288-the-third-fleet",
         },
         {
             complete = { quest = { id = 470, state = "activeOrCompleted" } },
@@ -323,13 +343,13 @@ ns:RegisterGuide({
                     y = 0.5234,
                 },
             },
+            sourceActionID = "turnin-305-in-search-of-the-excavation-team",
+            sourceGuide = "leveling-era-alliance-wetlands",
             sourceStep = 21,
             text = "Turn in In Search of The Excavation Team to Merrin Rockweaver.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-wetlands",
-            sourceActionID = "turnin-305-in-search-of-the-excavation-team",
         },
         {
             complete = { quest = { id = 306, state = "activeOrCompleted" } },
@@ -411,13 +431,13 @@ ns:RegisterGuide({
                     y = 0.4043,
                 },
             },
+            sourceActionID = "turnin-463-the-greenwarden",
+            sourceGuide = "leveling-era-alliance-wetlands",
             sourceStep = 27,
             text = "Turn in The Greenwarden to Rethiel the Greenwarden.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-wetlands",
-            sourceActionID = "turnin-463-the-greenwarden",
         },
         {
             complete = { quest = { id = 276, state = "activeOrCompleted" } },
@@ -514,13 +534,13 @@ ns:RegisterGuide({
                     y = 0.4043,
                 },
             },
+            sourceActionID = "turnin-276-tramping-paws",
+            sourceGuide = "leveling-era-alliance-wetlands",
             sourceStep = 31,
             text = "Turn in Tramping Paws to Rethiel the Greenwarden.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-wetlands",
-            sourceActionID = "turnin-276-tramping-paws",
         },
         {
             complete = { quest = { id = 277, state = "activeOrCompleted" } },
@@ -590,37 +610,18 @@ ns:RegisterGuide({
             kind = "turnin",
             requiredQuests = {},
             route = { { label = "Sida", mapID = 1437, offMapText = "Travel to Sida in Wetlands.", x = 0.118, y = 0.5799 } },
+            sourceActionID = "turnin-470-digging-through-the-ooze",
+            sourceGuide = "leveling-era-alliance-wetlands",
             sourceStep = 34,
             text = "Turn in Digging Through the Ooze to Sida.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-wetlands",
-            sourceActionID = "turnin-470-digging-through-the-ooze",
         },
         {
             complete = { quest = { id = 306, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 21 } }, { race = { 1, 3, 4, 7, 95 } } } },
             dependsOn = { "alliance-leveling-era-alliance-wetlands-accept-306-in-search-of-the-excavation-team" },
-            id = "alliance-leveling-era-alliance-wetlands-turnin-306-in-search-of-the-excavation-team",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 305 } } },
-            route = {
-                {
-                    label = "Tarrel Rockweaver",
-                    mapID = 1437,
-                    offMapText = "Travel to Tarrel Rockweaver in Wetlands.",
-                    x = 0.115,
-                    y = 0.5214,
-                },
-            },
-            sourceStep = 35,
-            text = "Turn in In Search of The Excavation Team to Tarrel Rockweaver.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-wetlands",
-            sourceActionID = "turnin-306-in-search-of-the-excavation-team",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -639,6 +640,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-wetlands-turnin-306-in-search-of-the-excavation-team",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 305 } } },
+            route = {
+                {
+                    label = "Tarrel Rockweaver",
+                    mapID = 1437,
+                    offMapText = "Travel to Tarrel Rockweaver in Wetlands.",
+                    x = 0.115,
+                    y = 0.5214,
+                },
+            },
+            sourceActionID = "turnin-306-in-search-of-the-excavation-team",
+            sourceGuide = "leveling-era-alliance-wetlands",
+            sourceStep = 35,
+            text = "Turn in In Search of The Excavation Team to Tarrel Rockweaver.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 484, state = "completed" } },
@@ -653,13 +673,13 @@ ns:RegisterGuide({
             route = {
                 { label = "James Halloran", mapID = 1437, offMapText = "Travel to James Halloran in Wetlands.", x = 0.0851, y = 0.5571 },
             },
+            sourceActionID = "turnin-484-young-crocolisk-skins",
+            sourceGuide = "leveling-era-alliance-wetlands",
             sourceStep = 37,
             text = "Turn in Young Crocolisk Skins to James Halloran.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-wetlands",
-            sourceActionID = "turnin-484-young-crocolisk-skins",
         },
         {
             complete = { quest = { id = 469, state = "completed" } },
@@ -671,13 +691,13 @@ ns:RegisterGuide({
             route = {
                 { label = "James Halloran", mapID = 1437, offMapText = "Travel to James Halloran in Wetlands.", x = 0.0851, y = 0.5571 },
             },
+            sourceActionID = "turnin-469-daily-delivery",
+            sourceGuide = "leveling-era-alliance-wetlands",
             sourceStep = 37,
             text = "Turn in Daily Delivery to James Halloran.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-wetlands",
-            sourceActionID = "turnin-469-daily-delivery",
         },
         {
             complete = { quest = { id = 279, state = "completed" } },
@@ -693,13 +713,13 @@ ns:RegisterGuide({
             route = {
                 { label = "Karl Boran", mapID = 1437, offMapText = "Travel to Karl Boran in Wetlands.", x = 0.0831, y = 0.5853 },
             },
+            sourceActionID = "turnin-279-claws-from-the-deep",
+            sourceGuide = "leveling-era-alliance-wetlands",
             sourceStep = 38,
             text = "Turn in Claws from the Deep to Karl Boran.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-wetlands",
-            sourceActionID = "turnin-279-claws-from-the-deep",
         },
         {
             checkpointQuest = 98197,
@@ -740,12 +760,12 @@ ns:RegisterGuide({
             route = {
                 { label = "Tarrel Rockweaver", mapID = 1437, offMapText = "Travel to Tarrel Rockweaver.", x = 0.1147, y = 0.522 },
             },
+            sourceActionID = "woven-turnin-98461-unrequited-love",
+            sourceGuide = "leveling-era-alliance-wetlands",
             text = "Turn in Unrequited Love to Tarrel Rockweaver in Menethil Harbor.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-wetlands",
-            sourceActionID = "woven-turnin-98461-unrequited-love",
         },
         {
             complete = { quest = { id = 98197, state = "complete" } },
@@ -772,12 +792,22 @@ ns:RegisterGuide({
             kind = "turnin",
             requiredQuests = {},
             route = { { label = "Valstag Ironjaw", mapID = 1437, offMapText = "Travel to Valstag Ironjaw.", x = 0.1, y = 0.568 } },
+            sourceActionID = "woven-turnin-98197-spoils-of-war",
+            sourceGuide = "leveling-era-alliance-wetlands",
             text = "Turn in Spoils of War to Valstag Ironjaw in Menethil Keep.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-wetlands",
-            sourceActionID = "woven-turnin-98197-spoils-of-war",
+        },
+        {
+            complete = { level = { min = 27 } },
+            conditions = { all = { { faction = "Alliance" } } },
+            excludeWhen = { ["not"] = { all = { { faction = "Alliance" } } } },
+            id = "visit-entry-leveling-era-alliance-wetlands-part-2",
+            kind = "note",
+            requiredLevel = 27,
+            text = "Reach level 27 before the Wetlands visit.",
+            visitSourceGuide = "leveling-era-alliance-wetlands-part-2",
         },
         {
             checkpointQuest = 281,
@@ -971,32 +1001,34 @@ ns:RegisterGuide({
         },
         {
             alternativeQuests = { 455 },
+            complete = { quest = { id = 468, state = "completed" } },
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 19 } } } },
+            dependsOn = { "alliance-extra-468-objective" },
             id = "alliance-extra-468-turnin",
             kind = "turnin",
-            text = "Turn in Report to Mountaineer Rockgar to Mountaineer Rockgar.",
-            conditions = { all = { { faction = "Alliance" }, { level = { min = 19 } } } },
+            requiredQuests = {},
             route = {
                 {
-                    mapID = 1432,
-                    x = 0.254,
-                    y = 0.10400000000000001,
                     label = "Mountaineer Rockgar",
+                    mapID = 1432,
                     offMapText = "Travel to Mountaineer Rockgar in Loch Modan.",
+                    x = 0.254,
+                    y = 0.104,
                 },
             },
-            complete = { quest = { id = 468, state = "completed" } },
-            requiredQuests = {},
+            text = "Turn in Report to Mountaineer Rockgar to Mountaineer Rockgar.",
+            useClientPin = true,
             useClientText = false,
-            dependsOn = { "alliance-extra-468-objective" },
+            useQuestNavigation = true,
         },
         {
+            checkpointQuest = 455,
+            complete = { level = { min = 19 } },
+            conditions = { all = { { faction = "Alliance" } } },
             id = "alliance-extra-455-level",
             kind = "note",
-            checkpointQuest = 455,
-            text = "Reach level 21 before this visit.",
-            conditions = { all = { { faction = "Alliance" } } },
-            complete = { level = { min = 21 } },
-            requiredLevel = 21,
+            requiredLevel = 19,
+            text = "Reach level 19 before this visit.",
         },
         {
             id = "alliance-extra-455-accept",
@@ -1031,27 +1063,25 @@ ns:RegisterGuide({
             dependsOn = { "alliance-extra-455-accept" },
         },
         {
+            complete = { quest = { id = 455, state = "completed" } },
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 19 } } } },
+            dependsOn = { "alliance-extra-455-objective" },
             id = "alliance-extra-455-turnin",
             kind = "turnin",
-            text = "Turn in The Algaz Gauntlet to Valstag Ironjaw.",
-            conditions = { all = { { faction = "Alliance" }, { level = { min = 19 } } } },
-            route = {
-                { mapID = 1437, x = 0.1, y = 0.568, label = "Valstag Ironjaw", offMapText = "Travel to Valstag Ironjaw in Wetlands." },
-            },
-            complete = { quest = { id = 455, state = "completed" } },
             requiredQuests = {},
+            route = {
+                { label = "Valstag Ironjaw", mapID = 1437, offMapText = "Travel to Valstag Ironjaw in Wetlands.", x = 0.1, y = 0.568 },
+            },
+            text = "Turn in The Algaz Gauntlet to Valstag Ironjaw.",
+            useClientPin = true,
             useClientText = false,
-            dependsOn = { "alliance-extra-455-objective" },
+            useQuestNavigation = true,
         },
         {
             alternativeQuests = { 464 },
-            id = "alliance-extra-473-level",
-            kind = "note",
             checkpointQuest = 473,
-            text = "Reach level 28 before this visit.",
+            complete = { level = { min = 23 } },
             conditions = { all = { { faction = "Alliance" } } },
-            complete = { level = { min = 28 } },
-            requiredLevel = 28,
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -1070,6 +1100,10 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-extra-473-level",
+            kind = "note",
+            requiredLevel = 23,
+            text = "Reach level 23 before this visit.",
         },
         {
             alternativeQuests = { 464 },
@@ -1079,16 +1113,38 @@ ns:RegisterGuide({
             excludeWhen = {
                 any = {
                     {
-                        ["not"] = {
-                            any = {
-                                { quest = { id = 473, state = "activeOrCompleted" } },
-                                {
+                        any = {
+                            {
+                                ["not"] = {
                                     any = {
-                                        { quest = { id = 473, state = "completed" } },
+                                        { quest = { id = 473, state = "activeOrCompleted" } },
                                         {
-                                            all = {
-                                                { faction = "Alliance" },
-                                                { any = { { any = { { quest = { id = 455, state = "completed" } }, { all = { { faction = "Alliance" } } } } } } },
+                                            any = {
+                                                { quest = { id = 473, state = "completed" } },
+                                                {
+                                                    all = {
+                                                        { faction = "Alliance" },
+                                                        { any = { { any = { { quest = { id = 455, state = "completed" } }, { all = { { faction = "Alliance" } } } } } } },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                            {
+                                ["not"] = {
+                                    any = {
+                                        { quest = { id = 473, state = "activeOrCompleted" } },
+                                        {
+                                            any = {
+                                                { quest = { id = 473, state = "completed" } },
+                                                {
+                                                    all = {
+                                                        { faction = "Alliance" },
+                                                        { any = { { any = { { quest = { id = 455, state = "completed" } }, { all = { { faction = "Alliance" } } } } } } },
+                                                    },
+                                                },
                                             },
                                         },
                                     },
@@ -1102,11 +1158,21 @@ ns:RegisterGuide({
                                 { quest = { id = 473, state = "activeOrCompleted" } },
                                 {
                                     any = {
-                                        { quest = { id = 473, state = "completed" } },
+                                        { quest = { id = 473, state = "activeOrCompleted" } },
                                         {
                                             all = {
                                                 { faction = "Alliance" },
-                                                { any = { { any = { { quest = { id = 455, state = "completed" } }, { all = { { faction = "Alliance" } } } } } } },
+                                                { race = { 1, 3, 4, 7 } },
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 455, state = "activeOrCompleted" } },
+                                                                { all = { { faction = "Alliance" }, { race = { 1, 3, 4, 7 } } } },
+                                                            },
+                                                        },
+                                                    },
+                                                },
                                             },
                                         },
                                     },
@@ -1133,16 +1199,38 @@ ns:RegisterGuide({
             excludeWhen = {
                 any = {
                     {
-                        ["not"] = {
-                            any = {
-                                { quest = { id = 473, state = "activeOrCompleted" } },
-                                {
+                        any = {
+                            {
+                                ["not"] = {
                                     any = {
-                                        { quest = { id = 473, state = "completed" } },
+                                        { quest = { id = 473, state = "activeOrCompleted" } },
                                         {
-                                            all = {
-                                                { faction = "Alliance" },
-                                                { any = { { any = { { quest = { id = 455, state = "completed" } }, { all = { { faction = "Alliance" } } } } } } },
+                                            any = {
+                                                { quest = { id = 473, state = "completed" } },
+                                                {
+                                                    all = {
+                                                        { faction = "Alliance" },
+                                                        { any = { { any = { { quest = { id = 455, state = "completed" } }, { all = { { faction = "Alliance" } } } } } } },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                            {
+                                ["not"] = {
+                                    any = {
+                                        { quest = { id = 473, state = "activeOrCompleted" } },
+                                        {
+                                            any = {
+                                                { quest = { id = 473, state = "completed" } },
+                                                {
+                                                    all = {
+                                                        { faction = "Alliance" },
+                                                        { any = { { any = { { quest = { id = 455, state = "completed" } }, { all = { { faction = "Alliance" } } } } } } },
+                                                    },
+                                                },
                                             },
                                         },
                                     },
@@ -1156,11 +1244,21 @@ ns:RegisterGuide({
                                 { quest = { id = 473, state = "activeOrCompleted" } },
                                 {
                                     any = {
-                                        { quest = { id = 473, state = "completed" } },
+                                        { quest = { id = 473, state = "activeOrCompleted" } },
                                         {
                                             all = {
                                                 { faction = "Alliance" },
-                                                { any = { { any = { { quest = { id = 455, state = "completed" } }, { all = { { faction = "Alliance" } } } } } } },
+                                                { race = { 1, 3, 4, 7 } },
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 455, state = "activeOrCompleted" } },
+                                                                { all = { { faction = "Alliance" }, { race = { 1, 3, 4, 7 } } } },
+                                                            },
+                                                        },
+                                                    },
+                                                },
                                             },
                                         },
                                     },
@@ -1186,16 +1284,38 @@ ns:RegisterGuide({
             excludeWhen = {
                 any = {
                     {
-                        ["not"] = {
-                            any = {
-                                { quest = { id = 473, state = "activeOrCompleted" } },
-                                {
+                        any = {
+                            {
+                                ["not"] = {
                                     any = {
-                                        { quest = { id = 473, state = "completed" } },
+                                        { quest = { id = 473, state = "activeOrCompleted" } },
                                         {
-                                            all = {
-                                                { faction = "Alliance" },
-                                                { any = { { any = { { quest = { id = 455, state = "completed" } }, { all = { { faction = "Alliance" } } } } } } },
+                                            any = {
+                                                { quest = { id = 473, state = "completed" } },
+                                                {
+                                                    all = {
+                                                        { faction = "Alliance" },
+                                                        { any = { { any = { { quest = { id = 455, state = "completed" } }, { all = { { faction = "Alliance" } } } } } } },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                            {
+                                ["not"] = {
+                                    any = {
+                                        { quest = { id = 473, state = "activeOrCompleted" } },
+                                        {
+                                            any = {
+                                                { quest = { id = 473, state = "completed" } },
+                                                {
+                                                    all = {
+                                                        { faction = "Alliance" },
+                                                        { any = { { any = { { quest = { id = 455, state = "completed" } }, { all = { { faction = "Alliance" } } } } } } },
+                                                    },
+                                                },
                                             },
                                         },
                                     },
@@ -1209,11 +1329,21 @@ ns:RegisterGuide({
                                 { quest = { id = 473, state = "activeOrCompleted" } },
                                 {
                                     any = {
-                                        { quest = { id = 473, state = "completed" } },
+                                        { quest = { id = 473, state = "activeOrCompleted" } },
                                         {
                                             all = {
                                                 { faction = "Alliance" },
-                                                { any = { { any = { { quest = { id = 455, state = "completed" } }, { all = { { faction = "Alliance" } } } } } } },
+                                                { race = { 1, 3, 4, 7 } },
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 455, state = "activeOrCompleted" } },
+                                                                { all = { { faction = "Alliance" }, { race = { 1, 3, 4, 7 } } } },
+                                                            },
+                                                        },
+                                                    },
+                                                },
                                             },
                                         },
                                     },
@@ -1267,19 +1397,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 281, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 20 } }, { race = { 1, 3, 4, 7, 95 } } } },
             dependsOn = { "alliance-leveling-era-alliance-wetlands-part-2-accept-281-reclaiming-goods" },
-            id = "alliance-leveling-era-alliance-wetlands-part-2-turnin-281-reclaiming-goods",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 279 } } },
-            route = {
-                { label = "Reclaiming Goods", mapID = 1437, offMapText = "Travel to Reclaiming Goods.", x = 0.1351, y = 0.4138 },
-            },
-            sourceStep = 8,
-            text = "Turn in Reclaiming Goods.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-wetlands-part-2",
-            sourceActionID = "turnin-281-reclaiming-goods",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -1298,6 +1415,19 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-wetlands-part-2-turnin-281-reclaiming-goods",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 279 } } },
+            route = {
+                { label = "Reclaiming Goods", mapID = 1437, offMapText = "Travel to Reclaiming Goods.", x = 0.1351, y = 0.4138 },
+            },
+            sourceActionID = "turnin-281-reclaiming-goods",
+            sourceGuide = "leveling-era-alliance-wetlands-part-2",
+            sourceStep = 8,
+            text = "Turn in Reclaiming Goods.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 284, state = "activeOrCompleted" } },
@@ -1352,19 +1482,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 284, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 20 } }, { race = { 1, 3, 4, 7, 95 } } } },
             dependsOn = { "alliance-leveling-era-alliance-wetlands-part-2-accept-284-the-search-continues" },
-            id = "alliance-leveling-era-alliance-wetlands-part-2-turnin-284-the-search-continues",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 281 } } },
-            route = {
-                { label = "The Search Continues", mapID = 1437, offMapText = "Travel to The Search Continues.", x = 0.1361, y = 0.3821 },
-            },
-            sourceStep = 9,
-            text = "Turn in The Search Continues.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-wetlands-part-2",
-            sourceActionID = "turnin-284-the-search-continues",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -1397,6 +1514,19 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-wetlands-part-2-turnin-284-the-search-continues",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 281 } } },
+            route = {
+                { label = "The Search Continues", mapID = 1437, offMapText = "Travel to The Search Continues.", x = 0.1361, y = 0.3821 },
+            },
+            sourceActionID = "turnin-284-the-search-continues",
+            sourceGuide = "leveling-era-alliance-wetlands-part-2",
+            sourceStep = 9,
+            text = "Turn in The Search Continues.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 285, state = "activeOrCompleted" } },
@@ -1465,19 +1595,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 285, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 20 } }, { race = { 1, 3, 4, 7, 95 } } } },
             dependsOn = { "alliance-leveling-era-alliance-wetlands-part-2-accept-285-search-more-hovels" },
-            id = "alliance-leveling-era-alliance-wetlands-part-2-turnin-285-search-more-hovels",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 284 } } },
-            route = {
-                { label = "Search More Hovels", mapID = 1437, offMapText = "Travel to Search More Hovels.", x = 0.1395, y = 0.3481 },
-            },
-            sourceStep = 10,
-            text = "Turn in Search More Hovels.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-wetlands-part-2",
-            sourceActionID = "turnin-285-search-more-hovels",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -1524,6 +1641,19 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-wetlands-part-2-turnin-285-search-more-hovels",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 284 } } },
+            route = {
+                { label = "Search More Hovels", mapID = 1437, offMapText = "Travel to Search More Hovels.", x = 0.1395, y = 0.3481 },
+            },
+            sourceActionID = "turnin-285-search-more-hovels",
+            sourceGuide = "leveling-era-alliance-wetlands-part-2",
+            sourceStep = 10,
+            text = "Turn in Search More Hovels.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 286, state = "activeOrCompleted" } },
@@ -1891,13 +2021,13 @@ ns:RegisterGuide({
                     y = 0.5239,
                 },
             },
+            sourceActionID = "turnin-299-uncovering-the-past",
+            sourceGuide = "leveling-era-alliance-wetlands-part-2",
             sourceStep = 25,
             text = "Turn in Uncovering the Past to Prospector Whelgar.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-wetlands-part-2",
-            sourceActionID = "turnin-299-uncovering-the-past",
         },
         {
             complete = { questObjective = { count = 8, id = 464, index = 1, text = "Dragonmaw Raider" } },
@@ -1921,25 +2051,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 277, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 20 } }, { race = { 1, 3, 4, 7, 95 } } } },
             dependsOn = { "alliance-leveling-era-alliance-wetlands-part-2-objective-277-1-mosshide-brute" },
-            id = "alliance-leveling-era-alliance-wetlands-part-2-turnin-277-fire-taboo",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 276 } } },
-            route = {
-                {
-                    label = "Rethiel the Greenwarden",
-                    mapID = 1437,
-                    offMapText = "Travel to Rethiel the Greenwarden in Wetlands.",
-                    x = 0.5637,
-                    y = 0.404,
-                },
-            },
-            sourceStep = 27,
-            text = "Turn in Fire Taboo to Rethiel the Greenwarden.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-wetlands-part-2",
-            sourceActionID = "turnin-277-fire-taboo",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -1958,6 +2069,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-wetlands-part-2-turnin-277-fire-taboo",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 276 } } },
+            route = {
+                {
+                    label = "Rethiel the Greenwarden",
+                    mapID = 1437,
+                    offMapText = "Travel to Rethiel the Greenwarden in Wetlands.",
+                    x = 0.5637,
+                    y = 0.404,
+                },
+            },
+            sourceActionID = "turnin-277-fire-taboo",
+            sourceGuide = "leveling-era-alliance-wetlands-part-2",
+            sourceStep = 27,
+            text = "Turn in Fire Taboo to Rethiel the Greenwarden.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 275, state = "activeOrCompleted" } },
@@ -2023,25 +2153,6 @@ ns:RegisterGuide({
                 "alliance-leveling-era-alliance-wetlands-part-2-objective-289-2-cursed-marine",
                 "alliance-leveling-era-alliance-wetlands-part-2-objective-289-1-cursed-sailor",
             },
-            id = "alliance-leveling-era-alliance-wetlands-part-2-turnin-289-the-cursed-crew",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 288 } } },
-            route = {
-                {
-                    label = "First Mate Fitzsimmons",
-                    mapID = 1437,
-                    offMapText = "Travel to First Mate Fitzsimmons in Wetlands.",
-                    x = 0.1089,
-                    y = 0.5967,
-                },
-            },
-            sourceStep = 30,
-            text = "Turn in The Cursed Crew to First Mate Fitzsimmons.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-wetlands-part-2",
-            sourceActionID = "turnin-289-the-cursed-crew",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -2060,6 +2171,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-wetlands-part-2-turnin-289-the-cursed-crew",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 288 } } },
+            route = {
+                {
+                    label = "First Mate Fitzsimmons",
+                    mapID = 1437,
+                    offMapText = "Travel to First Mate Fitzsimmons in Wetlands.",
+                    x = 0.1089,
+                    y = 0.5967,
+                },
+            },
+            sourceActionID = "turnin-289-the-cursed-crew",
+            sourceGuide = "leveling-era-alliance-wetlands-part-2",
+            sourceStep = 30,
+            text = "Turn in The Cursed Crew to First Mate Fitzsimmons.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 290, state = "activeOrCompleted" } },
@@ -2120,19 +2250,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 286, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 20 } }, { race = { 1, 3, 4, 7, 95 } } } },
             dependsOn = { "alliance-leveling-era-alliance-wetlands-part-2-accept-286-return-the-statuette" },
-            id = "alliance-leveling-era-alliance-wetlands-part-2-turnin-286-return-the-statuette",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 285 } } },
-            route = {
-                { label = "Karl Boran", mapID = 1437, offMapText = "Travel to Karl Boran in Wetlands.", x = 0.0831, y = 0.5854 },
-            },
-            sourceStep = 39,
-            text = "Turn in Return the Statuette to Karl Boran.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-wetlands-part-2",
-            sourceActionID = "turnin-286-return-the-statuette",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -2193,6 +2310,19 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-wetlands-part-2-turnin-286-return-the-statuette",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 285 } } },
+            route = {
+                { label = "Karl Boran", mapID = 1437, offMapText = "Travel to Karl Boran in Wetlands.", x = 0.0831, y = 0.5854 },
+            },
+            sourceActionID = "turnin-286-return-the-statuette",
+            sourceGuide = "leveling-era-alliance-wetlands-part-2",
+            sourceStep = 39,
+            text = "Turn in Return the Statuette to Karl Boran.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 471, state = "completed" } },
@@ -2201,19 +2331,6 @@ ns:RegisterGuide({
                 "alliance-leveling-era-alliance-wetlands-part-2-accept-471-apprentice-s-duties",
                 "alliance-leveling-era-alliance-wetlands-part-2-objective-471-1-giant-wetlands-crocolisk",
             },
-            id = "alliance-leveling-era-alliance-wetlands-part-2-turnin-471-apprentice-s-duties",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 484 } } },
-            route = {
-                { label = "James Halloran", mapID = 1437, offMapText = "Travel to James Halloran in Wetlands.", x = 0.0851, y = 0.5571 },
-            },
-            sourceStep = 40,
-            text = "Turn in Apprentice's Duties to James Halloran.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-wetlands-part-2",
-            sourceActionID = "turnin-471-apprentice-s-duties",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -2232,6 +2349,19 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-wetlands-part-2-turnin-471-apprentice-s-duties",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 484 } } },
+            route = {
+                { label = "James Halloran", mapID = 1437, offMapText = "Travel to James Halloran in Wetlands.", x = 0.0851, y = 0.5571 },
+            },
+            sourceActionID = "turnin-471-apprentice-s-duties",
+            sourceGuide = "leveling-era-alliance-wetlands-part-2",
+            sourceStep = 40,
+            text = "Turn in Apprentice's Duties to James Halloran.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 464, state = "completed" } },
@@ -2252,13 +2382,13 @@ ns:RegisterGuide({
                     y = 0.5749,
                 },
             },
+            sourceActionID = "turnin-464-war-banners",
+            sourceGuide = "leveling-era-alliance-wetlands-part-2",
             sourceStep = 41,
             text = "Turn in War Banners to Captain Stoutfist.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-wetlands-part-2",
-            sourceActionID = "turnin-464-war-banners",
         },
         {
             complete = { quest = { id = 465, state = "activeOrCompleted" } },
@@ -2358,19 +2488,6 @@ ns:RegisterGuide({
                 "alliance-leveling-era-alliance-wetlands-part-2-accept-290-lifting-the-curse",
                 "alliance-leveling-era-alliance-wetlands-part-2-objective-290-1-captain-halyndor",
             },
-            id = "alliance-leveling-era-alliance-wetlands-part-2-turnin-290-lifting-the-curse",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 289 } } },
-            route = {
-                { label = "Lifting the Curse", mapID = 1437, offMapText = "Travel to Lifting the Curse.", x = 0.1437, y = 0.2402 },
-            },
-            sourceStep = 43,
-            text = "Turn in Lifting the Curse.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-wetlands-part-2",
-            sourceActionID = "turnin-290-lifting-the-curse",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -2403,6 +2520,19 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-wetlands-part-2-turnin-290-lifting-the-curse",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 289 } } },
+            route = {
+                { label = "Lifting the Curse", mapID = 1437, offMapText = "Travel to Lifting the Curse.", x = 0.1437, y = 0.2402 },
+            },
+            sourceActionID = "turnin-290-lifting-the-curse",
+            sourceGuide = "leveling-era-alliance-wetlands-part-2",
+            sourceStep = 43,
+            text = "Turn in Lifting the Curse.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 292, state = "activeOrCompleted" } },
@@ -2519,19 +2649,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 465, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 23 } }, { race = { 1, 3, 4, 7, 95 } } } },
             dependsOn = { "alliance-leveling-era-alliance-wetlands-part-2-accept-465-nek-rosh-s-gambit" },
-            id = "alliance-leveling-era-alliance-wetlands-part-2-turnin-465-nek-rosh-s-gambit",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 464 } } },
-            route = {
-                { label = "Nek'rosh's Gambit", mapID = 1437, offMapText = "Travel to Nek'rosh's Gambit.", x = 0.474, y = 0.469 },
-            },
-            sourceStep = 45,
-            text = "Turn in Nek'rosh's Gambit.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-wetlands-part-2",
-            sourceActionID = "turnin-465-nek-rosh-s-gambit",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -2550,6 +2667,19 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-wetlands-part-2-turnin-465-nek-rosh-s-gambit",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 464 } } },
+            route = {
+                { label = "Nek'rosh's Gambit", mapID = 1437, offMapText = "Travel to Nek'rosh's Gambit.", x = 0.474, y = 0.469 },
+            },
+            sourceActionID = "turnin-465-nek-rosh-s-gambit",
+            sourceGuide = "leveling-era-alliance-wetlands-part-2",
+            sourceStep = 45,
+            text = "Turn in Nek'rosh's Gambit.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { questObjective = { count = 12, id = 275, index = 1, text = "Fen Creeper" } },
@@ -2607,25 +2737,6 @@ ns:RegisterGuide({
                 "alliance-leveling-era-alliance-wetlands-part-2-objective-275-1-fen-creeper",
                 "alliance-leveling-era-alliance-wetlands-part-2-objective-275-1-fen-creeper-2",
             },
-            id = "alliance-leveling-era-alliance-wetlands-part-2-turnin-275-blisters-on-the-land",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 277 } } },
-            route = {
-                {
-                    label = "Rethiel the Greenwarden",
-                    mapID = 1437,
-                    offMapText = "Travel to Rethiel the Greenwarden in Wetlands.",
-                    x = 0.5637,
-                    y = 0.404,
-                },
-            },
-            sourceStep = 48,
-            text = "Turn in Blisters on The Land to Rethiel the Greenwarden.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-wetlands-part-2",
-            sourceActionID = "turnin-275-blisters-on-the-land",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -2658,6 +2769,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-wetlands-part-2-turnin-275-blisters-on-the-land",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 277 } } },
+            route = {
+                {
+                    label = "Rethiel the Greenwarden",
+                    mapID = 1437,
+                    offMapText = "Travel to Rethiel the Greenwarden in Wetlands.",
+                    x = 0.5637,
+                    y = 0.404,
+                },
+            },
+            sourceActionID = "turnin-275-blisters-on-the-land",
+            sourceGuide = "leveling-era-alliance-wetlands-part-2",
+            sourceStep = 48,
+            text = "Turn in Blisters on The Land to Rethiel the Greenwarden.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             checkpointQuest = 631,
@@ -2701,13 +2831,13 @@ ns:RegisterGuide({
             route = {
                 { label = "The Thandol Span", mapID = 1437, offMapText = "Travel to The Thandol Span.", x = 0.5136, y = 0.0811 },
             },
+            sourceActionID = "turnin-631-the-thandol-span",
+            sourceGuide = "leveling-era-alliance-wetlands-part-2",
             sourceStep = 52,
             text = "Turn in The Thandol Span.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-wetlands-part-2",
-            sourceActionID = "turnin-631-the-thandol-span",
         },
         {
             complete = { quest = { id = 632, state = "activeOrCompleted" } },
@@ -2748,19 +2878,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 632, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 28 } }, { race = { 1, 3, 4, 7, 95 } } } },
             dependsOn = { "alliance-leveling-era-alliance-wetlands-part-2-accept-632-the-thandol-span" },
-            id = "alliance-leveling-era-alliance-wetlands-part-2-turnin-632-the-thandol-span",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 631 } } },
-            route = {
-                { label = "Rhag Garmason", mapID = 1437, offMapText = "Travel to Rhag Garmason in Wetlands.", x = 0.4992, y = 0.1822 },
-            },
-            sourceStep = 53,
-            text = "Turn in The Thandol Span to Rhag Garmason.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-wetlands-part-2",
-            sourceActionID = "turnin-632-the-thandol-span",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -2779,6 +2896,19 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-wetlands-part-2-turnin-632-the-thandol-span",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 631 } } },
+            route = {
+                { label = "Rhag Garmason", mapID = 1437, offMapText = "Travel to Rhag Garmason in Wetlands.", x = 0.4992, y = 0.1822 },
+            },
+            sourceActionID = "turnin-632-the-thandol-span",
+            sourceGuide = "leveling-era-alliance-wetlands-part-2",
+            sourceStep = 53,
+            text = "Turn in The Thandol Span to Rhag Garmason.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 633, state = "activeOrCompleted" } },
@@ -2882,19 +3012,6 @@ ns:RegisterGuide({
                 "alliance-leveling-era-alliance-wetlands-part-2-accept-633-the-thandol-span",
                 "alliance-leveling-era-alliance-wetlands-part-2-objective-633-quest-work",
             },
-            id = "alliance-leveling-era-alliance-wetlands-part-2-turnin-633-the-thandol-span",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 632 } } },
-            route = {
-                { label = "Rhag Garmason", mapID = 1437, offMapText = "Travel to Rhag Garmason in Wetlands.", x = 0.4992, y = 0.1822 },
-            },
-            sourceStep = 58,
-            text = "Turn in The Thandol Span to Rhag Garmason.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-wetlands-part-2",
-            sourceActionID = "turnin-633-the-thandol-span",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -2927,6 +3044,19 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-wetlands-part-2-turnin-633-the-thandol-span",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 632 } } },
+            route = {
+                { label = "Rhag Garmason", mapID = 1437, offMapText = "Travel to Rhag Garmason in Wetlands.", x = 0.4992, y = 0.1822 },
+            },
+            sourceActionID = "turnin-633-the-thandol-span",
+            sourceGuide = "leveling-era-alliance-wetlands-part-2",
+            sourceStep = 58,
+            text = "Turn in The Thandol Span to Rhag Garmason.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 634, state = "activeOrCompleted" } },
@@ -2995,25 +3125,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 634, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 28 } }, { race = { 1, 3, 4, 7, 95 } } } },
             dependsOn = { "alliance-leveling-era-alliance-wetlands-part-2-accept-634-plea-to-the-alliance" },
-            id = "alliance-leveling-era-alliance-wetlands-part-2-turnin-634-plea-to-the-alliance",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 633 } } },
-            route = {
-                {
-                    label = "Captain Nials",
-                    mapID = 1417,
-                    offMapText = "Travel to Captain Nials in Arathi Highlands.",
-                    x = 0.4583,
-                    y = 0.4755,
-                },
-            },
-            sourceStep = 59,
-            text = "Turn in Plea To The Alliance to Captain Nials.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-wetlands-part-2",
-            sourceActionID = "turnin-634-plea-to-the-alliance",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -3060,30 +3171,30 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-wetlands-part-2-turnin-634-plea-to-the-alliance",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 633 } } },
+            route = {
+                {
+                    label = "Captain Nials",
+                    mapID = 1417,
+                    offMapText = "Travel to Captain Nials in Arathi Highlands.",
+                    x = 0.4583,
+                    y = 0.4755,
+                },
+            },
+            sourceActionID = "turnin-634-plea-to-the-alliance",
+            sourceGuide = "leveling-era-alliance-wetlands-part-2",
+            sourceStep = 59,
+            text = "Turn in Plea To The Alliance to Captain Nials.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 292, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 22 } }, { race = { 1, 3, 4, 7, 95 } } } },
             dependsOn = { "alliance-leveling-era-alliance-wetlands-part-2-accept-292-the-eye-of-paleth" },
-            id = "alliance-leveling-era-alliance-wetlands-part-2-turnin-292-the-eye-of-paleth",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 290 } } },
-            route = {
-                {
-                    label = "Glorin Steelbrow",
-                    mapID = 1437,
-                    offMapText = "Travel to Glorin Steelbrow in Wetlands.",
-                    x = 0.1058,
-                    y = 0.6059,
-                },
-            },
-            sourceStep = 64,
-            text = "Turn in The Eye of Paleth to Glorin Steelbrow.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-wetlands-part-2",
-            sourceActionID = "turnin-292-the-eye-of-paleth",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -3130,6 +3241,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-wetlands-part-2-turnin-292-the-eye-of-paleth",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 290 } } },
+            route = {
+                {
+                    label = "Glorin Steelbrow",
+                    mapID = 1437,
+                    offMapText = "Travel to Glorin Steelbrow in Wetlands.",
+                    x = 0.1058,
+                    y = 0.6059,
+                },
+            },
+            sourceActionID = "turnin-292-the-eye-of-paleth",
+            sourceGuide = "leveling-era-alliance-wetlands-part-2",
+            sourceStep = 64,
+            text = "Turn in The Eye of Paleth to Glorin Steelbrow.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 293, state = "activeOrCompleted" } },
@@ -3215,6 +3345,16 @@ ns:RegisterGuide({
             },
         },
         {
+            complete = { level = { min = 30 } },
+            conditions = { all = { { faction = "Alliance" } } },
+            excludeWhen = { ["not"] = { all = { { faction = "Alliance" } } } },
+            id = "visit-entry-leveling-era-alliance-duskwood-and-stranglethorn-vale",
+            kind = "note",
+            requiredLevel = 30,
+            text = "Reach level 30 before the Duskwood & Stranglethorn Vale visit.",
+            visitSourceGuide = "leveling-era-alliance-duskwood-and-stranglethorn-vale",
+        },
+        {
             checkpointQuest = 293,
             complete = { level = { min = 22 } },
             conditions = { all = { { faction = "Alliance" }, { race = { 1, 3, 4, 7, 95 } } } },
@@ -3290,13 +3430,13 @@ ns:RegisterGuide({
             },
         },
         {
+            checkpointQuest = 303,
+            complete = { level = { min = 25 } },
+            conditions = { all = { { faction = "Alliance" } } },
             id = "alliance-extra-303-level",
             kind = "note",
-            checkpointQuest = 303,
-            text = "Reach level 30 before this visit.",
-            conditions = { all = { { faction = "Alliance" } } },
-            complete = { level = { min = 30 } },
-            requiredLevel = 30,
+            requiredLevel = 25,
+            text = "Reach level 25 before this visit.",
         },
         {
             id = "alliance-extra-303-accept",
@@ -3325,26 +3465,24 @@ ns:RegisterGuide({
             dependsOn = { "alliance-extra-303-accept" },
         },
         {
+            complete = { quest = { id = 303, state = "completed" } },
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 25 } } } },
+            dependsOn = { "alliance-extra-303-objective" },
             id = "alliance-extra-303-turnin",
             kind = "turnin",
-            text = "Turn in The Dark Iron War to Motley Garmason.",
-            conditions = { all = { { faction = "Alliance" }, { level = { min = 25 } } } },
-            route = {
-                { mapID = 1437, x = 0.496, y = 0.182, label = "Motley Garmason", offMapText = "Travel to Motley Garmason in Wetlands." },
-            },
-            complete = { quest = { id = 303, state = "completed" } },
             requiredQuests = {},
+            route = {
+                { label = "Motley Garmason", mapID = 1437, offMapText = "Travel to Motley Garmason in Wetlands.", x = 0.496, y = 0.182 },
+            },
+            text = "Turn in The Dark Iron War to Motley Garmason.",
+            useClientPin = true,
             useClientText = false,
-            dependsOn = { "alliance-extra-303-objective" },
+            useQuestNavigation = true,
         },
         {
-            id = "alliance-extra-474-level",
-            kind = "note",
             checkpointQuest = 474,
-            text = "Reach level 32 before this visit.",
+            complete = { level = { min = 23 } },
             conditions = { all = { { faction = "Alliance" } } },
-            complete = { level = { min = 32 } },
-            requiredLevel = 32,
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -3377,6 +3515,10 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-extra-474-level",
+            kind = "note",
+            requiredLevel = 23,
+            text = "Reach level 23 before this visit.",
         },
         {
             complete = { quest = { id = 474, state = "activeOrCompleted" } },
@@ -3385,24 +3527,60 @@ ns:RegisterGuide({
             excludeWhen = {
                 any = {
                     {
-                        ["not"] = {
-                            any = {
-                                { quest = { id = 474, state = "activeOrCompleted" } },
-                                {
+                        any = {
+                            {
+                                ["not"] = {
                                     any = {
-                                        { quest = { id = 474, state = "completed" } },
+                                        { quest = { id = 474, state = "activeOrCompleted" } },
                                         {
-                                            all = {
-                                                { faction = "Alliance" },
+                                            any = {
+                                                { quest = { id = 474, state = "completed" } },
                                                 {
-                                                    any = {
+                                                    all = {
+                                                        { faction = "Alliance" },
                                                         {
                                                             any = {
-                                                                { quest = { id = 465, state = "completed" } },
                                                                 {
-                                                                    all = {
-                                                                        { faction = "Alliance" },
-                                                                        { any = { { any = { { quest = { id = 464, state = "completed" } }, { all = { { faction = "Alliance" } } } } } } },
+                                                                    any = {
+                                                                        { quest = { id = 465, state = "completed" } },
+                                                                        {
+                                                                            all = {
+                                                                                { faction = "Alliance" },
+                                                                                { any = { { any = { { quest = { id = 464, state = "completed" } }, { all = { { faction = "Alliance" } } } } } } },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                            {
+                                ["not"] = {
+                                    any = {
+                                        { quest = { id = 474, state = "activeOrCompleted" } },
+                                        {
+                                            any = {
+                                                { quest = { id = 474, state = "completed" } },
+                                                {
+                                                    all = {
+                                                        { faction = "Alliance" },
+                                                        {
+                                                            any = {
+                                                                {
+                                                                    any = {
+                                                                        { quest = { id = 465, state = "completed" } },
+                                                                        {
+                                                                            all = {
+                                                                                { faction = "Alliance" },
+                                                                                { any = { { any = { { quest = { id = 464, state = "completed" } }, { all = { { faction = "Alliance" } } } } } } },
+                                                                            },
+                                                                        },
                                                                     },
                                                                 },
                                                             },
@@ -3422,19 +3600,30 @@ ns:RegisterGuide({
                                 { quest = { id = 474, state = "activeOrCompleted" } },
                                 {
                                     any = {
-                                        { quest = { id = 474, state = "completed" } },
+                                        { quest = { id = 474, state = "activeOrCompleted" } },
                                         {
                                             all = {
                                                 { faction = "Alliance" },
+                                                { race = { 1, 3, 4, 7 } },
                                                 {
                                                     any = {
                                                         {
                                                             any = {
-                                                                { quest = { id = 465, state = "completed" } },
+                                                                { quest = { id = 465, state = "activeOrCompleted" } },
                                                                 {
                                                                     all = {
                                                                         { faction = "Alliance" },
-                                                                        { any = { { any = { { quest = { id = 464, state = "completed" } }, { all = { { faction = "Alliance" } } } } } } },
+                                                                        { race = { 1, 3, 4, 7 } },
+                                                                        {
+                                                                            any = {
+                                                                                {
+                                                                                    any = {
+                                                                                        { quest = { id = 464, state = "activeOrCompleted" } },
+                                                                                        { all = { { faction = "Alliance" }, { race = { 1, 3, 4, 7 } } } },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
                                                                     },
                                                                 },
                                                             },
@@ -3472,24 +3661,60 @@ ns:RegisterGuide({
             excludeWhen = {
                 any = {
                     {
-                        ["not"] = {
-                            any = {
-                                { quest = { id = 474, state = "activeOrCompleted" } },
-                                {
+                        any = {
+                            {
+                                ["not"] = {
                                     any = {
-                                        { quest = { id = 474, state = "completed" } },
+                                        { quest = { id = 474, state = "activeOrCompleted" } },
                                         {
-                                            all = {
-                                                { faction = "Alliance" },
+                                            any = {
+                                                { quest = { id = 474, state = "completed" } },
                                                 {
-                                                    any = {
+                                                    all = {
+                                                        { faction = "Alliance" },
                                                         {
                                                             any = {
-                                                                { quest = { id = 465, state = "completed" } },
                                                                 {
-                                                                    all = {
-                                                                        { faction = "Alliance" },
-                                                                        { any = { { any = { { quest = { id = 464, state = "completed" } }, { all = { { faction = "Alliance" } } } } } } },
+                                                                    any = {
+                                                                        { quest = { id = 465, state = "completed" } },
+                                                                        {
+                                                                            all = {
+                                                                                { faction = "Alliance" },
+                                                                                { any = { { any = { { quest = { id = 464, state = "completed" } }, { all = { { faction = "Alliance" } } } } } } },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                            {
+                                ["not"] = {
+                                    any = {
+                                        { quest = { id = 474, state = "activeOrCompleted" } },
+                                        {
+                                            any = {
+                                                { quest = { id = 474, state = "completed" } },
+                                                {
+                                                    all = {
+                                                        { faction = "Alliance" },
+                                                        {
+                                                            any = {
+                                                                {
+                                                                    any = {
+                                                                        { quest = { id = 465, state = "completed" } },
+                                                                        {
+                                                                            all = {
+                                                                                { faction = "Alliance" },
+                                                                                { any = { { any = { { quest = { id = 464, state = "completed" } }, { all = { { faction = "Alliance" } } } } } } },
+                                                                            },
+                                                                        },
                                                                     },
                                                                 },
                                                             },
@@ -3509,19 +3734,30 @@ ns:RegisterGuide({
                                 { quest = { id = 474, state = "activeOrCompleted" } },
                                 {
                                     any = {
-                                        { quest = { id = 474, state = "completed" } },
+                                        { quest = { id = 474, state = "activeOrCompleted" } },
                                         {
                                             all = {
                                                 { faction = "Alliance" },
+                                                { race = { 1, 3, 4, 7 } },
                                                 {
                                                     any = {
                                                         {
                                                             any = {
-                                                                { quest = { id = 465, state = "completed" } },
+                                                                { quest = { id = 465, state = "activeOrCompleted" } },
                                                                 {
                                                                     all = {
                                                                         { faction = "Alliance" },
-                                                                        { any = { { any = { { quest = { id = 464, state = "completed" } }, { all = { { faction = "Alliance" } } } } } } },
+                                                                        { race = { 1, 3, 4, 7 } },
+                                                                        {
+                                                                            any = {
+                                                                                {
+                                                                                    any = {
+                                                                                        { quest = { id = 464, state = "activeOrCompleted" } },
+                                                                                        { all = { { faction = "Alliance" }, { race = { 1, 3, 4, 7 } } } },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
                                                                     },
                                                                 },
                                                             },
@@ -3560,24 +3796,60 @@ ns:RegisterGuide({
             excludeWhen = {
                 any = {
                     {
-                        ["not"] = {
-                            any = {
-                                { quest = { id = 474, state = "activeOrCompleted" } },
-                                {
+                        any = {
+                            {
+                                ["not"] = {
                                     any = {
-                                        { quest = { id = 474, state = "completed" } },
+                                        { quest = { id = 474, state = "activeOrCompleted" } },
                                         {
-                                            all = {
-                                                { faction = "Alliance" },
+                                            any = {
+                                                { quest = { id = 474, state = "completed" } },
                                                 {
-                                                    any = {
+                                                    all = {
+                                                        { faction = "Alliance" },
                                                         {
                                                             any = {
-                                                                { quest = { id = 465, state = "completed" } },
                                                                 {
-                                                                    all = {
-                                                                        { faction = "Alliance" },
-                                                                        { any = { { any = { { quest = { id = 464, state = "completed" } }, { all = { { faction = "Alliance" } } } } } } },
+                                                                    any = {
+                                                                        { quest = { id = 465, state = "completed" } },
+                                                                        {
+                                                                            all = {
+                                                                                { faction = "Alliance" },
+                                                                                { any = { { any = { { quest = { id = 464, state = "completed" } }, { all = { { faction = "Alliance" } } } } } } },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                            {
+                                ["not"] = {
+                                    any = {
+                                        { quest = { id = 474, state = "activeOrCompleted" } },
+                                        {
+                                            any = {
+                                                { quest = { id = 474, state = "completed" } },
+                                                {
+                                                    all = {
+                                                        { faction = "Alliance" },
+                                                        {
+                                                            any = {
+                                                                {
+                                                                    any = {
+                                                                        { quest = { id = 465, state = "completed" } },
+                                                                        {
+                                                                            all = {
+                                                                                { faction = "Alliance" },
+                                                                                { any = { { any = { { quest = { id = 464, state = "completed" } }, { all = { { faction = "Alliance" } } } } } } },
+                                                                            },
+                                                                        },
                                                                     },
                                                                 },
                                                             },
@@ -3597,19 +3869,30 @@ ns:RegisterGuide({
                                 { quest = { id = 474, state = "activeOrCompleted" } },
                                 {
                                     any = {
-                                        { quest = { id = 474, state = "completed" } },
+                                        { quest = { id = 474, state = "activeOrCompleted" } },
                                         {
                                             all = {
                                                 { faction = "Alliance" },
+                                                { race = { 1, 3, 4, 7 } },
                                                 {
                                                     any = {
                                                         {
                                                             any = {
-                                                                { quest = { id = 465, state = "completed" } },
+                                                                { quest = { id = 465, state = "activeOrCompleted" } },
                                                                 {
                                                                     all = {
                                                                         { faction = "Alliance" },
-                                                                        { any = { { any = { { quest = { id = 464, state = "completed" } }, { all = { { faction = "Alliance" } } } } } } },
+                                                                        { race = { 1, 3, 4, 7 } },
+                                                                        {
+                                                                            any = {
+                                                                                {
+                                                                                    any = {
+                                                                                        { quest = { id = 464, state = "activeOrCompleted" } },
+                                                                                        { all = { { faction = "Alliance" }, { race = { 1, 3, 4, 7 } } } },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
                                                                     },
                                                                 },
                                                             },
@@ -3646,25 +3929,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 293, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 22 } }, { race = { 1, 3, 4, 7, 95 } } } },
             dependsOn = {},
-            id = "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-turnin-293-cleansing-the-eye",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 292 } } },
-            route = {
-                {
-                    label = "Archbishop Benedictus",
-                    mapID = 1453,
-                    offMapText = "Travel to Archbishop Benedictus in Stormwind City.",
-                    x = 0.3959,
-                    y = 0.2725,
-                },
-            },
-            sourceStep = 1,
-            text = "Turn in Cleansing the Eye to Archbishop Benedictus.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-duskwood-and-stranglethorn-vale",
-            sourceActionID = "turnin-293-cleansing-the-eye",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -3725,6 +3989,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-turnin-293-cleansing-the-eye",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 292 } } },
+            route = {
+                {
+                    label = "Archbishop Benedictus",
+                    mapID = 1453,
+                    offMapText = "Travel to Archbishop Benedictus in Stormwind City.",
+                    x = 0.3959,
+                    y = 0.2725,
+                },
+            },
+            sourceActionID = "turnin-293-cleansing-the-eye",
+            sourceGuide = "leveling-era-alliance-duskwood-and-stranglethorn-vale",
+            sourceStep = 1,
+            text = "Turn in Cleansing the Eye to Archbishop Benedictus.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             checkpointQuest = 1274,
@@ -3772,13 +4055,13 @@ ns:RegisterGuide({
                     y = 0.2544,
                 },
             },
+            sourceActionID = "turnin-1274-the-missing-diplomat",
+            sourceGuide = "leveling-era-alliance-duskwood-and-stranglethorn-vale",
             sourceStep = 5,
             text = "Turn in The Missing Diplomat to Bishop DeLavey.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-duskwood-and-stranglethorn-vale",
-            sourceActionID = "turnin-1274-the-missing-diplomat",
         },
         {
             complete = { quest = { id = 1241, state = "activeOrCompleted" } },
@@ -3827,19 +4110,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 1241, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 28 } }, { race = { 1, 3, 4, 7, 95 } } } },
             dependsOn = { "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-accept-1241-the-missing-diplomat" },
-            id = "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-turnin-1241-the-missing-diplomat",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 1274 } } },
-            route = {
-                { label = "Jorgen", mapID = 1453, offMapText = "Travel to Jorgen in Stormwind City.", x = 0.7317, y = 0.7842 },
-            },
-            sourceStep = 7,
-            text = "Turn in The Missing Diplomat to Jorgen.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-duskwood-and-stranglethorn-vale",
-            sourceActionID = "turnin-1241-the-missing-diplomat",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -3860,6 +4130,19 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-turnin-1241-the-missing-diplomat",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 1274 } } },
+            route = {
+                { label = "Jorgen", mapID = 1453, offMapText = "Travel to Jorgen in Stormwind City.", x = 0.7317, y = 0.7842 },
+            },
+            sourceActionID = "turnin-1241-the-missing-diplomat",
+            sourceGuide = "leveling-era-alliance-duskwood-and-stranglethorn-vale",
+            sourceStep = 7,
+            text = "Turn in The Missing Diplomat to Jorgen.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 1242, state = "activeOrCompleted" } },
@@ -3914,25 +4197,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 1242, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 28 } }, { race = { 1, 3, 4, 7, 95 } } } },
             dependsOn = { "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-accept-1242-the-missing-diplomat" },
-            id = "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-turnin-1242-the-missing-diplomat",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 1241 } } },
-            route = {
-                {
-                    label = "Elling Trias",
-                    mapID = 1453,
-                    offMapText = "Travel to Elling Trias in Stormwind City.",
-                    x = 0.5991,
-                    y = 0.6417,
-                },
-            },
-            sourceStep = 8,
-            text = "Turn in The Missing Diplomat to Elling Trias.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-duskwood-and-stranglethorn-vale",
-            sourceActionID = "turnin-1242-the-missing-diplomat",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -3967,6 +4231,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-turnin-1242-the-missing-diplomat",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 1241 } } },
+            route = {
+                {
+                    label = "Elling Trias",
+                    mapID = 1453,
+                    offMapText = "Travel to Elling Trias in Stormwind City.",
+                    x = 0.5991,
+                    y = 0.6417,
+                },
+            },
+            sourceActionID = "turnin-1242-the-missing-diplomat",
+            sourceGuide = "leveling-era-alliance-duskwood-and-stranglethorn-vale",
+            sourceStep = 8,
+            text = "Turn in The Missing Diplomat to Elling Trias.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 1243, state = "activeOrCompleted" } },
@@ -4037,16 +4320,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 1243, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 28 } }, { race = { 1, 3, 4, 7, 95 } } } },
             dependsOn = { "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-accept-1243-the-missing-diplomat" },
-            id = "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-turnin-1243-the-missing-diplomat",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 1242 } } },
-            sourceStep = 15,
-            text = "Turn in The Missing Diplomat to Watcher Backus.",
-            useClientPin = true,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-duskwood-and-stranglethorn-vale",
-            sourceActionID = "turnin-1243-the-missing-diplomat",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -4095,6 +4368,16 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-turnin-1243-the-missing-diplomat",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 1242 } } },
+            sourceActionID = "turnin-1243-the-missing-diplomat",
+            sourceGuide = "leveling-era-alliance-duskwood-and-stranglethorn-vale",
+            sourceStep = 15,
+            text = "Turn in The Missing Diplomat to Watcher Backus.",
+            useClientPin = true,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 1244, state = "activeOrCompleted" } },
@@ -4257,16 +4540,6 @@ ns:RegisterGuide({
                 "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-accept-1244-the-missing-diplomat",
                 "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-objective-1244-1-defias-docket",
             },
-            id = "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-turnin-1244-the-missing-diplomat",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 1243 } } },
-            sourceStep = 47,
-            text = "Turn in The Missing Diplomat to Watcher Backus.",
-            useClientPin = true,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-duskwood-and-stranglethorn-vale",
-            sourceActionID = "turnin-1244-the-missing-diplomat",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -4329,6 +4602,16 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-turnin-1244-the-missing-diplomat",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 1243 } } },
+            sourceActionID = "turnin-1244-the-missing-diplomat",
+            sourceGuide = "leveling-era-alliance-duskwood-and-stranglethorn-vale",
+            sourceStep = 47,
+            text = "Turn in The Missing Diplomat to Watcher Backus.",
+            useClientPin = true,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 1245, state = "activeOrCompleted" } },
@@ -4449,25 +4732,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 1245, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 28 } }, { race = { 1, 3, 4, 7, 95 } } } },
             dependsOn = { "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-accept-1245-the-missing-diplomat" },
-            id = "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-turnin-1245-the-missing-diplomat",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 1244 } } },
-            route = {
-                {
-                    label = "Elling Trias",
-                    mapID = 1453,
-                    offMapText = "Travel to Elling Trias in Stormwind City.",
-                    x = 0.5991,
-                    y = 0.6417,
-                },
-            },
-            sourceStep = 72,
-            text = "Turn in The Missing Diplomat to Elling Trias.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-duskwood-and-stranglethorn-vale",
-            sourceActionID = "turnin-1245-the-missing-diplomat",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -4544,6 +4808,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-turnin-1245-the-missing-diplomat",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 1244 } } },
+            route = {
+                {
+                    label = "Elling Trias",
+                    mapID = 1453,
+                    offMapText = "Travel to Elling Trias in Stormwind City.",
+                    x = 0.5991,
+                    y = 0.6417,
+                },
+            },
+            sourceActionID = "turnin-1245-the-missing-diplomat",
+            sourceGuide = "leveling-era-alliance-duskwood-and-stranglethorn-vale",
+            sourceStep = 72,
+            text = "Turn in The Missing Diplomat to Elling Trias.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 1246, state = "activeOrCompleted" } },
@@ -4686,25 +4969,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 1246, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 28 } }, { race = { 1, 3, 4, 7, 95 } } } },
             dependsOn = { "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-accept-1246-the-missing-diplomat" },
-            id = "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-turnin-1246-the-missing-diplomat",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 1245 } } },
-            route = {
-                {
-                    label = "Dashel Stonefist",
-                    mapID = 1453,
-                    offMapText = "Travel to Dashel Stonefist in Stormwind City.",
-                    x = 0.7053,
-                    y = 0.4488,
-                },
-            },
-            sourceStep = 88,
-            text = "Turn in The Missing Diplomat to Dashel Stonefist.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-duskwood-and-stranglethorn-vale",
-            sourceActionID = "turnin-1246-the-missing-diplomat",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -4795,6 +5059,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-turnin-1246-the-missing-diplomat",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 1245 } } },
+            route = {
+                {
+                    label = "Dashel Stonefist",
+                    mapID = 1453,
+                    offMapText = "Travel to Dashel Stonefist in Stormwind City.",
+                    x = 0.7053,
+                    y = 0.4488,
+                },
+            },
+            sourceActionID = "turnin-1246-the-missing-diplomat",
+            sourceGuide = "leveling-era-alliance-duskwood-and-stranglethorn-vale",
+            sourceStep = 88,
+            text = "Turn in The Missing Diplomat to Dashel Stonefist.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 1447, state = "activeOrCompleted" } },
@@ -5051,25 +5334,6 @@ ns:RegisterGuide({
                 "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-accept-1447-the-missing-diplomat",
                 "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-objective-1447-1-dashel-stonefist",
             },
-            id = "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-turnin-1447-the-missing-diplomat",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 1246 } } },
-            route = {
-                {
-                    label = "Dashel Stonefist",
-                    mapID = 1453,
-                    offMapText = "Travel to Dashel Stonefist in Stormwind City.",
-                    x = 0.7053,
-                    y = 0.4488,
-                },
-            },
-            sourceStep = 90,
-            text = "Turn in The Missing Diplomat to Dashel Stonefist.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-duskwood-and-stranglethorn-vale",
-            sourceActionID = "turnin-1447-the-missing-diplomat",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -5174,6 +5438,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-turnin-1447-the-missing-diplomat",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 1246 } } },
+            route = {
+                {
+                    label = "Dashel Stonefist",
+                    mapID = 1453,
+                    offMapText = "Travel to Dashel Stonefist in Stormwind City.",
+                    x = 0.7053,
+                    y = 0.4488,
+                },
+            },
+            sourceActionID = "turnin-1447-the-missing-diplomat",
+            sourceGuide = "leveling-era-alliance-duskwood-and-stranglethorn-vale",
+            sourceStep = 90,
+            text = "Turn in The Missing Diplomat to Dashel Stonefist.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 1247, state = "activeOrCompleted" } },
@@ -5320,25 +5603,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 1247, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 28 } }, { race = { 1, 3, 4, 7, 95 } } } },
             dependsOn = { "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-accept-1247-the-missing-diplomat" },
-            id = "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-turnin-1247-the-missing-diplomat",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 1447 } } },
-            route = {
-                {
-                    label = "Elling Trias",
-                    mapID = 1453,
-                    offMapText = "Travel to Elling Trias in Stormwind City.",
-                    x = 0.5991,
-                    y = 0.6417,
-                },
-            },
-            sourceStep = 91,
-            text = "Turn in The Missing Diplomat to Elling Trias.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-duskwood-and-stranglethorn-vale",
-            sourceActionID = "turnin-1247-the-missing-diplomat",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -5457,6 +5721,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-turnin-1247-the-missing-diplomat",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 1447 } } },
+            route = {
+                {
+                    label = "Elling Trias",
+                    mapID = 1453,
+                    offMapText = "Travel to Elling Trias in Stormwind City.",
+                    x = 0.5991,
+                    y = 0.6417,
+                },
+            },
+            sourceActionID = "turnin-1247-the-missing-diplomat",
+            sourceGuide = "leveling-era-alliance-duskwood-and-stranglethorn-vale",
+            sourceStep = 91,
+            text = "Turn in The Missing Diplomat to Elling Trias.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 1248, state = "activeOrCompleted" } },
@@ -5620,13 +5903,13 @@ ns:RegisterGuide({
             route = {
                 { label = "Vincent Hyal", mapID = 1437, offMapText = "Travel to Vincent Hyal in Wetlands.", x = 0.1083, y = 0.604 },
             },
+            sourceActionID = "turnin-1301-james-hyal",
+            sourceGuide = "leveling-era-alliance-duskwood-and-stranglethorn-vale",
             sourceStep = 94,
             text = "Turn in James Hyal to Vincent Hyal.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-duskwood-and-stranglethorn-vale",
-            sourceActionID = "turnin-1301-james-hyal",
         },
         {
             complete = { quest = { id = 1302, state = "activeOrCompleted" } },
@@ -5649,17 +5932,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 1248, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 28 } }, { race = { 1, 3, 4, 7, 95 } } } },
             dependsOn = { "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-accept-1248-the-missing-diplomat" },
-            id = "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-turnin-1248-the-missing-diplomat",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 1247 } } },
-            route = { { label = "Mikhail", mapID = 1437, offMapText = "Travel to Mikhail in Wetlands.", x = 0.106, y = 0.6077 } },
-            sourceStep = 96,
-            text = "Turn in The Missing Diplomat to Mikhail.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-duskwood-and-stranglethorn-vale",
-            sourceActionID = "turnin-1248-the-missing-diplomat",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -5792,6 +6064,17 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-turnin-1248-the-missing-diplomat",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 1247 } } },
+            route = { { label = "Mikhail", mapID = 1437, offMapText = "Travel to Mikhail in Wetlands.", x = 0.106, y = 0.6077 } },
+            sourceActionID = "turnin-1248-the-missing-diplomat",
+            sourceGuide = "leveling-era-alliance-duskwood-and-stranglethorn-vale",
+            sourceStep = 96,
+            text = "Turn in The Missing Diplomat to Mikhail.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 1249, state = "activeOrCompleted" } },
@@ -6124,17 +6407,6 @@ ns:RegisterGuide({
                 "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-accept-1249-the-missing-diplomat",
                 "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-objective-1249-1-tapoke-slim-jahn",
             },
-            id = "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-turnin-1249-the-missing-diplomat",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 1248 } } },
-            route = { { label = "Mikhail", mapID = 1437, offMapText = "Travel to Mikhail in Wetlands.", x = 0.106, y = 0.6077 } },
-            sourceStep = 98,
-            text = "Turn in The Missing Diplomat to Mikhail.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-duskwood-and-stranglethorn-vale",
-            sourceActionID = "turnin-1249-the-missing-diplomat",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -6281,6 +6553,17 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-turnin-1249-the-missing-diplomat",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 1248 } } },
+            route = { { label = "Mikhail", mapID = 1437, offMapText = "Travel to Mikhail in Wetlands.", x = 0.106, y = 0.6077 } },
+            sourceActionID = "turnin-1249-the-missing-diplomat",
+            sourceGuide = "leveling-era-alliance-duskwood-and-stranglethorn-vale",
+            sourceStep = 98,
+            text = "Turn in The Missing Diplomat to Mikhail.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 1250, state = "activeOrCompleted" } },
@@ -6469,17 +6752,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 1250, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 28 } }, { race = { 1, 3, 4, 7, 95 } } } },
             dependsOn = { "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-accept-1250-the-missing-diplomat" },
-            id = "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-turnin-1250-the-missing-diplomat",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 1249 } } },
-            route = { { label = "Mikhail", mapID = 1437, offMapText = "Travel to Mikhail in Wetlands.", x = 0.106, y = 0.6077 } },
-            sourceStep = 100,
-            text = "Turn in The Missing Diplomat to Mikhail.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-duskwood-and-stranglethorn-vale",
-            sourceActionID = "turnin-1250-the-missing-diplomat",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -6640,6 +6912,27 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-turnin-1250-the-missing-diplomat",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 1249 } } },
+            route = { { label = "Mikhail", mapID = 1437, offMapText = "Travel to Mikhail in Wetlands.", x = 0.106, y = 0.6077 } },
+            sourceActionID = "turnin-1250-the-missing-diplomat",
+            sourceGuide = "leveling-era-alliance-duskwood-and-stranglethorn-vale",
+            sourceStep = 100,
+            text = "Turn in The Missing Diplomat to Mikhail.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
+        },
+        {
+            complete = { level = { min = 33 } },
+            conditions = { all = { { faction = "Alliance" } } },
+            excludeWhen = { ["not"] = { all = { { faction = "Alliance" } } } },
+            id = "visit-entry-leveling-era-alliance-dustwallow-marsh-and-thousand-needles",
+            kind = "note",
+            requiredLevel = 33,
+            text = "Reach level 33 before the Dustwallow Marsh & Thousand Needles visit.",
+            visitSourceGuide = "leveling-era-alliance-dustwallow-marsh-and-thousand-needles",
         },
         {
             complete = { quest = { id = 1302, state = "completed" } },
@@ -6657,22 +6950,22 @@ ns:RegisterGuide({
                     y = 0.4824,
                 },
             },
+            sourceActionID = "turnin-1302-james-hyal",
+            sourceGuide = "leveling-era-alliance-dustwallow-marsh-and-thousand-needles",
             sourceStep = 6,
             text = "Turn in James Hyal to Clerk Lendry.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-dustwallow-marsh-and-thousand-needles",
-            sourceActionID = "turnin-1302-james-hyal",
         },
         {
+            checkpointQuest = 1132,
+            complete = { level = { min = 30 } },
+            conditions = { all = { { faction = "Alliance" } } },
             id = "alliance-extra-1132-level",
             kind = "note",
-            checkpointQuest = 1132,
-            text = "Reach level 20 before this visit.",
-            conditions = { all = { { faction = "Alliance" } } },
-            complete = { level = { min = 20 } },
-            requiredLevel = 20,
+            requiredLevel = 30,
+            text = "Reach level 30 before this visit.",
         },
         {
             id = "alliance-extra-1132-accept",
@@ -6700,32 +6993,30 @@ ns:RegisterGuide({
             useClientPin = true,
         },
         {
+            complete = { quest = { id = 1132, state = "completed" } },
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 30 } } } },
+            dependsOn = { "alliance-extra-1132-objective" },
             id = "alliance-extra-1132-turnin",
             kind = "turnin",
-            text = "Turn in Fiora Longears to Fiora Longears.",
-            conditions = { all = { { faction = "Alliance" }, { level = { min = 30 } } } },
+            requiredQuests = {},
             route = {
                 {
+                    label = "Fiora Longears",
                     mapID = 1445,
+                    offMapText = "Travel to Fiora Longears in Dustwallow Marsh.",
                     x = 0.664,
                     y = 0.452,
-                    label = "Fiora Longears",
-                    offMapText = "Travel to Fiora Longears in Dustwallow Marsh.",
                 },
             },
-            complete = { quest = { id = 1132, state = "completed" } },
-            requiredQuests = {},
+            text = "Turn in Fiora Longears to Fiora Longears.",
+            useClientPin = true,
             useClientText = false,
-            dependsOn = { "alliance-extra-1132-objective" },
+            useQuestNavigation = true,
         },
         {
-            id = "alliance-extra-98072-level",
-            kind = "note",
             checkpointQuest = 98072,
-            text = "Reach level 27 before this visit.",
+            complete = { level = { min = 1 } },
             conditions = { all = { { faction = "Alliance" }, { race = { 3, 4, 7, 95 } } } },
-            complete = { level = { min = 27 } },
-            requiredLevel = 27,
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -6759,6 +7050,10 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-extra-98072-level",
+            kind = "note",
+            requiredLevel = 1,
+            text = "Reach level 1 before this visit.",
         },
         {
             complete = { quest = { id = 98072, state = "activeOrCompleted" } },
@@ -6767,25 +7062,62 @@ ns:RegisterGuide({
             excludeWhen = {
                 any = {
                     {
-                        ["not"] = {
-                            any = {
-                                { quest = { id = 98072, state = "activeOrCompleted" } },
-                                {
+                        any = {
+                            {
+                                ["not"] = {
                                     any = {
-                                        { quest = { id = 98072, state = "completed" } },
+                                        { quest = { id = 98072, state = "activeOrCompleted" } },
                                         {
-                                            all = {
-                                                { faction = "Alliance" },
-                                                { race = { 3, 4, 7, 95 } },
+                                            any = {
+                                                { quest = { id = 98072, state = "completed" } },
                                                 {
-                                                    any = {
+                                                    all = {
+                                                        { faction = "Alliance" },
+                                                        { race = { 3, 4, 7, 95 } },
                                                         {
                                                             any = {
-                                                                { quest = { id = 471, state = "completed" } },
                                                                 {
-                                                                    all = {
-                                                                        { faction = "Alliance" },
-                                                                        { any = { { any = { { quest = { id = 484, state = "completed" } }, { all = { { faction = "Alliance" } } } } } } },
+                                                                    any = {
+                                                                        { quest = { id = 471, state = "completed" } },
+                                                                        {
+                                                                            all = {
+                                                                                { faction = "Alliance" },
+                                                                                { any = { { any = { { quest = { id = 484, state = "completed" } }, { all = { { faction = "Alliance" } } } } } } },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                            {
+                                ["not"] = {
+                                    any = {
+                                        { quest = { id = 98072, state = "activeOrCompleted" } },
+                                        {
+                                            any = {
+                                                { quest = { id = 98072, state = "completed" } },
+                                                {
+                                                    all = {
+                                                        { faction = "Alliance" },
+                                                        { race = { 3, 4, 7, 95 } },
+                                                        {
+                                                            any = {
+                                                                {
+                                                                    any = {
+                                                                        { quest = { id = 471, state = "completed" } },
+                                                                        {
+                                                                            all = {
+                                                                                { faction = "Alliance" },
+                                                                                { any = { { any = { { quest = { id = 484, state = "completed" } }, { all = { { faction = "Alliance" } } } } } } },
+                                                                            },
+                                                                        },
                                                                     },
                                                                 },
                                                             },
@@ -6805,20 +7137,30 @@ ns:RegisterGuide({
                                 { quest = { id = 98072, state = "activeOrCompleted" } },
                                 {
                                     any = {
-                                        { quest = { id = 98072, state = "completed" } },
+                                        { quest = { id = 98072, state = "activeOrCompleted" } },
                                         {
                                             all = {
                                                 { faction = "Alliance" },
-                                                { race = { 3, 4, 7, 95 } },
+                                                { race = { 1, 3, 4, 7 } },
                                                 {
                                                     any = {
                                                         {
                                                             any = {
-                                                                { quest = { id = 471, state = "completed" } },
+                                                                { quest = { id = 471, state = "activeOrCompleted" } },
                                                                 {
                                                                     all = {
                                                                         { faction = "Alliance" },
-                                                                        { any = { { any = { { quest = { id = 484, state = "completed" } }, { all = { { faction = "Alliance" } } } } } } },
+                                                                        { race = { 1, 3, 4, 7 } },
+                                                                        {
+                                                                            any = {
+                                                                                {
+                                                                                    any = {
+                                                                                        { quest = { id = 484, state = "activeOrCompleted" } },
+                                                                                        { all = { { faction = "Alliance" }, { race = { 1, 3, 4, 7 } } } },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
                                                                     },
                                                                 },
                                                             },
@@ -6850,25 +7192,62 @@ ns:RegisterGuide({
             excludeWhen = {
                 any = {
                     {
-                        ["not"] = {
-                            any = {
-                                { quest = { id = 98072, state = "activeOrCompleted" } },
-                                {
+                        any = {
+                            {
+                                ["not"] = {
                                     any = {
-                                        { quest = { id = 98072, state = "completed" } },
+                                        { quest = { id = 98072, state = "activeOrCompleted" } },
                                         {
-                                            all = {
-                                                { faction = "Alliance" },
-                                                { race = { 3, 4, 7, 95 } },
+                                            any = {
+                                                { quest = { id = 98072, state = "completed" } },
                                                 {
-                                                    any = {
+                                                    all = {
+                                                        { faction = "Alliance" },
+                                                        { race = { 3, 4, 7, 95 } },
                                                         {
                                                             any = {
-                                                                { quest = { id = 471, state = "completed" } },
                                                                 {
-                                                                    all = {
-                                                                        { faction = "Alliance" },
-                                                                        { any = { { any = { { quest = { id = 484, state = "completed" } }, { all = { { faction = "Alliance" } } } } } } },
+                                                                    any = {
+                                                                        { quest = { id = 471, state = "completed" } },
+                                                                        {
+                                                                            all = {
+                                                                                { faction = "Alliance" },
+                                                                                { any = { { any = { { quest = { id = 484, state = "completed" } }, { all = { { faction = "Alliance" } } } } } } },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                            {
+                                ["not"] = {
+                                    any = {
+                                        { quest = { id = 98072, state = "activeOrCompleted" } },
+                                        {
+                                            any = {
+                                                { quest = { id = 98072, state = "completed" } },
+                                                {
+                                                    all = {
+                                                        { faction = "Alliance" },
+                                                        { race = { 3, 4, 7, 95 } },
+                                                        {
+                                                            any = {
+                                                                {
+                                                                    any = {
+                                                                        { quest = { id = 471, state = "completed" } },
+                                                                        {
+                                                                            all = {
+                                                                                { faction = "Alliance" },
+                                                                                { any = { { any = { { quest = { id = 484, state = "completed" } }, { all = { { faction = "Alliance" } } } } } } },
+                                                                            },
+                                                                        },
                                                                     },
                                                                 },
                                                             },
@@ -6888,20 +7267,30 @@ ns:RegisterGuide({
                                 { quest = { id = 98072, state = "activeOrCompleted" } },
                                 {
                                     any = {
-                                        { quest = { id = 98072, state = "completed" } },
+                                        { quest = { id = 98072, state = "activeOrCompleted" } },
                                         {
                                             all = {
                                                 { faction = "Alliance" },
-                                                { race = { 3, 4, 7, 95 } },
+                                                { race = { 1, 3, 4, 7 } },
                                                 {
                                                     any = {
                                                         {
                                                             any = {
-                                                                { quest = { id = 471, state = "completed" } },
+                                                                { quest = { id = 471, state = "activeOrCompleted" } },
                                                                 {
                                                                     all = {
                                                                         { faction = "Alliance" },
-                                                                        { any = { { any = { { quest = { id = 484, state = "completed" } }, { all = { { faction = "Alliance" } } } } } } },
+                                                                        { race = { 1, 3, 4, 7 } },
+                                                                        {
+                                                                            any = {
+                                                                                {
+                                                                                    any = {
+                                                                                        { quest = { id = 484, state = "activeOrCompleted" } },
+                                                                                        { all = { { faction = "Alliance" }, { race = { 1, 3, 4, 7 } } } },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
                                                                     },
                                                                 },
                                                             },
@@ -6932,25 +7321,62 @@ ns:RegisterGuide({
             excludeWhen = {
                 any = {
                     {
-                        ["not"] = {
-                            any = {
-                                { quest = { id = 98072, state = "activeOrCompleted" } },
-                                {
+                        any = {
+                            {
+                                ["not"] = {
                                     any = {
-                                        { quest = { id = 98072, state = "completed" } },
+                                        { quest = { id = 98072, state = "activeOrCompleted" } },
                                         {
-                                            all = {
-                                                { faction = "Alliance" },
-                                                { race = { 3, 4, 7, 95 } },
+                                            any = {
+                                                { quest = { id = 98072, state = "completed" } },
                                                 {
-                                                    any = {
+                                                    all = {
+                                                        { faction = "Alliance" },
+                                                        { race = { 3, 4, 7, 95 } },
                                                         {
                                                             any = {
-                                                                { quest = { id = 471, state = "completed" } },
                                                                 {
-                                                                    all = {
-                                                                        { faction = "Alliance" },
-                                                                        { any = { { any = { { quest = { id = 484, state = "completed" } }, { all = { { faction = "Alliance" } } } } } } },
+                                                                    any = {
+                                                                        { quest = { id = 471, state = "completed" } },
+                                                                        {
+                                                                            all = {
+                                                                                { faction = "Alliance" },
+                                                                                { any = { { any = { { quest = { id = 484, state = "completed" } }, { all = { { faction = "Alliance" } } } } } } },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                            {
+                                ["not"] = {
+                                    any = {
+                                        { quest = { id = 98072, state = "activeOrCompleted" } },
+                                        {
+                                            any = {
+                                                { quest = { id = 98072, state = "completed" } },
+                                                {
+                                                    all = {
+                                                        { faction = "Alliance" },
+                                                        { race = { 3, 4, 7, 95 } },
+                                                        {
+                                                            any = {
+                                                                {
+                                                                    any = {
+                                                                        { quest = { id = 471, state = "completed" } },
+                                                                        {
+                                                                            all = {
+                                                                                { faction = "Alliance" },
+                                                                                { any = { { any = { { quest = { id = 484, state = "completed" } }, { all = { { faction = "Alliance" } } } } } } },
+                                                                            },
+                                                                        },
                                                                     },
                                                                 },
                                                             },
@@ -6970,20 +7396,30 @@ ns:RegisterGuide({
                                 { quest = { id = 98072, state = "activeOrCompleted" } },
                                 {
                                     any = {
-                                        { quest = { id = 98072, state = "completed" } },
+                                        { quest = { id = 98072, state = "activeOrCompleted" } },
                                         {
                                             all = {
                                                 { faction = "Alliance" },
-                                                { race = { 3, 4, 7, 95 } },
+                                                { race = { 1, 3, 4, 7 } },
                                                 {
                                                     any = {
                                                         {
                                                             any = {
-                                                                { quest = { id = 471, state = "completed" } },
+                                                                { quest = { id = 471, state = "activeOrCompleted" } },
                                                                 {
                                                                     all = {
                                                                         { faction = "Alliance" },
-                                                                        { any = { { any = { { quest = { id = 484, state = "completed" } }, { all = { { faction = "Alliance" } } } } } } },
+                                                                        { race = { 1, 3, 4, 7 } },
+                                                                        {
+                                                                            any = {
+                                                                                {
+                                                                                    any = {
+                                                                                        { quest = { id = 484, state = "activeOrCompleted" } },
+                                                                                        { all = { { faction = "Alliance" }, { race = { 1, 3, 4, 7 } } } },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
                                                                     },
                                                                 },
                                                             },
@@ -7011,13 +7447,13 @@ ns:RegisterGuide({
             useQuestNavigation = true,
         },
         {
+            checkpointQuest = 98221,
+            complete = { level = { min = 23 } },
+            conditions = { all = { { faction = "Alliance" }, { race = { 3, 4, 7, 95 } } } },
             id = "alliance-extra-98221-level",
             kind = "note",
-            checkpointQuest = 98221,
-            text = "Reach level 28 before this visit.",
-            conditions = { all = { { faction = "Alliance" }, { race = { 3, 4, 7, 95 } } } },
-            complete = { level = { min = 28 } },
-            requiredLevel = 28,
+            requiredLevel = 23,
+            text = "Reach level 23 before this visit.",
         },
         {
             id = "alliance-extra-98221-accept",
@@ -7058,32 +7494,34 @@ ns:RegisterGuide({
             dependsOn = { "alliance-extra-98221-accept" },
         },
         {
+            complete = { quest = { id = 98221, state = "completed" } },
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 23 } }, { race = { 3, 4, 7, 95 } } } },
+            dependsOn = { "alliance-extra-98221-objective" },
             id = "alliance-extra-98221-turnin",
             kind = "turnin",
-            text = "Turn in From the Ashes to Captain Stoutfist.",
-            conditions = { all = { { faction = "Alliance" }, { level = { min = 23 } }, { race = { 3, 4, 7, 95 } } } },
+            requiredQuests = {},
             route = {
                 {
+                    label = "Captain Stoutfist",
                     mapID = 1437,
+                    offMapText = "Travel to Captain Stoutfist in Wetlands.",
                     x = 0.098,
                     y = 0.574,
-                    label = "Captain Stoutfist",
-                    offMapText = "Travel to Captain Stoutfist in Wetlands.",
                 },
             },
-            complete = { quest = { id = 98221, state = "completed" } },
-            requiredQuests = {},
+            text = "Turn in From the Ashes to Captain Stoutfist.",
+            useClientPin = true,
             useClientText = false,
-            dependsOn = { "alliance-extra-98221-objective" },
+            useQuestNavigation = true,
         },
         {
+            checkpointQuest = 98282,
+            complete = { level = { min = 20 } },
+            conditions = { all = { { faction = "Alliance" }, { race = { 3, 4, 7, 95 } } } },
             id = "alliance-extra-98282-level",
             kind = "note",
-            checkpointQuest = 98282,
-            text = "Reach level 22 before this visit.",
-            conditions = { all = { { faction = "Alliance" }, { race = { 3, 4, 7, 95 } } } },
-            complete = { level = { min = 22 } },
-            requiredLevel = 22,
+            requiredLevel = 20,
+            text = "Reach level 20 before this visit.",
         },
         {
             id = "alliance-extra-98282-accept",
@@ -7118,32 +7556,34 @@ ns:RegisterGuide({
             dependsOn = { "alliance-extra-98282-accept" },
         },
         {
+            complete = { quest = { id = 98282, state = "completed" } },
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 20 } }, { race = { 3, 4, 7, 95 } } } },
+            dependsOn = { "alliance-extra-98282-objective" },
             id = "alliance-extra-98282-turnin",
             kind = "turnin",
-            text = "Turn in Alchemical Hazards to Caitlin Grassman.",
-            conditions = { all = { { faction = "Alliance" }, { level = { min = 20 } }, { race = { 3, 4, 7, 95 } } } },
+            requiredQuests = {},
             route = {
                 {
-                    mapID = 1437,
-                    x = 0.11800000000000001,
-                    y = 0.586,
                     label = "Caitlin Grassman",
+                    mapID = 1437,
                     offMapText = "Travel to Caitlin Grassman in Wetlands.",
+                    x = 0.118,
+                    y = 0.586,
                 },
             },
-            complete = { quest = { id = 98282, state = "completed" } },
-            requiredQuests = {},
+            text = "Turn in Alchemical Hazards to Caitlin Grassman.",
+            useClientPin = true,
             useClientText = false,
-            dependsOn = { "alliance-extra-98282-objective" },
+            useQuestNavigation = true,
         },
         {
+            checkpointQuest = 98291,
+            complete = { level = { min = 22 } },
+            conditions = { all = { { faction = "Alliance" } } },
             id = "alliance-extra-98291-level",
             kind = "note",
-            checkpointQuest = 98291,
-            text = "Reach level 30 before this visit.",
-            conditions = { all = { { faction = "Alliance" } } },
-            complete = { level = { min = 30 } },
-            requiredLevel = 30,
+            requiredLevel = 22,
+            text = "Reach level 22 before this visit.",
         },
         {
             id = "alliance-extra-98291-accept",
@@ -7184,32 +7624,30 @@ ns:RegisterGuide({
             dependsOn = { "alliance-extra-98291-accept" },
         },
         {
+            complete = { quest = { id = 98291, state = "completed" } },
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 22 } } } },
+            dependsOn = { "alliance-extra-98291-objective" },
             id = "alliance-extra-98291-turnin",
             kind = "turnin",
-            text = "Turn in Death to the Dragonmaw to Howin Kindfeather.",
-            conditions = { all = { { faction = "Alliance" }, { level = { min = 22 } } } },
+            requiredQuests = {},
             route = {
                 {
+                    label = "Howin Kindfeather",
                     mapID = 1437,
+                    offMapText = "Travel to Howin Kindfeather in Wetlands.",
                     x = 0.494,
                     y = 0.42,
-                    label = "Howin Kindfeather",
-                    offMapText = "Travel to Howin Kindfeather in Wetlands.",
                 },
             },
-            complete = { quest = { id = 98291, state = "completed" } },
-            requiredQuests = {},
+            text = "Turn in Death to the Dragonmaw to Howin Kindfeather.",
+            useClientPin = true,
             useClientText = false,
-            dependsOn = { "alliance-extra-98291-objective" },
+            useQuestNavigation = true,
         },
         {
-            id = "alliance-extra-98297-level",
-            kind = "note",
             checkpointQuest = 98297,
-            text = "Reach level 34 before this visit.",
+            complete = { level = { min = 24 } },
             conditions = { all = { { faction = "Alliance" } } },
-            complete = { level = { min = 34 } },
-            requiredLevel = 34,
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -7230,6 +7668,10 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-extra-98297-level",
+            kind = "note",
+            requiredLevel = 24,
+            text = "Reach level 24 before this visit.",
         },
         {
             complete = { quest = { id = 98297, state = "activeOrCompleted" } },
@@ -7238,17 +7680,41 @@ ns:RegisterGuide({
             excludeWhen = {
                 any = {
                     {
-                        ["not"] = {
-                            any = {
-                                { quest = { id = 98297, state = "activeOrCompleted" } },
-                                {
+                        any = {
+                            {
+                                ["not"] = {
                                     any = {
-                                        { quest = { id = 98297, state = "completed" } },
+                                        { quest = { id = 98297, state = "activeOrCompleted" } },
                                         {
-                                            all = {
-                                                { faction = "Alliance" },
+                                            any = {
+                                                { quest = { id = 98297, state = "completed" } },
                                                 {
-                                                    any = { { any = { { quest = { id = 98291, state = "completed" } }, { all = { { faction = "Alliance" } } } } } },
+                                                    all = {
+                                                        { faction = "Alliance" },
+                                                        {
+                                                            any = { { any = { { quest = { id = 98291, state = "completed" } }, { all = { { faction = "Alliance" } } } } } },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                            {
+                                ["not"] = {
+                                    any = {
+                                        { quest = { id = 98297, state = "activeOrCompleted" } },
+                                        {
+                                            any = {
+                                                { quest = { id = 98297, state = "completed" } },
+                                                {
+                                                    all = {
+                                                        { faction = "Alliance" },
+                                                        {
+                                                            any = { { any = { { quest = { id = 98291, state = "completed" } }, { all = { { faction = "Alliance" } } } } } },
+                                                        },
+                                                    },
                                                 },
                                             },
                                         },
@@ -7263,12 +7729,20 @@ ns:RegisterGuide({
                                 { quest = { id = 98297, state = "activeOrCompleted" } },
                                 {
                                     any = {
-                                        { quest = { id = 98297, state = "completed" } },
+                                        { quest = { id = 98297, state = "activeOrCompleted" } },
                                         {
                                             all = {
                                                 { faction = "Alliance" },
+                                                { race = { 1, 3, 4, 7 } },
                                                 {
-                                                    any = { { any = { { quest = { id = 98291, state = "completed" } }, { all = { { faction = "Alliance" } } } } } },
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 98291, state = "activeOrCompleted" } },
+                                                                { all = { { faction = "Alliance" }, { race = { 1, 3, 4, 7 } } } },
+                                                            },
+                                                        },
+                                                    },
                                                 },
                                             },
                                         },
@@ -7301,17 +7775,41 @@ ns:RegisterGuide({
             excludeWhen = {
                 any = {
                     {
-                        ["not"] = {
-                            any = {
-                                { quest = { id = 98297, state = "activeOrCompleted" } },
-                                {
+                        any = {
+                            {
+                                ["not"] = {
                                     any = {
-                                        { quest = { id = 98297, state = "completed" } },
+                                        { quest = { id = 98297, state = "activeOrCompleted" } },
                                         {
-                                            all = {
-                                                { faction = "Alliance" },
+                                            any = {
+                                                { quest = { id = 98297, state = "completed" } },
                                                 {
-                                                    any = { { any = { { quest = { id = 98291, state = "completed" } }, { all = { { faction = "Alliance" } } } } } },
+                                                    all = {
+                                                        { faction = "Alliance" },
+                                                        {
+                                                            any = { { any = { { quest = { id = 98291, state = "completed" } }, { all = { { faction = "Alliance" } } } } } },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                            {
+                                ["not"] = {
+                                    any = {
+                                        { quest = { id = 98297, state = "activeOrCompleted" } },
+                                        {
+                                            any = {
+                                                { quest = { id = 98297, state = "completed" } },
+                                                {
+                                                    all = {
+                                                        { faction = "Alliance" },
+                                                        {
+                                                            any = { { any = { { quest = { id = 98291, state = "completed" } }, { all = { { faction = "Alliance" } } } } } },
+                                                        },
+                                                    },
                                                 },
                                             },
                                         },
@@ -7326,12 +7824,20 @@ ns:RegisterGuide({
                                 { quest = { id = 98297, state = "activeOrCompleted" } },
                                 {
                                     any = {
-                                        { quest = { id = 98297, state = "completed" } },
+                                        { quest = { id = 98297, state = "activeOrCompleted" } },
                                         {
                                             all = {
                                                 { faction = "Alliance" },
+                                                { race = { 1, 3, 4, 7 } },
                                                 {
-                                                    any = { { any = { { quest = { id = 98291, state = "completed" } }, { all = { { faction = "Alliance" } } } } } },
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 98291, state = "activeOrCompleted" } },
+                                                                { all = { { faction = "Alliance" }, { race = { 1, 3, 4, 7 } } } },
+                                                            },
+                                                        },
+                                                    },
                                                 },
                                             },
                                         },
@@ -7365,17 +7871,41 @@ ns:RegisterGuide({
             excludeWhen = {
                 any = {
                     {
-                        ["not"] = {
-                            any = {
-                                { quest = { id = 98297, state = "activeOrCompleted" } },
-                                {
+                        any = {
+                            {
+                                ["not"] = {
                                     any = {
-                                        { quest = { id = 98297, state = "completed" } },
+                                        { quest = { id = 98297, state = "activeOrCompleted" } },
                                         {
-                                            all = {
-                                                { faction = "Alliance" },
+                                            any = {
+                                                { quest = { id = 98297, state = "completed" } },
                                                 {
-                                                    any = { { any = { { quest = { id = 98291, state = "completed" } }, { all = { { faction = "Alliance" } } } } } },
+                                                    all = {
+                                                        { faction = "Alliance" },
+                                                        {
+                                                            any = { { any = { { quest = { id = 98291, state = "completed" } }, { all = { { faction = "Alliance" } } } } } },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                            {
+                                ["not"] = {
+                                    any = {
+                                        { quest = { id = 98297, state = "activeOrCompleted" } },
+                                        {
+                                            any = {
+                                                { quest = { id = 98297, state = "completed" } },
+                                                {
+                                                    all = {
+                                                        { faction = "Alliance" },
+                                                        {
+                                                            any = { { any = { { quest = { id = 98291, state = "completed" } }, { all = { { faction = "Alliance" } } } } } },
+                                                        },
+                                                    },
                                                 },
                                             },
                                         },
@@ -7390,12 +7920,20 @@ ns:RegisterGuide({
                                 { quest = { id = 98297, state = "activeOrCompleted" } },
                                 {
                                     any = {
-                                        { quest = { id = 98297, state = "completed" } },
+                                        { quest = { id = 98297, state = "activeOrCompleted" } },
                                         {
                                             all = {
                                                 { faction = "Alliance" },
+                                                { race = { 1, 3, 4, 7 } },
                                                 {
-                                                    any = { { any = { { quest = { id = 98291, state = "completed" } }, { all = { { faction = "Alliance" } } } } } },
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 98291, state = "activeOrCompleted" } },
+                                                                { all = { { faction = "Alliance" }, { race = { 1, 3, 4, 7 } } } },
+                                                            },
+                                                        },
+                                                    },
                                                 },
                                             },
                                         },

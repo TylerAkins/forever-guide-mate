@@ -8,7 +8,7 @@ import (
 )
 
 func record(id int, requirements map[string]any, fields map[string]any) map[string]any {
-	return map[string]any{"id": id, "list": map[string]any{"id": id, "level": 10, "reqlevel": 5, "firstseenpatch": 16001, "name": "Sample"}, "minLevel": 5, "classes": []any{}, "detail": map[string]any{"requirements": requirements, "questie": map[string]any{"fields": fields}}}
+	return map[string]any{"id": id, "list": map[string]any{"id": id, "level": 10, "reqlevel": 5, "name": "Sample"}, "minLevel": 5, "classes": []any{}, "detail": map[string]any{"requirements": requirements, "questie": map[string]any{"fields": fields}}}
 }
 func goal(id string, quest int, kind, source string, priority float64, depends ...string) loremaster.Goal {
 	return loremaster.Goal{ID: id, QuestID: quest, Kind: kind, SourceFile: source, Priority: priority, Depends: depends}
@@ -32,11 +32,10 @@ func TestRequirementMappingPreservesAllAnyAndMixedSemantics(t *testing.T) {
 func TestCatalogMapsSchemaV2AndLevelFallbacks(t *testing.T) {
 	value := record(92461, map[string]any{}, map[string]any{"preQuestSingle": []any{92460}, "requiredClasses": []any{7}, "requiredRaces": []any{2}})
 	catalog := CatalogQuest(92461, value)
-	if !catalog.Forever || catalog.Requirement == nil || catalog.Requirement.Mode != "any" || !reflect.DeepEqual(catalog.RequiredClasses, []int{7}) || !reflect.DeepEqual(catalog.RequiredRaces, []int{2}) {
+	if catalog.Forever || catalog.Requirement == nil || catalog.Requirement.Mode != "any" || !reflect.DeepEqual(catalog.RequiredClasses, []int{7}) || !reflect.DeepEqual(catalog.RequiredRaces, []int{2}) {
 		t.Fatalf("catalog=%#v", catalog)
 	}
 	classic := record(50, map[string]any{}, map[string]any{"questLevel": 0, "requiredLevel": 0})
-	classic["list"].(map[string]any)["firstseenpatch"] = 11302
 	if got := CatalogQuest(50, classic).StepLevel; got != 5 {
 		t.Fatalf("zero Questie values should keep offer level: %d", got)
 	}
@@ -75,7 +74,7 @@ func TestCatalogMissingRecordAndClassicFallback(t *testing.T) {
 	if catalog := CatalogQuest(50, nil); catalog.RecordFound || catalog.Forever {
 		t.Fatalf("missing record catalog=%#v", catalog)
 	}
-	classicRecord := map[string]any{"id": 50, "list": map[string]any{"level": 8, "reqlevel": 4, "firstseenpatch": 11302}, "minLevel": 4, "classes": []any{}, "detail": map[string]any{}}
+	classicRecord := map[string]any{"id": 50, "list": map[string]any{"level": 8, "reqlevel": 4}, "minLevel": 4, "classes": []any{}, "detail": map[string]any{}}
 	catalog := CatalogQuest(50, classicRecord)
 	if catalog.Forever || catalog.Requirement != nil || catalog.StepLevel != 4 {
 		t.Fatalf("classic fallback catalog=%#v", catalog)

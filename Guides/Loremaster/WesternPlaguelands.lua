@@ -6,7 +6,7 @@ ns:RegisterGuide({
     id = "loremaster-western-plaguelands",
     title = "Western Plaguelands",
     category = "Loremaster Guides",
-    revision = 1,
+    revision = 2,
     routeMode = "ordered",
     loremasterExpanded = true,
     goals = {
@@ -92,13 +92,13 @@ ns:RegisterGuide({
                     y = 0.8403,
                 },
             },
+            sourceActionID = "turnin-5066-a-call-to-arms-the-plaguelands",
+            sourceGuide = "leveling-era-alliance-western-plaguelands",
             sourceStep = 1,
             text = "Turn in A Call to Arms: The Plaguelands! to Commander Ashlam Valorfist.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-western-plaguelands",
-            sourceActionID = "turnin-5066-a-call-to-arms-the-plaguelands",
         },
         {
             alternativeQuests = { 5066, 5091 },
@@ -117,13 +117,13 @@ ns:RegisterGuide({
                     y = 0.8403,
                 },
             },
+            sourceActionID = "turnin-5090-a-call-to-arms-the-plaguelands",
+            sourceGuide = "leveling-era-alliance-western-plaguelands",
             sourceStep = 1,
             text = "Turn in A Call to Arms: The Plaguelands! to Commander Ashlam Valorfist.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-western-plaguelands",
-            sourceActionID = "turnin-5090-a-call-to-arms-the-plaguelands",
         },
         {
             alternativeQuests = { 5066, 5090 },
@@ -156,13 +156,13 @@ ns:RegisterGuide({
                     y = 0.8403,
                 },
             },
+            sourceActionID = "turnin-5091-a-call-to-arms-the-plaguelands",
+            sourceGuide = "leveling-era-alliance-western-plaguelands",
             sourceStep = 1,
             text = "Turn in A Call to Arms: The Plaguelands! to Commander Ashlam Valorfist.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-western-plaguelands",
-            sourceActionID = "turnin-5091-a-call-to-arms-the-plaguelands",
         },
         {
             complete = { quest = { id = 5092, state = "activeOrCompleted" } },
@@ -279,13 +279,13 @@ ns:RegisterGuide({
                     y = 0.8403,
                 },
             },
+            sourceActionID = "turnin-5092-clear-the-way",
+            sourceGuide = "leveling-era-alliance-western-plaguelands",
             sourceStep = 6,
             text = "Turn in Clear the Way to Commander Ashlam Valorfist.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-western-plaguelands",
-            sourceActionID = "turnin-5092-clear-the-way",
         },
         {
             complete = { quest = { id = 5215, state = "activeOrCompleted" } },
@@ -334,25 +334,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 5215, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 50 } }, { race = { 1, 3, 4, 7, 95 } } } },
             dependsOn = { "alliance-leveling-era-alliance-western-plaguelands-accept-5215-the-scourge-cauldrons" },
-            id = "alliance-leveling-era-alliance-western-plaguelands-turnin-5215-the-scourge-cauldrons",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 5092 } } },
-            route = {
-                {
-                    label = "High Priestess MacDonnell",
-                    mapID = 1422,
-                    offMapText = "Travel to High Priestess MacDonnell in Western Plaguelands.",
-                    x = 0.4297,
-                    y = 0.845,
-                },
-            },
-            sourceStep = 7,
-            text = "Turn in The Scourge Cauldrons to High Priestess MacDonnell.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-western-plaguelands",
-            sourceActionID = "turnin-5215-the-scourge-cauldrons",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -373,6 +354,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-western-plaguelands-turnin-5215-the-scourge-cauldrons",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 5092 } } },
+            route = {
+                {
+                    label = "High Priestess MacDonnell",
+                    mapID = 1422,
+                    offMapText = "Travel to High Priestess MacDonnell in Western Plaguelands.",
+                    x = 0.4297,
+                    y = 0.845,
+                },
+            },
+            sourceActionID = "turnin-5215-the-scourge-cauldrons",
+            sourceGuide = "leveling-era-alliance-western-plaguelands",
+            sourceStep = 7,
+            text = "Turn in The Scourge Cauldrons to High Priestess MacDonnell.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 5216, state = "activeOrCompleted" } },
@@ -496,25 +496,6 @@ ns:RegisterGuide({
                 "alliance-leveling-era-alliance-western-plaguelands-accept-5216-target-felstone-field",
                 "alliance-leveling-era-alliance-western-plaguelands-objective-5216-1-cauldron-lord-bilemaw",
             },
-            id = "alliance-leveling-era-alliance-western-plaguelands-turnin-5216-target-felstone-field",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 5215 } } },
-            route = {
-                {
-                    label = "Target: Felstone Field",
-                    mapID = 1422,
-                    offMapText = "Travel to Target: Felstone Field.",
-                    x = 0.3719,
-                    y = 0.5687,
-                },
-            },
-            sourceStep = 9,
-            text = "Turn in Target: Felstone Field.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-western-plaguelands",
-            sourceActionID = "turnin-5216-target-felstone-field",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -549,6 +530,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-western-plaguelands-turnin-5216-target-felstone-field",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 5215 } } },
+            route = {
+                {
+                    label = "Target: Felstone Field",
+                    mapID = 1422,
+                    offMapText = "Travel to Target: Felstone Field.",
+                    x = 0.3719,
+                    y = 0.5687,
+                },
+            },
+            sourceActionID = "turnin-5216-target-felstone-field",
+            sourceGuide = "leveling-era-alliance-western-plaguelands",
+            sourceStep = 9,
+            text = "Turn in Target: Felstone Field.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 5217, state = "activeOrCompleted" } },
@@ -654,13 +654,13 @@ ns:RegisterGuide({
                     y = 0.5524,
                 },
             },
+            sourceActionID = "turnin-5021-better-late-than-never",
+            sourceGuide = "leveling-era-alliance-western-plaguelands",
             sourceStep = 11,
             text = "Turn in Better Late Than Never.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-western-plaguelands",
-            sourceActionID = "turnin-5021-better-late-than-never",
         },
         {
             complete = { quest = { id = 5022, state = "activeOrCompleted" } },
@@ -707,25 +707,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 5217, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 50 } }, { race = { 1, 3, 4, 7, 95 } } } },
             dependsOn = { "alliance-leveling-era-alliance-western-plaguelands-accept-5217-return-to-chillwind-camp" },
-            id = "alliance-leveling-era-alliance-western-plaguelands-turnin-5217-return-to-chillwind-camp",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 5216 } } },
-            route = {
-                {
-                    label = "High Priestess MacDonnell",
-                    mapID = 1422,
-                    offMapText = "Travel to High Priestess MacDonnell in Western Plaguelands.",
-                    x = 0.4297,
-                    y = 0.845,
-                },
-            },
-            sourceStep = 12,
-            text = "Turn in Return to Chillwind Camp to High Priestess MacDonnell.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-western-plaguelands",
-            sourceActionID = "turnin-5217-return-to-chillwind-camp",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -774,6 +755,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-western-plaguelands-turnin-5217-return-to-chillwind-camp",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 5216 } } },
+            route = {
+                {
+                    label = "High Priestess MacDonnell",
+                    mapID = 1422,
+                    offMapText = "Travel to High Priestess MacDonnell in Western Plaguelands.",
+                    x = 0.4297,
+                    y = 0.845,
+                },
+            },
+            sourceActionID = "turnin-5217-return-to-chillwind-camp",
+            sourceGuide = "leveling-era-alliance-western-plaguelands",
+            sourceStep = 12,
+            text = "Turn in Return to Chillwind Camp to High Priestess MacDonnell.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             id = "visit-entry-leveling-era-alliance-burning-steppes",
@@ -839,13 +839,13 @@ ns:RegisterGuide({
                     y = 0.5985,
                 },
             },
+            sourceActionID = "turnin-6182-the-first-and-the-last",
+            sourceGuide = "leveling-era-alliance-burning-steppes",
             sourceStep = 36,
             text = "Turn in The First and the Last to Master Mathias Shaw.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-burning-steppes",
-            sourceActionID = "turnin-6182-the-first-and-the-last",
         },
         {
             complete = { quest = { id = 6183, state = "activeOrCompleted" } },
@@ -894,25 +894,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 6183, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 56 } }, { race = { 1, 3, 4, 7, 95 } } } },
             dependsOn = { "alliance-leveling-era-alliance-burning-steppes-accept-6183-honor-the-dead" },
-            id = "alliance-leveling-era-alliance-burning-steppes-turnin-6183-honor-the-dead",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 6182 } } },
-            route = {
-                {
-                    label = "Master Mathias Shaw",
-                    mapID = 1453,
-                    offMapText = "Travel to Master Mathias Shaw in Stormwind City.",
-                    x = 0.7579,
-                    y = 0.5985,
-                },
-            },
-            sourceStep = 37,
-            text = "Turn in Honor the Dead to Master Mathias Shaw.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-burning-steppes",
-            sourceActionID = "turnin-6183-honor-the-dead",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -933,6 +914,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-burning-steppes-turnin-6183-honor-the-dead",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 6182 } } },
+            route = {
+                {
+                    label = "Master Mathias Shaw",
+                    mapID = 1453,
+                    offMapText = "Travel to Master Mathias Shaw in Stormwind City.",
+                    x = 0.7579,
+                    y = 0.5985,
+                },
+            },
+            sourceActionID = "turnin-6183-honor-the-dead",
+            sourceGuide = "leveling-era-alliance-burning-steppes",
+            sourceStep = 37,
+            text = "Turn in Honor the Dead to Master Mathias Shaw.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 6184, state = "activeOrCompleted" } },
@@ -995,25 +995,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 5022, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 50 } }, { race = { 1, 3, 4, 7, 95 } } } },
             dependsOn = {},
-            id = "alliance-leveling-era-alliance-burning-steppes-turnin-5022-better-late-than-never",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 5021 } } },
-            route = {
-                {
-                    label = "Royal Factor Bathrilor",
-                    mapID = 1453,
-                    offMapText = "Travel to Royal Factor Bathrilor in Stormwind City.",
-                    x = 0.4847,
-                    y = 0.3055,
-                },
-            },
-            sourceStep = 38,
-            text = "Turn in Better Late Than Never to Royal Factor Bathrilor.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-burning-steppes",
-            sourceActionID = "turnin-5022-better-late-than-never",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -1032,6 +1013,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-burning-steppes-turnin-5022-better-late-than-never",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 5021 } } },
+            route = {
+                {
+                    label = "Royal Factor Bathrilor",
+                    mapID = 1453,
+                    offMapText = "Travel to Royal Factor Bathrilor in Stormwind City.",
+                    x = 0.4847,
+                    y = 0.3055,
+                },
+            },
+            sourceActionID = "turnin-5022-better-late-than-never",
+            sourceGuide = "leveling-era-alliance-burning-steppes",
+            sourceStep = 38,
+            text = "Turn in Better Late Than Never to Royal Factor Bathrilor.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 5048, state = "activeOrCompleted" } },
@@ -1092,16 +1092,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 5048, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 50 } }, { race = { 1, 3, 4, 7, 95 } } } },
             dependsOn = { "alliance-leveling-era-alliance-burning-steppes-accept-5048-good-natured-emma" },
-            id = "alliance-leveling-era-alliance-burning-steppes-turnin-5048-good-natured-emma",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 5022 } } },
-            sourceStep = 39,
-            text = "Turn in Good Natured Emma to Ol' Emma.",
-            useClientPin = true,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-burning-steppes",
-            sourceActionID = "turnin-5048-good-natured-emma",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -1134,6 +1124,16 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-burning-steppes-turnin-5048-good-natured-emma",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 5022 } } },
+            sourceActionID = "turnin-5048-good-natured-emma",
+            sourceGuide = "leveling-era-alliance-burning-steppes",
+            sourceStep = 39,
+            text = "Turn in Good Natured Emma to Ol' Emma.",
+            useClientPin = true,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 5050, state = "activeOrCompleted" } },
@@ -1389,25 +1389,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 6184, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 56 } }, { race = { 1, 3, 4, 7, 95 } } } },
             dependsOn = {},
-            id = "alliance-leveling-era-alliance-western-and-eastern-plaguelands-turnin-6184-flint-shadowmore",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 6183 } } },
-            route = {
-                {
-                    label = "Flint Shadowmore",
-                    mapID = 1422,
-                    offMapText = "Travel to Flint Shadowmore in Western Plaguelands.",
-                    x = 0.4361,
-                    y = 0.8451,
-                },
-            },
-            sourceStep = 10,
-            text = "Turn in Flint Shadowmore to Flint Shadowmore.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-western-and-eastern-plaguelands",
-            sourceActionID = "turnin-6184-flint-shadowmore",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -1442,6 +1423,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-western-and-eastern-plaguelands-turnin-6184-flint-shadowmore",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 6183 } } },
+            route = {
+                {
+                    label = "Flint Shadowmore",
+                    mapID = 1422,
+                    offMapText = "Travel to Flint Shadowmore in Western Plaguelands.",
+                    x = 0.4361,
+                    y = 0.8451,
+                },
+            },
+            sourceActionID = "turnin-6184-flint-shadowmore",
+            sourceGuide = "leveling-era-alliance-western-and-eastern-plaguelands",
+            sourceStep = 10,
+            text = "Turn in Flint Shadowmore to Flint Shadowmore.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { questObjective = { id = 5097, index = 4, text = "Beacon Torch" } },
@@ -1615,13 +1615,13 @@ ns:RegisterGuide({
                     y = 0.5067,
                 },
             },
+            sourceActionID = "turnin-5058-mrs-dalson-s-diary",
+            sourceGuide = "leveling-era-alliance-western-and-eastern-plaguelands",
             sourceStep = 16,
             text = "Finish reading Mrs. Dalson's Diary.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-western-and-eastern-plaguelands",
-            sourceActionID = "turnin-5058-mrs-dalson-s-diary",
         },
         {
             complete = { quest = { id = 5060, state = "activeOrCompleted" } },
@@ -1654,13 +1654,13 @@ ns:RegisterGuide({
                     y = 0.4965,
                 },
             },
+            sourceActionID = "turnin-5060-locked-away",
+            sourceGuide = "leveling-era-alliance-western-and-eastern-plaguelands",
             sourceStep = 19,
             text = "Complete Locked Away at the Locked Cabinet.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-western-and-eastern-plaguelands",
-            sourceActionID = "turnin-5060-locked-away",
         },
         {
             complete = { questObjective = { count = 1, id = 5219, index = 1, text = "Cauldron Lord Malvinious" } },
@@ -1755,25 +1755,6 @@ ns:RegisterGuide({
                 "alliance-leveling-era-alliance-western-and-eastern-plaguelands-accept-5219-target-dalson-s-tears",
                 "alliance-leveling-era-alliance-western-and-eastern-plaguelands-objective-5219-1-cauldron-lord-malvinious",
             },
-            id = "alliance-leveling-era-alliance-western-and-eastern-plaguelands-turnin-5219-target-dalson-s-tears",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 5217 } } },
-            route = {
-                {
-                    label = "Target: Dalson's Tears",
-                    mapID = 1422,
-                    offMapText = "Travel to Target: Dalson's Tears.",
-                    x = 0.4618,
-                    y = 0.5202,
-                },
-            },
-            sourceStep = 21,
-            text = "Turn in Target: Dalson's Tears.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-western-and-eastern-plaguelands",
-            sourceActionID = "turnin-5219-target-dalson-s-tears",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -1836,6 +1817,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-western-and-eastern-plaguelands-turnin-5219-target-dalson-s-tears",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 5217 } } },
+            route = {
+                {
+                    label = "Target: Dalson's Tears",
+                    mapID = 1422,
+                    offMapText = "Travel to Target: Dalson's Tears.",
+                    x = 0.4618,
+                    y = 0.5202,
+                },
+            },
+            sourceActionID = "turnin-5219-target-dalson-s-tears",
+            sourceGuide = "leveling-era-alliance-western-and-eastern-plaguelands",
+            sourceStep = 21,
+            text = "Turn in Target: Dalson's Tears.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 5220, state = "activeOrCompleted" } },
@@ -1934,25 +1934,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 5050, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 50 } } } },
             dependsOn = {},
-            id = "alliance-leveling-era-alliance-western-and-eastern-plaguelands-turnin-5050-good-luck-charm",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 5048, 5049 } } },
-            route = {
-                {
-                    label = "Janice Felstone",
-                    mapID = 1422,
-                    offMapText = "Travel to Janice Felstone in Western Plaguelands.",
-                    x = 0.384,
-                    y = 0.5405,
-                },
-            },
-            sourceStep = 22,
-            text = "Turn in Good Luck Charm to Janice Felstone.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-western-and-eastern-plaguelands",
-            sourceActionID = "turnin-5050-good-luck-charm",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -2000,7 +1981,26 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-western-and-eastern-plaguelands-turnin-5050-good-luck-charm",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 5048, 5049 } } },
+            route = {
+                {
+                    label = "Janice Felstone",
+                    mapID = 1422,
+                    offMapText = "Travel to Janice Felstone in Western Plaguelands.",
+                    x = 0.384,
+                    y = 0.5405,
+                },
+            },
+            sourceActionID = "turnin-5050-good-luck-charm",
+            sourceGuide = "leveling-era-alliance-western-and-eastern-plaguelands",
+            sourceStep = 22,
+            text = "Turn in Good Luck Charm to Janice Felstone.",
             unresolvedPrerequisites = { 5049 },
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 5051, state = "activeOrCompleted" } },
@@ -2170,25 +2170,6 @@ ns:RegisterGuide({
                 "alliance-leveling-era-alliance-western-and-eastern-plaguelands-accept-5051-two-halves-become-one",
                 "alliance-leveling-era-alliance-western-and-eastern-plaguelands-objective-5051-1-jabbering-ghoul",
             },
-            id = "alliance-leveling-era-alliance-western-and-eastern-plaguelands-turnin-5051-two-halves-become-one",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 5050 } } },
-            route = {
-                {
-                    label = "Janice Felstone",
-                    mapID = 1422,
-                    offMapText = "Travel to Janice Felstone in Western Plaguelands.",
-                    x = 0.384,
-                    y = 0.5405,
-                },
-            },
-            sourceStep = 24,
-            text = "Turn in Two Halves Become One to Janice Felstone.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-western-and-eastern-plaguelands",
-            sourceActionID = "turnin-5051-two-halves-become-one",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -2249,6 +2230,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-western-and-eastern-plaguelands-turnin-5051-two-halves-become-one",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 5050 } } },
+            route = {
+                {
+                    label = "Janice Felstone",
+                    mapID = 1422,
+                    offMapText = "Travel to Janice Felstone in Western Plaguelands.",
+                    x = 0.384,
+                    y = 0.5405,
+                },
+            },
+            sourceActionID = "turnin-5051-two-halves-become-one",
+            sourceGuide = "leveling-era-alliance-western-and-eastern-plaguelands",
+            sourceStep = 24,
+            text = "Turn in Two Halves Become One to Janice Felstone.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { questObjective = { id = 5097, index = 2, text = "Beacon Torch" } },
@@ -2330,25 +2330,6 @@ ns:RegisterGuide({
                 "alliance-leveling-era-alliance-western-and-eastern-plaguelands-objective-5097-2-beacon-torch",
                 "alliance-leveling-era-alliance-western-and-eastern-plaguelands-objective-5097-1-beacon-torch",
             },
-            id = "alliance-leveling-era-alliance-western-and-eastern-plaguelands-turnin-5097-all-along-the-watchtowers",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 5092 } } },
-            route = {
-                {
-                    label = "Commander Ashlam Valorfist",
-                    mapID = 1422,
-                    offMapText = "Travel to Commander Ashlam Valorfist in Western Plaguelands.",
-                    x = 0.427,
-                    y = 0.8403,
-                },
-            },
-            sourceStep = 27,
-            text = "Turn in All Along the Watchtowers to Commander Ashlam Valorfist.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-western-and-eastern-plaguelands",
-            sourceActionID = "turnin-5097-all-along-the-watchtowers",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -2369,6 +2350,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-western-and-eastern-plaguelands-turnin-5097-all-along-the-watchtowers",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 5092 } } },
+            route = {
+                {
+                    label = "Commander Ashlam Valorfist",
+                    mapID = 1422,
+                    offMapText = "Travel to Commander Ashlam Valorfist in Western Plaguelands.",
+                    x = 0.427,
+                    y = 0.8403,
+                },
+            },
+            sourceActionID = "turnin-5097-all-along-the-watchtowers",
+            sourceGuide = "leveling-era-alliance-western-and-eastern-plaguelands",
+            sourceStep = 27,
+            text = "Turn in All Along the Watchtowers to Commander Ashlam Valorfist.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 5533, state = "activeOrCompleted" } },
@@ -2431,25 +2431,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 5533, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 55 } }, { race = { 1, 3, 4, 7, 95 } } } },
             dependsOn = { "alliance-leveling-era-alliance-western-and-eastern-plaguelands-accept-5533-scholomance" },
-            id = "alliance-leveling-era-alliance-western-and-eastern-plaguelands-turnin-5533-scholomance",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 5097 } } },
-            route = {
-                {
-                    label = "Alchemist Arbington",
-                    mapID = 1422,
-                    offMapText = "Travel to Alchemist Arbington in Western Plaguelands.",
-                    x = 0.4266,
-                    y = 0.8377,
-                },
-            },
-            sourceStep = 29,
-            text = "Turn in Scholomance to Alchemist Arbington.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-western-and-eastern-plaguelands",
-            sourceActionID = "turnin-5533-scholomance",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -2484,30 +2465,30 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-western-and-eastern-plaguelands-turnin-5533-scholomance",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 5097 } } },
+            route = {
+                {
+                    label = "Alchemist Arbington",
+                    mapID = 1422,
+                    offMapText = "Travel to Alchemist Arbington in Western Plaguelands.",
+                    x = 0.4266,
+                    y = 0.8377,
+                },
+            },
+            sourceActionID = "turnin-5533-scholomance",
+            sourceGuide = "leveling-era-alliance-western-and-eastern-plaguelands",
+            sourceStep = 29,
+            text = "Turn in Scholomance to Alchemist Arbington.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 5220, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 50 } }, { race = { 1, 3, 4, 7, 95 } } } },
             dependsOn = { "alliance-leveling-era-alliance-western-and-eastern-plaguelands-accept-5220-return-to-chillwind-camp" },
-            id = "alliance-leveling-era-alliance-western-and-eastern-plaguelands-turnin-5220-return-to-chillwind-camp",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 5219 } } },
-            route = {
-                {
-                    label = "High Priestess MacDonnell",
-                    mapID = 1422,
-                    offMapText = "Travel to High Priestess MacDonnell in Western Plaguelands.",
-                    x = 0.4297,
-                    y = 0.845,
-                },
-            },
-            sourceStep = 30,
-            text = "Turn in Return to Chillwind Camp to High Priestess MacDonnell.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-western-and-eastern-plaguelands",
-            sourceActionID = "turnin-5220-return-to-chillwind-camp",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -2584,6 +2565,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-western-and-eastern-plaguelands-turnin-5220-return-to-chillwind-camp",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 5219 } } },
+            route = {
+                {
+                    label = "High Priestess MacDonnell",
+                    mapID = 1422,
+                    offMapText = "Travel to High Priestess MacDonnell in Western Plaguelands.",
+                    x = 0.4297,
+                    y = 0.845,
+                },
+            },
+            sourceActionID = "turnin-5220-return-to-chillwind-camp",
+            sourceGuide = "leveling-era-alliance-western-and-eastern-plaguelands",
+            sourceStep = 30,
+            text = "Turn in Return to Chillwind Camp to High Priestess MacDonnell.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 5222, state = "activeOrCompleted" } },
@@ -2842,25 +2842,6 @@ ns:RegisterGuide({
                 "alliance-leveling-era-alliance-western-and-eastern-plaguelands-accept-5222-target-writhing-haunt",
                 "alliance-leveling-era-alliance-western-and-eastern-plaguelands-objective-5222-1-cauldron-lord-razarch",
             },
-            id = "alliance-leveling-era-alliance-western-and-eastern-plaguelands-turnin-5222-target-writhing-haunt",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 5220 } } },
-            route = {
-                {
-                    label = "Target: Writhing Haunt",
-                    mapID = 1422,
-                    offMapText = "Travel to Target: Writhing Haunt.",
-                    x = 0.5302,
-                    y = 0.6572,
-                },
-            },
-            sourceStep = 34,
-            text = "Turn in Target: Writhing Haunt.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-western-and-eastern-plaguelands",
-            sourceActionID = "turnin-5222-target-writhing-haunt",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -2951,6 +2932,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-western-and-eastern-plaguelands-turnin-5222-target-writhing-haunt",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 5220 } } },
+            route = {
+                {
+                    label = "Target: Writhing Haunt",
+                    mapID = 1422,
+                    offMapText = "Travel to Target: Writhing Haunt.",
+                    x = 0.5302,
+                    y = 0.6572,
+                },
+            },
+            sourceActionID = "turnin-5222-target-writhing-haunt",
+            sourceGuide = "leveling-era-alliance-western-and-eastern-plaguelands",
+            sourceStep = 34,
+            text = "Turn in Target: Writhing Haunt.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 5223, state = "activeOrCompleted" } },
@@ -3092,13 +3092,13 @@ ns:RegisterGuide({
                     y = 0.6467,
                 },
             },
+            sourceActionID = "turnin-4984-the-wildlife-suffers-too",
+            sourceGuide = "leveling-era-alliance-western-and-eastern-plaguelands",
             sourceStep = 35,
             text = "Turn in The Wildlife Suffers Too to Mulgris Deepriver.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-western-and-eastern-plaguelands",
-            sourceActionID = "turnin-4984-the-wildlife-suffers-too",
         },
         {
             complete = { quest = { id = 4985, state = "activeOrCompleted" } },
@@ -3228,13 +3228,13 @@ ns:RegisterGuide({
                     y = 0.908,
                 },
             },
+            sourceActionID = "turnin-5149-pamela-s-doll",
+            sourceGuide = "leveling-era-alliance-western-and-eastern-plaguelands",
             sourceStep = 46,
             text = "Turn in Pamela's Doll to Pamela Redpath.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-western-and-eastern-plaguelands",
-            sourceActionID = "turnin-5149-pamela-s-doll",
         },
         {
             complete = { quest = { id = 5152, state = "activeOrCompleted" } },
@@ -3294,25 +3294,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 5223, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 50 } }, { race = { 1, 3, 4, 7, 95 } } } },
             dependsOn = { "alliance-leveling-era-alliance-western-and-eastern-plaguelands-accept-5223-return-to-chillwind-camp" },
-            id = "alliance-leveling-era-alliance-western-and-eastern-plaguelands-turnin-5223-return-to-chillwind-camp",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 5222 } } },
-            route = {
-                {
-                    label = "High Priestess MacDonnell",
-                    mapID = 1422,
-                    offMapText = "Travel to High Priestess MacDonnell in Western Plaguelands.",
-                    x = 0.4297,
-                    y = 0.845,
-                },
-            },
-            sourceStep = 69,
-            text = "Turn in Return to Chillwind Camp to High Priestess MacDonnell.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-western-and-eastern-plaguelands",
-            sourceActionID = "turnin-5223-return-to-chillwind-camp",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -3417,6 +3398,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-western-and-eastern-plaguelands-turnin-5223-return-to-chillwind-camp",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 5222 } } },
+            route = {
+                {
+                    label = "High Priestess MacDonnell",
+                    mapID = 1422,
+                    offMapText = "Travel to High Priestess MacDonnell in Western Plaguelands.",
+                    x = 0.4297,
+                    y = 0.845,
+                },
+            },
+            sourceActionID = "turnin-5223-return-to-chillwind-camp",
+            sourceGuide = "leveling-era-alliance-western-and-eastern-plaguelands",
+            sourceStep = 69,
+            text = "Turn in Return to Chillwind Camp to High Priestess MacDonnell.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 5225, state = "activeOrCompleted" } },
@@ -3649,13 +3649,13 @@ ns:RegisterGuide({
                     y = 0.8484,
                 },
             },
+            sourceActionID = "turnin-5903-a-plague-upon-thee",
+            sourceGuide = "leveling-era-alliance-western-and-eastern-plaguelands",
             sourceStep = 72,
             text = "Turn in A Plague Upon Thee to Nathaniel Dumah.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-western-and-eastern-plaguelands",
-            sourceActionID = "turnin-5903-a-plague-upon-thee",
         },
         {
             complete = { quest = { id = 5904, state = "activeOrCompleted" } },
@@ -3704,25 +3704,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 5152, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 50 } } } },
             dependsOn = { "alliance-leveling-era-alliance-western-and-eastern-plaguelands-accept-5152-auntie-marlene" },
-            id = "alliance-leveling-era-alliance-western-and-eastern-plaguelands-turnin-5152-auntie-marlene",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 5149 } } },
-            route = {
-                {
-                    label = "Marlene Redpath",
-                    mapID = 1422,
-                    offMapText = "Travel to Marlene Redpath in Western Plaguelands.",
-                    x = 0.4913,
-                    y = 0.7852,
-                },
-            },
-            sourceStep = 74,
-            text = "Turn in Auntie Marlene to Marlene Redpath.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-western-and-eastern-plaguelands",
-            sourceActionID = "turnin-5152-auntie-marlene",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -3736,6 +3717,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-western-and-eastern-plaguelands-turnin-5152-auntie-marlene",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 5149 } } },
+            route = {
+                {
+                    label = "Marlene Redpath",
+                    mapID = 1422,
+                    offMapText = "Travel to Marlene Redpath in Western Plaguelands.",
+                    x = 0.4913,
+                    y = 0.7852,
+                },
+            },
+            sourceActionID = "turnin-5152-auntie-marlene",
+            sourceGuide = "leveling-era-alliance-western-and-eastern-plaguelands",
+            sourceStep = 74,
+            text = "Turn in Auntie Marlene to Marlene Redpath.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 5153, state = "activeOrCompleted" } },
@@ -3909,19 +3909,6 @@ ns:RegisterGuide({
                 "alliance-leveling-era-alliance-western-and-eastern-plaguelands-accept-5153-a-strange-historian",
                 "alliance-leveling-era-alliance-western-and-eastern-plaguelands-objective-5153-1-joseph-s-wedding-ring",
             },
-            id = "alliance-leveling-era-alliance-western-and-eastern-plaguelands-turnin-5153-a-strange-historian",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 5152 } } },
-            route = {
-                { label = "Chromie", mapID = 1422, offMapText = "Travel to Chromie in Western Plaguelands.", x = 0.3945, y = 0.6676 },
-            },
-            sourceStep = 77,
-            text = "Turn in A Strange Historian to Chromie.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-western-and-eastern-plaguelands",
-            sourceActionID = "turnin-5153-a-strange-historian",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -3948,6 +3935,19 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-western-and-eastern-plaguelands-turnin-5153-a-strange-historian",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 5152 } } },
+            route = {
+                { label = "Chromie", mapID = 1422, offMapText = "Travel to Chromie in Western Plaguelands.", x = 0.3945, y = 0.6676 },
+            },
+            sourceActionID = "turnin-5153-a-strange-historian",
+            sourceGuide = "leveling-era-alliance-western-and-eastern-plaguelands",
+            sourceStep = 77,
+            text = "Turn in A Strange Historian to Chromie.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 5154, state = "activeOrCompleted" } },
@@ -4110,19 +4110,6 @@ ns:RegisterGuide({
                 "alliance-leveling-era-alliance-western-and-eastern-plaguelands-accept-5154-the-annals-of-darrowshire",
                 "alliance-leveling-era-alliance-western-and-eastern-plaguelands-objective-5154-1-annals-of-darrowshire",
             },
-            id = "alliance-leveling-era-alliance-western-and-eastern-plaguelands-turnin-5154-the-annals-of-darrowshire",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 5153 } } },
-            route = {
-                { label = "Chromie", mapID = 1422, offMapText = "Travel to Chromie in Western Plaguelands.", x = 0.3945, y = 0.6676 },
-            },
-            sourceStep = 81,
-            text = "Turn in The Annals of Darrowshire to Chromie.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-western-and-eastern-plaguelands",
-            sourceActionID = "turnin-5154-the-annals-of-darrowshire",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -4162,6 +4149,19 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-western-and-eastern-plaguelands-turnin-5154-the-annals-of-darrowshire",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 5153 } } },
+            route = {
+                { label = "Chromie", mapID = 1422, offMapText = "Travel to Chromie in Western Plaguelands.", x = 0.3945, y = 0.6676 },
+            },
+            sourceActionID = "turnin-5154-the-annals-of-darrowshire",
+            sourceGuide = "leveling-era-alliance-western-and-eastern-plaguelands",
+            sourceStep = 81,
+            text = "Turn in The Annals of Darrowshire to Chromie.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 4971, state = "completed" } },
@@ -4176,13 +4176,13 @@ ns:RegisterGuide({
             route = {
                 { label = "Chromie", mapID = 1422, offMapText = "Travel to Chromie in Western Plaguelands.", x = 0.3945, y = 0.6676 },
             },
+            sourceActionID = "turnin-4971-a-matter-of-time",
+            sourceGuide = "leveling-era-alliance-western-and-eastern-plaguelands",
             sourceStep = 81,
             text = "Turn in A Matter of Time to Chromie.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-western-and-eastern-plaguelands",
-            sourceActionID = "turnin-4971-a-matter-of-time",
         },
         {
             complete = { quest = { id = 4972, state = "activeOrCompleted" } },
@@ -4250,19 +4250,6 @@ ns:RegisterGuide({
                 "alliance-leveling-era-alliance-western-and-eastern-plaguelands-accept-4972-counting-out-time",
                 "alliance-leveling-era-alliance-western-and-eastern-plaguelands-objective-4972-1-andorhal-watch",
             },
-            id = "alliance-leveling-era-alliance-western-and-eastern-plaguelands-turnin-4972-counting-out-time",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 4971 } } },
-            route = {
-                { label = "Chromie", mapID = 1422, offMapText = "Travel to Chromie in Western Plaguelands.", x = 0.3945, y = 0.6676 },
-            },
-            sourceStep = 84,
-            text = "Turn in Counting Out Time to Chromie.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-western-and-eastern-plaguelands",
-            sourceActionID = "turnin-4972-counting-out-time",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -4276,6 +4263,19 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-western-and-eastern-plaguelands-turnin-4972-counting-out-time",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 4971 } } },
+            route = {
+                { label = "Chromie", mapID = 1422, offMapText = "Travel to Chromie in Western Plaguelands.", x = 0.3945, y = 0.6676 },
+            },
+            sourceActionID = "turnin-4972-counting-out-time",
+            sourceGuide = "leveling-era-alliance-western-and-eastern-plaguelands",
+            sourceStep = 84,
+            text = "Turn in Counting Out Time to Chromie.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 5537, state = "completed" } },
@@ -4284,25 +4284,6 @@ ns:RegisterGuide({
                 "alliance-leveling-era-alliance-western-and-eastern-plaguelands-accept-5537-skeletal-fragments",
                 "alliance-leveling-era-alliance-western-and-eastern-plaguelands-objective-5537-1-skeletal-fragments",
             },
-            id = "alliance-leveling-era-alliance-western-and-eastern-plaguelands-turnin-5537-skeletal-fragments",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 5533 } } },
-            route = {
-                {
-                    label = "Alchemist Arbington",
-                    mapID = 1422,
-                    offMapText = "Travel to Alchemist Arbington in Western Plaguelands.",
-                    x = 0.4266,
-                    y = 0.8377,
-                },
-            },
-            sourceStep = 85,
-            text = "Turn in Skeletal Fragments to Alchemist Arbington.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-western-and-eastern-plaguelands",
-            sourceActionID = "turnin-5537-skeletal-fragments",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -4351,6 +4332,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-western-and-eastern-plaguelands-turnin-5537-skeletal-fragments",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 5533 } } },
+            route = {
+                {
+                    label = "Alchemist Arbington",
+                    mapID = 1422,
+                    offMapText = "Travel to Alchemist Arbington in Western Plaguelands.",
+                    x = 0.4266,
+                    y = 0.8377,
+                },
+            },
+            sourceActionID = "turnin-5537-skeletal-fragments",
+            sourceGuide = "leveling-era-alliance-western-and-eastern-plaguelands",
+            sourceStep = 85,
+            text = "Turn in Skeletal Fragments to Alchemist Arbington.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { questObjective = { count = 1, id = 5225, index = 1, text = "Cauldron Lord Soulwrath" } },
@@ -4501,25 +4501,6 @@ ns:RegisterGuide({
                 "alliance-leveling-era-alliance-western-and-eastern-plaguelands-accept-5225-target-gahrron-s-withering",
                 "alliance-leveling-era-alliance-western-and-eastern-plaguelands-objective-5225-1-cauldron-lord-soulwrath",
             },
-            id = "alliance-leveling-era-alliance-western-and-eastern-plaguelands-turnin-5225-target-gahrron-s-withering",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 5223 } } },
-            route = {
-                {
-                    label = "Target: Gahrron's Withering",
-                    mapID = 1422,
-                    offMapText = "Travel to Target: Gahrron's Withering.",
-                    x = 0.6256,
-                    y = 0.5857,
-                },
-            },
-            sourceStep = 92,
-            text = "Turn in Target: Gahrron's Withering.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-western-and-eastern-plaguelands",
-            sourceActionID = "turnin-5225-target-gahrron-s-withering",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -4638,6 +4619,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-western-and-eastern-plaguelands-turnin-5225-target-gahrron-s-withering",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 5223 } } },
+            route = {
+                {
+                    label = "Target: Gahrron's Withering",
+                    mapID = 1422,
+                    offMapText = "Travel to Target: Gahrron's Withering.",
+                    x = 0.6256,
+                    y = 0.5857,
+                },
+            },
+            sourceActionID = "turnin-5225-target-gahrron-s-withering",
+            sourceGuide = "leveling-era-alliance-western-and-eastern-plaguelands",
+            sourceStep = 92,
+            text = "Turn in Target: Gahrron's Withering.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 5226, state = "activeOrCompleted" } },
@@ -4826,25 +4826,6 @@ ns:RegisterGuide({
                 "alliance-leveling-era-alliance-western-and-eastern-plaguelands-accept-4985-the-wildlife-suffers-too",
                 "alliance-leveling-era-alliance-western-and-eastern-plaguelands-objective-4985-1-diseased-grizzly",
             },
-            id = "alliance-leveling-era-alliance-western-and-eastern-plaguelands-turnin-4985-the-wildlife-suffers-too",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 4984 } } },
-            route = {
-                {
-                    label = "Mulgris Deepriver",
-                    mapID = 1422,
-                    offMapText = "Travel to Mulgris Deepriver in Western Plaguelands.",
-                    x = 0.5372,
-                    y = 0.6467,
-                },
-            },
-            sourceStep = 94,
-            text = "Turn in The Wildlife Suffers Too to Mulgris Deepriver.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-western-and-eastern-plaguelands",
-            sourceActionID = "turnin-4985-the-wildlife-suffers-too",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -4858,6 +4839,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-western-and-eastern-plaguelands-turnin-4985-the-wildlife-suffers-too",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 4984 } } },
+            route = {
+                {
+                    label = "Mulgris Deepriver",
+                    mapID = 1422,
+                    offMapText = "Travel to Mulgris Deepriver in Western Plaguelands.",
+                    x = 0.5372,
+                    y = 0.6467,
+                },
+            },
+            sourceActionID = "turnin-4985-the-wildlife-suffers-too",
+            sourceGuide = "leveling-era-alliance-western-and-eastern-plaguelands",
+            sourceStep = 94,
+            text = "Turn in The Wildlife Suffers Too to Mulgris Deepriver.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 4986, state = "activeOrCompleted" } },
@@ -4913,19 +4913,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 5904, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 48 } }, { race = { 1, 3, 4, 7, 95 } } } },
             dependsOn = { "alliance-leveling-era-alliance-western-and-eastern-plaguelands-accept-5904-a-plague-upon-thee" },
-            id = "alliance-leveling-era-alliance-western-and-eastern-plaguelands-turnin-5904-a-plague-upon-thee",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 5903 } } },
-            route = {
-                { label = "A Plague Upon Thee", mapID = 1422, offMapText = "Travel to A Plague Upon Thee.", x = 0.4835, y = 0.32 },
-            },
-            sourceStep = 95,
-            text = "Turn in A Plague Upon Thee.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-western-and-eastern-plaguelands",
-            sourceActionID = "turnin-5904-a-plague-upon-thee",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -4946,6 +4933,19 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-western-and-eastern-plaguelands-turnin-5904-a-plague-upon-thee",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 5903 } } },
+            route = {
+                { label = "A Plague Upon Thee", mapID = 1422, offMapText = "Travel to A Plague Upon Thee.", x = 0.4835, y = 0.32 },
+            },
+            sourceActionID = "turnin-5904-a-plague-upon-thee",
+            sourceGuide = "leveling-era-alliance-western-and-eastern-plaguelands",
+            sourceStep = 95,
+            text = "Turn in A Plague Upon Thee.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 6389, state = "activeOrCompleted" } },
@@ -5107,13 +5107,13 @@ ns:RegisterGuide({
                     y = 0.2806,
                 },
             },
+            sourceActionID = "turnin-6004-unfinished-business",
+            sourceGuide = "leveling-era-alliance-western-and-eastern-plaguelands",
             sourceStep = 99,
             text = "Turn in Unfinished Business to Kirsta Deepshadow.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-western-and-eastern-plaguelands",
-            sourceActionID = "turnin-6004-unfinished-business",
         },
         {
             complete = { quest = { id = 6023, state = "activeOrCompleted" } },
@@ -5221,25 +5221,6 @@ ns:RegisterGuide({
                 "alliance-leveling-era-alliance-western-and-eastern-plaguelands-objective-6023-1-huntsman-radley",
                 "alliance-leveling-era-alliance-western-and-eastern-plaguelands-objective-6023-2-cavalier-durgen",
             },
-            id = "alliance-leveling-era-alliance-western-and-eastern-plaguelands-turnin-6023-unfinished-business",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 6004 } } },
-            route = {
-                {
-                    label = "Kirsta Deepshadow",
-                    mapID = 1422,
-                    offMapText = "Travel to Kirsta Deepshadow in Western Plaguelands.",
-                    x = 0.5192,
-                    y = 0.2806,
-                },
-            },
-            sourceStep = 102,
-            text = "Turn in Unfinished Business to Kirsta Deepshadow.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-western-and-eastern-plaguelands",
-            sourceActionID = "turnin-6023-unfinished-business",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -5253,30 +5234,30 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-western-and-eastern-plaguelands-turnin-6023-unfinished-business",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 6004 } } },
+            route = {
+                {
+                    label = "Kirsta Deepshadow",
+                    mapID = 1422,
+                    offMapText = "Travel to Kirsta Deepshadow in Western Plaguelands.",
+                    x = 0.5192,
+                    y = 0.2806,
+                },
+            },
+            sourceActionID = "turnin-6023-unfinished-business",
+            sourceGuide = "leveling-era-alliance-western-and-eastern-plaguelands",
+            sourceStep = 102,
+            text = "Turn in Unfinished Business to Kirsta Deepshadow.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 6389, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 48 } }, { race = { 1, 3, 4, 7, 95 } } } },
             dependsOn = { "alliance-leveling-era-alliance-western-and-eastern-plaguelands-accept-6389-a-plague-upon-thee" },
-            id = "alliance-leveling-era-alliance-western-and-eastern-plaguelands-turnin-6389-a-plague-upon-thee",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 5904 } } },
-            route = {
-                {
-                    label = "Nathaniel Dumah",
-                    mapID = 1422,
-                    offMapText = "Travel to Nathaniel Dumah in Western Plaguelands.",
-                    x = 0.4342,
-                    y = 0.8483,
-                },
-            },
-            sourceStep = 104,
-            text = "Turn in A Plague Upon Thee to Nathaniel Dumah.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-western-and-eastern-plaguelands",
-            sourceActionID = "turnin-6389-a-plague-upon-thee",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -5311,30 +5292,30 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-western-and-eastern-plaguelands-turnin-6389-a-plague-upon-thee",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 5904 } } },
+            route = {
+                {
+                    label = "Nathaniel Dumah",
+                    mapID = 1422,
+                    offMapText = "Travel to Nathaniel Dumah in Western Plaguelands.",
+                    x = 0.4342,
+                    y = 0.8483,
+                },
+            },
+            sourceActionID = "turnin-6389-a-plague-upon-thee",
+            sourceGuide = "leveling-era-alliance-western-and-eastern-plaguelands",
+            sourceStep = 104,
+            text = "Turn in A Plague Upon Thee to Nathaniel Dumah.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 5226, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 50 } }, { race = { 1, 3, 4, 7, 95 } } } },
             dependsOn = { "alliance-leveling-era-alliance-western-and-eastern-plaguelands-accept-5226-return-to-chillwind-point" },
-            id = "alliance-leveling-era-alliance-western-and-eastern-plaguelands-turnin-5226-return-to-chillwind-camp",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 5225 } } },
-            route = {
-                {
-                    label = "High Priestess MacDonnell",
-                    mapID = 1422,
-                    offMapText = "Travel to High Priestess MacDonnell in Western Plaguelands.",
-                    x = 0.4297,
-                    y = 0.845,
-                },
-            },
-            sourceStep = 105,
-            text = "Turn in Return to Chillwind Camp to High Priestess MacDonnell.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-western-and-eastern-plaguelands",
-            sourceActionID = "turnin-5226-return-to-chillwind-camp",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -5467,6 +5448,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-western-and-eastern-plaguelands-turnin-5226-return-to-chillwind-camp",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 5225 } } },
+            route = {
+                {
+                    label = "High Priestess MacDonnell",
+                    mapID = 1422,
+                    offMapText = "Travel to High Priestess MacDonnell in Western Plaguelands.",
+                    x = 0.4297,
+                    y = 0.845,
+                },
+            },
+            sourceActionID = "turnin-5226-return-to-chillwind-camp",
+            sourceGuide = "leveling-era-alliance-western-and-eastern-plaguelands",
+            sourceStep = 105,
+            text = "Turn in Return to Chillwind Camp to High Priestess MacDonnell.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 5237, state = "activeOrCompleted" } },
@@ -5651,25 +5651,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 4986, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 51 } }, { race = { 1, 3, 4, 7, 95 } } } },
             dependsOn = {},
-            id = "alliance-leveling-era-alliance-winterspring-turnin-4986-glyphed-oaken-branch",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 4985 } } },
-            route = {
-                {
-                    label = "Mathrengyl Bearwalker",
-                    mapID = 1457,
-                    offMapText = "Travel to Mathrengyl Bearwalker in Darnassus.",
-                    x = 0.3538,
-                    y = 0.0843,
-                },
-            },
-            sourceStep = 26,
-            text = "Turn in Glyphed Oaken Branch to Mathrengyl Bearwalker.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-winterspring",
-            sourceActionID = "turnin-4986-glyphed-oaken-branch",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -5697,88 +5678,140 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-winterspring-turnin-4986-glyphed-oaken-branch",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 4985 } } },
+            route = {
+                {
+                    label = "Mathrengyl Bearwalker",
+                    mapID = 1457,
+                    offMapText = "Travel to Mathrengyl Bearwalker in Darnassus.",
+                    x = 0.3538,
+                    y = 0.0843,
+                },
+            },
+            sourceActionID = "turnin-4986-glyphed-oaken-branch",
+            sourceGuide = "leveling-era-alliance-winterspring",
+            sourceStep = 26,
+            text = "Turn in Glyphed Oaken Branch to Mathrengyl Bearwalker.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
+            checkpointQuest = 211,
+            complete = { level = { min = 50 } },
+            conditions = { all = { { faction = "Alliance" } } },
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 211, state = "activeOrCompleted" } },
+                        {
+                            any = {
+                                { quest = { id = 211, state = "activeOrCompleted" } },
+                                {
+                                    all = {
+                                        { faction = "Alliance" },
+                                        {
+                                            any = {
+                                                {
+                                                    any = {
+                                                        { quest = { id = 5097, state = "activeOrCompleted" } },
+                                                        {
+                                                            all = {
+                                                                { faction = "Alliance" },
+                                                                {
+                                                                    any = { { any = { { quest = { id = 5092, state = "activeOrCompleted" } }, { all = { { faction = "Alliance" } } } } } },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
             id = "alliance-extra-211-level",
             kind = "note",
-            checkpointQuest = 211,
-            text = "Reach level 60 before this visit.",
-            conditions = { all = { { faction = "Alliance" } } },
-            complete = { level = { min = 60 } },
-            requiredLevel = 60,
-            excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 211, state = "activeOrCompleted" } },
-                        {
-                            any = {
-                                { quest = { id = 211, state = "activeOrCompleted" } },
-                                {
-                                    all = {
-                                        { faction = "Alliance" },
-                                        {
-                                            any = {
-                                                {
-                                                    any = {
-                                                        { quest = { id = 5097, state = "activeOrCompleted" } },
-                                                        {
-                                                            all = {
-                                                                { faction = "Alliance" },
-                                                                {
-                                                                    any = { { any = { { quest = { id = 5092, state = "activeOrCompleted" } }, { all = { { faction = "Alliance" } } } } } },
-                                                                },
-                                                            },
-                                                        },
-                                                    },
-                                                },
-                                            },
-                                        },
-                                    },
-                                },
-                            },
-                        },
-                    },
-                },
-            },
+            requiredLevel = 50,
+            text = "Reach level 50 before this visit.",
         },
         {
-            id = "alliance-extra-211-accept",
-            kind = "accept",
-            text = "Accept Alas, Andorhal from Commander Ashlam Valorfist.",
-            conditions = { all = { { faction = "Alliance" }, { level = { min = 50 } } } },
-            route = {
-                {
-                    mapID = 1422,
-                    x = 0.428,
-                    y = 0.84,
-                    label = "Commander Ashlam Valorfist",
-                    offMapText = "Travel to Commander Ashlam Valorfist in Western Plaguelands.",
-                },
-            },
             complete = { quest = { id = 211, state = "activeOrCompleted" } },
-            requiredQuests = { { mode = "any", quests = { 5097 } } },
-            useClientText = false,
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 50 } } } },
             dependsOn = { "alliance-extra-211-level" },
             excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 211, state = "activeOrCompleted" } },
-                        {
+                any = {
+                    {
+                        ["not"] = {
                             any = {
                                 { quest = { id = 211, state = "activeOrCompleted" } },
                                 {
-                                    all = {
-                                        { faction = "Alliance" },
+                                    any = {
+                                        { quest = { id = 211, state = "activeOrCompleted" } },
                                         {
-                                            any = {
+                                            all = {
+                                                { faction = "Alliance" },
                                                 {
                                                     any = {
-                                                        { quest = { id = 5097, state = "activeOrCompleted" } },
                                                         {
-                                                            all = {
-                                                                { faction = "Alliance" },
+                                                            any = {
+                                                                { quest = { id = 5097, state = "activeOrCompleted" } },
                                                                 {
-                                                                    any = { { any = { { quest = { id = 5092, state = "activeOrCompleted" } }, { all = { { faction = "Alliance" } } } } } },
+                                                                    all = {
+                                                                        { faction = "Alliance" },
+                                                                        {
+                                                                            any = { { any = { { quest = { id = 5092, state = "activeOrCompleted" } }, { all = { { faction = "Alliance" } } } } } },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 211, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 211, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                { faction = "Alliance" },
+                                                { race = { 1, 3, 4, 7 } },
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 5097, state = "activeOrCompleted" } },
+                                                                {
+                                                                    all = {
+                                                                        { faction = "Alliance" },
+                                                                        { race = { 1, 3, 4, 7 } },
+                                                                        {
+                                                                            any = {
+                                                                                {
+                                                                                    any = {
+                                                                                        { quest = { id = 5092, state = "activeOrCompleted" } },
+                                                                                        { all = { { faction = "Alliance" }, { race = { 1, 3, 4, 7 } } } },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
                                                                 },
                                                             },
                                                         },
@@ -5793,98 +5826,92 @@ ns:RegisterGuide({
                     },
                 },
             },
-        },
-        {
-            id = "alliance-extra-211-objective",
-            kind = "objective",
-            text = "Defeat Araj the Summoner, then search Araj's Phylactery in Andorhal for Araj's Phylactery Shard. This is an elite. Bring a group.",
-            conditions = { all = { { faction = "Alliance" }, { level = { min = 50 } } } },
-            route = {
-                {
-                    mapID = 1422,
-                    x = 0.456,
-                    y = 0.6920000000000001,
-                    label = "Araj the Summoner",
-                    offMapText = "Travel to Araj the Summoner in Western Plaguelands.",
-                },
-            },
-            complete = { quest = { id = 211, state = "complete" } },
+            id = "alliance-extra-211-accept",
+            kind = "accept",
             requiredQuests = { { mode = "any", quests = { 5097 } } },
-            useClientText = false,
-            dependsOn = { "alliance-extra-211-accept" },
-            excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 211, state = "activeOrCompleted" } },
-                        {
-                            any = {
-                                { quest = { id = 211, state = "activeOrCompleted" } },
-                                {
-                                    all = {
-                                        { faction = "Alliance" },
-                                        {
-                                            any = {
-                                                {
-                                                    any = {
-                                                        { quest = { id = 5097, state = "activeOrCompleted" } },
-                                                        {
-                                                            all = {
-                                                                { faction = "Alliance" },
-                                                                {
-                                                                    any = { { any = { { quest = { id = 5092, state = "activeOrCompleted" } }, { all = { { faction = "Alliance" } } } } } },
-                                                                },
-                                                            },
-                                                        },
-                                                    },
-                                                },
-                                            },
-                                        },
-                                    },
-                                },
-                            },
-                        },
-                    },
-                },
-            },
-        },
-        {
-            id = "alliance-extra-211-turnin",
-            kind = "turnin",
-            text = "Turn in Alas, Andorhal to Commander Ashlam Valorfist.",
-            conditions = { all = { { faction = "Alliance" }, { level = { min = 50 } } } },
             route = {
                 {
+                    label = "Commander Ashlam Valorfist",
                     mapID = 1422,
+                    offMapText = "Travel to Commander Ashlam Valorfist in Western Plaguelands.",
                     x = 0.428,
                     y = 0.84,
-                    label = "Commander Ashlam Valorfist",
-                    offMapText = "Travel to Commander Ashlam Valorfist in Western Plaguelands.",
                 },
             },
-            complete = { quest = { id = 211, state = "completed" } },
-            requiredQuests = { { mode = "any", quests = { 5097 } } },
+            text = "Accept Alas, Andorhal from Commander Ashlam Valorfist.",
             useClientText = false,
-            dependsOn = { "alliance-extra-211-objective" },
+        },
+        {
+            complete = { quest = { id = 211, state = "complete" } },
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 50 } } } },
+            dependsOn = { "alliance-extra-211-accept" },
             excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 211, state = "activeOrCompleted" } },
-                        {
+                any = {
+                    {
+                        ["not"] = {
                             any = {
                                 { quest = { id = 211, state = "activeOrCompleted" } },
                                 {
-                                    all = {
-                                        { faction = "Alliance" },
+                                    any = {
+                                        { quest = { id = 211, state = "activeOrCompleted" } },
                                         {
-                                            any = {
+                                            all = {
+                                                { faction = "Alliance" },
                                                 {
                                                     any = {
-                                                        { quest = { id = 5097, state = "activeOrCompleted" } },
                                                         {
-                                                            all = {
-                                                                { faction = "Alliance" },
+                                                            any = {
+                                                                { quest = { id = 5097, state = "activeOrCompleted" } },
                                                                 {
-                                                                    any = { { any = { { quest = { id = 5092, state = "activeOrCompleted" } }, { all = { { faction = "Alliance" } } } } } },
+                                                                    all = {
+                                                                        { faction = "Alliance" },
+                                                                        {
+                                                                            any = { { any = { { quest = { id = 5092, state = "activeOrCompleted" } }, { all = { { faction = "Alliance" } } } } } },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 211, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 211, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                { faction = "Alliance" },
+                                                { race = { 1, 3, 4, 7 } },
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 5097, state = "activeOrCompleted" } },
+                                                                {
+                                                                    all = {
+                                                                        { faction = "Alliance" },
+                                                                        { race = { 1, 3, 4, 7 } },
+                                                                        {
+                                                                            any = {
+                                                                                {
+                                                                                    any = {
+                                                                                        { quest = { id = 5092, state = "activeOrCompleted" } },
+                                                                                        { all = { { faction = "Alliance" }, { race = { 1, 3, 4, 7 } } } },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
                                                                 },
                                                             },
                                                         },
@@ -5899,6 +5926,123 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-extra-211-objective",
+            kind = "objective",
+            requiredQuests = { { mode = "any", quests = { 5097 } } },
+            route = {
+                {
+                    label = "Araj the Summoner",
+                    mapID = 1422,
+                    offMapText = "Travel to Araj the Summoner in Western Plaguelands.",
+                    x = 0.456,
+                    y = 0.692,
+                },
+            },
+            text = "Defeat Araj the Summoner, then search Araj's Phylactery in Andorhal for Araj's Phylactery Shard. This is an elite. Bring a group.",
+            useClientPin = true,
+            useClientText = false,
+        },
+        {
+            complete = { quest = { id = 211, state = "completed" } },
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 50 } } } },
+            dependsOn = { "alliance-extra-211-objective" },
+            excludeWhen = {
+                any = {
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 211, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 211, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                { faction = "Alliance" },
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 5097, state = "activeOrCompleted" } },
+                                                                {
+                                                                    all = {
+                                                                        { faction = "Alliance" },
+                                                                        {
+                                                                            any = { { any = { { quest = { id = 5092, state = "activeOrCompleted" } }, { all = { { faction = "Alliance" } } } } } },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 211, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 211, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                { faction = "Alliance" },
+                                                { race = { 1, 3, 4, 7 } },
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 5097, state = "activeOrCompleted" } },
+                                                                {
+                                                                    all = {
+                                                                        { faction = "Alliance" },
+                                                                        { race = { 1, 3, 4, 7 } },
+                                                                        {
+                                                                            any = {
+                                                                                {
+                                                                                    any = {
+                                                                                        { quest = { id = 5092, state = "activeOrCompleted" } },
+                                                                                        { all = { { faction = "Alliance" }, { race = { 1, 3, 4, 7 } } } },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
+            id = "alliance-extra-211-turnin",
+            kind = "turnin",
+            requiredQuests = { { mode = "any", quests = { 5097 } } },
+            route = {
+                {
+                    label = "Commander Ashlam Valorfist",
+                    mapID = 1422,
+                    offMapText = "Travel to Commander Ashlam Valorfist in Western Plaguelands.",
+                    x = 0.428,
+                    y = 0.84,
+                },
+            },
+            text = "Turn in Alas, Andorhal to Commander Ashlam Valorfist.",
+            useClientPin = true,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             id = "visit-entry-leveling-era-horde-western-and-eastern-plaguelands",
@@ -5984,13 +6128,13 @@ ns:RegisterGuide({
                     y = 0.6893,
                 },
             },
+            sourceActionID = "turnin-5093-a-call-to-arms-the-plaguelands",
+            sourceGuide = "leveling-era-horde-western-and-eastern-plaguelands",
             sourceStep = 3,
             text = "Turn in A Call to Arms: The Plaguelands! to High Executor Derrington.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-western-and-eastern-plaguelands",
-            sourceActionID = "turnin-5093-a-call-to-arms-the-plaguelands",
         },
         {
             alternativeQuests = { 5093, 5095 },
@@ -6009,13 +6153,13 @@ ns:RegisterGuide({
                     y = 0.6893,
                 },
             },
+            sourceActionID = "turnin-5094-a-call-to-arms-the-plaguelands",
+            sourceGuide = "leveling-era-horde-western-and-eastern-plaguelands",
             sourceStep = 3,
             text = "Turn in A Call to Arms: The Plaguelands! to High Executor Derrington.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-western-and-eastern-plaguelands",
-            sourceActionID = "turnin-5094-a-call-to-arms-the-plaguelands",
         },
         {
             alternativeQuests = { 5093, 5094 },
@@ -6048,13 +6192,13 @@ ns:RegisterGuide({
                     y = 0.6893,
                 },
             },
+            sourceActionID = "turnin-5095-a-call-to-arms-the-plaguelands",
+            sourceGuide = "leveling-era-horde-western-and-eastern-plaguelands",
             sourceStep = 3,
             text = "Turn in A Call to Arms: The Plaguelands! to High Executor Derrington.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-western-and-eastern-plaguelands",
-            sourceActionID = "turnin-5095-a-call-to-arms-the-plaguelands",
         },
         {
             complete = { quest = { id = 5096, state = "activeOrCompleted" } },
@@ -6153,13 +6297,13 @@ ns:RegisterGuide({
                     y = 0.6893,
                 },
             },
+            sourceActionID = "turnin-5096-scarlet-diversions",
+            sourceGuide = "leveling-era-horde-western-and-eastern-plaguelands",
             sourceStep = 8,
             text = "Turn in Scarlet Diversions to High Executor Derrington.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-western-and-eastern-plaguelands",
-            sourceActionID = "turnin-5096-scarlet-diversions",
         },
         {
             complete = { quest = { id = 5098, state = "activeOrCompleted" } },
@@ -6251,25 +6395,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 5228, state = "completed" } },
             conditions = { all = { { faction = "Horde" }, { level = { min = 50 } }, { race = { 2, 5, 6, 8, 96 } } } },
             dependsOn = { "horde-leveling-era-horde-western-and-eastern-plaguelands-accept-5228-the-scourge-cauldrons" },
-            id = "horde-leveling-era-horde-western-and-eastern-plaguelands-turnin-5228-the-scourge-cauldrons",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 5096 } } },
-            route = {
-                {
-                    label = "Shadow Priestess Vandis",
-                    mapID = 1420,
-                    offMapText = "Travel to Shadow Priestess Vandis in Tirisfal Glades.",
-                    x = 0.8303,
-                    y = 0.7191,
-                },
-            },
-            sourceStep = 10,
-            text = "Turn in The Scourge Cauldrons to Shadow Priestess Vandis.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-western-and-eastern-plaguelands",
-            sourceActionID = "turnin-5228-the-scourge-cauldrons",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -6290,6 +6415,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-western-and-eastern-plaguelands-turnin-5228-the-scourge-cauldrons",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 5096 } } },
+            route = {
+                {
+                    label = "Shadow Priestess Vandis",
+                    mapID = 1420,
+                    offMapText = "Travel to Shadow Priestess Vandis in Tirisfal Glades.",
+                    x = 0.8303,
+                    y = 0.7191,
+                },
+            },
+            sourceActionID = "turnin-5228-the-scourge-cauldrons",
+            sourceGuide = "leveling-era-horde-western-and-eastern-plaguelands",
+            sourceStep = 10,
+            text = "Turn in The Scourge Cauldrons to Shadow Priestess Vandis.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 5229, state = "activeOrCompleted" } },
@@ -6413,25 +6557,6 @@ ns:RegisterGuide({
                 "horde-leveling-era-horde-western-and-eastern-plaguelands-accept-5229-target-felstone-field",
                 "horde-leveling-era-horde-western-and-eastern-plaguelands-objective-5229-1-cauldron-lord-bilemaw",
             },
-            id = "horde-leveling-era-horde-western-and-eastern-plaguelands-turnin-5229-target-felstone-field",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 5228 } } },
-            route = {
-                {
-                    label = "Target: Felstone Field",
-                    mapID = 1422,
-                    offMapText = "Travel to Target: Felstone Field.",
-                    x = 0.3719,
-                    y = 0.5687,
-                },
-            },
-            sourceStep = 12,
-            text = "Turn in Target: Felstone Field.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-western-and-eastern-plaguelands",
-            sourceActionID = "turnin-5229-target-felstone-field",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -6466,6 +6591,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-western-and-eastern-plaguelands-turnin-5229-target-felstone-field",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 5228 } } },
+            route = {
+                {
+                    label = "Target: Felstone Field",
+                    mapID = 1422,
+                    offMapText = "Travel to Target: Felstone Field.",
+                    x = 0.3719,
+                    y = 0.5687,
+                },
+            },
+            sourceActionID = "turnin-5229-target-felstone-field",
+            sourceGuide = "leveling-era-horde-western-and-eastern-plaguelands",
+            sourceStep = 12,
+            text = "Turn in Target: Felstone Field.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 5230, state = "activeOrCompleted" } },
@@ -6571,13 +6715,13 @@ ns:RegisterGuide({
                     y = 0.5524,
                 },
             },
+            sourceActionID = "turnin-5021-better-late-than-never",
+            sourceGuide = "leveling-era-horde-western-and-eastern-plaguelands",
             sourceStep = 14,
             text = "Turn in Better Late Than Never.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-western-and-eastern-plaguelands",
-            sourceActionID = "turnin-5021-better-late-than-never",
         },
         {
             complete = { quest = { id = 5023, state = "activeOrCompleted" } },
@@ -6624,25 +6768,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 5230, state = "completed" } },
             conditions = { all = { { faction = "Horde" }, { level = { min = 50 } }, { race = { 2, 5, 6, 8, 96 } } } },
             dependsOn = { "horde-leveling-era-horde-western-and-eastern-plaguelands-accept-5230-return-to-the-bulwark" },
-            id = "horde-leveling-era-horde-western-and-eastern-plaguelands-turnin-5230-return-to-the-bulwark",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 5229 } } },
-            route = {
-                {
-                    label = "Shadow Priestess Vandis",
-                    mapID = 1420,
-                    offMapText = "Travel to Shadow Priestess Vandis in Tirisfal Glades.",
-                    x = 0.8304,
-                    y = 0.7191,
-                },
-            },
-            sourceStep = 15,
-            text = "Turn in Return to the Bulwark to Shadow Priestess Vandis.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-western-and-eastern-plaguelands",
-            sourceActionID = "turnin-5230-return-to-the-bulwark",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -6691,6 +6816,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-western-and-eastern-plaguelands-turnin-5230-return-to-the-bulwark",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 5229 } } },
+            route = {
+                {
+                    label = "Shadow Priestess Vandis",
+                    mapID = 1420,
+                    offMapText = "Travel to Shadow Priestess Vandis in Tirisfal Glades.",
+                    x = 0.8304,
+                    y = 0.7191,
+                },
+            },
+            sourceActionID = "turnin-5230-return-to-the-bulwark",
+            sourceGuide = "leveling-era-horde-western-and-eastern-plaguelands",
+            sourceStep = 15,
+            text = "Turn in Return to the Bulwark to Shadow Priestess Vandis.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 5231, state = "activeOrCompleted" } },
@@ -6870,25 +7014,6 @@ ns:RegisterGuide({
                 "horde-leveling-era-horde-western-and-eastern-plaguelands-accept-5231-target-dalson-s-tears",
                 "horde-leveling-era-horde-western-and-eastern-plaguelands-objective-5231-1-cauldron-lord-malvinious",
             },
-            id = "horde-leveling-era-horde-western-and-eastern-plaguelands-turnin-5231-target-dalson-s-tears",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 5230 } } },
-            route = {
-                {
-                    label = "Target: Dalson's Tears",
-                    mapID = 1422,
-                    offMapText = "Travel to Target: Dalson's Tears.",
-                    x = 0.4618,
-                    y = 0.5202,
-                },
-            },
-            sourceStep = 17,
-            text = "Turn in Target: Dalson's Tears.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-western-and-eastern-plaguelands",
-            sourceActionID = "turnin-5231-target-dalson-s-tears",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -6951,6 +7076,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-western-and-eastern-plaguelands-turnin-5231-target-dalson-s-tears",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 5230 } } },
+            route = {
+                {
+                    label = "Target: Dalson's Tears",
+                    mapID = 1422,
+                    offMapText = "Travel to Target: Dalson's Tears.",
+                    x = 0.4618,
+                    y = 0.5202,
+                },
+            },
+            sourceActionID = "turnin-5231-target-dalson-s-tears",
+            sourceGuide = "leveling-era-horde-western-and-eastern-plaguelands",
+            sourceStep = 17,
+            text = "Turn in Target: Dalson's Tears.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 5232, state = "activeOrCompleted" } },
@@ -7093,13 +7237,13 @@ ns:RegisterGuide({
                     y = 0.5067,
                 },
             },
+            sourceActionID = "turnin-5058-mrs-dalson-s-diary",
+            sourceGuide = "leveling-era-horde-western-and-eastern-plaguelands",
             sourceStep = 18,
             text = "Finish reading Mrs. Dalson's Diary.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-western-and-eastern-plaguelands",
-            sourceActionID = "turnin-5058-mrs-dalson-s-diary",
         },
         {
             complete = { quest = { id = 5060, state = "activeOrCompleted" } },
@@ -7132,13 +7276,13 @@ ns:RegisterGuide({
                     y = 0.4965,
                 },
             },
+            sourceActionID = "turnin-5060-locked-away",
+            sourceGuide = "leveling-era-horde-western-and-eastern-plaguelands",
             sourceStep = 21,
             text = "Complete Locked Away at the Locked Cabinet.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-western-and-eastern-plaguelands",
-            sourceActionID = "turnin-5060-locked-away",
         },
         {
             checkpointQuest = 4971,
@@ -7343,13 +7487,13 @@ ns:RegisterGuide({
             route = {
                 { label = "Chromie", mapID = 1422, offMapText = "Travel to Chromie in Western Plaguelands.", x = 0.3945, y = 0.6676 },
             },
+            sourceActionID = "turnin-4971-a-matter-of-time",
+            sourceGuide = "leveling-era-horde-western-and-eastern-plaguelands",
             sourceStep = 28,
             text = "Turn in A Matter of Time to Chromie.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-western-and-eastern-plaguelands",
-            sourceActionID = "turnin-4971-a-matter-of-time",
         },
         {
             complete = { quest = { id = 4972, state = "activeOrCompleted" } },
@@ -7420,25 +7564,6 @@ ns:RegisterGuide({
                 "horde-leveling-era-horde-western-and-eastern-plaguelands-objective-5098-3-beacon-torch",
                 "horde-leveling-era-horde-western-and-eastern-plaguelands-objective-5098-2-beacon-torch",
             },
-            id = "horde-leveling-era-horde-western-and-eastern-plaguelands-turnin-5098-all-along-the-watchtowers",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 5096 } } },
-            route = {
-                {
-                    label = "High Executor Derrington",
-                    mapID = 1420,
-                    offMapText = "Travel to High Executor Derrington in Tirisfal Glades.",
-                    x = 0.8313,
-                    y = 0.6893,
-                },
-            },
-            sourceStep = 30,
-            text = "Turn in All Along the Watchtowers to High Executor Derrington.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-western-and-eastern-plaguelands",
-            sourceActionID = "turnin-5098-all-along-the-watchtowers",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -7459,6 +7584,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-western-and-eastern-plaguelands-turnin-5098-all-along-the-watchtowers",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 5096 } } },
+            route = {
+                {
+                    label = "High Executor Derrington",
+                    mapID = 1420,
+                    offMapText = "Travel to High Executor Derrington in Tirisfal Glades.",
+                    x = 0.8313,
+                    y = 0.6893,
+                },
+            },
+            sourceActionID = "turnin-5098-all-along-the-watchtowers",
+            sourceGuide = "leveling-era-horde-western-and-eastern-plaguelands",
+            sourceStep = 30,
+            text = "Turn in All Along the Watchtowers to High Executor Derrington.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             checkpointQuest = 838,
@@ -7570,25 +7714,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 838, state = "completed" } },
             conditions = { all = { { faction = "Horde" }, { level = { min = 55 } }, { race = { 2, 5, 6, 8, 96 } } } },
             dependsOn = { "horde-leveling-era-horde-western-and-eastern-plaguelands-accept-838-scholomance" },
-            id = "horde-leveling-era-horde-western-and-eastern-plaguelands-turnin-838-scholomance",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 5098 } } },
-            route = {
-                {
-                    label = "Apothecary Dithers",
-                    mapID = 1420,
-                    offMapText = "Travel to Apothecary Dithers in Tirisfal Glades.",
-                    x = 0.8328,
-                    y = 0.6923,
-                },
-            },
-            sourceStep = 32,
-            text = "Turn in Scholomance to Apothecary Dithers.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-western-and-eastern-plaguelands",
-            sourceActionID = "turnin-838-scholomance",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -7623,6 +7748,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-western-and-eastern-plaguelands-turnin-838-scholomance",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 5098 } } },
+            route = {
+                {
+                    label = "Apothecary Dithers",
+                    mapID = 1420,
+                    offMapText = "Travel to Apothecary Dithers in Tirisfal Glades.",
+                    x = 0.8328,
+                    y = 0.6923,
+                },
+            },
+            sourceActionID = "turnin-838-scholomance",
+            sourceGuide = "leveling-era-horde-western-and-eastern-plaguelands",
+            sourceStep = 32,
+            text = "Turn in Scholomance to Apothecary Dithers.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 964, state = "activeOrCompleted" } },
@@ -7699,25 +7843,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 5232, state = "completed" } },
             conditions = { all = { { faction = "Horde" }, { level = { min = 50 } }, { race = { 2, 5, 6, 8, 96 } } } },
             dependsOn = { "horde-leveling-era-horde-western-and-eastern-plaguelands-accept-5232-return-to-the-bulwark" },
-            id = "horde-leveling-era-horde-western-and-eastern-plaguelands-turnin-5232-return-to-the-bulwark",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 5231 } } },
-            route = {
-                {
-                    label = "Shadow Priestess Vandis",
-                    mapID = 1420,
-                    offMapText = "Travel to Shadow Priestess Vandis in Tirisfal Glades.",
-                    x = 0.8304,
-                    y = 0.7191,
-                },
-            },
-            sourceStep = 33,
-            text = "Turn in Return to the Bulwark to Shadow Priestess Vandis.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-western-and-eastern-plaguelands",
-            sourceActionID = "turnin-5232-return-to-the-bulwark",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -7794,6 +7919,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-western-and-eastern-plaguelands-turnin-5232-return-to-the-bulwark",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 5231 } } },
+            route = {
+                {
+                    label = "Shadow Priestess Vandis",
+                    mapID = 1420,
+                    offMapText = "Travel to Shadow Priestess Vandis in Tirisfal Glades.",
+                    x = 0.8304,
+                    y = 0.7191,
+                },
+            },
+            sourceActionID = "turnin-5232-return-to-the-bulwark",
+            sourceGuide = "leveling-era-horde-western-and-eastern-plaguelands",
+            sourceStep = 33,
+            text = "Turn in Return to the Bulwark to Shadow Priestess Vandis.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 5233, state = "activeOrCompleted" } },
@@ -8118,25 +8262,6 @@ ns:RegisterGuide({
                 "horde-leveling-era-horde-western-and-eastern-plaguelands-accept-5233-target-writhing-haunt",
                 "horde-leveling-era-horde-western-and-eastern-plaguelands-objective-5233-1-cauldron-lord-razarch",
             },
-            id = "horde-leveling-era-horde-western-and-eastern-plaguelands-turnin-5233-target-writhing-haunt",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 5232 } } },
-            route = {
-                {
-                    label = "Target: Writhing Haunt",
-                    mapID = 1422,
-                    offMapText = "Travel to Target: Writhing Haunt.",
-                    x = 0.5302,
-                    y = 0.6572,
-                },
-            },
-            sourceStep = 37,
-            text = "Turn in Target: Writhing Haunt.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-western-and-eastern-plaguelands",
-            sourceActionID = "turnin-5233-target-writhing-haunt",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -8227,6 +8352,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-western-and-eastern-plaguelands-turnin-5233-target-writhing-haunt",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 5232 } } },
+            route = {
+                {
+                    label = "Target: Writhing Haunt",
+                    mapID = 1422,
+                    offMapText = "Travel to Target: Writhing Haunt.",
+                    x = 0.5302,
+                    y = 0.6572,
+                },
+            },
+            sourceActionID = "turnin-5233-target-writhing-haunt",
+            sourceGuide = "leveling-era-horde-western-and-eastern-plaguelands",
+            sourceStep = 37,
+            text = "Turn in Target: Writhing Haunt.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 5234, state = "activeOrCompleted" } },
@@ -8481,13 +8625,13 @@ ns:RegisterGuide({
                     y = 0.2806,
                 },
             },
+            sourceActionID = "turnin-6004-unfinished-business",
+            sourceGuide = "leveling-era-horde-western-and-eastern-plaguelands",
             sourceStep = 42,
             text = "Turn in Unfinished Business to Kirsta Deepshadow.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-western-and-eastern-plaguelands",
-            sourceActionID = "turnin-6004-unfinished-business",
         },
         {
             complete = { quest = { id = 6023, state = "activeOrCompleted" } },
@@ -8595,25 +8739,6 @@ ns:RegisterGuide({
                 "horde-leveling-era-horde-western-and-eastern-plaguelands-objective-6023-1-huntsman-radley",
                 "horde-leveling-era-horde-western-and-eastern-plaguelands-objective-6023-2-cavalier-durgen",
             },
-            id = "horde-leveling-era-horde-western-and-eastern-plaguelands-turnin-6023-unfinished-business",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 6004 } } },
-            route = {
-                {
-                    label = "Kirsta Deepshadow",
-                    mapID = 1422,
-                    offMapText = "Travel to Kirsta Deepshadow in Western Plaguelands.",
-                    x = 0.5192,
-                    y = 0.2806,
-                },
-            },
-            sourceStep = 45,
-            text = "Turn in Unfinished Business to Kirsta Deepshadow.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-western-and-eastern-plaguelands",
-            sourceActionID = "turnin-6023-unfinished-business",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -8627,6 +8752,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-western-and-eastern-plaguelands-turnin-6023-unfinished-business",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 6004 } } },
+            route = {
+                {
+                    label = "Kirsta Deepshadow",
+                    mapID = 1422,
+                    offMapText = "Travel to Kirsta Deepshadow in Western Plaguelands.",
+                    x = 0.5192,
+                    y = 0.2806,
+                },
+            },
+            sourceActionID = "turnin-6023-unfinished-business",
+            sourceGuide = "leveling-era-horde-western-and-eastern-plaguelands",
+            sourceStep = 45,
+            text = "Turn in Unfinished Business to Kirsta Deepshadow.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { questObjective = { count = 8, id = 4984, index = 1, text = "Diseased Wolf" } },
@@ -8663,13 +8807,13 @@ ns:RegisterGuide({
                     y = 0.6467,
                 },
             },
+            sourceActionID = "turnin-4984-the-wildlife-suffers-too",
+            sourceGuide = "leveling-era-horde-western-and-eastern-plaguelands",
             sourceStep = 47,
             text = "Turn in The Wildlife Suffers Too to Mulgris Deepriver.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-western-and-eastern-plaguelands",
-            sourceActionID = "turnin-4984-the-wildlife-suffers-too",
         },
         {
             complete = { quest = { id = 4985, state = "activeOrCompleted" } },
@@ -8799,13 +8943,13 @@ ns:RegisterGuide({
                     y = 0.908,
                 },
             },
+            sourceActionID = "turnin-5149-pamela-s-doll",
+            sourceGuide = "leveling-era-horde-western-and-eastern-plaguelands",
             sourceStep = 55,
             text = "Turn in Pamela's Doll to Pamela Redpath.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-western-and-eastern-plaguelands",
-            sourceActionID = "turnin-5149-pamela-s-doll",
         },
         {
             complete = { quest = { id = 5152, state = "activeOrCompleted" } },
@@ -8897,25 +9041,6 @@ ns:RegisterGuide({
                 "horde-leveling-era-horde-western-and-eastern-plaguelands-accept-4985-the-wildlife-suffers-too",
                 "horde-leveling-era-horde-western-and-eastern-plaguelands-objective-4985-1-diseased-grizzly",
             },
-            id = "horde-leveling-era-horde-western-and-eastern-plaguelands-turnin-4985-the-wildlife-suffers-too",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 4984 } } },
-            route = {
-                {
-                    label = "Mulgris Deepriver",
-                    mapID = 1422,
-                    offMapText = "Travel to Mulgris Deepriver in Western Plaguelands.",
-                    x = 0.5372,
-                    y = 0.6467,
-                },
-            },
-            sourceStep = 79,
-            text = "Turn in The Wildlife Suffers Too to Mulgris Deepriver.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-western-and-eastern-plaguelands",
-            sourceActionID = "turnin-4985-the-wildlife-suffers-too",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -8929,6 +9054,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-western-and-eastern-plaguelands-turnin-4985-the-wildlife-suffers-too",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 4984 } } },
+            route = {
+                {
+                    label = "Mulgris Deepriver",
+                    mapID = 1422,
+                    offMapText = "Travel to Mulgris Deepriver in Western Plaguelands.",
+                    x = 0.5372,
+                    y = 0.6467,
+                },
+            },
+            sourceActionID = "turnin-4985-the-wildlife-suffers-too",
+            sourceGuide = "leveling-era-horde-western-and-eastern-plaguelands",
+            sourceStep = 79,
+            text = "Turn in The Wildlife Suffers Too to Mulgris Deepriver.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 4987, state = "activeOrCompleted" } },
@@ -8984,25 +9128,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 5152, state = "completed" } },
             conditions = { all = { { faction = "Horde" }, { level = { min = 50 } } } },
             dependsOn = { "horde-leveling-era-horde-western-and-eastern-plaguelands-accept-5152-auntie-marlene" },
-            id = "horde-leveling-era-horde-western-and-eastern-plaguelands-turnin-5152-auntie-marlene",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 5149 } } },
-            route = {
-                {
-                    label = "Marlene Redpath",
-                    mapID = 1422,
-                    offMapText = "Travel to Marlene Redpath in Western Plaguelands.",
-                    x = 0.4917,
-                    y = 0.7858,
-                },
-            },
-            sourceStep = 80,
-            text = "Turn in Auntie Marlene to Marlene Redpath.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-western-and-eastern-plaguelands",
-            sourceActionID = "turnin-5152-auntie-marlene",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -9016,6 +9141,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-western-and-eastern-plaguelands-turnin-5152-auntie-marlene",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 5149 } } },
+            route = {
+                {
+                    label = "Marlene Redpath",
+                    mapID = 1422,
+                    offMapText = "Travel to Marlene Redpath in Western Plaguelands.",
+                    x = 0.4917,
+                    y = 0.7858,
+                },
+            },
+            sourceActionID = "turnin-5152-auntie-marlene",
+            sourceGuide = "leveling-era-horde-western-and-eastern-plaguelands",
+            sourceStep = 80,
+            text = "Turn in Auntie Marlene to Marlene Redpath.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 5153, state = "activeOrCompleted" } },
@@ -9123,19 +9267,6 @@ ns:RegisterGuide({
                 "horde-leveling-era-horde-western-and-eastern-plaguelands-accept-4972-counting-out-time",
                 "horde-leveling-era-horde-western-and-eastern-plaguelands-objective-4972-1-andorhal-watch",
             },
-            id = "horde-leveling-era-horde-western-and-eastern-plaguelands-turnin-4972-counting-out-time",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 4971 } } },
-            route = {
-                { label = "Chromie", mapID = 1422, offMapText = "Travel to Chromie in Western Plaguelands.", x = 0.3945, y = 0.6676 },
-            },
-            sourceStep = 82,
-            text = "Turn in Counting Out Time to Chromie.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-western-and-eastern-plaguelands",
-            sourceActionID = "turnin-4972-counting-out-time",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -9149,6 +9280,19 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-western-and-eastern-plaguelands-turnin-4972-counting-out-time",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 4971 } } },
+            route = {
+                { label = "Chromie", mapID = 1422, offMapText = "Travel to Chromie in Western Plaguelands.", x = 0.3945, y = 0.6676 },
+            },
+            sourceActionID = "turnin-4972-counting-out-time",
+            sourceGuide = "leveling-era-horde-western-and-eastern-plaguelands",
+            sourceStep = 82,
+            text = "Turn in Counting Out Time to Chromie.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 5153, state = "completed" } },
@@ -9157,19 +9301,6 @@ ns:RegisterGuide({
                 "horde-leveling-era-horde-western-and-eastern-plaguelands-accept-5153-a-strange-historian",
                 "horde-leveling-era-horde-western-and-eastern-plaguelands-objective-5153-1-joseph-s-wedding-ring",
             },
-            id = "horde-leveling-era-horde-western-and-eastern-plaguelands-turnin-5153-a-strange-historian",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 5152 } } },
-            route = {
-                { label = "Chromie", mapID = 1422, offMapText = "Travel to Chromie in Western Plaguelands.", x = 0.3945, y = 0.6676 },
-            },
-            sourceStep = 82,
-            text = "Turn in A Strange Historian to Chromie.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-western-and-eastern-plaguelands",
-            sourceActionID = "turnin-5153-a-strange-historian",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -9196,6 +9327,19 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-western-and-eastern-plaguelands-turnin-5153-a-strange-historian",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 5152 } } },
+            route = {
+                { label = "Chromie", mapID = 1422, offMapText = "Travel to Chromie in Western Plaguelands.", x = 0.3945, y = 0.6676 },
+            },
+            sourceActionID = "turnin-5153-a-strange-historian",
+            sourceGuide = "leveling-era-horde-western-and-eastern-plaguelands",
+            sourceStep = 82,
+            text = "Turn in A Strange Historian to Chromie.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 5154, state = "activeOrCompleted" } },
@@ -9323,19 +9467,6 @@ ns:RegisterGuide({
                 "horde-leveling-era-horde-western-and-eastern-plaguelands-accept-5154-the-annals-of-darrowshire",
                 "horde-leveling-era-horde-western-and-eastern-plaguelands-objective-5154-1-annals-of-darrowshire",
             },
-            id = "horde-leveling-era-horde-western-and-eastern-plaguelands-turnin-5154-the-annals-of-darrowshire",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 5153 } } },
-            route = {
-                { label = "Chromie", mapID = 1422, offMapText = "Travel to Chromie in Western Plaguelands.", x = 0.3945, y = 0.6676 },
-            },
-            sourceStep = 85,
-            text = "Turn in The Annals of Darrowshire to Chromie.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-western-and-eastern-plaguelands",
-            sourceActionID = "turnin-5154-the-annals-of-darrowshire",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -9375,6 +9506,19 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-western-and-eastern-plaguelands-turnin-5154-the-annals-of-darrowshire",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 5153 } } },
+            route = {
+                { label = "Chromie", mapID = 1422, offMapText = "Travel to Chromie in Western Plaguelands.", x = 0.3945, y = 0.6676 },
+            },
+            sourceActionID = "turnin-5154-the-annals-of-darrowshire",
+            sourceGuide = "leveling-era-horde-western-and-eastern-plaguelands",
+            sourceStep = 85,
+            text = "Turn in The Annals of Darrowshire to Chromie.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 964, state = "completed" } },
@@ -9383,25 +9527,6 @@ ns:RegisterGuide({
                 "horde-leveling-era-horde-western-and-eastern-plaguelands-accept-964-skeletal-fragments",
                 "horde-leveling-era-horde-western-and-eastern-plaguelands-objective-964-1-skeletal-sorcerer",
             },
-            id = "horde-leveling-era-horde-western-and-eastern-plaguelands-turnin-964-skeletal-fragments",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 838 } } },
-            route = {
-                {
-                    label = "Apothecary Dithers",
-                    mapID = 1420,
-                    offMapText = "Travel to Apothecary Dithers in Tirisfal Glades.",
-                    x = 0.8328,
-                    y = 0.6923,
-                },
-            },
-            sourceStep = 87,
-            text = "Turn in Skeletal Fragments to Apothecary Dithers.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-western-and-eastern-plaguelands",
-            sourceActionID = "turnin-964-skeletal-fragments",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -9450,30 +9575,30 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-western-and-eastern-plaguelands-turnin-964-skeletal-fragments",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 838 } } },
+            route = {
+                {
+                    label = "Apothecary Dithers",
+                    mapID = 1420,
+                    offMapText = "Travel to Apothecary Dithers in Tirisfal Glades.",
+                    x = 0.8328,
+                    y = 0.6923,
+                },
+            },
+            sourceActionID = "turnin-964-skeletal-fragments",
+            sourceGuide = "leveling-era-horde-western-and-eastern-plaguelands",
+            sourceStep = 87,
+            text = "Turn in Skeletal Fragments to Apothecary Dithers.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 5234, state = "completed" } },
             conditions = { all = { { faction = "Horde" }, { level = { min = 50 } }, { race = { 2, 5, 6, 8, 96 } } } },
             dependsOn = { "horde-leveling-era-horde-western-and-eastern-plaguelands-accept-5234-return-to-the-bulwark" },
-            id = "horde-leveling-era-horde-western-and-eastern-plaguelands-turnin-5234-return-to-the-bulwark",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 5233 } } },
-            route = {
-                {
-                    label = "Shadow Priestess Vandis",
-                    mapID = 1420,
-                    offMapText = "Travel to Shadow Priestess Vandis in Tirisfal Glades.",
-                    x = 0.8304,
-                    y = 0.7191,
-                },
-            },
-            sourceStep = 88,
-            text = "Turn in Return to the Bulwark to Shadow Priestess Vandis.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-western-and-eastern-plaguelands",
-            sourceActionID = "turnin-5234-return-to-the-bulwark",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -9578,6 +9703,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-western-and-eastern-plaguelands-turnin-5234-return-to-the-bulwark",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 5233 } } },
+            route = {
+                {
+                    label = "Shadow Priestess Vandis",
+                    mapID = 1420,
+                    offMapText = "Travel to Shadow Priestess Vandis in Tirisfal Glades.",
+                    x = 0.8304,
+                    y = 0.7191,
+                },
+            },
+            sourceActionID = "turnin-5234-return-to-the-bulwark",
+            sourceGuide = "leveling-era-horde-western-and-eastern-plaguelands",
+            sourceStep = 88,
+            text = "Turn in Return to the Bulwark to Shadow Priestess Vandis.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 5235, state = "activeOrCompleted" } },
@@ -9739,13 +9883,13 @@ ns:RegisterGuide({
                     y = 0.7233,
                 },
             },
+            sourceActionID = "turnin-5901-a-plague-upon-thee",
+            sourceGuide = "leveling-era-horde-western-and-eastern-plaguelands",
             sourceStep = 89,
             text = "Turn in A Plague Upon Thee to Mickey Levine.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-western-and-eastern-plaguelands",
-            sourceActionID = "turnin-5901-a-plague-upon-thee",
         },
         {
             complete = { quest = { id = 5902, state = "activeOrCompleted" } },
@@ -9794,25 +9938,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 5023, state = "completed" } },
             conditions = { all = { { faction = "Horde" }, { level = { min = 50 } }, { race = { 2, 5, 6, 8, 96 } } } },
             dependsOn = { "horde-leveling-era-horde-western-and-eastern-plaguelands-accept-5023-better-late-than-never" },
-            id = "horde-leveling-era-horde-western-and-eastern-plaguelands-turnin-5023-better-late-than-never",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 5021 } } },
-            route = {
-                {
-                    label = "Royal Overseer Bauhaus",
-                    mapID = 1458,
-                    offMapText = "Travel to Royal Overseer Bauhaus in Undercity.",
-                    x = 0.6978,
-                    y = 0.4315,
-                },
-            },
-            sourceStep = 92,
-            text = "Turn in Better Late Than Never to Royal Overseer Bauhaus.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-western-and-eastern-plaguelands",
-            sourceActionID = "turnin-5023-better-late-than-never",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -9831,6 +9956,215 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-western-and-eastern-plaguelands-turnin-5023-better-late-than-never",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 5021 } } },
+            route = {
+                {
+                    label = "Royal Overseer Bauhaus",
+                    mapID = 1458,
+                    offMapText = "Travel to Royal Overseer Bauhaus in Undercity.",
+                    x = 0.6978,
+                    y = 0.4315,
+                },
+            },
+            sourceActionID = "turnin-5023-better-late-than-never",
+            sourceGuide = "leveling-era-horde-western-and-eastern-plaguelands",
+            sourceStep = 92,
+            text = "Turn in Better Late Than Never to Royal Overseer Bauhaus.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
+        },
+        {
+            complete = { quest = { id = 5049, state = "activeOrCompleted" } },
+            conditions = { all = { { faction = "Horde" }, { level = { min = 50 } }, { race = { 2, 5, 6, 8, 96 } } } },
+            dependsOn = {},
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 5049, state = "activeOrCompleted" } },
+                        {
+                            any = {
+                                { quest = { id = 5049, state = "activeOrCompleted" } },
+                                {
+                                    all = {
+                                        { faction = "Horde" },
+                                        { race = { 2, 5, 6, 8 } },
+                                        {
+                                            any = {
+                                                {
+                                                    any = {
+                                                        { quest = { id = 5023, state = "activeOrCompleted" } },
+                                                        {
+                                                            all = {
+                                                                { item = { minCount = 1, name = "Janice's Parcel" } },
+                                                                { faction = "Horde" },
+                                                                { race = { 2, 5, 6, 8 } },
+                                                                { any = { { any = { { quest = { id = 5021, state = "activeOrCompleted" } }, { all = {} } } } } },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
+            id = "horde-leveling-era-horde-western-and-eastern-plaguelands-accept-5049-the-jeremiah-blues",
+            kind = "accept",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 5023 } } },
+            route = {
+                {
+                    label = "Royal Overseer Bauhaus",
+                    mapID = 1458,
+                    offMapText = "Travel to Royal Overseer Bauhaus in Undercity.",
+                    x = 0.6978,
+                    y = 0.4315,
+                },
+            },
+            sourceActionID = "accept-5049-the-jeremiah-blues",
+            sourceGuide = "leveling-era-horde-western-and-eastern-plaguelands",
+            sourceStep = 92,
+            text = "Accept The Jeremiah Blues from Royal Overseer Bauhaus.",
+            useClientPin = false,
+            useClientText = false,
+        },
+        {
+            complete = { quest = { id = 5049, state = "completed" } },
+            conditions = { all = { { faction = "Horde" }, { level = { min = 50 } }, { race = { 2, 5, 6, 8, 96 } } } },
+            dependsOn = { "horde-leveling-era-horde-western-and-eastern-plaguelands-accept-5049-the-jeremiah-blues" },
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 5049, state = "activeOrCompleted" } },
+                        {
+                            any = {
+                                { quest = { id = 5049, state = "activeOrCompleted" } },
+                                {
+                                    all = {
+                                        { faction = "Horde" },
+                                        { race = { 2, 5, 6, 8 } },
+                                        {
+                                            any = {
+                                                {
+                                                    any = {
+                                                        { quest = { id = 5023, state = "activeOrCompleted" } },
+                                                        {
+                                                            all = {
+                                                                { item = { minCount = 1, name = "Janice's Parcel" } },
+                                                                { faction = "Horde" },
+                                                                { race = { 2, 5, 6, 8 } },
+                                                                { any = { { any = { { quest = { id = 5021, state = "activeOrCompleted" } }, { all = {} } } } } },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
+            id = "horde-leveling-era-horde-western-and-eastern-plaguelands-turnin-5049-the-jeremiah-blues",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 5023 } } },
+            route = {
+                {
+                    label = "Jeremiah Payson",
+                    mapID = 1458,
+                    offMapText = "Travel to Jeremiah Payson in Undercity.",
+                    x = 0.676,
+                    y = 0.4416,
+                },
+            },
+            sourceActionID = "turnin-5049-the-jeremiah-blues",
+            sourceGuide = "leveling-era-horde-western-and-eastern-plaguelands",
+            sourceStep = 93,
+            text = "Turn in The Jeremiah Blues to Jeremiah Payson.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
+        },
+        {
+            complete = { quest = { id = 5050, state = "activeOrCompleted" } },
+            conditions = { all = { { faction = "Horde" }, { level = { min = 50 } } } },
+            dependsOn = {},
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 5050, state = "activeOrCompleted" } },
+                        {
+                            any = {
+                                { quest = { id = 5050, state = "activeOrCompleted" } },
+                                {
+                                    all = {
+                                        {
+                                            any = {
+                                                { quest = { id = 5048, state = "completed" } },
+                                                {
+                                                    any = {
+                                                        { quest = { id = 5049, state = "activeOrCompleted" } },
+                                                        {
+                                                            all = {
+                                                                { faction = "Horde" },
+                                                                { race = { 2, 5, 6, 8 } },
+                                                                {
+                                                                    any = {
+                                                                        {
+                                                                            any = {
+                                                                                { quest = { id = 5023, state = "activeOrCompleted" } },
+                                                                                {
+                                                                                    all = {
+                                                                                        { item = { minCount = 1, name = "Janice's Parcel" } },
+                                                                                        { faction = "Horde" },
+                                                                                        { race = { 2, 5, 6, 8 } },
+                                                                                        { any = { { any = { { quest = { id = 5021, state = "activeOrCompleted" } }, { all = {} } } } } },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
+            id = "horde-leveling-era-horde-western-and-eastern-plaguelands-accept-5050-good-luck-charm",
+            kind = "accept",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 5048, 5049 } } },
+            route = {
+                {
+                    label = "Jeremiah Payson",
+                    mapID = 1458,
+                    offMapText = "Travel to Jeremiah Payson in Undercity.",
+                    x = 0.676,
+                    y = 0.4416,
+                },
+            },
+            sourceActionID = "accept-5050-good-luck-charm",
+            sourceGuide = "leveling-era-horde-western-and-eastern-plaguelands",
+            sourceStep = 93,
+            text = "Accept Good Luck Charm from Jeremiah Payson.",
+            unresolvedPrerequisites = { 5048 },
+            useClientPin = false,
+            useClientText = false,
         },
         {
             complete = { quest = { id = 5235, state = "complete" } },
@@ -9971,25 +10305,6 @@ ns:RegisterGuide({
                 "horde-leveling-era-horde-western-and-eastern-plaguelands-accept-5235-target-gahrron-s-withering",
                 "horde-leveling-era-horde-western-and-eastern-plaguelands-objective-5235-quest-work",
             },
-            id = "horde-leveling-era-horde-western-and-eastern-plaguelands-turnin-5235-target-gahrron-s-withering",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 5234 } } },
-            route = {
-                {
-                    label = "Target: Gahrron's Withering",
-                    mapID = 1422,
-                    offMapText = "Travel to Target: Gahrron's Withering.",
-                    x = 0.6256,
-                    y = 0.5857,
-                },
-            },
-            sourceStep = 104,
-            text = "Turn in Target: Gahrron's Withering.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-western-and-eastern-plaguelands",
-            sourceActionID = "turnin-5235-target-gahrron-s-withering",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -10108,6 +10423,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-western-and-eastern-plaguelands-turnin-5235-target-gahrron-s-withering",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 5234 } } },
+            route = {
+                {
+                    label = "Target: Gahrron's Withering",
+                    mapID = 1422,
+                    offMapText = "Travel to Target: Gahrron's Withering.",
+                    x = 0.6256,
+                    y = 0.5857,
+                },
+            },
+            sourceActionID = "turnin-5235-target-gahrron-s-withering",
+            sourceGuide = "leveling-era-horde-western-and-eastern-plaguelands",
+            sourceStep = 104,
+            text = "Turn in Target: Gahrron's Withering.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 5236, state = "activeOrCompleted" } },
@@ -10262,19 +10596,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 5902, state = "completed" } },
             conditions = { all = { { faction = "Horde" }, { level = { min = 48 } }, { race = { 2, 5, 6, 8, 96 } } } },
             dependsOn = { "horde-leveling-era-horde-western-and-eastern-plaguelands-accept-5902-a-plague-upon-thee" },
-            id = "horde-leveling-era-horde-western-and-eastern-plaguelands-turnin-5902-a-plague-upon-thee",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 5901 } } },
-            route = {
-                { label = "A Plague Upon Thee", mapID = 1422, offMapText = "Travel to A Plague Upon Thee.", x = 0.4835, y = 0.32 },
-            },
-            sourceStep = 105,
-            text = "Turn in A Plague Upon Thee.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-western-and-eastern-plaguelands",
-            sourceActionID = "turnin-5902-a-plague-upon-thee",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -10295,6 +10616,19 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-western-and-eastern-plaguelands-turnin-5902-a-plague-upon-thee",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 5901 } } },
+            route = {
+                { label = "A Plague Upon Thee", mapID = 1422, offMapText = "Travel to A Plague Upon Thee.", x = 0.4835, y = 0.32 },
+            },
+            sourceActionID = "turnin-5902-a-plague-upon-thee",
+            sourceGuide = "leveling-era-horde-western-and-eastern-plaguelands",
+            sourceStep = 105,
+            text = "Turn in A Plague Upon Thee.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 6390, state = "activeOrCompleted" } },
@@ -10348,28 +10682,417 @@ ns:RegisterGuide({
             },
         },
         {
-            complete = { quest = { id = 5236, state = "completed" } },
-            conditions = { all = { { faction = "Horde" }, { level = { min = 50 } }, { race = { 2, 5, 6, 8, 96 } } } },
-            dependsOn = { "horde-leveling-era-horde-western-and-eastern-plaguelands-accept-5236-return-to-the-bulwark" },
-            id = "horde-leveling-era-horde-western-and-eastern-plaguelands-turnin-5236-return-to-the-bulwark",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 5235 } } },
-            route = {
-                {
-                    label = "Shadow Priestess Vandis",
-                    mapID = 1420,
-                    offMapText = "Travel to Shadow Priestess Vandis in Tirisfal Glades.",
-                    x = 0.8303,
-                    y = 0.7191,
+            complete = { quest = { id = 5050, state = "completed" } },
+            conditions = { all = { { faction = "Horde" }, { level = { min = 50 } } } },
+            dependsOn = { "horde-leveling-era-horde-western-and-eastern-plaguelands-accept-5050-good-luck-charm" },
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 5050, state = "activeOrCompleted" } },
+                        {
+                            any = {
+                                { quest = { id = 5050, state = "activeOrCompleted" } },
+                                {
+                                    all = {
+                                        {
+                                            any = {
+                                                { quest = { id = 5048, state = "completed" } },
+                                                {
+                                                    any = {
+                                                        { quest = { id = 5049, state = "activeOrCompleted" } },
+                                                        {
+                                                            all = {
+                                                                { faction = "Horde" },
+                                                                { race = { 2, 5, 6, 8 } },
+                                                                {
+                                                                    any = {
+                                                                        {
+                                                                            any = {
+                                                                                { quest = { id = 5023, state = "activeOrCompleted" } },
+                                                                                {
+                                                                                    all = {
+                                                                                        { item = { minCount = 1, name = "Janice's Parcel" } },
+                                                                                        { faction = "Horde" },
+                                                                                        { race = { 2, 5, 6, 8 } },
+                                                                                        { any = { { any = { { quest = { id = 5021, state = "activeOrCompleted" } }, { all = {} } } } } },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
                 },
             },
-            sourceStep = 111,
-            text = "Turn in Return to the Bulwark to Shadow Priestess Vandis.",
+            id = "horde-leveling-era-horde-western-and-eastern-plaguelands-turnin-5050-good-luck-charm",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 5048, 5049 } } },
+            route = {
+                {
+                    label = "Janice Felstone",
+                    mapID = 1422,
+                    offMapText = "Travel to Janice Felstone in Western Plaguelands.",
+                    x = 0.384,
+                    y = 0.5405,
+                },
+            },
+            sourceActionID = "turnin-5050-good-luck-charm",
+            sourceGuide = "leveling-era-horde-western-and-eastern-plaguelands",
+            sourceStep = 106,
+            text = "Turn in Good Luck Charm to Janice Felstone.",
+            unresolvedPrerequisites = { 5048 },
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
+        },
+        {
+            complete = { quest = { id = 5051, state = "activeOrCompleted" } },
+            conditions = { all = { { faction = "Horde" }, { level = { min = 50 } } } },
+            dependsOn = {},
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 5051, state = "activeOrCompleted" } },
+                        {
+                            any = {
+                                { quest = { id = 5051, state = "activeOrCompleted" } },
+                                {
+                                    all = {
+                                        {
+                                            any = {
+                                                {
+                                                    any = {
+                                                        { quest = { id = 5050, state = "activeOrCompleted" } },
+                                                        {
+                                                            all = {
+                                                                {
+                                                                    any = {
+                                                                        { quest = { id = 5048, state = "completed" } },
+                                                                        {
+                                                                            any = {
+                                                                                { quest = { id = 5049, state = "activeOrCompleted" } },
+                                                                                {
+                                                                                    all = {
+                                                                                        { faction = "Horde" },
+                                                                                        { race = { 2, 5, 6, 8 } },
+                                                                                        {
+                                                                                            any = {
+                                                                                                {
+                                                                                                    any = {
+                                                                                                        { quest = { id = 5023, state = "activeOrCompleted" } },
+                                                                                                        {
+                                                                                                            all = {
+                                                                                                                { item = { minCount = 1, name = "Janice's Parcel" } },
+                                                                                                                { faction = "Horde" },
+                                                                                                                { race = { 2, 5, 6, 8 } },
+                                                                                                                { any = { { any = { { quest = { id = 5021, state = "activeOrCompleted" } }, { all = {} } } } } },
+                                                                                                            },
+                                                                                                        },
+                                                                                                    },
+                                                                                                },
+                                                                                            },
+                                                                                        },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
+            id = "horde-leveling-era-horde-western-and-eastern-plaguelands-accept-5051-two-halves-become-one",
+            kind = "accept",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 5050 } } },
+            route = {
+                {
+                    label = "Janice Felstone",
+                    mapID = 1422,
+                    offMapText = "Travel to Janice Felstone in Western Plaguelands.",
+                    x = 0.384,
+                    y = 0.5405,
+                },
+            },
+            sourceActionID = "accept-5051-two-halves-become-one",
             sourceGuide = "leveling-era-horde-western-and-eastern-plaguelands",
-            sourceActionID = "turnin-5236-return-to-the-bulwark",
+            sourceStep = 106,
+            text = "Accept Two Halves Become One from Janice Felstone.",
+            useClientPin = false,
+            useClientText = false,
+        },
+        {
+            complete = { questObjective = { count = 1, id = 5051, index = 1 } },
+            conditions = { all = { { faction = "Horde" }, { level = { min = 50 } } } },
+            dependsOn = { "horde-leveling-era-horde-western-and-eastern-plaguelands-accept-5051-two-halves-become-one" },
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 5051, state = "activeOrCompleted" } },
+                        {
+                            any = {
+                                { quest = { id = 5051, state = "activeOrCompleted" } },
+                                {
+                                    all = {
+                                        {
+                                            any = {
+                                                {
+                                                    any = {
+                                                        { quest = { id = 5050, state = "activeOrCompleted" } },
+                                                        {
+                                                            all = {
+                                                                {
+                                                                    any = {
+                                                                        { quest = { id = 5048, state = "completed" } },
+                                                                        {
+                                                                            any = {
+                                                                                { quest = { id = 5049, state = "activeOrCompleted" } },
+                                                                                {
+                                                                                    all = {
+                                                                                        { faction = "Horde" },
+                                                                                        { race = { 2, 5, 6, 8 } },
+                                                                                        {
+                                                                                            any = {
+                                                                                                {
+                                                                                                    any = {
+                                                                                                        { quest = { id = 5023, state = "activeOrCompleted" } },
+                                                                                                        {
+                                                                                                            all = {
+                                                                                                                { item = { minCount = 1, name = "Janice's Parcel" } },
+                                                                                                                { faction = "Horde" },
+                                                                                                                { race = { 2, 5, 6, 8 } },
+                                                                                                                { any = { { any = { { quest = { id = 5021, state = "activeOrCompleted" } }, { all = {} } } } } },
+                                                                                                            },
+                                                                                                        },
+                                                                                                    },
+                                                                                                },
+                                                                                            },
+                                                                                        },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
+            id = "horde-leveling-era-horde-western-and-eastern-plaguelands-objective-5051-1-jabbering-ghoul",
+            kind = "objective",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 5050 } } },
+            route = {
+                { label = "Jabbering Ghouls", mapID = 1422, offMapText = "Travel to Jabbering Ghouls.", x = 0.378, y = 0.576 },
+            },
+            sourceActionID = "objective-5051-1-jabbering-ghoul",
+            sourceGuide = "leveling-era-horde-western-and-eastern-plaguelands",
+            sourceStep = 108,
+            text = "Kill Jabbering Ghouls around the ruined fields of Andorhal. Loot the Good Luck Other-Half-Charm, then use it to assemble the Good Luck Charm.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
+        },
+        {
+            complete = { questObjective = { count = 1, id = 5051, index = 1 } },
+            conditions = { all = { { faction = "Horde" }, { level = { min = 50 } } } },
+            dependsOn = { "horde-leveling-era-horde-western-and-eastern-plaguelands-accept-5051-two-halves-become-one" },
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 5051, state = "activeOrCompleted" } },
+                        {
+                            any = {
+                                { quest = { id = 5051, state = "activeOrCompleted" } },
+                                {
+                                    all = {
+                                        {
+                                            any = {
+                                                {
+                                                    any = {
+                                                        { quest = { id = 5050, state = "activeOrCompleted" } },
+                                                        {
+                                                            all = {
+                                                                {
+                                                                    any = {
+                                                                        { quest = { id = 5048, state = "completed" } },
+                                                                        {
+                                                                            any = {
+                                                                                { quest = { id = 5049, state = "activeOrCompleted" } },
+                                                                                {
+                                                                                    all = {
+                                                                                        { faction = "Horde" },
+                                                                                        { race = { 2, 5, 6, 8 } },
+                                                                                        {
+                                                                                            any = {
+                                                                                                {
+                                                                                                    any = {
+                                                                                                        { quest = { id = 5023, state = "activeOrCompleted" } },
+                                                                                                        {
+                                                                                                            all = {
+                                                                                                                { item = { minCount = 1, name = "Janice's Parcel" } },
+                                                                                                                { faction = "Horde" },
+                                                                                                                { race = { 2, 5, 6, 8 } },
+                                                                                                                { any = { { any = { { quest = { id = 5021, state = "activeOrCompleted" } }, { all = {} } } } } },
+                                                                                                            },
+                                                                                                        },
+                                                                                                    },
+                                                                                                },
+                                                                                            },
+                                                                                        },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
+            id = "horde-leveling-era-horde-western-and-eastern-plaguelands-objective-5051-1-good-luck-other-half-charm",
+            kind = "objective",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 5050 } } },
+            route = {
+                { label = "Jabbering Ghouls", mapID = 1422, offMapText = "Travel to Jabbering Ghouls.", x = 0.378, y = 0.576 },
+            },
+            sourceActionID = "objective-5051-1-good-luck-other-half-charm",
+            sourceGuide = "leveling-era-horde-western-and-eastern-plaguelands",
+            text = "Kill Jabbering Ghouls around the ruined fields of Andorhal. Loot the Good Luck Other-Half-Charm, then use it to assemble the Good Luck Charm.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
+        },
+        {
+            complete = { quest = { id = 5051, state = "completed" } },
+            conditions = { all = { { faction = "Horde" }, { level = { min = 50 } } } },
+            dependsOn = {
+                "horde-leveling-era-horde-western-and-eastern-plaguelands-accept-5051-two-halves-become-one",
+                "horde-leveling-era-horde-western-and-eastern-plaguelands-objective-5051-1-jabbering-ghoul",
+                "horde-leveling-era-horde-western-and-eastern-plaguelands-objective-5051-1-good-luck-other-half-charm",
+            },
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 5051, state = "activeOrCompleted" } },
+                        {
+                            any = {
+                                { quest = { id = 5051, state = "activeOrCompleted" } },
+                                {
+                                    all = {
+                                        {
+                                            any = {
+                                                {
+                                                    any = {
+                                                        { quest = { id = 5050, state = "activeOrCompleted" } },
+                                                        {
+                                                            all = {
+                                                                {
+                                                                    any = {
+                                                                        { quest = { id = 5048, state = "completed" } },
+                                                                        {
+                                                                            any = {
+                                                                                { quest = { id = 5049, state = "activeOrCompleted" } },
+                                                                                {
+                                                                                    all = {
+                                                                                        { faction = "Horde" },
+                                                                                        { race = { 2, 5, 6, 8 } },
+                                                                                        {
+                                                                                            any = {
+                                                                                                {
+                                                                                                    any = {
+                                                                                                        { quest = { id = 5023, state = "activeOrCompleted" } },
+                                                                                                        {
+                                                                                                            all = {
+                                                                                                                { item = { minCount = 1, name = "Janice's Parcel" } },
+                                                                                                                { faction = "Horde" },
+                                                                                                                { race = { 2, 5, 6, 8 } },
+                                                                                                                { any = { { any = { { quest = { id = 5021, state = "activeOrCompleted" } }, { all = {} } } } } },
+                                                                                                            },
+                                                                                                        },
+                                                                                                    },
+                                                                                                },
+                                                                                            },
+                                                                                        },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
+            id = "horde-leveling-era-horde-western-and-eastern-plaguelands-turnin-5051-two-halves-become-one",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 5050 } } },
+            route = {
+                {
+                    label = "Janice Felstone",
+                    mapID = 1422,
+                    offMapText = "Travel to Janice Felstone in Western Plaguelands.",
+                    x = 0.384,
+                    y = 0.5405,
+                },
+            },
+            sourceActionID = "turnin-5051-two-halves-become-one",
+            sourceGuide = "leveling-era-horde-western-and-eastern-plaguelands",
+            sourceStep = 109,
+            text = "Turn in Two Halves Become One to Janice Felstone.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
+        },
+        {
+            complete = { quest = { id = 5236, state = "completed" } },
+            conditions = { all = { { faction = "Horde" }, { level = { min = 50 } }, { race = { 2, 5, 6, 8, 96 } } } },
+            dependsOn = { "horde-leveling-era-horde-western-and-eastern-plaguelands-accept-5236-return-to-the-bulwark" },
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -10502,30 +11225,30 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-western-and-eastern-plaguelands-turnin-5236-return-to-the-bulwark",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 5235 } } },
+            route = {
+                {
+                    label = "Shadow Priestess Vandis",
+                    mapID = 1420,
+                    offMapText = "Travel to Shadow Priestess Vandis in Tirisfal Glades.",
+                    x = 0.8303,
+                    y = 0.7191,
+                },
+            },
+            sourceActionID = "turnin-5236-return-to-the-bulwark",
+            sourceGuide = "leveling-era-horde-western-and-eastern-plaguelands",
+            sourceStep = 111,
+            text = "Turn in Return to the Bulwark to Shadow Priestess Vandis.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 6390, state = "completed" } },
             conditions = { all = { { faction = "Horde" }, { level = { min = 48 } }, { race = { 2, 5, 6, 8, 96 } } } },
             dependsOn = { "horde-leveling-era-horde-western-and-eastern-plaguelands-accept-6390-a-plague-upon-thee" },
-            id = "horde-leveling-era-horde-western-and-eastern-plaguelands-turnin-6390-a-plague-upon-thee",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 5902 } } },
-            route = {
-                {
-                    label = "Mickey Levine",
-                    mapID = 1420,
-                    offMapText = "Travel to Mickey Levine in Tirisfal Glades.",
-                    x = 0.8329,
-                    y = 0.7233,
-                },
-            },
-            sourceStep = 112,
-            text = "Turn in A Plague Upon Thee to Mickey Levine.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-western-and-eastern-plaguelands",
-            sourceActionID = "turnin-6390-a-plague-upon-thee",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -10560,6 +11283,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-western-and-eastern-plaguelands-turnin-6390-a-plague-upon-thee",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 5902 } } },
+            route = {
+                {
+                    label = "Mickey Levine",
+                    mapID = 1420,
+                    offMapText = "Travel to Mickey Levine in Tirisfal Glades.",
+                    x = 0.8329,
+                    y = 0.7233,
+                },
+            },
+            sourceActionID = "turnin-6390-a-plague-upon-thee",
+            sourceGuide = "leveling-era-horde-western-and-eastern-plaguelands",
+            sourceStep = 112,
+            text = "Turn in A Plague Upon Thee to Mickey Levine.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 5238, state = "activeOrCompleted" } },
@@ -10744,25 +11486,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 4987, state = "completed" } },
             conditions = { all = { { faction = "Horde" }, { level = { min = 51 } }, { race = { 2, 5, 6, 8, 96 } } } },
             dependsOn = {},
-            id = "horde-leveling-era-horde-winterspring-turnin-4987-glyphed-oaken-branch",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 4985 } } },
-            route = {
-                {
-                    label = "Nara Wildmane",
-                    mapID = 1456,
-                    offMapText = "Travel to Nara Wildmane in Thunder Bluff.",
-                    x = 0.7565,
-                    y = 0.3161,
-                },
-            },
-            sourceStep = 43,
-            text = "Turn in Glyphed Oaken Branch to Nara Wildmane.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-winterspring",
-            sourceActionID = "turnin-4987-glyphed-oaken-branch",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -10790,88 +11513,140 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-winterspring-turnin-4987-glyphed-oaken-branch",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 4985 } } },
+            route = {
+                {
+                    label = "Nara Wildmane",
+                    mapID = 1456,
+                    offMapText = "Travel to Nara Wildmane in Thunder Bluff.",
+                    x = 0.7565,
+                    y = 0.3161,
+                },
+            },
+            sourceActionID = "turnin-4987-glyphed-oaken-branch",
+            sourceGuide = "leveling-era-horde-winterspring",
+            sourceStep = 43,
+            text = "Turn in Glyphed Oaken Branch to Nara Wildmane.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
+            checkpointQuest = 105,
+            complete = { level = { min = 50 } },
+            conditions = { all = { { faction = "Horde" } } },
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 105, state = "activeOrCompleted" } },
+                        {
+                            any = {
+                                { quest = { id = 105, state = "activeOrCompleted" } },
+                                {
+                                    all = {
+                                        { faction = "Horde" },
+                                        {
+                                            any = {
+                                                {
+                                                    any = {
+                                                        { quest = { id = 5098, state = "activeOrCompleted" } },
+                                                        {
+                                                            all = {
+                                                                { faction = "Horde" },
+                                                                {
+                                                                    any = { { any = { { quest = { id = 5096, state = "activeOrCompleted" } }, { all = { { faction = "Horde" } } } } } },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
             id = "horde-extra-105-level",
             kind = "note",
-            checkpointQuest = 105,
-            text = "Reach level 60 before this visit.",
-            conditions = { all = { { faction = "Horde" } } },
-            complete = { level = { min = 60 } },
-            requiredLevel = 60,
-            excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 105, state = "activeOrCompleted" } },
-                        {
-                            any = {
-                                { quest = { id = 105, state = "activeOrCompleted" } },
-                                {
-                                    all = {
-                                        { faction = "Horde" },
-                                        {
-                                            any = {
-                                                {
-                                                    any = {
-                                                        { quest = { id = 5098, state = "activeOrCompleted" } },
-                                                        {
-                                                            all = {
-                                                                { faction = "Horde" },
-                                                                {
-                                                                    any = { { any = { { quest = { id = 5096, state = "activeOrCompleted" } }, { all = { { faction = "Horde" } } } } } },
-                                                                },
-                                                            },
-                                                        },
-                                                    },
-                                                },
-                                            },
-                                        },
-                                    },
-                                },
-                            },
-                        },
-                    },
-                },
-            },
+            requiredLevel = 50,
+            text = "Reach level 50 before this visit.",
         },
         {
-            id = "horde-extra-105-accept",
-            kind = "accept",
-            text = "Accept Alas, Andorhal from High Executor Derrington.",
-            conditions = { all = { { faction = "Horde" }, { level = { min = 50 } } } },
-            route = {
-                {
-                    mapID = 1420,
-                    x = 0.83,
-                    y = 0.69,
-                    label = "High Executor Derrington",
-                    offMapText = "Travel to High Executor Derrington in Tirisfal Glades.",
-                },
-            },
             complete = { quest = { id = 105, state = "activeOrCompleted" } },
-            requiredQuests = { { mode = "any", quests = { 5098 } } },
-            useClientText = false,
+            conditions = { all = { { faction = "Horde" }, { level = { min = 50 } } } },
             dependsOn = { "horde-extra-105-level" },
             excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 105, state = "activeOrCompleted" } },
-                        {
+                any = {
+                    {
+                        ["not"] = {
                             any = {
                                 { quest = { id = 105, state = "activeOrCompleted" } },
                                 {
-                                    all = {
-                                        { faction = "Horde" },
+                                    any = {
+                                        { quest = { id = 105, state = "activeOrCompleted" } },
                                         {
-                                            any = {
+                                            all = {
+                                                { faction = "Horde" },
                                                 {
                                                     any = {
-                                                        { quest = { id = 5098, state = "activeOrCompleted" } },
                                                         {
-                                                            all = {
-                                                                { faction = "Horde" },
+                                                            any = {
+                                                                { quest = { id = 5098, state = "activeOrCompleted" } },
                                                                 {
-                                                                    any = { { any = { { quest = { id = 5096, state = "activeOrCompleted" } }, { all = { { faction = "Horde" } } } } } },
+                                                                    all = {
+                                                                        { faction = "Horde" },
+                                                                        {
+                                                                            any = { { any = { { quest = { id = 5096, state = "activeOrCompleted" } }, { all = { { faction = "Horde" } } } } } },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 105, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 105, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                { faction = "Horde" },
+                                                { race = { 2, 5, 6, 8 } },
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 5098, state = "activeOrCompleted" } },
+                                                                {
+                                                                    all = {
+                                                                        { faction = "Horde" },
+                                                                        { race = { 2, 5, 6, 8 } },
+                                                                        {
+                                                                            any = {
+                                                                                {
+                                                                                    any = {
+                                                                                        { quest = { id = 5096, state = "activeOrCompleted" } },
+                                                                                        { all = { { faction = "Horde" }, { race = { 2, 5, 6, 8 } } } },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
                                                                 },
                                                             },
                                                         },
@@ -10886,98 +11661,92 @@ ns:RegisterGuide({
                     },
                 },
             },
-        },
-        {
-            id = "horde-extra-105-objective",
-            kind = "objective",
-            text = "Defeat Araj the Summoner, then search Araj's Phylactery in Andorhal for Araj's Phylactery Shard. This is an elite. Bring a group.",
-            conditions = { all = { { faction = "Horde" }, { level = { min = 50 } } } },
-            route = {
-                {
-                    mapID = 1422,
-                    x = 0.456,
-                    y = 0.6920000000000001,
-                    label = "Araj the Summoner",
-                    offMapText = "Travel to Araj the Summoner in Western Plaguelands.",
-                },
-            },
-            complete = { quest = { id = 105, state = "complete" } },
+            id = "horde-extra-105-accept",
+            kind = "accept",
             requiredQuests = { { mode = "any", quests = { 5098 } } },
-            useClientText = false,
-            dependsOn = { "horde-extra-105-accept" },
-            excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 105, state = "activeOrCompleted" } },
-                        {
-                            any = {
-                                { quest = { id = 105, state = "activeOrCompleted" } },
-                                {
-                                    all = {
-                                        { faction = "Horde" },
-                                        {
-                                            any = {
-                                                {
-                                                    any = {
-                                                        { quest = { id = 5098, state = "activeOrCompleted" } },
-                                                        {
-                                                            all = {
-                                                                { faction = "Horde" },
-                                                                {
-                                                                    any = { { any = { { quest = { id = 5096, state = "activeOrCompleted" } }, { all = { { faction = "Horde" } } } } } },
-                                                                },
-                                                            },
-                                                        },
-                                                    },
-                                                },
-                                            },
-                                        },
-                                    },
-                                },
-                            },
-                        },
-                    },
-                },
-            },
-        },
-        {
-            id = "horde-extra-105-turnin",
-            kind = "turnin",
-            text = "Turn in Alas, Andorhal to High Executor Derrington.",
-            conditions = { all = { { faction = "Horde" }, { level = { min = 50 } } } },
             route = {
                 {
+                    label = "High Executor Derrington",
                     mapID = 1420,
+                    offMapText = "Travel to High Executor Derrington in Tirisfal Glades.",
                     x = 0.83,
                     y = 0.69,
-                    label = "High Executor Derrington",
-                    offMapText = "Travel to High Executor Derrington in Tirisfal Glades.",
                 },
             },
-            complete = { quest = { id = 105, state = "completed" } },
-            requiredQuests = { { mode = "any", quests = { 5098 } } },
+            text = "Accept Alas, Andorhal from High Executor Derrington.",
             useClientText = false,
-            dependsOn = { "horde-extra-105-objective" },
+        },
+        {
+            complete = { quest = { id = 105, state = "complete" } },
+            conditions = { all = { { faction = "Horde" }, { level = { min = 50 } } } },
+            dependsOn = { "horde-extra-105-accept" },
             excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 105, state = "activeOrCompleted" } },
-                        {
+                any = {
+                    {
+                        ["not"] = {
                             any = {
                                 { quest = { id = 105, state = "activeOrCompleted" } },
                                 {
-                                    all = {
-                                        { faction = "Horde" },
+                                    any = {
+                                        { quest = { id = 105, state = "activeOrCompleted" } },
                                         {
-                                            any = {
+                                            all = {
+                                                { faction = "Horde" },
                                                 {
                                                     any = {
-                                                        { quest = { id = 5098, state = "activeOrCompleted" } },
                                                         {
-                                                            all = {
-                                                                { faction = "Horde" },
+                                                            any = {
+                                                                { quest = { id = 5098, state = "activeOrCompleted" } },
                                                                 {
-                                                                    any = { { any = { { quest = { id = 5096, state = "activeOrCompleted" } }, { all = { { faction = "Horde" } } } } } },
+                                                                    all = {
+                                                                        { faction = "Horde" },
+                                                                        {
+                                                                            any = { { any = { { quest = { id = 5096, state = "activeOrCompleted" } }, { all = { { faction = "Horde" } } } } } },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 105, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 105, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                { faction = "Horde" },
+                                                { race = { 2, 5, 6, 8 } },
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 5098, state = "activeOrCompleted" } },
+                                                                {
+                                                                    all = {
+                                                                        { faction = "Horde" },
+                                                                        { race = { 2, 5, 6, 8 } },
+                                                                        {
+                                                                            any = {
+                                                                                {
+                                                                                    any = {
+                                                                                        { quest = { id = 5096, state = "activeOrCompleted" } },
+                                                                                        { all = { { faction = "Horde" }, { race = { 2, 5, 6, 8 } } } },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
                                                                 },
                                                             },
                                                         },
@@ -10992,6 +11761,123 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-extra-105-objective",
+            kind = "objective",
+            requiredQuests = { { mode = "any", quests = { 5098 } } },
+            route = {
+                {
+                    label = "Araj the Summoner",
+                    mapID = 1422,
+                    offMapText = "Travel to Araj the Summoner in Western Plaguelands.",
+                    x = 0.456,
+                    y = 0.692,
+                },
+            },
+            text = "Defeat Araj the Summoner, then search Araj's Phylactery in Andorhal for Araj's Phylactery Shard. This is an elite. Bring a group.",
+            useClientPin = true,
+            useClientText = false,
+        },
+        {
+            complete = { quest = { id = 105, state = "completed" } },
+            conditions = { all = { { faction = "Horde" }, { level = { min = 50 } } } },
+            dependsOn = { "horde-extra-105-objective" },
+            excludeWhen = {
+                any = {
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 105, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 105, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                { faction = "Horde" },
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 5098, state = "activeOrCompleted" } },
+                                                                {
+                                                                    all = {
+                                                                        { faction = "Horde" },
+                                                                        {
+                                                                            any = { { any = { { quest = { id = 5096, state = "activeOrCompleted" } }, { all = { { faction = "Horde" } } } } } },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 105, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 105, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                { faction = "Horde" },
+                                                { race = { 2, 5, 6, 8 } },
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 5098, state = "activeOrCompleted" } },
+                                                                {
+                                                                    all = {
+                                                                        { faction = "Horde" },
+                                                                        { race = { 2, 5, 6, 8 } },
+                                                                        {
+                                                                            any = {
+                                                                                {
+                                                                                    any = {
+                                                                                        { quest = { id = 5096, state = "activeOrCompleted" } },
+                                                                                        { all = { { faction = "Horde" }, { race = { 2, 5, 6, 8 } } } },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
+            id = "horde-extra-105-turnin",
+            kind = "turnin",
+            requiredQuests = { { mode = "any", quests = { 5098 } } },
+            route = {
+                {
+                    label = "High Executor Derrington",
+                    mapID = 1420,
+                    offMapText = "Travel to High Executor Derrington in Tirisfal Glades.",
+                    x = 0.83,
+                    y = 0.69,
+                },
+            },
+            text = "Turn in Alas, Andorhal to High Executor Derrington.",
+            useClientPin = true,
+            useClientText = false,
+            useQuestNavigation = true,
         },
     },
 })

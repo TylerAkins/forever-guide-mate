@@ -39,7 +39,15 @@ Forever GuideMate is a local-development guide addon for World of Warcraft: Fore
 
 Quest-step rules are in [guide-authoring.md](guide-authoring.md). Class quests are supported: one guide per class in `Guides/Class/`, with race and faction on every step. Loremaster weave rules are in [zone-loremaster-guides.md](zone-loremaster-guides.md) and `.cursor/skills/zone-loremaster-guide/SKILL.md`. Era chapter conversion rules are in `.cursor/skills/era-forever-weave/SKILL.md`.
 
-Forever quest facts come from [wow-database](https://github.com/TylerAkins/wow-database). Use the compiled zone and collection files in `data/forever/compiled/`. A quest added in Forever has `firstseenpatch` 16001. When `detail.questie.fields` is present, a positive `questLevel` is the step level and a positive `requiredLevel` is the offer gate. `0` and `-1` leave the Wowhead value. `detail.requirements.allOf` is mode `all` and `anyOf` is mode `any`. Without a Questie level, the recommended level is the Wowhead Level line (`Level: N` in `infoboxMarkup`). Run `go run ./cmd/audit-quest-paths` to report differences; it does not edit guides.
+Loremaster facts and levels come from the Forever QuestieDB preview artifact and Questie's Forever policy files. The Go tools read generated JSON; LuaJIT is the only adapter for the QuestieDB baked store and policy code. From the repository root, create `.compiled/questiedb/export.json` and `.compiled/questiedb/policy.json` with matching QuestieDB and Questie checkouts:
+
+```sh
+mkdir -p .compiled/questiedb
+luajit -joff tools/questiedb/export_artifact.lua /path/to/QuestieDB > .compiled/questiedb/export.json
+luajit -joff tools/questiedb/export_policy.lua /path/to/QuestieDB /path/to/Questie > .compiled/questiedb/policy.json
+```
+
+The checked export records artifact version `1.0.6-dev.f844007`, build commit `f844007b329b72f18cf2bda3d87540012294732a`, and 5,232 quests. Policy output is from Questie commit `d0b0e89ac228e380e139f1c524408507e6d4fe1b`. The scripts reject unsupported fields instead of silently dropping them. `questLevel` is the step level and `requiredLevel` is the offer gate. Prerequisites, providers, objectives, and spawn locations come from QuestieDB. Holiday membership, hidden status, and tag corrections come from Questie's policy files. Daily, weekly, and monthly flags are unavailable in this source and are false in the generated facts. Audits record the source manifest and known differences from the previous source in [the migration review](loremaster/questiedb-migration.md).
 
 Install Go 1.27.3 and LuaJIT. The Go test suite runs LuaJIT and reports a clear failure if it is missing.
 

@@ -11,6 +11,7 @@ import (
 	"github.com/TylerAkins/forever-guide-mate/internal/loremaster"
 	"github.com/TylerAkins/forever-guide-mate/internal/questaudit"
 	"github.com/TylerAkins/forever-guide-mate/internal/questdb"
+	"github.com/TylerAkins/forever-guide-mate/internal/questexport"
 )
 
 var guideRoots = []string{"Guides/Leveling", "Guides/Loremaster", "Guides/Class", "Guides/Dungeons"}
@@ -18,7 +19,7 @@ var dependencyCategories = map[string]bool{"missing-prerequisite": true, "extra-
 
 func main() {
 	flags := flag.NewFlagSet("audit-quest-paths", flag.ExitOnError)
-	database := flags.String("database", "../wow-database", "wow-database checkout")
+	questieExport := flags.String("questie-export", "", "QuestieDB export (default .compiled/questiedb/export.json under --root)")
 	depsOnly := flags.Bool("deps-only", false, "only report prerequisite and missing-record findings")
 	root := flags.String("root", ".", "repository root")
 	_ = flags.Parse(os.Args[1:])
@@ -26,7 +27,14 @@ func main() {
 	if err != nil {
 		fail(err)
 	}
-	records, err := questdb.LoadQuestRecords(*database, "")
+	if *questieExport == "" {
+		*questieExport = filepath.Join(absolute, ".compiled", "questiedb", "export.json")
+	}
+	export, err := questexport.Load(*questieExport)
+	if err != nil {
+		fail(err)
+	}
+	records, err := questdb.LoadQuestRecords(export)
 	if err != nil {
 		fail(err)
 	}

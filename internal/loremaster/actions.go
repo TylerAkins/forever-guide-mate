@@ -229,9 +229,6 @@ func BuildAuthoringActions(facts map[string]any, faction string) ([]map[string]a
 				goal := makeAction("objective", instruction, authoringPointRoute(point), map[string]any{"questObjective": map[string]any{"id": questID, "index": index + 1, "text": entry.label, "count": entry.count}})
 				goal["id"] = fmt.Sprintf("%s-objective-%d", prefix, index+1)
 				goal["dependsOn"] = []any{accept["id"]}
-				if truthy(facts["elite"]) {
-					goal["text"] = instruction + " This is an elite. Bring a group."
-				}
 				objectives = append(objectives, goal)
 			}
 		} else {
@@ -276,9 +273,6 @@ func BuildAuthoringActions(facts map[string]any, faction string) ([]map[string]a
 					}
 					text += " " + strings.TrimSpace(strings.Join(instructions, " "))
 				}
-			}
-			if truthy(facts["elite"]) {
-				text += " This is an elite. Bring a group."
 			}
 			goal := makeAction("objective", text, route, map[string]any{"quest": map[string]any{"id": questID, "state": "complete"}})
 			goal["dependsOn"] = []any{accept["id"]}

@@ -19,6 +19,8 @@ import (
 	"strings"
 
 	"github.com/TylerAkins/forever-guide-mate/internal/loremaster"
+	"github.com/TylerAkins/forever-guide-mate/internal/questexport"
+	"github.com/TylerAkins/forever-guide-mate/internal/questiepolicy"
 )
 
 const (
@@ -47,9 +49,9 @@ var unresolvedMechanics = map[int]string{
 
 var excludedZones = map[string]bool{"Mount Hyjal": true, "Riverglades": true}
 
-var outsideItineraryFlags = []string{"dungeon", "raid", "daily", "weekly", "monthly", "repeatable"}
+var outsideItineraryFlags = []string{"dungeon", "raid", "daily", "weekly", "monthly", "holiday", "repeatable"}
 
-var prerequisiteFlags = []string{"dungeon", "raid", "daily", "weekly", "monthly"}
+var prerequisiteFlags = []string{"dungeon", "raid", "daily", "weekly", "monthly", "holiday"}
 
 // ZoneSpec describes one zone candidate from the zone inventory.
 type ZoneSpec struct {
@@ -77,8 +79,10 @@ type Environment struct {
 	// Root is the repository root that holds the zone inventory, the guides,
 	// and the frozen reference bands.
 	Root string
-	// Database is the wow-database checkout holding the compiled observations.
-	Database string
+	// QuestieExport is the QuestieDB export written by tools/questiedb/export_artifact.lua.
+	QuestieExport string
+	// QuestiePolicy is the policy export written by tools/questiedb/export_policy.lua.
+	QuestiePolicy string
 	// Upstream is the clean Zygor Guides Remaster checkout.
 	Upstream string
 	// Snapshot is the exported guide and prerequisite state.
@@ -90,8 +94,6 @@ type Environment struct {
 	UpstreamRevision func() (string, error)
 	// VerifyUpstream confirms the upstream guide checkout has no local edits.
 	VerifyUpstream func() error
-	// DatabaseRevision reports the database checkout revision.
-	DatabaseRevision func() (string, error)
 	// UpstreamActions reads the advisory ordering evidence for one faction.
 	UpstreamActions func(faction, zone string) ([]loremaster.Action, map[string]string, error)
 }
@@ -130,27 +132,31 @@ func Prepare(spec ZoneSpec, env Environment) (string, *orderedMap, error) {
 
 // session carries the mutable state of one zone preparation.
 type session struct {
-	env          Environment
-	spec         ZoneSpec
-	zone         string
-	facts        map[int]map[string]any
-	areaNames    map[int]string
-	catalogs     map[int][]string
-	candidates   map[int]bool
-	bands        map[string]Band
-	guides       []map[string]any
-	current      map[string]any
-	audit        *orderedMap
-	raw          map[string]string
-	currentGoals []map[string]any
-	allGoals     map[string]map[string]any
-	added        map[string]bool
-	removed      map[string]bool
-	sourcesUsed  []string
-	placements   []any
-	matches      *orderedMap
-	guide        map[string]any
-	rendered     string
+	env            Environment
+	spec           ZoneSpec
+	zone           string
+	facts          map[int]map[string]any
+	factsByFaction map[string]map[int]map[string]any
+	questie        *questexport.Export
+	exportSum      string
+	policySum      string
+	areaNames      map[int]string
+	catalogs       map[int][]string
+	candidates     map[int]bool
+	bands          map[string]Band
+	guides         []map[string]any
+	current        map[string]any
+	audit          *orderedMap
+	raw            map[string]string
+	currentGoals   []map[string]any
+	allGoals       map[string]map[string]any
+	added          map[string]bool
+	removed        map[string]bool
+	sourcesUsed    []string
+	placements     []any
+	matches        *orderedMap
+	guide          map[string]any
+	rendered       string
 }
 
 // run prepares the zone candidate.
@@ -179,17 +185,9 @@ func (s *session) run() error {
 	}
 	s.bands = bands
 
-	facts, err := loremaster.LoadSourceFacts(s.env.Database)
-	if err != nil {
+	if err := s.loadQuestie(); err != nil {
 		return err
 	}
-	s.facts = facts
-	areaNames, catalogs, err := loadCatalogs(s.env.Database)
-	if err != nil {
-		return err
-	}
-	s.areaNames = areaNames
-	s.catalogs = catalogs
 
 	s.guides = s.env.Snapshot.Guides
 	for _, guide := range s.guides {
@@ -259,7 +257,7 @@ func (s *session) run() error {
 		}
 	}
 
-	for _, faction := range []string{"Alliance", "Horde"} {
+	for _, faction := range questexport.Factions {
 		if err := s.prepareFaction(faction); err != nil {
 			return err
 		}
@@ -309,36 +307,13 @@ func (s *session) buildAudit() error {
 	default:
 		return err
 	}
-	s.audit.Set("sourcePriority", toAnyList(loremaster.SourcePriority()))
+	s.audit.Set("sourcePriority", []any{"questiedb"})
 
-	manifestPath := filepath.Join(s.env.Database, "data", "forever", "compilation", "manifest.json")
-	manifestData, err := os.ReadFile(manifestPath)
-	if err != nil {
-		return err
-	}
-	manifest, err := decodeOrdered(manifestData)
-	if err != nil {
-		return err
-	}
-
-	recordsPath := filepath.Join(s.env.Database, "data", "forever", "compilation", "records.jsonl.gz")
-	records, err := os.ReadFile(recordsPath)
-	if err != nil {
-		return err
-	}
-	sum := sha256.Sum256(records)
-	databaseCommit := ""
-	if s.env.DatabaseRevision != nil {
-		databaseCommit, err = s.env.DatabaseRevision()
-		if err != nil {
-			return err
-		}
-	}
 	sources := newOrderedMap()
-	sources.Set("databaseCommit", databaseCommit)
-	sources.Set("compilation", manifest)
+	sources.Set("questiedb", questieManifest(s.questie))
 	sourceHashes := newOrderedMap()
-	sourceHashes.Set("data/forever/compilation/records.jsonl.gz", hex.EncodeToString(sum[:]))
+	sourceHashes.Set("questiedb/export.json", s.exportSum)
+	sourceHashes.Set("questiedb/policy.json", s.policySum)
 	sources.Set("sourceHashes", sourceHashes)
 	s.audit.Set("sources", sources)
 	s.audit.Set("coverageMode", "zone")
@@ -355,6 +330,7 @@ func (s *session) buildAudit() error {
 // prepareFaction selects the candidates for one faction, closes the
 // prerequisite chain, and orders the resulting actions.
 func (s *session) prepareFaction(faction string) error {
+	s.facts = s.factsByFaction[faction]
 	sourceGuides := []map[string]any{}
 	for _, guide := range s.guides {
 		if guideCategory(guide) != "Leveling Quest Guides" {
@@ -395,6 +371,28 @@ func (s *session) prepareFaction(faction string) error {
 		}
 	}
 
+	// The steps of one quest must agree on their conditions. A quest whose
+	// Casual steps were written for different character groups cannot be
+	// copied into one itinerary, so it is reported instead of narrowed.
+	conflicting := map[int]bool{}
+	for quest, actions := range byQuest {
+		signature := ""
+		for index, action := range actions {
+			conditions, err := json.Marshal(action.goal["conditions"])
+			if err != nil {
+				continue
+			}
+			if index == 0 {
+				signature = string(conditions)
+				continue
+			}
+			if string(conditions) != signature {
+				conflicting[quest] = true
+				break
+			}
+		}
+	}
+
 	upstreamOrder, hashes, err := s.upstreamActions(faction)
 	if err != nil {
 		return err
@@ -407,17 +405,7 @@ func (s *session) prepareFaction(faction string) error {
 	eligibility := ensureOrdered(s.audit, "orderingEligibility")
 	for _, quest := range sortedQuests(s.candidates) {
 		entry := ensureOrdered(eligibility, strconv.Itoa(quest))
-		var foreverSpecific any
-		advisory := false
-		if fact, known := s.facts[quest]; known {
-			foreverSpecific = fact["forever"]
-			advisory = !truthy(fact["forever"])
-		}
-		entry.Set(faction, map[string]any{
-			"inCasual":         casualQuests[quest],
-			"foreverSpecific":  foreverSpecific,
-			"upstreamAdvisory": !casualQuests[quest] && advisory,
-		})
+		entry.Set(faction, map[string]any{"inCasual": casualQuests[quest]})
 	}
 
 	known := map[int]bool{}
@@ -442,7 +430,6 @@ func (s *session) prepareFaction(faction string) error {
 			entry := newOrderedMap()
 			entry.Set("catalogs", toAnyList(s.catalogs[quest]))
 			entry.Set("evidence", factField(fact, "evidence"))
-			entry.Set("sourceRevisions", factField(fact, "sourceRevisions"))
 			entry.Set("locations", factField(fact, "points"))
 			entry.Set("supporting", false)
 			entry.Set("status", "unresolved")
@@ -492,7 +479,6 @@ func (s *session) prepareFaction(faction string) error {
 		entry := newOrderedMap()
 		entry.Set("catalogs", toAnyList(s.catalogs[quest]))
 		entry.Set("evidence", factField(fact, "evidence"))
-		entry.Set("sourceRevisions", factField(fact, "sourceRevisions"))
 		entry.Set("locations", factField(fact, "points"))
 		entry.Set("supporting", false)
 		quests.Set(strconv.Itoa(quest), entry)
@@ -504,6 +490,9 @@ func (s *session) prepareFaction(faction string) error {
 		case hasAnyFlag(fact, outsideItineraryFlags) || strings.Contains(strings.ToLower(text(fact["name"])), "unused"):
 			entry.Set("status", "excluded")
 			entry.Set("reason", "Dungeon, raid, event/repeatable, or unused work is outside this outdoor itinerary.")
+		case conflicting[quest]:
+			entry.Set("status", "unresolved")
+			entry.Set("reason", "Casual steps for this quest disagree on their conditions.")
 		case len(textList(fact["unresolved"])) > 0 && !casualQuests[quest]:
 			entry.Set("status", "unresolved")
 			entry.Set("reason", strings.Join(textList(fact["unresolved"]), "; "))
@@ -601,7 +590,6 @@ func (s *session) prepareFaction(faction string) error {
 					entry.Set("catalogs", toAnyList(s.catalogs[parent]))
 					entry.Set("supporting", true)
 					entry.Set("evidence", factField(fact, "evidence"))
-					entry.Set("sourceRevisions", factField(fact, "sourceRevisions"))
 					entry.Set("locations", factField(fact, "points"))
 					quests.Set(strconv.Itoa(parent), entry)
 				}
@@ -698,7 +686,7 @@ func (s *session) prepareFaction(faction string) error {
 	selectedIDs := map[string]bool{}
 	for _, action := range sourceActions {
 		quest, ok := questIDOf(action.goal)
-		if ok && wanted[quest] {
+		if ok && wanted[quest] && !conflicting[quest] {
 			selectedIDs[action.node] = true
 		}
 	}
@@ -890,6 +878,17 @@ func (s *session) prepareFaction(faction string) error {
 			stale[goalID(goal)] = true
 		}
 	}
+	for _, goal := range s.currentGoals {
+		quest, ok := questIDOf(goal)
+		if !ok || !conflicting[quest] {
+			continue
+		}
+		owner := factionOf(goal["conditions"])
+		if owner != "" && owner != faction {
+			continue
+		}
+		stale[goalID(goal)] = true
+	}
 	for node := range stale {
 		s.removed[node] = true
 	}
@@ -911,14 +910,13 @@ func (s *session) prepareFaction(faction string) error {
 		if !ok {
 			continue
 		}
-		fact, ok := s.facts[quest]
-		if !ok {
+		if _, known := s.facts[quest]; !known {
 			continue
 		}
 		if casualQuests[quest] {
 			continue
 		}
-		if strings.Contains(node, "-extra-") || (!truthy(fact["forever"]) && fact["firstseenpatch"] != nil) {
+		if strings.Contains(node, "-extra-") {
 			movable = append(movable, node)
 		}
 	}
@@ -1184,9 +1182,6 @@ func (s *session) prepareFaction(faction string) error {
 		}
 		quest, ok := questIDOf(goal)
 		if !ok {
-			continue
-		}
-		if fact, known := s.facts[quest]; known && truthy(fact["forever"]) {
 			continue
 		}
 		if casualQuests[quest] && containsString(extraIDs, node) {
@@ -1719,15 +1714,6 @@ func VerifyUpstreamClean(upstream string) error {
 	return exec.Command("git", "-C", upstream, "diff", "--exit-code", "HEAD", "--", "ZygorGuidesViewerRM/Guides").Run()
 }
 
-// DatabaseRevision reports the pinned wow-database checkout revision.
-func DatabaseRevision(database string) (string, error) {
-	output, err := exec.Command("git", "-C", database, "rev-parse", "HEAD").Output()
-	if err != nil {
-		return "", err
-	}
-	return strings.TrimSpace(string(output)), nil
-}
-
 // sourceAction is one copied Casual action.
 type sourceAction struct {
 	node  string
@@ -1790,6 +1776,85 @@ func dependencyQuests(quest int, byQuest map[int][]sourceAction, byID map[string
 	return found
 }
 
+// loadQuestie reads the QuestieDB export and policy, and builds the quest facts
+// for each faction. The base facts, with no faction, serve the candidate
+// search that runs before a faction is chosen.
+func (s *session) loadQuestie() error {
+	export, err := questexport.Load(s.env.QuestieExport)
+	if err != nil {
+		return err
+	}
+	policy, err := questiepolicy.Load(s.env.QuestiePolicy)
+	if err != nil {
+		return err
+	}
+	if s.exportSum, err = fileSHA256(s.env.QuestieExport); err != nil {
+		return err
+	}
+	if s.policySum, err = fileSHA256(s.env.QuestiePolicy); err != nil {
+		return err
+	}
+	s.questie = export
+	s.areaNames = zoneNames(export)
+	if s.facts, err = s.buildFacts(export, policy, ""); err != nil {
+		return err
+	}
+	s.catalogs = catalogsFromFacts(s.facts, s.areaNames)
+	s.factsByFaction = map[string]map[int]map[string]any{}
+	for _, faction := range questexport.Factions {
+		facts, err := s.buildFacts(export, policy, faction)
+		if err != nil {
+			return err
+		}
+		s.factsByFaction[faction] = facts
+	}
+	return nil
+}
+
+// buildFacts derives the facts for one faction and names each point's zone
+// from its area ID, which is how zone ownership and routes read it.
+func (s *session) buildFacts(export *questexport.Export, policy *questiepolicy.Policy, faction string) (map[int]map[string]any, error) {
+	facts, err := loremaster.BuildQuestFacts(export, policy, faction)
+	if err != nil {
+		return nil, err
+	}
+	for _, fact := range facts {
+		points, _ := fact["points"].([]any)
+		for _, raw := range points {
+			point, ok := raw.(map[string]any)
+			if !ok {
+				continue
+			}
+			area, _ := integer(point["zone"])
+			point["zone"] = s.areaNames[area]
+		}
+	}
+	return facts, nil
+}
+
+// questieManifest reports the QuestieDB build an export was compiled from.
+func questieManifest(export *questexport.Export) map[string]any {
+	counts := map[string]any{}
+	for datatype, count := range export.Manifest.Counts {
+		counts[datatype] = count
+	}
+	return map[string]any{
+		"artifactVersion": export.Manifest.ArtifactVersion,
+		"buildCommit":     export.Manifest.BuildCommit,
+		"counts":          counts,
+	}
+}
+
+// fileSHA256 reports the SHA-256 digest of one file as hex.
+func fileSHA256(path string) (string, error) {
+	data, err := os.ReadFile(path)
+	if err != nil {
+		return "", err
+	}
+	sum := sha256.Sum256(data)
+	return hex.EncodeToString(sum[:]), nil
+}
+
 // ownership resolves the zone that a quest belongs to. Objective locations
 // establish ownership before a capital pickup does.
 func ownership(facts map[string]any, areaNames map[int]string) string {
@@ -1823,7 +1888,7 @@ func ownership(facts map[string]any, areaNames map[int]string) string {
 		}
 		return best
 	}
-	for _, key := range []string{"zoneId", "questieZone"} {
+	for _, key := range []string{"zoneId"} {
 		value, exists := facts[key]
 		if !exists {
 			continue
@@ -1916,56 +1981,39 @@ func withoutLevel(condition any) any {
 	return result
 }
 
-// loadCatalogs reads the compiled zone catalogs and the zone names they map to.
-func loadCatalogs(database string) (map[int]string, map[int][]string, error) {
-	areaNames := map[int]string{}
-	catalogs := map[int][]string{}
-	bundles := filepath.Join(database, "data", "forever", "compiled", "zones")
-	entries, err := os.ReadDir(bundles)
-	if err != nil {
-		if os.IsNotExist(err) {
-			return areaNames, catalogs, nil
-		}
-		return nil, nil, err
-	}
-	names := []string{}
-	for name := range loremaster.ZoneUIMap() {
-		names = append(names, name)
-	}
-	sort.Strings(names)
-	for _, entry := range entries {
-		if entry.IsDir() || !strings.HasSuffix(entry.Name(), ".json") {
+// zoneNames names every area that has a UiMap with a known zone.
+func zoneNames(export *questexport.Export) map[int]string {
+	names := map[int]string{}
+	for key := range export.Areas {
+		area, err := strconv.Atoi(key)
+		if err != nil {
 			continue
 		}
-		data, err := os.ReadFile(filepath.Join(bundles, entry.Name()))
-		if err != nil {
-			return nil, nil, err
+		uiMap, ok := export.AreaUIMap(area)
+		if !ok {
+			continue
 		}
-		bundle := map[string]any{}
-		if err := json.Unmarshal(data, &bundle); err != nil {
-			return nil, nil, err
-		}
-		stem := strings.TrimSuffix(entry.Name(), ".json")
-		area, hasArea := integer(object(bundle["zone"])["zoneId"])
-		name := ""
-		for _, candidate := range names {
-			if loremaster.Slug(candidate) == stem {
-				name = candidate
-				break
-			}
-		}
-		if name != "" && hasArea {
-			areaNames[area] = name
-		}
-		for quest := range object(bundle["quests"]) {
-			id, ok := integerText(quest)
-			if !ok {
-				continue
-			}
-			catalogs[id] = append(catalogs[id], stem)
+		if name := loremaster.ZoneNameForUIMap(uiMap); name != "" {
+			names[area] = name
 		}
 	}
-	return areaNames, catalogs, nil
+	return names
+}
+
+// catalogsFromFacts lists each quest's zone catalog: the quest's own zone when
+// it is a known zone. The catalog slug is the zone's slug. Start locations do not
+// decide the catalog, since most quests start outside their own zone.
+func catalogsFromFacts(facts map[int]map[string]any, areaNames map[int]string) map[int][]string {
+	zones := loremaster.ZoneUIMap()
+	catalogs := map[int][]string{}
+	for quest, fact := range facts {
+		area, _ := integer(fact["zoneId"])
+		name := areaNames[area]
+		if _, known := zones[name]; known {
+			catalogs[quest] = []string{loremaster.Slug(name)}
+		}
+	}
+	return catalogs
 }
 
 // loadBands reads the frozen Casual chapter level bands.

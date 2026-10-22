@@ -5,37 +5,21 @@ import (
 	"flag"
 	"fmt"
 	"os"
-	"path/filepath"
 
 	"github.com/TylerAkins/forever-guide-mate/internal/questdb"
+	"github.com/TylerAkins/forever-guide-mate/internal/questexport"
 )
 
 func main() {
 	flags := flag.NewFlagSet("quest-database", flag.ExitOnError)
-	database := flags.String("database", "../wow-database", "wow-database checkout")
-	index := flags.String("index", "", "explicit raw quest index")
-	normalize := flags.Bool("normalize-export", false, "normalize one export quest read from stdin")
+	questieExport := flags.String("questie-export", ".compiled/questiedb/export.json", "QuestieDB export from tools/questiedb/export_artifact.lua")
 	minLevels := flags.Bool("min-levels", false, "report computed pickup and offer levels")
 	_ = flags.Parse(os.Args[1:])
-	if *normalize {
-		var quest map[string]any
-		decoder := json.NewDecoder(os.Stdin)
-		decoder.UseNumber()
-		if err := decoder.Decode(&quest); err != nil {
-			fail(err)
-		}
-		record, err := questdb.NormalizeExportQuest(quest)
-		if err != nil {
-			fail(err)
-		}
-		encode(record)
-		return
-	}
-	root, err := filepath.Abs(*database)
+	export, err := questexport.Load(*questieExport)
 	if err != nil {
 		fail(err)
 	}
-	records, err := questdb.LoadQuestRecords(root, *index)
+	records, err := questdb.LoadQuestRecords(export)
 	if err != nil {
 		fail(err)
 	}

@@ -6,7 +6,7 @@ ns:RegisterGuide({
     id = "loremaster-badlands",
     title = "Badlands",
     category = "Loremaster Guides",
-    revision = 1,
+    revision = 2,
     routeMode = "ordered",
     loremasterExpanded = true,
     goals = {
@@ -151,13 +151,13 @@ ns:RegisterGuide({
                     y = 0.434,
                 },
             },
+            sourceActionID = "turnin-719-a-dwarf-and-his-tools",
+            sourceGuide = "leveling-era-alliance-badlands",
             sourceStep = 17,
             text = "Turn in A Dwarf and His Tools to Prospector Ryedol.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-badlands",
-            sourceActionID = "turnin-719-a-dwarf-and-his-tools",
         },
         {
             complete = { quest = { id = 720, state = "completed" } },
@@ -175,13 +175,13 @@ ns:RegisterGuide({
                     y = 0.434,
                 },
             },
+            sourceActionID = "turnin-720-a-sign-of-hope",
+            sourceGuide = "leveling-era-alliance-badlands",
             sourceStep = 17,
             text = "Turn in A Sign of Hope to Prospector Ryedol.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-badlands",
-            sourceActionID = "turnin-720-a-sign-of-hope",
         },
         {
             complete = { quest = { id = 718, state = "completed" } },
@@ -196,13 +196,13 @@ ns:RegisterGuide({
             route = {
                 { label = "Sigrun Ironhew", mapID = 1418, offMapText = "Travel to Sigrun Ironhew in Badlands.", x = 0.538, y = 0.4331 },
             },
+            sourceActionID = "turnin-718-mirages",
+            sourceGuide = "leveling-era-alliance-badlands",
             sourceStep = 18,
             text = "Turn in Mirages to Sigrun Ironhew.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-badlands",
-            sourceActionID = "turnin-718-mirages",
         },
         {
             complete = { quest = { id = 733, state = "activeOrCompleted" } },
@@ -279,13 +279,13 @@ ns:RegisterGuide({
             kind = "turnin",
             requiredQuests = {},
             route = { { label = "Find Agmond", mapID = 1418, offMapText = "Travel to Find Agmond.", x = 0.5089, y = 0.6241 } },
+            sourceActionID = "turnin-738-find-agmond",
+            sourceGuide = "leveling-era-alliance-badlands",
             sourceStep = 22,
             text = "Turn in Find Agmond.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-badlands",
-            sourceActionID = "turnin-738-find-agmond",
         },
         {
             complete = { quest = { id = 739, state = "activeOrCompleted" } },
@@ -424,13 +424,13 @@ ns:RegisterGuide({
             route = {
                 { label = "Rigglefuzz", mapID = 1418, offMapText = "Travel to Rigglefuzz in Badlands.", x = 0.4239, y = 0.5293 },
             },
+            sourceActionID = "turnin-703-barbecued-buzzard-wings",
+            sourceGuide = "leveling-era-alliance-badlands",
             sourceStep = 26,
             text = "Turn in Barbecued Buzzard Wings to Rigglefuzz.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-badlands",
-            sourceActionID = "turnin-703-barbecued-buzzard-wings",
         },
         {
             checkpointQuest = 710,
@@ -526,13 +526,13 @@ ns:RegisterGuide({
                     y = 0.4487,
                 },
             },
+            sourceActionID = "turnin-713-coolant-heads-prevail",
+            sourceGuide = "leveling-era-alliance-badlands",
             sourceStep = 30,
             text = "Turn in Coolant Heads Prevail to Lotwil Veriatus.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-badlands",
-            sourceActionID = "turnin-713-coolant-heads-prevail",
         },
         {
             complete = { quest = { id = 714, state = "activeOrCompleted" } },
@@ -604,25 +604,6 @@ ns:RegisterGuide({
                 "alliance-leveling-era-alliance-badlands-accept-714-gyro-what",
                 "alliance-leveling-era-alliance-badlands-objective-714-quest-work",
             },
-            id = "alliance-leveling-era-alliance-badlands-turnin-714-gyro-what",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 713 } } },
-            route = {
-                {
-                    label = "Lotwil Veriatus",
-                    mapID = 1418,
-                    offMapText = "Travel to Lotwil Veriatus in Badlands.",
-                    x = 0.2595,
-                    y = 0.4487,
-                },
-            },
-            sourceStep = 31,
-            text = "Turn in Gyro... What? to Lotwil Veriatus.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-badlands",
-            sourceActionID = "turnin-714-gyro-what",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -636,6 +617,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-badlands-turnin-714-gyro-what",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 713 } } },
+            route = {
+                {
+                    label = "Lotwil Veriatus",
+                    mapID = 1418,
+                    offMapText = "Travel to Lotwil Veriatus in Badlands.",
+                    x = 0.2595,
+                    y = 0.4487,
+                },
+            },
+            sourceActionID = "turnin-714-gyro-what",
+            sourceGuide = "leveling-era-alliance-badlands",
+            sourceStep = 31,
+            text = "Turn in Gyro... What? to Lotwil Veriatus.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 715, state = "activeOrCompleted" } },
@@ -733,25 +733,6 @@ ns:RegisterGuide({
                 "alliance-leveling-era-alliance-badlands-accept-715-liquid-stone",
                 "alliance-leveling-era-alliance-badlands-objective-715-quest-work",
             },
-            id = "alliance-leveling-era-alliance-badlands-turnin-715-liquid-stone",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 714 } } },
-            route = {
-                {
-                    label = "Lucien Tosselwrench",
-                    mapID = 1418,
-                    offMapText = "Travel to Lucien Tosselwrench in Badlands.",
-                    x = 0.2582,
-                    y = 0.4423,
-                },
-            },
-            sourceStep = 33,
-            text = "Turn in Liquid Stone to Lucien Tosselwrench.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-badlands",
-            sourceActionID = "turnin-715-liquid-stone",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -778,6 +759,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-badlands-turnin-715-liquid-stone",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 714 } } },
+            route = {
+                {
+                    label = "Lucien Tosselwrench",
+                    mapID = 1418,
+                    offMapText = "Travel to Lucien Tosselwrench in Badlands.",
+                    x = 0.2582,
+                    y = 0.4423,
+                },
+            },
+            sourceActionID = "turnin-715-liquid-stone",
+            sourceGuide = "leveling-era-alliance-badlands",
+            sourceStep = 33,
+            text = "Turn in Liquid Stone to Lucien Tosselwrench.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { questObjective = { count = 10, id = 710, index = 1, text = "Lesser Rock Elemental" } },
@@ -816,13 +816,13 @@ ns:RegisterGuide({
                     y = 0.4487,
                 },
             },
+            sourceActionID = "turnin-710-study-of-the-elements-rock",
+            sourceGuide = "leveling-era-alliance-badlands",
             sourceStep = 35,
             text = "Turn in Study of the Elements: Rock to Lotwil Veriatus.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-badlands",
-            sourceActionID = "turnin-710-study-of-the-elements-rock",
         },
         {
             complete = { quest = { id = 711, state = "activeOrCompleted" } },
@@ -896,25 +896,6 @@ ns:RegisterGuide({
                 "alliance-leveling-era-alliance-badlands-accept-711-study-of-the-elements-rock",
                 "alliance-leveling-era-alliance-badlands-objective-711-1-rock-elemental",
             },
-            id = "alliance-leveling-era-alliance-badlands-turnin-711-study-of-the-elements-rock",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 710 } } },
-            route = {
-                {
-                    label = "Lotwil Veriatus",
-                    mapID = 1418,
-                    offMapText = "Travel to Lotwil Veriatus in Badlands.",
-                    x = 0.2595,
-                    y = 0.4487,
-                },
-            },
-            sourceStep = 37,
-            text = "Turn in Study of the Elements: Rock to Lotwil Veriatus.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-badlands",
-            sourceActionID = "turnin-711-study-of-the-elements-rock",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -928,6 +909,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-badlands-turnin-711-study-of-the-elements-rock",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 710 } } },
+            route = {
+                {
+                    label = "Lotwil Veriatus",
+                    mapID = 1418,
+                    offMapText = "Travel to Lotwil Veriatus in Badlands.",
+                    x = 0.2595,
+                    y = 0.4487,
+                },
+            },
+            sourceActionID = "turnin-711-study-of-the-elements-rock",
+            sourceGuide = "leveling-era-alliance-badlands",
+            sourceStep = 37,
+            text = "Turn in Study of the Elements: Rock to Lotwil Veriatus.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 712, state = "activeOrCompleted" } },
@@ -1069,19 +1069,6 @@ ns:RegisterGuide({
                 "alliance-leveling-era-alliance-badlands-accept-733-scrounging",
                 "alliance-leveling-era-alliance-badlands-objective-733-1-scrap-metal",
             },
-            id = "alliance-leveling-era-alliance-badlands-turnin-733-scrounging",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 718 } } },
-            route = {
-                { label = "Sigrun Ironhew", mapID = 1418, offMapText = "Travel to Sigrun Ironhew in Badlands.", x = 0.538, y = 0.4331 },
-            },
-            sourceStep = 45,
-            text = "Turn in Scrounging to Sigrun Ironhew.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-badlands",
-            sourceActionID = "turnin-733-scrounging",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -1100,6 +1087,19 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-badlands-turnin-733-scrounging",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 718 } } },
+            route = {
+                { label = "Sigrun Ironhew", mapID = 1418, offMapText = "Travel to Sigrun Ironhew in Badlands.", x = 0.538, y = 0.4331 },
+            },
+            sourceActionID = "turnin-733-scrounging",
+            sourceGuide = "leveling-era-alliance-badlands",
+            sourceStep = 45,
+            text = "Turn in Scrounging to Sigrun Ironhew.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 712, state = "completed" } },
@@ -1108,25 +1108,6 @@ ns:RegisterGuide({
                 "alliance-leveling-era-alliance-badlands-accept-712-study-of-the-elements-rock",
                 "alliance-leveling-era-alliance-badlands-objective-712-1-greater-rock-elemental",
             },
-            id = "alliance-leveling-era-alliance-badlands-turnin-712-study-of-the-elements-rock",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 711 } } },
-            route = {
-                {
-                    label = "Lotwil Veriatus",
-                    mapID = 1418,
-                    offMapText = "Travel to Lotwil Veriatus in Badlands.",
-                    x = 0.2595,
-                    y = 0.4487,
-                },
-            },
-            sourceStep = 46,
-            text = "Turn in Study of the Elements: Rock to Lotwil Veriatus.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-badlands",
-            sourceActionID = "turnin-712-study-of-the-elements-rock",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -1153,6 +1134,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-badlands-turnin-712-study-of-the-elements-rock",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 711 } } },
+            route = {
+                {
+                    label = "Lotwil Veriatus",
+                    mapID = 1418,
+                    offMapText = "Travel to Lotwil Veriatus in Badlands.",
+                    x = 0.2595,
+                    y = 0.4487,
+                },
+            },
+            sourceActionID = "turnin-712-study-of-the-elements-rock",
+            sourceGuide = "leveling-era-alliance-badlands",
+            sourceStep = 46,
+            text = "Turn in Study of the Elements: Rock to Lotwil Veriatus.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 734, state = "activeOrCompleted" } },
@@ -1226,25 +1226,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 734, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 35 } } } },
             dependsOn = { "alliance-leveling-era-alliance-badlands-accept-734-this-is-going-to-be-hard" },
-            id = "alliance-leveling-era-alliance-badlands-turnin-734-this-is-going-to-be-hard",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "all", quests = { 712, 714 } } },
-            route = {
-                {
-                    label = "Lucien Tosselwrench",
-                    mapID = 1418,
-                    offMapText = "Travel to Lucien Tosselwrench in Badlands.",
-                    x = 0.2582,
-                    y = 0.4424,
-                },
-            },
-            sourceStep = 47,
-            text = "Turn in This Is Going to Be Hard to Lucien Tosselwrench.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-badlands",
-            sourceActionID = "turnin-734-this-is-going-to-be-hard",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -1290,6 +1271,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-badlands-turnin-734-this-is-going-to-be-hard",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "all", quests = { 712, 714 } } },
+            route = {
+                {
+                    label = "Lucien Tosselwrench",
+                    mapID = 1418,
+                    offMapText = "Travel to Lucien Tosselwrench in Badlands.",
+                    x = 0.2582,
+                    y = 0.4424,
+                },
+            },
+            sourceActionID = "turnin-734-this-is-going-to-be-hard",
+            sourceGuide = "leveling-era-alliance-badlands",
+            sourceStep = 47,
+            text = "Turn in This Is Going to Be Hard to Lucien Tosselwrench.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 777, state = "activeOrCompleted" } },
@@ -1494,25 +1494,6 @@ ns:RegisterGuide({
                 "alliance-leveling-era-alliance-badlands-accept-716-stone-is-better-than-cloth",
                 "alliance-leveling-era-alliance-badlands-objective-716-quest-work",
             },
-            id = "alliance-leveling-era-alliance-badlands-turnin-716-stone-is-better-than-cloth",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 712 } } },
-            route = {
-                {
-                    label = "Lucien Tosselwrench",
-                    mapID = 1418,
-                    offMapText = "Travel to Lucien Tosselwrench in Badlands.",
-                    x = 0.2582,
-                    y = 0.4424,
-                },
-            },
-            sourceStep = 48,
-            text = "Turn in Stone Is Better than Cloth to Lucien Tosselwrench.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-badlands",
-            sourceActionID = "turnin-716-stone-is-better-than-cloth",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -1552,30 +1533,30 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-badlands-turnin-716-stone-is-better-than-cloth",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 712 } } },
+            route = {
+                {
+                    label = "Lucien Tosselwrench",
+                    mapID = 1418,
+                    offMapText = "Travel to Lucien Tosselwrench in Badlands.",
+                    x = 0.2582,
+                    y = 0.4424,
+                },
+            },
+            sourceActionID = "turnin-716-stone-is-better-than-cloth",
+            sourceGuide = "leveling-era-alliance-badlands",
+            sourceStep = 48,
+            text = "Turn in Stone Is Better than Cloth to Lucien Tosselwrench.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 777, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 35 } } } },
             dependsOn = { "alliance-leveling-era-alliance-badlands-accept-777-this-is-going-to-be-hard" },
-            id = "alliance-leveling-era-alliance-badlands-turnin-777-this-is-going-to-be-hard",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 734 } } },
-            route = {
-                {
-                    label = "Lotwil Veriatus",
-                    mapID = 1418,
-                    offMapText = "Travel to Lotwil Veriatus in Badlands.",
-                    x = 0.2595,
-                    y = 0.4486,
-                },
-            },
-            sourceStep = 49,
-            text = "Turn in This Is Going to Be Hard to Lotwil Veriatus.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-badlands",
-            sourceActionID = "turnin-777-this-is-going-to-be-hard",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -1634,6 +1615,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-badlands-turnin-777-this-is-going-to-be-hard",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 734 } } },
+            route = {
+                {
+                    label = "Lotwil Veriatus",
+                    mapID = 1418,
+                    offMapText = "Travel to Lotwil Veriatus in Badlands.",
+                    x = 0.2595,
+                    y = 0.4486,
+                },
+            },
+            sourceActionID = "turnin-777-this-is-going-to-be-hard",
+            sourceGuide = "leveling-era-alliance-badlands",
+            sourceStep = 49,
+            text = "Turn in This Is Going to Be Hard to Lotwil Veriatus.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 778, state = "activeOrCompleted" } },
@@ -1821,25 +1821,6 @@ ns:RegisterGuide({
                 "alliance-leveling-era-alliance-badlands-accept-778-this-is-going-to-be-hard",
                 "alliance-leveling-era-alliance-badlands-objective-778-quest-work",
             },
-            id = "alliance-leveling-era-alliance-badlands-turnin-778-this-is-going-to-be-hard",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 777 } } },
-            route = {
-                {
-                    label = "Lotwil Veriatus",
-                    mapID = 1418,
-                    offMapText = "Travel to Lotwil Veriatus in Badlands.",
-                    x = 0.2595,
-                    y = 0.4487,
-                },
-            },
-            sourceStep = 51,
-            text = "Turn in This Is Going to Be Hard to Lotwil Veriatus.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-badlands",
-            sourceActionID = "turnin-778-this-is-going-to-be-hard",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -1911,6 +1892,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-badlands-turnin-778-this-is-going-to-be-hard",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 777 } } },
+            route = {
+                {
+                    label = "Lotwil Veriatus",
+                    mapID = 1418,
+                    offMapText = "Travel to Lotwil Veriatus in Badlands.",
+                    x = 0.2595,
+                    y = 0.4487,
+                },
+            },
+            sourceActionID = "turnin-778-this-is-going-to-be-hard",
+            sourceGuide = "leveling-era-alliance-badlands",
+            sourceStep = 51,
+            text = "Turn in This Is Going to Be Hard to Lotwil Veriatus.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 739, state = "completed" } },
@@ -1920,25 +1920,6 @@ ns:RegisterGuide({
                 "alliance-leveling-era-alliance-badlands-objective-739-1-murdaloc",
                 "alliance-leveling-era-alliance-badlands-objective-739-2-stonevault-bonesnapper",
             },
-            id = "alliance-leveling-era-alliance-badlands-turnin-739-murdaloc",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 738 } } },
-            route = {
-                {
-                    label = "Prospector Ironband",
-                    mapID = 1432,
-                    offMapText = "Travel to Prospector Ironband in Loch Modan.",
-                    x = 0.6593,
-                    y = 0.6562,
-                },
-            },
-            sourceStep = 60,
-            text = "Turn in Murdaloc to Prospector Ironband.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-badlands",
-            sourceActionID = "turnin-739-murdaloc",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -1957,15 +1938,34 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-badlands-turnin-739-murdaloc",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 738 } } },
+            route = {
+                {
+                    label = "Prospector Ironband",
+                    mapID = 1432,
+                    offMapText = "Travel to Prospector Ironband in Loch Modan.",
+                    x = 0.6593,
+                    y = 0.6562,
+                },
+            },
+            sourceActionID = "turnin-739-murdaloc",
+            sourceGuide = "leveling-era-alliance-badlands",
+            sourceStep = 60,
+            text = "Turn in Murdaloc to Prospector Ironband.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
+            checkpointQuest = 706,
+            complete = { level = { min = 40 } },
+            conditions = { all = { { faction = "Alliance" } } },
             id = "alliance-extra-706-level",
             kind = "note",
-            checkpointQuest = 706,
-            text = "Reach level 45 before this visit.",
-            conditions = { all = { { faction = "Alliance" } } },
-            complete = { level = { min = 45 } },
-            requiredLevel = 45,
+            requiredLevel = 40,
+            text = "Reach level 40 before this visit.",
         },
         {
             id = "alliance-extra-706-accept",
@@ -2006,72 +2006,94 @@ ns:RegisterGuide({
             dependsOn = { "alliance-extra-706-accept" },
         },
         {
+            complete = { quest = { id = 706, state = "completed" } },
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 40 } } } },
+            dependsOn = { "alliance-extra-706-objective" },
             id = "alliance-extra-706-turnin",
             kind = "turnin",
-            text = "Turn in Fiery Blaze Enchantments to Sigrun Ironhew.",
-            conditions = { all = { { faction = "Alliance" }, { level = { min = 40 } } } },
-            route = {
-                {
-                    mapID = 1418,
-                    x = 0.5379999999999999,
-                    y = 0.434,
-                    label = "Sigrun Ironhew",
-                    offMapText = "Travel to Sigrun Ironhew in Badlands.",
-                },
-            },
-            complete = { quest = { id = 706, state = "completed" } },
             requiredQuests = {},
+            route = {
+                { label = "Sigrun Ironhew", mapID = 1418, offMapText = "Travel to Sigrun Ironhew in Badlands.", x = 0.538, y = 0.434 },
+            },
+            text = "Turn in Fiery Blaze Enchantments to Sigrun Ironhew.",
+            useClientPin = true,
             useClientText = false,
-            dependsOn = { "alliance-extra-706-objective" },
+            useQuestNavigation = true,
         },
         {
+            checkpointQuest = 732,
+            complete = { level = { min = 40 } },
+            conditions = { all = { { faction = "Alliance" } } },
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 732, state = "activeOrCompleted" } },
+                        {
+                            any = {
+                                { quest = { id = 732, state = "completed" } },
+                                {
+                                    all = {
+                                        { faction = "Alliance" },
+                                        { any = { { any = { { quest = { id = 718, state = "completed" } }, { all = { { faction = "Alliance" } } } } } } },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
             id = "alliance-extra-732-level",
             kind = "note",
-            checkpointQuest = 732,
-            text = "Reach level 43 before this visit.",
-            conditions = { all = { { faction = "Alliance" } } },
-            complete = { level = { min = 43 } },
-            requiredLevel = 43,
-            excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 732, state = "activeOrCompleted" } },
-                        {
-                            any = {
-                                { quest = { id = 732, state = "completed" } },
-                                {
-                                    all = {
-                                        { faction = "Alliance" },
-                                        { any = { { any = { { quest = { id = 718, state = "completed" } }, { all = { { faction = "Alliance" } } } } } } },
-                                    },
-                                },
-                            },
-                        },
-                    },
-                },
-            },
+            requiredLevel = 40,
+            text = "Reach level 40 before this visit.",
         },
         {
-            id = "alliance-extra-732-accept",
-            kind = "accept",
-            text = "Accept Tremors of the Earth from Garek.",
-            conditions = { all = { { faction = "Alliance" }, { level = { min = 40 } } } },
-            route = { { mapID = 1418, x = 0.618, y = 0.542, label = "Garek", offMapText = "Travel to Garek in Badlands." } },
             complete = { quest = { id = 732, state = "activeOrCompleted" } },
-            requiredQuests = { { mode = "any", quests = { 718 } } },
-            useClientText = false,
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 40 } } } },
             dependsOn = { "alliance-extra-732-level" },
             excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 732, state = "activeOrCompleted" } },
-                        {
+                any = {
+                    {
+                        ["not"] = {
                             any = {
-                                { quest = { id = 732, state = "completed" } },
+                                { quest = { id = 732, state = "activeOrCompleted" } },
                                 {
-                                    all = {
-                                        { faction = "Alliance" },
-                                        { any = { { any = { { quest = { id = 718, state = "completed" } }, { all = { { faction = "Alliance" } } } } } } },
+                                    any = {
+                                        { quest = { id = 732, state = "completed" } },
+                                        {
+                                            all = {
+                                                { faction = "Alliance" },
+                                                { any = { { any = { { quest = { id = 718, state = "completed" } }, { all = { { faction = "Alliance" } } } } } } },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 732, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 732, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                { faction = "Alliance" },
+                                                { race = { 1, 3, 4, 7 } },
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 718, state = "activeOrCompleted" } },
+                                                                { all = { { faction = "Alliance" }, { race = { 1, 3, 4, 7 } } } },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
                                     },
                                 },
                             },
@@ -2079,36 +2101,60 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-extra-732-accept",
+            kind = "accept",
+            requiredQuests = { { mode = "any", quests = { 718 } } },
+            route = { { label = "Garek", mapID = 1418, offMapText = "Travel to Garek in Badlands.", x = 0.618, y = 0.542 } },
+            text = "Accept Tremors of the Earth from Garek.",
+            useClientText = false,
         },
         {
-            id = "alliance-extra-732-objective",
-            kind = "objective",
-            text = "Defeat Boss Tho'grun and loot the Sign of the Earth.",
-            conditions = { all = { { faction = "Alliance" }, { level = { min = 40 } } } },
-            route = {
-                {
-                    mapID = 1418,
-                    x = 0.616,
-                    y = 0.6779999999999999,
-                    label = "Boss Tho'grun",
-                    offMapText = "Travel to Boss Tho'grun in Badlands.",
-                },
-            },
             complete = { quest = { id = 732, state = "complete" } },
-            requiredQuests = { { mode = "any", quests = { 718 } } },
-            useClientText = false,
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 40 } } } },
             dependsOn = { "alliance-extra-732-accept" },
             excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 732, state = "activeOrCompleted" } },
-                        {
+                any = {
+                    {
+                        ["not"] = {
                             any = {
-                                { quest = { id = 732, state = "completed" } },
+                                { quest = { id = 732, state = "activeOrCompleted" } },
                                 {
-                                    all = {
-                                        { faction = "Alliance" },
-                                        { any = { { any = { { quest = { id = 718, state = "completed" } }, { all = { { faction = "Alliance" } } } } } } },
+                                    any = {
+                                        { quest = { id = 732, state = "completed" } },
+                                        {
+                                            all = {
+                                                { faction = "Alliance" },
+                                                { any = { { any = { { quest = { id = 718, state = "completed" } }, { all = { { faction = "Alliance" } } } } } } },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 732, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 732, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                { faction = "Alliance" },
+                                                { race = { 1, 3, 4, 7 } },
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 718, state = "activeOrCompleted" } },
+                                                                { all = { { faction = "Alliance" }, { race = { 1, 3, 4, 7 } } } },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
                                     },
                                 },
                             },
@@ -2116,28 +2162,63 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-extra-732-objective",
+            kind = "objective",
+            requiredQuests = { { mode = "any", quests = { 718 } } },
+            route = {
+                { label = "Boss Tho'grun", mapID = 1418, offMapText = "Travel to Boss Tho'grun in Badlands.", x = 0.616, y = 0.678 },
+            },
+            text = "Defeat Boss Tho'grun and loot the Sign of the Earth.",
+            useClientPin = true,
+            useClientText = false,
         },
         {
-            id = "alliance-extra-732-turnin",
-            kind = "turnin",
-            text = "Turn in Tremors of the Earth to Garek.",
-            conditions = { all = { { faction = "Alliance" }, { level = { min = 40 } } } },
-            route = { { mapID = 1418, x = 0.618, y = 0.542, label = "Garek", offMapText = "Travel to Garek in Badlands." } },
             complete = { quest = { id = 732, state = "completed" } },
-            requiredQuests = { { mode = "any", quests = { 718 } } },
-            useClientText = false,
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 40 } } } },
             dependsOn = { "alliance-extra-732-objective" },
             excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 732, state = "activeOrCompleted" } },
-                        {
+                any = {
+                    {
+                        ["not"] = {
                             any = {
-                                { quest = { id = 732, state = "completed" } },
+                                { quest = { id = 732, state = "activeOrCompleted" } },
                                 {
-                                    all = {
-                                        { faction = "Alliance" },
-                                        { any = { { any = { { quest = { id = 718, state = "completed" } }, { all = { { faction = "Alliance" } } } } } } },
+                                    any = {
+                                        { quest = { id = 732, state = "completed" } },
+                                        {
+                                            all = {
+                                                { faction = "Alliance" },
+                                                { any = { { any = { { quest = { id = 718, state = "completed" } }, { all = { { faction = "Alliance" } } } } } } },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 732, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 732, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                { faction = "Alliance" },
+                                                { race = { 1, 3, 4, 7 } },
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 718, state = "activeOrCompleted" } },
+                                                                { all = { { faction = "Alliance" }, { race = { 1, 3, 4, 7 } } } },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
                                     },
                                 },
                             },
@@ -2145,6 +2226,14 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-extra-732-turnin",
+            kind = "turnin",
+            requiredQuests = { { mode = "any", quests = { 718 } } },
+            route = { { label = "Garek", mapID = 1418, offMapText = "Travel to Garek in Badlands.", x = 0.618, y = 0.542 } },
+            text = "Turn in Tremors of the Earth to Garek.",
+            useClientPin = true,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             id = "visit-entry-leveling-era-horde-badlands",
@@ -2282,13 +2371,13 @@ ns:RegisterGuide({
                     y = 0.4487,
                 },
             },
+            sourceActionID = "turnin-713-coolant-heads-prevail",
+            sourceGuide = "leveling-era-horde-badlands",
             sourceStep = 5,
             text = "Turn in Coolant Heads Prevail to Lotwil Veriatus.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-badlands",
-            sourceActionID = "turnin-713-coolant-heads-prevail",
         },
         {
             complete = { quest = { id = 714, state = "activeOrCompleted" } },
@@ -2360,25 +2449,6 @@ ns:RegisterGuide({
                 "horde-leveling-era-horde-badlands-accept-714-gyro-what",
                 "horde-leveling-era-horde-badlands-objective-714-quest-work",
             },
-            id = "horde-leveling-era-horde-badlands-turnin-714-gyro-what",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 713 } } },
-            route = {
-                {
-                    label = "Lotwil Veriatus",
-                    mapID = 1418,
-                    offMapText = "Travel to Lotwil Veriatus in Badlands.",
-                    x = 0.2595,
-                    y = 0.4487,
-                },
-            },
-            sourceStep = 6,
-            text = "Turn in Gyro... What? to Lotwil Veriatus.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-badlands",
-            sourceActionID = "turnin-714-gyro-what",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -2392,6 +2462,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-badlands-turnin-714-gyro-what",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 713 } } },
+            route = {
+                {
+                    label = "Lotwil Veriatus",
+                    mapID = 1418,
+                    offMapText = "Travel to Lotwil Veriatus in Badlands.",
+                    x = 0.2595,
+                    y = 0.4487,
+                },
+            },
+            sourceActionID = "turnin-714-gyro-what",
+            sourceGuide = "leveling-era-horde-badlands",
+            sourceStep = 6,
+            text = "Turn in Gyro... What? to Lotwil Veriatus.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 715, state = "activeOrCompleted" } },
@@ -2489,25 +2578,6 @@ ns:RegisterGuide({
                 "horde-leveling-era-horde-badlands-accept-715-liquid-stone",
                 "horde-leveling-era-horde-badlands-objective-715-quest-work",
             },
-            id = "horde-leveling-era-horde-badlands-turnin-715-liquid-stone",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 714 } } },
-            route = {
-                {
-                    label = "Lucien Tosselwrench",
-                    mapID = 1418,
-                    offMapText = "Travel to Lucien Tosselwrench in Badlands.",
-                    x = 0.2582,
-                    y = 0.4423,
-                },
-            },
-            sourceStep = 8,
-            text = "Turn in Liquid Stone to Lucien Tosselwrench.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-badlands",
-            sourceActionID = "turnin-715-liquid-stone",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -2534,6 +2604,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-badlands-turnin-715-liquid-stone",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 714 } } },
+            route = {
+                {
+                    label = "Lucien Tosselwrench",
+                    mapID = 1418,
+                    offMapText = "Travel to Lucien Tosselwrench in Badlands.",
+                    x = 0.2582,
+                    y = 0.4423,
+                },
+            },
+            sourceActionID = "turnin-715-liquid-stone",
+            sourceGuide = "leveling-era-horde-badlands",
+            sourceStep = 8,
+            text = "Turn in Liquid Stone to Lucien Tosselwrench.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             checkpointQuest = 1419,
@@ -2664,13 +2753,13 @@ ns:RegisterGuide({
                     y = 0.4487,
                 },
             },
+            sourceActionID = "turnin-710-study-of-the-elements-rock",
+            sourceGuide = "leveling-era-horde-badlands",
             sourceStep = 14,
             text = "Turn in Study of the Elements: Rock to Lotwil Veriatus.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-badlands",
-            sourceActionID = "turnin-710-study-of-the-elements-rock",
         },
         {
             complete = { quest = { id = 711, state = "activeOrCompleted" } },
@@ -2762,25 +2851,6 @@ ns:RegisterGuide({
                 "horde-leveling-era-horde-badlands-accept-711-study-of-the-elements-rock",
                 "horde-leveling-era-horde-badlands-objective-711-1-rock-elemental",
             },
-            id = "horde-leveling-era-horde-badlands-turnin-711-study-of-the-elements-rock",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 710 } } },
-            route = {
-                {
-                    label = "Lotwil Veriatus",
-                    mapID = 1418,
-                    offMapText = "Travel to Lotwil Veriatus in Badlands.",
-                    x = 0.2595,
-                    y = 0.4487,
-                },
-            },
-            sourceStep = 17,
-            text = "Turn in Study of the Elements: Rock to Lotwil Veriatus.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-badlands",
-            sourceActionID = "turnin-711-study-of-the-elements-rock",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -2794,6 +2864,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-badlands-turnin-711-study-of-the-elements-rock",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 710 } } },
+            route = {
+                {
+                    label = "Lotwil Veriatus",
+                    mapID = 1418,
+                    offMapText = "Travel to Lotwil Veriatus in Badlands.",
+                    x = 0.2595,
+                    y = 0.4487,
+                },
+            },
+            sourceActionID = "turnin-711-study-of-the-elements-rock",
+            sourceGuide = "leveling-era-horde-badlands",
+            sourceStep = 17,
+            text = "Turn in Study of the Elements: Rock to Lotwil Veriatus.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { questObjective = { count = 5, id = 2258, index = 1, text = "Buzzard Gizzard" } },
@@ -2858,13 +2947,13 @@ ns:RegisterGuide({
             route = {
                 { label = "Rigglefuzz", mapID = 1418, offMapText = "Travel to Rigglefuzz in Badlands.", x = 0.4239, y = 0.5293 },
             },
+            sourceActionID = "turnin-703-barbecued-buzzard-wings",
+            sourceGuide = "leveling-era-horde-badlands",
             sourceStep = 22,
             text = "Turn in Barbecued Buzzard Wings to Rigglefuzz.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-badlands",
-            sourceActionID = "turnin-703-barbecued-buzzard-wings",
         },
         {
             complete = { quest = { id = 1419, state = "completed" } },
@@ -2885,13 +2974,13 @@ ns:RegisterGuide({
                     y = 0.4718,
                 },
             },
+            sourceActionID = "turnin-1419-coyote-thieves",
+            sourceGuide = "leveling-era-horde-badlands",
             sourceStep = 27,
             text = "Turn in Coyote Thieves to Neeka Bloodscar.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-badlands",
-            sourceActionID = "turnin-1419-coyote-thieves",
         },
         {
             complete = { quest = { id = 1420, state = "activeOrCompleted" } },
@@ -2937,13 +3026,13 @@ ns:RegisterGuide({
                     y = 0.4606,
                 },
             },
+            sourceActionID = "turnin-2258-badlands-reagent-run",
+            sourceGuide = "leveling-era-horde-badlands",
             sourceStep = 28,
             text = "Turn in Badlands Reagent Run to Jarkal Mossmeld.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-badlands",
-            sourceActionID = "turnin-2258-badlands-reagent-run",
         },
         {
             id = "visit-entry-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows",
@@ -2971,13 +3060,13 @@ ns:RegisterGuide({
                     y = 0.552,
                 },
             },
+            sourceActionID = "turnin-1420-report-to-helgrum",
+            sourceGuide = "leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows",
             sourceStep = 36,
             text = "Turn in Report to Helgrum to Helgrum the Swift.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows",
-            sourceActionID = "turnin-1420-report-to-helgrum",
         },
         {
             id = "visit-entry-leveling-era-horde-searing-gorge",
@@ -3005,67 +3094,89 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
+            checkpointQuest = 712,
+            complete = { level = { min = 35 } },
+            conditions = { all = { { faction = "Horde" } } },
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 712, state = "activeOrCompleted" } },
+                        {
+                            any = {
+                                { quest = { id = 712, state = "completed" } },
+                                {
+                                    all = {
+                                        {
+                                            any = {
+                                                {
+                                                    any = {
+                                                        { quest = { id = 711, state = "completed" } },
+                                                        { all = { { any = { { any = { { quest = { id = 710, state = "completed" } }, { all = {} } } } } } } },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
             id = "horde-extra-712-level",
             kind = "note",
-            checkpointQuest = 712,
-            text = "Reach level 42 before this visit.",
-            conditions = { all = { { faction = "Horde" } } },
-            complete = { level = { min = 42 } },
-            requiredLevel = 42,
-            excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 712, state = "activeOrCompleted" } },
-                        {
-                            any = {
-                                { quest = { id = 712, state = "completed" } },
-                                {
-                                    all = {
-                                        {
-                                            any = {
-                                                {
-                                                    any = {
-                                                        { quest = { id = 711, state = "completed" } },
-                                                        { all = { { any = { { any = { { quest = { id = 710, state = "completed" } }, { all = {} } } } } } } },
-                                                    },
-                                                },
-                                            },
-                                        },
-                                    },
-                                },
-                            },
-                        },
-                    },
-                },
-            },
+            requiredLevel = 35,
+            text = "Reach level 35 before this visit.",
         },
         {
-            id = "horde-extra-712-accept",
-            kind = "accept",
-            text = "Accept Study of the Elements: Rock from Lotwil Veriatus.",
-            conditions = { all = { { faction = "Horde" }, { level = { min = 35 } } } },
-            route = {
-                { mapID = 1418, x = 0.258, y = 0.45, label = "Lotwil Veriatus", offMapText = "Travel to Lotwil Veriatus in Badlands." },
-            },
             complete = { quest = { id = 712, state = "activeOrCompleted" } },
-            requiredQuests = { { mode = "any", quests = { 711 } } },
-            useClientText = false,
+            conditions = { all = { { faction = "Horde" }, { level = { min = 35 } } } },
             dependsOn = { "horde-extra-712-level" },
             excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 712, state = "activeOrCompleted" } },
-                        {
+                any = {
+                    {
+                        ["not"] = {
                             any = {
-                                { quest = { id = 712, state = "completed" } },
+                                { quest = { id = 712, state = "activeOrCompleted" } },
                                 {
-                                    all = {
+                                    any = {
+                                        { quest = { id = 712, state = "completed" } },
                                         {
-                                            any = {
+                                            all = {
                                                 {
                                                     any = {
-                                                        { quest = { id = 711, state = "completed" } },
-                                                        { all = { { any = { { any = { { quest = { id = 710, state = "completed" } }, { all = {} } } } } } } },
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 711, state = "completed" } },
+                                                                { all = { { any = { { any = { { quest = { id = 710, state = "completed" } }, { all = {} } } } } } } },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 712, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 712, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 711, state = "activeOrCompleted" } },
+                                                                { all = { { any = { { any = { { quest = { id = 710, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                            },
+                                                        },
                                                     },
                                                 },
                                             },
@@ -3077,40 +3188,64 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-extra-712-accept",
+            kind = "accept",
+            requiredQuests = { { mode = "any", quests = { 711 } } },
+            route = {
+                { label = "Lotwil Veriatus", mapID = 1418, offMapText = "Travel to Lotwil Veriatus in Badlands.", x = 0.258, y = 0.45 },
+            },
+            text = "Accept Study of the Elements: Rock from Lotwil Veriatus.",
+            useClientText = false,
         },
         {
-            id = "horde-extra-712-objective",
-            kind = "objective",
-            text = "Defeat Greater Rock Elementals and loot 5 Bracers of Rock Binding.",
-            conditions = { all = { { faction = "Horde" }, { level = { min = 35 } } } },
-            route = {
-                {
-                    mapID = 1418,
-                    x = 0.132,
-                    y = 0.838,
-                    label = "Greater Rock Elemental",
-                    offMapText = "Travel to Greater Rock Elemental in Badlands.",
-                },
-            },
             complete = { quest = { id = 712, state = "complete" } },
-            requiredQuests = { { mode = "any", quests = { 711 } } },
-            useClientText = false,
+            conditions = { all = { { faction = "Horde" }, { level = { min = 35 } } } },
             dependsOn = { "horde-extra-712-accept" },
             excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 712, state = "activeOrCompleted" } },
-                        {
+                any = {
+                    {
+                        ["not"] = {
                             any = {
-                                { quest = { id = 712, state = "completed" } },
+                                { quest = { id = 712, state = "activeOrCompleted" } },
                                 {
-                                    all = {
+                                    any = {
+                                        { quest = { id = 712, state = "completed" } },
                                         {
-                                            any = {
+                                            all = {
                                                 {
                                                     any = {
-                                                        { quest = { id = 711, state = "completed" } },
-                                                        { all = { { any = { { any = { { quest = { id = 710, state = "completed" } }, { all = {} } } } } } } },
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 711, state = "completed" } },
+                                                                { all = { { any = { { any = { { quest = { id = 710, state = "completed" } }, { all = {} } } } } } } },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 712, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 712, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 711, state = "activeOrCompleted" } },
+                                                                { all = { { any = { { any = { { quest = { id = 710, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                            },
+                                                        },
                                                     },
                                                 },
                                             },
@@ -3122,34 +3257,71 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-extra-712-objective",
+            kind = "objective",
+            requiredQuests = { { mode = "any", quests = { 711 } } },
+            route = {
+                {
+                    label = "Greater Rock Elemental",
+                    mapID = 1418,
+                    offMapText = "Travel to Greater Rock Elemental in Badlands.",
+                    x = 0.132,
+                    y = 0.838,
+                },
+            },
+            text = "Defeat Greater Rock Elementals and loot 5 Bracers of Rock Binding.",
+            useClientPin = true,
+            useClientText = false,
         },
         {
-            id = "horde-extra-712-turnin",
-            kind = "turnin",
-            text = "Turn in Study of the Elements: Rock to Lotwil Veriatus.",
-            conditions = { all = { { faction = "Horde" }, { level = { min = 35 } } } },
-            route = {
-                { mapID = 1418, x = 0.258, y = 0.45, label = "Lotwil Veriatus", offMapText = "Travel to Lotwil Veriatus in Badlands." },
-            },
             complete = { quest = { id = 712, state = "completed" } },
-            requiredQuests = { { mode = "any", quests = { 711 } } },
-            useClientText = false,
+            conditions = { all = { { faction = "Horde" }, { level = { min = 35 } } } },
             dependsOn = { "horde-extra-712-objective" },
             excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 712, state = "activeOrCompleted" } },
-                        {
+                any = {
+                    {
+                        ["not"] = {
                             any = {
-                                { quest = { id = 712, state = "completed" } },
+                                { quest = { id = 712, state = "activeOrCompleted" } },
                                 {
-                                    all = {
+                                    any = {
+                                        { quest = { id = 712, state = "completed" } },
                                         {
-                                            any = {
+                                            all = {
                                                 {
                                                     any = {
-                                                        { quest = { id = 711, state = "completed" } },
-                                                        { all = { { any = { { any = { { quest = { id = 710, state = "completed" } }, { all = {} } } } } } } },
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 711, state = "completed" } },
+                                                                { all = { { any = { { any = { { quest = { id = 710, state = "completed" } }, { all = {} } } } } } } },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 712, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 712, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 711, state = "activeOrCompleted" } },
+                                                                { all = { { any = { { any = { { quest = { id = 710, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                            },
+                                                        },
                                                     },
                                                 },
                                             },
@@ -3161,107 +3333,158 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-extra-712-turnin",
+            kind = "turnin",
+            requiredQuests = { { mode = "any", quests = { 711 } } },
+            route = {
+                { label = "Lotwil Veriatus", mapID = 1418, offMapText = "Travel to Lotwil Veriatus in Badlands.", x = 0.258, y = 0.45 },
+            },
+            text = "Turn in Study of the Elements: Rock to Lotwil Veriatus.",
+            useClientPin = true,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
+            checkpointQuest = 734,
+            complete = { level = { min = 35 } },
+            conditions = { all = { { faction = "Horde" } } },
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 734, state = "activeOrCompleted" } },
+                        {
+                            any = {
+                                { quest = { id = 734, state = "completed" } },
+                                {
+                                    all = {
+                                        {
+                                            all = {
+                                                {
+                                                    any = {
+                                                        { quest = { id = 712, state = "completed" } },
+                                                        {
+                                                            all = {
+                                                                {
+                                                                    any = {
+                                                                        {
+                                                                            any = {
+                                                                                { quest = { id = 711, state = "completed" } },
+                                                                                { all = { { any = { { any = { { quest = { id = 710, state = "completed" } }, { all = {} } } } } } } },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                                {
+                                                    any = {
+                                                        { quest = { id = 714, state = "completed" } },
+                                                        { all = { { any = { { any = { { quest = { id = 713, state = "completed" } }, { all = {} } } } } } } },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
             id = "horde-extra-734-level",
             kind = "note",
-            checkpointQuest = 734,
-            text = "Reach level 42 before this visit.",
-            conditions = { all = { { faction = "Horde" } } },
-            complete = { level = { min = 42 } },
-            requiredLevel = 42,
-            excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 734, state = "activeOrCompleted" } },
-                        {
-                            any = {
-                                { quest = { id = 734, state = "completed" } },
-                                {
-                                    all = {
-                                        {
-                                            all = {
-                                                {
-                                                    any = {
-                                                        { quest = { id = 712, state = "completed" } },
-                                                        {
-                                                            all = {
-                                                                {
-                                                                    any = {
-                                                                        {
-                                                                            any = {
-                                                                                { quest = { id = 711, state = "completed" } },
-                                                                                { all = { { any = { { any = { { quest = { id = 710, state = "completed" } }, { all = {} } } } } } } },
-                                                                            },
-                                                                        },
-                                                                    },
-                                                                },
-                                                            },
-                                                        },
-                                                    },
-                                                },
-                                                {
-                                                    any = {
-                                                        { quest = { id = 714, state = "completed" } },
-                                                        { all = { { any = { { any = { { quest = { id = 713, state = "completed" } }, { all = {} } } } } } } },
-                                                    },
-                                                },
-                                            },
-                                        },
-                                    },
-                                },
-                            },
-                        },
-                    },
-                },
-            },
+            requiredLevel = 35,
+            text = "Reach level 35 before this visit.",
         },
         {
-            id = "horde-extra-734-accept",
-            kind = "accept",
-            text = "Accept This Is Going to Be Hard from Lotwil Veriatus.",
-            conditions = { all = { { faction = "Horde" }, { level = { min = 35 } } } },
-            route = {
-                { mapID = 1418, x = 0.258, y = 0.45, label = "Lotwil Veriatus", offMapText = "Travel to Lotwil Veriatus in Badlands." },
-            },
             complete = { quest = { id = 734, state = "activeOrCompleted" } },
-            requiredQuests = { { mode = "all", quests = { 712, 714 } } },
-            useClientText = false,
+            conditions = { all = { { faction = "Horde" }, { level = { min = 35 } } } },
             dependsOn = { "horde-extra-734-level", "horde-extra-712-turnin", "horde-leveling-era-horde-badlands-turnin-714-gyro-what" },
             excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 734, state = "activeOrCompleted" } },
-                        {
+                any = {
+                    {
+                        ["not"] = {
                             any = {
-                                { quest = { id = 734, state = "completed" } },
+                                { quest = { id = 734, state = "activeOrCompleted" } },
                                 {
-                                    all = {
+                                    any = {
+                                        { quest = { id = 734, state = "completed" } },
                                         {
                                             all = {
                                                 {
-                                                    any = {
-                                                        { quest = { id = 712, state = "completed" } },
+                                                    all = {
                                                         {
-                                                            all = {
+                                                            any = {
+                                                                { quest = { id = 712, state = "completed" } },
                                                                 {
-                                                                    any = {
+                                                                    all = {
                                                                         {
                                                                             any = {
-                                                                                { quest = { id = 711, state = "completed" } },
-                                                                                { all = { { any = { { any = { { quest = { id = 710, state = "completed" } }, { all = {} } } } } } } },
+                                                                                {
+                                                                                    any = {
+                                                                                        { quest = { id = 711, state = "completed" } },
+                                                                                        { all = { { any = { { any = { { quest = { id = 710, state = "completed" } }, { all = {} } } } } } } },
+                                                                                    },
+                                                                                },
                                                                             },
                                                                         },
                                                                     },
                                                                 },
                                                             },
                                                         },
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 714, state = "completed" } },
+                                                                { all = { { any = { { any = { { quest = { id = 713, state = "completed" } }, { all = {} } } } } } } },
+                                                            },
+                                                        },
                                                     },
                                                 },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 734, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 734, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
                                                 {
-                                                    any = {
-                                                        { quest = { id = 714, state = "completed" } },
-                                                        { all = { { any = { { any = { { quest = { id = 713, state = "completed" } }, { all = {} } } } } } } },
+                                                    all = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 712, state = "activeOrCompleted" } },
+                                                                {
+                                                                    all = {
+                                                                        {
+                                                                            any = {
+                                                                                {
+                                                                                    any = {
+                                                                                        { quest = { id = 711, state = "activeOrCompleted" } },
+                                                                                        { all = { { any = { { any = { { quest = { id = 710, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 714, state = "activeOrCompleted" } },
+                                                                { all = { { any = { { any = { { quest = { id = 713, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                            },
+                                                        },
                                                     },
                                                 },
                                             },
@@ -3273,6 +3496,14 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-extra-734-accept",
+            kind = "accept",
+            requiredQuests = { { mode = "all", quests = { 712, 714 } } },
+            route = {
+                { label = "Lotwil Veriatus", mapID = 1418, offMapText = "Travel to Lotwil Veriatus in Badlands.", x = 0.258, y = 0.45 },
+            },
+            text = "Accept This Is Going to Be Hard from Lotwil Veriatus.",
+            useClientText = false,
         },
         {
             complete = { quest = { id = 3821, state = "activeOrCompleted" } },
@@ -3338,123 +3569,207 @@ ns:RegisterGuide({
                     y = 0.4552,
                 },
             },
+            sourceActionID = "turnin-3821-dreadmaul-rock",
+            sourceGuide = "leveling-era-horde-burning-steppes-and-azshara",
             sourceStep = 8,
             text = "Turn in Dreadmaul Rock to Sha'ni Proudtusk.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-burning-steppes-and-azshara",
-            sourceActionID = "turnin-3821-dreadmaul-rock",
         },
         {
+            complete = { quest = { id = 734, state = "complete" } },
+            conditions = { all = { { faction = "Horde" }, { level = { min = 35 } } } },
+            dependsOn = { "horde-extra-734-accept" },
+            excludeWhen = {
+                any = {
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 734, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 734, state = "completed" } },
+                                        {
+                                            all = {
+                                                {
+                                                    all = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 712, state = "completed" } },
+                                                                {
+                                                                    all = {
+                                                                        {
+                                                                            any = {
+                                                                                {
+                                                                                    any = {
+                                                                                        { quest = { id = 711, state = "completed" } },
+                                                                                        { all = { { any = { { any = { { quest = { id = 710, state = "completed" } }, { all = {} } } } } } } },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 714, state = "completed" } },
+                                                                { all = { { any = { { any = { { quest = { id = 713, state = "completed" } }, { all = {} } } } } } } },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 734, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 734, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                {
+                                                    all = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 712, state = "activeOrCompleted" } },
+                                                                {
+                                                                    all = {
+                                                                        {
+                                                                            any = {
+                                                                                {
+                                                                                    any = {
+                                                                                        { quest = { id = 711, state = "activeOrCompleted" } },
+                                                                                        { all = { { any = { { any = { { quest = { id = 710, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 714, state = "activeOrCompleted" } },
+                                                                { all = { { any = { { any = { { quest = { id = 713, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
             id = "horde-extra-734-objective",
             kind = "objective",
-            text = "Speak to Lucien Tosselwrench in the Badlands. Follow the quest log for the destination.",
-            conditions = { all = { { faction = "Horde" }, { level = { min = 35 } } } },
-            route = {},
-            complete = { quest = { id = 734, state = "complete" } },
             requiredQuests = { { mode = "all", quests = { 712, 714 } } },
-            useClientText = false,
-            dependsOn = { "horde-extra-734-accept" },
+            route = {},
+            text = "Speak to Lucien Tosselwrench in the Badlands. Follow the quest log for the destination.",
             useClientPin = true,
-            excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 734, state = "activeOrCompleted" } },
-                        {
-                            any = {
-                                { quest = { id = 734, state = "completed" } },
-                                {
-                                    all = {
-                                        {
-                                            all = {
-                                                {
-                                                    any = {
-                                                        { quest = { id = 712, state = "completed" } },
-                                                        {
-                                                            all = {
-                                                                {
-                                                                    any = {
-                                                                        {
-                                                                            any = {
-                                                                                { quest = { id = 711, state = "completed" } },
-                                                                                { all = { { any = { { any = { { quest = { id = 710, state = "completed" } }, { all = {} } } } } } } },
-                                                                            },
-                                                                        },
-                                                                    },
-                                                                },
-                                                            },
-                                                        },
-                                                    },
-                                                },
-                                                {
-                                                    any = {
-                                                        { quest = { id = 714, state = "completed" } },
-                                                        { all = { { any = { { any = { { quest = { id = 713, state = "completed" } }, { all = {} } } } } } } },
-                                                    },
-                                                },
-                                            },
-                                        },
-                                    },
-                                },
-                            },
-                        },
-                    },
-                },
-            },
+            useClientText = false,
         },
         {
-            id = "horde-extra-734-turnin",
-            kind = "turnin",
-            text = "Turn in This Is Going to Be Hard to Lucien Tosselwrench.",
-            conditions = { all = { { faction = "Horde" }, { level = { min = 35 } } } },
-            route = {
-                {
-                    mapID = 1418,
-                    x = 0.258,
-                    y = 0.444,
-                    label = "Lucien Tosselwrench",
-                    offMapText = "Travel to Lucien Tosselwrench in Badlands.",
-                },
-            },
             complete = { quest = { id = 734, state = "completed" } },
-            requiredQuests = { { mode = "all", quests = { 712, 714 } } },
-            useClientText = false,
+            conditions = { all = { { faction = "Horde" }, { level = { min = 35 } } } },
             dependsOn = { "horde-extra-734-objective" },
             excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 734, state = "activeOrCompleted" } },
-                        {
+                any = {
+                    {
+                        ["not"] = {
                             any = {
-                                { quest = { id = 734, state = "completed" } },
+                                { quest = { id = 734, state = "activeOrCompleted" } },
                                 {
-                                    all = {
+                                    any = {
+                                        { quest = { id = 734, state = "completed" } },
                                         {
                                             all = {
                                                 {
-                                                    any = {
-                                                        { quest = { id = 712, state = "completed" } },
+                                                    all = {
                                                         {
-                                                            all = {
+                                                            any = {
+                                                                { quest = { id = 712, state = "completed" } },
                                                                 {
-                                                                    any = {
+                                                                    all = {
                                                                         {
                                                                             any = {
-                                                                                { quest = { id = 711, state = "completed" } },
-                                                                                { all = { { any = { { any = { { quest = { id = 710, state = "completed" } }, { all = {} } } } } } } },
+                                                                                {
+                                                                                    any = {
+                                                                                        { quest = { id = 711, state = "completed" } },
+                                                                                        { all = { { any = { { any = { { quest = { id = 710, state = "completed" } }, { all = {} } } } } } } },
+                                                                                    },
+                                                                                },
                                                                             },
                                                                         },
                                                                     },
                                                                 },
                                                             },
                                                         },
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 714, state = "completed" } },
+                                                                { all = { { any = { { any = { { quest = { id = 713, state = "completed" } }, { all = {} } } } } } } },
+                                                            },
+                                                        },
                                                     },
                                                 },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 734, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 734, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
                                                 {
-                                                    any = {
-                                                        { quest = { id = 714, state = "completed" } },
-                                                        { all = { { any = { { any = { { quest = { id = 713, state = "completed" } }, { all = {} } } } } } } },
+                                                    all = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 712, state = "activeOrCompleted" } },
+                                                                {
+                                                                    all = {
+                                                                        {
+                                                                            any = {
+                                                                                {
+                                                                                    any = {
+                                                                                        { quest = { id = 711, state = "activeOrCompleted" } },
+                                                                                        { all = { { any = { { any = { { quest = { id = 710, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 714, state = "activeOrCompleted" } },
+                                                                { all = { { any = { { any = { { quest = { id = 713, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                            },
+                                                        },
                                                     },
                                                 },
                                             },
@@ -3466,15 +3781,31 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-extra-734-turnin",
+            kind = "turnin",
+            requiredQuests = { { mode = "all", quests = { 712, 714 } } },
+            route = {
+                {
+                    label = "Lucien Tosselwrench",
+                    mapID = 1418,
+                    offMapText = "Travel to Lucien Tosselwrench in Badlands.",
+                    x = 0.258,
+                    y = 0.444,
+                },
+            },
+            text = "Turn in This Is Going to Be Hard to Lucien Tosselwrench.",
+            useClientPin = true,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
+            checkpointQuest = 782,
+            complete = { level = { min = 40 } },
+            conditions = { all = { { faction = "Horde" } } },
             id = "horde-extra-782-level",
             kind = "note",
-            checkpointQuest = 782,
-            text = "Reach level 43 before this visit.",
-            conditions = { all = { { faction = "Horde" } } },
-            complete = { level = { min = 43 } },
-            requiredLevel = 43,
+            requiredLevel = 40,
+            text = "Reach level 40 before this visit.",
         },
         {
             id = "horde-extra-782-accept",
@@ -3515,23 +3846,17 @@ ns:RegisterGuide({
             dependsOn = { "horde-extra-782-accept" },
         },
         {
+            complete = { quest = { id = 782, state = "completed" } },
+            conditions = { all = { { faction = "Horde" }, { level = { min = 40 } } } },
+            dependsOn = { "horde-extra-782-objective" },
             id = "horde-extra-782-turnin",
             kind = "turnin",
-            text = "Turn in Broken Alliances to Gorn.",
-            conditions = { all = { { faction = "Horde" }, { level = { min = 40 } } } },
-            route = {
-                {
-                    mapID = 1418,
-                    x = 0.027999999999999997,
-                    y = 0.45799999999999996,
-                    label = "Gorn",
-                    offMapText = "Travel to Gorn in Badlands.",
-                },
-            },
-            complete = { quest = { id = 782, state = "completed" } },
             requiredQuests = {},
+            route = { { label = "Gorn", mapID = 1418, offMapText = "Travel to Gorn in Badlands.", x = 0.028, y = 0.458 } },
+            text = "Turn in Broken Alliances to Gorn.",
+            useClientPin = true,
             useClientText = false,
-            dependsOn = { "horde-extra-782-objective" },
+            useQuestNavigation = true,
         },
     },
 })

@@ -109,6 +109,10 @@ jobs:
         run: luajit -joff tests/lua/lint.lua
       - name: Accept-chain audit
         run: luajit -joff tests/lua/audit_accept_chains.lua
+      - name: QuestieDB baked store decoder
+        run: luajit -joff tests/lua/questiedb_baked.lua
+      - name: QuestieDB zone area table
+        run: luajit -joff tests/lua/questiedb_areas.lua
 
   journeys:
     needs: plan

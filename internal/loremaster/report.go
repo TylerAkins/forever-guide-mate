@@ -153,6 +153,9 @@ func BuildReport(root, lua string) (map[string]any, error) {
 		if err := json.Unmarshal(data, &audit); err != nil {
 			return nil, err
 		}
+		if audit.Guide == "" && len(audit.Quests) == 0 {
+			continue
+		}
 		profiles, ok := sets[audit.Guide]
 		if !ok {
 			return nil, fmt.Errorf("report missing guide %q", audit.Guide)

@@ -2415,7 +2415,7 @@
             "sharable": true,
             "weekly": false
           },
-          "name": "<nyi> <TXT> The Centaur Hoofprints",
+          "name": "\u003cnyi\u003e \u003cTXT\u003e The Centaur Hoofprints",
           "prerequisiteReferences": [],
           "questLevel": 40,
           "races": [],
@@ -14332,7 +14332,7 @@
             "sharable": true,
             "weekly": false
           },
-          "name": "<UNUSED>",
+          "name": "\u003cUNUSED\u003e",
           "prerequisiteReferences": [],
           "questLevel": 33,
           "races": [],
@@ -21065,7 +21065,7 @@
             "sharable": true,
             "weekly": false
           },
-          "name": "<UNUSED>",
+          "name": "\u003cUNUSED\u003e",
           "prerequisiteReferences": [],
           "questLevel": 37,
           "races": [],
@@ -21101,7 +21101,7 @@
             "sharable": true,
             "weekly": false
           },
-          "name": "<UNUSED>",
+          "name": "\u003cUNUSED\u003e",
           "prerequisiteReferences": [],
           "questLevel": 37,
           "races": [],
@@ -26082,7 +26082,7 @@
             "sharable": true,
             "weekly": false
           },
-          "name": "<UNUSED>",
+          "name": "\u003cUNUSED\u003e",
           "prerequisiteReferences": [],
           "questLevel": 33,
           "races": [],
@@ -68945,1156 +68945,705 @@
   ],
   "clientWalkthrough": "unverified",
   "sourcePriority": [
-    "wowhead",
-    "questiedb",
-    "allthethings",
-    "foreverclient"
+    "questiedb"
   ],
   "sources": {
-    "databaseCommit": "5c92953420ab4a710fda39581a405a72a89b8c0d",
-    "compilation": {
-      "schemaVersion": 1,
-      "compilationFormatVersion": 2,
-      "flavor": "forever",
-      "source": "compilation",
-      "sourceRevision": "991cc5841d7b79dc85613431aa8ecf6f4c34070753426d60f323e321532d4b66",
-      "recordCount": 107209,
-      "recordsSha256": "9ab82625871b9df3a0ac5781bb194be6d8211a4a6337258fbf82224e00416727",
-      "status": "generated"
+    "questiedb": {
+      "artifactVersion": "1.0.6-dev.f844007",
+      "buildCommit": "f844007b329b72f18cf2bda3d87540012294732a",
+      "counts": {
+        "Item": 21294,
+        "Npc": 13393,
+        "Object": 7035,
+        "Quest": 5232
+      }
     },
     "sourceHashes": {
-      "data/forever/compilation/records.jsonl.gz": "35c74cb11823db372dc0bc289d5ffaf8296ca9d1c370e4f7b794a29af7f84b47"
+      "questiedb/export.json": "e26090e90df3aa2e94be4c13feb001390068b84c249ff2443c629d26a408e704",
+      "questiedb/policy.json": "835ba8f6361ef37bda275859bdb48852001c3ce2b6a2b3ecff586283633e2ad4"
     },
     "upstreamCommit": "9087c457e20fb96e73e5b362dd6fc50324b75718"
   },
   "coverageMode": "zone",
   "orderingEligibility": {
-    "97284": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
-      },
+    "261": {
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
-      }
-    },
-    "93196": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
+        "inCasual": false
       },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
-      }
-    },
-    "6161": {
       "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
+        "inCasual": true
       }
     },
     "1052": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "93224": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
+        "inCasual": false
       },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
-      }
-    },
-    "93225": {
       "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
-      }
-    },
-    "93226": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
-      }
-    },
-    "93227": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
-      }
-    },
-    "92743": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
-      }
-    },
-    "92754": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
-      }
-    },
-    "92755": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
-      }
-    },
-    "5741": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      }
-    },
-    "5763": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      }
-    },
-    "92811": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
-      }
-    },
-    "92812": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
-      }
-    },
-    "92814": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
-      }
-    },
-    "92817": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
-      }
-    },
-    "92818": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
-      }
-    },
-    "94872": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
-      }
-    },
-    "94873": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
-      }
-    },
-    "5821": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "1277": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "261": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "5381": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      }
-    },
-    "5386": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "8458": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
-      }
-    },
-    "93465": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
-      }
-    },
-    "5421": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "5943": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": true
       }
     },
     "1361": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
       }
     },
     "1362": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
       }
     },
     "1365": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
       "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
       }
     },
     "1366": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
       "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
       }
     },
     "1367": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
       }
     },
     "1368": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
       "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
       }
     },
     "1369": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
       }
     },
     "1370": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": true
       }
     },
     "1371": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
       }
     },
     "1373": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": true
       }
     },
     "1374": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": true
       }
     },
     "1375": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
       }
     },
     "1380": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
       }
     },
     "1381": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
       }
     },
     "1382": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
       }
     },
     "1384": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
       }
     },
     "1385": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
       }
     },
     "1386": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
       }
     },
     "1387": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "93044": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
+        "inCasual": false
       },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
-      }
-    },
-    "93045": {
       "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
-      }
-    },
-    "5501": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      }
-    },
-    "79229": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
-      }
-    },
-    "79235": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
-      }
-    },
-    "79236": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
-      }
-    },
-    "79242": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
-      }
-    },
-    "6027": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
+        "inCasual": true
       }
     },
     "1432": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
       "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
       }
     },
     "1433": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
       "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
       }
     },
     "1434": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
       "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
       }
     },
     "1435": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
       "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
       }
     },
     "1437": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
       }
     },
     "1438": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
       }
     },
     "1439": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
       }
     },
     "1440": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "1441": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
       },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "6568": {
       "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": true
       }
     },
     "1453": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
       }
     },
     "1454": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
       }
     },
     "1455": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
       }
     },
     "1456": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
       }
     },
     "1457": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
       }
     },
     "1458": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
       }
     },
     "1459": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "1460": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
       },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "1461": {
       "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": true
       }
     },
     "1465": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
       }
     },
     "1466": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
       }
     },
     "1467": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "5561": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
+        "inCasual": false
       },
-      "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
+      "Alliance": {
+        "inCasual": true
       }
     },
     "1480": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
       "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
       }
     },
     "1481": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
       "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
       }
     },
     "1482": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
       "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      }
-    },
-    "93128": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
+        "inCasual": true
       },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
+      "Alliance": {
+        "inCasual": false
       }
     },
     "1484": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
       "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      }
-    },
-    "5581": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": true
       },
-      "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
+      "Alliance": {
+        "inCasual": false
       }
     },
     "1488": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
       "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
       }
     },
-    "96222": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
-      },
+    "5381": {
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
       }
     },
-    "93678": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
-      },
+    "5386": {
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
       }
     },
-    "97265": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
-      },
+    "5421": {
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "5501": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "5561": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "5581": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "5741": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "5763": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "5821": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "5943": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "6027": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": true
       }
     },
     "6132": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
       }
     },
     "6134": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": true
       }
     },
     "6141": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
       }
     },
     "6142": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
       "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
       }
     },
     "6143": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
       "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "6161": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "6567": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "6568": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "92743": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "92754": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "92755": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "92811": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "92812": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "92814": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "92817": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "92818": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "93044": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "93128": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "93196": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "93224": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "93225": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "93226": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "93227": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "93465": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "93678": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "94872": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "94873": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "96222": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "97265": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "97284": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
       }
     }
   },
@@ -70103,111 +69652,12 @@
     "commit": "9087c457e20fb96e73e5b362dd6fc50324b75718",
     "strict": false,
     "sourceHashes": {
+      "ZygorGuidesViewerRM/Guides/Leveling/ZygorGuidesHorde.lua": "2eaf5adb4865936cdb4257451c3ce920fdaff1c0ec17216c36e055480f389e54",
       "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-EasternKingdoms.lua": "8a5ec87d31698c612e50eb0655f5c1f28d723c3068552c1295d79ddcd934270f",
       "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-Kalimdor.lua": "4fb7b7f5bb2702dfe36ed33de31b4d3105153bfba62b7a14a7ab73386e2087fa",
-      "ZygorGuidesViewerRM/Guides/Leveling/ZygorGuidesAlliance.lua": "ffb9b7828817e098d74ee5931e15a64ce773142a4c1e60f9775d0713121ba67d",
-      "ZygorGuidesViewerRM/Guides/Leveling/ZygorGuidesHorde.lua": "2eaf5adb4865936cdb4257451c3ce920fdaff1c0ec17216c36e055480f389e54"
+      "ZygorGuidesViewerRM/Guides/Leveling/ZygorGuidesAlliance.lua": "ffb9b7828817e098d74ee5931e15a64ce773142a4c1e60f9775d0713121ba67d"
     },
     "matches": {
-      "alliance-extra-5943-level": {
-        "quest": 5943,
-        "kind": "accept",
-        "index": 0,
-        "faction": "Alliance",
-        "chapter": "Ding80's Loremaster Alliance Guides\\\\Kalimdor\\\\[40] Desolace",
-        "source": "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-Kalimdor.lua",
-        "line": 3516
-      },
-      "alliance-extra-5943-accept": {
-        "quest": 5943,
-        "kind": "accept",
-        "index": 0,
-        "faction": "Alliance",
-        "chapter": "Ding80's Loremaster Alliance Guides\\\\Kalimdor\\\\[40] Desolace",
-        "source": "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-Kalimdor.lua",
-        "line": 3516
-      },
-      "alliance-extra-5943-objective": {
-        "quest": 5943,
-        "kind": "objective",
-        "index": 1,
-        "faction": "Alliance",
-        "chapter": "Ding80's Loremaster Alliance Guides\\\\Kalimdor\\\\[40] Desolace",
-        "source": "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-Kalimdor.lua",
-        "line": 3525
-      },
-      "alliance-extra-5943-turnin": {
-        "quest": 5943,
-        "kind": "turnin",
-        "index": 0,
-        "faction": "Alliance",
-        "chapter": "Ding80's Loremaster Alliance Guides\\\\Kalimdor\\\\[40] Desolace",
-        "source": "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-Kalimdor.lua",
-        "line": 3529
-      },
-      "alliance-extra-6132-level": {
-        "quest": 6132,
-        "kind": "accept",
-        "index": 0,
-        "faction": "Alliance",
-        "chapter": "Ding80's Loremaster Alliance Guides\\\\Kalimdor\\\\[40] Desolace",
-        "source": "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-Kalimdor.lua",
-        "line": 3501
-      },
-      "alliance-extra-6132-accept": {
-        "quest": 6132,
-        "kind": "accept",
-        "index": 0,
-        "faction": "Alliance",
-        "chapter": "Ding80's Loremaster Alliance Guides\\\\Kalimdor\\\\[40] Desolace",
-        "source": "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-Kalimdor.lua",
-        "line": 3501
-      },
-      "alliance-extra-6132-objective": {
-        "quest": 6132,
-        "kind": "objective",
-        "index": 1,
-        "faction": "Alliance",
-        "chapter": "Ding80's Loremaster Alliance Guides\\\\Kalimdor\\\\[40] Desolace",
-        "source": "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-Kalimdor.lua",
-        "line": 3504
-      },
-      "alliance-extra-6132-turnin": {
-        "quest": 6132,
-        "kind": "turnin",
-        "index": 0,
-        "faction": "Alliance",
-        "chapter": "Ding80's Loremaster Alliance Guides\\\\Kalimdor\\\\[40] Desolace",
-        "source": "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-Kalimdor.lua",
-        "line": 3508
-      },
-      "alliance-extra-6141-level": {
-        "quest": 6141,
-        "kind": "accept",
-        "index": 0,
-        "faction": "Alliance",
-        "chapter": "Ding80's Loremaster Alliance Guides\\\\Kalimdor\\\\[40] Desolace",
-        "source": "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-Kalimdor.lua",
-        "line": 3197
-      },
-      "alliance-extra-6141-accept": {
-        "quest": 6141,
-        "kind": "accept",
-        "index": 0,
-        "faction": "Alliance",
-        "chapter": "Ding80's Loremaster Alliance Guides\\\\Kalimdor\\\\[40] Desolace",
-        "source": "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-Kalimdor.lua",
-        "line": 3197
-      },
-      "alliance-extra-6141-turnin": {
-        "quest": 6141,
-        "kind": "turnin",
-        "index": 0,
-        "faction": "Alliance",
-        "chapter": "Ding80's Loremaster Alliance Guides\\\\Kalimdor\\\\[40] Desolace",
-        "source": "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-Kalimdor.lua",
-        "line": 3223
-      },
       "horde-extra-1361-level": {
         "quest": 1361,
         "kind": "accept",
@@ -70261,6 +69711,105 @@
         "chapter": "Zygor's Horde Leveling Guides\\\\Levels (30-35)",
         "source": "ZygorGuidesViewerRM/Guides/Leveling/ZygorGuidesHorde.lua",
         "line": 7597
+      },
+      "alliance-extra-6141-level": {
+        "quest": 6141,
+        "kind": "accept",
+        "index": 0,
+        "faction": "Alliance",
+        "chapter": "Ding80's Loremaster Alliance Guides\\\\Kalimdor\\\\[40] Desolace",
+        "source": "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-Kalimdor.lua",
+        "line": 3197
+      },
+      "alliance-extra-6141-accept": {
+        "quest": 6141,
+        "kind": "accept",
+        "index": 0,
+        "faction": "Alliance",
+        "chapter": "Ding80's Loremaster Alliance Guides\\\\Kalimdor\\\\[40] Desolace",
+        "source": "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-Kalimdor.lua",
+        "line": 3197
+      },
+      "alliance-extra-6132-level": {
+        "quest": 6132,
+        "kind": "accept",
+        "index": 0,
+        "faction": "Alliance",
+        "chapter": "Ding80's Loremaster Alliance Guides\\\\Kalimdor\\\\[40] Desolace",
+        "source": "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-Kalimdor.lua",
+        "line": 3501
+      },
+      "alliance-extra-6132-accept": {
+        "quest": 6132,
+        "kind": "accept",
+        "index": 0,
+        "faction": "Alliance",
+        "chapter": "Ding80's Loremaster Alliance Guides\\\\Kalimdor\\\\[40] Desolace",
+        "source": "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-Kalimdor.lua",
+        "line": 3501
+      },
+      "alliance-extra-6132-objective": {
+        "quest": 6132,
+        "kind": "objective",
+        "index": 1,
+        "faction": "Alliance",
+        "chapter": "Ding80's Loremaster Alliance Guides\\\\Kalimdor\\\\[40] Desolace",
+        "source": "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-Kalimdor.lua",
+        "line": 3504
+      },
+      "alliance-extra-6132-turnin": {
+        "quest": 6132,
+        "kind": "turnin",
+        "index": 0,
+        "faction": "Alliance",
+        "chapter": "Ding80's Loremaster Alliance Guides\\\\Kalimdor\\\\[40] Desolace",
+        "source": "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-Kalimdor.lua",
+        "line": 3508
+      },
+      "alliance-extra-5943-level": {
+        "quest": 5943,
+        "kind": "accept",
+        "index": 0,
+        "faction": "Alliance",
+        "chapter": "Ding80's Loremaster Alliance Guides\\\\Kalimdor\\\\[40] Desolace",
+        "source": "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-Kalimdor.lua",
+        "line": 3516
+      },
+      "alliance-extra-5943-accept": {
+        "quest": 5943,
+        "kind": "accept",
+        "index": 0,
+        "faction": "Alliance",
+        "chapter": "Ding80's Loremaster Alliance Guides\\\\Kalimdor\\\\[40] Desolace",
+        "source": "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-Kalimdor.lua",
+        "line": 3516
+      },
+      "alliance-extra-5943-objective": {
+        "quest": 5943,
+        "kind": "objective",
+        "index": 1,
+        "faction": "Alliance",
+        "chapter": "Ding80's Loremaster Alliance Guides\\\\Kalimdor\\\\[40] Desolace",
+        "source": "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-Kalimdor.lua",
+        "line": 3525
+      },
+      "alliance-extra-5943-turnin": {
+        "quest": 5943,
+        "kind": "turnin",
+        "index": 0,
+        "faction": "Alliance",
+        "chapter": "Ding80's Loremaster Alliance Guides\\\\Kalimdor\\\\[40] Desolace",
+        "source": "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-Kalimdor.lua",
+        "line": 3529
+      },
+      "alliance-extra-6141-turnin": {
+        "quest": 6141,
+        "kind": "turnin",
+        "index": 0,
+        "faction": "Alliance",
+        "chapter": "Ding80's Loremaster Alliance Guides\\\\Kalimdor\\\\[40] Desolace",
+        "source": "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-Kalimdor.lua",
+        "line": 3223
       }
     }
   }

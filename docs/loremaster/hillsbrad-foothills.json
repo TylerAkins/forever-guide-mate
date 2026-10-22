@@ -14,7 +14,8 @@
     "leveling-era-horde-hillsbrad-foothills",
     "leveling-era-horde-hillsbrad-foothills-part-2",
     "leveling-era-horde-arathi-highlands",
-    "leveling-era-horde-alterac-mountains-and-arathi-highlands"
+    "leveling-era-horde-alterac-mountains-and-arathi-highlands",
+    "leveling-era-alliance-stonetalon-mountains-and-ashenvale"
   ],
   "spineActions": [
     "alliance-leveling-era-alliance-wetlands-level-before-accept-279-claws-from-the-deep",
@@ -31,7 +32,14 @@
     "alliance-leveling-era-alliance-wetlands-part-2-turnin-285-search-more-hovels",
     "alliance-leveling-era-alliance-wetlands-part-2-accept-286-return-the-statuette",
     "alliance-leveling-era-alliance-wetlands-part-2-turnin-286-return-the-statuette",
+    "alliance-leveling-era-alliance-wetlands-part-2-accept-637-sully-balloo-s-letter",
     "alliance-leveling-era-alliance-wetlands-part-2-collect-before-pickup-objective-555-1-snapjaw",
+    "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-turnin-637-sully-balloo-s-letter",
+    "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-accept-683-sara-balloo-s-plea",
+    "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-turnin-683-sara-balloo-s-plea",
+    "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-accept-686-a-king-s-tribute",
+    "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-turnin-686-a-king-s-tribute",
+    "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-accept-689-a-king-s-tribute",
     "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-accept-337-an-old-history-book",
     "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-turnin-337-an-old-history-book",
     "alliance-leveling-era-alliance-duskwood-and-stranglethorn-vale-accept-538-southshore",
@@ -64,6 +72,7 @@
     "alliance-leveling-era-alliance-hillsbrad-foothills-and-arathi-highlands-objective-562-2-daggerspine-siren",
     "alliance-leveling-era-alliance-hillsbrad-foothills-and-arathi-highlands-turnin-562-stormwind-ho",
     "alliance-leveling-era-alliance-hillsbrad-foothills-and-arathi-highlands-accept-659-hints-of-a-new-plague",
+    "alliance-leveling-era-alliance-hillsbrad-foothills-and-arathi-highlands-objective-689-1-alterac-granite",
     "alliance-leveling-era-alliance-hillsbrad-foothills-and-arathi-highlands-objective-565-4-yeti-fur",
     "alliance-leveling-era-alliance-hillsbrad-foothills-and-arathi-highlands-objective-564-1-mountain-lion",
     "alliance-leveling-era-alliance-hillsbrad-foothills-and-arathi-highlands-objective-564-2-hulking-mountain-lion",
@@ -75,6 +84,7 @@
     "alliance-leveling-era-alliance-hillsbrad-foothills-and-arathi-highlands-turnin-565-bartolo-s-yeti-fur-cloak",
     "alliance-leveling-era-alliance-hillsbrad-foothills-and-arathi-highlands-turnin-659-hints-of-a-new-plague",
     "alliance-leveling-era-alliance-hillsbrad-foothills-and-arathi-highlands-accept-658-hints-of-a-new-plague",
+    "alliance-leveling-era-alliance-hillsbrad-foothills-and-arathi-highlands-turnin-689-a-king-s-tribute",
     "alliance-leveling-era-alliance-stranglethorn-vale-turnin-563-reassignment",
     "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-level-before-objective-658-1-forsaken-courier",
     "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-objective-658-1-forsaken-courier",
@@ -194,6 +204,8 @@
     "horde-leveling-era-horde-arathi-highlands-accept-513-elixir-of-agony",
     "horde-leveling-era-horde-arathi-highlands-turnin-513-elixir-of-agony",
     "horde-leveling-era-horde-arathi-highlands-turnin-550-battle-of-hillsbrad",
+    "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-level-before-accept-545-dalaran-patrols",
+    "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-accept-545-dalaran-patrols",
     "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-accept-557-bracers-of-binding",
     "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-level-before-accept-566-wanted-baron-vardus",
     "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-accept-566-wanted-baron-vardus",
@@ -207,9 +219,12 @@
     "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-accept-507-lord-aliden-perenolde",
     "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-turnin-566-wanted-baron-vardus",
     "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-objective-557-1-elemental-slave",
+    "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-objective-545-1-dalaran-summoner",
+    "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-objective-545-2-elemental-slave",
     "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-objective-507-1-lord-aliden-perenolde",
     "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-turnin-507-lord-aliden-perenolde",
     "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-accept-508-taretha-s-gift",
+    "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-turnin-545-dalaran-patrols",
     "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-turnin-557-bracers-of-binding",
     "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-turnin-508-taretha-s-gift"
   ],
@@ -3187,6 +3202,111 @@
       "actions": [
         "visit-entry-leveling-era-horde-alterac-mountains-and-arathi-highlands"
       ],
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "alliance-leveling-era-alliance-wetlands-part-2-accept-637-sully-balloo-s-letter"
+      ],
+      "anchor": "alliance-leveling-era-alliance-wetlands-part-2-turnin-286-return-the-statuette",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "visit-entry-leveling-era-alliance-stonetalon-mountains-and-ashenvale"
+      ],
+      "anchor": "alliance-leveling-era-alliance-wetlands-part-2-collect-before-pickup-objective-555-1-snapjaw",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-turnin-637-sully-balloo-s-letter"
+      ],
+      "anchor": "visit-entry-leveling-era-alliance-stonetalon-mountains-and-ashenvale",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-accept-683-sara-balloo-s-plea"
+      ],
+      "anchor": "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-turnin-637-sully-balloo-s-letter",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-turnin-683-sara-balloo-s-plea"
+      ],
+      "anchor": "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-accept-683-sara-balloo-s-plea",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-accept-686-a-king-s-tribute"
+      ],
+      "anchor": "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-turnin-683-sara-balloo-s-plea",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-turnin-686-a-king-s-tribute"
+      ],
+      "anchor": "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-accept-686-a-king-s-tribute",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-accept-689-a-king-s-tribute"
+      ],
+      "anchor": "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-turnin-686-a-king-s-tribute",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "alliance-leveling-era-alliance-hillsbrad-foothills-and-arathi-highlands-objective-689-1-alterac-granite"
+      ],
+      "anchor": "alliance-leveling-era-alliance-hillsbrad-foothills-and-arathi-highlands-accept-659-hints-of-a-new-plague",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "alliance-leveling-era-alliance-hillsbrad-foothills-and-arathi-highlands-turnin-689-a-king-s-tribute"
+      ],
+      "anchor": "alliance-leveling-era-alliance-hillsbrad-foothills-and-arathi-highlands-accept-658-hints-of-a-new-plague",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-level-before-accept-545-dalaran-patrols"
+      ],
+      "anchor": "visit-entry-leveling-era-horde-alterac-mountains-and-arathi-highlands",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-accept-545-dalaran-patrols"
+      ],
+      "anchor": "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-level-before-accept-545-dalaran-patrols",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-objective-545-1-dalaran-summoner"
+      ],
+      "anchor": "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-objective-557-1-elemental-slave",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-objective-545-2-elemental-slave"
+      ],
+      "anchor": "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-objective-545-1-dalaran-summoner",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-turnin-545-dalaran-patrols"
+      ],
+      "anchor": "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-accept-508-taretha-s-gift",
       "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
     }
   ],
@@ -28735,764 +28855,796 @@
       ],
       "status": "spine",
       "reason": "Preserved faction Casual actions."
+    },
+    "545": {
+      "catalogs": [
+        "hillsbrad-foothills"
+      ],
+      "evidence": {
+        "artifactVersion": "1.0.6-dev.f844007",
+        "buildCommit": "f844007b329b72f18cf2bda3d87540012294732a",
+        "source": "QuestieDB"
+      },
+      "locations": [
+        {
+          "coord": [
+            61.6,
+            20.85
+          ],
+          "id": 2410,
+          "name": "Magus Wordeen Voidglare",
+          "point": "start",
+          "reactalliance": -1,
+          "reacthorde": 1,
+          "type": 1,
+          "zone": "Hillsbrad Foothills"
+        },
+        {
+          "coord": [
+            61.6,
+            20.85
+          ],
+          "id": 2410,
+          "name": "Magus Wordeen Voidglare",
+          "point": "end",
+          "reactalliance": -1,
+          "reacthorde": 1,
+          "type": 1,
+          "zone": "Hillsbrad Foothills"
+        }
+      ],
+      "supporting": false,
+      "status": "spine",
+      "reason": "Preserved faction Casual actions."
+    },
+    "689": {
+      "catalogs": [
+        "ironforge"
+      ],
+      "evidence": {
+        "artifactVersion": "1.0.6-dev.f844007",
+        "buildCommit": "f844007b329b72f18cf2bda3d87540012294732a",
+        "source": "QuestieDB"
+      },
+      "locations": [
+        {
+          "coord": [
+            39.04,
+            88.05
+          ],
+          "id": 2790,
+          "name": "Grand Mason Marblesten",
+          "point": "start",
+          "reactalliance": 1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Ironforge"
+        },
+        {
+          "coord": [
+            39.04,
+            88.05
+          ],
+          "id": 2790,
+          "name": "Grand Mason Marblesten",
+          "point": "end",
+          "reactalliance": 1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Ironforge"
+        },
+        {
+          "coord": [
+            45.16,
+            28.29
+          ],
+          "id": 2714,
+          "item": "Alterac Granite",
+          "name": "Alterac Granite",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "Hillsbrad Foothills"
+        },
+        {
+          "coord": [
+            43.05,
+            32.91
+          ],
+          "id": 2714,
+          "item": "Alterac Granite",
+          "name": "Alterac Granite",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "Hillsbrad Foothills"
+        },
+        {
+          "coord": [
+            43.85,
+            31.42
+          ],
+          "id": 2714,
+          "item": "Alterac Granite",
+          "name": "Alterac Granite",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "Hillsbrad Foothills"
+        },
+        {
+          "coord": [
+            43.54,
+            30.19
+          ],
+          "id": 2714,
+          "item": "Alterac Granite",
+          "name": "Alterac Granite",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "Hillsbrad Foothills"
+        },
+        {
+          "coord": [
+            45.21,
+            25.2
+          ],
+          "id": 2714,
+          "item": "Alterac Granite",
+          "name": "Alterac Granite",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "Hillsbrad Foothills"
+        },
+        {
+          "coord": [
+            43.14,
+            27.96
+          ],
+          "id": 2714,
+          "item": "Alterac Granite",
+          "name": "Alterac Granite",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "Hillsbrad Foothills"
+        }
+      ],
+      "supporting": false,
+      "status": "spine",
+      "reason": "Preserved faction Casual actions."
+    },
+    "686": {
+      "catalogs": [
+        "ironforge"
+      ],
+      "supporting": true,
+      "evidence": {
+        "artifactVersion": "1.0.6-dev.f844007",
+        "buildCommit": "f844007b329b72f18cf2bda3d87540012294732a",
+        "source": "QuestieDB"
+      },
+      "locations": [
+        {
+          "coord": [
+            39.09,
+            56.2
+          ],
+          "id": 2784,
+          "name": "King Magni Bronzebeard",
+          "point": "start",
+          "reactalliance": 1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Ironforge"
+        },
+        {
+          "coord": [
+            39.04,
+            88.05
+          ],
+          "id": 2790,
+          "name": "Grand Mason Marblesten",
+          "point": "end",
+          "reactalliance": 1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Ironforge"
+        }
+      ],
+      "status": "spine",
+      "reason": "Preserved faction Casual actions."
+    },
+    "683": {
+      "catalogs": [
+        "ironforge"
+      ],
+      "supporting": true,
+      "evidence": {
+        "artifactVersion": "1.0.6-dev.f844007",
+        "buildCommit": "f844007b329b72f18cf2bda3d87540012294732a",
+        "source": "QuestieDB"
+      },
+      "locations": [
+        {
+          "coord": [
+            63.5,
+            67.3
+          ],
+          "id": 2695,
+          "name": "Sara Balloo",
+          "point": "start",
+          "reactalliance": 1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Ironforge"
+        },
+        {
+          "coord": [
+            39.09,
+            56.2
+          ],
+          "id": 2784,
+          "name": "King Magni Bronzebeard",
+          "point": "end",
+          "reactalliance": 1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Ironforge"
+        }
+      ],
+      "status": "spine",
+      "reason": "Preserved faction Casual actions."
+    },
+    "637": {
+      "catalogs": [
+        "ironforge"
+      ],
+      "supporting": true,
+      "evidence": {
+        "artifactVersion": "1.0.6-dev.f844007",
+        "buildCommit": "f844007b329b72f18cf2bda3d87540012294732a",
+        "source": "QuestieDB"
+      },
+      "locations": [
+        {
+          "coord": [
+            63.5,
+            67.3
+          ],
+          "id": 2695,
+          "name": "Sara Balloo",
+          "point": "end",
+          "reactalliance": 1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Ironforge"
+        }
+      ],
+      "status": "spine",
+      "reason": "Preserved faction Casual actions."
     }
   },
   "supportingQuests": [
-    281,
     279,
+    281,
     284,
     285,
     286,
     337,
-    1063,
-    1064,
+    637,
+    683,
+    686,
+    1061,
     1062,
-    1061
+    1063,
+    1064
   ],
   "clientWalkthrough": "unverified",
   "sourcePriority": [
-    "wowhead",
-    "questiedb",
-    "allthethings",
-    "foreverclient"
+    "questiedb"
   ],
   "sources": {
-    "databaseCommit": "5c92953420ab4a710fda39581a405a72a89b8c0d",
-    "compilation": {
-      "schemaVersion": 1,
-      "compilationFormatVersion": 2,
-      "flavor": "forever",
-      "source": "compilation",
-      "sourceRevision": "991cc5841d7b79dc85613431aa8ecf6f4c34070753426d60f323e321532d4b66",
-      "recordCount": 107209,
-      "recordsSha256": "9ab82625871b9df3a0ac5781bb194be6d8211a4a6337258fbf82224e00416727",
-      "status": "generated"
+    "questiedb": {
+      "artifactVersion": "1.0.6-dev.f844007",
+      "buildCommit": "f844007b329b72f18cf2bda3d87540012294732a",
+      "counts": {
+        "Item": 21294,
+        "Npc": 13393,
+        "Object": 7035,
+        "Quest": 5232
+      }
     },
     "sourceHashes": {
-      "data/forever/compilation/records.jsonl.gz": "35c74cb11823db372dc0bc289d5ffaf8296ca9d1c370e4f7b794a29af7f84b47"
+      "questiedb/export.json": "e26090e90df3aa2e94be4c13feb001390068b84c249ff2443c629d26a408e704",
+      "questiedb/policy.json": "835ba8f6361ef37bda275859bdb48852001c3ce2b6a2b3ecff586283633e2ad4"
     },
     "upstreamCommit": "9087c457e20fb96e73e5b362dd6fc50324b75718"
   },
   "coverageMode": "zone",
   "orderingEligibility": {
-    "513": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      }
-    },
-    "515": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "517": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "518": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "519": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "520": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "521": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "98059": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
-      }
-    },
-    "524": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "527": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      }
-    },
-    "528": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      }
-    },
-    "529": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      }
-    },
-    "657": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "658": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "532": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      }
-    },
-    "533": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      }
-    },
-    "659": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "660": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "536": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "661": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "98071": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
-      }
-    },
-    "539": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      }
-    },
-    "540": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "541": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      }
-    },
-    "538": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "544": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      }
-    },
-    "546": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      }
-    },
-    "547": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "676": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      }
-    },
-    "549": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      }
-    },
-    "550": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      }
-    },
-    "552": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      }
-    },
-    "553": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      }
-    },
-    "1065": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      }
-    },
-    "555": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "556": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      }
-    },
-    "557": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      }
-    },
-    "1066": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      }
-    },
-    "559": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "560": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "561": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "562": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "563": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "564": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "565": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "566": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      }
-    },
-    "567": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      }
-    },
-    "98219": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
-      }
-    },
     "494": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
       "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
       }
     },
     "495": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
       }
     },
     "496": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
       "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
       }
     },
     "498": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
       "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
       }
     },
     "499": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
       "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
       }
     },
     "501": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
       "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
       }
     },
     "502": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
       "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
       }
     },
     "503": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
       "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
       }
     },
     "506": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
       "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
       }
     },
     "507": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
       "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
       }
     },
     "508": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
       "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
       }
     },
     "509": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
       "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "513": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "515": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "517": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "518": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "519": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "520": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "521": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "524": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "527": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "528": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "529": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "532": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "533": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "536": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "538": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "539": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "541": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "544": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "545": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "546": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "547": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "549": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "550": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "552": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "553": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "555": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "556": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "557": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "559": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "560": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "561": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "562": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "563": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "564": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "565": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "566": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "567": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "657": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "658": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "659": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "660": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "661": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "676": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "689": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "1065": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "1066": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "98059": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "98071": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "98219": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
       }
     }
   },
@@ -29501,10 +29653,10 @@
     "commit": "9087c457e20fb96e73e5b362dd6fc50324b75718",
     "strict": false,
     "sourceHashes": {
+      "ZygorGuidesViewerRM/Guides/Leveling/ZygorGuidesHorde.lua": "2eaf5adb4865936cdb4257451c3ce920fdaff1c0ec17216c36e055480f389e54",
       "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-EasternKingdoms.lua": "8a5ec87d31698c612e50eb0655f5c1f28d723c3068552c1295d79ddcd934270f",
       "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-Kalimdor.lua": "4fb7b7f5bb2702dfe36ed33de31b4d3105153bfba62b7a14a7ab73386e2087fa",
-      "ZygorGuidesViewerRM/Guides/Leveling/ZygorGuidesAlliance.lua": "ffb9b7828817e098d74ee5931e15a64ce773142a4c1e60f9775d0713121ba67d",
-      "ZygorGuidesViewerRM/Guides/Leveling/ZygorGuidesHorde.lua": "2eaf5adb4865936cdb4257451c3ce920fdaff1c0ec17216c36e055480f389e54"
+      "ZygorGuidesViewerRM/Guides/Leveling/ZygorGuidesAlliance.lua": "ffb9b7828817e098d74ee5931e15a64ce773142a4c1e60f9775d0713121ba67d"
     },
     "matches": {}
   }

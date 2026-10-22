@@ -7,7 +7,10 @@
     "leveling-era-alliance-swamp-of-sorrows",
     "leveling-era-alliance-arathi-highlands-and-alterac-mountains",
     "leveling-era-horde-hillsbrad-foothills-part-2",
-    "leveling-era-horde-alterac-mountains-and-arathi-highlands"
+    "leveling-era-horde-alterac-mountains-and-arathi-highlands",
+    "leveling-era-horde-ashenvale-part-2",
+    "leveling-era-horde-thousand-needles",
+    "leveling-era-horde-badlands"
   ],
   "spineActions": [
     "alliance-leveling-era-alliance-hillsbrad-foothills-and-arathi-highlands-accept-505-syndicate-assassins",
@@ -36,6 +39,11 @@
     "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-turnin-551-the-ensorcelled-parchment",
     "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-accept-554-stormpike-s-deciphering",
     "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-turnin-554-stormpike-s-deciphering",
+    "horde-leveling-era-horde-ashenvale-part-2-accept-1131-steelsnap",
+    "horde-leveling-era-horde-thousand-needles-objective-1131-1-steelsnap",
+    "horde-leveling-era-horde-thousand-needles-turnin-1131-steelsnap",
+    "horde-leveling-era-horde-thousand-needles-level-before-accept-1136-frostmaw",
+    "horde-leveling-era-horde-thousand-needles-accept-1136-frostmaw",
     "horde-leveling-era-horde-hillsbrad-foothills-part-2-level-before-accept-544-prison-break-in",
     "horde-leveling-era-horde-hillsbrad-foothills-part-2-accept-544-prison-break-in",
     "horde-leveling-era-horde-hillsbrad-foothills-part-2-objective-544-2-ricter",
@@ -45,9 +53,13 @@
     "horde-leveling-era-horde-hillsbrad-foothills-part-2-turnin-544-prison-break-in",
     "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-level-before-accept-545-dalaran-patrols",
     "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-accept-545-dalaran-patrols",
+    "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-objective-1136-1-hulking-mountain-lion",
+    "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-objective-1136-1-fresh-carcass",
     "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-objective-545-1-dalaran-summoner",
     "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-objective-545-2-elemental-slave",
-    "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-turnin-545-dalaran-patrols"
+    "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-turnin-545-dalaran-patrols",
+    "horde-leveling-era-horde-badlands-objective-1136-quest-work",
+    "horde-leveling-era-horde-badlands-turnin-1136-frostmaw"
   ],
   "placements": [
     {
@@ -433,6 +445,146 @@
       "actions": [
         "horde-extra-535-turnin"
       ],
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "alliance-extra-543-level"
+      ],
+      "anchor": "alliance-extra-92432-turnin",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "alliance-extra-543-accept"
+      ],
+      "anchor": "alliance-extra-543-level",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "alliance-extra-543-objective"
+      ],
+      "anchor": "alliance-extra-543-accept",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "alliance-extra-543-turnin"
+      ],
+      "anchor": "alliance-extra-543-objective",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "alliance-extra-94947-level"
+      ],
+      "anchor": "alliance-extra-543-turnin",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "alliance-extra-94947-accept"
+      ],
+      "anchor": "alliance-extra-94947-level",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "alliance-extra-94947-objective"
+      ],
+      "anchor": "alliance-extra-94947-accept",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "alliance-extra-94947-turnin"
+      ],
+      "anchor": "alliance-extra-94947-objective",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "visit-entry-leveling-era-horde-ashenvale-part-2"
+      ],
+      "anchor": "alliance-extra-94947-turnin",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "horde-leveling-era-horde-ashenvale-part-2-accept-1131-steelsnap"
+      ],
+      "anchor": "visit-entry-leveling-era-horde-ashenvale-part-2",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "visit-entry-leveling-era-horde-thousand-needles"
+      ],
+      "anchor": "horde-leveling-era-horde-ashenvale-part-2-accept-1131-steelsnap",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "horde-leveling-era-horde-thousand-needles-objective-1131-1-steelsnap"
+      ],
+      "anchor": "visit-entry-leveling-era-horde-thousand-needles",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "horde-leveling-era-horde-thousand-needles-turnin-1131-steelsnap"
+      ],
+      "anchor": "horde-leveling-era-horde-thousand-needles-objective-1131-1-steelsnap",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "horde-leveling-era-horde-thousand-needles-level-before-accept-1136-frostmaw"
+      ],
+      "anchor": "horde-leveling-era-horde-thousand-needles-turnin-1131-steelsnap",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "horde-leveling-era-horde-thousand-needles-accept-1136-frostmaw"
+      ],
+      "anchor": "horde-leveling-era-horde-thousand-needles-level-before-accept-1136-frostmaw",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-objective-1136-1-hulking-mountain-lion"
+      ],
+      "anchor": "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-accept-545-dalaran-patrols",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-objective-1136-1-fresh-carcass"
+      ],
+      "anchor": "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-objective-1136-1-hulking-mountain-lion",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "visit-entry-leveling-era-horde-badlands"
+      ],
+      "anchor": "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-turnin-545-dalaran-patrols",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "horde-leveling-era-horde-badlands-objective-1136-quest-work"
+      ],
+      "anchor": "visit-entry-leveling-era-horde-badlands",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "horde-leveling-era-horde-badlands-turnin-1136-frostmaw"
+      ],
+      "anchor": "horde-leveling-era-horde-badlands-objective-1136-quest-work",
       "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
     }
   ],
@@ -8983,311 +9135,2954 @@
       ],
       "status": "spine",
       "reason": "Preserved faction Casual actions."
+    },
+    "1136": {
+      "catalogs": [
+        "thunder-bluff"
+      ],
+      "evidence": {
+        "artifactVersion": "1.0.6-dev.f844007",
+        "buildCommit": "f844007b329b72f18cf2bda3d87540012294732a",
+        "source": "QuestieDB"
+      },
+      "locations": [
+        {
+          "coord": [
+            61.54,
+            80.92
+          ],
+          "id": 3441,
+          "name": "Melor Stonehoof",
+          "point": "start",
+          "reactalliance": -1,
+          "reacthorde": 1,
+          "type": 1,
+          "zone": "Thunder Bluff"
+        },
+        {
+          "coord": [
+            61.54,
+            80.92
+          ],
+          "id": 3441,
+          "name": "Melor Stonehoof",
+          "point": "end",
+          "reactalliance": -1,
+          "reacthorde": 1,
+          "type": 1,
+          "zone": "Thunder Bluff"
+        },
+        {
+          "coord": [
+            37.51,
+            67.2
+          ],
+          "id": 4504,
+          "item": "Frostmaw's Mane",
+          "name": "Frostmaw",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        }
+      ],
+      "supporting": false,
+      "status": "spine",
+      "reason": "Preserved faction Casual actions."
+    },
+    "1131": {
+      "catalogs": [
+        "thunder-bluff"
+      ],
+      "supporting": true,
+      "evidence": {
+        "artifactVersion": "1.0.6-dev.f844007",
+        "buildCommit": "f844007b329b72f18cf2bda3d87540012294732a",
+        "source": "QuestieDB"
+      },
+      "locations": [
+        {
+          "coord": [
+            61.54,
+            80.92
+          ],
+          "id": 3441,
+          "name": "Melor Stonehoof",
+          "point": "start",
+          "reactalliance": -1,
+          "reacthorde": 1,
+          "type": 1,
+          "zone": "Thunder Bluff"
+        },
+        {
+          "coord": [
+            61.54,
+            80.92
+          ],
+          "id": 3441,
+          "name": "Melor Stonehoof",
+          "point": "end",
+          "reactalliance": -1,
+          "reacthorde": 1,
+          "type": 1,
+          "zone": "Thunder Bluff"
+        },
+        {
+          "coord": [
+            17.79,
+            19.79
+          ],
+          "id": 4548,
+          "item": "Steelsnap's Rib",
+          "name": "Steelsnap",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Thousand Needles"
+        }
+      ],
+      "status": "spine",
+      "reason": "Preserved faction Casual actions."
+    },
+    "540": {
+      "catalogs": [
+        "stormwind-city"
+      ],
+      "evidence": {
+        "artifactVersion": "1.0.6-dev.f844007",
+        "buildCommit": "f844007b329b72f18cf2bda3d87540012294732a",
+        "source": "QuestieDB"
+      },
+      "locations": [
+        {
+          "coord": [
+            50.57,
+            57.09
+          ],
+          "id": 2277,
+          "name": "Loremaster Dibbs",
+          "point": "start",
+          "reactalliance": 1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Hillsbrad Foothills"
+        },
+        {
+          "coord": [
+            50.57,
+            57.09
+          ],
+          "id": 2277,
+          "name": "Loremaster Dibbs",
+          "point": "end",
+          "reactalliance": 1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Hillsbrad Foothills"
+        },
+        {
+          "coord": [
+            53.64,
+            36.04
+          ],
+          "id": 2252,
+          "item": "Recovered Tome",
+          "name": "Crushridge Ogre",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            51.74,
+            45.41
+          ],
+          "id": 2252,
+          "item": "Recovered Tome",
+          "name": "Crushridge Ogre",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            52.6,
+            42.07
+          ],
+          "id": 2252,
+          "item": "Recovered Tome",
+          "name": "Crushridge Ogre",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            52.47,
+            38.16
+          ],
+          "id": 2252,
+          "item": "Recovered Tome",
+          "name": "Crushridge Ogre",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            46.33,
+            32.8
+          ],
+          "id": 2252,
+          "item": "Recovered Tome",
+          "name": "Crushridge Ogre",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            45.18,
+            29.41
+          ],
+          "id": 2252,
+          "item": "Recovered Tome",
+          "name": "Crushridge Ogre",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            53.02,
+            45.47
+          ],
+          "id": 2252,
+          "item": "Recovered Tome",
+          "name": "Crushridge Ogre",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            54.84,
+            54.53
+          ],
+          "id": 2252,
+          "item": "Recovered Tome",
+          "name": "Crushridge Ogre",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            41.53,
+            30.59
+          ],
+          "id": 2252,
+          "item": "Recovered Tome",
+          "name": "Crushridge Ogre",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            55.75,
+            54.32
+          ],
+          "id": 2252,
+          "item": "Recovered Tome",
+          "name": "Crushridge Ogre",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            53.72,
+            54.38
+          ],
+          "id": 2252,
+          "item": "Recovered Tome",
+          "name": "Crushridge Ogre",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            49.15,
+            39.08
+          ],
+          "id": 2252,
+          "item": "Recovered Tome",
+          "name": "Crushridge Ogre",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            51.04,
+            34.95
+          ],
+          "id": 2252,
+          "item": "Recovered Tome",
+          "name": "Crushridge Ogre",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            49.98,
+            31.5
+          ],
+          "id": 2252,
+          "item": "Recovered Tome",
+          "name": "Crushridge Ogre",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            49.95,
+            34.53
+          ],
+          "id": 2252,
+          "item": "Recovered Tome",
+          "name": "Crushridge Ogre",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            49.91,
+            32.81
+          ],
+          "id": 2252,
+          "item": "Recovered Tome",
+          "name": "Crushridge Ogre",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            51.1,
+            40.31
+          ],
+          "id": 2252,
+          "item": "Recovered Tome",
+          "name": "Crushridge Ogre",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            45.33,
+            37.86
+          ],
+          "id": 2252,
+          "item": "Recovered Tome",
+          "name": "Crushridge Ogre",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            46.35,
+            39.85
+          ],
+          "id": 2252,
+          "item": "Recovered Tome",
+          "name": "Crushridge Ogre",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            55.5,
+            40.57
+          ],
+          "id": 2252,
+          "item": "Recovered Tome",
+          "name": "Crushridge Ogre",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            52.38,
+            40.2
+          ],
+          "id": 2252,
+          "item": "Recovered Tome",
+          "name": "Crushridge Ogre",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            53.59,
+            41.89
+          ],
+          "id": 2252,
+          "item": "Recovered Tome",
+          "name": "Crushridge Ogre",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            54.49,
+            43.33
+          ],
+          "id": 2252,
+          "item": "Recovered Tome",
+          "name": "Crushridge Ogre",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            51.21,
+            46.76
+          ],
+          "id": 2252,
+          "item": "Recovered Tome",
+          "name": "Crushridge Ogre",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            53.2,
+            45.08
+          ],
+          "id": 2252,
+          "item": "Recovered Tome",
+          "name": "Crushridge Ogre",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            54.53,
+            52.75
+          ],
+          "id": 2252,
+          "item": "Recovered Tome",
+          "name": "Crushridge Ogre",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            50.15,
+            52.74
+          ],
+          "id": 2252,
+          "item": "Recovered Tome",
+          "name": "Crushridge Ogre",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            52.49,
+            52.61
+          ],
+          "id": 2252,
+          "item": "Recovered Tome",
+          "name": "Crushridge Ogre",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            51.43,
+            36.55
+          ],
+          "id": 2252,
+          "item": "Recovered Tome",
+          "name": "Crushridge Ogre",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            48.61,
+            54.25
+          ],
+          "id": 2252,
+          "item": "Recovered Tome",
+          "name": "Crushridge Ogre",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            47.42,
+            60.37
+          ],
+          "id": 2252,
+          "item": "Recovered Tome",
+          "name": "Crushridge Ogre",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            43.92,
+            32.81
+          ],
+          "id": 2252,
+          "item": "Recovered Tome",
+          "name": "Crushridge Ogre",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            43.93,
+            36.52
+          ],
+          "id": 2252,
+          "item": "Recovered Tome",
+          "name": "Crushridge Ogre",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            44.92,
+            60.2
+          ],
+          "id": 2252,
+          "item": "Recovered Tome",
+          "name": "Crushridge Ogre",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            45.39,
+            61.33
+          ],
+          "id": 2252,
+          "item": "Recovered Tome",
+          "name": "Crushridge Ogre",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            46.47,
+            35.21
+          ],
+          "id": 2252,
+          "item": "Recovered Tome",
+          "name": "Crushridge Ogre",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            48.93,
+            36.94
+          ],
+          "id": 2252,
+          "item": "Recovered Tome",
+          "name": "Crushridge Ogre",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            49.93,
+            42.09
+          ],
+          "id": 2252,
+          "item": "Recovered Tome",
+          "name": "Crushridge Ogre",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            49.88,
+            38.16
+          ],
+          "id": 2252,
+          "item": "Recovered Tome",
+          "name": "Crushridge Ogre",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            48.9,
+            43.25
+          ],
+          "id": 2252,
+          "item": "Recovered Tome",
+          "name": "Crushridge Ogre",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            49.05,
+            61.32
+          ],
+          "id": 2252,
+          "item": "Recovered Tome",
+          "name": "Crushridge Ogre",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            50.26,
+            59.28
+          ],
+          "id": 2252,
+          "item": "Recovered Tome",
+          "name": "Crushridge Ogre",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            53.3,
+            47.95
+          ],
+          "id": 2252,
+          "item": "Recovered Tome",
+          "name": "Crushridge Ogre",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            47.54,
+            63.59
+          ],
+          "id": 2252,
+          "item": "Recovered Tome",
+          "name": "Crushridge Ogre",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            46.18,
+            63.06
+          ],
+          "id": 2252,
+          "item": "Recovered Tome",
+          "name": "Crushridge Ogre",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            51.75,
+            45.23
+          ],
+          "id": 2252,
+          "item": "Recovered Tome",
+          "name": "Crushridge Ogre",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            53.06,
+            45.63
+          ],
+          "id": 2252,
+          "item": "Recovered Tome",
+          "name": "Crushridge Ogre",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            51,
+            56.38
+          ],
+          "id": 2252,
+          "item": "Recovered Tome",
+          "name": "Crushridge Ogre",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            48.75,
+            54.9
+          ],
+          "id": 2252,
+          "item": "Recovered Tome",
+          "name": "Crushridge Ogre",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            42.81,
+            31.15
+          ],
+          "id": 2253,
+          "item": "Recovered Tome",
+          "name": "Crushridge Brute",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            47.68,
+            38.64
+          ],
+          "id": 2253,
+          "item": "Recovered Tome",
+          "name": "Crushridge Brute",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            48.49,
+            57.3
+          ],
+          "id": 2253,
+          "item": "Recovered Tome",
+          "name": "Crushridge Brute",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            47.34,
+            36.39
+          ],
+          "id": 2253,
+          "item": "Recovered Tome",
+          "name": "Crushridge Brute",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            47.61,
+            40.41
+          ],
+          "id": 2253,
+          "item": "Recovered Tome",
+          "name": "Crushridge Brute",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            52.37,
+            47.46
+          ],
+          "id": 2253,
+          "item": "Recovered Tome",
+          "name": "Crushridge Brute",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            52.89,
+            47.63
+          ],
+          "id": 2253,
+          "item": "Recovered Tome",
+          "name": "Crushridge Brute",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            47.46,
+            44.51
+          ],
+          "id": 2253,
+          "item": "Recovered Tome",
+          "name": "Crushridge Brute",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            52.43,
+            45.57
+          ],
+          "id": 2253,
+          "item": "Recovered Tome",
+          "name": "Crushridge Brute",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            46.48,
+            58.37
+          ],
+          "id": 2253,
+          "item": "Recovered Tome",
+          "name": "Crushridge Brute",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            50.23,
+            56.22
+          ],
+          "id": 2253,
+          "item": "Recovered Tome",
+          "name": "Crushridge Brute",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            51.4,
+            52.67
+          ],
+          "id": 2253,
+          "item": "Recovered Tome",
+          "name": "Crushridge Brute",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            51.55,
+            54.59
+          ],
+          "id": 2253,
+          "item": "Recovered Tome",
+          "name": "Crushridge Brute",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            51.21,
+            38.28
+          ],
+          "id": 2253,
+          "item": "Recovered Tome",
+          "name": "Crushridge Brute",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            48.89,
+            42.05
+          ],
+          "id": 2253,
+          "item": "Recovered Tome",
+          "name": "Crushridge Brute",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            51.28,
+            58.03
+          ],
+          "id": 2253,
+          "item": "Recovered Tome",
+          "name": "Crushridge Brute",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            44.17,
+            34.88
+          ],
+          "id": 2253,
+          "item": "Recovered Tome",
+          "name": "Crushridge Brute",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            45.67,
+            34.93
+          ],
+          "id": 2253,
+          "item": "Recovered Tome",
+          "name": "Crushridge Brute",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            45.19,
+            31.42
+          ],
+          "id": 2253,
+          "item": "Recovered Tome",
+          "name": "Crushridge Brute",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            47.83,
+            33.39
+          ],
+          "id": 2253,
+          "item": "Recovered Tome",
+          "name": "Crushridge Brute",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            47.69,
+            33.04
+          ],
+          "id": 2253,
+          "item": "Recovered Tome",
+          "name": "Crushridge Brute",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            48.09,
+            43.55
+          ],
+          "id": 2253,
+          "item": "Recovered Tome",
+          "name": "Crushridge Brute",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            52.14,
+            43.96
+          ],
+          "id": 2253,
+          "item": "Recovered Tome",
+          "name": "Crushridge Brute",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            50.69,
+            45.28
+          ],
+          "id": 2253,
+          "item": "Recovered Tome",
+          "name": "Crushridge Brute",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            51.1,
+            45.59
+          ],
+          "id": 2253,
+          "item": "Recovered Tome",
+          "name": "Crushridge Brute",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            53.61,
+            45.58
+          ],
+          "id": 2253,
+          "item": "Recovered Tome",
+          "name": "Crushridge Brute",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            48.81,
+            59.86
+          ],
+          "id": 2253,
+          "item": "Recovered Tome",
+          "name": "Crushridge Brute",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            46.55,
+            60.9
+          ],
+          "id": 2253,
+          "item": "Recovered Tome",
+          "name": "Crushridge Brute",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            51.45,
+            47.5
+          ],
+          "id": 2253,
+          "item": "Recovered Tome",
+          "name": "Crushridge Brute",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            49.64,
+            54.2
+          ],
+          "id": 2253,
+          "item": "Recovered Tome",
+          "name": "Crushridge Brute",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            39.33,
+            40.12
+          ],
+          "id": 2254,
+          "item": "Recovered Tome",
+          "name": "Crushridge Mauler",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            38.29,
+            41.97
+          ],
+          "id": 2254,
+          "item": "Recovered Tome",
+          "name": "Crushridge Mauler",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            39.46,
+            38.78
+          ],
+          "id": 2254,
+          "item": "Recovered Tome",
+          "name": "Crushridge Mauler",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            41.75,
+            43.49
+          ],
+          "id": 2254,
+          "item": "Recovered Tome",
+          "name": "Crushridge Mauler",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            41.7,
+            44.87
+          ],
+          "id": 2254,
+          "item": "Recovered Tome",
+          "name": "Crushridge Mauler",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            43.83,
+            51.25
+          ],
+          "id": 2254,
+          "item": "Recovered Tome",
+          "name": "Crushridge Mauler",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            40.38,
+            45.67
+          ],
+          "id": 2254,
+          "item": "Recovered Tome",
+          "name": "Crushridge Mauler",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            46.42,
+            46.87
+          ],
+          "id": 2254,
+          "item": "Recovered Tome",
+          "name": "Crushridge Mauler",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            43.94,
+            46.65
+          ],
+          "id": 2254,
+          "item": "Recovered Tome",
+          "name": "Crushridge Mauler",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            45.83,
+            47.74
+          ],
+          "id": 2254,
+          "item": "Recovered Tome",
+          "name": "Crushridge Mauler",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            43.11,
+            46.89
+          ],
+          "id": 2254,
+          "item": "Recovered Tome",
+          "name": "Crushridge Mauler",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            43.88,
+            49.01
+          ],
+          "id": 2254,
+          "item": "Recovered Tome",
+          "name": "Crushridge Mauler",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            43.25,
+            50.17
+          ],
+          "id": 2254,
+          "item": "Recovered Tome",
+          "name": "Crushridge Mauler",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            42.47,
+            47.71
+          ],
+          "id": 2254,
+          "item": "Recovered Tome",
+          "name": "Crushridge Mauler",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            41.41,
+            48.67
+          ],
+          "id": 2254,
+          "item": "Recovered Tome",
+          "name": "Crushridge Mauler",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            45.93,
+            45.84
+          ],
+          "id": 2254,
+          "item": "Recovered Tome",
+          "name": "Crushridge Mauler",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            41.28,
+            39.9
+          ],
+          "id": 2255,
+          "item": "Recovered Tome",
+          "name": "Crushridge Mage",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            38.44,
+            40.18
+          ],
+          "id": 2255,
+          "item": "Recovered Tome",
+          "name": "Crushridge Mage",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            38.93,
+            49.55
+          ],
+          "id": 2255,
+          "item": "Recovered Tome",
+          "name": "Crushridge Mage",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            40.3,
+            47.53
+          ],
+          "id": 2255,
+          "item": "Recovered Tome",
+          "name": "Crushridge Mage",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            40.39,
+            43.69
+          ],
+          "id": 2255,
+          "item": "Recovered Tome",
+          "name": "Crushridge Mage",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            42.82,
+            45.8
+          ],
+          "id": 2255,
+          "item": "Recovered Tome",
+          "name": "Crushridge Mage",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            45.61,
+            46.63
+          ],
+          "id": 2255,
+          "item": "Recovered Tome",
+          "name": "Crushridge Mage",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            43.33,
+            48.01
+          ],
+          "id": 2255,
+          "item": "Recovered Tome",
+          "name": "Crushridge Mage",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            40.5,
+            51.05
+          ],
+          "id": 2256,
+          "item": "Recovered Tome",
+          "name": "Crushridge Enforcer",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            39.9,
+            49.15
+          ],
+          "id": 2256,
+          "item": "Recovered Tome",
+          "name": "Crushridge Enforcer",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            38.19,
+            51.28
+          ],
+          "id": 2256,
+          "item": "Recovered Tome",
+          "name": "Crushridge Enforcer",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            38.18,
+            52.52
+          ],
+          "id": 2256,
+          "item": "Recovered Tome",
+          "name": "Crushridge Enforcer",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            36.85,
+            51.01
+          ],
+          "id": 2256,
+          "item": "Recovered Tome",
+          "name": "Crushridge Enforcer",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            35.67,
+            49.08
+          ],
+          "id": 2256,
+          "item": "Recovered Tome",
+          "name": "Crushridge Enforcer",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            37.89,
+            49.21
+          ],
+          "id": 2256,
+          "item": "Recovered Tome",
+          "name": "Crushridge Enforcer",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            40.35,
+            54.44
+          ],
+          "id": 2256,
+          "item": "Recovered Tome",
+          "name": "Crushridge Enforcer",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            39.5,
+            56.18
+          ],
+          "id": 2256,
+          "item": "Recovered Tome",
+          "name": "Crushridge Enforcer",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            38.12,
+            59.9
+          ],
+          "id": 2256,
+          "item": "Recovered Tome",
+          "name": "Crushridge Enforcer",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            38.18,
+            54.54
+          ],
+          "id": 2256,
+          "item": "Recovered Tome",
+          "name": "Crushridge Enforcer",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            36.85,
+            56.41
+          ],
+          "id": 2256,
+          "item": "Recovered Tome",
+          "name": "Crushridge Enforcer",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            39.24,
+            54.7
+          ],
+          "id": 2256,
+          "item": "Recovered Tome",
+          "name": "Crushridge Enforcer",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            34.94,
+            53.45
+          ],
+          "id": 2287,
+          "item": "Recovered Tome",
+          "name": "Crushridge Warmonger",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            35.56,
+            53.19
+          ],
+          "id": 2287,
+          "item": "Recovered Tome",
+          "name": "Crushridge Warmonger",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            40.53,
+            52.96
+          ],
+          "id": 2287,
+          "item": "Recovered Tome",
+          "name": "Crushridge Warmonger",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            36.25,
+            53.62
+          ],
+          "id": 2287,
+          "item": "Recovered Tome",
+          "name": "Crushridge Warmonger",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            36.37,
+            53.93
+          ],
+          "id": 2287,
+          "item": "Recovered Tome",
+          "name": "Crushridge Warmonger",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            35.69,
+            55.52
+          ],
+          "id": 2287,
+          "item": "Recovered Tome",
+          "name": "Crushridge Warmonger",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            36.3,
+            53.79
+          ],
+          "id": 2287,
+          "item": "Recovered Tome",
+          "name": "Crushridge Warmonger",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            36.37,
+            52.31
+          ],
+          "id": 2287,
+          "item": "Recovered Tome",
+          "name": "Crushridge Warmonger",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            35.91,
+            52.76
+          ],
+          "id": 2287,
+          "item": "Recovered Tome",
+          "name": "Crushridge Warmonger",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            35.57,
+            53.23
+          ],
+          "id": 2287,
+          "item": "Recovered Tome",
+          "name": "Crushridge Warmonger",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            36.16,
+            54.95
+          ],
+          "id": 2287,
+          "item": "Recovered Tome",
+          "name": "Crushridge Warmonger",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            36.32,
+            52.51
+          ],
+          "id": 2287,
+          "item": "Recovered Tome",
+          "name": "Crushridge Warmonger",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            35.07,
+            53.29
+          ],
+          "id": 2287,
+          "item": "Recovered Tome",
+          "name": "Crushridge Warmonger",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            35.88,
+            55.57
+          ],
+          "id": 2287,
+          "item": "Recovered Tome",
+          "name": "Crushridge Warmonger",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            37.04,
+            54.46
+          ],
+          "id": 2287,
+          "item": "Recovered Tome",
+          "name": "Crushridge Warmonger",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            35.77,
+            53.86
+          ],
+          "id": 2287,
+          "item": "Recovered Tome",
+          "name": "Crushridge Warmonger",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            36.26,
+            54.99
+          ],
+          "id": 2287,
+          "item": "Recovered Tome",
+          "name": "Crushridge Warmonger",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            35.83,
+            54.31
+          ],
+          "id": 2287,
+          "item": "Recovered Tome",
+          "name": "Crushridge Warmonger",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            36.83,
+            49.08
+          ],
+          "id": 2287,
+          "item": "Recovered Tome",
+          "name": "Crushridge Warmonger",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            35.71,
+            51.04
+          ],
+          "id": 2287,
+          "item": "Recovered Tome",
+          "name": "Crushridge Warmonger",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            37.03,
+            53.15
+          ],
+          "id": 2287,
+          "item": "Recovered Tome",
+          "name": "Crushridge Warmonger",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            39.16,
+            54.5
+          ],
+          "id": 2287,
+          "item": "Recovered Tome",
+          "name": "Crushridge Warmonger",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            39.24,
+            59.55
+          ],
+          "id": 2287,
+          "item": "Recovered Tome",
+          "name": "Crushridge Warmonger",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            38.36,
+            57.8
+          ],
+          "id": 2287,
+          "item": "Recovered Tome",
+          "name": "Crushridge Warmonger",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            38.08,
+            55.98
+          ],
+          "id": 2287,
+          "item": "Recovered Tome",
+          "name": "Crushridge Warmonger",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            36.75,
+            58.02
+          ],
+          "id": 2287,
+          "item": "Recovered Tome",
+          "name": "Crushridge Warmonger",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            37.16,
+            54.61
+          ],
+          "id": 2416,
+          "item": "Recovered Tome",
+          "name": "Crushridge Plunderer",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            37.15,
+            54.2
+          ],
+          "id": 2416,
+          "item": "Recovered Tome",
+          "name": "Crushridge Plunderer",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            38.42,
+            46.38
+          ],
+          "id": 1760,
+          "item": "Worn Leather Book",
+          "name": "Weathered Bookcase",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "Alterac Mountains"
+        }
+      ],
+      "supporting": false,
+      "status": "unresolved",
+      "reason": "separate collection objectives lack complete item labels or source-backed visits"
+    },
+    "543": {
+      "catalogs": [
+        "stormwind-city"
+      ],
+      "evidence": {
+        "artifactVersion": "1.0.6-dev.f844007",
+        "buildCommit": "f844007b329b72f18cf2bda3d87540012294732a",
+        "source": "QuestieDB"
+      },
+      "locations": [
+        {
+          "coord": [
+            76.94,
+            47.83
+          ],
+          "id": 2285,
+          "name": "Count Remington Ridgewell",
+          "point": "start",
+          "reactalliance": 1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Stormwind City"
+        },
+        {
+          "coord": [
+            76.94,
+            47.83
+          ],
+          "id": 2285,
+          "name": "Count Remington Ridgewell",
+          "point": "end",
+          "reactalliance": 1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Stormwind City"
+        },
+        {
+          "coord": [
+            35.58,
+            54.42
+          ],
+          "id": 2417,
+          "item": "Perenolde Tiara",
+          "name": "Grel'borg the Miser",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        }
+      ],
+      "supporting": false,
+      "status": "included",
+      "reason": "Permanent outdoor quest woven using verified source requirements and advisory legacy order."
+    },
+    "8371": {
+      "catalogs": [
+        "ironforge"
+      ],
+      "evidence": {
+        "artifactVersion": "1.0.6-dev.f844007",
+        "buildCommit": "f844007b329b72f18cf2bda3d87540012294732a",
+        "source": "QuestieDB"
+      },
+      "locations": [
+        {
+          "coord": [
+            39.29,
+            82.33
+          ],
+          "id": 15351,
+          "name": "Alliance Brigadier General",
+          "point": "start",
+          "reactalliance": 1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            45.65,
+            45.75
+          ],
+          "id": 15351,
+          "name": "Alliance Brigadier General",
+          "point": "start",
+          "reactalliance": 1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Arathi Highlands"
+        },
+        {
+          "coord": [
+            61.94,
+            83.83
+          ],
+          "id": 15351,
+          "name": "Alliance Brigadier General",
+          "point": "start",
+          "reactalliance": 1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Ashenvale"
+        },
+        {
+          "coord": [
+            81.23,
+            38.49
+          ],
+          "id": 15351,
+          "name": "Alliance Brigadier General",
+          "point": "start",
+          "reactalliance": 1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Stormwind City"
+        },
+        {
+          "coord": [
+            70.41,
+            91.12
+          ],
+          "id": 15351,
+          "name": "Alliance Brigadier General",
+          "point": "start",
+          "reactalliance": 1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Ironforge"
+        },
+        {
+          "coord": [
+            58.02,
+            34.52
+          ],
+          "id": 15351,
+          "name": "Alliance Brigadier General",
+          "point": "start",
+          "reactalliance": 1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Darnassus"
+        },
+        {
+          "coord": [
+            39.29,
+            82.33
+          ],
+          "id": 15351,
+          "name": "Alliance Brigadier General",
+          "point": "end",
+          "reactalliance": 1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            45.65,
+            45.75
+          ],
+          "id": 15351,
+          "name": "Alliance Brigadier General",
+          "point": "end",
+          "reactalliance": 1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Arathi Highlands"
+        },
+        {
+          "coord": [
+            61.94,
+            83.83
+          ],
+          "id": 15351,
+          "name": "Alliance Brigadier General",
+          "point": "end",
+          "reactalliance": 1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Ashenvale"
+        },
+        {
+          "coord": [
+            81.23,
+            38.49
+          ],
+          "id": 15351,
+          "name": "Alliance Brigadier General",
+          "point": "end",
+          "reactalliance": 1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Stormwind City"
+        },
+        {
+          "coord": [
+            70.41,
+            91.12
+          ],
+          "id": 15351,
+          "name": "Alliance Brigadier General",
+          "point": "end",
+          "reactalliance": 1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Ironforge"
+        },
+        {
+          "coord": [
+            58.02,
+            34.52
+          ],
+          "id": 15351,
+          "name": "Alliance Brigadier General",
+          "point": "end",
+          "reactalliance": 1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Darnassus"
+        }
+      ],
+      "supporting": false,
+      "status": "unresolved",
+      "reason": "required collection materials lack complete acquisition sources and visits"
+    },
+    "8385": {
+      "catalogs": [
+        "ironforge"
+      ],
+      "evidence": {
+        "artifactVersion": "1.0.6-dev.f844007",
+        "buildCommit": "f844007b329b72f18cf2bda3d87540012294732a",
+        "source": "QuestieDB"
+      },
+      "locations": [
+        {
+          "coord": [
+            39.29,
+            82.33
+          ],
+          "id": 15351,
+          "name": "Alliance Brigadier General",
+          "point": "start",
+          "reactalliance": 1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            45.65,
+            45.75
+          ],
+          "id": 15351,
+          "name": "Alliance Brigadier General",
+          "point": "start",
+          "reactalliance": 1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Arathi Highlands"
+        },
+        {
+          "coord": [
+            61.94,
+            83.83
+          ],
+          "id": 15351,
+          "name": "Alliance Brigadier General",
+          "point": "start",
+          "reactalliance": 1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Ashenvale"
+        },
+        {
+          "coord": [
+            81.23,
+            38.49
+          ],
+          "id": 15351,
+          "name": "Alliance Brigadier General",
+          "point": "start",
+          "reactalliance": 1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Stormwind City"
+        },
+        {
+          "coord": [
+            70.41,
+            91.12
+          ],
+          "id": 15351,
+          "name": "Alliance Brigadier General",
+          "point": "start",
+          "reactalliance": 1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Ironforge"
+        },
+        {
+          "coord": [
+            58.02,
+            34.52
+          ],
+          "id": 15351,
+          "name": "Alliance Brigadier General",
+          "point": "start",
+          "reactalliance": 1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Darnassus"
+        },
+        {
+          "coord": [
+            39.29,
+            82.33
+          ],
+          "id": 15351,
+          "name": "Alliance Brigadier General",
+          "point": "end",
+          "reactalliance": 1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            45.65,
+            45.75
+          ],
+          "id": 15351,
+          "name": "Alliance Brigadier General",
+          "point": "end",
+          "reactalliance": 1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Arathi Highlands"
+        },
+        {
+          "coord": [
+            61.94,
+            83.83
+          ],
+          "id": 15351,
+          "name": "Alliance Brigadier General",
+          "point": "end",
+          "reactalliance": 1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Ashenvale"
+        },
+        {
+          "coord": [
+            81.23,
+            38.49
+          ],
+          "id": 15351,
+          "name": "Alliance Brigadier General",
+          "point": "end",
+          "reactalliance": 1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Stormwind City"
+        },
+        {
+          "coord": [
+            70.41,
+            91.12
+          ],
+          "id": 15351,
+          "name": "Alliance Brigadier General",
+          "point": "end",
+          "reactalliance": 1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Ironforge"
+        },
+        {
+          "coord": [
+            58.02,
+            34.52
+          ],
+          "id": 15351,
+          "name": "Alliance Brigadier General",
+          "point": "end",
+          "reactalliance": 1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Darnassus"
+        }
+      ],
+      "supporting": false,
+      "status": "excluded",
+      "reason": "Dungeon, raid, event/repeatable, or unused work is outside this outdoor itinerary."
+    },
+    "94947": {
+      "catalogs": [
+        "stormwind-city"
+      ],
+      "evidence": {
+        "artifactVersion": "1.0.6-dev.f844007",
+        "buildCommit": "f844007b329b72f18cf2bda3d87540012294732a",
+        "source": "QuestieDB"
+      },
+      "locations": [
+        {
+          "coord": [
+            12.3,
+            56.3
+          ],
+          "id": 259084,
+          "name": "Denaaris Stargale",
+          "point": "start",
+          "reactalliance": 1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            80.21,
+            38.35
+          ],
+          "id": 1748,
+          "name": "Highlord Bolvar Fordragon",
+          "point": "end",
+          "reactalliance": 1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Stormwind City"
+        },
+        {
+          "coord": [
+            12.04,
+            56.21
+          ],
+          "id": 631299,
+          "name": "Skyborne Portal to Stormwind",
+          "point": "objective",
+          "type": 2,
+          "zone": "Alterac Mountains"
+        }
+      ],
+      "supporting": false,
+      "status": "included",
+      "reason": "Permanent outdoor quest woven using verified source requirements and advisory legacy order."
+    },
+    "538": {
+      "catalogs": [
+        "stormwind-city"
+      ],
+      "supporting": true,
+      "evidence": {
+        "artifactVersion": "1.0.6-dev.f844007",
+        "buildCommit": "f844007b329b72f18cf2bda3d87540012294732a",
+        "source": "QuestieDB"
+      },
+      "locations": [
+        {
+          "coord": [
+            77.07,
+            30.21
+          ],
+          "id": 1440,
+          "name": "Milton Sheaf",
+          "point": "start",
+          "reactalliance": 1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Stormwind City"
+        },
+        {
+          "coord": [
+            50.57,
+            57.09
+          ],
+          "id": 2277,
+          "name": "Loremaster Dibbs",
+          "point": "end",
+          "reactalliance": 1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Hillsbrad Foothills"
+        }
+      ],
+      "status": "excluded",
+      "reason": "Prerequisite excursion only served a candidate whose complete itinerary remains unresolved."
+    },
+    "337": {
+      "catalogs": [
+        "duskwood"
+      ],
+      "supporting": true,
+      "evidence": {
+        "artifactVersion": "1.0.6-dev.f844007",
+        "buildCommit": "f844007b329b72f18cf2bda3d87540012294732a",
+        "source": "QuestieDB"
+      },
+      "locations": [
+        {
+          "coord": [
+            77.07,
+            30.21
+          ],
+          "id": 1440,
+          "name": "Milton Sheaf",
+          "point": "end",
+          "reactalliance": 1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Stormwind City"
+        }
+      ],
+      "status": "excluded",
+      "reason": "Prerequisite excursion only served a candidate whose complete itinerary remains unresolved."
     }
   },
   "supportingQuests": [
-    544
+    544,
+    1131
   ],
   "clientWalkthrough": "unverified",
   "sourcePriority": [
-    "wowhead",
-    "questiedb",
-    "allthethings",
-    "foreverclient"
+    "questiedb"
   ],
   "sources": {
-    "databaseCommit": "5c92953420ab4a710fda39581a405a72a89b8c0d",
-    "compilation": {
-      "schemaVersion": 1,
-      "compilationFormatVersion": 2,
-      "flavor": "forever",
-      "source": "compilation",
-      "sourceRevision": "991cc5841d7b79dc85613431aa8ecf6f4c34070753426d60f323e321532d4b66",
-      "recordCount": 107209,
-      "recordsSha256": "9ab82625871b9df3a0ac5781bb194be6d8211a4a6337258fbf82224e00416727",
-      "status": "generated"
+    "questiedb": {
+      "artifactVersion": "1.0.6-dev.f844007",
+      "buildCommit": "f844007b329b72f18cf2bda3d87540012294732a",
+      "counts": {
+        "Item": 21294,
+        "Npc": 13393,
+        "Object": 7035,
+        "Quest": 5232
+      }
     },
     "sourceHashes": {
-      "data/forever/compilation/records.jsonl.gz": "35c74cb11823db372dc0bc289d5ffaf8296ca9d1c370e4f7b794a29af7f84b47"
+      "questiedb/export.json": "e26090e90df3aa2e94be4c13feb001390068b84c249ff2443c629d26a408e704",
+      "questiedb/policy.json": "835ba8f6361ef37bda275859bdb48852001c3ce2b6a2b3ecff586283633e2ad4"
     },
     "upstreamCommit": "9087c457e20fb96e73e5b362dd6fc50324b75718"
   },
   "coverageMode": "zone",
   "orderingEligibility": {
-    "512": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "514": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "97287": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
-      }
-    },
-    "522": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "523": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "525": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "92432": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
-      }
-    },
-    "92434": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
-      }
-    },
-    "535": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "537": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "545": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      }
-    },
-    "551": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "554": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "92459": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
-      }
-    },
-    "95534": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
-      }
-    },
-    "93680": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
-      }
-    },
     "500": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "99192": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
+        "inCasual": false
       },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
-      }
-    },
-    "99191": {
       "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
+        "inCasual": true
       }
     },
     "504": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
       }
     },
     "505": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
       }
     },
     "510": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
       }
     },
     "511": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "512": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "514": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "522": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "523": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "525": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "535": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "537": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "540": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "543": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "551": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "554": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "1136": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "8371": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "8385": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "92432": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "92434": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "92459": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "93680": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "94947": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "95534": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "97287": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "99191": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "99192": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
       }
     }
   },
@@ -9296,10 +12091,10 @@
     "commit": "9087c457e20fb96e73e5b362dd6fc50324b75718",
     "strict": false,
     "sourceHashes": {
+      "ZygorGuidesViewerRM/Guides/Leveling/ZygorGuidesHorde.lua": "2eaf5adb4865936cdb4257451c3ce920fdaff1c0ec17216c36e055480f389e54",
       "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-EasternKingdoms.lua": "8a5ec87d31698c612e50eb0655f5c1f28d723c3068552c1295d79ddcd934270f",
       "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-Kalimdor.lua": "4fb7b7f5bb2702dfe36ed33de31b4d3105153bfba62b7a14a7ab73386e2087fa",
-      "ZygorGuidesViewerRM/Guides/Leveling/ZygorGuidesAlliance.lua": "ffb9b7828817e098d74ee5931e15a64ce773142a4c1e60f9775d0713121ba67d",
-      "ZygorGuidesViewerRM/Guides/Leveling/ZygorGuidesHorde.lua": "2eaf5adb4865936cdb4257451c3ce920fdaff1c0ec17216c36e055480f389e54"
+      "ZygorGuidesViewerRM/Guides/Leveling/ZygorGuidesAlliance.lua": "ffb9b7828817e098d74ee5931e15a64ce773142a4c1e60f9775d0713121ba67d"
     },
     "matches": {}
   }

@@ -6,7 +6,7 @@ ns:RegisterGuide({
     id = "loremaster-alterac-mountains",
     title = "Alterac Mountains",
     category = "Loremaster Guides",
-    revision = 1,
+    revision = 2,
     routeMode = "ordered",
     loremasterExpanded = true,
     goals = {
@@ -123,13 +123,13 @@ ns:RegisterGuide({
                     y = 0.5911,
                 },
             },
+            sourceActionID = "turnin-510-foreboding-plans",
+            sourceGuide = "leveling-era-alliance-hillsbrad-foothills-and-arathi-highlands",
             sourceStep = 26,
             text = "Turn in Foreboding Plans to Magistrate Henry Maleb.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-hillsbrad-foothills-and-arathi-highlands",
-            sourceActionID = "turnin-510-foreboding-plans",
         },
         {
             complete = { quest = { id = 505, state = "completed" } },
@@ -151,13 +151,13 @@ ns:RegisterGuide({
                     y = 0.5911,
                 },
             },
+            sourceActionID = "turnin-505-syndicate-assassins",
+            sourceGuide = "leveling-era-alliance-hillsbrad-foothills-and-arathi-highlands",
             sourceStep = 26,
             text = "Turn in Syndicate Assassins to Magistrate Henry Maleb.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-hillsbrad-foothills-and-arathi-highlands",
-            sourceActionID = "turnin-505-syndicate-assassins",
         },
         {
             complete = { quest = { id = 511, state = "completed" } },
@@ -175,13 +175,13 @@ ns:RegisterGuide({
                     y = 0.5709,
                 },
             },
+            sourceActionID = "turnin-511-encrypted-letter",
+            sourceGuide = "leveling-era-alliance-hillsbrad-foothills-and-arathi-highlands",
             sourceStep = 27,
             text = "Turn in Encrypted Letter to Loremaster Dibbs.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-hillsbrad-foothills-and-arathi-highlands",
-            sourceActionID = "turnin-511-encrypted-letter",
         },
         {
             complete = { quest = { id = 514, state = "activeOrCompleted" } },
@@ -228,25 +228,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 514, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 30 } }, { race = { 1, 3, 4, 7, 95 } } } },
             dependsOn = { "alliance-leveling-era-alliance-hillsbrad-foothills-and-arathi-highlands-accept-514-letter-to-stormpike" },
-            id = "alliance-leveling-era-alliance-hillsbrad-foothills-and-arathi-highlands-turnin-514-letter-to-stormpike",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 511 } } },
-            route = {
-                {
-                    label = "Prospector Stormpike",
-                    mapID = 1455,
-                    offMapText = "Travel to Prospector Stormpike in Ironforge.",
-                    x = 0.7464,
-                    y = 0.1173,
-                },
-            },
-            sourceStep = 37,
-            text = "Turn in Letter to Stormpike to Prospector Stormpike.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-hillsbrad-foothills-and-arathi-highlands",
-            sourceActionID = "turnin-514-letter-to-stormpike",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -265,6 +246,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-hillsbrad-foothills-and-arathi-highlands-turnin-514-letter-to-stormpike",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 511 } } },
+            route = {
+                {
+                    label = "Prospector Stormpike",
+                    mapID = 1455,
+                    offMapText = "Travel to Prospector Stormpike in Ironforge.",
+                    x = 0.7464,
+                    y = 0.1173,
+                },
+            },
+            sourceActionID = "turnin-514-letter-to-stormpike",
+            sourceGuide = "leveling-era-alliance-hillsbrad-foothills-and-arathi-highlands",
+            sourceStep = 37,
+            text = "Turn in Letter to Stormpike to Prospector Stormpike.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             id = "visit-entry-leveling-era-alliance-swamp-of-sorrows",
@@ -368,25 +368,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 525, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 30 } }, { race = { 1, 3, 4, 7, 95 } } } },
             dependsOn = {},
-            id = "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-turnin-525-further-mysteries",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 514 } } },
-            route = {
-                {
-                    label = "Magistrate Henry Maleb",
-                    mapID = 1424,
-                    offMapText = "Travel to Magistrate Henry Maleb in Hillsbrad Foothills.",
-                    x = 0.4814,
-                    y = 0.5911,
-                },
-            },
-            sourceStep = 21,
-            text = "Turn in Further Mysteries to Magistrate Henry Maleb.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-arathi-highlands-and-alterac-mountains",
-            sourceActionID = "turnin-525-further-mysteries",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -419,6 +400,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-turnin-525-further-mysteries",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 514 } } },
+            route = {
+                {
+                    label = "Magistrate Henry Maleb",
+                    mapID = 1424,
+                    offMapText = "Travel to Magistrate Henry Maleb in Hillsbrad Foothills.",
+                    x = 0.4814,
+                    y = 0.5911,
+                },
+            },
+            sourceActionID = "turnin-525-further-mysteries",
+            sourceGuide = "leveling-era-alliance-arathi-highlands-and-alterac-mountains",
+            sourceStep = 21,
+            text = "Turn in Further Mysteries to Magistrate Henry Maleb.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 537, state = "activeOrCompleted" } },
@@ -741,13 +741,13 @@ ns:RegisterGuide({
                     y = 0.5873,
                 },
             },
+            sourceActionID = "turnin-500-crushridge-bounty",
+            sourceGuide = "leveling-era-alliance-arathi-highlands-and-alterac-mountains",
             sourceStep = 29,
             text = "Turn in Crushridge Bounty to Marshal Redpath.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-arathi-highlands-and-alterac-mountains",
-            sourceActionID = "turnin-500-crushridge-bounty",
         },
         {
             complete = { quest = { id = 537, state = "completed" } },
@@ -757,25 +757,6 @@ ns:RegisterGuide({
                 "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-objective-537-2-nagaz",
                 "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-objective-537-1-argus-shadow-mage",
             },
-            id = "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-turnin-537-dark-council",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 525 } } },
-            route = {
-                {
-                    label = "Magistrate Henry Maleb",
-                    mapID = 1424,
-                    offMapText = "Travel to Magistrate Henry Maleb in Hillsbrad Foothills.",
-                    x = 0.4814,
-                    y = 0.5911,
-                },
-            },
-            sourceStep = 30,
-            text = "Turn in Dark Council to Magistrate Henry Maleb.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-arathi-highlands-and-alterac-mountains",
-            sourceActionID = "turnin-537-dark-council",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -822,17 +803,9 @@ ns:RegisterGuide({
                     },
                 },
             },
-        },
-        {
-            complete = { quest = { id = 512, state = "completed" } },
-            conditions = { all = { { faction = "Alliance" }, { level = { min = 26 } }, { race = { 1, 3, 4, 7, 95 } } } },
-            dependsOn = {
-                "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-accept-512-noble-deaths",
-                "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-objective-512-1-alterac-signet-ring",
-            },
-            id = "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-turnin-512-noble-deaths",
+            id = "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-turnin-537-dark-council",
             kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 510 } } },
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 525 } } },
             route = {
                 {
                     label = "Magistrate Henry Maleb",
@@ -842,13 +815,21 @@ ns:RegisterGuide({
                     y = 0.5911,
                 },
             },
+            sourceActionID = "turnin-537-dark-council",
+            sourceGuide = "leveling-era-alliance-arathi-highlands-and-alterac-mountains",
             sourceStep = 30,
-            text = "Turn in Noble Deaths to Magistrate Henry Maleb.",
+            text = "Turn in Dark Council to Magistrate Henry Maleb.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-arathi-highlands-and-alterac-mountains",
-            sourceActionID = "turnin-512-noble-deaths",
+        },
+        {
+            complete = { quest = { id = 512, state = "completed" } },
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 26 } }, { race = { 1, 3, 4, 7, 95 } } } },
+            dependsOn = {
+                "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-accept-512-noble-deaths",
+                "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-objective-512-1-alterac-signet-ring",
+            },
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -867,6 +848,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-turnin-512-noble-deaths",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 510 } } },
+            route = {
+                {
+                    label = "Magistrate Henry Maleb",
+                    mapID = 1424,
+                    offMapText = "Travel to Magistrate Henry Maleb in Hillsbrad Foothills.",
+                    x = 0.4814,
+                    y = 0.5911,
+                },
+            },
+            sourceActionID = "turnin-512-noble-deaths",
+            sourceGuide = "leveling-era-alliance-arathi-highlands-and-alterac-mountains",
+            sourceStep = 30,
+            text = "Turn in Noble Deaths to Magistrate Henry Maleb.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 551, state = "completed" } },
@@ -884,13 +884,13 @@ ns:RegisterGuide({
                     y = 0.5709,
                 },
             },
+            sourceActionID = "turnin-551-the-ensorcelled-parchment",
+            sourceGuide = "leveling-era-alliance-arathi-highlands-and-alterac-mountains",
             sourceStep = 31,
             text = "Turn in The Ensorcelled Parchment to Loremaster Dibbs.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-arathi-highlands-and-alterac-mountains",
-            sourceActionID = "turnin-551-the-ensorcelled-parchment",
         },
         {
             complete = { quest = { id = 554, state = "activeOrCompleted" } },
@@ -937,25 +937,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 554, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 28 } }, { race = { 1, 3, 4, 7, 95 } } } },
             dependsOn = { "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-accept-554-stormpike-s-deciphering" },
-            id = "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-turnin-554-stormpike-s-deciphering",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 551 } } },
-            route = {
-                {
-                    label = "Prospector Stormpike",
-                    mapID = 1455,
-                    offMapText = "Travel to Prospector Stormpike in Ironforge.",
-                    x = 0.7464,
-                    y = 0.1174,
-                },
-            },
-            sourceStep = 69,
-            text = "Turn in Stormpike's Deciphering to Prospector Stormpike.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-arathi-highlands-and-alterac-mountains",
-            sourceActionID = "turnin-554-stormpike-s-deciphering",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -974,63 +955,100 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-turnin-554-stormpike-s-deciphering",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 551 } } },
+            route = {
+                {
+                    label = "Prospector Stormpike",
+                    mapID = 1455,
+                    offMapText = "Travel to Prospector Stormpike in Ironforge.",
+                    x = 0.7464,
+                    y = 0.1174,
+                },
+            },
+            sourceActionID = "turnin-554-stormpike-s-deciphering",
+            sourceGuide = "leveling-era-alliance-arathi-highlands-and-alterac-mountains",
+            sourceStep = 69,
+            text = "Turn in Stormpike's Deciphering to Prospector Stormpike.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
+            checkpointQuest = 504,
+            complete = { level = { min = 30 } },
+            conditions = { all = { { faction = "Alliance" } } },
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 504, state = "activeOrCompleted" } },
+                        {
+                            any = {
+                                { quest = { id = 504, state = "completed" } },
+                                {
+                                    all = {
+                                        { faction = "Alliance" },
+                                        { any = { { any = { { quest = { id = 500, state = "completed" } }, { all = { { faction = "Alliance" } } } } } } },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
             id = "alliance-extra-504-level",
             kind = "note",
-            checkpointQuest = 504,
-            text = "Reach level 40 before this visit.",
-            conditions = { all = { { faction = "Alliance" } } },
-            complete = { level = { min = 40 } },
-            requiredLevel = 40,
-            excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 504, state = "activeOrCompleted" } },
-                        {
-                            any = {
-                                { quest = { id = 504, state = "completed" } },
-                                {
-                                    all = {
-                                        { faction = "Alliance" },
-                                        { any = { { any = { { quest = { id = 500, state = "completed" } }, { all = { { faction = "Alliance" } } } } } } },
-                                    },
-                                },
-                            },
-                        },
-                    },
-                },
-            },
+            requiredLevel = 30,
+            text = "Reach level 30 before this visit.",
         },
         {
-            id = "alliance-extra-504-accept",
-            kind = "accept",
-            text = "Accept Crushridge Warmongers from Marshal Redpath.",
-            conditions = { all = { { faction = "Alliance" }, { level = { min = 30 } } } },
-            route = {
-                {
-                    mapID = 1424,
-                    x = 0.494,
-                    y = 0.586,
-                    label = "Marshal Redpath",
-                    offMapText = "Travel to Marshal Redpath in Hillsbrad Foothills.",
-                },
-            },
             complete = { quest = { id = 504, state = "activeOrCompleted" } },
-            requiredQuests = { { mode = "any", quests = { 500 } } },
-            useClientText = false,
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 30 } } } },
             dependsOn = { "alliance-extra-504-level" },
             excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 504, state = "activeOrCompleted" } },
-                        {
+                any = {
+                    {
+                        ["not"] = {
                             any = {
-                                { quest = { id = 504, state = "completed" } },
+                                { quest = { id = 504, state = "activeOrCompleted" } },
                                 {
-                                    all = {
-                                        { faction = "Alliance" },
-                                        { any = { { any = { { quest = { id = 500, state = "completed" } }, { all = { { faction = "Alliance" } } } } } } },
+                                    any = {
+                                        { quest = { id = 504, state = "completed" } },
+                                        {
+                                            all = {
+                                                { faction = "Alliance" },
+                                                { any = { { any = { { quest = { id = 500, state = "completed" } }, { all = { { faction = "Alliance" } } } } } } },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 504, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 504, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                { faction = "Alliance" },
+                                                { race = { 1, 3, 4, 7 } },
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 500, state = "activeOrCompleted" } },
+                                                                { all = { { faction = "Alliance" }, { race = { 1, 3, 4, 7 } } } },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
                                     },
                                 },
                             },
@@ -1038,73 +1056,68 @@ ns:RegisterGuide({
                     },
                 },
             },
-        },
-        {
-            id = "alliance-extra-504-objective",
-            kind = "objective",
-            text = "Slay 15 Crushridge Warmongers. This is an elite. Bring a group.",
-            conditions = { all = { { faction = "Alliance" }, { level = { min = 30 } } } },
-            route = {
-                {
-                    mapID = 1416,
-                    x = 0.364,
-                    y = 0.536,
-                    label = "Crushridge Warmonger",
-                    offMapText = "Travel to Crushridge Warmonger in Alterac Mountains.",
-                },
-            },
-            complete = { quest = { id = 504, state = "complete" } },
+            id = "alliance-extra-504-accept",
+            kind = "accept",
             requiredQuests = { { mode = "any", quests = { 500 } } },
-            useClientText = false,
-            dependsOn = { "alliance-extra-504-accept" },
-            excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 504, state = "activeOrCompleted" } },
-                        {
-                            any = {
-                                { quest = { id = 504, state = "completed" } },
-                                {
-                                    all = {
-                                        { faction = "Alliance" },
-                                        { any = { { any = { { quest = { id = 500, state = "completed" } }, { all = { { faction = "Alliance" } } } } } } },
-                                    },
-                                },
-                            },
-                        },
-                    },
-                },
-            },
-        },
-        {
-            id = "alliance-extra-504-turnin",
-            kind = "turnin",
-            text = "Turn in Crushridge Warmongers to Marshal Redpath.",
-            conditions = { all = { { faction = "Alliance" }, { level = { min = 30 } } } },
             route = {
                 {
+                    label = "Marshal Redpath",
                     mapID = 1424,
+                    offMapText = "Travel to Marshal Redpath in Hillsbrad Foothills.",
                     x = 0.494,
                     y = 0.586,
-                    label = "Marshal Redpath",
-                    offMapText = "Travel to Marshal Redpath in Hillsbrad Foothills.",
                 },
             },
-            complete = { quest = { id = 504, state = "completed" } },
-            requiredQuests = { { mode = "any", quests = { 500 } } },
+            text = "Accept Crushridge Warmongers from Marshal Redpath.",
             useClientText = false,
-            dependsOn = { "alliance-extra-504-objective" },
+        },
+        {
+            complete = { quest = { id = 504, state = "complete" } },
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 30 } } } },
+            dependsOn = { "alliance-extra-504-accept" },
             excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 504, state = "activeOrCompleted" } },
-                        {
+                any = {
+                    {
+                        ["not"] = {
                             any = {
-                                { quest = { id = 504, state = "completed" } },
+                                { quest = { id = 504, state = "activeOrCompleted" } },
                                 {
-                                    all = {
-                                        { faction = "Alliance" },
-                                        { any = { { any = { { quest = { id = 500, state = "completed" } }, { all = { { faction = "Alliance" } } } } } } },
+                                    any = {
+                                        { quest = { id = 504, state = "completed" } },
+                                        {
+                                            all = {
+                                                { faction = "Alliance" },
+                                                { any = { { any = { { quest = { id = 500, state = "completed" } }, { all = { { faction = "Alliance" } } } } } } },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 504, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 504, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                { faction = "Alliance" },
+                                                { race = { 1, 3, 4, 7 } },
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 500, state = "activeOrCompleted" } },
+                                                                { all = { { faction = "Alliance" }, { race = { 1, 3, 4, 7 } } } },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
                                     },
                                 },
                             },
@@ -1112,15 +1125,101 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-extra-504-objective",
+            kind = "objective",
+            requiredQuests = { { mode = "any", quests = { 500 } } },
+            route = {
+                {
+                    label = "Crushridge Warmonger",
+                    mapID = 1416,
+                    offMapText = "Travel to Crushridge Warmonger in Alterac Mountains.",
+                    x = 0.364,
+                    y = 0.536,
+                },
+            },
+            text = "Slay 15 Crushridge Warmongers. This is an elite. Bring a group.",
+            useClientPin = true,
+            useClientText = false,
         },
         {
+            complete = { quest = { id = 504, state = "completed" } },
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 30 } } } },
+            dependsOn = { "alliance-extra-504-objective" },
+            excludeWhen = {
+                any = {
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 504, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 504, state = "completed" } },
+                                        {
+                                            all = {
+                                                { faction = "Alliance" },
+                                                { any = { { any = { { quest = { id = 500, state = "completed" } }, { all = { { faction = "Alliance" } } } } } } },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 504, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 504, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                { faction = "Alliance" },
+                                                { race = { 1, 3, 4, 7 } },
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 500, state = "activeOrCompleted" } },
+                                                                { all = { { faction = "Alliance" }, { race = { 1, 3, 4, 7 } } } },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
+            id = "alliance-extra-504-turnin",
+            kind = "turnin",
+            requiredQuests = { { mode = "any", quests = { 500 } } },
+            route = {
+                {
+                    label = "Marshal Redpath",
+                    mapID = 1424,
+                    offMapText = "Travel to Marshal Redpath in Hillsbrad Foothills.",
+                    x = 0.494,
+                    y = 0.586,
+                },
+            },
+            text = "Turn in Crushridge Warmongers to Marshal Redpath.",
+            useClientPin = true,
+            useClientText = false,
+            useQuestNavigation = true,
+        },
+        {
+            checkpointQuest = 92432,
+            complete = { level = { min = 30 } },
+            conditions = { all = { { faction = "Alliance" } } },
             id = "alliance-extra-92432-level",
             kind = "note",
-            checkpointQuest = 92432,
-            text = "Reach level 33 before this visit.",
-            conditions = { all = { { faction = "Alliance" } } },
-            complete = { level = { min = 33 } },
-            requiredLevel = 33,
+            requiredLevel = 30,
+            text = "Reach level 30 before this visit.",
         },
         {
             id = "alliance-extra-92432-accept",
@@ -1154,23 +1253,333 @@ ns:RegisterGuide({
             useClientPin = true,
         },
         {
+            complete = { quest = { id = 92432, state = "completed" } },
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 30 } } } },
+            dependsOn = { "alliance-extra-92432-objective" },
             id = "alliance-extra-92432-turnin",
             kind = "turnin",
-            text = "Turn in An Alarming Request to Image of Archmage Modera.",
-            conditions = { all = { { faction = "Alliance" }, { level = { min = 30 } } } },
+            requiredQuests = {},
             route = {
                 {
-                    mapID = 1421,
-                    x = 0.6859999999999999,
-                    y = 0.452,
                     label = "Image of Archmage Modera",
+                    mapID = 1421,
                     offMapText = "Travel to Image of Archmage Modera in Silverpine Forest.",
+                    x = 0.686,
+                    y = 0.452,
                 },
             },
-            complete = { quest = { id = 92432, state = "completed" } },
-            requiredQuests = {},
+            text = "Turn in An Alarming Request to Image of Archmage Modera.",
+            useClientPin = true,
             useClientText = false,
-            dependsOn = { "alliance-extra-92432-objective" },
+            useQuestNavigation = true,
+        },
+        {
+            checkpointQuest = 543,
+            complete = { level = { min = 30 } },
+            conditions = { all = { { faction = "Alliance" }, { race = { 1, 3, 4, 7 } } } },
+            id = "alliance-extra-543-level",
+            kind = "note",
+            requiredLevel = 30,
+            text = "Reach level 30 before this visit.",
+        },
+        {
+            complete = { quest = { id = 543, state = "activeOrCompleted" } },
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 30 } }, { race = { 1, 3, 4, 7 } } } },
+            dependsOn = { "alliance-extra-543-level" },
+            id = "alliance-extra-543-accept",
+            kind = "accept",
+            requiredQuests = {},
+            route = {
+                {
+                    label = "Count Remington Ridgewell",
+                    mapID = 1453,
+                    offMapText = "Travel to Count Remington Ridgewell in Stormwind City.",
+                    x = 0.7694,
+                    y = 0.4783,
+                },
+            },
+            text = "Accept The Perenolde Tiara from Count Remington Ridgewell.",
+            useClientText = false,
+        },
+        {
+            complete = { quest = { id = 543, state = "complete" } },
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 30 } }, { race = { 1, 3, 4, 7 } } } },
+            dependsOn = { "alliance-extra-543-accept" },
+            id = "alliance-extra-543-objective",
+            kind = "objective",
+            requiredQuests = {},
+            route = {
+                {
+                    label = "Grel'borg the Miser",
+                    mapID = 1416,
+                    offMapText = "Travel to Grel'borg the Miser in Alterac Mountains.",
+                    x = 0.3558,
+                    y = 0.5442,
+                },
+            },
+            text = "Defeat Grel'borg the Miser and loot the Perenolde Tiara. Bring the Perenolde Tiara to Remington Ridgewell in Stormwind.",
+            useClientText = false,
+        },
+        {
+            complete = { quest = { id = 543, state = "completed" } },
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 30 } }, { race = { 1, 3, 4, 7 } } } },
+            dependsOn = { "alliance-extra-543-objective" },
+            id = "alliance-extra-543-turnin",
+            kind = "turnin",
+            requiredQuests = {},
+            route = {
+                {
+                    label = "Count Remington Ridgewell",
+                    mapID = 1453,
+                    offMapText = "Travel to Count Remington Ridgewell in Stormwind City.",
+                    x = 0.7694,
+                    y = 0.4783,
+                },
+            },
+            text = "Turn in The Perenolde Tiara to Count Remington Ridgewell.",
+            useClientText = false,
+        },
+        {
+            checkpointQuest = 94947,
+            complete = { level = { min = 7 } },
+            conditions = { all = { { faction = "Alliance" } } },
+            id = "alliance-extra-94947-level",
+            kind = "note",
+            requiredLevel = 7,
+            text = "Reach level 7 before this visit.",
+        },
+        {
+            complete = { quest = { id = 94947, state = "activeOrCompleted" } },
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 7 } } } },
+            dependsOn = { "alliance-extra-94947-level" },
+            id = "alliance-extra-94947-accept",
+            kind = "accept",
+            requiredQuests = {},
+            route = {
+                {
+                    label = "Denaaris Stargale",
+                    mapID = 1416,
+                    offMapText = "Travel to Denaaris Stargale in Alterac Mountains.",
+                    x = 0.12300000000000001,
+                    y = 0.563,
+                },
+            },
+            text = "Accept Welcome to Azeroth from Denaaris Stargale.",
+            useClientText = false,
+        },
+        {
+            complete = { quest = { id = 94947, state = "complete" } },
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 7 } } } },
+            dependsOn = { "alliance-extra-94947-accept" },
+            id = "alliance-extra-94947-objective",
+            kind = "objective",
+            requiredQuests = {},
+            route = {
+                {
+                    label = "Skyborne Portal to Stormwind",
+                    mapID = 1416,
+                    offMapText = "Travel to Skyborne Portal to Stormwind in Alterac Mountains.",
+                    x = 0.1204,
+                    y = 0.5621,
+                },
+            },
+            text = "Take the Skyborne Portal to Stormwind.",
+            useClientText = false,
+        },
+        {
+            complete = { quest = { id = 94947, state = "completed" } },
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 7 } } } },
+            dependsOn = { "alliance-extra-94947-objective" },
+            id = "alliance-extra-94947-turnin",
+            kind = "turnin",
+            requiredQuests = {},
+            route = {
+                {
+                    label = "Highlord Bolvar Fordragon",
+                    mapID = 1453,
+                    offMapText = "Travel to Highlord Bolvar Fordragon in Stormwind City.",
+                    x = 0.8020999999999999,
+                    y = 0.3835,
+                },
+            },
+            text = "Turn in Welcome to Azeroth to Highlord Bolvar Fordragon.",
+            useClientText = false,
+        },
+        {
+            complete = { level = { min = 26 } },
+            conditions = { all = { { faction = "Horde" } } },
+            excludeWhen = { ["not"] = { all = { { faction = "Horde" } } } },
+            id = "visit-entry-leveling-era-horde-ashenvale-part-2",
+            kind = "note",
+            requiredLevel = 26,
+            text = "Reach level 26 before the Ashenvale visit.",
+            visitSourceGuide = "leveling-era-horde-ashenvale-part-2",
+        },
+        {
+            complete = { quest = { id = 1131, state = "activeOrCompleted" } },
+            conditions = { all = { { faction = "Horde" }, { level = { min = 20 } }, { race = { 2, 5, 6, 8, 96 } } } },
+            dependsOn = {},
+            id = "horde-leveling-era-horde-ashenvale-part-2-accept-1131-steelsnap",
+            kind = "accept",
+            requiredQuests = {},
+            route = {
+                {
+                    label = "Melor Stonehoof",
+                    mapID = 1456,
+                    offMapText = "Travel to Melor Stonehoof in Thunder Bluff.",
+                    x = 0.6154,
+                    y = 0.8092,
+                },
+            },
+            sourceActionID = "accept-1131-steelsnap",
+            sourceGuide = "leveling-era-horde-ashenvale-part-2",
+            sourceStep = 78,
+            text = "Accept Steelsnap from Melor Stonehoof.",
+            useClientPin = false,
+            useClientText = false,
+        },
+        {
+            complete = { level = { min = 28 } },
+            conditions = { all = { { faction = "Horde" } } },
+            excludeWhen = { ["not"] = { all = { { faction = "Horde" } } } },
+            id = "visit-entry-leveling-era-horde-thousand-needles",
+            kind = "note",
+            requiredLevel = 28,
+            text = "Reach level 28 before the Thousand Needles visit.",
+            visitSourceGuide = "leveling-era-horde-thousand-needles",
+        },
+        {
+            complete = { questObjective = { count = 1, id = 1131, index = 1, text = "Steelsnap" } },
+            conditions = { all = { { faction = "Horde" }, { level = { min = 20 } }, { race = { 2, 5, 6, 8, 96 } } } },
+            dependsOn = {},
+            id = "horde-leveling-era-horde-thousand-needles-objective-1131-1-steelsnap",
+            kind = "objective",
+            requiredQuests = {},
+            sourceActionID = "objective-1131-1-steelsnap",
+            sourceGuide = "leveling-era-horde-thousand-needles",
+            sourceStep = 25,
+            text = "Collect 1 Steelsnap's Rib.",
+            useClientPin = true,
+            useClientText = false,
+            useQuestNavigation = true,
+        },
+        {
+            complete = { quest = { id = 1131, state = "completed" } },
+            conditions = { all = { { faction = "Horde" }, { level = { min = 20 } }, { race = { 2, 5, 6, 8, 96 } } } },
+            dependsOn = { "horde-leveling-era-horde-thousand-needles-objective-1131-1-steelsnap" },
+            id = "horde-leveling-era-horde-thousand-needles-turnin-1131-steelsnap",
+            kind = "turnin",
+            requiredQuests = {},
+            route = {
+                {
+                    label = "Melor Stonehoof",
+                    mapID = 1456,
+                    offMapText = "Travel to Melor Stonehoof in Thunder Bluff.",
+                    x = 0.6153,
+                    y = 0.809,
+                },
+            },
+            sourceActionID = "turnin-1131-steelsnap",
+            sourceGuide = "leveling-era-horde-thousand-needles",
+            sourceStep = 33,
+            text = "Turn in Steelsnap to Melor Stonehoof.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
+        },
+        {
+            checkpointQuest = 1136,
+            complete = { level = { min = 26 } },
+            conditions = { all = { { faction = "Horde" }, { race = { 2, 5, 6, 8, 96 } } } },
+            dependsOn = {},
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 1136, state = "activeOrCompleted" } },
+                        {
+                            any = {
+                                { quest = { id = 1136, state = "activeOrCompleted" } },
+                                {
+                                    all = {
+                                        { faction = "Horde" },
+                                        { race = { 2, 5, 6, 8 } },
+                                        {
+                                            any = {
+                                                {
+                                                    any = {
+                                                        { quest = { id = 1131, state = "activeOrCompleted" } },
+                                                        { all = { { faction = "Horde" }, { race = { 2, 5, 6, 8 } } } },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
+            id = "horde-leveling-era-horde-thousand-needles-level-before-accept-1136-frostmaw",
+            kind = "note",
+            requiredLevel = 26,
+            requiredQuests = {},
+            sourceActionID = "level-before-accept-1136-frostmaw",
+            sourceGuide = "leveling-era-horde-thousand-needles",
+            text = "Reach level 26 before continuing. Choose how to gain XP, then return to this route.",
+            useClientPin = false,
+            useClientText = false,
+        },
+        {
+            complete = { quest = { id = 1136, state = "activeOrCompleted" } },
+            conditions = { all = { { faction = "Horde" }, { level = { min = 26 } }, { race = { 2, 5, 6, 8, 96 } } } },
+            dependsOn = {},
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 1136, state = "activeOrCompleted" } },
+                        {
+                            any = {
+                                { quest = { id = 1136, state = "activeOrCompleted" } },
+                                {
+                                    all = {
+                                        { faction = "Horde" },
+                                        { race = { 2, 5, 6, 8 } },
+                                        {
+                                            any = {
+                                                {
+                                                    any = {
+                                                        { quest = { id = 1131, state = "activeOrCompleted" } },
+                                                        { all = { { faction = "Horde" }, { race = { 2, 5, 6, 8 } } } },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
+            id = "horde-leveling-era-horde-thousand-needles-accept-1136-frostmaw",
+            kind = "accept",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 1131 } } },
+            route = {
+                {
+                    label = "Melor Stonehoof",
+                    mapID = 1456,
+                    offMapText = "Travel to Melor Stonehoof in Thunder Bluff.",
+                    x = 0.6153,
+                    y = 0.809,
+                },
+            },
+            sourceActionID = "accept-1136-frostmaw",
+            sourceGuide = "leveling-era-horde-thousand-needles",
+            sourceStep = 33,
+            text = "Accept Frostmaw from Melor Stonehoof.",
+            useClientPin = false,
+            useClientText = false,
         },
         {
             id = "visit-entry-leveling-era-horde-hillsbrad-foothills-part-2",
@@ -1306,13 +1715,13 @@ ns:RegisterGuide({
                     y = 0.2084,
                 },
             },
+            sourceActionID = "turnin-544-prison-break-in",
+            sourceGuide = "leveling-era-horde-hillsbrad-foothills-part-2",
             sourceStep = 45,
             text = "Turn in Prison Break In to Magus Wordeen Voidglare.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-hillsbrad-foothills-part-2",
-            sourceActionID = "turnin-544-prison-break-in",
         },
         {
             id = "visit-entry-leveling-era-horde-alterac-mountains-and-arathi-highlands",
@@ -1399,6 +1808,101 @@ ns:RegisterGuide({
             },
         },
         {
+            checkpointQuest = 1136,
+            complete = {
+                any = {
+                    { all = { { item = { minCount = 1, name = "Fresh Carcass" } } } },
+                    { quest = { id = 1136, state = "complete" } },
+                },
+            },
+            conditions = { all = { { faction = "Horde" }, { level = { min = 26 } }, { race = { 2, 5, 6, 8, 96 } } } },
+            dependsOn = {},
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 1136, state = "activeOrCompleted" } },
+                        {
+                            any = {
+                                { quest = { id = 1136, state = "activeOrCompleted" } },
+                                {
+                                    all = {
+                                        { faction = "Horde" },
+                                        { race = { 2, 5, 6, 8 } },
+                                        {
+                                            any = {
+                                                {
+                                                    any = {
+                                                        { quest = { id = 1131, state = "activeOrCompleted" } },
+                                                        { all = { { faction = "Horde" }, { race = { 2, 5, 6, 8 } } } },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
+            id = "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-objective-1136-1-hulking-mountain-lion",
+            instructionOnly = true,
+            kind = "note",
+            rememberPreparation = 1136,
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 1131 } } },
+            route = { { label = "Mountain lions", mapID = 1416, offMapText = "Travel to Mountain lions.", x = 0.484, y = 0.75 } },
+            sourceActionID = "objective-1136-1-hulking-mountain-lion",
+            sourceGuide = "leveling-era-horde-alterac-mountains-and-arathi-highlands",
+            sourceInstructionIndex = 1,
+            sourceInstructionStep = 12,
+            text = "Kill mountain lions in southern Alterac Mountains and loot 1 Fresh Carcass.",
+            useClientPin = false,
+            useClientText = false,
+        },
+        {
+            complete = { questObjective = { count = 1, id = 1136, index = 1 } },
+            conditions = { all = { { faction = "Horde" }, { level = { min = 26 } }, { race = { 2, 5, 6, 8, 96 } } } },
+            dependsOn = {},
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 1136, state = "activeOrCompleted" } },
+                        {
+                            any = {
+                                { quest = { id = 1136, state = "activeOrCompleted" } },
+                                {
+                                    all = {
+                                        { faction = "Horde" },
+                                        { race = { 2, 5, 6, 8 } },
+                                        {
+                                            any = {
+                                                {
+                                                    any = {
+                                                        { quest = { id = 1131, state = "activeOrCompleted" } },
+                                                        { all = { { faction = "Horde" }, { race = { 2, 5, 6, 8 } } } },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
+            id = "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-objective-1136-1-fresh-carcass",
+            kind = "objective",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 1131 } } },
+            route = { { label = "Frostmaw cave", mapID = 1416, offMapText = "Travel to Frostmaw cave.", x = 0.3754, y = 0.6626 } },
+            sourceActionID = "objective-1136-1-fresh-carcass",
+            sourceGuide = "leveling-era-horde-alterac-mountains-and-arathi-highlands",
+            text = "Place the Fresh Carcass in Frostmaw's cave. Kill Frostmaw when he approaches and loot his mane.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
+        },
+        {
             complete = { questObjective = { count = 6, id = 545, index = 1, text = "Dalaran Summoner" } },
             conditions = { all = { { faction = "Horde" }, { level = { min = 30 } }, { race = { 2, 5, 6, 8, 96 } } } },
             dependsOn = { "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-accept-545-dalaran-patrols" },
@@ -1476,25 +1980,6 @@ ns:RegisterGuide({
                 "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-objective-545-1-dalaran-summoner",
                 "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-objective-545-2-elemental-slave",
             },
-            id = "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-turnin-545-dalaran-patrols",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 544 } } },
-            route = {
-                {
-                    label = "Magus Wordeen Voidglare",
-                    mapID = 1424,
-                    offMapText = "Travel to Magus Wordeen Voidglare in Hillsbrad Foothills.",
-                    x = 0.616,
-                    y = 0.2084,
-                },
-            },
-            sourceStep = 24,
-            text = "Turn in Dalaran Patrols to Magus Wordeen Voidglare.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-alterac-mountains-and-arathi-highlands",
-            sourceActionID = "turnin-545-dalaran-patrols",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -1513,15 +1998,144 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-turnin-545-dalaran-patrols",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 544 } } },
+            route = {
+                {
+                    label = "Magus Wordeen Voidglare",
+                    mapID = 1424,
+                    offMapText = "Travel to Magus Wordeen Voidglare in Hillsbrad Foothills.",
+                    x = 0.616,
+                    y = 0.2084,
+                },
+            },
+            sourceActionID = "turnin-545-dalaran-patrols",
+            sourceGuide = "leveling-era-horde-alterac-mountains-and-arathi-highlands",
+            sourceStep = 24,
+            text = "Turn in Dalaran Patrols to Magus Wordeen Voidglare.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
+            complete = { level = { min = 39 } },
+            conditions = { all = { { faction = "Horde" } } },
+            excludeWhen = { ["not"] = { all = { { faction = "Horde" } } } },
+            id = "visit-entry-leveling-era-horde-badlands",
+            kind = "note",
+            requiredLevel = 39,
+            text = "Reach level 39 before the Badlands visit.",
+            visitSourceGuide = "leveling-era-horde-badlands",
+        },
+        {
+            complete = { quest = { id = 1136, state = "complete" } },
+            conditions = { all = { { faction = "Horde" }, { level = { min = 26 } }, { race = { 2, 5, 6, 8, 96 } } } },
+            dependsOn = {},
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 1136, state = "activeOrCompleted" } },
+                        {
+                            any = {
+                                { quest = { id = 1136, state = "activeOrCompleted" } },
+                                {
+                                    all = {
+                                        { faction = "Horde" },
+                                        { race = { 2, 5, 6, 8 } },
+                                        {
+                                            any = {
+                                                {
+                                                    any = {
+                                                        { quest = { id = 1131, state = "activeOrCompleted" } },
+                                                        { all = { { faction = "Horde" }, { race = { 2, 5, 6, 8 } } } },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
+            id = "horde-leveling-era-horde-badlands-objective-1136-quest-work",
+            kind = "objective",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 1131 } } },
+            route = {
+                { label = "Frostmaw's Mane", mapID = 1416, offMapText = "Travel to Frostmaw's Mane.", x = 0.3754, y = 0.6626 },
+            },
+            sourceActionID = "objective-1136-quest-work",
+            sourceGuide = "leveling-era-horde-badlands",
+            sourceStep = 48,
+            text = "For Frostmaw: Bring Frostmaw's Mane to Melor Stonehoof in Thunder Bluff.",
+            useClientPin = false,
+            useClientText = false,
+        },
+        {
+            complete = { quest = { id = 1136, state = "completed" } },
+            conditions = { all = { { faction = "Horde" }, { level = { min = 26 } }, { race = { 2, 5, 6, 8, 96 } } } },
+            dependsOn = {
+                "horde-leveling-era-horde-badlands-objective-1136-quest-work",
+                "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-objective-1136-1-fresh-carcass",
+            },
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 1136, state = "activeOrCompleted" } },
+                        {
+                            any = {
+                                { quest = { id = 1136, state = "activeOrCompleted" } },
+                                {
+                                    all = {
+                                        { faction = "Horde" },
+                                        { race = { 2, 5, 6, 8 } },
+                                        {
+                                            any = {
+                                                {
+                                                    any = {
+                                                        { quest = { id = 1131, state = "activeOrCompleted" } },
+                                                        { all = { { faction = "Horde" }, { race = { 2, 5, 6, 8 } } } },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
+            id = "horde-leveling-era-horde-badlands-turnin-1136-frostmaw",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 1131 } } },
+            route = {
+                {
+                    label = "Melor Stonehoof",
+                    mapID = 1456,
+                    offMapText = "Travel to Melor Stonehoof in Thunder Bluff.",
+                    x = 0.6153,
+                    y = 0.809,
+                },
+            },
+            sourceActionID = "turnin-1136-frostmaw",
+            sourceGuide = "leveling-era-horde-badlands",
+            sourceStep = 48,
+            text = "Turn in Frostmaw to Melor Stonehoof.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
+        },
+        {
+            checkpointQuest = 535,
+            complete = { level = { min = 29 } },
+            conditions = { all = { { faction = "Horde" } } },
             id = "horde-extra-535-level",
             kind = "note",
-            checkpointQuest = 535,
-            text = "Reach level 34 before this visit.",
-            conditions = { all = { { faction = "Horde" } } },
-            complete = { level = { min = 34 } },
-            requiredLevel = 34,
+            requiredLevel = 29,
+            text = "Reach level 29 before this visit.",
         },
         {
             id = "horde-extra-535-accept",
@@ -1562,23 +2176,25 @@ ns:RegisterGuide({
             dependsOn = { "horde-extra-535-accept" },
         },
         {
+            complete = { quest = { id = 535, state = "completed" } },
+            conditions = { all = { { faction = "Horde" }, { level = { min = 29 } } } },
+            dependsOn = { "horde-extra-535-objective" },
             id = "horde-extra-535-turnin",
             kind = "turnin",
-            text = "Turn in Valik to Henchman Valik.",
-            conditions = { all = { { faction = "Horde" }, { level = { min = 29 } } } },
+            requiredQuests = {},
             route = {
                 {
-                    mapID = 1416,
-                    x = 0.57,
-                    y = 0.6940000000000001,
                     label = "Henchman Valik",
+                    mapID = 1416,
                     offMapText = "Travel to Henchman Valik in Alterac Mountains.",
+                    x = 0.57,
+                    y = 0.694,
                 },
             },
-            complete = { quest = { id = 535, state = "completed" } },
-            requiredQuests = {},
+            text = "Turn in Valik to Henchman Valik.",
+            useClientPin = true,
             useClientText = false,
-            dependsOn = { "horde-extra-535-objective" },
+            useQuestNavigation = true,
         },
     },
 })

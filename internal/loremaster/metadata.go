@@ -40,3 +40,29 @@ func Slug(value string) string {
 	value = strings.ToLower(strings.ReplaceAll(strings.ReplaceAll(value, "&", "and"), "'", ""))
 	return strings.Trim(slugSeparator.ReplaceAllString(value, "-"), "-")
 }
+
+// ZoneNameForUIMap returns the zone name for a UiMap ID. Names that share an ID,
+// such as The Barrens and Barrens, resolve to the longer name, which is the
+// catalog slug the guides use. It returns "" when no zone has the ID.
+func ZoneNameForUIMap(uiMap int) string {
+	best := ""
+	consider := func(name string, id int) {
+		if id == uiMap && (len(name) > len(best) || (len(name) == len(best) && name < best)) {
+			best = name
+		}
+	}
+	for name, value := range zoneUIMaps {
+		if id, ok := value.(int); ok {
+			consider(name, id)
+		}
+	}
+	for name, id := range excludedZoneUIMaps {
+		consider(name, id)
+	}
+	return best
+}
+
+// excludedZoneUIMaps names the zones the authoring tool excludes. They are not
+// in zoneUIMaps, so ownership and catalogs do not see them, but their points
+// still need a name for the excluded-zone checks.
+var excludedZoneUIMaps = map[string]int{"Mount Hyjal": 2482, "Riverglades": 2548}

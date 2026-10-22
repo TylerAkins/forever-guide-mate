@@ -38,6 +38,16 @@ assert(next(parity.Compare(sample,pair)),'Deleting a shared source action must f
 sample.guides.source.goals={source,{id='objective-test',kind='objective',complete={quest={id=10,state='complete'}}}}
 assert(next(parity.Compare(sample,pair)),'Adding an unmatched action for a shared quest must fail synchronization')
 print('Loremaster synchronization regression sensitivity passed')
+local canonical={id='turnin-test',kind='turnin',complete={quest={id=42,state='complete'}}}
+local wrapped={id='loremaster-zone-turnin-test',sourceActionID='turnin-test',kind='turnin',
+    complete={quest={id=42,state='complete'}}}
+local wrappedSample={guides={source={goals={canonical}},target={goals={wrapped}}}}
+local wrappedPair={{source='source',target='target',sharedActions={'turnin-test'}}}
+assert(next(parity.Compare(wrappedSample,wrappedPair))==nil,
+    'A route-wrapped action keeps its sourceActionID for parity matching')
+wrapped.complete={quest={id=43,state='complete'}}
+assert(next(parity.Compare(wrappedSample,wrappedPair)),
+    'A wrapped action still reports changed behavior')
 local a={id='a',kind='accept'}
 local b={id='b',kind='turnin'}
 local ordered={guides={source={goals={a,b}},target={goals={b,a}}}}

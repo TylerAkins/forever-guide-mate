@@ -20,13 +20,14 @@ handoffs. Keep dungeon-only work in dungeon guides. Event-only, unused, and
 standalone repeatable quests stay out; retain repeatables needed by included chains.
 Do not inherit the legacy tool's omission list without reviewing each reason.
 
-Read the local `wow-database` source observations. Prefer eligible Wowhead facts,
-then QuestieDB, ATT, and finally the client scrape. The database compiler uses a
-different field priority, so inspect `attributes.sourceData` and provenance rather
-than accepting its selected value blindly. ATT exports stored under a legacy
-`questie` key are not independent Questie evidence. Missing, unavailable, empty,
-and conflicting values are distinct. Preserve unresolved mechanics as unresolved;
-do not invent providers, prerequisites, or coordinates.
+Read the generated QuestieDB export and the matching Questie policy export described
+in `docs/DEVELOPMENT.md`. QuestieDB is the source for quest records, restrictions,
+prerequisites, objectives, providers, levels, and NPC or object spawns. Questie's
+Forever policy supplies holiday membership and quest tag corrections. The tools
+fail on unmapped source fields; preserve unresolved mechanics as unresolved and do
+not invent providers, prerequisites, or coordinates. Review the known source gaps
+in `docs/loremaster/questiedb-migration.md` before interpreting absent quests,
+repeatability, daily flags, locations, or prior Forever-only classification.
 
 Record candidate dispositions, source revision/hashes, ownership, restrictions,
 levels, prerequisite evidence, and action insertion visits under `docs/loremaster/`.
@@ -62,7 +63,10 @@ use the pinned ErebusAres repository as advisory ordering evidence: dedicated
 Alliance Loremaster routes first, matching Horde leveling routes for Horde.
 `--no-strict` is an authoring policy, not an option that disables validation.
 Prerequisites, levels, and suitable visits take precedence; unmatched quests stay
-eligible. Forever-specific quests use wow-database evidence and visit weaving.
+eligible. The source does not identify a per-quest Forever-only set, so do not
+infer one from first-seen patch metadata or upstream availability. Use the exported
+QuestieDB facts and preserve eligibility decisions as unresolved when those facts
+do not support them.
 Record upstream revision, hashes, matches, and deviations. Never use upstream
 prose, coordinates, or availability as Forever quest facts.
 

@@ -1,0 +1,14 @@
+{
+  "holidays": [
+    {"event": "Winter Veil", "hidden": false, "questId": 6961},
+    {"event": "Winter Veil", "hidden": false, "questId": 7043},
+    {"event": "Winter Veil", "hidden": true, "questId": 6983}
+  ],
+  "questTags": {
+    "17": {"name": "Dungeon", "tagId": 81},
+    "166": {"name": "Dungeon", "tagId": 81},
+    "236": {"name": "PvP", "tagId": 41},
+    "256": {"name": "Elite", "tagId": 1},
+    "7021": {"name": "Scenario", "tagId": 98}
+  }
+}

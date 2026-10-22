@@ -6,7 +6,7 @@ ns:RegisterGuide({
     id = "loremaster-burning-steppes",
     title = "Burning Steppes",
     category = "Loremaster Guides",
-    revision = 1,
+    revision = 2,
     routeMode = "ordered",
     loremasterExpanded = true,
     goals = {
@@ -76,13 +76,13 @@ ns:RegisterGuide({
                     y = 0.3899,
                 },
             },
+            sourceActionID = "turnin-3441-divine-retribution",
+            sourceGuide = "leveling-era-alliance-searing-gorge",
             sourceStep = 6,
             text = "Turn in Divine Retribution to Velarok Windblade.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-searing-gorge",
-            sourceActionID = "turnin-3441-divine-retribution",
         },
         {
             complete = { quest = { id = 3442, state = "activeOrCompleted" } },
@@ -186,25 +186,6 @@ ns:RegisterGuide({
                 "alliance-leveling-era-alliance-searing-gorge-objective-3442-1-heart-of-flame",
                 "alliance-leveling-era-alliance-searing-gorge-objective-3442-2-golem-oil",
             },
-            id = "alliance-leveling-era-alliance-searing-gorge-turnin-3442-the-flawless-flame",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 3441 } } },
-            route = {
-                {
-                    label = "Velarok Windblade",
-                    mapID = 1427,
-                    offMapText = "Travel to Velarok Windblade in Searing Gorge.",
-                    x = 0.3905,
-                    y = 0.3899,
-                },
-            },
-            sourceStep = 10,
-            text = "Turn in The Flawless Flame to Velarok Windblade.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-searing-gorge",
-            sourceActionID = "turnin-3442-the-flawless-flame",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -218,6 +199,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-searing-gorge-turnin-3442-the-flawless-flame",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 3441 } } },
+            route = {
+                {
+                    label = "Velarok Windblade",
+                    mapID = 1427,
+                    offMapText = "Travel to Velarok Windblade in Searing Gorge.",
+                    x = 0.3905,
+                    y = 0.3899,
+                },
+            },
+            sourceActionID = "turnin-3442-the-flawless-flame",
+            sourceGuide = "leveling-era-alliance-searing-gorge",
+            sourceStep = 10,
+            text = "Turn in The Flawless Flame to Velarok Windblade.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 3443, state = "activeOrCompleted" } },
@@ -319,25 +319,6 @@ ns:RegisterGuide({
                 "alliance-leveling-era-alliance-searing-gorge-accept-3443-forging-the-shaft",
                 "alliance-leveling-era-alliance-searing-gorge-objective-3443-1-thorium-plated-dagger",
             },
-            id = "alliance-leveling-era-alliance-searing-gorge-turnin-3443-forging-the-shaft",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 3442 } } },
-            route = {
-                {
-                    label = "Velarok Windblade",
-                    mapID = 1427,
-                    offMapText = "Travel to Velarok Windblade in Searing Gorge.",
-                    x = 0.3906,
-                    y = 0.3899,
-                },
-            },
-            sourceStep = 18,
-            text = "Turn in Forging the Shaft to Velarok Windblade.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-searing-gorge",
-            sourceActionID = "turnin-3443-forging-the-shaft",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -364,6 +345,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-searing-gorge-turnin-3443-forging-the-shaft",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 3442 } } },
+            route = {
+                {
+                    label = "Velarok Windblade",
+                    mapID = 1427,
+                    offMapText = "Travel to Velarok Windblade in Searing Gorge.",
+                    x = 0.3906,
+                    y = 0.3899,
+                },
+            },
+            sourceActionID = "turnin-3443-forging-the-shaft",
+            sourceGuide = "leveling-era-alliance-searing-gorge",
+            sourceStep = 18,
+            text = "Turn in Forging the Shaft to Velarok Windblade.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 3452, state = "activeOrCompleted" } },
@@ -491,25 +491,6 @@ ns:RegisterGuide({
                 "alliance-leveling-era-alliance-searing-gorge-accept-3452-the-flame-s-casing",
                 "alliance-leveling-era-alliance-searing-gorge-objective-3452-1-twilight-dark-shaman",
             },
-            id = "alliance-leveling-era-alliance-searing-gorge-turnin-3452-the-flame-s-casing",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 3443 } } },
-            route = {
-                {
-                    label = "Velarok Windblade",
-                    mapID = 1427,
-                    offMapText = "Travel to Velarok Windblade in Searing Gorge.",
-                    x = 0.3905,
-                    y = 0.3899,
-                },
-            },
-            sourceStep = 20,
-            text = "Turn in The Flame's Casing to Velarok Windblade.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-searing-gorge",
-            sourceActionID = "turnin-3452-the-flame-s-casing",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -549,6 +530,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-searing-gorge-turnin-3452-the-flame-s-casing",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 3443 } } },
+            route = {
+                {
+                    label = "Velarok Windblade",
+                    mapID = 1427,
+                    offMapText = "Travel to Velarok Windblade in Searing Gorge.",
+                    x = 0.3905,
+                    y = 0.3899,
+                },
+            },
+            sourceActionID = "turnin-3452-the-flame-s-casing",
+            sourceGuide = "leveling-era-alliance-searing-gorge",
+            sourceStep = 20,
+            text = "Turn in The Flame's Casing to Velarok Windblade.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 3453, state = "activeOrCompleted" } },
@@ -698,25 +698,6 @@ ns:RegisterGuide({
                 "alliance-leveling-era-alliance-searing-gorge-accept-3453-the-torch-of-retribution",
                 "alliance-leveling-era-alliance-searing-gorge-objective-3453-quest-work",
             },
-            id = "alliance-leveling-era-alliance-searing-gorge-turnin-3453-the-torch-of-retribution",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 3452 } } },
-            route = {
-                {
-                    label = "Velarok Windblade",
-                    mapID = 1427,
-                    offMapText = "Travel to Velarok Windblade in Searing Gorge.",
-                    x = 0.3905,
-                    y = 0.3899,
-                },
-            },
-            sourceStep = 22,
-            text = "Turn in The Torch of Retribution to Velarok Windblade.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-searing-gorge",
-            sourceActionID = "turnin-3453-the-torch-of-retribution",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -769,6 +750,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-searing-gorge-turnin-3453-the-torch-of-retribution",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 3452 } } },
+            route = {
+                {
+                    label = "Velarok Windblade",
+                    mapID = 1427,
+                    offMapText = "Travel to Velarok Windblade in Searing Gorge.",
+                    x = 0.3905,
+                    y = 0.3899,
+                },
+            },
+            sourceActionID = "turnin-3453-the-torch-of-retribution",
+            sourceGuide = "leveling-era-alliance-searing-gorge",
+            sourceStep = 22,
+            text = "Turn in The Torch of Retribution to Velarok Windblade.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 3454, state = "activeOrCompleted" } },
@@ -862,25 +862,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 3454, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 40 } } } },
             dependsOn = { "alliance-leveling-era-alliance-searing-gorge-accept-3454-the-torch-of-retribution" },
-            id = "alliance-leveling-era-alliance-searing-gorge-turnin-3454-the-torch-of-retribution",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 3453 } } },
-            route = {
-                {
-                    label = "The Torch of Retribution",
-                    mapID = 1427,
-                    offMapText = "Travel to The Torch of Retribution.",
-                    x = 0.3906,
-                    y = 0.3906,
-                },
-            },
-            sourceStep = 23,
-            text = "Turn in The Torch of Retribution.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-searing-gorge",
-            sourceActionID = "turnin-3454-the-torch-of-retribution",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -946,6 +927,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-searing-gorge-turnin-3454-the-torch-of-retribution",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 3453 } } },
+            route = {
+                {
+                    label = "The Torch of Retribution",
+                    mapID = 1427,
+                    offMapText = "Travel to The Torch of Retribution.",
+                    x = 0.3906,
+                    y = 0.3906,
+                },
+            },
+            sourceActionID = "turnin-3454-the-torch-of-retribution",
+            sourceGuide = "leveling-era-alliance-searing-gorge",
+            sourceStep = 23,
+            text = "Turn in The Torch of Retribution.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 3462, state = "activeOrCompleted" } },
@@ -1052,25 +1052,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 3462, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 40 } } } },
             dependsOn = { "alliance-leveling-era-alliance-searing-gorge-accept-3462-squire-maltrake" },
-            id = "alliance-leveling-era-alliance-searing-gorge-turnin-3462-squire-maltrake",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 3454 } } },
-            route = {
-                {
-                    label = "Squire Maltrake",
-                    mapID = 1427,
-                    offMapText = "Travel to Squire Maltrake in Searing Gorge.",
-                    x = 0.3916,
-                    y = 0.3899,
-                },
-            },
-            sourceStep = 25,
-            text = "Turn in Squire Maltrake to Squire Maltrake.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-searing-gorge",
-            sourceActionID = "turnin-3462-squire-maltrake",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -1149,6 +1130,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-searing-gorge-turnin-3462-squire-maltrake",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 3454 } } },
+            route = {
+                {
+                    label = "Squire Maltrake",
+                    mapID = 1427,
+                    offMapText = "Travel to Squire Maltrake in Searing Gorge.",
+                    x = 0.3916,
+                    y = 0.3899,
+                },
+            },
+            sourceActionID = "turnin-3462-squire-maltrake",
+            sourceGuide = "leveling-era-alliance-searing-gorge",
+            sourceStep = 25,
+            text = "Turn in Squire Maltrake to Squire Maltrake.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 3463, state = "activeOrCompleted" } },
@@ -1698,25 +1698,6 @@ ns:RegisterGuide({
                 "alliance-leveling-era-alliance-searing-gorge-objective-3463-2-authored-Southern-Tower",
                 "alliance-leveling-era-alliance-searing-gorge-objective-3463-3-authored-Eastern-Tower",
             },
-            id = "alliance-leveling-era-alliance-searing-gorge-turnin-3463-set-them-ablaze",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 3462 } } },
-            route = {
-                {
-                    label = "Squire Maltrake",
-                    mapID = 1427,
-                    offMapText = "Travel to Squire Maltrake in Searing Gorge.",
-                    x = 0.3917,
-                    y = 0.39,
-                },
-            },
-            sourceStep = 44,
-            text = "Turn in Set Them Ablaze! to Squire Maltrake.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-searing-gorge",
-            sourceActionID = "turnin-3463-set-them-ablaze",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -1808,6 +1789,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-searing-gorge-turnin-3463-set-them-ablaze",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 3462 } } },
+            route = {
+                {
+                    label = "Squire Maltrake",
+                    mapID = 1427,
+                    offMapText = "Travel to Squire Maltrake in Searing Gorge.",
+                    x = 0.3917,
+                    y = 0.39,
+                },
+            },
+            sourceActionID = "turnin-3463-set-them-ablaze",
+            sourceGuide = "leveling-era-alliance-searing-gorge",
+            sourceStep = 44,
+            text = "Turn in Set Them Ablaze! to Squire Maltrake.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 3481, state = "activeOrCompleted" } },
@@ -1932,17 +1932,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 3481, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 40 } } } },
             dependsOn = { "alliance-leveling-era-alliance-searing-gorge-accept-3481-trinkets" },
-            id = "alliance-leveling-era-alliance-searing-gorge-turnin-3481-trinkets",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 3463 } } },
-            route = { { label = "Trinkets..", mapID = 1427, offMapText = "Travel to Trinkets....", x = 0.3886, y = 0.3899 } },
-            sourceStep = 47,
-            text = "Turn in Trinkets...",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-searing-gorge",
-            sourceActionID = "turnin-3481-trinkets",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -2047,6 +2036,17 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-searing-gorge-turnin-3481-trinkets",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 3463 } } },
+            route = { { label = "Trinkets..", mapID = 1427, offMapText = "Travel to Trinkets....", x = 0.3886, y = 0.3899 } },
+            sourceActionID = "turnin-3481-trinkets",
+            sourceGuide = "leveling-era-alliance-searing-gorge",
+            sourceStep = 47,
+            text = "Turn in Trinkets...",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             alternativeQuests = { 4023 },
@@ -2272,13 +2272,13 @@ ns:RegisterGuide({
             route = {
                 { label = "Oralius", mapID = 1428, offMapText = "Travel to Oralius in Burning Steppes.", x = 0.8456, y = 0.6868 },
             },
+            sourceActionID = "turnin-3823-extinguish-the-firegut",
+            sourceGuide = "leveling-era-alliance-blasted-lands-and-burning-steppes",
             sourceStep = 21,
             text = "Turn in Extinguish the Firegut to Oralius.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-blasted-lands-and-burning-steppes",
-            sourceActionID = "turnin-3823-extinguish-the-firegut",
         },
         {
             id = "visit-entry-leveling-era-alliance-burning-steppes",
@@ -2361,13 +2361,13 @@ ns:RegisterGuide({
                     y = 0.5531,
                 },
             },
+            sourceActionID = "turnin-3702-the-smoldering-ruins-of-thaurissan",
+            sourceGuide = "leveling-era-alliance-burning-steppes",
             sourceStep = 3,
             text = "Turn in The Smoldering Ruins of Thaurissan to Royal Historian Archesonus.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-burning-steppes",
-            sourceActionID = "turnin-3702-the-smoldering-ruins-of-thaurissan",
         },
         {
             complete = { quest = { id = 3701, state = "activeOrCompleted" } },
@@ -2968,25 +2968,6 @@ ns:RegisterGuide({
                 "alliance-leveling-era-alliance-burning-steppes-accept-4022-a-taste-of-flame",
                 "alliance-leveling-era-alliance-burning-steppes-objective-4022-1-frenzied-black-drake",
             },
-            id = "alliance-leveling-era-alliance-burning-steppes-turnin-4022-a-taste-of-flame",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 3481 } } },
-            route = {
-                {
-                    label = "Cyrus Therepentous",
-                    mapID = 1428,
-                    offMapText = "Travel to Cyrus Therepentous in Burning Steppes.",
-                    x = 0.9506,
-                    y = 0.3157,
-                },
-            },
-            sourceStep = 20,
-            text = "Turn in A Taste of Flame to Cyrus Therepentous.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-burning-steppes",
-            sourceActionID = "turnin-4022-a-taste-of-flame",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -3104,6 +3085,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-burning-steppes-turnin-4022-a-taste-of-flame",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 3481 } } },
+            route = {
+                {
+                    label = "Cyrus Therepentous",
+                    mapID = 1428,
+                    offMapText = "Travel to Cyrus Therepentous in Burning Steppes.",
+                    x = 0.9506,
+                    y = 0.3157,
+                },
+            },
+            sourceActionID = "turnin-4022-a-taste-of-flame",
+            sourceGuide = "leveling-era-alliance-burning-steppes",
+            sourceStep = 20,
+            text = "Turn in A Taste of Flame to Cyrus Therepentous.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { questObjective = { count = 8, id = 4726, index = 1, text = "Broodling Essence" } },
@@ -3268,19 +3268,6 @@ ns:RegisterGuide({
                 "alliance-leveling-era-alliance-burning-steppes-accept-3824-gor-tesh-the-brute-lord",
                 "alliance-leveling-era-alliance-burning-steppes-objective-3824-1-gor-tesh",
             },
-            id = "alliance-leveling-era-alliance-burning-steppes-turnin-3824-gor-tesh-the-brute-lord",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 3823 } } },
-            route = {
-                { label = "Oralius", mapID = 1428, offMapText = "Travel to Oralius in Burning Steppes.", x = 0.8456, y = 0.6867 },
-            },
-            sourceStep = 29,
-            text = "Turn in Gor'tesh the Brute Lord to Oralius.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-burning-steppes",
-            sourceActionID = "turnin-3824-gor-tesh-the-brute-lord",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -3301,6 +3288,19 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-burning-steppes-turnin-3824-gor-tesh-the-brute-lord",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 3823 } } },
+            route = {
+                { label = "Oralius", mapID = 1428, offMapText = "Travel to Oralius in Burning Steppes.", x = 0.8456, y = 0.6867 },
+            },
+            sourceActionID = "turnin-3824-gor-tesh-the-brute-lord",
+            sourceGuide = "leveling-era-alliance-burning-steppes",
+            sourceStep = 29,
+            text = "Turn in Gor'tesh the Brute Lord to Oralius.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 3825, state = "activeOrCompleted" } },
@@ -3366,13 +3366,13 @@ ns:RegisterGuide({
             route = {
                 { label = "Oralius", mapID = 1428, offMapText = "Travel to Oralius in Burning Steppes.", x = 0.8456, y = 0.6867 },
             },
+            sourceActionID = "turnin-4283-fifty-yep",
+            sourceGuide = "leveling-era-alliance-burning-steppes",
             sourceStep = 29,
             text = "Turn in FIFTY! YEP! to Oralius.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-burning-steppes",
-            sourceActionID = "turnin-4283-fifty-yep",
         },
         {
             complete = { quest = { id = 4182, state = "completed" } },
@@ -3396,13 +3396,13 @@ ns:RegisterGuide({
                     y = 0.6895,
                 },
             },
+            sourceActionID = "turnin-4182-dragonkin-menace",
+            sourceGuide = "leveling-era-alliance-burning-steppes",
             sourceStep = 31,
             text = "Turn in Dragonkin Menace to Helendis Riverhorn.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-burning-steppes",
-            sourceActionID = "turnin-4182-dragonkin-menace",
         },
         {
             complete = { quest = { id = 4183, state = "activeOrCompleted" } },
@@ -3451,25 +3451,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 4183, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 48 } }, { race = { 1, 3, 4, 7, 95 } } } },
             dependsOn = { "alliance-leveling-era-alliance-burning-steppes-accept-4183-the-true-masters" },
-            id = "alliance-leveling-era-alliance-burning-steppes-turnin-4183-the-true-masters",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 4182 } } },
-            route = {
-                {
-                    label = "Magistrate Solomon",
-                    mapID = 1433,
-                    offMapText = "Travel to Magistrate Solomon in Redridge Mountains.",
-                    x = 0.2999,
-                    y = 0.4445,
-                },
-            },
-            sourceStep = 32,
-            text = "Turn in The True Masters to Magistrate Solomon.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-burning-steppes",
-            sourceActionID = "turnin-4183-the-true-masters",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -3490,6 +3471,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-burning-steppes-turnin-4183-the-true-masters",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 4182 } } },
+            route = {
+                {
+                    label = "Magistrate Solomon",
+                    mapID = 1433,
+                    offMapText = "Travel to Magistrate Solomon in Redridge Mountains.",
+                    x = 0.2999,
+                    y = 0.4445,
+                },
+            },
+            sourceActionID = "turnin-4183-the-true-masters",
+            sourceGuide = "leveling-era-alliance-burning-steppes",
+            sourceStep = 32,
+            text = "Turn in The True Masters to Magistrate Solomon.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 4184, state = "activeOrCompleted" } },
@@ -3552,25 +3552,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 4184, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 48 } }, { race = { 1, 3, 4, 7, 95 } } } },
             dependsOn = { "alliance-leveling-era-alliance-burning-steppes-accept-4184-the-true-masters" },
-            id = "alliance-leveling-era-alliance-burning-steppes-turnin-4184-the-true-masters",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 4183 } } },
-            route = {
-                {
-                    label = "Highlord Bolvar Fordragon",
-                    mapID = 1453,
-                    offMapText = "Travel to Highlord Bolvar Fordragon in Stormwind City.",
-                    x = 0.7822,
-                    y = 0.1799,
-                },
-            },
-            sourceStep = 33,
-            text = "Turn in The True Masters to Highlord Bolvar Fordragon.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-burning-steppes",
-            sourceActionID = "turnin-4184-the-true-masters",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -3605,6 +3586,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-burning-steppes-turnin-4184-the-true-masters",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 4183 } } },
+            route = {
+                {
+                    label = "Highlord Bolvar Fordragon",
+                    mapID = 1453,
+                    offMapText = "Travel to Highlord Bolvar Fordragon in Stormwind City.",
+                    x = 0.7822,
+                    y = 0.1799,
+                },
+            },
+            sourceActionID = "turnin-4184-the-true-masters",
+            sourceGuide = "leveling-era-alliance-burning-steppes",
+            sourceStep = 33,
+            text = "Turn in The True Masters to Highlord Bolvar Fordragon.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 4185, state = "activeOrCompleted" } },
@@ -3746,25 +3746,6 @@ ns:RegisterGuide({
                 "alliance-leveling-era-alliance-burning-steppes-accept-4185-the-true-masters",
                 "alliance-leveling-era-alliance-burning-steppes-objective-4185-quest-work",
             },
-            id = "alliance-leveling-era-alliance-burning-steppes-turnin-4185-the-true-masters",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 4184 } } },
-            route = {
-                {
-                    label = "Highlord Bolvar Fordragon",
-                    mapID = 1453,
-                    offMapText = "Travel to Highlord Bolvar Fordragon in Stormwind City.",
-                    x = 0.7822,
-                    y = 0.1799,
-                },
-            },
-            sourceStep = 35,
-            text = "Turn in The True Masters to Highlord Bolvar Fordragon.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-burning-steppes",
-            sourceActionID = "turnin-4185-the-true-masters",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -3813,6 +3794,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-burning-steppes-turnin-4185-the-true-masters",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 4184 } } },
+            route = {
+                {
+                    label = "Highlord Bolvar Fordragon",
+                    mapID = 1453,
+                    offMapText = "Travel to Highlord Bolvar Fordragon in Stormwind City.",
+                    x = 0.7822,
+                    y = 0.1799,
+                },
+            },
+            sourceActionID = "turnin-4185-the-true-masters",
+            sourceGuide = "leveling-era-alliance-burning-steppes",
+            sourceStep = 35,
+            text = "Turn in The True Masters to Highlord Bolvar Fordragon.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 4186, state = "activeOrCompleted" } },
@@ -3903,25 +3903,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 4186, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 48 } }, { race = { 1, 3, 4, 7, 95 } } } },
             dependsOn = { "alliance-leveling-era-alliance-burning-steppes-accept-4186-the-true-masters" },
-            id = "alliance-leveling-era-alliance-burning-steppes-turnin-4186-the-true-masters",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 4185 } } },
-            route = {
-                {
-                    label = "Magistrate Solomon",
-                    mapID = 1433,
-                    offMapText = "Travel to Magistrate Solomon in Redridge Mountains.",
-                    x = 0.2999,
-                    y = 0.4445,
-                },
-            },
-            sourceStep = 41,
-            text = "Turn in The True Masters to Magistrate Solomon.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-burning-steppes",
-            sourceActionID = "turnin-4186-the-true-masters",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -3984,6 +3965,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-burning-steppes-turnin-4186-the-true-masters",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 4185 } } },
+            route = {
+                {
+                    label = "Magistrate Solomon",
+                    mapID = 1433,
+                    offMapText = "Travel to Magistrate Solomon in Redridge Mountains.",
+                    x = 0.2999,
+                    y = 0.4445,
+                },
+            },
+            sourceActionID = "turnin-4186-the-true-masters",
+            sourceGuide = "leveling-era-alliance-burning-steppes",
+            sourceStep = 41,
+            text = "Turn in The True Masters to Magistrate Solomon.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 4223, state = "activeOrCompleted" } },
@@ -4088,25 +4088,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 4223, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 48 } }, { race = { 1, 3, 4, 7, 95 } } } },
             dependsOn = { "alliance-leveling-era-alliance-burning-steppes-accept-4223-the-true-masters" },
-            id = "alliance-leveling-era-alliance-burning-steppes-turnin-4223-the-true-masters",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 4186 } } },
-            route = {
-                {
-                    label = "Marshal Maxwell",
-                    mapID = 1428,
-                    offMapText = "Travel to Marshal Maxwell in Burning Steppes.",
-                    x = 0.8475,
-                    y = 0.6902,
-                },
-            },
-            sourceStep = 42,
-            text = "Turn in The True Masters to Marshal Maxwell.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-burning-steppes",
-            sourceActionID = "turnin-4223-the-true-masters",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -4183,6 +4164,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-burning-steppes-turnin-4223-the-true-masters",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 4186 } } },
+            route = {
+                {
+                    label = "Marshal Maxwell",
+                    mapID = 1428,
+                    offMapText = "Travel to Marshal Maxwell in Burning Steppes.",
+                    x = 0.8475,
+                    y = 0.6902,
+                },
+            },
+            sourceActionID = "turnin-4223-the-true-masters",
+            sourceGuide = "leveling-era-alliance-burning-steppes",
+            sourceStep = 42,
+            text = "Turn in The True Masters to Marshal Maxwell.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 4224, state = "activeOrCompleted" } },
@@ -4316,13 +4316,13 @@ ns:RegisterGuide({
                     y = 0.2399,
                 },
             },
+            sourceActionID = "turnin-4726-broodling-essence",
+            sourceGuide = "leveling-era-alliance-burning-steppes",
             sourceStep = 43,
             text = "Turn in Broodling Essence to Tinkee Steamboil.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-burning-steppes",
-            sourceActionID = "turnin-4726-broodling-essence",
         },
         {
             complete = { quest = { id = 4808, state = "activeOrCompleted" } },
@@ -4379,13 +4379,13 @@ ns:RegisterGuide({
                     y = 0.2391,
                 },
             },
+            sourceActionID = "turnin-4296-tablet-of-the-seven",
+            sourceGuide = "leveling-era-alliance-burning-steppes",
             sourceStep = 44,
             text = "Turn in Tablet of the Seven to Maxwort Uberglint.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-burning-steppes",
-            sourceActionID = "turnin-4296-tablet-of-the-seven",
         },
         {
             complete = { quest = { id = 3825, state = "complete" } },
@@ -4442,19 +4442,6 @@ ns:RegisterGuide({
                 "alliance-leveling-era-alliance-burning-steppes-accept-3825-ogre-head-on-a-stick-party",
                 "alliance-leveling-era-alliance-burning-steppes-objective-3825-quest-work",
             },
-            id = "alliance-leveling-era-alliance-burning-steppes-turnin-3825-ogre-head-on-a-stick-party",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 3824 } } },
-            route = {
-                { label = "Oralius", mapID = 1428, offMapText = "Travel to Oralius in Burning Steppes.", x = 0.8456, y = 0.6867 },
-            },
-            sourceStep = 47,
-            text = "Turn in Ogre Head On A Stick = Party to Oralius.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-burning-steppes",
-            sourceActionID = "turnin-3825-ogre-head-on-a-stick-party",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -4489,6 +4476,19 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-burning-steppes-turnin-3825-ogre-head-on-a-stick-party",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 3824 } } },
+            route = {
+                { label = "Oralius", mapID = 1428, offMapText = "Travel to Oralius in Burning Steppes.", x = 0.8456, y = 0.6867 },
+            },
+            sourceActionID = "turnin-3825-ogre-head-on-a-stick-party",
+            sourceGuide = "leveling-era-alliance-burning-steppes",
+            sourceStep = 47,
+            text = "Turn in Ogre Head On A Stick = Party to Oralius.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 4224, state = "complete" } },
@@ -4601,25 +4601,6 @@ ns:RegisterGuide({
                 "alliance-leveling-era-alliance-burning-steppes-accept-4224-the-true-masters",
                 "alliance-leveling-era-alliance-burning-steppes-objective-4224-quest-work",
             },
-            id = "alliance-leveling-era-alliance-burning-steppes-turnin-4224-the-true-masters",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 4223 } } },
-            route = {
-                {
-                    label = "Marshal Maxwell",
-                    mapID = 1428,
-                    offMapText = "Travel to Marshal Maxwell in Burning Steppes.",
-                    x = 0.8474,
-                    y = 0.6901,
-                },
-            },
-            sourceStep = 48,
-            text = "Turn in The True Masters to Marshal Maxwell.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-burning-steppes",
-            sourceActionID = "turnin-4224-the-true-masters",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -4710,6 +4691,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-burning-steppes-turnin-4224-the-true-masters",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 4223 } } },
+            route = {
+                {
+                    label = "Marshal Maxwell",
+                    mapID = 1428,
+                    offMapText = "Travel to Marshal Maxwell in Burning Steppes.",
+                    x = 0.8474,
+                    y = 0.6901,
+                },
+            },
+            sourceActionID = "turnin-4224-the-true-masters",
+            sourceGuide = "leveling-era-alliance-burning-steppes",
+            sourceStep = 48,
+            text = "Turn in The True Masters to Marshal Maxwell.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             id = "visit-entry-leveling-era-alliance-western-and-eastern-plaguelands",
@@ -4794,25 +4794,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 3701, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 50 } }, { race = { 1, 3, 4, 7, 95 } } } },
             dependsOn = { "alliance-leveling-era-alliance-western-and-eastern-plaguelands-objective-3701-quest-work" },
-            id = "alliance-leveling-era-alliance-western-and-eastern-plaguelands-turnin-3701-the-smoldering-ruins-of-thaurissan",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 3702 } } },
-            route = {
-                {
-                    label = "Royal Historian Archesonus",
-                    mapID = 1455,
-                    offMapText = "Travel to Royal Historian Archesonus in Ironforge.",
-                    x = 0.3837,
-                    y = 0.5531,
-                },
-            },
-            sourceStep = 4,
-            text = "Turn in The Smoldering Ruins of Thaurissan to Royal Historian Archesonus.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-western-and-eastern-plaguelands",
-            sourceActionID = "turnin-3701-the-smoldering-ruins-of-thaurissan",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -4833,6 +4814,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-western-and-eastern-plaguelands-turnin-3701-the-smoldering-ruins-of-thaurissan",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 3702 } } },
+            route = {
+                {
+                    label = "Royal Historian Archesonus",
+                    mapID = 1455,
+                    offMapText = "Travel to Royal Historian Archesonus in Ironforge.",
+                    x = 0.3837,
+                    y = 0.5531,
+                },
+            },
+            sourceActionID = "turnin-3701-the-smoldering-ruins-of-thaurissan",
+            sourceGuide = "leveling-era-alliance-western-and-eastern-plaguelands",
+            sourceStep = 4,
+            text = "Turn in The Smoldering Ruins of Thaurissan to Royal Historian Archesonus.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             id = "visit-entry-leveling-era-alliance-winterspring",
@@ -4876,25 +4876,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 4808, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 50 } } } },
             dependsOn = {},
-            id = "alliance-leveling-era-alliance-winterspring-turnin-4808-felnok-steelspring",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 4726 } } },
-            route = {
-                {
-                    label = "Felnok Steelspring",
-                    mapID = 1452,
-                    offMapText = "Travel to Felnok Steelspring in Winterspring.",
-                    x = 0.6163,
-                    y = 0.3861,
-                },
-            },
-            sourceStep = 7,
-            text = "Turn in Felnok Steelspring to Felnok Steelspring.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-winterspring",
-            sourceActionID = "turnin-4808-felnok-steelspring",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -4908,6 +4889,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-winterspring-turnin-4808-felnok-steelspring",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 4726 } } },
+            route = {
+                {
+                    label = "Felnok Steelspring",
+                    mapID = 1452,
+                    offMapText = "Travel to Felnok Steelspring in Winterspring.",
+                    x = 0.6163,
+                    y = 0.3861,
+                },
+            },
+            sourceActionID = "turnin-4808-felnok-steelspring",
+            sourceGuide = "leveling-era-alliance-winterspring",
+            sourceStep = 7,
+            text = "Turn in Felnok Steelspring to Felnok Steelspring.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             id = "visit-entry-leveling-era-horde-searing-gorge",
@@ -5013,13 +5013,13 @@ ns:RegisterGuide({
                     y = 0.3899,
                 },
             },
+            sourceActionID = "turnin-3441-divine-retribution",
+            sourceGuide = "leveling-era-horde-searing-gorge",
             sourceStep = 8,
             text = "Turn in Divine Retribution to Velarok Windblade.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-searing-gorge",
-            sourceActionID = "turnin-3441-divine-retribution",
         },
         {
             complete = { quest = { id = 3442, state = "activeOrCompleted" } },
@@ -5123,25 +5123,6 @@ ns:RegisterGuide({
                 "horde-leveling-era-horde-searing-gorge-objective-3442-1-heart-of-flame",
                 "horde-leveling-era-horde-searing-gorge-objective-3442-2-golem-oil",
             },
-            id = "horde-leveling-era-horde-searing-gorge-turnin-3442-the-flawless-flame",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 3441 } } },
-            route = {
-                {
-                    label = "Velarok Windblade",
-                    mapID = 1427,
-                    offMapText = "Travel to Velarok Windblade in Searing Gorge.",
-                    x = 0.3905,
-                    y = 0.3899,
-                },
-            },
-            sourceStep = 15,
-            text = "Turn in The Flawless Flame to Velarok Windblade.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-searing-gorge",
-            sourceActionID = "turnin-3442-the-flawless-flame",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -5155,6 +5136,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-searing-gorge-turnin-3442-the-flawless-flame",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 3441 } } },
+            route = {
+                {
+                    label = "Velarok Windblade",
+                    mapID = 1427,
+                    offMapText = "Travel to Velarok Windblade in Searing Gorge.",
+                    x = 0.3905,
+                    y = 0.3899,
+                },
+            },
+            sourceActionID = "turnin-3442-the-flawless-flame",
+            sourceGuide = "leveling-era-horde-searing-gorge",
+            sourceStep = 15,
+            text = "Turn in The Flawless Flame to Velarok Windblade.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 3443, state = "activeOrCompleted" } },
@@ -5256,25 +5256,6 @@ ns:RegisterGuide({
                 "horde-leveling-era-horde-searing-gorge-accept-3443-forging-the-shaft",
                 "horde-leveling-era-horde-searing-gorge-objective-3443-1-thorium-plated-dagger",
             },
-            id = "horde-leveling-era-horde-searing-gorge-turnin-3443-forging-the-shaft",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 3442 } } },
-            route = {
-                {
-                    label = "Velarok Windblade",
-                    mapID = 1427,
-                    offMapText = "Travel to Velarok Windblade in Searing Gorge.",
-                    x = 0.3906,
-                    y = 0.3899,
-                },
-            },
-            sourceStep = 23,
-            text = "Turn in Forging the Shaft to Velarok Windblade.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-searing-gorge",
-            sourceActionID = "turnin-3443-forging-the-shaft",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -5301,6 +5282,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-searing-gorge-turnin-3443-forging-the-shaft",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 3442 } } },
+            route = {
+                {
+                    label = "Velarok Windblade",
+                    mapID = 1427,
+                    offMapText = "Travel to Velarok Windblade in Searing Gorge.",
+                    x = 0.3906,
+                    y = 0.3899,
+                },
+            },
+            sourceActionID = "turnin-3443-forging-the-shaft",
+            sourceGuide = "leveling-era-horde-searing-gorge",
+            sourceStep = 23,
+            text = "Turn in Forging the Shaft to Velarok Windblade.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 3452, state = "activeOrCompleted" } },
@@ -5428,25 +5428,6 @@ ns:RegisterGuide({
                 "horde-leveling-era-horde-searing-gorge-accept-3452-the-flame-s-casing",
                 "horde-leveling-era-horde-searing-gorge-objective-3452-1-twilight-dark-shaman",
             },
-            id = "horde-leveling-era-horde-searing-gorge-turnin-3452-the-flame-s-casing",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 3443 } } },
-            route = {
-                {
-                    label = "Velarok Windblade",
-                    mapID = 1427,
-                    offMapText = "Travel to Velarok Windblade in Searing Gorge.",
-                    x = 0.3905,
-                    y = 0.3899,
-                },
-            },
-            sourceStep = 25,
-            text = "Turn in The Flame's Casing to Velarok Windblade.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-searing-gorge",
-            sourceActionID = "turnin-3452-the-flame-s-casing",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -5486,6 +5467,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-searing-gorge-turnin-3452-the-flame-s-casing",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 3443 } } },
+            route = {
+                {
+                    label = "Velarok Windblade",
+                    mapID = 1427,
+                    offMapText = "Travel to Velarok Windblade in Searing Gorge.",
+                    x = 0.3905,
+                    y = 0.3899,
+                },
+            },
+            sourceActionID = "turnin-3452-the-flame-s-casing",
+            sourceGuide = "leveling-era-horde-searing-gorge",
+            sourceStep = 25,
+            text = "Turn in The Flame's Casing to Velarok Windblade.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 3453, state = "activeOrCompleted" } },
@@ -5635,25 +5635,6 @@ ns:RegisterGuide({
                 "horde-leveling-era-horde-searing-gorge-accept-3453-the-torch-of-retribution",
                 "horde-leveling-era-horde-searing-gorge-objective-3453-quest-work",
             },
-            id = "horde-leveling-era-horde-searing-gorge-turnin-3453-the-torch-of-retribution",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 3452 } } },
-            route = {
-                {
-                    label = "Velarok Windblade",
-                    mapID = 1427,
-                    offMapText = "Travel to Velarok Windblade in Searing Gorge.",
-                    x = 0.3905,
-                    y = 0.3899,
-                },
-            },
-            sourceStep = 27,
-            text = "Turn in The Torch of Retribution to Velarok Windblade.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-searing-gorge",
-            sourceActionID = "turnin-3453-the-torch-of-retribution",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -5706,6 +5687,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-searing-gorge-turnin-3453-the-torch-of-retribution",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 3452 } } },
+            route = {
+                {
+                    label = "Velarok Windblade",
+                    mapID = 1427,
+                    offMapText = "Travel to Velarok Windblade in Searing Gorge.",
+                    x = 0.3905,
+                    y = 0.3899,
+                },
+            },
+            sourceActionID = "turnin-3453-the-torch-of-retribution",
+            sourceGuide = "leveling-era-horde-searing-gorge",
+            sourceStep = 27,
+            text = "Turn in The Torch of Retribution to Velarok Windblade.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 3454, state = "activeOrCompleted" } },
@@ -5799,25 +5799,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 3454, state = "completed" } },
             conditions = { all = { { faction = "Horde" }, { level = { min = 40 } } } },
             dependsOn = { "horde-leveling-era-horde-searing-gorge-accept-3454-the-torch-of-retribution" },
-            id = "horde-leveling-era-horde-searing-gorge-turnin-3454-the-torch-of-retribution",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 3453 } } },
-            route = {
-                {
-                    label = "The Torch of Retribution",
-                    mapID = 1427,
-                    offMapText = "Travel to The Torch of Retribution.",
-                    x = 0.3906,
-                    y = 0.3906,
-                },
-            },
-            sourceStep = 28,
-            text = "Turn in The Torch of Retribution.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-searing-gorge",
-            sourceActionID = "turnin-3454-the-torch-of-retribution",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -5883,6 +5864,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-searing-gorge-turnin-3454-the-torch-of-retribution",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 3453 } } },
+            route = {
+                {
+                    label = "The Torch of Retribution",
+                    mapID = 1427,
+                    offMapText = "Travel to The Torch of Retribution.",
+                    x = 0.3906,
+                    y = 0.3906,
+                },
+            },
+            sourceActionID = "turnin-3454-the-torch-of-retribution",
+            sourceGuide = "leveling-era-horde-searing-gorge",
+            sourceStep = 28,
+            text = "Turn in The Torch of Retribution.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 3462, state = "activeOrCompleted" } },
@@ -5989,25 +5989,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 3462, state = "completed" } },
             conditions = { all = { { faction = "Horde" }, { level = { min = 40 } } } },
             dependsOn = { "horde-leveling-era-horde-searing-gorge-accept-3462-squire-maltrake" },
-            id = "horde-leveling-era-horde-searing-gorge-turnin-3462-squire-maltrake",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 3454 } } },
-            route = {
-                {
-                    label = "Squire Maltrake",
-                    mapID = 1427,
-                    offMapText = "Travel to Squire Maltrake in Searing Gorge.",
-                    x = 0.3916,
-                    y = 0.3899,
-                },
-            },
-            sourceStep = 30,
-            text = "Turn in Squire Maltrake to Squire Maltrake.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-searing-gorge",
-            sourceActionID = "turnin-3462-squire-maltrake",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -6086,6 +6067,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-searing-gorge-turnin-3462-squire-maltrake",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 3454 } } },
+            route = {
+                {
+                    label = "Squire Maltrake",
+                    mapID = 1427,
+                    offMapText = "Travel to Squire Maltrake in Searing Gorge.",
+                    x = 0.3916,
+                    y = 0.3899,
+                },
+            },
+            sourceActionID = "turnin-3462-squire-maltrake",
+            sourceGuide = "leveling-era-horde-searing-gorge",
+            sourceStep = 30,
+            text = "Turn in Squire Maltrake to Squire Maltrake.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 3463, state = "activeOrCompleted" } },
@@ -6635,25 +6635,6 @@ ns:RegisterGuide({
                 "horde-leveling-era-horde-searing-gorge-objective-3463-2-authored-Southern-Tower",
                 "horde-leveling-era-horde-searing-gorge-objective-3463-3-authored-Eastern-Tower",
             },
-            id = "horde-leveling-era-horde-searing-gorge-turnin-3463-set-them-ablaze",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 3462 } } },
-            route = {
-                {
-                    label = "Squire Maltrake",
-                    mapID = 1427,
-                    offMapText = "Travel to Squire Maltrake in Searing Gorge.",
-                    x = 0.3917,
-                    y = 0.39,
-                },
-            },
-            sourceStep = 40,
-            text = "Turn in Set Them Ablaze! to Squire Maltrake.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-searing-gorge",
-            sourceActionID = "turnin-3463-set-them-ablaze",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -6745,6 +6726,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-searing-gorge-turnin-3463-set-them-ablaze",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 3462 } } },
+            route = {
+                {
+                    label = "Squire Maltrake",
+                    mapID = 1427,
+                    offMapText = "Travel to Squire Maltrake in Searing Gorge.",
+                    x = 0.3917,
+                    y = 0.39,
+                },
+            },
+            sourceActionID = "turnin-3463-set-them-ablaze",
+            sourceGuide = "leveling-era-horde-searing-gorge",
+            sourceStep = 40,
+            text = "Turn in Set Them Ablaze! to Squire Maltrake.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 3481, state = "activeOrCompleted" } },
@@ -6869,17 +6869,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 3481, state = "completed" } },
             conditions = { all = { { faction = "Horde" }, { level = { min = 40 } } } },
             dependsOn = { "horde-leveling-era-horde-searing-gorge-accept-3481-trinkets" },
-            id = "horde-leveling-era-horde-searing-gorge-turnin-3481-trinkets",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 3463 } } },
-            route = { { label = "Trinkets..", mapID = 1427, offMapText = "Travel to Trinkets....", x = 0.3886, y = 0.3899 } },
-            sourceStep = 43,
-            text = "Turn in Trinkets...",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-searing-gorge",
-            sourceActionID = "turnin-3481-trinkets",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -6984,6 +6973,17 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-searing-gorge-turnin-3481-trinkets",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 3463 } } },
+            route = { { label = "Trinkets..", mapID = 1427, offMapText = "Travel to Trinkets....", x = 0.3886, y = 0.3899 } },
+            sourceActionID = "turnin-3481-trinkets",
+            sourceGuide = "leveling-era-horde-searing-gorge",
+            sourceStep = 43,
+            text = "Turn in Trinkets...",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             alternativeQuests = { 4023 },
@@ -7237,13 +7237,13 @@ ns:RegisterGuide({
                     y = 0.4552,
                 },
             },
+            sourceActionID = "turnin-3821-dreadmaul-rock",
+            sourceGuide = "leveling-era-horde-burning-steppes-and-azshara",
             sourceStep = 8,
             text = "Turn in Dreadmaul Rock to Sha'ni Proudtusk.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-burning-steppes-and-azshara",
-            sourceActionID = "turnin-3821-dreadmaul-rock",
         },
         {
             alternativeQuests = { 4023 },
@@ -7668,25 +7668,6 @@ ns:RegisterGuide({
                 "horde-leveling-era-horde-burning-steppes-and-azshara-accept-4022-a-taste-of-flame",
                 "horde-leveling-era-horde-burning-steppes-and-azshara-objective-4022-quest-work",
             },
-            id = "horde-leveling-era-horde-burning-steppes-and-azshara-turnin-4022-a-taste-of-flame",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 3481 } } },
-            route = {
-                {
-                    label = "Cyrus Therepentous",
-                    mapID = 1428,
-                    offMapText = "Travel to Cyrus Therepentous in Burning Steppes.",
-                    x = 0.9506,
-                    y = 0.3157,
-                },
-            },
-            sourceStep = 12,
-            text = "Turn in A Taste of Flame to Cyrus Therepentous.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-burning-steppes-and-azshara",
-            sourceActionID = "turnin-4022-a-taste-of-flame",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -7804,6 +7785,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-burning-steppes-and-azshara-turnin-4022-a-taste-of-flame",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 3481 } } },
+            route = {
+                {
+                    label = "Cyrus Therepentous",
+                    mapID = 1428,
+                    offMapText = "Travel to Cyrus Therepentous in Burning Steppes.",
+                    x = 0.9506,
+                    y = 0.3157,
+                },
+            },
+            sourceActionID = "turnin-4022-a-taste-of-flame",
+            sourceGuide = "leveling-era-horde-burning-steppes-and-azshara",
+            sourceStep = 12,
+            text = "Turn in A Taste of Flame to Cyrus Therepentous.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { questObjective = { count = 8, id = 4726, index = 1, text = "Broodling Essence" } },
@@ -7842,13 +7842,13 @@ ns:RegisterGuide({
                     y = 0.2399,
                 },
             },
+            sourceActionID = "turnin-4726-broodling-essence",
+            sourceGuide = "leveling-era-horde-burning-steppes-and-azshara",
             sourceStep = 14,
             text = "Turn in Broodling Essence to Tinkee Steamboil.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-burning-steppes-and-azshara",
-            sourceActionID = "turnin-4726-broodling-essence",
         },
         {
             complete = { quest = { id = 4808, state = "activeOrCompleted" } },
@@ -7905,13 +7905,13 @@ ns:RegisterGuide({
                     y = 0.2391,
                 },
             },
+            sourceActionID = "turnin-4296-tablet-of-the-seven",
+            sourceGuide = "leveling-era-horde-burning-steppes-and-azshara",
             sourceStep = 15,
             text = "Turn in Tablet of the Seven to Maxwort Uberglint.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-burning-steppes-and-azshara",
-            sourceActionID = "turnin-4296-tablet-of-the-seven",
         },
         {
             id = "visit-entry-leveling-era-horde-felwood-and-winterspring",
@@ -7927,25 +7927,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 4808, state = "completed" } },
             conditions = { all = { { faction = "Horde" }, { level = { min = 50 } } } },
             dependsOn = {},
-            id = "horde-leveling-era-horde-felwood-and-winterspring-turnin-4808-felnok-steelspring",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 4726 } } },
-            route = {
-                {
-                    label = "Felnok Steelspring",
-                    mapID = 1452,
-                    offMapText = "Travel to Felnok Steelspring in Winterspring.",
-                    x = 0.6163,
-                    y = 0.3861,
-                },
-            },
-            sourceStep = 31,
-            text = "Turn in Felnok Steelspring to Felnok Steelspring.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-felwood-and-winterspring",
-            sourceActionID = "turnin-4808-felnok-steelspring",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -7959,63 +7940,100 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-felwood-and-winterspring-turnin-4808-felnok-steelspring",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 4726 } } },
+            route = {
+                {
+                    label = "Felnok Steelspring",
+                    mapID = 1452,
+                    offMapText = "Travel to Felnok Steelspring in Winterspring.",
+                    x = 0.6163,
+                    y = 0.3861,
+                },
+            },
+            sourceActionID = "turnin-4808-felnok-steelspring",
+            sourceGuide = "leveling-era-horde-felwood-and-winterspring",
+            sourceStep = 31,
+            text = "Turn in Felnok Steelspring to Felnok Steelspring.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
+            checkpointQuest = 3822,
+            complete = { level = { min = 48 } },
+            conditions = { all = { { faction = "Horde" } } },
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 3822, state = "activeOrCompleted" } },
+                        {
+                            any = {
+                                { quest = { id = 3822, state = "completed" } },
+                                {
+                                    all = {
+                                        { faction = "Horde" },
+                                        { any = { { any = { { quest = { id = 3821, state = "completed" } }, { all = { { faction = "Horde" } } } } } } },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
             id = "horde-extra-3822-level",
             kind = "note",
-            checkpointQuest = 3822,
-            text = "Reach level 53 before this visit.",
-            conditions = { all = { { faction = "Horde" } } },
-            complete = { level = { min = 53 } },
-            requiredLevel = 53,
-            excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 3822, state = "activeOrCompleted" } },
-                        {
-                            any = {
-                                { quest = { id = 3822, state = "completed" } },
-                                {
-                                    all = {
-                                        { faction = "Horde" },
-                                        { any = { { any = { { quest = { id = 3821, state = "completed" } }, { all = { { faction = "Horde" } } } } } } },
-                                    },
-                                },
-                            },
-                        },
-                    },
-                },
-            },
+            requiredLevel = 48,
+            text = "Reach level 48 before this visit.",
         },
         {
-            id = "horde-extra-3822-accept",
-            kind = "accept",
-            text = "Accept Krom'Grul from Sha'ni Proudtusk.",
-            conditions = { all = { { faction = "Horde" }, { level = { min = 48 } } } },
-            route = {
-                {
-                    mapID = 1428,
-                    x = 0.7979999999999999,
-                    y = 0.45399999999999996,
-                    label = "Sha'ni Proudtusk",
-                    offMapText = "Travel to Sha'ni Proudtusk in Burning Steppes.",
-                },
-            },
             complete = { quest = { id = 3822, state = "activeOrCompleted" } },
-            requiredQuests = { { mode = "any", quests = { 3821 } } },
-            useClientText = false,
+            conditions = { all = { { faction = "Horde" }, { level = { min = 48 } } } },
             dependsOn = { "horde-extra-3822-level" },
             excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 3822, state = "activeOrCompleted" } },
-                        {
+                any = {
+                    {
+                        ["not"] = {
                             any = {
-                                { quest = { id = 3822, state = "completed" } },
+                                { quest = { id = 3822, state = "activeOrCompleted" } },
                                 {
-                                    all = {
-                                        { faction = "Horde" },
-                                        { any = { { any = { { quest = { id = 3821, state = "completed" } }, { all = { { faction = "Horde" } } } } } } },
+                                    any = {
+                                        { quest = { id = 3822, state = "completed" } },
+                                        {
+                                            all = {
+                                                { faction = "Horde" },
+                                                { any = { { any = { { quest = { id = 3821, state = "completed" } }, { all = { { faction = "Horde" } } } } } } },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 3822, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 3822, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                { faction = "Horde" },
+                                                { race = { 2, 5, 6, 8 } },
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 3821, state = "activeOrCompleted" } },
+                                                                { all = { { faction = "Horde" }, { race = { 2, 5, 6, 8 } } } },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
                                     },
                                 },
                             },
@@ -8023,67 +8041,68 @@ ns:RegisterGuide({
                     },
                 },
             },
-        },
-        {
-            id = "horde-extra-3822-objective",
-            kind = "objective",
-            text = "Search the caves and mines in Dreadmaul Rock. Defeat Krom'Grul and loot Sha'ni's Nose-Ring.",
-            conditions = { all = { { faction = "Horde" }, { level = { min = 48 } } } },
-            route = {
-                { mapID = 1428, x = 0.782, y = 0.414, label = "Krom'Grul", offMapText = "Travel to Krom'Grul in Burning Steppes." },
-            },
-            complete = { quest = { id = 3822, state = "complete" } },
+            id = "horde-extra-3822-accept",
+            kind = "accept",
             requiredQuests = { { mode = "any", quests = { 3821 } } },
-            useClientText = false,
-            dependsOn = { "horde-extra-3822-accept" },
-            excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 3822, state = "activeOrCompleted" } },
-                        {
-                            any = {
-                                { quest = { id = 3822, state = "completed" } },
-                                {
-                                    all = {
-                                        { faction = "Horde" },
-                                        { any = { { any = { { quest = { id = 3821, state = "completed" } }, { all = { { faction = "Horde" } } } } } } },
-                                    },
-                                },
-                            },
-                        },
-                    },
-                },
-            },
-        },
-        {
-            id = "horde-extra-3822-turnin",
-            kind = "turnin",
-            text = "Turn in Krom'Grul to Thal'trak Proudtusk.",
-            conditions = { all = { { faction = "Horde" }, { level = { min = 48 } } } },
             route = {
                 {
-                    mapID = 1418,
-                    x = 0.034,
-                    y = 0.48,
-                    label = "Thal'trak Proudtusk",
-                    offMapText = "Travel to Thal'trak Proudtusk in Badlands.",
+                    label = "Sha'ni Proudtusk",
+                    mapID = 1428,
+                    offMapText = "Travel to Sha'ni Proudtusk in Burning Steppes.",
+                    x = 0.798,
+                    y = 0.454,
                 },
             },
-            complete = { quest = { id = 3822, state = "completed" } },
-            requiredQuests = { { mode = "any", quests = { 3821 } } },
+            text = "Accept Krom'Grul from Sha'ni Proudtusk.",
             useClientText = false,
-            dependsOn = { "horde-extra-3822-objective" },
+        },
+        {
+            complete = { quest = { id = 3822, state = "complete" } },
+            conditions = { all = { { faction = "Horde" }, { level = { min = 48 } } } },
+            dependsOn = { "horde-extra-3822-accept" },
             excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 3822, state = "activeOrCompleted" } },
-                        {
+                any = {
+                    {
+                        ["not"] = {
                             any = {
-                                { quest = { id = 3822, state = "completed" } },
+                                { quest = { id = 3822, state = "activeOrCompleted" } },
                                 {
-                                    all = {
-                                        { faction = "Horde" },
-                                        { any = { { any = { { quest = { id = 3821, state = "completed" } }, { all = { { faction = "Horde" } } } } } } },
+                                    any = {
+                                        { quest = { id = 3822, state = "completed" } },
+                                        {
+                                            all = {
+                                                { faction = "Horde" },
+                                                { any = { { any = { { quest = { id = 3821, state = "completed" } }, { all = { { faction = "Horde" } } } } } } },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 3822, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 3822, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                { faction = "Horde" },
+                                                { race = { 2, 5, 6, 8 } },
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 3821, state = "activeOrCompleted" } },
+                                                                { all = { { faction = "Horde" }, { race = { 2, 5, 6, 8 } } } },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
                                     },
                                 },
                             },
@@ -8091,6 +8110,86 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-extra-3822-objective",
+            kind = "objective",
+            requiredQuests = { { mode = "any", quests = { 3821 } } },
+            route = {
+                { label = "Krom'Grul", mapID = 1428, offMapText = "Travel to Krom'Grul in Burning Steppes.", x = 0.782, y = 0.414 },
+            },
+            text = "Search the caves and mines in Dreadmaul Rock. Defeat Krom'Grul and loot Sha'ni's Nose-Ring.",
+            useClientPin = true,
+            useClientText = false,
+        },
+        {
+            complete = { quest = { id = 3822, state = "completed" } },
+            conditions = { all = { { faction = "Horde" }, { level = { min = 48 } } } },
+            dependsOn = { "horde-extra-3822-objective" },
+            excludeWhen = {
+                any = {
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 3822, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 3822, state = "completed" } },
+                                        {
+                                            all = {
+                                                { faction = "Horde" },
+                                                { any = { { any = { { quest = { id = 3821, state = "completed" } }, { all = { { faction = "Horde" } } } } } } },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 3822, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 3822, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                { faction = "Horde" },
+                                                { race = { 2, 5, 6, 8 } },
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 3821, state = "activeOrCompleted" } },
+                                                                { all = { { faction = "Horde" }, { race = { 2, 5, 6, 8 } } } },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
+            id = "horde-extra-3822-turnin",
+            kind = "turnin",
+            requiredQuests = { { mode = "any", quests = { 3821 } } },
+            route = {
+                {
+                    label = "Thal'trak Proudtusk",
+                    mapID = 1418,
+                    offMapText = "Travel to Thal'trak Proudtusk in Badlands.",
+                    x = 0.034,
+                    y = 0.48,
+                },
+            },
+            text = "Turn in Krom'Grul to Thal'trak Proudtusk.",
+            useClientPin = true,
+            useClientText = false,
+            useQuestNavigation = true,
         },
     },
 })

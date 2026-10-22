@@ -6,7 +6,7 @@ ns:RegisterGuide({
     id = "loremaster-ashenvale",
     title = "Ashenvale",
     category = "Loremaster Guides",
-    revision = 1,
+    revision = 2,
     routeMode = "ordered",
     loremasterExpanded = true,
     goals = {
@@ -59,13 +59,13 @@ ns:RegisterGuide({
                     y = 0.2489,
                 },
             },
+            sourceActionID = "turnin-965-the-tower-of-althalaxx",
+            sourceGuide = "leveling-era-alliance-darkshore",
             sourceStep = 88,
             text = "Turn in The Tower of Althalaxx to Balthule Shadowstrike.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-darkshore",
-            sourceActionID = "turnin-965-the-tower-of-althalaxx",
         },
         {
             complete = { quest = { id = 966, state = "activeOrCompleted" } },
@@ -155,25 +155,6 @@ ns:RegisterGuide({
                 "alliance-leveling-era-alliance-darkshore-accept-966-the-tower-of-althalaxx",
                 "alliance-leveling-era-alliance-darkshore-objective-966-1-dark-strand-fanatic",
             },
-            id = "alliance-leveling-era-alliance-darkshore-turnin-966-the-tower-of-althalaxx",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 965 } } },
-            route = {
-                {
-                    label = "Balthule Shadowstrike",
-                    mapID = 1439,
-                    offMapText = "Travel to Balthule Shadowstrike in Darkshore.",
-                    x = 0.5497,
-                    y = 0.2489,
-                },
-            },
-            sourceStep = 90,
-            text = "Turn in The Tower of Althalaxx to Balthule Shadowstrike.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-darkshore",
-            sourceActionID = "turnin-966-the-tower-of-althalaxx",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -194,6 +175,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-darkshore-turnin-966-the-tower-of-althalaxx",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 965 } } },
+            route = {
+                {
+                    label = "Balthule Shadowstrike",
+                    mapID = 1439,
+                    offMapText = "Travel to Balthule Shadowstrike in Darkshore.",
+                    x = 0.5497,
+                    y = 0.2489,
+                },
+            },
+            sourceActionID = "turnin-966-the-tower-of-althalaxx",
+            sourceGuide = "leveling-era-alliance-darkshore",
+            sourceStep = 90,
+            text = "Turn in The Tower of Althalaxx to Balthule Shadowstrike.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 967, state = "activeOrCompleted" } },
@@ -315,25 +315,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 967, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 13 } }, { race = { 1, 3, 4, 7, 95 } } } },
             dependsOn = {},
-            id = "alliance-leveling-era-alliance-ashenvale-and-stonetalon-mountains-turnin-967-the-tower-of-althalaxx",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 966 } } },
-            route = {
-                {
-                    label = "Delgren the Purifier",
-                    mapID = 1440,
-                    offMapText = "Travel to Delgren the Purifier in Ashenvale.",
-                    x = 0.262,
-                    y = 0.387,
-                },
-            },
-            sourceStep = 1,
-            text = "Turn in The Tower of Althalaxx to Delgren the Purifier.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-ashenvale-and-stonetalon-mountains",
-            sourceActionID = "turnin-967-the-tower-of-althalaxx",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -368,6 +349,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-ashenvale-and-stonetalon-mountains-turnin-967-the-tower-of-althalaxx",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 966 } } },
+            route = {
+                {
+                    label = "Delgren the Purifier",
+                    mapID = 1440,
+                    offMapText = "Travel to Delgren the Purifier in Ashenvale.",
+                    x = 0.262,
+                    y = 0.387,
+                },
+            },
+            sourceActionID = "turnin-967-the-tower-of-althalaxx",
+            sourceGuide = "leveling-era-alliance-ashenvale-and-stonetalon-mountains",
+            sourceStep = 1,
+            text = "Turn in The Tower of Althalaxx to Delgren the Purifier.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 970, state = "activeOrCompleted" } },
@@ -579,13 +579,13 @@ ns:RegisterGuide({
                     y = 0.3859,
                 },
             },
+            sourceActionID = "turnin-1010-bathran-s-hair",
+            sourceGuide = "leveling-era-alliance-ashenvale-and-stonetalon-mountains",
             sourceStep = 5,
             text = "Turn in Bathran's Hair to Orendil Broadleaf.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-ashenvale-and-stonetalon-mountains",
-            sourceActionID = "turnin-1010-bathran-s-hair",
         },
         {
             complete = { quest = { id = 1020, state = "activeOrCompleted" } },
@@ -637,25 +637,6 @@ ns:RegisterGuide({
                 "alliance-leveling-era-alliance-ashenvale-and-stonetalon-mountains-accept-970-the-tower-of-althalaxx",
                 "alliance-leveling-era-alliance-ashenvale-and-stonetalon-mountains-objective-970-1-dark-strand-cultist",
             },
-            id = "alliance-leveling-era-alliance-ashenvale-and-stonetalon-mountains-turnin-970-the-tower-of-althalaxx",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 967 } } },
-            route = {
-                {
-                    label = "Delgren the Purifier",
-                    mapID = 1440,
-                    offMapText = "Travel to Delgren the Purifier in Ashenvale.",
-                    x = 0.262,
-                    y = 0.387,
-                },
-            },
-            sourceStep = 6,
-            text = "Turn in The Tower of Althalaxx to Delgren the Purifier.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-ashenvale-and-stonetalon-mountains",
-            sourceActionID = "turnin-970-the-tower-of-althalaxx",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -704,6 +685,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-ashenvale-and-stonetalon-mountains-turnin-970-the-tower-of-althalaxx",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 967 } } },
+            route = {
+                {
+                    label = "Delgren the Purifier",
+                    mapID = 1440,
+                    offMapText = "Travel to Delgren the Purifier in Ashenvale.",
+                    x = 0.262,
+                    y = 0.387,
+                },
+            },
+            sourceActionID = "turnin-970-the-tower-of-althalaxx",
+            sourceGuide = "leveling-era-alliance-ashenvale-and-stonetalon-mountains",
+            sourceStep = 6,
+            text = "Turn in The Tower of Althalaxx to Delgren the Purifier.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 973, state = "activeOrCompleted" } },
@@ -909,25 +909,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 1020, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 20 } }, { race = { 1, 3, 4, 7, 95 } } } },
             dependsOn = { "alliance-leveling-era-alliance-ashenvale-and-stonetalon-mountains-accept-1020-orendil-s-cure" },
-            id = "alliance-leveling-era-alliance-ashenvale-and-stonetalon-mountains-turnin-1020-orendil-s-cure",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 1010 } } },
-            route = {
-                {
-                    label = "Pelturas Whitemoon",
-                    mapID = 1440,
-                    offMapText = "Travel to Pelturas Whitemoon in Ashenvale.",
-                    x = 0.3737,
-                    y = 0.5179,
-                },
-            },
-            sourceStep = 14,
-            text = "Turn in Orendil's Cure to Pelturas Whitemoon.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-ashenvale-and-stonetalon-mountains",
-            sourceActionID = "turnin-1020-orendil-s-cure",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -948,6 +929,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-ashenvale-and-stonetalon-mountains-turnin-1020-orendil-s-cure",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 1010 } } },
+            route = {
+                {
+                    label = "Pelturas Whitemoon",
+                    mapID = 1440,
+                    offMapText = "Travel to Pelturas Whitemoon in Ashenvale.",
+                    x = 0.3737,
+                    y = 0.5179,
+                },
+            },
+            sourceActionID = "turnin-1020-orendil-s-cure",
+            sourceGuide = "leveling-era-alliance-ashenvale-and-stonetalon-mountains",
+            sourceStep = 14,
+            text = "Turn in Orendil's Cure to Pelturas Whitemoon.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 1033, state = "activeOrCompleted" } },
@@ -1091,13 +1091,13 @@ ns:RegisterGuide({
                     y = 0.4958,
                 },
             },
+            sourceActionID = "turnin-1054-culling-the-threat",
+            sourceGuide = "leveling-era-alliance-ashenvale-and-stonetalon-mountains",
             sourceStep = 23,
             text = "Turn in Culling the Threat to Raene Wolfrunner.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-ashenvale-and-stonetalon-mountains",
-            sourceActionID = "turnin-1054-culling-the-threat",
         },
         {
             complete = { quest = { id = 1033, state = "completed" } },
@@ -1106,25 +1106,6 @@ ns:RegisterGuide({
                 "alliance-leveling-era-alliance-ashenvale-and-stonetalon-mountains-accept-1033-elune-s-tear",
                 "alliance-leveling-era-alliance-ashenvale-and-stonetalon-mountains-objective-1033-1-elune-s-tear",
             },
-            id = "alliance-leveling-era-alliance-ashenvale-and-stonetalon-mountains-turnin-1033-elune-s-tear",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 1020 } } },
-            route = {
-                {
-                    label = "Pelturas Whitemoon",
-                    mapID = 1440,
-                    offMapText = "Travel to Pelturas Whitemoon in Ashenvale.",
-                    x = 0.3737,
-                    y = 0.5179,
-                },
-            },
-            sourceStep = 25,
-            text = "Turn in Elune's Tear to Pelturas Whitemoon.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-ashenvale-and-stonetalon-mountains",
-            sourceActionID = "turnin-1033-elune-s-tear",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -1159,6 +1140,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-ashenvale-and-stonetalon-mountains-turnin-1033-elune-s-tear",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 1020 } } },
+            route = {
+                {
+                    label = "Pelturas Whitemoon",
+                    mapID = 1440,
+                    offMapText = "Travel to Pelturas Whitemoon in Ashenvale.",
+                    x = 0.3737,
+                    y = 0.5179,
+                },
+            },
+            sourceActionID = "turnin-1033-elune-s-tear",
+            sourceGuide = "leveling-era-alliance-ashenvale-and-stonetalon-mountains",
+            sourceStep = 25,
+            text = "Turn in Elune's Tear to Pelturas Whitemoon.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 1034, state = "activeOrCompleted" } },
@@ -1390,25 +1390,6 @@ ns:RegisterGuide({
                 "alliance-leveling-era-alliance-ashenvale-and-stonetalon-mountains-accept-973-the-tower-of-althalaxx",
                 "alliance-leveling-era-alliance-ashenvale-and-stonetalon-mountains-objective-973-1-ilkrud-magthrull",
             },
-            id = "alliance-leveling-era-alliance-ashenvale-and-stonetalon-mountains-turnin-973-the-tower-of-althalaxx",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 970 } } },
-            route = {
-                {
-                    label = "Delgren the Purifier",
-                    mapID = 1440,
-                    offMapText = "Travel to Delgren the Purifier in Ashenvale.",
-                    x = 0.262,
-                    y = 0.387,
-                },
-            },
-            sourceStep = 29,
-            text = "Turn in The Tower of Althalaxx to Delgren the Purifier.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-ashenvale-and-stonetalon-mountains",
-            sourceActionID = "turnin-973-the-tower-of-althalaxx",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -1471,154 +1452,251 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-ashenvale-and-stonetalon-mountains-turnin-973-the-tower-of-althalaxx",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 970 } } },
+            route = {
+                {
+                    label = "Delgren the Purifier",
+                    mapID = 1440,
+                    offMapText = "Travel to Delgren the Purifier in Ashenvale.",
+                    x = 0.262,
+                    y = 0.387,
+                },
+            },
+            sourceActionID = "turnin-973-the-tower-of-althalaxx",
+            sourceGuide = "leveling-era-alliance-ashenvale-and-stonetalon-mountains",
+            sourceStep = 29,
+            text = "Turn in The Tower of Althalaxx to Delgren the Purifier.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
+            checkpointQuest = 976,
+            complete = { level = { min = 19 } },
+            conditions = { all = { { faction = "Alliance" } } },
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 976, state = "activeOrCompleted" } },
+                        {
+                            any = {
+                                { quest = { id = 976, state = "activeOrCompleted" } },
+                                {
+                                    all = {
+                                        { faction = "Alliance" },
+                                        {
+                                            any = {
+                                                {
+                                                    any = {
+                                                        { quest = { id = 973, state = "activeOrCompleted" } },
+                                                        {
+                                                            all = {
+                                                                { faction = "Alliance" },
+                                                                {
+                                                                    any = {
+                                                                        {
+                                                                            any = {
+                                                                                { quest = { id = 970, state = "activeOrCompleted" } },
+                                                                                {
+                                                                                    all = {
+                                                                                        { faction = "Alliance" },
+                                                                                        {
+                                                                                            any = {
+                                                                                                {
+                                                                                                    any = {
+                                                                                                        { quest = { id = 967, state = "activeOrCompleted" } },
+                                                                                                        {
+                                                                                                            all = {
+                                                                                                                { faction = "Alliance" },
+                                                                                                                {
+                                                                                                                    any = {
+                                                                                                                        {
+                                                                                                                            any = {
+                                                                                                                                { quest = { id = 966, state = "activeOrCompleted" } },
+                                                                                                                                {
+                                                                                                                                    all = {
+                                                                                                                                        { faction = "Alliance" },
+                                                                                                                                        {
+                                                                                                                                            any = { { any = { { quest = { id = 965, state = "activeOrCompleted" } }, { all = { { faction = "Alliance" } } } } } },
+                                                                                                                                        },
+                                                                                                                                    },
+                                                                                                                                },
+                                                                                                                            },
+                                                                                                                        },
+                                                                                                                    },
+                                                                                                                },
+                                                                                                            },
+                                                                                                        },
+                                                                                                    },
+                                                                                                },
+                                                                                            },
+                                                                                        },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
             id = "alliance-extra-976-level",
             kind = "note",
-            checkpointQuest = 976,
-            text = "Reach level 24 before this visit.",
-            conditions = { all = { { faction = "Alliance" } } },
-            complete = { level = { min = 24 } },
-            requiredLevel = 24,
-            excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 976, state = "activeOrCompleted" } },
-                        {
-                            any = {
-                                { quest = { id = 976, state = "activeOrCompleted" } },
-                                {
-                                    all = {
-                                        { faction = "Alliance" },
-                                        {
-                                            any = {
-                                                {
-                                                    any = {
-                                                        { quest = { id = 973, state = "activeOrCompleted" } },
-                                                        {
-                                                            all = {
-                                                                { faction = "Alliance" },
-                                                                {
-                                                                    any = {
-                                                                        {
-                                                                            any = {
-                                                                                { quest = { id = 970, state = "activeOrCompleted" } },
-                                                                                {
-                                                                                    all = {
-                                                                                        { faction = "Alliance" },
-                                                                                        {
-                                                                                            any = {
-                                                                                                {
-                                                                                                    any = {
-                                                                                                        { quest = { id = 967, state = "activeOrCompleted" } },
-                                                                                                        {
-                                                                                                            all = {
-                                                                                                                { faction = "Alliance" },
-                                                                                                                {
-                                                                                                                    any = {
-                                                                                                                        {
-                                                                                                                            any = {
-                                                                                                                                { quest = { id = 966, state = "activeOrCompleted" } },
-                                                                                                                                {
-                                                                                                                                    all = {
-                                                                                                                                        { faction = "Alliance" },
-                                                                                                                                        {
-                                                                                                                                            any = { { any = { { quest = { id = 965, state = "activeOrCompleted" } }, { all = { { faction = "Alliance" } } } } } },
-                                                                                                                                        },
-                                                                                                                                    },
-                                                                                                                                },
-                                                                                                                            },
-                                                                                                                        },
-                                                                                                                    },
-                                                                                                                },
-                                                                                                            },
-                                                                                                        },
-                                                                                                    },
-                                                                                                },
-                                                                                            },
-                                                                                        },
-                                                                                    },
-                                                                                },
-                                                                            },
-                                                                        },
-                                                                    },
-                                                                },
-                                                            },
-                                                        },
-                                                    },
-                                                },
-                                            },
-                                        },
-                                    },
-                                },
-                            },
-                        },
-                    },
-                },
-            },
+            requiredLevel = 19,
+            text = "Reach level 19 before this visit.",
         },
         {
-            id = "alliance-extra-976-accept",
-            kind = "accept",
-            text = "Accept Supplies to Auberdine from Feero Ironhand.",
-            conditions = { all = { { faction = "Alliance" }, { level = { min = 19 } } } },
-            route = {
-                {
-                    mapID = 1440,
-                    x = 0.262,
-                    y = 0.388,
-                    label = "Feero Ironhand",
-                    offMapText = "Travel to Feero Ironhand in Ashenvale.",
-                },
-            },
             complete = { quest = { id = 976, state = "activeOrCompleted" } },
-            requiredQuests = { { mode = "any", quests = { 973 } } },
-            useClientText = false,
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 19 } } } },
             dependsOn = { "alliance-extra-976-level" },
             excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 976, state = "activeOrCompleted" } },
-                        {
+                any = {
+                    {
+                        ["not"] = {
                             any = {
                                 { quest = { id = 976, state = "activeOrCompleted" } },
                                 {
-                                    all = {
-                                        { faction = "Alliance" },
+                                    any = {
+                                        { quest = { id = 976, state = "activeOrCompleted" } },
                                         {
-                                            any = {
+                                            all = {
+                                                { faction = "Alliance" },
                                                 {
                                                     any = {
-                                                        { quest = { id = 973, state = "activeOrCompleted" } },
                                                         {
-                                                            all = {
-                                                                { faction = "Alliance" },
+                                                            any = {
+                                                                { quest = { id = 973, state = "activeOrCompleted" } },
                                                                 {
-                                                                    any = {
+                                                                    all = {
+                                                                        { faction = "Alliance" },
                                                                         {
                                                                             any = {
-                                                                                { quest = { id = 970, state = "activeOrCompleted" } },
                                                                                 {
-                                                                                    all = {
-                                                                                        { faction = "Alliance" },
+                                                                                    any = {
+                                                                                        { quest = { id = 970, state = "activeOrCompleted" } },
                                                                                         {
-                                                                                            any = {
+                                                                                            all = {
+                                                                                                { faction = "Alliance" },
                                                                                                 {
                                                                                                     any = {
-                                                                                                        { quest = { id = 967, state = "activeOrCompleted" } },
                                                                                                         {
-                                                                                                            all = {
-                                                                                                                { faction = "Alliance" },
+                                                                                                            any = {
+                                                                                                                { quest = { id = 967, state = "activeOrCompleted" } },
                                                                                                                 {
-                                                                                                                    any = {
+                                                                                                                    all = {
+                                                                                                                        { faction = "Alliance" },
                                                                                                                         {
                                                                                                                             any = {
-                                                                                                                                { quest = { id = 966, state = "activeOrCompleted" } },
                                                                                                                                 {
-                                                                                                                                    all = {
-                                                                                                                                        { faction = "Alliance" },
+                                                                                                                                    any = {
+                                                                                                                                        { quest = { id = 966, state = "activeOrCompleted" } },
                                                                                                                                         {
-                                                                                                                                            any = { { any = { { quest = { id = 965, state = "activeOrCompleted" } }, { all = { { faction = "Alliance" } } } } } },
+                                                                                                                                            all = {
+                                                                                                                                                { faction = "Alliance" },
+                                                                                                                                                {
+                                                                                                                                                    any = { { any = { { quest = { id = 965, state = "activeOrCompleted" } }, { all = { { faction = "Alliance" } } } } } },
+                                                                                                                                                },
+                                                                                                                                            },
+                                                                                                                                        },
+                                                                                                                                    },
+                                                                                                                                },
+                                                                                                                            },
+                                                                                                                        },
+                                                                                                                    },
+                                                                                                                },
+                                                                                                            },
+                                                                                                        },
+                                                                                                    },
+                                                                                                },
+                                                                                            },
+                                                                                        },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 976, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 976, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                { faction = "Alliance" },
+                                                { race = { 1, 3, 4, 7 } },
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 973, state = "activeOrCompleted" } },
+                                                                {
+                                                                    all = {
+                                                                        { faction = "Alliance" },
+                                                                        { race = { 1, 3, 4, 7 } },
+                                                                        {
+                                                                            any = {
+                                                                                {
+                                                                                    any = {
+                                                                                        { quest = { id = 970, state = "activeOrCompleted" } },
+                                                                                        {
+                                                                                            all = {
+                                                                                                { faction = "Alliance" },
+                                                                                                { race = { 1, 3, 4, 7 } },
+                                                                                                {
+                                                                                                    any = {
+                                                                                                        {
+                                                                                                            any = {
+                                                                                                                { quest = { id = 967, state = "activeOrCompleted" } },
+                                                                                                                {
+                                                                                                                    all = {
+                                                                                                                        { faction = "Alliance" },
+                                                                                                                        { race = { 1, 3, 4, 7 } },
+                                                                                                                        {
+                                                                                                                            any = {
+                                                                                                                                {
+                                                                                                                                    any = {
+                                                                                                                                        { quest = { id = 966, state = "activeOrCompleted" } },
+                                                                                                                                        {
+                                                                                                                                            all = {
+                                                                                                                                                { faction = "Alliance" },
+                                                                                                                                                { race = { 1, 3, 4, 7 } },
+                                                                                                                                                {
+                                                                                                                                                    any = {
+                                                                                                                                                        {
+                                                                                                                                                            any = {
+                                                                                                                                                                { quest = { id = 965, state = "activeOrCompleted" } },
+                                                                                                                                                                { all = { { faction = "Alliance" }, { race = { 1, 3, 4, 7 } } } },
+                                                                                                                                                            },
+                                                                                                                                                        },
+                                                                                                                                                    },
+                                                                                                                                                },
+                                                                                                                                            },
                                                                                                                                         },
                                                                                                                                     },
                                                                                                                                 },
@@ -1651,157 +1729,335 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-extra-976-accept",
+            kind = "accept",
+            requiredQuests = { { mode = "any", quests = { 973 } } },
+            route = {
+                { label = "Feero Ironhand", mapID = 1440, offMapText = "Travel to Feero Ironhand in Ashenvale.", x = 0.262, y = 0.388 },
+            },
+            text = "Accept Supplies to Auberdine from Feero Ironhand.",
+            useClientText = false,
         },
         {
+            complete = { quest = { id = 976, state = "complete" } },
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 19 } } } },
+            dependsOn = { "alliance-extra-976-accept" },
+            excludeWhen = {
+                any = {
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 976, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 976, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                { faction = "Alliance" },
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 973, state = "activeOrCompleted" } },
+                                                                {
+                                                                    all = {
+                                                                        { faction = "Alliance" },
+                                                                        {
+                                                                            any = {
+                                                                                {
+                                                                                    any = {
+                                                                                        { quest = { id = 970, state = "activeOrCompleted" } },
+                                                                                        {
+                                                                                            all = {
+                                                                                                { faction = "Alliance" },
+                                                                                                {
+                                                                                                    any = {
+                                                                                                        {
+                                                                                                            any = {
+                                                                                                                { quest = { id = 967, state = "activeOrCompleted" } },
+                                                                                                                {
+                                                                                                                    all = {
+                                                                                                                        { faction = "Alliance" },
+                                                                                                                        {
+                                                                                                                            any = {
+                                                                                                                                {
+                                                                                                                                    any = {
+                                                                                                                                        { quest = { id = 966, state = "activeOrCompleted" } },
+                                                                                                                                        {
+                                                                                                                                            all = {
+                                                                                                                                                { faction = "Alliance" },
+                                                                                                                                                {
+                                                                                                                                                    any = { { any = { { quest = { id = 965, state = "activeOrCompleted" } }, { all = { { faction = "Alliance" } } } } } },
+                                                                                                                                                },
+                                                                                                                                            },
+                                                                                                                                        },
+                                                                                                                                    },
+                                                                                                                                },
+                                                                                                                            },
+                                                                                                                        },
+                                                                                                                    },
+                                                                                                                },
+                                                                                                            },
+                                                                                                        },
+                                                                                                    },
+                                                                                                },
+                                                                                            },
+                                                                                        },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 976, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 976, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                { faction = "Alliance" },
+                                                { race = { 1, 3, 4, 7 } },
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 973, state = "activeOrCompleted" } },
+                                                                {
+                                                                    all = {
+                                                                        { faction = "Alliance" },
+                                                                        { race = { 1, 3, 4, 7 } },
+                                                                        {
+                                                                            any = {
+                                                                                {
+                                                                                    any = {
+                                                                                        { quest = { id = 970, state = "activeOrCompleted" } },
+                                                                                        {
+                                                                                            all = {
+                                                                                                { faction = "Alliance" },
+                                                                                                { race = { 1, 3, 4, 7 } },
+                                                                                                {
+                                                                                                    any = {
+                                                                                                        {
+                                                                                                            any = {
+                                                                                                                { quest = { id = 967, state = "activeOrCompleted" } },
+                                                                                                                {
+                                                                                                                    all = {
+                                                                                                                        { faction = "Alliance" },
+                                                                                                                        { race = { 1, 3, 4, 7 } },
+                                                                                                                        {
+                                                                                                                            any = {
+                                                                                                                                {
+                                                                                                                                    any = {
+                                                                                                                                        { quest = { id = 966, state = "activeOrCompleted" } },
+                                                                                                                                        {
+                                                                                                                                            all = {
+                                                                                                                                                { faction = "Alliance" },
+                                                                                                                                                { race = { 1, 3, 4, 7 } },
+                                                                                                                                                {
+                                                                                                                                                    any = {
+                                                                                                                                                        {
+                                                                                                                                                            any = {
+                                                                                                                                                                { quest = { id = 965, state = "activeOrCompleted" } },
+                                                                                                                                                                { all = { { faction = "Alliance" }, { race = { 1, 3, 4, 7 } } } },
+                                                                                                                                                            },
+                                                                                                                                                        },
+                                                                                                                                                    },
+                                                                                                                                                },
+                                                                                                                                            },
+                                                                                                                                        },
+                                                                                                                                    },
+                                                                                                                                },
+                                                                                                                            },
+                                                                                                                        },
+                                                                                                                    },
+                                                                                                                },
+                                                                                                            },
+                                                                                                        },
+                                                                                                    },
+                                                                                                },
+                                                                                            },
+                                                                                        },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
             id = "alliance-extra-976-objective",
             kind = "objective",
-            text = "Escort Feero Ironhand safely through Ashenvale Forest until the quest log marks the escort complete.",
-            conditions = { all = { { faction = "Alliance" }, { level = { min = 19 } } } },
-            route = {},
-            complete = { quest = { id = 976, state = "complete" } },
             requiredQuests = { { mode = "any", quests = { 973 } } },
-            useClientText = false,
-            dependsOn = { "alliance-extra-976-accept" },
+            route = {},
+            text = "Escort Feero Ironhand safely through Ashenvale Forest until the quest log marks the escort complete.",
             useClientPin = true,
-            excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 976, state = "activeOrCompleted" } },
-                        {
-                            any = {
-                                { quest = { id = 976, state = "activeOrCompleted" } },
-                                {
-                                    all = {
-                                        { faction = "Alliance" },
-                                        {
-                                            any = {
-                                                {
-                                                    any = {
-                                                        { quest = { id = 973, state = "activeOrCompleted" } },
-                                                        {
-                                                            all = {
-                                                                { faction = "Alliance" },
-                                                                {
-                                                                    any = {
-                                                                        {
-                                                                            any = {
-                                                                                { quest = { id = 970, state = "activeOrCompleted" } },
-                                                                                {
-                                                                                    all = {
-                                                                                        { faction = "Alliance" },
-                                                                                        {
-                                                                                            any = {
-                                                                                                {
-                                                                                                    any = {
-                                                                                                        { quest = { id = 967, state = "activeOrCompleted" } },
-                                                                                                        {
-                                                                                                            all = {
-                                                                                                                { faction = "Alliance" },
-                                                                                                                {
-                                                                                                                    any = {
-                                                                                                                        {
-                                                                                                                            any = {
-                                                                                                                                { quest = { id = 966, state = "activeOrCompleted" } },
-                                                                                                                                {
-                                                                                                                                    all = {
-                                                                                                                                        { faction = "Alliance" },
-                                                                                                                                        {
-                                                                                                                                            any = { { any = { { quest = { id = 965, state = "activeOrCompleted" } }, { all = { { faction = "Alliance" } } } } } },
-                                                                                                                                        },
-                                                                                                                                    },
-                                                                                                                                },
-                                                                                                                            },
-                                                                                                                        },
-                                                                                                                    },
-                                                                                                                },
-                                                                                                            },
-                                                                                                        },
-                                                                                                    },
-                                                                                                },
-                                                                                            },
-                                                                                        },
-                                                                                    },
-                                                                                },
-                                                                            },
-                                                                        },
-                                                                    },
-                                                                },
-                                                            },
-                                                        },
-                                                    },
-                                                },
-                                            },
-                                        },
-                                    },
-                                },
-                            },
-                        },
-                    },
-                },
-            },
+            useClientText = false,
         },
         {
-            id = "alliance-extra-976-turnin",
-            kind = "turnin",
-            text = "Turn in Supplies to Auberdine to Delgren the Purifier.",
-            conditions = { all = { { faction = "Alliance" }, { level = { min = 19 } } } },
-            route = {
-                {
-                    mapID = 1440,
-                    x = 0.262,
-                    y = 0.386,
-                    label = "Delgren the Purifier",
-                    offMapText = "Travel to Delgren the Purifier in Ashenvale.",
-                },
-            },
             complete = { quest = { id = 976, state = "completed" } },
-            requiredQuests = { { mode = "any", quests = { 973 } } },
-            useClientText = false,
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 19 } } } },
             dependsOn = { "alliance-extra-976-objective" },
             excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 976, state = "activeOrCompleted" } },
-                        {
+                any = {
+                    {
+                        ["not"] = {
                             any = {
                                 { quest = { id = 976, state = "activeOrCompleted" } },
                                 {
-                                    all = {
-                                        { faction = "Alliance" },
+                                    any = {
+                                        { quest = { id = 976, state = "activeOrCompleted" } },
                                         {
-                                            any = {
+                                            all = {
+                                                { faction = "Alliance" },
                                                 {
                                                     any = {
-                                                        { quest = { id = 973, state = "activeOrCompleted" } },
                                                         {
-                                                            all = {
-                                                                { faction = "Alliance" },
+                                                            any = {
+                                                                { quest = { id = 973, state = "activeOrCompleted" } },
                                                                 {
-                                                                    any = {
+                                                                    all = {
+                                                                        { faction = "Alliance" },
                                                                         {
                                                                             any = {
-                                                                                { quest = { id = 970, state = "activeOrCompleted" } },
                                                                                 {
-                                                                                    all = {
-                                                                                        { faction = "Alliance" },
+                                                                                    any = {
+                                                                                        { quest = { id = 970, state = "activeOrCompleted" } },
                                                                                         {
-                                                                                            any = {
+                                                                                            all = {
+                                                                                                { faction = "Alliance" },
                                                                                                 {
                                                                                                     any = {
-                                                                                                        { quest = { id = 967, state = "activeOrCompleted" } },
                                                                                                         {
-                                                                                                            all = {
-                                                                                                                { faction = "Alliance" },
+                                                                                                            any = {
+                                                                                                                { quest = { id = 967, state = "activeOrCompleted" } },
                                                                                                                 {
-                                                                                                                    any = {
+                                                                                                                    all = {
+                                                                                                                        { faction = "Alliance" },
                                                                                                                         {
                                                                                                                             any = {
-                                                                                                                                { quest = { id = 966, state = "activeOrCompleted" } },
                                                                                                                                 {
-                                                                                                                                    all = {
-                                                                                                                                        { faction = "Alliance" },
+                                                                                                                                    any = {
+                                                                                                                                        { quest = { id = 966, state = "activeOrCompleted" } },
                                                                                                                                         {
-                                                                                                                                            any = { { any = { { quest = { id = 965, state = "activeOrCompleted" } }, { all = { { faction = "Alliance" } } } } } },
+                                                                                                                                            all = {
+                                                                                                                                                { faction = "Alliance" },
+                                                                                                                                                {
+                                                                                                                                                    any = { { any = { { quest = { id = 965, state = "activeOrCompleted" } }, { all = { { faction = "Alliance" } } } } } },
+                                                                                                                                                },
+                                                                                                                                            },
+                                                                                                                                        },
+                                                                                                                                    },
+                                                                                                                                },
+                                                                                                                            },
+                                                                                                                        },
+                                                                                                                    },
+                                                                                                                },
+                                                                                                            },
+                                                                                                        },
+                                                                                                    },
+                                                                                                },
+                                                                                            },
+                                                                                        },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 976, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 976, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                { faction = "Alliance" },
+                                                { race = { 1, 3, 4, 7 } },
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 973, state = "activeOrCompleted" } },
+                                                                {
+                                                                    all = {
+                                                                        { faction = "Alliance" },
+                                                                        { race = { 1, 3, 4, 7 } },
+                                                                        {
+                                                                            any = {
+                                                                                {
+                                                                                    any = {
+                                                                                        { quest = { id = 970, state = "activeOrCompleted" } },
+                                                                                        {
+                                                                                            all = {
+                                                                                                { faction = "Alliance" },
+                                                                                                { race = { 1, 3, 4, 7 } },
+                                                                                                {
+                                                                                                    any = {
+                                                                                                        {
+                                                                                                            any = {
+                                                                                                                { quest = { id = 967, state = "activeOrCompleted" } },
+                                                                                                                {
+                                                                                                                    all = {
+                                                                                                                        { faction = "Alliance" },
+                                                                                                                        { race = { 1, 3, 4, 7 } },
+                                                                                                                        {
+                                                                                                                            any = {
+                                                                                                                                {
+                                                                                                                                    any = {
+                                                                                                                                        { quest = { id = 966, state = "activeOrCompleted" } },
+                                                                                                                                        {
+                                                                                                                                            all = {
+                                                                                                                                                { faction = "Alliance" },
+                                                                                                                                                { race = { 1, 3, 4, 7 } },
+                                                                                                                                                {
+                                                                                                                                                    any = {
+                                                                                                                                                        {
+                                                                                                                                                            any = {
+                                                                                                                                                                { quest = { id = 965, state = "activeOrCompleted" } },
+                                                                                                                                                                { all = { { faction = "Alliance" }, { race = { 1, 3, 4, 7 } } } },
+                                                                                                                                                            },
+                                                                                                                                                        },
+                                                                                                                                                    },
+                                                                                                                                                },
+                                                                                                                                            },
                                                                                                                                         },
                                                                                                                                     },
                                                                                                                                 },
@@ -1834,6 +2090,22 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-extra-976-turnin",
+            kind = "turnin",
+            requiredQuests = { { mode = "any", quests = { 973 } } },
+            route = {
+                {
+                    label = "Delgren the Purifier",
+                    mapID = 1440,
+                    offMapText = "Travel to Delgren the Purifier in Ashenvale.",
+                    x = 0.262,
+                    y = 0.386,
+                },
+            },
+            text = "Turn in Supplies to Auberdine to Delgren the Purifier.",
+            useClientPin = true,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 991, state = "completed" } },
@@ -1845,13 +2117,13 @@ ns:RegisterGuide({
             route = {
                 { label = "Raene's Cleansing", mapID = 1440, offMapText = "Travel to Raene's Cleansing.", x = 0.2031, y = 0.4233 },
             },
+            sourceActionID = "turnin-991-raene-s-cleansing",
+            sourceGuide = "leveling-era-alliance-ashenvale-and-stonetalon-mountains",
             sourceStep = 31,
             text = "Turn in Raene's Cleansing.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-ashenvale-and-stonetalon-mountains",
-            sourceActionID = "turnin-991-raene-s-cleansing",
         },
         {
             complete = { quest = { id = 1023, state = "activeOrCompleted" } },
@@ -1978,13 +2250,13 @@ ns:RegisterGuide({
             kind = "turnin",
             requiredQuests = {},
             route = { { label = "Talen", mapID = 1440, offMapText = "Travel to Talen in Ashenvale.", x = 0.1479, y = 0.313 } },
+            sourceActionID = "turnin-1007-the-ancient-statuette",
+            sourceGuide = "leveling-era-alliance-ashenvale-and-stonetalon-mountains",
             sourceStep = 35,
             text = "Turn in The Ancient Statuette to Talen.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-ashenvale-and-stonetalon-mountains",
-            sourceActionID = "turnin-1007-the-ancient-statuette",
         },
         {
             complete = { quest = { id = 1009, state = "activeOrCompleted" } },
@@ -2064,17 +2336,6 @@ ns:RegisterGuide({
                 "alliance-leveling-era-alliance-ashenvale-and-stonetalon-mountains-accept-1009-ruuzel",
                 "alliance-leveling-era-alliance-ashenvale-and-stonetalon-mountains-objective-1009-1-ruuzel",
             },
-            id = "alliance-leveling-era-alliance-ashenvale-and-stonetalon-mountains-turnin-1009-ruuzel",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 1007 } } },
-            route = { { label = "Talen", mapID = 1440, offMapText = "Travel to Talen in Ashenvale.", x = 0.1479, y = 0.313 } },
-            sourceStep = 40,
-            text = "Turn in Ruuzel to Talen.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-ashenvale-and-stonetalon-mountains",
-            sourceActionID = "turnin-1009-ruuzel",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -2095,6 +2356,17 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-ashenvale-and-stonetalon-mountains-turnin-1009-ruuzel",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 1007 } } },
+            route = { { label = "Talen", mapID = 1440, offMapText = "Travel to Talen in Ashenvale.", x = 0.1479, y = 0.313 } },
+            sourceActionID = "turnin-1009-ruuzel",
+            sourceGuide = "leveling-era-alliance-ashenvale-and-stonetalon-mountains",
+            sourceStep = 40,
+            text = "Turn in Ruuzel to Talen.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { questObjective = { count = 20, id = 1008, index = 1, text = "Wrathtail Head" } },
@@ -2119,25 +2391,6 @@ ns:RegisterGuide({
                 "alliance-leveling-era-alliance-ashenvale-and-stonetalon-mountains-accept-1023-raene-s-cleansing",
                 "alliance-leveling-era-alliance-ashenvale-and-stonetalon-mountains-objective-1023-1-saltspittle-puddlejumper",
             },
-            id = "alliance-leveling-era-alliance-ashenvale-and-stonetalon-mountains-turnin-1023-raene-s-cleansing",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 991 } } },
-            route = {
-                {
-                    label = "Raene Wolfrunner",
-                    mapID = 1440,
-                    offMapText = "Travel to Raene Wolfrunner in Ashenvale.",
-                    x = 0.3662,
-                    y = 0.4958,
-                },
-            },
-            sourceStep = 43,
-            text = "Turn in Raene's Cleansing to Raene Wolfrunner.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-ashenvale-and-stonetalon-mountains",
-            sourceActionID = "turnin-1023-raene-s-cleansing",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -2158,6 +2411,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-ashenvale-and-stonetalon-mountains-turnin-1023-raene-s-cleansing",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 991 } } },
+            route = {
+                {
+                    label = "Raene Wolfrunner",
+                    mapID = 1440,
+                    offMapText = "Travel to Raene Wolfrunner in Ashenvale.",
+                    x = 0.3662,
+                    y = 0.4958,
+                },
+            },
+            sourceActionID = "turnin-1023-raene-s-cleansing",
+            sourceGuide = "leveling-era-alliance-ashenvale-and-stonetalon-mountains",
+            sourceStep = 43,
+            text = "Turn in Raene's Cleansing to Raene Wolfrunner.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 1034, state = "completed" } },
@@ -2166,25 +2438,6 @@ ns:RegisterGuide({
                 "alliance-leveling-era-alliance-ashenvale-and-stonetalon-mountains-accept-1034-the-ruins-of-stardust",
                 "alliance-leveling-era-alliance-ashenvale-and-stonetalon-mountains-objective-1034-1-handful-of-stardust",
             },
-            id = "alliance-leveling-era-alliance-ashenvale-and-stonetalon-mountains-turnin-1034-the-ruins-of-stardust",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 1033 } } },
-            route = {
-                {
-                    label = "Pelturas Whitemoon",
-                    mapID = 1440,
-                    offMapText = "Travel to Pelturas Whitemoon in Ashenvale.",
-                    x = 0.3737,
-                    y = 0.5179,
-                },
-            },
-            sourceStep = 45,
-            text = "Turn in The Ruins of Stardust to Pelturas Whitemoon.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-ashenvale-and-stonetalon-mountains",
-            sourceActionID = "turnin-1034-the-ruins-of-stardust",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -2233,6 +2486,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-ashenvale-and-stonetalon-mountains-turnin-1034-the-ruins-of-stardust",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 1033 } } },
+            route = {
+                {
+                    label = "Pelturas Whitemoon",
+                    mapID = 1440,
+                    offMapText = "Travel to Pelturas Whitemoon in Ashenvale.",
+                    x = 0.3737,
+                    y = 0.5179,
+                },
+            },
+            sourceActionID = "turnin-1034-the-ruins-of-stardust",
+            sourceGuide = "leveling-era-alliance-ashenvale-and-stonetalon-mountains",
+            sourceStep = 45,
+            text = "Turn in The Ruins of Stardust to Pelturas Whitemoon.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 1008, state = "completed" } },
@@ -2253,13 +2525,13 @@ ns:RegisterGuide({
                     y = 0.4884,
                 },
             },
+            sourceActionID = "turnin-1008-the-zoram-strand",
+            sourceGuide = "leveling-era-alliance-ashenvale-and-stonetalon-mountains",
             sourceStep = 46,
             text = "Turn in The Zoram Strand to Shindrell Swiftfire.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-ashenvale-and-stonetalon-mountains",
-            sourceActionID = "turnin-1008-the-zoram-strand",
         },
         {
             complete = { quest = { id = 1134, state = "activeOrCompleted" } },
@@ -2320,13 +2592,13 @@ ns:RegisterGuide({
                     y = 0.6685,
                 },
             },
+            sourceActionID = "turnin-1070-on-guard-in-stonetalon",
+            sourceGuide = "leveling-era-alliance-ashenvale-and-stonetalon-mountains",
             sourceStep = 63,
             text = "Turn in On Guard in Stonetalon to Kaela Shadowspear.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-ashenvale-and-stonetalon-mountains",
-            sourceActionID = "turnin-1070-on-guard-in-stonetalon",
         },
         {
             complete = { quest = { id = 1085, state = "activeOrCompleted" } },
@@ -2367,13 +2639,13 @@ ns:RegisterGuide({
                     y = 0.6715,
                 },
             },
+            sourceActionID = "turnin-1085-on-guard-in-stonetalon",
+            sourceGuide = "leveling-era-alliance-ashenvale-and-stonetalon-mountains",
             sourceStep = 64,
             text = "Turn in On Guard in Stonetalon to Gaxim Rustfizzle.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-ashenvale-and-stonetalon-mountains",
-            sourceActionID = "turnin-1085-on-guard-in-stonetalon",
         },
         {
             complete = { questObjective = { count = 12, id = 1134, index = 1, text = "Pridewing Wyvern" } },
@@ -2429,13 +2701,13 @@ ns:RegisterGuide({
                     y = 0.081,
                 },
             },
+            sourceActionID = "turnin-1056-journey-to-stonetalon-peak",
+            sourceGuide = "leveling-era-alliance-ashenvale-and-stonetalon-mountains",
             sourceStep = 71,
             text = "Turn in Journey to Stonetalon Peak to Keeper Albagorm.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-ashenvale-and-stonetalon-mountains",
-            sourceActionID = "turnin-1056-journey-to-stonetalon-peak",
         },
         {
             complete = { quest = { id = 1134, state = "completed" } },
@@ -2444,25 +2716,6 @@ ns:RegisterGuide({
                 "alliance-leveling-era-alliance-ashenvale-and-stonetalon-mountains-accept-1134-pridewings-of-stonetalon",
                 "alliance-leveling-era-alliance-ashenvale-and-stonetalon-mountains-objective-1134-1-pridewing-wyvern",
             },
-            id = "alliance-leveling-era-alliance-ashenvale-and-stonetalon-mountains-turnin-1134-pridewings-of-stonetalon",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 1008 } } },
-            route = {
-                {
-                    label = "Shindrell Swiftfire",
-                    mapID = 1440,
-                    offMapText = "Travel to Shindrell Swiftfire in Ashenvale.",
-                    x = 0.3467,
-                    y = 0.4884,
-                },
-            },
-            sourceStep = 74,
-            text = "Turn in Pridewings of Stonetalon to Shindrell Swiftfire.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-ashenvale-and-stonetalon-mountains",
-            sourceActionID = "turnin-1134-pridewings-of-stonetalon",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -2483,6 +2736,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-ashenvale-and-stonetalon-mountains-turnin-1134-pridewings-of-stonetalon",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 1008 } } },
+            route = {
+                {
+                    label = "Shindrell Swiftfire",
+                    mapID = 1440,
+                    offMapText = "Travel to Shindrell Swiftfire in Ashenvale.",
+                    x = 0.3467,
+                    y = 0.4884,
+                },
+            },
+            sourceActionID = "turnin-1134-pridewings-of-stonetalon",
+            sourceGuide = "leveling-era-alliance-ashenvale-and-stonetalon-mountains",
+            sourceStep = 74,
+            text = "Turn in Pridewings of Stonetalon to Shindrell Swiftfire.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 1025, state = "activeOrCompleted" } },
@@ -2607,13 +2879,13 @@ ns:RegisterGuide({
                     y = 0.6721,
                 },
             },
+            sourceActionID = "turnin-1016-elemental-bracers",
+            sourceGuide = "leveling-era-alliance-ashenvale-and-stonetalon-mountains",
             sourceStep = 78,
             text = "Turn in Elemental Bracers to Sentinel Velene Starstrike.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-ashenvale-and-stonetalon-mountains",
-            sourceActionID = "turnin-1016-elemental-bracers",
         },
         {
             complete = { questObjective = { id = 1025, index = 1, text = "Foulweald Den Watcher" } },
@@ -2831,25 +3103,6 @@ ns:RegisterGuide({
                 "alliance-leveling-era-alliance-ashenvale-and-stonetalon-mountains-objective-1025-3-foulweald-totemic",
                 "alliance-leveling-era-alliance-ashenvale-and-stonetalon-mountains-objective-1025-4-foulweald-warrior",
             },
-            id = "alliance-leveling-era-alliance-ashenvale-and-stonetalon-mountains-turnin-1025-an-aggressive-defense",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 1023 } } },
-            route = {
-                {
-                    label = "Raene Wolfrunner",
-                    mapID = 1440,
-                    offMapText = "Travel to Raene Wolfrunner in Ashenvale.",
-                    x = 0.3662,
-                    y = 0.4958,
-                },
-            },
-            sourceStep = 96,
-            text = "Turn in An Aggressive Defense to Raene Wolfrunner.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-ashenvale-and-stonetalon-mountains",
-            sourceActionID = "turnin-1025-an-aggressive-defense",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -2884,6 +3137,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-ashenvale-and-stonetalon-mountains-turnin-1025-an-aggressive-defense",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 1023 } } },
+            route = {
+                {
+                    label = "Raene Wolfrunner",
+                    mapID = 1440,
+                    offMapText = "Travel to Raene Wolfrunner in Ashenvale.",
+                    x = 0.3662,
+                    y = 0.4958,
+                },
+            },
+            sourceActionID = "turnin-1025-an-aggressive-defense",
+            sourceGuide = "leveling-era-alliance-ashenvale-and-stonetalon-mountains",
+            sourceStep = 96,
+            text = "Turn in An Aggressive Defense to Raene Wolfrunner.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             id = "visit-entry-leveling-era-alliance-stonetalon-mountains-and-ashenvale",
@@ -3132,19 +3404,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 1024, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 18 } }, { race = { 1, 3, 4, 7, 95 } } } },
             dependsOn = { "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-accept-1024-raene-s-cleansing" },
-            id = "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-turnin-1024-raene-s-cleansing",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 1023 } } },
-            route = {
-                { label = "Shael'dryn", mapID = 1440, offMapText = "Travel to Shael'dryn in Ashenvale.", x = 0.5354, y = 0.4629 },
-            },
-            sourceStep = 15,
-            text = "Turn in Raene's Cleansing to Shael'dryn.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-stonetalon-mountains-and-ashenvale",
-            sourceActionID = "turnin-1024-raene-s-cleansing",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -3179,6 +3438,19 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-turnin-1024-raene-s-cleansing",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 1023 } } },
+            route = {
+                { label = "Shael'dryn", mapID = 1440, offMapText = "Travel to Shael'dryn in Ashenvale.", x = 0.5354, y = 0.4629 },
+            },
+            sourceActionID = "turnin-1024-raene-s-cleansing",
+            sourceGuide = "leveling-era-alliance-stonetalon-mountains-and-ashenvale",
+            sourceStep = 15,
+            text = "Turn in Raene's Cleansing to Shael'dryn.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 1026, state = "activeOrCompleted" } },
@@ -3385,13 +3657,13 @@ ns:RegisterGuide({
             kind = "turnin",
             requiredQuests = {},
             route = { { label = "Anilia", mapID = 1440, offMapText = "Travel to Anilia in Ashenvale.", x = 0.7832, y = 0.4482 } },
+            sourceActionID = "turnin-1021-vile-satyr-dryads-in-danger",
+            sourceGuide = "leveling-era-alliance-stonetalon-mountains-and-ashenvale",
             sourceStep = 19,
             text = "Turn in Vile Satyr! Dryads in Danger! to Anilia.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-stonetalon-mountains-and-ashenvale",
-            sourceActionID = "turnin-1021-vile-satyr-dryads-in-danger",
         },
         {
             complete = { quest = { id = 1031, state = "activeOrCompleted" } },
@@ -3480,13 +3752,13 @@ ns:RegisterGuide({
                     y = 0.4471,
                 },
             },
+            sourceActionID = "turnin-4581-kayneth-stillwind",
+            sourceGuide = "leveling-era-alliance-stonetalon-mountains-and-ashenvale",
             sourceStep = 21,
             text = "Turn in Kayneth Stillwind to Kayneth Stillwind.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-stonetalon-mountains-and-ashenvale",
-            sourceActionID = "turnin-4581-kayneth-stillwind",
         },
         {
             complete = { quest = { id = 1011, state = "activeOrCompleted" } },
@@ -3544,13 +3816,13 @@ ns:RegisterGuide({
                     y = 0.5298,
                 },
             },
+            sourceActionID = "turnin-1022-the-howling-vale",
+            sourceGuide = "leveling-era-alliance-stonetalon-mountains-and-ashenvale",
             sourceStep = 22,
             text = "Turn in The Howling Vale to Sentinel Melyria Frostshadow.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-stonetalon-mountains-and-ashenvale",
-            sourceActionID = "turnin-1022-the-howling-vale",
         },
         {
             complete = { quest = { id = 1037, state = "activeOrCompleted" } },
@@ -3602,17 +3874,6 @@ ns:RegisterGuide({
                 "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-accept-1031-the-branch-of-cenarius",
                 "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-objective-1031-1-geltharis",
             },
-            id = "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-turnin-1031-the-branch-of-cenarius",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 1021 } } },
-            route = { { label = "Illiyana", mapID = 1440, offMapText = "Travel to Illiyana in Ashenvale.", x = 0.2173, y = 0.5335 } },
-            sourceStep = 23,
-            text = "Turn in The Branch of Cenarius to Illiyana.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-stonetalon-mountains-and-ashenvale",
-            sourceActionID = "turnin-1031-the-branch-of-cenarius",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -3633,6 +3894,17 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-turnin-1031-the-branch-of-cenarius",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 1021 } } },
+            route = { { label = "Illiyana", mapID = 1440, offMapText = "Travel to Illiyana in Ashenvale.", x = 0.2173, y = 0.5335 } },
+            sourceActionID = "turnin-1031-the-branch-of-cenarius",
+            sourceGuide = "leveling-era-alliance-stonetalon-mountains-and-ashenvale",
+            sourceStep = 23,
+            text = "Turn in The Branch of Cenarius to Illiyana.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 1032, state = "activeOrCompleted" } },
@@ -3691,19 +3963,6 @@ ns:RegisterGuide({
                 "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-objective-1026-1-withered-ancient",
                 "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-objective-1026-1-worn-chest",
             },
-            id = "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-turnin-1026-raene-s-cleansing",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 1024 } } },
-            route = {
-                { label = "Shael'dryn", mapID = 1440, offMapText = "Travel to Shael'dryn in Ashenvale.", x = 0.5354, y = 0.4629 },
-            },
-            sourceStep = 28,
-            text = "Turn in Raene's Cleansing to Shael'dryn.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-stonetalon-mountains-and-ashenvale",
-            sourceActionID = "turnin-1026-raene-s-cleansing",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -3752,6 +4011,19 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-turnin-1026-raene-s-cleansing",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 1024 } } },
+            route = {
+                { label = "Shael'dryn", mapID = 1440, offMapText = "Travel to Shael'dryn in Ashenvale.", x = 0.5354, y = 0.4629 },
+            },
+            sourceActionID = "turnin-1026-raene-s-cleansing",
+            sourceGuide = "leveling-era-alliance-stonetalon-mountains-and-ashenvale",
+            sourceStep = 28,
+            text = "Turn in Raene's Cleansing to Shael'dryn.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 1027, state = "activeOrCompleted" } },
@@ -4027,13 +4299,13 @@ ns:RegisterGuide({
                     y = 0.4471,
                 },
             },
+            sourceActionID = "turnin-1011-forsaken-diseases",
+            sourceGuide = "leveling-era-alliance-stonetalon-mountains-and-ashenvale",
             sourceStep = 32,
             text = "Turn in Forsaken Diseases to Kayneth Stillwind.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-stonetalon-mountains-and-ashenvale",
-            sourceActionID = "turnin-1011-forsaken-diseases",
         },
         {
             complete = { questObjective = { count = 16, id = 1032, index = 1, text = "Satyr Horns" } },
@@ -4092,19 +4364,6 @@ ns:RegisterGuide({
                 "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-accept-1027-raene-s-cleansing",
                 "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-objective-1027-1-rotting-slime",
             },
-            id = "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-turnin-1027-raene-s-cleansing",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 1026 } } },
-            route = {
-                { label = "Shael'dryn", mapID = 1440, offMapText = "Travel to Shael'dryn in Ashenvale.", x = 0.5354, y = 0.4621 },
-            },
-            sourceStep = 36,
-            text = "Turn in Raene's Cleansing to Shael'dryn.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-stonetalon-mountains-and-ashenvale",
-            sourceActionID = "turnin-1027-raene-s-cleansing",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -4167,6 +4426,19 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-turnin-1027-raene-s-cleansing",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 1026 } } },
+            route = {
+                { label = "Shael'dryn", mapID = 1440, offMapText = "Travel to Shael'dryn in Ashenvale.", x = 0.5354, y = 0.4621 },
+            },
+            sourceActionID = "turnin-1027-raene-s-cleansing",
+            sourceGuide = "leveling-era-alliance-stonetalon-mountains-and-ashenvale",
+            sourceStep = 36,
+            text = "Turn in Raene's Cleansing to Shael'dryn.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 1028, state = "activeOrCompleted" } },
@@ -4265,19 +4537,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 1028, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 18 } }, { race = { 1, 3, 4, 7, 95 } } } },
             dependsOn = { "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-accept-1028-raene-s-cleansing" },
-            id = "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-turnin-1028-raene-s-cleansing",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 1027 } } },
-            route = {
-                { label = "Raene's Cleansing", mapID = 1440, offMapText = "Travel to Raene's Cleansing.", x = 0.5638, y = 0.4923 },
-            },
-            sourceStep = 38,
-            text = "Turn in Raene's Cleansing.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-stonetalon-mountains-and-ashenvale",
-            sourceActionID = "turnin-1028-raene-s-cleansing",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -4354,6 +4613,19 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-turnin-1028-raene-s-cleansing",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 1027 } } },
+            route = {
+                { label = "Raene's Cleansing", mapID = 1440, offMapText = "Travel to Raene's Cleansing.", x = 0.5638, y = 0.4923 },
+            },
+            sourceActionID = "turnin-1028-raene-s-cleansing",
+            sourceGuide = "leveling-era-alliance-stonetalon-mountains-and-ashenvale",
+            sourceStep = 38,
+            text = "Turn in Raene's Cleansing.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 1055, state = "activeOrCompleted" } },
@@ -4466,19 +4738,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 1055, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 18 } }, { race = { 1, 3, 4, 7, 95 } } } },
             dependsOn = { "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-accept-1055-raene-s-cleansing" },
-            id = "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-turnin-1055-raene-s-cleansing",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 1028 } } },
-            route = {
-                { label = "Shael'dryn", mapID = 1440, offMapText = "Travel to Shael'dryn in Ashenvale.", x = 0.5354, y = 0.4621 },
-            },
-            sourceStep = 39,
-            text = "Turn in Raene's Cleansing to Shael'dryn.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-stonetalon-mountains-and-ashenvale",
-            sourceActionID = "turnin-1055-raene-s-cleansing",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -4569,6 +4828,19 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-turnin-1055-raene-s-cleansing",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 1028 } } },
+            route = {
+                { label = "Shael'dryn", mapID = 1440, offMapText = "Travel to Shael'dryn in Ashenvale.", x = 0.5354, y = 0.4621 },
+            },
+            sourceActionID = "turnin-1055-raene-s-cleansing",
+            sourceGuide = "leveling-era-alliance-stonetalon-mountains-and-ashenvale",
+            sourceStep = 39,
+            text = "Turn in Raene's Cleansing to Shael'dryn.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 1029, state = "activeOrCompleted" } },
@@ -4698,25 +4970,6 @@ ns:RegisterGuide({
                 "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-accept-1035-fallen-sky-lake",
                 "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-objective-1035-1-shadethicket-oracle",
             },
-            id = "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-turnin-1035-fallen-sky-lake",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 1034 } } },
-            route = {
-                {
-                    label = "Pelturas Whitemoon",
-                    mapID = 1440,
-                    offMapText = "Travel to Pelturas Whitemoon in Ashenvale.",
-                    x = 0.3736,
-                    y = 0.5179,
-                },
-            },
-            sourceStep = 40,
-            text = "Turn in Fallen Sky Lake to Pelturas Whitemoon.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-stonetalon-mountains-and-ashenvale",
-            sourceActionID = "turnin-1035-fallen-sky-lake",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -4779,30 +5032,30 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-turnin-1035-fallen-sky-lake",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 1034 } } },
+            route = {
+                {
+                    label = "Pelturas Whitemoon",
+                    mapID = 1440,
+                    offMapText = "Travel to Pelturas Whitemoon in Ashenvale.",
+                    x = 0.3736,
+                    y = 0.5179,
+                },
+            },
+            sourceActionID = "turnin-1035-fallen-sky-lake",
+            sourceGuide = "leveling-era-alliance-stonetalon-mountains-and-ashenvale",
+            sourceStep = 40,
+            text = "Turn in Fallen Sky Lake to Pelturas Whitemoon.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 1029, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 18 } }, { race = { 1, 3, 4, 7, 95 } } } },
             dependsOn = { "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-accept-1029-raene-s-cleansing" },
-            id = "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-turnin-1029-raene-s-cleansing",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 1055 } } },
-            route = {
-                {
-                    label = "Raene Wolfrunner",
-                    mapID = 1440,
-                    offMapText = "Travel to Raene Wolfrunner in Ashenvale.",
-                    x = 0.3662,
-                    y = 0.4958,
-                },
-            },
-            sourceStep = 41,
-            text = "Turn in Raene's Cleansing to Raene Wolfrunner.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-stonetalon-mountains-and-ashenvale",
-            sourceActionID = "turnin-1029-raene-s-cleansing",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -4907,6 +5160,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-turnin-1029-raene-s-cleansing",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 1055 } } },
+            route = {
+                {
+                    label = "Raene Wolfrunner",
+                    mapID = 1440,
+                    offMapText = "Travel to Raene Wolfrunner in Ashenvale.",
+                    x = 0.3662,
+                    y = 0.4958,
+                },
+            },
+            sourceActionID = "turnin-1029-raene-s-cleansing",
+            sourceGuide = "leveling-era-alliance-stonetalon-mountains-and-ashenvale",
+            sourceStep = 41,
+            text = "Turn in Raene's Cleansing to Raene Wolfrunner.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 1030, state = "activeOrCompleted" } },
@@ -5197,17 +5469,6 @@ ns:RegisterGuide({
                 "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-accept-1030-raene-s-cleansing",
                 "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-objective-1030-1-dartol-s-rod-of-transformation",
             },
-            id = "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-turnin-1030-raene-s-cleansing",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 1029 } } },
-            route = { { label = "Krolg", mapID = 1440, offMapText = "Travel to Krolg.", x = 0.5085, y = 0.7507 } },
-            sourceStep = 46,
-            text = "Use Dartol's Rod of Transformation to enter Furbolg Form, then speak with Krolg and turn in Raene's Cleansing.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-stonetalon-mountains-and-ashenvale",
-            sourceActionID = "turnin-1030-raene-s-cleansing",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -5326,6 +5587,17 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-turnin-1030-raene-s-cleansing",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 1029 } } },
+            route = { { label = "Krolg", mapID = 1440, offMapText = "Travel to Krolg.", x = 0.5085, y = 0.7507 } },
+            sourceActionID = "turnin-1030-raene-s-cleansing",
+            sourceGuide = "leveling-era-alliance-stonetalon-mountains-and-ashenvale",
+            sourceStep = 46,
+            text = "Use Dartol's Rod of Transformation to enter Furbolg Form, then speak with Krolg and turn in Raene's Cleansing.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 1045, state = "activeOrCompleted" } },
@@ -5779,17 +6051,6 @@ ns:RegisterGuide({
                 "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-objective-1045-2-bloodtooth-guard",
                 "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-objective-1045-1-dartol-s-rod-of-transformation",
             },
-            id = "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-turnin-1045-raene-s-cleansing",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 1030 } } },
-            route = { { label = "Krolg", mapID = 1440, offMapText = "Travel to Krolg.", x = 0.5085, y = 0.7507 } },
-            sourceStep = 50,
-            text = "Use Dartol's Rod of Transformation to enter Furbolg Form, then speak with Krolg and turn in Raene's Cleansing.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-stonetalon-mountains-and-ashenvale",
-            sourceActionID = "turnin-1045-raene-s-cleansing",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -5922,6 +6183,17 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-turnin-1045-raene-s-cleansing",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 1030 } } },
+            route = { { label = "Krolg", mapID = 1440, offMapText = "Travel to Krolg.", x = 0.5085, y = 0.7507 } },
+            sourceActionID = "turnin-1045-raene-s-cleansing",
+            sourceGuide = "leveling-era-alliance-stonetalon-mountains-and-ashenvale",
+            sourceStep = 50,
+            text = "Use Dartol's Rod of Transformation to enter Furbolg Form, then speak with Krolg and turn in Raene's Cleansing.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 1046, state = "activeOrCompleted" } },
@@ -6251,25 +6523,6 @@ ns:RegisterGuide({
                 "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-accept-1046-raene-s-cleansing",
                 "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-objective-1046-quest-work",
             },
-            id = "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-turnin-1046-raene-s-cleansing",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 1045 } } },
-            route = {
-                {
-                    label = "Raene Wolfrunner",
-                    mapID = 1440,
-                    offMapText = "Travel to Raene Wolfrunner in Ashenvale.",
-                    x = 0.3662,
-                    y = 0.4958,
-                },
-            },
-            sourceStep = 52,
-            text = "Turn in Raene's Cleansing to Raene Wolfrunner.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-stonetalon-mountains-and-ashenvale",
-            sourceActionID = "turnin-1046-raene-s-cleansing",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -6416,6 +6669,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-turnin-1046-raene-s-cleansing",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 1045 } } },
+            route = {
+                {
+                    label = "Raene Wolfrunner",
+                    mapID = 1440,
+                    offMapText = "Travel to Raene Wolfrunner in Ashenvale.",
+                    x = 0.3662,
+                    y = 0.4958,
+                },
+            },
+            sourceActionID = "turnin-1046-raene-s-cleansing",
+            sourceGuide = "leveling-era-alliance-stonetalon-mountains-and-ashenvale",
+            sourceStep = 52,
+            text = "Turn in Raene's Cleansing to Raene Wolfrunner.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 1032, state = "completed" } },
@@ -6424,17 +6696,6 @@ ns:RegisterGuide({
                 "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-accept-1032-satyr-slaying",
                 "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-objective-1032-1-satyr-horns",
             },
-            id = "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-turnin-1032-satyr-slaying",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 1031 } } },
-            route = { { label = "Illiyana", mapID = 1440, offMapText = "Travel to Illiyana in Ashenvale.", x = 0.2173, y = 0.5334 } },
-            sourceStep = 53,
-            text = "Turn in Satyr Slaying! to Illiyana.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-stonetalon-mountains-and-ashenvale",
-            sourceActionID = "turnin-1032-satyr-slaying",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -6469,30 +6730,22 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-turnin-1032-satyr-slaying",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 1031 } } },
+            route = { { label = "Illiyana", mapID = 1440, offMapText = "Travel to Illiyana in Ashenvale.", x = 0.2173, y = 0.5334 } },
+            sourceActionID = "turnin-1032-satyr-slaying",
+            sourceGuide = "leveling-era-alliance-stonetalon-mountains-and-ashenvale",
+            sourceStep = 53,
+            text = "Turn in Satyr Slaying! to Illiyana.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 1037, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 25 } }, { race = { 1, 3, 4, 7, 95 } } } },
             dependsOn = { "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-accept-1037-velinde-starsong" },
-            id = "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-turnin-1037-velinde-starsong",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 1022 } } },
-            route = {
-                {
-                    label = "Thyn'tel Bladeweaver",
-                    mapID = 1457,
-                    offMapText = "Travel to Thyn'tel Bladeweaver in Darnassus.",
-                    x = 0.6178,
-                    y = 0.3919,
-                },
-            },
-            sourceStep = 57,
-            text = "Turn in Velinde Starsong to Thyn'tel Bladeweaver.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-stonetalon-mountains-and-ashenvale",
-            sourceActionID = "turnin-1037-velinde-starsong",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -6513,6 +6766,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-turnin-1037-velinde-starsong",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 1022 } } },
+            route = {
+                {
+                    label = "Thyn'tel Bladeweaver",
+                    mapID = 1457,
+                    offMapText = "Travel to Thyn'tel Bladeweaver in Darnassus.",
+                    x = 0.6178,
+                    y = 0.3919,
+                },
+            },
+            sourceActionID = "turnin-1037-velinde-starsong",
+            sourceGuide = "leveling-era-alliance-stonetalon-mountains-and-ashenvale",
+            sourceStep = 57,
+            text = "Turn in Velinde Starsong to Thyn'tel Bladeweaver.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 1038, state = "activeOrCompleted" } },
@@ -6630,25 +6902,6 @@ ns:RegisterGuide({
                 "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-accept-1038-velinde-s-effects",
                 "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-objective-1038-1-velinde-s-journal",
             },
-            id = "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-turnin-1038-velinde-s-effects",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 1037 } } },
-            route = {
-                {
-                    label = "Thyn'tel Bladeweaver",
-                    mapID = 1457,
-                    offMapText = "Travel to Thyn'tel Bladeweaver in Darnassus.",
-                    x = 0.6178,
-                    y = 0.3919,
-                },
-            },
-            sourceStep = 62,
-            text = "Turn in Velinde's Effects to Thyn'tel Bladeweaver.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-stonetalon-mountains-and-ashenvale",
-            sourceActionID = "turnin-1038-velinde-s-effects",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -6683,6 +6936,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-turnin-1038-velinde-s-effects",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 1037 } } },
+            route = {
+                {
+                    label = "Thyn'tel Bladeweaver",
+                    mapID = 1457,
+                    offMapText = "Travel to Thyn'tel Bladeweaver in Darnassus.",
+                    x = 0.6178,
+                    y = 0.3919,
+                },
+            },
+            sourceActionID = "turnin-1038-velinde-s-effects",
+            sourceGuide = "leveling-era-alliance-stonetalon-mountains-and-ashenvale",
+            sourceStep = 62,
+            text = "Turn in Velinde's Effects to Thyn'tel Bladeweaver.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 1039, state = "activeOrCompleted" } },
@@ -6769,25 +7041,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 1039, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 25 } }, { race = { 1, 3, 4, 7, 95 } } } },
             dependsOn = {},
-            id = "alliance-leveling-era-alliance-dustwallow-marsh-and-thousand-needles-turnin-1039-the-barrens-port",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 1038 } } },
-            route = {
-                {
-                    label = "Wharfmaster Dizzywig",
-                    mapID = 1413,
-                    offMapText = "Travel to Wharfmaster Dizzywig in The Barrens.",
-                    x = 0.6335,
-                    y = 0.3845,
-                },
-            },
-            sourceStep = 61,
-            text = "Turn in The Barrens Port to Wharfmaster Dizzywig.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-dustwallow-marsh-and-thousand-needles",
-            sourceActionID = "turnin-1039-the-barrens-port",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -6836,66 +7089,103 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-dustwallow-marsh-and-thousand-needles-turnin-1039-the-barrens-port",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 1038 } } },
+            route = {
+                {
+                    label = "Wharfmaster Dizzywig",
+                    mapID = 1413,
+                    offMapText = "Travel to Wharfmaster Dizzywig in The Barrens.",
+                    x = 0.6335,
+                    y = 0.3845,
+                },
+            },
+            sourceActionID = "turnin-1039-the-barrens-port",
+            sourceGuide = "leveling-era-alliance-dustwallow-marsh-and-thousand-needles",
+            sourceStep = 61,
+            text = "Turn in The Barrens Port to Wharfmaster Dizzywig.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
+            checkpointQuest = 1012,
+            complete = { level = { min = 24 } },
+            conditions = { all = { { faction = "Alliance" } } },
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 1012, state = "activeOrCompleted" } },
+                        {
+                            any = {
+                                { quest = { id = 1012, state = "activeOrCompleted" } },
+                                {
+                                    all = {
+                                        { faction = "Alliance" },
+                                        {
+                                            any = { { any = { { quest = { id = 1011, state = "activeOrCompleted" } }, { all = { { faction = "Alliance" } } } } } },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
             id = "alliance-extra-1012-level",
             kind = "note",
-            checkpointQuest = 1012,
-            text = "Reach level 32 before this visit.",
-            conditions = { all = { { faction = "Alliance" } } },
-            complete = { level = { min = 32 } },
-            requiredLevel = 32,
-            excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 1012, state = "activeOrCompleted" } },
-                        {
-                            any = {
-                                { quest = { id = 1012, state = "activeOrCompleted" } },
-                                {
-                                    all = {
-                                        { faction = "Alliance" },
-                                        {
-                                            any = { { any = { { quest = { id = 1011, state = "activeOrCompleted" } }, { all = { { faction = "Alliance" } } } } } },
-                                        },
-                                    },
-                                },
-                            },
-                        },
-                    },
-                },
-            },
+            requiredLevel = 24,
+            text = "Reach level 24 before this visit.",
         },
         {
-            id = "alliance-extra-1012-accept",
-            kind = "accept",
-            text = "Accept Insane Druids from Kayneth Stillwind.",
-            conditions = { all = { { faction = "Alliance" }, { level = { min = 24 } } } },
-            route = {
-                {
-                    mapID = 1440,
-                    x = 0.852,
-                    y = 0.446,
-                    label = "Kayneth Stillwind",
-                    offMapText = "Travel to Kayneth Stillwind in Ashenvale.",
-                },
-            },
             complete = { quest = { id = 1012, state = "activeOrCompleted" } },
-            requiredQuests = { { mode = "any", quests = { 1011 } } },
-            useClientText = false,
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 24 } } } },
             dependsOn = { "alliance-extra-1012-level" },
             excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 1012, state = "activeOrCompleted" } },
-                        {
+                any = {
+                    {
+                        ["not"] = {
                             any = {
                                 { quest = { id = 1012, state = "activeOrCompleted" } },
                                 {
-                                    all = {
-                                        { faction = "Alliance" },
+                                    any = {
+                                        { quest = { id = 1012, state = "activeOrCompleted" } },
                                         {
-                                            any = { { any = { { quest = { id = 1011, state = "activeOrCompleted" } }, { all = { { faction = "Alliance" } } } } } },
+                                            all = {
+                                                { faction = "Alliance" },
+                                                {
+                                                    any = { { any = { { quest = { id = 1011, state = "activeOrCompleted" } }, { all = { { faction = "Alliance" } } } } } },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 1012, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 1012, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                { faction = "Alliance" },
+                                                { race = { 1, 3, 4, 7 } },
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 1011, state = "activeOrCompleted" } },
+                                                                { all = { { faction = "Alliance" }, { race = { 1, 3, 4, 7 } } } },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
                                         },
                                     },
                                 },
@@ -6904,70 +7194,69 @@ ns:RegisterGuide({
                     },
                 },
             },
-        },
-        {
-            id = "alliance-extra-1012-objective",
-            kind = "objective",
-            text = "Kill the druids: Taneel Darkwood, Uthil Mooncall, Mavoris Cloudsbreak.",
-            conditions = { all = { { faction = "Alliance" }, { level = { min = 24 } } } },
-            route = {
-                { mapID = 1440, x = 0.77, y = 0.74, label = "Taneel Darkwood", offMapText = "Travel to Taneel Darkwood in Ashenvale." },
-            },
-            complete = { quest = { id = 1012, state = "complete" } },
+            id = "alliance-extra-1012-accept",
+            kind = "accept",
             requiredQuests = { { mode = "any", quests = { 1011 } } },
-            useClientText = false,
-            dependsOn = { "alliance-extra-1012-accept" },
-            excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 1012, state = "activeOrCompleted" } },
-                        {
-                            any = {
-                                { quest = { id = 1012, state = "activeOrCompleted" } },
-                                {
-                                    all = {
-                                        { faction = "Alliance" },
-                                        {
-                                            any = { { any = { { quest = { id = 1011, state = "activeOrCompleted" } }, { all = { { faction = "Alliance" } } } } } },
-                                        },
-                                    },
-                                },
-                            },
-                        },
-                    },
-                },
-            },
-        },
-        {
-            id = "alliance-extra-1012-turnin",
-            kind = "turnin",
-            text = "Turn in Insane Druids to Kayneth Stillwind.",
-            conditions = { all = { { faction = "Alliance" }, { level = { min = 24 } } } },
             route = {
                 {
+                    label = "Kayneth Stillwind",
                     mapID = 1440,
+                    offMapText = "Travel to Kayneth Stillwind in Ashenvale.",
                     x = 0.852,
                     y = 0.446,
-                    label = "Kayneth Stillwind",
-                    offMapText = "Travel to Kayneth Stillwind in Ashenvale.",
                 },
             },
-            complete = { quest = { id = 1012, state = "completed" } },
-            requiredQuests = { { mode = "any", quests = { 1011 } } },
+            text = "Accept Insane Druids from Kayneth Stillwind.",
             useClientText = false,
-            dependsOn = { "alliance-extra-1012-objective" },
+        },
+        {
+            complete = { quest = { id = 1012, state = "complete" } },
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 24 } } } },
+            dependsOn = { "alliance-extra-1012-accept" },
             excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 1012, state = "activeOrCompleted" } },
-                        {
+                any = {
+                    {
+                        ["not"] = {
                             any = {
                                 { quest = { id = 1012, state = "activeOrCompleted" } },
                                 {
-                                    all = {
-                                        { faction = "Alliance" },
+                                    any = {
+                                        { quest = { id = 1012, state = "activeOrCompleted" } },
                                         {
-                                            any = { { any = { { quest = { id = 1011, state = "activeOrCompleted" } }, { all = { { faction = "Alliance" } } } } } },
+                                            all = {
+                                                { faction = "Alliance" },
+                                                {
+                                                    any = { { any = { { quest = { id = 1011, state = "activeOrCompleted" } }, { all = { { faction = "Alliance" } } } } } },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 1012, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 1012, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                { faction = "Alliance" },
+                                                { race = { 1, 3, 4, 7 } },
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 1011, state = "activeOrCompleted" } },
+                                                                { all = { { faction = "Alliance" }, { race = { 1, 3, 4, 7 } } } },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
                                         },
                                     },
                                 },
@@ -6976,6 +7265,88 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-extra-1012-objective",
+            kind = "objective",
+            requiredQuests = { { mode = "any", quests = { 1011 } } },
+            route = {
+                { label = "Taneel Darkwood", mapID = 1440, offMapText = "Travel to Taneel Darkwood in Ashenvale.", x = 0.77, y = 0.74 },
+            },
+            text = "Kill the druids: Taneel Darkwood, Uthil Mooncall, Mavoris Cloudsbreak.",
+            useClientPin = true,
+            useClientText = false,
+        },
+        {
+            complete = { quest = { id = 1012, state = "completed" } },
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 24 } } } },
+            dependsOn = { "alliance-extra-1012-objective" },
+            excludeWhen = {
+                any = {
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 1012, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 1012, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                { faction = "Alliance" },
+                                                {
+                                                    any = { { any = { { quest = { id = 1011, state = "activeOrCompleted" } }, { all = { { faction = "Alliance" } } } } } },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 1012, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 1012, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                { faction = "Alliance" },
+                                                { race = { 1, 3, 4, 7 } },
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 1011, state = "activeOrCompleted" } },
+                                                                { all = { { faction = "Alliance" }, { race = { 1, 3, 4, 7 } } } },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
+            id = "alliance-extra-1012-turnin",
+            kind = "turnin",
+            requiredQuests = { { mode = "any", quests = { 1011 } } },
+            route = {
+                {
+                    label = "Kayneth Stillwind",
+                    mapID = 1440,
+                    offMapText = "Travel to Kayneth Stillwind in Ashenvale.",
+                    x = 0.852,
+                    y = 0.446,
+                },
+            },
+            text = "Turn in Insane Druids to Kayneth Stillwind.",
+            useClientPin = true,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 1040, state = "activeOrCompleted" } },
@@ -7153,25 +7524,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 1040, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 25 } }, { race = { 1, 3, 4, 7, 95 } } } },
             dependsOn = {},
-            id = "alliance-leveling-era-alliance-stranglethorn-vale-turnin-1040-passage-to-booty-bay",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 1039 } } },
-            route = {
-                {
-                    label = "Caravaneer Ruzzgot",
-                    mapID = 1434,
-                    offMapText = "Travel to Caravaneer Ruzzgot in Stranglethorn Vale.",
-                    x = 0.2737,
-                    y = 0.7408,
-                },
-            },
-            sourceStep = 3,
-            text = "Turn in Passage to Booty Bay to Caravaneer Ruzzgot.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-stranglethorn-vale",
-            sourceActionID = "turnin-1040-passage-to-booty-bay",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -7234,6 +7586,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-stranglethorn-vale-turnin-1040-passage-to-booty-bay",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 1039 } } },
+            route = {
+                {
+                    label = "Caravaneer Ruzzgot",
+                    mapID = 1434,
+                    offMapText = "Travel to Caravaneer Ruzzgot in Stranglethorn Vale.",
+                    x = 0.2737,
+                    y = 0.7408,
+                },
+            },
+            sourceActionID = "turnin-1040-passage-to-booty-bay",
+            sourceGuide = "leveling-era-alliance-stranglethorn-vale",
+            sourceStep = 3,
+            text = "Turn in Passage to Booty Bay to Caravaneer Ruzzgot.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 1041, state = "activeOrCompleted" } },
@@ -7338,19 +7709,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 1041, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 25 } }, { race = { 1, 3, 4, 7, 95 } } } },
             dependsOn = { "alliance-leveling-era-alliance-stranglethorn-vale-accept-1041-the-caravan-road" },
-            id = "alliance-leveling-era-alliance-stranglethorn-vale-turnin-1041-the-caravan-road",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 1040 } } },
-            route = {
-                { label = "Clerk Daltry", mapID = 1431, offMapText = "Travel to Clerk Daltry in Duskwood.", x = 0.7253, y = 0.4686 },
-            },
-            sourceStep = 54,
-            text = "Turn in The Caravan Road to Clerk Daltry.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-stranglethorn-vale",
-            sourceActionID = "turnin-1041-the-caravan-road",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -7427,6 +7785,19 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-stranglethorn-vale-turnin-1041-the-caravan-road",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 1040 } } },
+            route = {
+                { label = "Clerk Daltry", mapID = 1431, offMapText = "Travel to Clerk Daltry in Duskwood.", x = 0.7253, y = 0.4686 },
+            },
+            sourceActionID = "turnin-1041-the-caravan-road",
+            sourceGuide = "leveling-era-alliance-stranglethorn-vale",
+            sourceStep = 54,
+            text = "Turn in The Caravan Road to Clerk Daltry.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 1042, state = "activeOrCompleted" } },
@@ -7539,25 +7910,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 1042, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 25 } }, { race = { 1, 3, 4, 7, 95 } } } },
             dependsOn = { "alliance-leveling-era-alliance-stranglethorn-vale-accept-1042-the-carevin-family" },
-            id = "alliance-leveling-era-alliance-stranglethorn-vale-turnin-1042-the-carevin-family",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 1041 } } },
-            route = {
-                {
-                    label = "Jonathan Carevin",
-                    mapID = 1431,
-                    offMapText = "Travel to Jonathan Carevin in Duskwood.",
-                    x = 0.7532,
-                    y = 0.4902,
-                },
-            },
-            sourceStep = 55,
-            text = "Turn in The Carevin Family to Jonathan Carevin.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-stranglethorn-vale",
-            sourceActionID = "turnin-1042-the-carevin-family",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -7648,15 +8000,34 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-stranglethorn-vale-turnin-1042-the-carevin-family",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 1041 } } },
+            route = {
+                {
+                    label = "Jonathan Carevin",
+                    mapID = 1431,
+                    offMapText = "Travel to Jonathan Carevin in Duskwood.",
+                    x = 0.7532,
+                    y = 0.4902,
+                },
+            },
+            sourceActionID = "turnin-1042-the-carevin-family",
+            sourceGuide = "leveling-era-alliance-stranglethorn-vale",
+            sourceStep = 55,
+            text = "Turn in The Carevin Family to Jonathan Carevin.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
+            checkpointQuest = 98418,
+            complete = { level = { min = 23 } },
+            conditions = { all = { { faction = "Alliance" } } },
             id = "alliance-extra-98418-level",
             kind = "note",
-            checkpointQuest = 98418,
-            text = "Reach level 30 before this visit.",
-            conditions = { all = { { faction = "Alliance" } } },
-            complete = { level = { min = 30 } },
-            requiredLevel = 30,
+            requiredLevel = 23,
+            text = "Reach level 23 before this visit.",
         },
         {
             id = "alliance-extra-98418-accept",
@@ -7697,23 +8068,25 @@ ns:RegisterGuide({
             dependsOn = { "alliance-extra-98418-accept" },
         },
         {
+            complete = { quest = { id = 98418, state = "completed" } },
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 23 } } } },
+            dependsOn = { "alliance-extra-98418-objective" },
             id = "alliance-extra-98418-turnin",
             kind = "turnin",
-            text = "Turn in Shared Fury to Maseara Autumnmoon.",
-            conditions = { all = { { faction = "Alliance" }, { level = { min = 23 } } } },
+            requiredQuests = {},
             route = {
                 {
+                    label = "Maseara Autumnmoon",
                     mapID = 1440,
+                    offMapText = "Travel to Maseara Autumnmoon in Ashenvale.",
                     x = 0.81,
                     y = 0.502,
-                    label = "Maseara Autumnmoon",
-                    offMapText = "Travel to Maseara Autumnmoon in Ashenvale.",
                 },
             },
-            complete = { quest = { id = 98418, state = "completed" } },
-            requiredQuests = {},
+            text = "Turn in Shared Fury to Maseara Autumnmoon.",
+            useClientPin = true,
             useClientText = false,
-            dependsOn = { "alliance-extra-98418-objective" },
+            useQuestNavigation = true,
         },
         {
             id = "visit-entry-leveling-era-horde-the-barrens-and-stonetalon-mountain",
@@ -7785,13 +8158,13 @@ ns:RegisterGuide({
                     y = 0.3101,
                 },
             },
+            sourceActionID = "turnin-844-plainstrider-menace",
+            sourceGuide = "leveling-era-horde-the-barrens-and-stonetalon-mountain",
             sourceStep = 24,
             text = "Turn in Plainstrider Menace to Sergra Darkthorn.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-the-barrens-and-stonetalon-mountain",
-            sourceActionID = "turnin-844-plainstrider-menace",
         },
         {
             complete = { quest = { id = 845, state = "activeOrCompleted" } },
@@ -7889,25 +8262,6 @@ ns:RegisterGuide({
                 "horde-leveling-era-horde-the-barrens-and-stonetalon-mountain-accept-845-the-zhevra",
                 "horde-leveling-era-horde-the-barrens-and-stonetalon-mountain-objective-845-1-zhevra-hooves",
             },
-            id = "horde-leveling-era-horde-the-barrens-and-stonetalon-mountain-turnin-845-the-zhevra",
-            kind = "turnin",
-            requiredQuests = { { conditions = { faction = "Horde" }, mode = "any", quests = { 844 } } },
-            route = {
-                {
-                    label = "Sergra Darkthorn",
-                    mapID = 1413,
-                    offMapText = "Travel to Sergra Darkthorn in The Barrens.",
-                    x = 0.5223,
-                    y = 0.3101,
-                },
-            },
-            sourceStep = 45,
-            text = "Turn in The Zhevra to Sergra Darkthorn.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-the-barrens-and-stonetalon-mountain",
-            sourceActionID = "turnin-845-the-zhevra",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -7933,6 +8287,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-the-barrens-and-stonetalon-mountain-turnin-845-the-zhevra",
+            kind = "turnin",
+            requiredQuests = { { conditions = { faction = "Horde" }, mode = "any", quests = { 844 } } },
+            route = {
+                {
+                    label = "Sergra Darkthorn",
+                    mapID = 1413,
+                    offMapText = "Travel to Sergra Darkthorn in The Barrens.",
+                    x = 0.5223,
+                    y = 0.3101,
+                },
+            },
+            sourceActionID = "turnin-845-the-zhevra",
+            sourceGuide = "leveling-era-horde-the-barrens-and-stonetalon-mountain",
+            sourceStep = 45,
+            text = "Turn in The Zhevra to Sergra Darkthorn.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 903, state = "activeOrCompleted" } },
@@ -8068,25 +8441,6 @@ ns:RegisterGuide({
                 "horde-leveling-era-horde-the-barrens-and-stonetalon-mountain-accept-903-prowlers-of-the-barrens",
                 "horde-leveling-era-horde-the-barrens-and-stonetalon-mountain-objective-903-1-prowler-claws",
             },
-            id = "horde-leveling-era-horde-the-barrens-and-stonetalon-mountain-turnin-903-prowlers-of-the-barrens",
-            kind = "turnin",
-            requiredQuests = { { conditions = { faction = "Horde" }, mode = "any", quests = { 845 } } },
-            route = {
-                {
-                    label = "Sergra Darkthorn",
-                    mapID = 1413,
-                    offMapText = "Travel to Sergra Darkthorn in The Barrens.",
-                    x = 0.5224,
-                    y = 0.3101,
-                },
-            },
-            sourceStep = 71,
-            text = "Turn in Prowlers of the Barrens to Sergra Darkthorn.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-the-barrens-and-stonetalon-mountain",
-            sourceActionID = "turnin-903-prowlers-of-the-barrens",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -8131,6 +8485,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-the-barrens-and-stonetalon-mountain-turnin-903-prowlers-of-the-barrens",
+            kind = "turnin",
+            requiredQuests = { { conditions = { faction = "Horde" }, mode = "any", quests = { 845 } } },
+            route = {
+                {
+                    label = "Sergra Darkthorn",
+                    mapID = 1413,
+                    offMapText = "Travel to Sergra Darkthorn in The Barrens.",
+                    x = 0.5224,
+                    y = 0.3101,
+                },
+            },
+            sourceActionID = "turnin-903-prowlers-of-the-barrens",
+            sourceGuide = "leveling-era-horde-the-barrens-and-stonetalon-mountain",
+            sourceStep = 71,
+            text = "Turn in Prowlers of the Barrens to Sergra Darkthorn.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 881, state = "activeOrCompleted" } },
@@ -8304,25 +8677,6 @@ ns:RegisterGuide({
                 "horde-leveling-era-horde-the-barrens-and-stonetalon-mountain-accept-881-echeyakee",
                 "horde-leveling-era-horde-the-barrens-and-stonetalon-mountain-objective-881-1-horn-of-echeyakee",
             },
-            id = "horde-leveling-era-horde-the-barrens-and-stonetalon-mountain-turnin-881-echeyakee",
-            kind = "turnin",
-            requiredQuests = { { conditions = { faction = "Horde" }, mode = "any", quests = { 903 } } },
-            route = {
-                {
-                    label = "Sergra Darkthorn",
-                    mapID = 1413,
-                    offMapText = "Travel to Sergra Darkthorn in The Barrens.",
-                    x = 0.5223,
-                    y = 0.31,
-                },
-            },
-            sourceStep = 102,
-            text = "Turn in Echeyakee to Sergra Darkthorn.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-the-barrens-and-stonetalon-mountain",
-            sourceActionID = "turnin-881-echeyakee",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -8386,6 +8740,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-the-barrens-and-stonetalon-mountain-turnin-881-echeyakee",
+            kind = "turnin",
+            requiredQuests = { { conditions = { faction = "Horde" }, mode = "any", quests = { 903 } } },
+            route = {
+                {
+                    label = "Sergra Darkthorn",
+                    mapID = 1413,
+                    offMapText = "Travel to Sergra Darkthorn in The Barrens.",
+                    x = 0.5223,
+                    y = 0.31,
+                },
+            },
+            sourceActionID = "turnin-881-echeyakee",
+            sourceGuide = "leveling-era-horde-the-barrens-and-stonetalon-mountain",
+            sourceStep = 102,
+            text = "Turn in Echeyakee to Sergra Darkthorn.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 905, state = "activeOrCompleted" } },
@@ -8798,25 +9171,6 @@ ns:RegisterGuide({
                 "horde-leveling-era-horde-the-barrens-and-stonetalon-mountain-objective-905-3-authored-Red-Raptor-Nest",
                 "horde-leveling-era-horde-the-barrens-and-stonetalon-mountain-objective-905-2-authored-Yellow-Raptor-Nest",
             },
-            id = "horde-leveling-era-horde-the-barrens-and-stonetalon-mountain-turnin-905-the-angry-scytheclaws",
-            kind = "turnin",
-            requiredQuests = { { conditions = { faction = "Horde" }, mode = "any", quests = { 881 } } },
-            route = {
-                {
-                    label = "Sergra Darkthorn",
-                    mapID = 1413,
-                    offMapText = "Travel to Sergra Darkthorn in The Barrens.",
-                    x = 0.5223,
-                    y = 0.3101,
-                },
-            },
-            sourceStep = 132,
-            text = "Turn in The Angry Scytheclaws to Sergra Darkthorn.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-the-barrens-and-stonetalon-mountain",
-            sourceActionID = "turnin-905-the-angry-scytheclaws",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -8899,6 +9253,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-the-barrens-and-stonetalon-mountain-turnin-905-the-angry-scytheclaws",
+            kind = "turnin",
+            requiredQuests = { { conditions = { faction = "Horde" }, mode = "any", quests = { 881 } } },
+            route = {
+                {
+                    label = "Sergra Darkthorn",
+                    mapID = 1413,
+                    offMapText = "Travel to Sergra Darkthorn in The Barrens.",
+                    x = 0.5223,
+                    y = 0.3101,
+                },
+            },
+            sourceActionID = "turnin-905-the-angry-scytheclaws",
+            sourceGuide = "leveling-era-horde-the-barrens-and-stonetalon-mountain",
+            sourceStep = 132,
+            text = "Turn in The Angry Scytheclaws to Sergra Darkthorn.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 3261, state = "activeOrCompleted" } },
@@ -9028,19 +9401,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 3261, state = "completed" } },
             conditions = { all = { { faction = "Horde" }, { level = { min = 10 } }, { race = { 2, 5, 6, 8, 96 } } } },
             dependsOn = { "horde-leveling-era-horde-the-barrens-and-stonetalon-mountain-accept-3261-jorn-skyseer" },
-            id = "horde-leveling-era-horde-the-barrens-and-stonetalon-mountain-turnin-3261-jorn-skyseer",
-            kind = "turnin",
-            requiredQuests = { { conditions = { faction = "Horde" }, mode = "any", quests = { 905 } } },
-            route = {
-                { label = "Jorn Skyseer", mapID = 1413, offMapText = "Travel to Jorn Skyseer in The Barrens.", x = 0.4486, y = 0.5914 },
-            },
-            sourceStep = 155,
-            text = "Turn in Jorn Skyseer to Jorn Skyseer.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-the-barrens-and-stonetalon-mountain",
-            sourceActionID = "turnin-3261-jorn-skyseer",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -9142,6 +9502,19 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-the-barrens-and-stonetalon-mountain-turnin-3261-jorn-skyseer",
+            kind = "turnin",
+            requiredQuests = { { conditions = { faction = "Horde" }, mode = "any", quests = { 905 } } },
+            route = {
+                { label = "Jorn Skyseer", mapID = 1413, offMapText = "Travel to Jorn Skyseer in The Barrens.", x = 0.4486, y = 0.5914 },
+            },
+            sourceActionID = "turnin-3261-jorn-skyseer",
+            sourceGuide = "leveling-era-horde-the-barrens-and-stonetalon-mountain",
+            sourceStep = 155,
+            text = "Turn in Jorn Skyseer to Jorn Skyseer.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 882, state = "activeOrCompleted" } },
@@ -9552,19 +9925,6 @@ ns:RegisterGuide({
                 "horde-leveling-era-horde-the-barrens-and-stonetalon-mountain-objective-882-1-zhevra-charger",
                 "horde-leveling-era-horde-the-barrens-and-stonetalon-mountain-objective-882-1-fresh-zhevra-carcass",
             },
-            id = "horde-leveling-era-horde-the-barrens-and-stonetalon-mountain-turnin-882-ishamuhale",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 3261 } } },
-            route = {
-                { label = "Jorn Skyseer", mapID = 1413, offMapText = "Travel to Jorn Skyseer in The Barrens.", x = 0.4486, y = 0.5914 },
-            },
-            sourceStep = 194,
-            text = "Turn in Ishamuhale to Jorn Skyseer.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-the-barrens-and-stonetalon-mountain",
-            sourceActionID = "turnin-882-ishamuhale",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -9680,6 +10040,19 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-the-barrens-and-stonetalon-mountain-turnin-882-ishamuhale",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 3261 } } },
+            route = {
+                { label = "Jorn Skyseer", mapID = 1413, offMapText = "Travel to Jorn Skyseer in The Barrens.", x = 0.4486, y = 0.5914 },
+            },
+            sourceActionID = "turnin-882-ishamuhale",
+            sourceGuide = "leveling-era-horde-the-barrens-and-stonetalon-mountain",
+            sourceStep = 194,
+            text = "Turn in Ishamuhale to Jorn Skyseer.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             id = "visit-entry-leveling-era-horde-ashenvale",
@@ -9782,13 +10155,13 @@ ns:RegisterGuide({
             kind = "turnin",
             requiredQuests = {},
             route = { { label = "Marukai", mapID = 1440, offMapText = "Travel to Marukai in Ashenvale.", x = 0.1169, y = 0.349 } },
+            sourceActionID = "turnin-6442-naga-at-the-zoram-strand",
+            sourceGuide = "leveling-era-horde-ashenvale",
             sourceStep = 8,
             text = "Turn in Naga at the Zoram Strand to Marukai.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-ashenvale",
-            sourceActionID = "turnin-6442-naga-at-the-zoram-strand",
         },
         {
             id = "visit-entry-leveling-era-horde-the-barrens",
@@ -9799,6 +10172,44 @@ ns:RegisterGuide({
             excludeWhen = { ["not"] = { all = { { faction = "Horde" } } } },
             complete = { level = { min = 24 } },
             requiredLevel = 24,
+        },
+        {
+            checkpointQuest = 1195,
+            complete = { level = { min = 20 } },
+            conditions = { all = { { faction = "Horde" }, { race = { 2, 5, 6, 8, 96 } } } },
+            dependsOn = {},
+            id = "horde-leveling-era-horde-the-barrens-level-before-accept-1195-the-sacred-flame",
+            kind = "note",
+            requiredLevel = 20,
+            requiredQuests = {},
+            sourceActionID = "level-before-accept-1195-the-sacred-flame",
+            sourceGuide = "leveling-era-horde-the-barrens",
+            text = "Reach level 20 before continuing. Choose how to gain XP, then return to this route.",
+            useClientPin = false,
+            useClientText = false,
+        },
+        {
+            complete = { quest = { id = 1195, state = "activeOrCompleted" } },
+            conditions = { all = { { faction = "Horde" }, { level = { min = 20 } }, { race = { 2, 5, 6, 8, 96 } } } },
+            dependsOn = {},
+            id = "horde-leveling-era-horde-the-barrens-accept-1195-the-sacred-flame",
+            kind = "accept",
+            requiredQuests = {},
+            route = {
+                {
+                    label = "Zangen Stonehoof",
+                    mapID = 1456,
+                    offMapText = "Travel to Zangen Stonehoof in Thunder Bluff.",
+                    x = 0.551,
+                    y = 0.508,
+                },
+            },
+            sourceActionID = "accept-1195-the-sacred-flame",
+            sourceGuide = "leveling-era-horde-the-barrens",
+            sourceStep = 8,
+            text = "Accept The Sacred Flame from Zangen Stonehoof.",
+            useClientPin = false,
+            useClientText = false,
         },
         {
             alternativeQuests = { 235, 742 },
@@ -10049,13 +10460,13 @@ ns:RegisterGuide({
             route = {
                 { label = "Gurda Ragescar", mapID = 1440, offMapText = "Travel to Gurda Ragescar in Ashenvale.", x = 0.7, y = 0.7115 },
             },
+            sourceActionID = "turnin-6504-the-lost-pages",
+            sourceGuide = "leveling-era-horde-ashenvale-part-2",
             sourceStep = 9,
             text = "Turn in The Lost Pages to Gurda Ragescar.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-ashenvale-part-2",
-            sourceActionID = "turnin-6504-the-lost-pages",
         },
         {
             complete = { quest = { id = 6503, state = "activeOrCompleted" } },
@@ -10079,25 +10490,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 6382, state = "completed" } },
             conditions = { all = { { faction = "Horde" }, { level = { min = 20 } }, { race = { 2, 5, 6, 8, 96 } } } },
             dependsOn = {},
-            id = "horde-leveling-era-horde-ashenvale-part-2-turnin-6382-the-ashenvale-hunt",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 882 } } },
-            route = {
-                {
-                    label = "Senani Thunderheart",
-                    mapID = 1440,
-                    offMapText = "Travel to Senani Thunderheart in Ashenvale.",
-                    x = 0.7378,
-                    y = 0.6146,
-                },
-            },
-            sourceStep = 12,
-            text = "Turn in The Ashenvale Hunt to Senani Thunderheart.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-ashenvale-part-2",
-            sourceActionID = "turnin-6382-the-ashenvale-hunt",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -10227,6 +10619,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-ashenvale-part-2-turnin-6382-the-ashenvale-hunt",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 882 } } },
+            route = {
+                {
+                    label = "Senani Thunderheart",
+                    mapID = 1440,
+                    offMapText = "Travel to Senani Thunderheart in Ashenvale.",
+                    x = 0.7378,
+                    y = 0.6146,
+                },
+            },
+            sourceActionID = "turnin-6382-the-ashenvale-hunt",
+            sourceGuide = "leveling-era-horde-ashenvale-part-2",
+            sourceStep = 12,
+            text = "Turn in The Ashenvale Hunt to Senani Thunderheart.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             alternativeQuests = { 742, 6382 },
@@ -10262,13 +10673,13 @@ ns:RegisterGuide({
                     y = 0.6146,
                 },
             },
+            sourceActionID = "turnin-235-the-ashenvale-hunt",
+            sourceGuide = "leveling-era-horde-ashenvale-part-2",
             sourceStep = 12,
             text = "Turn in The Ashenvale Hunt to Senani Thunderheart.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-ashenvale-part-2",
-            sourceActionID = "turnin-235-the-ashenvale-hunt",
         },
         {
             alternativeQuests = { 235, 6382 },
@@ -10301,13 +10712,13 @@ ns:RegisterGuide({
                     y = 0.6146,
                 },
             },
+            sourceActionID = "turnin-742-the-ashenvale-hunt",
+            sourceGuide = "leveling-era-horde-ashenvale-part-2",
             sourceStep = 12,
             text = "Turn in The Ashenvale Hunt to Senani Thunderheart.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-ashenvale-part-2",
-            sourceActionID = "turnin-742-the-ashenvale-hunt",
         },
         {
             complete = { quest = { id = 6383, state = "activeOrCompleted" } },
@@ -10348,13 +10759,13 @@ ns:RegisterGuide({
                     y = 0.6146,
                 },
             },
+            sourceActionID = "turnin-6383-the-ashenvale-hunt",
+            sourceGuide = "leveling-era-horde-ashenvale-part-2",
             sourceStep = 12,
             text = "Turn in The Ashenvale Hunt to Senani Thunderheart.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-ashenvale-part-2",
-            sourceActionID = "turnin-6383-the-ashenvale-hunt",
         },
         {
             complete = { quest = { id = 25, state = "activeOrCompleted" } },
@@ -10589,6 +11000,22 @@ ns:RegisterGuide({
             sourceActionID = "objective-25-1-befouled-water-elemental",
         },
         {
+            complete = { questObjective = { count = 1, id = 1195, index = 1, text = "Etched Phial" } },
+            conditions = { all = { { faction = "Horde" }, { level = { min = 20 } }, { race = { 2, 5, 6, 8, 96 } } } },
+            dependsOn = {},
+            id = "horde-leveling-era-horde-ashenvale-part-2-objective-1195-1-etched-phial",
+            kind = "objective",
+            requiredQuests = {},
+            route = { { label = "Etched Phial", mapID = 1440, offMapText = "Travel to Etched Phial.", x = 0.602, y = 0.729 } },
+            sourceActionID = "objective-1195-1-etched-phial",
+            sourceGuide = "leveling-era-horde-ashenvale-part-2",
+            sourceStep = 40,
+            text = "Collect 1 Filled Etched Phial.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
+        },
+        {
             complete = { quest = { id = 6503, state = "completed" } },
             conditions = { all = { { faction = "Horde" }, { level = { min = 19 } }, { race = { 2, 5, 6, 8, 96 } } } },
             dependsOn = {
@@ -10601,13 +11028,13 @@ ns:RegisterGuide({
             route = {
                 { label = "Kuray'bin", mapID = 1440, offMapText = "Travel to Kuray'bin in Ashenvale.", x = 0.7111, y = 0.6812 },
             },
+            sourceActionID = "turnin-6503-ashenvale-outrunners",
+            sourceGuide = "leveling-era-horde-ashenvale-part-2",
             sourceStep = 41,
             text = "Turn in Ashenvale Outrunners to Kuray'bin.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-ashenvale-part-2",
-            sourceActionID = "turnin-6503-ashenvale-outrunners",
         },
         {
             complete = { quest = { id = 6544, state = "completed" } },
@@ -10619,18 +11046,39 @@ ns:RegisterGuide({
             route = {
                 { label = "Ertog Ragetusk", mapID = 1440, offMapText = "Travel to Ertog Ragetusk in Ashenvale.", x = 0.7303, y = 0.6247 },
             },
+            sourceActionID = "turnin-6544-torek-s-assault",
+            sourceGuide = "leveling-era-horde-ashenvale-part-2",
             sourceStep = 42,
             text = "Turn in Torek's Assault to Ertog Ragetusk.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-ashenvale-part-2",
-            sourceActionID = "turnin-6544-torek-s-assault",
         },
         {
             complete = { quest = { id = 24, state = "completed" } },
             conditions = { all = { { faction = "Horde" }, { level = { min = 20 } }, { race = { 2, 5, 6, 8, 96 } } } },
             dependsOn = { "horde-leveling-era-horde-ashenvale-part-2-accept-24-shadumbra-s-head" },
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 24, state = "activeOrCompleted" } },
+                        {
+                            any = {
+                                { quest = { id = 24, state = "activeOrCompleted" } },
+                                {
+                                    all = {
+                                        { item = { minCount = 1, name = "Shadumbra's Head" } },
+                                        { faction = "Horde" },
+                                        {
+                                            any = { { any = { { quest = { id = 6383, state = "activeOrCompleted" } }, { all = { { faction = "Horde" } } } } } },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
             id = "horde-leveling-era-horde-ashenvale-part-2-turnin-24-shadumbra-s-head",
             kind = "turnin",
             requiredQuests = { { conditions = {}, mode = "any", quests = { 6383 } } },
@@ -10643,23 +11091,28 @@ ns:RegisterGuide({
                     y = 0.6146,
                 },
             },
+            sourceActionID = "turnin-24-shadumbra-s-head",
+            sourceGuide = "leveling-era-horde-ashenvale-part-2",
             sourceStep = 43,
             text = "Turn in Shadumbra's Head to Senani Thunderheart.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-ashenvale-part-2",
-            sourceActionID = "turnin-24-shadumbra-s-head",
+        },
+        {
+            complete = { quest = { id = 23, state = "completed" } },
+            conditions = { all = { { faction = "Horde" }, { level = { min = 20 } }, { race = { 2, 5, 6, 8, 96 } } } },
+            dependsOn = { "horde-leveling-era-horde-ashenvale-part-2-accept-23-ursangous-s-paw" },
             excludeWhen = {
                 ["not"] = {
                     any = {
-                        { quest = { id = 24, state = "activeOrCompleted" } },
+                        { quest = { id = 23, state = "activeOrCompleted" } },
                         {
                             any = {
-                                { quest = { id = 24, state = "activeOrCompleted" } },
+                                { quest = { id = 23, state = "activeOrCompleted" } },
                                 {
                                     all = {
-                                        { item = { name = "Shadumbra's Head", minCount = 1 } },
+                                        { item = { minCount = 1, name = "Ursangous's Paw" } },
                                         { faction = "Horde" },
                                         {
                                             any = { { any = { { quest = { id = 6383, state = "activeOrCompleted" } }, { all = { { faction = "Horde" } } } } } },
@@ -10671,11 +11124,6 @@ ns:RegisterGuide({
                     },
                 },
             },
-        },
-        {
-            complete = { quest = { id = 23, state = "completed" } },
-            conditions = { all = { { faction = "Horde" }, { level = { min = 20 } }, { race = { 2, 5, 6, 8, 96 } } } },
-            dependsOn = { "horde-leveling-era-horde-ashenvale-part-2-accept-23-ursangous-s-paw" },
             id = "horde-leveling-era-horde-ashenvale-part-2-turnin-23-ursangous-s-paw",
             kind = "turnin",
             requiredQuests = { { conditions = {}, mode = "any", quests = { 6383 } } },
@@ -10688,34 +11136,13 @@ ns:RegisterGuide({
                     y = 0.6146,
                 },
             },
+            sourceActionID = "turnin-23-ursangous-s-paw",
+            sourceGuide = "leveling-era-horde-ashenvale-part-2",
             sourceStep = 43,
             text = "Turn in Ursangous's Paw to Senani Thunderheart.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-ashenvale-part-2",
-            sourceActionID = "turnin-23-ursangous-s-paw",
-            excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 23, state = "activeOrCompleted" } },
-                        {
-                            any = {
-                                { quest = { id = 23, state = "activeOrCompleted" } },
-                                {
-                                    all = {
-                                        { item = { name = "Ursangous's Paw", minCount = 1 } },
-                                        { faction = "Horde" },
-                                        {
-                                            any = { { any = { { quest = { id = 6383, state = "activeOrCompleted" } }, { all = { { faction = "Horde" } } } } } },
-                                        },
-                                    },
-                                },
-                            },
-                        },
-                    },
-                },
-            },
         },
         {
             complete = { quest = { id = 6482, state = "completed" } },
@@ -10727,13 +11154,13 @@ ns:RegisterGuide({
             route = {
                 { label = "Yama Snowhoof", mapID = 1440, offMapText = "Travel to Yama Snowhoof in Ashenvale.", x = 0.7411, y = 0.6092 },
             },
+            sourceActionID = "turnin-6482-freedom-to-ruul",
+            sourceGuide = "leveling-era-horde-ashenvale-part-2",
             sourceStep = 44,
             text = "Turn in Freedom to Ruul to Yama Snowhoof.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-ashenvale-part-2",
-            sourceActionID = "turnin-6482-freedom-to-ruul",
         },
         {
             complete = { quest = { id = 25, state = "completed" } },
@@ -10754,13 +11181,13 @@ ns:RegisterGuide({
                     y = 0.6,
                 },
             },
+            sourceActionID = "turnin-25-stonetalon-standstill",
+            sourceGuide = "leveling-era-horde-ashenvale-part-2",
             sourceStep = 45,
             text = "Turn in Stonetalon Standstill to Mastok Wrilehiss.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-ashenvale-part-2",
-            sourceActionID = "turnin-25-stonetalon-standstill",
         },
         {
             complete = { quest = { id = 1918, state = "completed" } },
@@ -10778,13 +11205,13 @@ ns:RegisterGuide({
                     y = 0.6,
                 },
             },
+            sourceActionID = "turnin-1918-the-befouled-element",
+            sourceGuide = "leveling-era-horde-ashenvale-part-2",
             sourceStep = 45,
             text = "Turn in The Befouled Element to Mastok Wrilehiss.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-ashenvale-part-2",
-            sourceActionID = "turnin-1918-the-befouled-element",
         },
         {
             complete = { quest = { id = 824, state = "activeOrCompleted" } },
@@ -10861,31 +11288,18 @@ ns:RegisterGuide({
             kind = "turnin",
             requiredQuests = {},
             route = { { label = "Pixel", mapID = 1440, offMapText = "Travel to Pixel in Ashenvale.", x = 0.7306, y = 0.6148 } },
+            sourceActionID = "turnin-6441-satyr-horns",
+            sourceGuide = "leveling-era-horde-ashenvale-part-2",
             sourceStep = 46,
             text = "Turn in Satyr Horns to Pixel.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-ashenvale-part-2",
-            sourceActionID = "turnin-6441-satyr-horns",
         },
         {
             complete = { quest = { id = 824, state = "completed" } },
             conditions = { all = { { faction = "Horde" }, { level = { min = 23 } }, { race = { 2, 5, 6, 8, 96 } } } },
             dependsOn = { "horde-leveling-era-horde-ashenvale-part-2-accept-824-je-neu-of-the-earthen-ring" },
-            id = "horde-leveling-era-horde-ashenvale-part-2-turnin-824-je-neu-of-the-earthen-ring",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 1918 } } },
-            route = {
-                { label = "Je'neu Sancrea", mapID = 1440, offMapText = "Travel to Je'neu Sancrea in Ashenvale.", x = 0.1156, y = 0.3429 },
-            },
-            sourceStep = 47,
-            text = "Turn in Je'neu of the Earthen Ring to Je'neu Sancrea.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-ashenvale-part-2",
-            sourceActionID = "turnin-824-je-neu-of-the-earthen-ring",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -10901,7 +11315,7 @@ ns:RegisterGuide({
                                                 {
                                                     any = {
                                                         { quest = { id = 1918, state = "activeOrCompleted" } },
-                                                        { all = { { item = { name = "Befouled Water Globe", minCount = 1 } }, { faction = "Horde" } } },
+                                                        { all = { { item = { minCount = 1, name = "Befouled Water Globe" } }, { faction = "Horde" } } },
                                                     },
                                                 },
                                             },
@@ -10913,6 +11327,19 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-ashenvale-part-2-turnin-824-je-neu-of-the-earthen-ring",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 1918 } } },
+            route = {
+                { label = "Je'neu Sancrea", mapID = 1440, offMapText = "Travel to Je'neu Sancrea in Ashenvale.", x = 0.1156, y = 0.3429 },
+            },
+            sourceActionID = "turnin-824-je-neu-of-the-earthen-ring",
+            sourceGuide = "leveling-era-horde-ashenvale-part-2",
+            sourceStep = 47,
+            text = "Turn in Je'neu of the Earthen Ring to Je'neu Sancrea.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 6462, state = "complete" } },
@@ -10936,13 +11363,13 @@ ns:RegisterGuide({
             kind = "turnin",
             requiredQuests = {},
             route = { { label = "Mitsuwa", mapID = 1440, offMapText = "Travel to Mitsuwa in Ashenvale.", x = 0.1165, y = 0.3485 } },
+            sourceActionID = "turnin-6462-troll-charm",
+            sourceGuide = "leveling-era-horde-ashenvale-part-2",
             sourceStep = 48,
             text = "Turn in Troll Charm to Mitsuwa.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-ashenvale-part-2",
-            sourceActionID = "turnin-6462-troll-charm",
         },
         {
             complete = { quest = { id = 216, state = "completed" } },
@@ -10957,13 +11384,13 @@ ns:RegisterGuide({
             route = {
                 { label = "Karang Amakkar", mapID = 1440, offMapText = "Travel to Karang Amakkar in Ashenvale.", x = 0.119, y = 0.3454 },
             },
+            sourceActionID = "turnin-216-between-a-rock-and-a-thistlefur",
+            sourceGuide = "leveling-era-horde-ashenvale-part-2",
             sourceStep = 49,
             text = "Turn in Between a Rock and a Thistlefur to Karang Amakkar.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-ashenvale-part-2",
-            sourceActionID = "turnin-216-between-a-rock-and-a-thistlefur",
         },
         {
             complete = { quest = { id = 6641, state = "activeOrCompleted" } },
@@ -10990,13 +11417,13 @@ ns:RegisterGuide({
             route = {
                 { label = "Warsong Runner", mapID = 1440, offMapText = "Travel to Warsong Runner in Ashenvale.", x = 0.1222, y = 0.3421 },
             },
+            sourceActionID = "turnin-6641-vorsha-the-lasher",
+            sourceGuide = "leveling-era-horde-ashenvale-part-2",
             sourceStep = 52,
             text = "Turn in Vorsha the Lasher to Warsong Runner.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-ashenvale-part-2",
-            sourceActionID = "turnin-6641-vorsha-the-lasher",
         },
         {
             complete = { quest = { id = 2, state = "activeOrCompleted" } },
@@ -11037,6 +11464,27 @@ ns:RegisterGuide({
             complete = { quest = { id = 2, state = "completed" } },
             conditions = { all = { { faction = "Horde" }, { level = { min = 20 } }, { race = { 2, 5, 6, 8, 96 } } } },
             dependsOn = { "horde-leveling-era-horde-ashenvale-part-2-accept-2-sharptalon-s-claw" },
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 2, state = "activeOrCompleted" } },
+                        {
+                            any = {
+                                { quest = { id = 2, state = "activeOrCompleted" } },
+                                {
+                                    all = {
+                                        { item = { minCount = 1, name = "Sharptalon's Claw" } },
+                                        { faction = "Horde" },
+                                        {
+                                            any = { { any = { { quest = { id = 6383, state = "activeOrCompleted" } }, { all = { { faction = "Horde" } } } } } },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
             id = "horde-leveling-era-horde-ashenvale-part-2-turnin-2-sharptalon-s-claw",
             kind = "turnin",
             requiredQuests = { { conditions = {}, mode = "any", quests = { 6383 } } },
@@ -11049,34 +11497,13 @@ ns:RegisterGuide({
                     y = 0.6146,
                 },
             },
+            sourceActionID = "turnin-2-sharptalon-s-claw",
+            sourceGuide = "leveling-era-horde-ashenvale-part-2",
             sourceStep = 67,
             text = "Turn in Sharptalon's Claw to Senani Thunderheart.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-ashenvale-part-2",
-            sourceActionID = "turnin-2-sharptalon-s-claw",
-            excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 2, state = "activeOrCompleted" } },
-                        {
-                            any = {
-                                { quest = { id = 2, state = "activeOrCompleted" } },
-                                {
-                                    all = {
-                                        { item = { name = "Sharptalon's Claw", minCount = 1 } },
-                                        { faction = "Horde" },
-                                        {
-                                            any = { { any = { { quest = { id = 6383, state = "activeOrCompleted" } }, { all = { { faction = "Horde" } } } } } },
-                                        },
-                                    },
-                                },
-                            },
-                        },
-                    },
-                },
-            },
         },
         {
             complete = { quest = { id = 247, state = "activeOrCompleted" } },
@@ -11165,13 +11592,37 @@ ns:RegisterGuide({
             },
         },
         {
+            complete = { quest = { id = 1195, state = "completed" } },
+            conditions = { all = { { faction = "Horde" }, { level = { min = 20 } }, { race = { 2, 5, 6, 8, 96 } } } },
+            dependsOn = { "horde-leveling-era-horde-ashenvale-part-2-objective-1195-1-etched-phial" },
+            id = "horde-leveling-era-horde-ashenvale-part-2-turnin-1195-the-sacred-flame",
+            kind = "turnin",
+            requiredQuests = {},
+            route = {
+                {
+                    label = "Zangen Stonehoof",
+                    mapID = 1456,
+                    offMapText = "Travel to Zangen Stonehoof in Thunder Bluff.",
+                    x = 0.551,
+                    y = 0.508,
+                },
+            },
+            sourceActionID = "turnin-1195-the-sacred-flame",
+            sourceGuide = "leveling-era-horde-ashenvale-part-2",
+            sourceStep = 76,
+            text = "Turn in The Sacred Flame to Zangen Stonehoof.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
+        },
+        {
+            checkpointQuest = 98251,
+            complete = { level = { min = 18 } },
+            conditions = { all = { { faction = "Horde" } } },
             id = "horde-extra-98251-level",
             kind = "note",
-            checkpointQuest = 98251,
-            text = "Reach level 22 before this visit.",
-            conditions = { all = { { faction = "Horde" } } },
-            complete = { level = { min = 22 } },
-            requiredLevel = 22,
+            requiredLevel = 18,
+            text = "Reach level 18 before this visit.",
         },
         {
             id = "horde-extra-98251-accept",
@@ -11206,23 +11657,19 @@ ns:RegisterGuide({
             dependsOn = { "horde-extra-98251-accept" },
         },
         {
+            complete = { quest = { id = 98251, state = "completed" } },
+            conditions = { all = { { faction = "Horde" }, { level = { min = 18 } } } },
+            dependsOn = { "horde-extra-98251-objective" },
             id = "horde-extra-98251-turnin",
             kind = "turnin",
-            text = "Turn in Never Coming Back to Va'xug Firefure.",
-            conditions = { all = { { faction = "Horde" }, { level = { min = 18 } } } },
-            route = {
-                {
-                    mapID = 1440,
-                    x = 0.40399999999999997,
-                    y = 0.614,
-                    label = "Va'xug Firefure",
-                    offMapText = "Travel to Va'xug Firefure in Ashenvale.",
-                },
-            },
-            complete = { quest = { id = 98251, state = "completed" } },
             requiredQuests = {},
+            route = {
+                { label = "Va'xug Firefure", mapID = 1440, offMapText = "Travel to Va'xug Firefure in Ashenvale.", x = 0.404, y = 0.614 },
+            },
+            text = "Turn in Never Coming Back to Va'xug Firefure.",
+            useClientPin = true,
             useClientText = false,
-            dependsOn = { "horde-extra-98251-objective" },
+            useQuestNavigation = true,
         },
     },
 })

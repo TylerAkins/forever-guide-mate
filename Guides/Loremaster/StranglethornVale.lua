@@ -6,7 +6,7 @@ ns:RegisterGuide({
     id = "loremaster-stranglethorn-vale",
     title = "Stranglethorn Vale",
     category = "Loremaster Guides",
-    revision = 1,
+    revision = 2,
     routeMode = "ordered",
     loremasterExpanded = true,
     goals = {
@@ -4269,13 +4269,9 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "alliance-extra-202-level",
-            kind = "note",
             checkpointQuest = 202,
-            text = "Reach level 40 before this visit.",
+            complete = { level = { min = 30 } },
             conditions = { all = { { faction = "Alliance" } } },
-            complete = { level = { min = 40 } },
-            requiredLevel = 40,
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -4313,6 +4309,10 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-extra-202-level",
+            kind = "note",
+            requiredLevel = 30,
+            text = "Reach level 30 before this visit.",
         },
         {
             complete = { quest = { id = 202, state = "activeOrCompleted" } },
@@ -4321,27 +4321,68 @@ ns:RegisterGuide({
             excludeWhen = {
                 any = {
                     {
-                        ["not"] = {
-                            any = {
-                                { quest = { id = 202, state = "activeOrCompleted" } },
-                                {
+                        any = {
+                            {
+                                ["not"] = {
                                     any = {
-                                        { quest = { id = 202, state = "completed" } },
+                                        { quest = { id = 202, state = "activeOrCompleted" } },
                                         {
-                                            all = {
-                                                { faction = "Alliance" },
+                                            any = {
+                                                { quest = { id = 202, state = "completed" } },
                                                 {
-                                                    any = {
+                                                    all = {
+                                                        { faction = "Alliance" },
                                                         {
                                                             any = {
-                                                                { quest = { id = 574, state = "completed" } },
                                                                 {
-                                                                    all = {
-                                                                        { faction = "Alliance" },
+                                                                    any = {
+                                                                        { quest = { id = 574, state = "completed" } },
                                                                         {
                                                                             all = {
-                                                                                { any = { { quest = { id = 203, state = "completed" } }, { all = { { faction = "Alliance" } } } } },
-                                                                                { any = { { quest = { id = 204, state = "completed" } }, { all = { { faction = "Alliance" } } } } },
+                                                                                { faction = "Alliance" },
+                                                                                {
+                                                                                    all = {
+                                                                                        { any = { { quest = { id = 203, state = "completed" } }, { all = { { faction = "Alliance" } } } } },
+                                                                                        { any = { { quest = { id = 204, state = "completed" } }, { all = { { faction = "Alliance" } } } } },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                            {
+                                ["not"] = {
+                                    any = {
+                                        { quest = { id = 202, state = "activeOrCompleted" } },
+                                        {
+                                            any = {
+                                                { quest = { id = 202, state = "completed" } },
+                                                {
+                                                    all = {
+                                                        { faction = "Alliance" },
+                                                        {
+                                                            any = {
+                                                                {
+                                                                    any = {
+                                                                        { quest = { id = 574, state = "completed" } },
+                                                                        {
+                                                                            all = {
+                                                                                { faction = "Alliance" },
+                                                                                {
+                                                                                    all = {
+                                                                                        { any = { { quest = { id = 203, state = "completed" } }, { all = { { faction = "Alliance" } } } } },
+                                                                                        { any = { { quest = { id = 204, state = "completed" } }, { all = { { faction = "Alliance" } } } } },
+                                                                                    },
+                                                                                },
                                                                             },
                                                                         },
                                                                     },
@@ -4363,22 +4404,34 @@ ns:RegisterGuide({
                                 { quest = { id = 202, state = "activeOrCompleted" } },
                                 {
                                     any = {
-                                        { quest = { id = 202, state = "completed" } },
+                                        { quest = { id = 202, state = "activeOrCompleted" } },
                                         {
                                             all = {
                                                 { faction = "Alliance" },
+                                                { race = { 1, 3, 4, 7 } },
                                                 {
                                                     any = {
                                                         {
                                                             any = {
-                                                                { quest = { id = 574, state = "completed" } },
+                                                                { quest = { id = 574, state = "activeOrCompleted" } },
                                                                 {
                                                                     all = {
                                                                         { faction = "Alliance" },
+                                                                        { race = { 1, 3, 4, 7 } },
                                                                         {
                                                                             all = {
-                                                                                { any = { { quest = { id = 203, state = "completed" } }, { all = { { faction = "Alliance" } } } } },
-                                                                                { any = { { quest = { id = 204, state = "completed" } }, { all = { { faction = "Alliance" } } } } },
+                                                                                {
+                                                                                    any = {
+                                                                                        { quest = { id = 203, state = "activeOrCompleted" } },
+                                                                                        { all = { { faction = "Alliance" }, { race = { 1, 3, 4, 7 } } } },
+                                                                                    },
+                                                                                },
+                                                                                {
+                                                                                    any = {
+                                                                                        { quest = { id = 204, state = "activeOrCompleted" } },
+                                                                                        { all = { { faction = "Alliance" }, { race = { 1, 3, 4, 7 } } } },
+                                                                                    },
+                                                                                },
                                                                             },
                                                                         },
                                                                     },
@@ -4418,27 +4471,68 @@ ns:RegisterGuide({
             excludeWhen = {
                 any = {
                     {
-                        ["not"] = {
-                            any = {
-                                { quest = { id = 202, state = "activeOrCompleted" } },
-                                {
+                        any = {
+                            {
+                                ["not"] = {
                                     any = {
-                                        { quest = { id = 202, state = "completed" } },
+                                        { quest = { id = 202, state = "activeOrCompleted" } },
                                         {
-                                            all = {
-                                                { faction = "Alliance" },
+                                            any = {
+                                                { quest = { id = 202, state = "completed" } },
                                                 {
-                                                    any = {
+                                                    all = {
+                                                        { faction = "Alliance" },
                                                         {
                                                             any = {
-                                                                { quest = { id = 574, state = "completed" } },
                                                                 {
-                                                                    all = {
-                                                                        { faction = "Alliance" },
+                                                                    any = {
+                                                                        { quest = { id = 574, state = "completed" } },
                                                                         {
                                                                             all = {
-                                                                                { any = { { quest = { id = 203, state = "completed" } }, { all = { { faction = "Alliance" } } } } },
-                                                                                { any = { { quest = { id = 204, state = "completed" } }, { all = { { faction = "Alliance" } } } } },
+                                                                                { faction = "Alliance" },
+                                                                                {
+                                                                                    all = {
+                                                                                        { any = { { quest = { id = 203, state = "completed" } }, { all = { { faction = "Alliance" } } } } },
+                                                                                        { any = { { quest = { id = 204, state = "completed" } }, { all = { { faction = "Alliance" } } } } },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                            {
+                                ["not"] = {
+                                    any = {
+                                        { quest = { id = 202, state = "activeOrCompleted" } },
+                                        {
+                                            any = {
+                                                { quest = { id = 202, state = "completed" } },
+                                                {
+                                                    all = {
+                                                        { faction = "Alliance" },
+                                                        {
+                                                            any = {
+                                                                {
+                                                                    any = {
+                                                                        { quest = { id = 574, state = "completed" } },
+                                                                        {
+                                                                            all = {
+                                                                                { faction = "Alliance" },
+                                                                                {
+                                                                                    all = {
+                                                                                        { any = { { quest = { id = 203, state = "completed" } }, { all = { { faction = "Alliance" } } } } },
+                                                                                        { any = { { quest = { id = 204, state = "completed" } }, { all = { { faction = "Alliance" } } } } },
+                                                                                    },
+                                                                                },
                                                                             },
                                                                         },
                                                                     },
@@ -4460,22 +4554,34 @@ ns:RegisterGuide({
                                 { quest = { id = 202, state = "activeOrCompleted" } },
                                 {
                                     any = {
-                                        { quest = { id = 202, state = "completed" } },
+                                        { quest = { id = 202, state = "activeOrCompleted" } },
                                         {
                                             all = {
                                                 { faction = "Alliance" },
+                                                { race = { 1, 3, 4, 7 } },
                                                 {
                                                     any = {
                                                         {
                                                             any = {
-                                                                { quest = { id = 574, state = "completed" } },
+                                                                { quest = { id = 574, state = "activeOrCompleted" } },
                                                                 {
                                                                     all = {
                                                                         { faction = "Alliance" },
+                                                                        { race = { 1, 3, 4, 7 } },
                                                                         {
                                                                             all = {
-                                                                                { any = { { quest = { id = 203, state = "completed" } }, { all = { { faction = "Alliance" } } } } },
-                                                                                { any = { { quest = { id = 204, state = "completed" } }, { all = { { faction = "Alliance" } } } } },
+                                                                                {
+                                                                                    any = {
+                                                                                        { quest = { id = 203, state = "activeOrCompleted" } },
+                                                                                        { all = { { faction = "Alliance" }, { race = { 1, 3, 4, 7 } } } },
+                                                                                    },
+                                                                                },
+                                                                                {
+                                                                                    any = {
+                                                                                        { quest = { id = 204, state = "activeOrCompleted" } },
+                                                                                        { all = { { faction = "Alliance" }, { race = { 1, 3, 4, 7 } } } },
+                                                                                    },
+                                                                                },
                                                                             },
                                                                         },
                                                                     },
@@ -4516,27 +4622,68 @@ ns:RegisterGuide({
             excludeWhen = {
                 any = {
                     {
-                        ["not"] = {
-                            any = {
-                                { quest = { id = 202, state = "activeOrCompleted" } },
-                                {
+                        any = {
+                            {
+                                ["not"] = {
                                     any = {
-                                        { quest = { id = 202, state = "completed" } },
+                                        { quest = { id = 202, state = "activeOrCompleted" } },
                                         {
-                                            all = {
-                                                { faction = "Alliance" },
+                                            any = {
+                                                { quest = { id = 202, state = "completed" } },
                                                 {
-                                                    any = {
+                                                    all = {
+                                                        { faction = "Alliance" },
                                                         {
                                                             any = {
-                                                                { quest = { id = 574, state = "completed" } },
                                                                 {
-                                                                    all = {
-                                                                        { faction = "Alliance" },
+                                                                    any = {
+                                                                        { quest = { id = 574, state = "completed" } },
                                                                         {
                                                                             all = {
-                                                                                { any = { { quest = { id = 203, state = "completed" } }, { all = { { faction = "Alliance" } } } } },
-                                                                                { any = { { quest = { id = 204, state = "completed" } }, { all = { { faction = "Alliance" } } } } },
+                                                                                { faction = "Alliance" },
+                                                                                {
+                                                                                    all = {
+                                                                                        { any = { { quest = { id = 203, state = "completed" } }, { all = { { faction = "Alliance" } } } } },
+                                                                                        { any = { { quest = { id = 204, state = "completed" } }, { all = { { faction = "Alliance" } } } } },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                            {
+                                ["not"] = {
+                                    any = {
+                                        { quest = { id = 202, state = "activeOrCompleted" } },
+                                        {
+                                            any = {
+                                                { quest = { id = 202, state = "completed" } },
+                                                {
+                                                    all = {
+                                                        { faction = "Alliance" },
+                                                        {
+                                                            any = {
+                                                                {
+                                                                    any = {
+                                                                        { quest = { id = 574, state = "completed" } },
+                                                                        {
+                                                                            all = {
+                                                                                { faction = "Alliance" },
+                                                                                {
+                                                                                    all = {
+                                                                                        { any = { { quest = { id = 203, state = "completed" } }, { all = { { faction = "Alliance" } } } } },
+                                                                                        { any = { { quest = { id = 204, state = "completed" } }, { all = { { faction = "Alliance" } } } } },
+                                                                                    },
+                                                                                },
                                                                             },
                                                                         },
                                                                     },
@@ -4558,22 +4705,34 @@ ns:RegisterGuide({
                                 { quest = { id = 202, state = "activeOrCompleted" } },
                                 {
                                     any = {
-                                        { quest = { id = 202, state = "completed" } },
+                                        { quest = { id = 202, state = "activeOrCompleted" } },
                                         {
                                             all = {
                                                 { faction = "Alliance" },
+                                                { race = { 1, 3, 4, 7 } },
                                                 {
                                                     any = {
                                                         {
                                                             any = {
-                                                                { quest = { id = 574, state = "completed" } },
+                                                                { quest = { id = 574, state = "activeOrCompleted" } },
                                                                 {
                                                                     all = {
                                                                         { faction = "Alliance" },
+                                                                        { race = { 1, 3, 4, 7 } },
                                                                         {
                                                                             all = {
-                                                                                { any = { { quest = { id = 203, state = "completed" } }, { all = { { faction = "Alliance" } } } } },
-                                                                                { any = { { quest = { id = 204, state = "completed" } }, { all = { { faction = "Alliance" } } } } },
+                                                                                {
+                                                                                    any = {
+                                                                                        { quest = { id = 203, state = "activeOrCompleted" } },
+                                                                                        { all = { { faction = "Alliance" }, { race = { 1, 3, 4, 7 } } } },
+                                                                                    },
+                                                                                },
+                                                                                {
+                                                                                    any = {
+                                                                                        { quest = { id = 204, state = "activeOrCompleted" } },
+                                                                                        { all = { { faction = "Alliance" }, { race = { 1, 3, 4, 7 } } } },
+                                                                                    },
+                                                                                },
                                                                             },
                                                                         },
                                                                     },
@@ -8162,13 +8321,9 @@ ns:RegisterGuide({
             },
         },
         {
-            id = "alliance-extra-206-level",
-            kind = "note",
             checkpointQuest = 206,
-            text = "Reach level 46 before this visit.",
+            complete = { level = { min = 30 } },
             conditions = { all = { { faction = "Alliance" } } },
-            complete = { level = { min = 46 } },
-            requiredLevel = 46,
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -8250,6 +8405,10 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-extra-206-level",
+            kind = "note",
+            requiredLevel = 30,
+            text = "Reach level 30 before this visit.",
         },
         {
             complete = { quest = { id = 206, state = "activeOrCompleted" } },
@@ -8258,41 +8417,73 @@ ns:RegisterGuide({
                 "alliance-extra-206-level",
                 "alliance-extra-202-turnin",
                 "alliance-leveling-era-alliance-stranglethorn-vale-part-3-turnin-205-troll-witchery",
-                "alliance-extra-202-turnin",
-                "alliance-leveling-era-alliance-stranglethorn-vale-part-3-turnin-205-troll-witchery",
             },
             excludeWhen = {
                 any = {
                     {
-                        ["not"] = {
-                            any = {
-                                { quest = { id = 206, state = "activeOrCompleted" } },
-                                {
+                        any = {
+                            {
+                                ["not"] = {
                                     any = {
-                                        { quest = { id = 206, state = "completed" } },
+                                        { quest = { id = 206, state = "activeOrCompleted" } },
                                         {
-                                            all = {
-                                                { faction = "Alliance" },
+                                            any = {
+                                                { quest = { id = 206, state = "completed" } },
                                                 {
                                                     all = {
+                                                        { faction = "Alliance" },
                                                         {
-                                                            any = {
-                                                                { quest = { id = 202, state = "completed" } },
+                                                            all = {
                                                                 {
-                                                                    all = {
-                                                                        { faction = "Alliance" },
+                                                                    any = {
+                                                                        { quest = { id = 202, state = "completed" } },
                                                                         {
-                                                                            any = {
+                                                                            all = {
+                                                                                { faction = "Alliance" },
                                                                                 {
                                                                                     any = {
-                                                                                        { quest = { id = 574, state = "completed" } },
                                                                                         {
-                                                                                            all = {
-                                                                                                { faction = "Alliance" },
+                                                                                            any = {
+                                                                                                { quest = { id = 574, state = "completed" } },
                                                                                                 {
                                                                                                     all = {
-                                                                                                        { any = { { quest = { id = 203, state = "completed" } }, { all = { { faction = "Alliance" } } } } },
-                                                                                                        { any = { { quest = { id = 204, state = "completed" } }, { all = { { faction = "Alliance" } } } } },
+                                                                                                        { faction = "Alliance" },
+                                                                                                        {
+                                                                                                            all = {
+                                                                                                                { any = { { quest = { id = 203, state = "completed" } }, { all = { { faction = "Alliance" } } } } },
+                                                                                                                { any = { { quest = { id = 204, state = "completed" } }, { all = { { faction = "Alliance" } } } } },
+                                                                                                            },
+                                                                                                        },
+                                                                                                    },
+                                                                                                },
+                                                                                            },
+                                                                                        },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                                {
+                                                                    any = {
+                                                                        { quest = { id = 205, state = "completed" } },
+                                                                        {
+                                                                            all = {
+                                                                                { faction = "Alliance" },
+                                                                                {
+                                                                                    any = {
+                                                                                        {
+                                                                                            any = {
+                                                                                                { quest = { id = 207, state = "completed" } },
+                                                                                                {
+                                                                                                    all = {
+                                                                                                        { faction = "Alliance" },
+                                                                                                        {
+                                                                                                            all = {
+                                                                                                                { any = { { quest = { id = 204, state = "completed" } }, { all = { { faction = "Alliance" } } } } },
+                                                                                                                { any = { { quest = { id = 203, state = "completed" } }, { all = { { faction = "Alliance" } } } } },
+                                                                                                            },
+                                                                                                        },
                                                                                                     },
                                                                                                 },
                                                                                             },
@@ -8305,24 +8496,75 @@ ns:RegisterGuide({
                                                                 },
                                                             },
                                                         },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                            {
+                                ["not"] = {
+                                    any = {
+                                        { quest = { id = 206, state = "activeOrCompleted" } },
+                                        {
+                                            any = {
+                                                { quest = { id = 206, state = "completed" } },
+                                                {
+                                                    all = {
+                                                        { faction = "Alliance" },
                                                         {
-                                                            any = {
-                                                                { quest = { id = 205, state = "completed" } },
+                                                            all = {
                                                                 {
-                                                                    all = {
-                                                                        { faction = "Alliance" },
+                                                                    any = {
+                                                                        { quest = { id = 202, state = "completed" } },
                                                                         {
-                                                                            any = {
+                                                                            all = {
+                                                                                { faction = "Alliance" },
                                                                                 {
                                                                                     any = {
-                                                                                        { quest = { id = 207, state = "completed" } },
                                                                                         {
-                                                                                            all = {
-                                                                                                { faction = "Alliance" },
+                                                                                            any = {
+                                                                                                { quest = { id = 574, state = "completed" } },
                                                                                                 {
                                                                                                     all = {
-                                                                                                        { any = { { quest = { id = 204, state = "completed" } }, { all = { { faction = "Alliance" } } } } },
-                                                                                                        { any = { { quest = { id = 203, state = "completed" } }, { all = { { faction = "Alliance" } } } } },
+                                                                                                        { faction = "Alliance" },
+                                                                                                        {
+                                                                                                            all = {
+                                                                                                                { any = { { quest = { id = 203, state = "completed" } }, { all = { { faction = "Alliance" } } } } },
+                                                                                                                { any = { { quest = { id = 204, state = "completed" } }, { all = { { faction = "Alliance" } } } } },
+                                                                                                            },
+                                                                                                        },
+                                                                                                    },
+                                                                                                },
+                                                                                            },
+                                                                                        },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                                {
+                                                                    any = {
+                                                                        { quest = { id = 205, state = "completed" } },
+                                                                        {
+                                                                            all = {
+                                                                                { faction = "Alliance" },
+                                                                                {
+                                                                                    any = {
+                                                                                        {
+                                                                                            any = {
+                                                                                                { quest = { id = 207, state = "completed" } },
+                                                                                                {
+                                                                                                    all = {
+                                                                                                        { faction = "Alliance" },
+                                                                                                        {
+                                                                                                            all = {
+                                                                                                                { any = { { quest = { id = 204, state = "completed" } }, { all = { { faction = "Alliance" } } } } },
+                                                                                                                { any = { { quest = { id = 203, state = "completed" } }, { all = { { faction = "Alliance" } } } } },
+                                                                                                            },
+                                                                                                        },
                                                                                                     },
                                                                                                 },
                                                                                             },
@@ -8350,30 +8592,43 @@ ns:RegisterGuide({
                                 { quest = { id = 206, state = "activeOrCompleted" } },
                                 {
                                     any = {
-                                        { quest = { id = 206, state = "completed" } },
+                                        { quest = { id = 206, state = "activeOrCompleted" } },
                                         {
                                             all = {
                                                 { faction = "Alliance" },
+                                                { race = { 1, 3, 4, 7 } },
                                                 {
                                                     all = {
                                                         {
                                                             any = {
-                                                                { quest = { id = 202, state = "completed" } },
+                                                                { quest = { id = 202, state = "activeOrCompleted" } },
                                                                 {
                                                                     all = {
                                                                         { faction = "Alliance" },
+                                                                        { race = { 1, 3, 4, 7 } },
                                                                         {
                                                                             any = {
                                                                                 {
                                                                                     any = {
-                                                                                        { quest = { id = 574, state = "completed" } },
+                                                                                        { quest = { id = 574, state = "activeOrCompleted" } },
                                                                                         {
                                                                                             all = {
                                                                                                 { faction = "Alliance" },
+                                                                                                { race = { 1, 3, 4, 7 } },
                                                                                                 {
                                                                                                     all = {
-                                                                                                        { any = { { quest = { id = 203, state = "completed" } }, { all = { { faction = "Alliance" } } } } },
-                                                                                                        { any = { { quest = { id = 204, state = "completed" } }, { all = { { faction = "Alliance" } } } } },
+                                                                                                        {
+                                                                                                            any = {
+                                                                                                                { quest = { id = 203, state = "activeOrCompleted" } },
+                                                                                                                { all = { { faction = "Alliance" }, { race = { 1, 3, 4, 7 } } } },
+                                                                                                            },
+                                                                                                        },
+                                                                                                        {
+                                                                                                            any = {
+                                                                                                                { quest = { id = 204, state = "activeOrCompleted" } },
+                                                                                                                { all = { { faction = "Alliance" }, { race = { 1, 3, 4, 7 } } } },
+                                                                                                            },
+                                                                                                        },
                                                                                                     },
                                                                                                 },
                                                                                             },
@@ -8388,22 +8643,34 @@ ns:RegisterGuide({
                                                         },
                                                         {
                                                             any = {
-                                                                { quest = { id = 205, state = "completed" } },
+                                                                { quest = { id = 205, state = "activeOrCompleted" } },
                                                                 {
                                                                     all = {
                                                                         { faction = "Alliance" },
+                                                                        { race = { 1, 3, 4, 7 } },
                                                                         {
                                                                             any = {
                                                                                 {
                                                                                     any = {
-                                                                                        { quest = { id = 207, state = "completed" } },
+                                                                                        { quest = { id = 207, state = "activeOrCompleted" } },
                                                                                         {
                                                                                             all = {
                                                                                                 { faction = "Alliance" },
+                                                                                                { race = { 1, 3, 4, 7 } },
                                                                                                 {
                                                                                                     all = {
-                                                                                                        { any = { { quest = { id = 204, state = "completed" } }, { all = { { faction = "Alliance" } } } } },
-                                                                                                        { any = { { quest = { id = 203, state = "completed" } }, { all = { { faction = "Alliance" } } } } },
+                                                                                                        {
+                                                                                                            any = {
+                                                                                                                { quest = { id = 204, state = "activeOrCompleted" } },
+                                                                                                                { all = { { faction = "Alliance" }, { race = { 1, 3, 4, 7 } } } },
+                                                                                                            },
+                                                                                                        },
+                                                                                                        {
+                                                                                                            any = {
+                                                                                                                { quest = { id = 203, state = "activeOrCompleted" } },
+                                                                                                                { all = { { faction = "Alliance" }, { race = { 1, 3, 4, 7 } } } },
+                                                                                                            },
+                                                                                                        },
                                                                                                     },
                                                                                                 },
                                                                                             },
@@ -8449,35 +8716,69 @@ ns:RegisterGuide({
             excludeWhen = {
                 any = {
                     {
-                        ["not"] = {
-                            any = {
-                                { quest = { id = 206, state = "activeOrCompleted" } },
-                                {
+                        any = {
+                            {
+                                ["not"] = {
                                     any = {
-                                        { quest = { id = 206, state = "completed" } },
+                                        { quest = { id = 206, state = "activeOrCompleted" } },
                                         {
-                                            all = {
-                                                { faction = "Alliance" },
+                                            any = {
+                                                { quest = { id = 206, state = "completed" } },
                                                 {
                                                     all = {
+                                                        { faction = "Alliance" },
                                                         {
-                                                            any = {
-                                                                { quest = { id = 202, state = "completed" } },
+                                                            all = {
                                                                 {
-                                                                    all = {
-                                                                        { faction = "Alliance" },
+                                                                    any = {
+                                                                        { quest = { id = 202, state = "completed" } },
                                                                         {
-                                                                            any = {
+                                                                            all = {
+                                                                                { faction = "Alliance" },
                                                                                 {
                                                                                     any = {
-                                                                                        { quest = { id = 574, state = "completed" } },
                                                                                         {
-                                                                                            all = {
-                                                                                                { faction = "Alliance" },
+                                                                                            any = {
+                                                                                                { quest = { id = 574, state = "completed" } },
                                                                                                 {
                                                                                                     all = {
-                                                                                                        { any = { { quest = { id = 203, state = "completed" } }, { all = { { faction = "Alliance" } } } } },
-                                                                                                        { any = { { quest = { id = 204, state = "completed" } }, { all = { { faction = "Alliance" } } } } },
+                                                                                                        { faction = "Alliance" },
+                                                                                                        {
+                                                                                                            all = {
+                                                                                                                { any = { { quest = { id = 203, state = "completed" } }, { all = { { faction = "Alliance" } } } } },
+                                                                                                                { any = { { quest = { id = 204, state = "completed" } }, { all = { { faction = "Alliance" } } } } },
+                                                                                                            },
+                                                                                                        },
+                                                                                                    },
+                                                                                                },
+                                                                                            },
+                                                                                        },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                                {
+                                                                    any = {
+                                                                        { quest = { id = 205, state = "completed" } },
+                                                                        {
+                                                                            all = {
+                                                                                { faction = "Alliance" },
+                                                                                {
+                                                                                    any = {
+                                                                                        {
+                                                                                            any = {
+                                                                                                { quest = { id = 207, state = "completed" } },
+                                                                                                {
+                                                                                                    all = {
+                                                                                                        { faction = "Alliance" },
+                                                                                                        {
+                                                                                                            all = {
+                                                                                                                { any = { { quest = { id = 204, state = "completed" } }, { all = { { faction = "Alliance" } } } } },
+                                                                                                                { any = { { quest = { id = 203, state = "completed" } }, { all = { { faction = "Alliance" } } } } },
+                                                                                                            },
+                                                                                                        },
                                                                                                     },
                                                                                                 },
                                                                                             },
@@ -8490,24 +8791,75 @@ ns:RegisterGuide({
                                                                 },
                                                             },
                                                         },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                            {
+                                ["not"] = {
+                                    any = {
+                                        { quest = { id = 206, state = "activeOrCompleted" } },
+                                        {
+                                            any = {
+                                                { quest = { id = 206, state = "completed" } },
+                                                {
+                                                    all = {
+                                                        { faction = "Alliance" },
                                                         {
-                                                            any = {
-                                                                { quest = { id = 205, state = "completed" } },
+                                                            all = {
                                                                 {
-                                                                    all = {
-                                                                        { faction = "Alliance" },
+                                                                    any = {
+                                                                        { quest = { id = 202, state = "completed" } },
                                                                         {
-                                                                            any = {
+                                                                            all = {
+                                                                                { faction = "Alliance" },
                                                                                 {
                                                                                     any = {
-                                                                                        { quest = { id = 207, state = "completed" } },
                                                                                         {
-                                                                                            all = {
-                                                                                                { faction = "Alliance" },
+                                                                                            any = {
+                                                                                                { quest = { id = 574, state = "completed" } },
                                                                                                 {
                                                                                                     all = {
-                                                                                                        { any = { { quest = { id = 204, state = "completed" } }, { all = { { faction = "Alliance" } } } } },
-                                                                                                        { any = { { quest = { id = 203, state = "completed" } }, { all = { { faction = "Alliance" } } } } },
+                                                                                                        { faction = "Alliance" },
+                                                                                                        {
+                                                                                                            all = {
+                                                                                                                { any = { { quest = { id = 203, state = "completed" } }, { all = { { faction = "Alliance" } } } } },
+                                                                                                                { any = { { quest = { id = 204, state = "completed" } }, { all = { { faction = "Alliance" } } } } },
+                                                                                                            },
+                                                                                                        },
+                                                                                                    },
+                                                                                                },
+                                                                                            },
+                                                                                        },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                                {
+                                                                    any = {
+                                                                        { quest = { id = 205, state = "completed" } },
+                                                                        {
+                                                                            all = {
+                                                                                { faction = "Alliance" },
+                                                                                {
+                                                                                    any = {
+                                                                                        {
+                                                                                            any = {
+                                                                                                { quest = { id = 207, state = "completed" } },
+                                                                                                {
+                                                                                                    all = {
+                                                                                                        { faction = "Alliance" },
+                                                                                                        {
+                                                                                                            all = {
+                                                                                                                { any = { { quest = { id = 204, state = "completed" } }, { all = { { faction = "Alliance" } } } } },
+                                                                                                                { any = { { quest = { id = 203, state = "completed" } }, { all = { { faction = "Alliance" } } } } },
+                                                                                                            },
+                                                                                                        },
                                                                                                     },
                                                                                                 },
                                                                                             },
@@ -8535,30 +8887,43 @@ ns:RegisterGuide({
                                 { quest = { id = 206, state = "activeOrCompleted" } },
                                 {
                                     any = {
-                                        { quest = { id = 206, state = "completed" } },
+                                        { quest = { id = 206, state = "activeOrCompleted" } },
                                         {
                                             all = {
                                                 { faction = "Alliance" },
+                                                { race = { 1, 3, 4, 7 } },
                                                 {
                                                     all = {
                                                         {
                                                             any = {
-                                                                { quest = { id = 202, state = "completed" } },
+                                                                { quest = { id = 202, state = "activeOrCompleted" } },
                                                                 {
                                                                     all = {
                                                                         { faction = "Alliance" },
+                                                                        { race = { 1, 3, 4, 7 } },
                                                                         {
                                                                             any = {
                                                                                 {
                                                                                     any = {
-                                                                                        { quest = { id = 574, state = "completed" } },
+                                                                                        { quest = { id = 574, state = "activeOrCompleted" } },
                                                                                         {
                                                                                             all = {
                                                                                                 { faction = "Alliance" },
+                                                                                                { race = { 1, 3, 4, 7 } },
                                                                                                 {
                                                                                                     all = {
-                                                                                                        { any = { { quest = { id = 203, state = "completed" } }, { all = { { faction = "Alliance" } } } } },
-                                                                                                        { any = { { quest = { id = 204, state = "completed" } }, { all = { { faction = "Alliance" } } } } },
+                                                                                                        {
+                                                                                                            any = {
+                                                                                                                { quest = { id = 203, state = "activeOrCompleted" } },
+                                                                                                                { all = { { faction = "Alliance" }, { race = { 1, 3, 4, 7 } } } },
+                                                                                                            },
+                                                                                                        },
+                                                                                                        {
+                                                                                                            any = {
+                                                                                                                { quest = { id = 204, state = "activeOrCompleted" } },
+                                                                                                                { all = { { faction = "Alliance" }, { race = { 1, 3, 4, 7 } } } },
+                                                                                                            },
+                                                                                                        },
                                                                                                     },
                                                                                                 },
                                                                                             },
@@ -8573,22 +8938,34 @@ ns:RegisterGuide({
                                                         },
                                                         {
                                                             any = {
-                                                                { quest = { id = 205, state = "completed" } },
+                                                                { quest = { id = 205, state = "activeOrCompleted" } },
                                                                 {
                                                                     all = {
                                                                         { faction = "Alliance" },
+                                                                        { race = { 1, 3, 4, 7 } },
                                                                         {
                                                                             any = {
                                                                                 {
                                                                                     any = {
-                                                                                        { quest = { id = 207, state = "completed" } },
+                                                                                        { quest = { id = 207, state = "activeOrCompleted" } },
                                                                                         {
                                                                                             all = {
                                                                                                 { faction = "Alliance" },
+                                                                                                { race = { 1, 3, 4, 7 } },
                                                                                                 {
                                                                                                     all = {
-                                                                                                        { any = { { quest = { id = 204, state = "completed" } }, { all = { { faction = "Alliance" } } } } },
-                                                                                                        { any = { { quest = { id = 203, state = "completed" } }, { all = { { faction = "Alliance" } } } } },
+                                                                                                        {
+                                                                                                            any = {
+                                                                                                                { quest = { id = 204, state = "activeOrCompleted" } },
+                                                                                                                { all = { { faction = "Alliance" }, { race = { 1, 3, 4, 7 } } } },
+                                                                                                            },
+                                                                                                        },
+                                                                                                        {
+                                                                                                            any = {
+                                                                                                                { quest = { id = 203, state = "activeOrCompleted" } },
+                                                                                                                { all = { { faction = "Alliance" }, { race = { 1, 3, 4, 7 } } } },
+                                                                                                            },
+                                                                                                        },
                                                                                                     },
                                                                                                 },
                                                                                             },
@@ -8704,35 +9081,69 @@ ns:RegisterGuide({
             excludeWhen = {
                 any = {
                     {
-                        ["not"] = {
-                            any = {
-                                { quest = { id = 206, state = "activeOrCompleted" } },
-                                {
+                        any = {
+                            {
+                                ["not"] = {
                                     any = {
-                                        { quest = { id = 206, state = "completed" } },
+                                        { quest = { id = 206, state = "activeOrCompleted" } },
                                         {
-                                            all = {
-                                                { faction = "Alliance" },
+                                            any = {
+                                                { quest = { id = 206, state = "completed" } },
                                                 {
                                                     all = {
+                                                        { faction = "Alliance" },
                                                         {
-                                                            any = {
-                                                                { quest = { id = 202, state = "completed" } },
+                                                            all = {
                                                                 {
-                                                                    all = {
-                                                                        { faction = "Alliance" },
+                                                                    any = {
+                                                                        { quest = { id = 202, state = "completed" } },
                                                                         {
-                                                                            any = {
+                                                                            all = {
+                                                                                { faction = "Alliance" },
                                                                                 {
                                                                                     any = {
-                                                                                        { quest = { id = 574, state = "completed" } },
                                                                                         {
-                                                                                            all = {
-                                                                                                { faction = "Alliance" },
+                                                                                            any = {
+                                                                                                { quest = { id = 574, state = "completed" } },
                                                                                                 {
                                                                                                     all = {
-                                                                                                        { any = { { quest = { id = 203, state = "completed" } }, { all = { { faction = "Alliance" } } } } },
-                                                                                                        { any = { { quest = { id = 204, state = "completed" } }, { all = { { faction = "Alliance" } } } } },
+                                                                                                        { faction = "Alliance" },
+                                                                                                        {
+                                                                                                            all = {
+                                                                                                                { any = { { quest = { id = 203, state = "completed" } }, { all = { { faction = "Alliance" } } } } },
+                                                                                                                { any = { { quest = { id = 204, state = "completed" } }, { all = { { faction = "Alliance" } } } } },
+                                                                                                            },
+                                                                                                        },
+                                                                                                    },
+                                                                                                },
+                                                                                            },
+                                                                                        },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                                {
+                                                                    any = {
+                                                                        { quest = { id = 205, state = "completed" } },
+                                                                        {
+                                                                            all = {
+                                                                                { faction = "Alliance" },
+                                                                                {
+                                                                                    any = {
+                                                                                        {
+                                                                                            any = {
+                                                                                                { quest = { id = 207, state = "completed" } },
+                                                                                                {
+                                                                                                    all = {
+                                                                                                        { faction = "Alliance" },
+                                                                                                        {
+                                                                                                            all = {
+                                                                                                                { any = { { quest = { id = 204, state = "completed" } }, { all = { { faction = "Alliance" } } } } },
+                                                                                                                { any = { { quest = { id = 203, state = "completed" } }, { all = { { faction = "Alliance" } } } } },
+                                                                                                            },
+                                                                                                        },
                                                                                                     },
                                                                                                 },
                                                                                             },
@@ -8745,24 +9156,75 @@ ns:RegisterGuide({
                                                                 },
                                                             },
                                                         },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                            {
+                                ["not"] = {
+                                    any = {
+                                        { quest = { id = 206, state = "activeOrCompleted" } },
+                                        {
+                                            any = {
+                                                { quest = { id = 206, state = "completed" } },
+                                                {
+                                                    all = {
+                                                        { faction = "Alliance" },
                                                         {
-                                                            any = {
-                                                                { quest = { id = 205, state = "completed" } },
+                                                            all = {
                                                                 {
-                                                                    all = {
-                                                                        { faction = "Alliance" },
+                                                                    any = {
+                                                                        { quest = { id = 202, state = "completed" } },
                                                                         {
-                                                                            any = {
+                                                                            all = {
+                                                                                { faction = "Alliance" },
                                                                                 {
                                                                                     any = {
-                                                                                        { quest = { id = 207, state = "completed" } },
                                                                                         {
-                                                                                            all = {
-                                                                                                { faction = "Alliance" },
+                                                                                            any = {
+                                                                                                { quest = { id = 574, state = "completed" } },
                                                                                                 {
                                                                                                     all = {
-                                                                                                        { any = { { quest = { id = 204, state = "completed" } }, { all = { { faction = "Alliance" } } } } },
-                                                                                                        { any = { { quest = { id = 203, state = "completed" } }, { all = { { faction = "Alliance" } } } } },
+                                                                                                        { faction = "Alliance" },
+                                                                                                        {
+                                                                                                            all = {
+                                                                                                                { any = { { quest = { id = 203, state = "completed" } }, { all = { { faction = "Alliance" } } } } },
+                                                                                                                { any = { { quest = { id = 204, state = "completed" } }, { all = { { faction = "Alliance" } } } } },
+                                                                                                            },
+                                                                                                        },
+                                                                                                    },
+                                                                                                },
+                                                                                            },
+                                                                                        },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                                {
+                                                                    any = {
+                                                                        { quest = { id = 205, state = "completed" } },
+                                                                        {
+                                                                            all = {
+                                                                                { faction = "Alliance" },
+                                                                                {
+                                                                                    any = {
+                                                                                        {
+                                                                                            any = {
+                                                                                                { quest = { id = 207, state = "completed" } },
+                                                                                                {
+                                                                                                    all = {
+                                                                                                        { faction = "Alliance" },
+                                                                                                        {
+                                                                                                            all = {
+                                                                                                                { any = { { quest = { id = 204, state = "completed" } }, { all = { { faction = "Alliance" } } } } },
+                                                                                                                { any = { { quest = { id = 203, state = "completed" } }, { all = { { faction = "Alliance" } } } } },
+                                                                                                            },
+                                                                                                        },
                                                                                                     },
                                                                                                 },
                                                                                             },
@@ -8790,30 +9252,43 @@ ns:RegisterGuide({
                                 { quest = { id = 206, state = "activeOrCompleted" } },
                                 {
                                     any = {
-                                        { quest = { id = 206, state = "completed" } },
+                                        { quest = { id = 206, state = "activeOrCompleted" } },
                                         {
                                             all = {
                                                 { faction = "Alliance" },
+                                                { race = { 1, 3, 4, 7 } },
                                                 {
                                                     all = {
                                                         {
                                                             any = {
-                                                                { quest = { id = 202, state = "completed" } },
+                                                                { quest = { id = 202, state = "activeOrCompleted" } },
                                                                 {
                                                                     all = {
                                                                         { faction = "Alliance" },
+                                                                        { race = { 1, 3, 4, 7 } },
                                                                         {
                                                                             any = {
                                                                                 {
                                                                                     any = {
-                                                                                        { quest = { id = 574, state = "completed" } },
+                                                                                        { quest = { id = 574, state = "activeOrCompleted" } },
                                                                                         {
                                                                                             all = {
                                                                                                 { faction = "Alliance" },
+                                                                                                { race = { 1, 3, 4, 7 } },
                                                                                                 {
                                                                                                     all = {
-                                                                                                        { any = { { quest = { id = 203, state = "completed" } }, { all = { { faction = "Alliance" } } } } },
-                                                                                                        { any = { { quest = { id = 204, state = "completed" } }, { all = { { faction = "Alliance" } } } } },
+                                                                                                        {
+                                                                                                            any = {
+                                                                                                                { quest = { id = 203, state = "activeOrCompleted" } },
+                                                                                                                { all = { { faction = "Alliance" }, { race = { 1, 3, 4, 7 } } } },
+                                                                                                            },
+                                                                                                        },
+                                                                                                        {
+                                                                                                            any = {
+                                                                                                                { quest = { id = 204, state = "activeOrCompleted" } },
+                                                                                                                { all = { { faction = "Alliance" }, { race = { 1, 3, 4, 7 } } } },
+                                                                                                            },
+                                                                                                        },
                                                                                                     },
                                                                                                 },
                                                                                             },
@@ -8828,22 +9303,34 @@ ns:RegisterGuide({
                                                         },
                                                         {
                                                             any = {
-                                                                { quest = { id = 205, state = "completed" } },
+                                                                { quest = { id = 205, state = "activeOrCompleted" } },
                                                                 {
                                                                     all = {
                                                                         { faction = "Alliance" },
+                                                                        { race = { 1, 3, 4, 7 } },
                                                                         {
                                                                             any = {
                                                                                 {
                                                                                     any = {
-                                                                                        { quest = { id = 207, state = "completed" } },
+                                                                                        { quest = { id = 207, state = "activeOrCompleted" } },
                                                                                         {
                                                                                             all = {
                                                                                                 { faction = "Alliance" },
+                                                                                                { race = { 1, 3, 4, 7 } },
                                                                                                 {
                                                                                                     all = {
-                                                                                                        { any = { { quest = { id = 204, state = "completed" } }, { all = { { faction = "Alliance" } } } } },
-                                                                                                        { any = { { quest = { id = 203, state = "completed" } }, { all = { { faction = "Alliance" } } } } },
+                                                                                                        {
+                                                                                                            any = {
+                                                                                                                { quest = { id = 204, state = "activeOrCompleted" } },
+                                                                                                                { all = { { faction = "Alliance" }, { race = { 1, 3, 4, 7 } } } },
+                                                                                                            },
+                                                                                                        },
+                                                                                                        {
+                                                                                                            any = {
+                                                                                                                { quest = { id = 203, state = "activeOrCompleted" } },
+                                                                                                                { all = { { faction = "Alliance" }, { race = { 1, 3, 4, 7 } } } },
+                                                                                                            },
+                                                                                                        },
                                                                                                     },
                                                                                                 },
                                                                                             },
@@ -8885,13 +9372,9 @@ ns:RegisterGuide({
             useQuestNavigation = true,
         },
         {
-            id = "alliance-extra-613-level",
-            kind = "note",
             checkpointQuest = 613,
-            text = "Reach level 44 before this visit.",
+            complete = { level = { min = 30 } },
             conditions = { all = { { faction = "Alliance" } } },
-            complete = { level = { min = 44 } },
-            requiredLevel = 44,
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -8931,6 +9414,10 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-extra-613-level",
+            kind = "note",
+            requiredLevel = 30,
+            text = "Reach level 30 before this visit.",
         },
         {
             complete = { quest = { id = 613, state = "activeOrCompleted" } },
@@ -8939,27 +9426,70 @@ ns:RegisterGuide({
             excludeWhen = {
                 any = {
                     {
-                        ["not"] = {
-                            any = {
-                                { quest = { id = 613, state = "activeOrCompleted" } },
-                                {
+                        any = {
+                            {
+                                ["not"] = {
                                     any = {
-                                        { quest = { id = 613, state = "completed" } },
+                                        { quest = { id = 613, state = "activeOrCompleted" } },
                                         {
-                                            all = {
+                                            any = {
+                                                { quest = { id = 613, state = "completed" } },
                                                 {
-                                                    any = {
+                                                    all = {
                                                         {
                                                             any = {
-                                                                { quest = { id = 609, state = "completed" } },
                                                                 {
-                                                                    all = {
+                                                                    any = {
+                                                                        { quest = { id = 609, state = "completed" } },
                                                                         {
-                                                                            any = {
+                                                                            all = {
                                                                                 {
                                                                                     any = {
-                                                                                        { quest = { id = 607, state = "completed" } },
-                                                                                        { all = { { any = { { any = { { quest = { id = 606, state = "completed" } }, { all = {} } } } } } } },
+                                                                                        {
+                                                                                            any = {
+                                                                                                { quest = { id = 607, state = "completed" } },
+                                                                                                { all = { { any = { { any = { { quest = { id = 606, state = "completed" } }, { all = {} } } } } } } },
+                                                                                            },
+                                                                                        },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                            {
+                                ["not"] = {
+                                    any = {
+                                        { quest = { id = 613, state = "activeOrCompleted" } },
+                                        {
+                                            any = {
+                                                { quest = { id = 613, state = "completed" } },
+                                                {
+                                                    all = {
+                                                        {
+                                                            any = {
+                                                                {
+                                                                    any = {
+                                                                        { quest = { id = 609, state = "completed" } },
+                                                                        {
+                                                                            all = {
+                                                                                {
+                                                                                    any = {
+                                                                                        {
+                                                                                            any = {
+                                                                                                { quest = { id = 607, state = "completed" } },
+                                                                                                { all = { { any = { { any = { { quest = { id = 606, state = "completed" } }, { all = {} } } } } } } },
+                                                                                            },
+                                                                                        },
                                                                                     },
                                                                                 },
                                                                             },
@@ -8983,22 +9513,22 @@ ns:RegisterGuide({
                                 { quest = { id = 613, state = "activeOrCompleted" } },
                                 {
                                     any = {
-                                        { quest = { id = 613, state = "completed" } },
+                                        { quest = { id = 613, state = "activeOrCompleted" } },
                                         {
                                             all = {
                                                 {
                                                     any = {
                                                         {
                                                             any = {
-                                                                { quest = { id = 609, state = "completed" } },
+                                                                { quest = { id = 609, state = "activeOrCompleted" } },
                                                                 {
                                                                     all = {
                                                                         {
                                                                             any = {
                                                                                 {
                                                                                     any = {
-                                                                                        { quest = { id = 607, state = "completed" } },
-                                                                                        { all = { { any = { { any = { { quest = { id = 606, state = "completed" } }, { all = {} } } } } } } },
+                                                                                        { quest = { id = 607, state = "activeOrCompleted" } },
+                                                                                        { all = { { any = { { any = { { quest = { id = 606, state = "activeOrCompleted" } }, { all = {} } } } } } } },
                                                                                     },
                                                                                 },
                                                                             },
@@ -9040,27 +9570,70 @@ ns:RegisterGuide({
             excludeWhen = {
                 any = {
                     {
-                        ["not"] = {
-                            any = {
-                                { quest = { id = 613, state = "activeOrCompleted" } },
-                                {
+                        any = {
+                            {
+                                ["not"] = {
                                     any = {
-                                        { quest = { id = 613, state = "completed" } },
+                                        { quest = { id = 613, state = "activeOrCompleted" } },
                                         {
-                                            all = {
+                                            any = {
+                                                { quest = { id = 613, state = "completed" } },
                                                 {
-                                                    any = {
+                                                    all = {
                                                         {
                                                             any = {
-                                                                { quest = { id = 609, state = "completed" } },
                                                                 {
-                                                                    all = {
+                                                                    any = {
+                                                                        { quest = { id = 609, state = "completed" } },
                                                                         {
-                                                                            any = {
+                                                                            all = {
                                                                                 {
                                                                                     any = {
-                                                                                        { quest = { id = 607, state = "completed" } },
-                                                                                        { all = { { any = { { any = { { quest = { id = 606, state = "completed" } }, { all = {} } } } } } } },
+                                                                                        {
+                                                                                            any = {
+                                                                                                { quest = { id = 607, state = "completed" } },
+                                                                                                { all = { { any = { { any = { { quest = { id = 606, state = "completed" } }, { all = {} } } } } } } },
+                                                                                            },
+                                                                                        },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                            {
+                                ["not"] = {
+                                    any = {
+                                        { quest = { id = 613, state = "activeOrCompleted" } },
+                                        {
+                                            any = {
+                                                { quest = { id = 613, state = "completed" } },
+                                                {
+                                                    all = {
+                                                        {
+                                                            any = {
+                                                                {
+                                                                    any = {
+                                                                        { quest = { id = 609, state = "completed" } },
+                                                                        {
+                                                                            all = {
+                                                                                {
+                                                                                    any = {
+                                                                                        {
+                                                                                            any = {
+                                                                                                { quest = { id = 607, state = "completed" } },
+                                                                                                { all = { { any = { { any = { { quest = { id = 606, state = "completed" } }, { all = {} } } } } } } },
+                                                                                            },
+                                                                                        },
                                                                                     },
                                                                                 },
                                                                             },
@@ -9084,22 +9657,22 @@ ns:RegisterGuide({
                                 { quest = { id = 613, state = "activeOrCompleted" } },
                                 {
                                     any = {
-                                        { quest = { id = 613, state = "completed" } },
+                                        { quest = { id = 613, state = "activeOrCompleted" } },
                                         {
                                             all = {
                                                 {
                                                     any = {
                                                         {
                                                             any = {
-                                                                { quest = { id = 609, state = "completed" } },
+                                                                { quest = { id = 609, state = "activeOrCompleted" } },
                                                                 {
                                                                     all = {
                                                                         {
                                                                             any = {
                                                                                 {
                                                                                     any = {
-                                                                                        { quest = { id = 607, state = "completed" } },
-                                                                                        { all = { { any = { { any = { { quest = { id = 606, state = "completed" } }, { all = {} } } } } } } },
+                                                                                        { quest = { id = 607, state = "activeOrCompleted" } },
+                                                                                        { all = { { any = { { any = { { quest = { id = 606, state = "activeOrCompleted" } }, { all = {} } } } } } } },
                                                                                     },
                                                                                 },
                                                                             },
@@ -9142,27 +9715,70 @@ ns:RegisterGuide({
             excludeWhen = {
                 any = {
                     {
-                        ["not"] = {
-                            any = {
-                                { quest = { id = 613, state = "activeOrCompleted" } },
-                                {
+                        any = {
+                            {
+                                ["not"] = {
                                     any = {
-                                        { quest = { id = 613, state = "completed" } },
+                                        { quest = { id = 613, state = "activeOrCompleted" } },
                                         {
-                                            all = {
+                                            any = {
+                                                { quest = { id = 613, state = "completed" } },
                                                 {
-                                                    any = {
+                                                    all = {
                                                         {
                                                             any = {
-                                                                { quest = { id = 609, state = "completed" } },
                                                                 {
-                                                                    all = {
+                                                                    any = {
+                                                                        { quest = { id = 609, state = "completed" } },
                                                                         {
-                                                                            any = {
+                                                                            all = {
                                                                                 {
                                                                                     any = {
-                                                                                        { quest = { id = 607, state = "completed" } },
-                                                                                        { all = { { any = { { any = { { quest = { id = 606, state = "completed" } }, { all = {} } } } } } } },
+                                                                                        {
+                                                                                            any = {
+                                                                                                { quest = { id = 607, state = "completed" } },
+                                                                                                { all = { { any = { { any = { { quest = { id = 606, state = "completed" } }, { all = {} } } } } } } },
+                                                                                            },
+                                                                                        },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                            {
+                                ["not"] = {
+                                    any = {
+                                        { quest = { id = 613, state = "activeOrCompleted" } },
+                                        {
+                                            any = {
+                                                { quest = { id = 613, state = "completed" } },
+                                                {
+                                                    all = {
+                                                        {
+                                                            any = {
+                                                                {
+                                                                    any = {
+                                                                        { quest = { id = 609, state = "completed" } },
+                                                                        {
+                                                                            all = {
+                                                                                {
+                                                                                    any = {
+                                                                                        {
+                                                                                            any = {
+                                                                                                { quest = { id = 607, state = "completed" } },
+                                                                                                { all = { { any = { { any = { { quest = { id = 606, state = "completed" } }, { all = {} } } } } } } },
+                                                                                            },
+                                                                                        },
                                                                                     },
                                                                                 },
                                                                             },
@@ -9186,22 +9802,22 @@ ns:RegisterGuide({
                                 { quest = { id = 613, state = "activeOrCompleted" } },
                                 {
                                     any = {
-                                        { quest = { id = 613, state = "completed" } },
+                                        { quest = { id = 613, state = "activeOrCompleted" } },
                                         {
                                             all = {
                                                 {
                                                     any = {
                                                         {
                                                             any = {
-                                                                { quest = { id = 609, state = "completed" } },
+                                                                { quest = { id = 609, state = "activeOrCompleted" } },
                                                                 {
                                                                     all = {
                                                                         {
                                                                             any = {
                                                                                 {
                                                                                     any = {
-                                                                                        { quest = { id = 607, state = "completed" } },
-                                                                                        { all = { { any = { { any = { { quest = { id = 606, state = "completed" } }, { all = {} } } } } } } },
+                                                                                        { quest = { id = 607, state = "activeOrCompleted" } },
+                                                                                        { all = { { any = { { any = { { quest = { id = 606, state = "activeOrCompleted" } }, { all = {} } } } } } } },
                                                                                     },
                                                                                 },
                                                                             },
@@ -10454,13 +11070,9 @@ ns:RegisterGuide({
             useQuestNavigation = true,
         },
         {
-            id = "alliance-extra-630-level",
-            kind = "note",
             checkpointQuest = 630,
-            text = "Reach level 51 before this visit.",
+            complete = { level = { min = 45 } },
             conditions = { all = { { faction = "Alliance" } } },
-            complete = { level = { min = 51 } },
-            requiredLevel = 51,
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -10474,6 +11086,10 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-extra-630-level",
+            kind = "note",
+            requiredLevel = 45,
+            text = "Reach level 45 before this visit.",
         },
         {
             complete = { quest = { id = 630, state = "activeOrCompleted" } },
@@ -10482,13 +11098,30 @@ ns:RegisterGuide({
             excludeWhen = {
                 any = {
                     {
-                        ["not"] = {
-                            any = {
-                                { quest = { id = 630, state = "activeOrCompleted" } },
-                                {
+                        any = {
+                            {
+                                ["not"] = {
                                     any = {
-                                        { quest = { id = 630, state = "completed" } },
-                                        { all = { { any = { { any = { { quest = { id = 594, state = "completed" } }, { all = {} } } } } } } },
+                                        { quest = { id = 630, state = "activeOrCompleted" } },
+                                        {
+                                            any = {
+                                                { quest = { id = 630, state = "completed" } },
+                                                { all = { { any = { { any = { { quest = { id = 594, state = "completed" } }, { all = {} } } } } } } },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                            {
+                                ["not"] = {
+                                    any = {
+                                        { quest = { id = 630, state = "activeOrCompleted" } },
+                                        {
+                                            any = {
+                                                { quest = { id = 630, state = "completed" } },
+                                                { all = { { any = { { any = { { quest = { id = 594, state = "completed" } }, { all = {} } } } } } } },
+                                            },
+                                        },
                                     },
                                 },
                             },
@@ -10500,8 +11133,8 @@ ns:RegisterGuide({
                                 { quest = { id = 630, state = "activeOrCompleted" } },
                                 {
                                     any = {
-                                        { quest = { id = 630, state = "completed" } },
-                                        { all = { { any = { { any = { { quest = { id = 594, state = "completed" } }, { all = {} } } } } } } },
+                                        { quest = { id = 630, state = "activeOrCompleted" } },
+                                        { all = { { any = { { any = { { quest = { id = 594, state = "activeOrCompleted" } }, { all = {} } } } } } } },
                                     },
                                 },
                             },
@@ -10531,13 +11164,30 @@ ns:RegisterGuide({
             excludeWhen = {
                 any = {
                     {
-                        ["not"] = {
-                            any = {
-                                { quest = { id = 630, state = "activeOrCompleted" } },
-                                {
+                        any = {
+                            {
+                                ["not"] = {
                                     any = {
-                                        { quest = { id = 630, state = "completed" } },
-                                        { all = { { any = { { any = { { quest = { id = 594, state = "completed" } }, { all = {} } } } } } } },
+                                        { quest = { id = 630, state = "activeOrCompleted" } },
+                                        {
+                                            any = {
+                                                { quest = { id = 630, state = "completed" } },
+                                                { all = { { any = { { any = { { quest = { id = 594, state = "completed" } }, { all = {} } } } } } } },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                            {
+                                ["not"] = {
+                                    any = {
+                                        { quest = { id = 630, state = "activeOrCompleted" } },
+                                        {
+                                            any = {
+                                                { quest = { id = 630, state = "completed" } },
+                                                { all = { { any = { { any = { { quest = { id = 594, state = "completed" } }, { all = {} } } } } } } },
+                                            },
+                                        },
                                     },
                                 },
                             },
@@ -10549,8 +11199,8 @@ ns:RegisterGuide({
                                 { quest = { id = 630, state = "activeOrCompleted" } },
                                 {
                                     any = {
-                                        { quest = { id = 630, state = "completed" } },
-                                        { all = { { any = { { any = { { quest = { id = 594, state = "completed" } }, { all = {} } } } } } } },
+                                        { quest = { id = 630, state = "activeOrCompleted" } },
+                                        { all = { { any = { { any = { { quest = { id = 594, state = "activeOrCompleted" } }, { all = {} } } } } } } },
                                     },
                                 },
                             },
@@ -10575,13 +11225,30 @@ ns:RegisterGuide({
             excludeWhen = {
                 any = {
                     {
-                        ["not"] = {
-                            any = {
-                                { quest = { id = 630, state = "activeOrCompleted" } },
-                                {
+                        any = {
+                            {
+                                ["not"] = {
                                     any = {
-                                        { quest = { id = 630, state = "completed" } },
-                                        { all = { { any = { { any = { { quest = { id = 594, state = "completed" } }, { all = {} } } } } } } },
+                                        { quest = { id = 630, state = "activeOrCompleted" } },
+                                        {
+                                            any = {
+                                                { quest = { id = 630, state = "completed" } },
+                                                { all = { { any = { { any = { { quest = { id = 594, state = "completed" } }, { all = {} } } } } } } },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                            {
+                                ["not"] = {
+                                    any = {
+                                        { quest = { id = 630, state = "activeOrCompleted" } },
+                                        {
+                                            any = {
+                                                { quest = { id = 630, state = "completed" } },
+                                                { all = { { any = { { any = { { quest = { id = 594, state = "completed" } }, { all = {} } } } } } } },
+                                            },
+                                        },
                                     },
                                 },
                             },
@@ -10593,8 +11260,8 @@ ns:RegisterGuide({
                                 { quest = { id = 630, state = "activeOrCompleted" } },
                                 {
                                     any = {
-                                        { quest = { id = 630, state = "completed" } },
-                                        { all = { { any = { { any = { { quest = { id = 594, state = "completed" } }, { all = {} } } } } } } },
+                                        { quest = { id = 630, state = "activeOrCompleted" } },
+                                        { all = { { any = { { any = { { quest = { id = 594, state = "activeOrCompleted" } }, { all = {} } } } } } } },
                                     },
                                 },
                             },
@@ -10620,13 +11287,13 @@ ns:RegisterGuide({
             useQuestNavigation = true,
         },
         {
+            checkpointQuest = 8551,
+            complete = { level = { min = 35 } },
+            conditions = { all = { { faction = "Alliance" } } },
             id = "alliance-extra-8551-level",
             kind = "note",
-            checkpointQuest = 8551,
-            text = "Reach level 47 before this visit.",
-            conditions = { all = { { faction = "Alliance" } } },
-            complete = { level = { min = 47 } },
-            requiredLevel = 47,
+            requiredLevel = 35,
+            text = "Reach level 35 before this visit.",
         },
         {
             id = "alliance-extra-8551-accept",
@@ -10680,6 +11347,60 @@ ns:RegisterGuide({
             useClientPin = true,
             useClientText = false,
             useQuestNavigation = true,
+        },
+        {
+            checkpointQuest = 212,
+            complete = { level = { min = 35 } },
+            conditions = { all = { { faction = "Alliance" }, { race = { 1, 3, 4, 7 } } } },
+            id = "alliance-extra-212-level",
+            kind = "note",
+            requiredLevel = 35,
+            text = "Reach level 35 before this visit.",
+        },
+        {
+            complete = { quest = { id = 212, state = "activeOrCompleted" } },
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 35 } }, { race = { 1, 3, 4, 7 } } } },
+            dependsOn = { "alliance-extra-212-level" },
+            id = "alliance-extra-212-accept",
+            kind = "accept",
+            requiredQuests = {},
+            route = {
+                { label = "Angus Stern", mapID = 1453, offMapText = "Travel to Angus Stern in Stormwind City.", x = 0.5179, y = 0.9364 },
+            },
+            text = "Accept A Meal Served Cold from Angus Stern.",
+            useClientText = false,
+        },
+        {
+            complete = { quest = { id = 212, state = "complete" } },
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 35 } }, { race = { 1, 3, 4, 7 } } } },
+            dependsOn = { "alliance-extra-212-accept" },
+            id = "alliance-extra-212-objective",
+            kind = "objective",
+            requiredQuests = {},
+            route = {
+                {
+                    label = "Cold Eye Basilisk",
+                    mapID = 1434,
+                    offMapText = "Travel to Cold Eye Basilisk in Stranglethorn Vale.",
+                    x = 0.2873,
+                    y = 0.40880000000000005,
+                },
+            },
+            text = "Kill a Cold Eye Basilisk, get a Chilled Basilisk Haunch, and return it to Angus Stern in the Blue Recluse..",
+            useClientText = false,
+        },
+        {
+            complete = { quest = { id = 212, state = "completed" } },
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 35 } }, { race = { 1, 3, 4, 7 } } } },
+            dependsOn = { "alliance-extra-212-objective" },
+            id = "alliance-extra-212-turnin",
+            kind = "turnin",
+            requiredQuests = {},
+            route = {
+                { label = "Angus Stern", mapID = 1453, offMapText = "Travel to Angus Stern in Stormwind City.", x = 0.5179, y = 0.9364 },
+            },
+            text = "Turn in A Meal Served Cold to Angus Stern.",
+            useClientText = false,
         },
         {
             id = "visit-entry-leveling-era-horde-thousand-needles-part-2",
@@ -19431,13 +20152,9 @@ ns:RegisterGuide({
             useQuestNavigation = true,
         },
         {
-            id = "horde-extra-630-level",
-            kind = "note",
             checkpointQuest = 630,
-            text = "Reach level 51 before this visit.",
+            complete = { level = { min = 45 } },
             conditions = { all = { { faction = "Horde" } } },
-            complete = { level = { min = 51 } },
-            requiredLevel = 51,
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -19451,6 +20168,10 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-extra-630-level",
+            kind = "note",
+            requiredLevel = 45,
+            text = "Reach level 45 before this visit.",
         },
         {
             complete = { quest = { id = 630, state = "activeOrCompleted" } },
@@ -19459,13 +20180,30 @@ ns:RegisterGuide({
             excludeWhen = {
                 any = {
                     {
-                        ["not"] = {
-                            any = {
-                                { quest = { id = 630, state = "activeOrCompleted" } },
-                                {
+                        any = {
+                            {
+                                ["not"] = {
                                     any = {
-                                        { quest = { id = 630, state = "completed" } },
-                                        { all = { { any = { { any = { { quest = { id = 594, state = "completed" } }, { all = {} } } } } } } },
+                                        { quest = { id = 630, state = "activeOrCompleted" } },
+                                        {
+                                            any = {
+                                                { quest = { id = 630, state = "completed" } },
+                                                { all = { { any = { { any = { { quest = { id = 594, state = "completed" } }, { all = {} } } } } } } },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                            {
+                                ["not"] = {
+                                    any = {
+                                        { quest = { id = 630, state = "activeOrCompleted" } },
+                                        {
+                                            any = {
+                                                { quest = { id = 630, state = "completed" } },
+                                                { all = { { any = { { any = { { quest = { id = 594, state = "completed" } }, { all = {} } } } } } } },
+                                            },
+                                        },
                                     },
                                 },
                             },
@@ -19477,8 +20215,8 @@ ns:RegisterGuide({
                                 { quest = { id = 630, state = "activeOrCompleted" } },
                                 {
                                     any = {
-                                        { quest = { id = 630, state = "completed" } },
-                                        { all = { { any = { { any = { { quest = { id = 594, state = "completed" } }, { all = {} } } } } } } },
+                                        { quest = { id = 630, state = "activeOrCompleted" } },
+                                        { all = { { any = { { any = { { quest = { id = 594, state = "activeOrCompleted" } }, { all = {} } } } } } } },
                                     },
                                 },
                             },
@@ -19508,13 +20246,30 @@ ns:RegisterGuide({
             excludeWhen = {
                 any = {
                     {
-                        ["not"] = {
-                            any = {
-                                { quest = { id = 630, state = "activeOrCompleted" } },
-                                {
+                        any = {
+                            {
+                                ["not"] = {
                                     any = {
-                                        { quest = { id = 630, state = "completed" } },
-                                        { all = { { any = { { any = { { quest = { id = 594, state = "completed" } }, { all = {} } } } } } } },
+                                        { quest = { id = 630, state = "activeOrCompleted" } },
+                                        {
+                                            any = {
+                                                { quest = { id = 630, state = "completed" } },
+                                                { all = { { any = { { any = { { quest = { id = 594, state = "completed" } }, { all = {} } } } } } } },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                            {
+                                ["not"] = {
+                                    any = {
+                                        { quest = { id = 630, state = "activeOrCompleted" } },
+                                        {
+                                            any = {
+                                                { quest = { id = 630, state = "completed" } },
+                                                { all = { { any = { { any = { { quest = { id = 594, state = "completed" } }, { all = {} } } } } } } },
+                                            },
+                                        },
                                     },
                                 },
                             },
@@ -19526,8 +20281,8 @@ ns:RegisterGuide({
                                 { quest = { id = 630, state = "activeOrCompleted" } },
                                 {
                                     any = {
-                                        { quest = { id = 630, state = "completed" } },
-                                        { all = { { any = { { any = { { quest = { id = 594, state = "completed" } }, { all = {} } } } } } } },
+                                        { quest = { id = 630, state = "activeOrCompleted" } },
+                                        { all = { { any = { { any = { { quest = { id = 594, state = "activeOrCompleted" } }, { all = {} } } } } } } },
                                     },
                                 },
                             },
@@ -19552,13 +20307,30 @@ ns:RegisterGuide({
             excludeWhen = {
                 any = {
                     {
-                        ["not"] = {
-                            any = {
-                                { quest = { id = 630, state = "activeOrCompleted" } },
-                                {
+                        any = {
+                            {
+                                ["not"] = {
                                     any = {
-                                        { quest = { id = 630, state = "completed" } },
-                                        { all = { { any = { { any = { { quest = { id = 594, state = "completed" } }, { all = {} } } } } } } },
+                                        { quest = { id = 630, state = "activeOrCompleted" } },
+                                        {
+                                            any = {
+                                                { quest = { id = 630, state = "completed" } },
+                                                { all = { { any = { { any = { { quest = { id = 594, state = "completed" } }, { all = {} } } } } } } },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                            {
+                                ["not"] = {
+                                    any = {
+                                        { quest = { id = 630, state = "activeOrCompleted" } },
+                                        {
+                                            any = {
+                                                { quest = { id = 630, state = "completed" } },
+                                                { all = { { any = { { any = { { quest = { id = 594, state = "completed" } }, { all = {} } } } } } } },
+                                            },
+                                        },
                                     },
                                 },
                             },
@@ -19570,8 +20342,8 @@ ns:RegisterGuide({
                                 { quest = { id = 630, state = "activeOrCompleted" } },
                                 {
                                     any = {
-                                        { quest = { id = 630, state = "completed" } },
-                                        { all = { { any = { { any = { { quest = { id = 594, state = "completed" } }, { all = {} } } } } } } },
+                                        { quest = { id = 630, state = "activeOrCompleted" } },
+                                        { all = { { any = { { any = { { quest = { id = 594, state = "activeOrCompleted" } }, { all = {} } } } } } } },
                                     },
                                 },
                             },
@@ -19597,13 +20369,9 @@ ns:RegisterGuide({
             useQuestNavigation = true,
         },
         {
-            id = "horde-extra-591-level",
-            kind = "note",
             checkpointQuest = 591,
-            text = "Reach level 46 before this visit.",
+            complete = { level = { min = 30 } },
             conditions = { all = { { faction = "Horde" } } },
-            complete = { level = { min = 46 } },
-            requiredLevel = 46,
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -19731,6 +20499,10 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-extra-591-level",
+            kind = "note",
+            requiredLevel = 30,
+            text = "Reach level 30 before this visit.",
         },
         {
             complete = { quest = { id = 591, state = "activeOrCompleted" } },
@@ -19739,56 +20511,99 @@ ns:RegisterGuide({
             excludeWhen = {
                 any = {
                     {
-                        ["not"] = {
-                            any = {
-                                { quest = { id = 591, state = "activeOrCompleted" } },
-                                {
+                        any = {
+                            {
+                                ["not"] = {
                                     any = {
-                                        { quest = { id = 591, state = "completed" } },
+                                        { quest = { id = 591, state = "activeOrCompleted" } },
                                         {
-                                            all = {
-                                                { faction = "Horde" },
+                                            any = {
+                                                { quest = { id = 591, state = "completed" } },
                                                 {
-                                                    any = {
+                                                    all = {
+                                                        { faction = "Horde" },
                                                         {
                                                             any = {
-                                                                { quest = { id = 589, state = "completed" } },
                                                                 {
-                                                                    all = {
-                                                                        { faction = "Horde" },
+                                                                    any = {
+                                                                        { quest = { id = 589, state = "completed" } },
                                                                         {
-                                                                            any = {
+                                                                            all = {
+                                                                                { faction = "Horde" },
                                                                                 {
                                                                                     any = {
-                                                                                        { quest = { id = 588, state = "completed" } },
                                                                                         {
-                                                                                            all = {
-                                                                                                { faction = "Horde" },
+                                                                                            any = {
+                                                                                                { quest = { id = 588, state = "completed" } },
                                                                                                 {
                                                                                                     all = {
+                                                                                                        { faction = "Horde" },
                                                                                                         {
-                                                                                                            any = {
-                                                                                                                { quest = { id = 585, state = "completed" } },
+                                                                                                            all = {
                                                                                                                 {
-                                                                                                                    all = {
-                                                                                                                        { faction = "Horde" },
+                                                                                                                    any = {
+                                                                                                                        { quest = { id = 585, state = "completed" } },
                                                                                                                         {
-                                                                                                                            any = {
+                                                                                                                            all = {
+                                                                                                                                { faction = "Horde" },
                                                                                                                                 {
                                                                                                                                     any = {
-                                                                                                                                        { quest = { id = 584, state = "completed" } },
                                                                                                                                         {
-                                                                                                                                            all = {
-                                                                                                                                                { faction = "Horde" },
+                                                                                                                                            any = {
+                                                                                                                                                { quest = { id = 584, state = "completed" } },
                                                                                                                                                 {
-                                                                                                                                                    any = {
+                                                                                                                                                    all = {
+                                                                                                                                                        { faction = "Horde" },
                                                                                                                                                         {
                                                                                                                                                             any = {
-                                                                                                                                                                { quest = { id = 582, state = "completed" } },
                                                                                                                                                                 {
-                                                                                                                                                                    all = {
-                                                                                                                                                                        { faction = "Horde" },
-                                                                                                                                                                        { any = { { any = { { quest = { id = 581, state = "completed" } }, { all = { { faction = "Horde" } } } } } } },
+                                                                                                                                                                    any = {
+                                                                                                                                                                        { quest = { id = 582, state = "completed" } },
+                                                                                                                                                                        {
+                                                                                                                                                                            all = {
+                                                                                                                                                                                { faction = "Horde" },
+                                                                                                                                                                                { any = { { any = { { quest = { id = 581, state = "completed" } }, { all = { { faction = "Horde" } } } } } } },
+                                                                                                                                                                            },
+                                                                                                                                                                        },
+                                                                                                                                                                    },
+                                                                                                                                                                },
+                                                                                                                                                            },
+                                                                                                                                                        },
+                                                                                                                                                    },
+                                                                                                                                                },
+                                                                                                                                            },
+                                                                                                                                        },
+                                                                                                                                    },
+                                                                                                                                },
+                                                                                                                            },
+                                                                                                                        },
+                                                                                                                    },
+                                                                                                                },
+                                                                                                                {
+                                                                                                                    any = {
+                                                                                                                        { quest = { id = 586, state = "completed" } },
+                                                                                                                        {
+                                                                                                                            all = {
+                                                                                                                                { faction = "Horde" },
+                                                                                                                                {
+                                                                                                                                    any = {
+                                                                                                                                        {
+                                                                                                                                            any = {
+                                                                                                                                                { quest = { id = 584, state = "completed" } },
+                                                                                                                                                {
+                                                                                                                                                    all = {
+                                                                                                                                                        { faction = "Horde" },
+                                                                                                                                                        {
+                                                                                                                                                            any = {
+                                                                                                                                                                {
+                                                                                                                                                                    any = {
+                                                                                                                                                                        { quest = { id = 582, state = "completed" } },
+                                                                                                                                                                        {
+                                                                                                                                                                            all = {
+                                                                                                                                                                                { faction = "Horde" },
+                                                                                                                                                                                { any = { { any = { { quest = { id = 581, state = "completed" } }, { all = { { faction = "Horde" } } } } } } },
+                                                                                                                                                                            },
+                                                                                                                                                                        },
                                                                                                                                                                     },
                                                                                                                                                                 },
                                                                                                                                                             },
@@ -19805,29 +20620,117 @@ ns:RegisterGuide({
                                                                                                                 },
                                                                                                             },
                                                                                                         },
+                                                                                                    },
+                                                                                                },
+                                                                                            },
+                                                                                        },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                            {
+                                ["not"] = {
+                                    any = {
+                                        { quest = { id = 591, state = "activeOrCompleted" } },
+                                        {
+                                            any = {
+                                                { quest = { id = 591, state = "completed" } },
+                                                {
+                                                    all = {
+                                                        { faction = "Horde" },
+                                                        {
+                                                            any = {
+                                                                {
+                                                                    any = {
+                                                                        { quest = { id = 589, state = "completed" } },
+                                                                        {
+                                                                            all = {
+                                                                                { faction = "Horde" },
+                                                                                {
+                                                                                    any = {
+                                                                                        {
+                                                                                            any = {
+                                                                                                { quest = { id = 588, state = "completed" } },
+                                                                                                {
+                                                                                                    all = {
+                                                                                                        { faction = "Horde" },
                                                                                                         {
-                                                                                                            any = {
-                                                                                                                { quest = { id = 586, state = "completed" } },
+                                                                                                            all = {
                                                                                                                 {
-                                                                                                                    all = {
-                                                                                                                        { faction = "Horde" },
+                                                                                                                    any = {
+                                                                                                                        { quest = { id = 585, state = "completed" } },
                                                                                                                         {
-                                                                                                                            any = {
+                                                                                                                            all = {
+                                                                                                                                { faction = "Horde" },
                                                                                                                                 {
                                                                                                                                     any = {
-                                                                                                                                        { quest = { id = 584, state = "completed" } },
                                                                                                                                         {
-                                                                                                                                            all = {
-                                                                                                                                                { faction = "Horde" },
+                                                                                                                                            any = {
+                                                                                                                                                { quest = { id = 584, state = "completed" } },
                                                                                                                                                 {
-                                                                                                                                                    any = {
+                                                                                                                                                    all = {
+                                                                                                                                                        { faction = "Horde" },
                                                                                                                                                         {
                                                                                                                                                             any = {
-                                                                                                                                                                { quest = { id = 582, state = "completed" } },
                                                                                                                                                                 {
-                                                                                                                                                                    all = {
-                                                                                                                                                                        { faction = "Horde" },
-                                                                                                                                                                        { any = { { any = { { quest = { id = 581, state = "completed" } }, { all = { { faction = "Horde" } } } } } } },
+                                                                                                                                                                    any = {
+                                                                                                                                                                        { quest = { id = 582, state = "completed" } },
+                                                                                                                                                                        {
+                                                                                                                                                                            all = {
+                                                                                                                                                                                { faction = "Horde" },
+                                                                                                                                                                                { any = { { any = { { quest = { id = 581, state = "completed" } }, { all = { { faction = "Horde" } } } } } } },
+                                                                                                                                                                            },
+                                                                                                                                                                        },
+                                                                                                                                                                    },
+                                                                                                                                                                },
+                                                                                                                                                            },
+                                                                                                                                                        },
+                                                                                                                                                    },
+                                                                                                                                                },
+                                                                                                                                            },
+                                                                                                                                        },
+                                                                                                                                    },
+                                                                                                                                },
+                                                                                                                            },
+                                                                                                                        },
+                                                                                                                    },
+                                                                                                                },
+                                                                                                                {
+                                                                                                                    any = {
+                                                                                                                        { quest = { id = 586, state = "completed" } },
+                                                                                                                        {
+                                                                                                                            all = {
+                                                                                                                                { faction = "Horde" },
+                                                                                                                                {
+                                                                                                                                    any = {
+                                                                                                                                        {
+                                                                                                                                            any = {
+                                                                                                                                                { quest = { id = 584, state = "completed" } },
+                                                                                                                                                {
+                                                                                                                                                    all = {
+                                                                                                                                                        { faction = "Horde" },
+                                                                                                                                                        {
+                                                                                                                                                            any = {
+                                                                                                                                                                {
+                                                                                                                                                                    any = {
+                                                                                                                                                                        { quest = { id = 582, state = "completed" } },
+                                                                                                                                                                        {
+                                                                                                                                                                            all = {
+                                                                                                                                                                                { faction = "Horde" },
+                                                                                                                                                                                { any = { { any = { { quest = { id = 581, state = "completed" } }, { all = { { faction = "Horde" } } } } } } },
+                                                                                                                                                                            },
+                                                                                                                                                                        },
                                                                                                                                                                     },
                                                                                                                                                                 },
                                                                                                                                                             },
@@ -19871,51 +20774,66 @@ ns:RegisterGuide({
                                 { quest = { id = 591, state = "activeOrCompleted" } },
                                 {
                                     any = {
-                                        { quest = { id = 591, state = "completed" } },
+                                        { quest = { id = 591, state = "activeOrCompleted" } },
                                         {
                                             all = {
                                                 { faction = "Horde" },
+                                                { race = { 2, 5, 6, 8 } },
                                                 {
                                                     any = {
                                                         {
                                                             any = {
-                                                                { quest = { id = 589, state = "completed" } },
+                                                                { quest = { id = 589, state = "activeOrCompleted" } },
                                                                 {
                                                                     all = {
                                                                         { faction = "Horde" },
+                                                                        { race = { 2, 5, 6, 8 } },
                                                                         {
                                                                             any = {
                                                                                 {
                                                                                     any = {
-                                                                                        { quest = { id = 588, state = "completed" } },
+                                                                                        { quest = { id = 588, state = "activeOrCompleted" } },
                                                                                         {
                                                                                             all = {
                                                                                                 { faction = "Horde" },
+                                                                                                { race = { 2, 5, 6, 8 } },
                                                                                                 {
                                                                                                     all = {
                                                                                                         {
                                                                                                             any = {
-                                                                                                                { quest = { id = 585, state = "completed" } },
+                                                                                                                { quest = { id = 585, state = "activeOrCompleted" } },
                                                                                                                 {
                                                                                                                     all = {
                                                                                                                         { faction = "Horde" },
+                                                                                                                        { race = { 2, 5, 6, 8 } },
                                                                                                                         {
                                                                                                                             any = {
                                                                                                                                 {
                                                                                                                                     any = {
-                                                                                                                                        { quest = { id = 584, state = "completed" } },
+                                                                                                                                        { quest = { id = 584, state = "activeOrCompleted" } },
                                                                                                                                         {
                                                                                                                                             all = {
                                                                                                                                                 { faction = "Horde" },
+                                                                                                                                                { race = { 2, 5, 6, 8 } },
                                                                                                                                                 {
                                                                                                                                                     any = {
                                                                                                                                                         {
                                                                                                                                                             any = {
-                                                                                                                                                                { quest = { id = 582, state = "completed" } },
+                                                                                                                                                                { quest = { id = 582, state = "activeOrCompleted" } },
                                                                                                                                                                 {
                                                                                                                                                                     all = {
                                                                                                                                                                         { faction = "Horde" },
-                                                                                                                                                                        { any = { { any = { { quest = { id = 581, state = "completed" } }, { all = { { faction = "Horde" } } } } } } },
+                                                                                                                                                                        { race = { 2, 5, 6, 8 } },
+                                                                                                                                                                        {
+                                                                                                                                                                            any = {
+                                                                                                                                                                                {
+                                                                                                                                                                                    any = {
+                                                                                                                                                                                        { quest = { id = 581, state = "activeOrCompleted" } },
+                                                                                                                                                                                        { all = { { faction = "Horde" }, { race = { 2, 5, 6, 8 } } } },
+                                                                                                                                                                                    },
+                                                                                                                                                                                },
+                                                                                                                                                                            },
+                                                                                                                                                                        },
                                                                                                                                                                     },
                                                                                                                                                                 },
                                                                                                                                                             },
@@ -19934,27 +20852,39 @@ ns:RegisterGuide({
                                                                                                         },
                                                                                                         {
                                                                                                             any = {
-                                                                                                                { quest = { id = 586, state = "completed" } },
+                                                                                                                { quest = { id = 586, state = "activeOrCompleted" } },
                                                                                                                 {
                                                                                                                     all = {
                                                                                                                         { faction = "Horde" },
+                                                                                                                        { race = { 2, 5, 6, 8 } },
                                                                                                                         {
                                                                                                                             any = {
                                                                                                                                 {
                                                                                                                                     any = {
-                                                                                                                                        { quest = { id = 584, state = "completed" } },
+                                                                                                                                        { quest = { id = 584, state = "activeOrCompleted" } },
                                                                                                                                         {
                                                                                                                                             all = {
                                                                                                                                                 { faction = "Horde" },
+                                                                                                                                                { race = { 2, 5, 6, 8 } },
                                                                                                                                                 {
                                                                                                                                                     any = {
                                                                                                                                                         {
                                                                                                                                                             any = {
-                                                                                                                                                                { quest = { id = 582, state = "completed" } },
+                                                                                                                                                                { quest = { id = 582, state = "activeOrCompleted" } },
                                                                                                                                                                 {
                                                                                                                                                                     all = {
                                                                                                                                                                         { faction = "Horde" },
-                                                                                                                                                                        { any = { { any = { { quest = { id = 581, state = "completed" } }, { all = { { faction = "Horde" } } } } } } },
+                                                                                                                                                                        { race = { 2, 5, 6, 8 } },
+                                                                                                                                                                        {
+                                                                                                                                                                            any = {
+                                                                                                                                                                                {
+                                                                                                                                                                                    any = {
+                                                                                                                                                                                        { quest = { id = 581, state = "activeOrCompleted" } },
+                                                                                                                                                                                        { all = { { faction = "Horde" }, { race = { 2, 5, 6, 8 } } } },
+                                                                                                                                                                                    },
+                                                                                                                                                                                },
+                                                                                                                                                                            },
+                                                                                                                                                                        },
                                                                                                                                                                     },
                                                                                                                                                                 },
                                                                                                                                                             },
@@ -20010,56 +20940,99 @@ ns:RegisterGuide({
             excludeWhen = {
                 any = {
                     {
-                        ["not"] = {
-                            any = {
-                                { quest = { id = 591, state = "activeOrCompleted" } },
-                                {
+                        any = {
+                            {
+                                ["not"] = {
                                     any = {
-                                        { quest = { id = 591, state = "completed" } },
+                                        { quest = { id = 591, state = "activeOrCompleted" } },
                                         {
-                                            all = {
-                                                { faction = "Horde" },
+                                            any = {
+                                                { quest = { id = 591, state = "completed" } },
                                                 {
-                                                    any = {
+                                                    all = {
+                                                        { faction = "Horde" },
                                                         {
                                                             any = {
-                                                                { quest = { id = 589, state = "completed" } },
                                                                 {
-                                                                    all = {
-                                                                        { faction = "Horde" },
+                                                                    any = {
+                                                                        { quest = { id = 589, state = "completed" } },
                                                                         {
-                                                                            any = {
+                                                                            all = {
+                                                                                { faction = "Horde" },
                                                                                 {
                                                                                     any = {
-                                                                                        { quest = { id = 588, state = "completed" } },
                                                                                         {
-                                                                                            all = {
-                                                                                                { faction = "Horde" },
+                                                                                            any = {
+                                                                                                { quest = { id = 588, state = "completed" } },
                                                                                                 {
                                                                                                     all = {
+                                                                                                        { faction = "Horde" },
                                                                                                         {
-                                                                                                            any = {
-                                                                                                                { quest = { id = 585, state = "completed" } },
+                                                                                                            all = {
                                                                                                                 {
-                                                                                                                    all = {
-                                                                                                                        { faction = "Horde" },
+                                                                                                                    any = {
+                                                                                                                        { quest = { id = 585, state = "completed" } },
                                                                                                                         {
-                                                                                                                            any = {
+                                                                                                                            all = {
+                                                                                                                                { faction = "Horde" },
                                                                                                                                 {
                                                                                                                                     any = {
-                                                                                                                                        { quest = { id = 584, state = "completed" } },
                                                                                                                                         {
-                                                                                                                                            all = {
-                                                                                                                                                { faction = "Horde" },
+                                                                                                                                            any = {
+                                                                                                                                                { quest = { id = 584, state = "completed" } },
                                                                                                                                                 {
-                                                                                                                                                    any = {
+                                                                                                                                                    all = {
+                                                                                                                                                        { faction = "Horde" },
                                                                                                                                                         {
                                                                                                                                                             any = {
-                                                                                                                                                                { quest = { id = 582, state = "completed" } },
                                                                                                                                                                 {
-                                                                                                                                                                    all = {
-                                                                                                                                                                        { faction = "Horde" },
-                                                                                                                                                                        { any = { { any = { { quest = { id = 581, state = "completed" } }, { all = { { faction = "Horde" } } } } } } },
+                                                                                                                                                                    any = {
+                                                                                                                                                                        { quest = { id = 582, state = "completed" } },
+                                                                                                                                                                        {
+                                                                                                                                                                            all = {
+                                                                                                                                                                                { faction = "Horde" },
+                                                                                                                                                                                { any = { { any = { { quest = { id = 581, state = "completed" } }, { all = { { faction = "Horde" } } } } } } },
+                                                                                                                                                                            },
+                                                                                                                                                                        },
+                                                                                                                                                                    },
+                                                                                                                                                                },
+                                                                                                                                                            },
+                                                                                                                                                        },
+                                                                                                                                                    },
+                                                                                                                                                },
+                                                                                                                                            },
+                                                                                                                                        },
+                                                                                                                                    },
+                                                                                                                                },
+                                                                                                                            },
+                                                                                                                        },
+                                                                                                                    },
+                                                                                                                },
+                                                                                                                {
+                                                                                                                    any = {
+                                                                                                                        { quest = { id = 586, state = "completed" } },
+                                                                                                                        {
+                                                                                                                            all = {
+                                                                                                                                { faction = "Horde" },
+                                                                                                                                {
+                                                                                                                                    any = {
+                                                                                                                                        {
+                                                                                                                                            any = {
+                                                                                                                                                { quest = { id = 584, state = "completed" } },
+                                                                                                                                                {
+                                                                                                                                                    all = {
+                                                                                                                                                        { faction = "Horde" },
+                                                                                                                                                        {
+                                                                                                                                                            any = {
+                                                                                                                                                                {
+                                                                                                                                                                    any = {
+                                                                                                                                                                        { quest = { id = 582, state = "completed" } },
+                                                                                                                                                                        {
+                                                                                                                                                                            all = {
+                                                                                                                                                                                { faction = "Horde" },
+                                                                                                                                                                                { any = { { any = { { quest = { id = 581, state = "completed" } }, { all = { { faction = "Horde" } } } } } } },
+                                                                                                                                                                            },
+                                                                                                                                                                        },
                                                                                                                                                                     },
                                                                                                                                                                 },
                                                                                                                                                             },
@@ -20076,29 +21049,117 @@ ns:RegisterGuide({
                                                                                                                 },
                                                                                                             },
                                                                                                         },
+                                                                                                    },
+                                                                                                },
+                                                                                            },
+                                                                                        },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                            {
+                                ["not"] = {
+                                    any = {
+                                        { quest = { id = 591, state = "activeOrCompleted" } },
+                                        {
+                                            any = {
+                                                { quest = { id = 591, state = "completed" } },
+                                                {
+                                                    all = {
+                                                        { faction = "Horde" },
+                                                        {
+                                                            any = {
+                                                                {
+                                                                    any = {
+                                                                        { quest = { id = 589, state = "completed" } },
+                                                                        {
+                                                                            all = {
+                                                                                { faction = "Horde" },
+                                                                                {
+                                                                                    any = {
+                                                                                        {
+                                                                                            any = {
+                                                                                                { quest = { id = 588, state = "completed" } },
+                                                                                                {
+                                                                                                    all = {
+                                                                                                        { faction = "Horde" },
                                                                                                         {
-                                                                                                            any = {
-                                                                                                                { quest = { id = 586, state = "completed" } },
+                                                                                                            all = {
                                                                                                                 {
-                                                                                                                    all = {
-                                                                                                                        { faction = "Horde" },
+                                                                                                                    any = {
+                                                                                                                        { quest = { id = 585, state = "completed" } },
                                                                                                                         {
-                                                                                                                            any = {
+                                                                                                                            all = {
+                                                                                                                                { faction = "Horde" },
                                                                                                                                 {
                                                                                                                                     any = {
-                                                                                                                                        { quest = { id = 584, state = "completed" } },
                                                                                                                                         {
-                                                                                                                                            all = {
-                                                                                                                                                { faction = "Horde" },
+                                                                                                                                            any = {
+                                                                                                                                                { quest = { id = 584, state = "completed" } },
                                                                                                                                                 {
-                                                                                                                                                    any = {
+                                                                                                                                                    all = {
+                                                                                                                                                        { faction = "Horde" },
                                                                                                                                                         {
                                                                                                                                                             any = {
-                                                                                                                                                                { quest = { id = 582, state = "completed" } },
                                                                                                                                                                 {
-                                                                                                                                                                    all = {
-                                                                                                                                                                        { faction = "Horde" },
-                                                                                                                                                                        { any = { { any = { { quest = { id = 581, state = "completed" } }, { all = { { faction = "Horde" } } } } } } },
+                                                                                                                                                                    any = {
+                                                                                                                                                                        { quest = { id = 582, state = "completed" } },
+                                                                                                                                                                        {
+                                                                                                                                                                            all = {
+                                                                                                                                                                                { faction = "Horde" },
+                                                                                                                                                                                { any = { { any = { { quest = { id = 581, state = "completed" } }, { all = { { faction = "Horde" } } } } } } },
+                                                                                                                                                                            },
+                                                                                                                                                                        },
+                                                                                                                                                                    },
+                                                                                                                                                                },
+                                                                                                                                                            },
+                                                                                                                                                        },
+                                                                                                                                                    },
+                                                                                                                                                },
+                                                                                                                                            },
+                                                                                                                                        },
+                                                                                                                                    },
+                                                                                                                                },
+                                                                                                                            },
+                                                                                                                        },
+                                                                                                                    },
+                                                                                                                },
+                                                                                                                {
+                                                                                                                    any = {
+                                                                                                                        { quest = { id = 586, state = "completed" } },
+                                                                                                                        {
+                                                                                                                            all = {
+                                                                                                                                { faction = "Horde" },
+                                                                                                                                {
+                                                                                                                                    any = {
+                                                                                                                                        {
+                                                                                                                                            any = {
+                                                                                                                                                { quest = { id = 584, state = "completed" } },
+                                                                                                                                                {
+                                                                                                                                                    all = {
+                                                                                                                                                        { faction = "Horde" },
+                                                                                                                                                        {
+                                                                                                                                                            any = {
+                                                                                                                                                                {
+                                                                                                                                                                    any = {
+                                                                                                                                                                        { quest = { id = 582, state = "completed" } },
+                                                                                                                                                                        {
+                                                                                                                                                                            all = {
+                                                                                                                                                                                { faction = "Horde" },
+                                                                                                                                                                                { any = { { any = { { quest = { id = 581, state = "completed" } }, { all = { { faction = "Horde" } } } } } } },
+                                                                                                                                                                            },
+                                                                                                                                                                        },
                                                                                                                                                                     },
                                                                                                                                                                 },
                                                                                                                                                             },
@@ -20142,51 +21203,66 @@ ns:RegisterGuide({
                                 { quest = { id = 591, state = "activeOrCompleted" } },
                                 {
                                     any = {
-                                        { quest = { id = 591, state = "completed" } },
+                                        { quest = { id = 591, state = "activeOrCompleted" } },
                                         {
                                             all = {
                                                 { faction = "Horde" },
+                                                { race = { 2, 5, 6, 8 } },
                                                 {
                                                     any = {
                                                         {
                                                             any = {
-                                                                { quest = { id = 589, state = "completed" } },
+                                                                { quest = { id = 589, state = "activeOrCompleted" } },
                                                                 {
                                                                     all = {
                                                                         { faction = "Horde" },
+                                                                        { race = { 2, 5, 6, 8 } },
                                                                         {
                                                                             any = {
                                                                                 {
                                                                                     any = {
-                                                                                        { quest = { id = 588, state = "completed" } },
+                                                                                        { quest = { id = 588, state = "activeOrCompleted" } },
                                                                                         {
                                                                                             all = {
                                                                                                 { faction = "Horde" },
+                                                                                                { race = { 2, 5, 6, 8 } },
                                                                                                 {
                                                                                                     all = {
                                                                                                         {
                                                                                                             any = {
-                                                                                                                { quest = { id = 585, state = "completed" } },
+                                                                                                                { quest = { id = 585, state = "activeOrCompleted" } },
                                                                                                                 {
                                                                                                                     all = {
                                                                                                                         { faction = "Horde" },
+                                                                                                                        { race = { 2, 5, 6, 8 } },
                                                                                                                         {
                                                                                                                             any = {
                                                                                                                                 {
                                                                                                                                     any = {
-                                                                                                                                        { quest = { id = 584, state = "completed" } },
+                                                                                                                                        { quest = { id = 584, state = "activeOrCompleted" } },
                                                                                                                                         {
                                                                                                                                             all = {
                                                                                                                                                 { faction = "Horde" },
+                                                                                                                                                { race = { 2, 5, 6, 8 } },
                                                                                                                                                 {
                                                                                                                                                     any = {
                                                                                                                                                         {
                                                                                                                                                             any = {
-                                                                                                                                                                { quest = { id = 582, state = "completed" } },
+                                                                                                                                                                { quest = { id = 582, state = "activeOrCompleted" } },
                                                                                                                                                                 {
                                                                                                                                                                     all = {
                                                                                                                                                                         { faction = "Horde" },
-                                                                                                                                                                        { any = { { any = { { quest = { id = 581, state = "completed" } }, { all = { { faction = "Horde" } } } } } } },
+                                                                                                                                                                        { race = { 2, 5, 6, 8 } },
+                                                                                                                                                                        {
+                                                                                                                                                                            any = {
+                                                                                                                                                                                {
+                                                                                                                                                                                    any = {
+                                                                                                                                                                                        { quest = { id = 581, state = "activeOrCompleted" } },
+                                                                                                                                                                                        { all = { { faction = "Horde" }, { race = { 2, 5, 6, 8 } } } },
+                                                                                                                                                                                    },
+                                                                                                                                                                                },
+                                                                                                                                                                            },
+                                                                                                                                                                        },
                                                                                                                                                                     },
                                                                                                                                                                 },
                                                                                                                                                             },
@@ -20205,27 +21281,39 @@ ns:RegisterGuide({
                                                                                                         },
                                                                                                         {
                                                                                                             any = {
-                                                                                                                { quest = { id = 586, state = "completed" } },
+                                                                                                                { quest = { id = 586, state = "activeOrCompleted" } },
                                                                                                                 {
                                                                                                                     all = {
                                                                                                                         { faction = "Horde" },
+                                                                                                                        { race = { 2, 5, 6, 8 } },
                                                                                                                         {
                                                                                                                             any = {
                                                                                                                                 {
                                                                                                                                     any = {
-                                                                                                                                        { quest = { id = 584, state = "completed" } },
+                                                                                                                                        { quest = { id = 584, state = "activeOrCompleted" } },
                                                                                                                                         {
                                                                                                                                             all = {
                                                                                                                                                 { faction = "Horde" },
+                                                                                                                                                { race = { 2, 5, 6, 8 } },
                                                                                                                                                 {
                                                                                                                                                     any = {
                                                                                                                                                         {
                                                                                                                                                             any = {
-                                                                                                                                                                { quest = { id = 582, state = "completed" } },
+                                                                                                                                                                { quest = { id = 582, state = "activeOrCompleted" } },
                                                                                                                                                                 {
                                                                                                                                                                     all = {
                                                                                                                                                                         { faction = "Horde" },
-                                                                                                                                                                        { any = { { any = { { quest = { id = 581, state = "completed" } }, { all = { { faction = "Horde" } } } } } } },
+                                                                                                                                                                        { race = { 2, 5, 6, 8 } },
+                                                                                                                                                                        {
+                                                                                                                                                                            any = {
+                                                                                                                                                                                {
+                                                                                                                                                                                    any = {
+                                                                                                                                                                                        { quest = { id = 581, state = "activeOrCompleted" } },
+                                                                                                                                                                                        { all = { { faction = "Horde" }, { race = { 2, 5, 6, 8 } } } },
+                                                                                                                                                                                    },
+                                                                                                                                                                                },
+                                                                                                                                                                            },
+                                                                                                                                                                        },
                                                                                                                                                                     },
                                                                                                                                                                 },
                                                                                                                                                             },
@@ -20282,56 +21370,99 @@ ns:RegisterGuide({
             excludeWhen = {
                 any = {
                     {
-                        ["not"] = {
-                            any = {
-                                { quest = { id = 591, state = "activeOrCompleted" } },
-                                {
+                        any = {
+                            {
+                                ["not"] = {
                                     any = {
-                                        { quest = { id = 591, state = "completed" } },
+                                        { quest = { id = 591, state = "activeOrCompleted" } },
                                         {
-                                            all = {
-                                                { faction = "Horde" },
+                                            any = {
+                                                { quest = { id = 591, state = "completed" } },
                                                 {
-                                                    any = {
+                                                    all = {
+                                                        { faction = "Horde" },
                                                         {
                                                             any = {
-                                                                { quest = { id = 589, state = "completed" } },
                                                                 {
-                                                                    all = {
-                                                                        { faction = "Horde" },
+                                                                    any = {
+                                                                        { quest = { id = 589, state = "completed" } },
                                                                         {
-                                                                            any = {
+                                                                            all = {
+                                                                                { faction = "Horde" },
                                                                                 {
                                                                                     any = {
-                                                                                        { quest = { id = 588, state = "completed" } },
                                                                                         {
-                                                                                            all = {
-                                                                                                { faction = "Horde" },
+                                                                                            any = {
+                                                                                                { quest = { id = 588, state = "completed" } },
                                                                                                 {
                                                                                                     all = {
+                                                                                                        { faction = "Horde" },
                                                                                                         {
-                                                                                                            any = {
-                                                                                                                { quest = { id = 585, state = "completed" } },
+                                                                                                            all = {
                                                                                                                 {
-                                                                                                                    all = {
-                                                                                                                        { faction = "Horde" },
+                                                                                                                    any = {
+                                                                                                                        { quest = { id = 585, state = "completed" } },
                                                                                                                         {
-                                                                                                                            any = {
+                                                                                                                            all = {
+                                                                                                                                { faction = "Horde" },
                                                                                                                                 {
                                                                                                                                     any = {
-                                                                                                                                        { quest = { id = 584, state = "completed" } },
                                                                                                                                         {
-                                                                                                                                            all = {
-                                                                                                                                                { faction = "Horde" },
+                                                                                                                                            any = {
+                                                                                                                                                { quest = { id = 584, state = "completed" } },
                                                                                                                                                 {
-                                                                                                                                                    any = {
+                                                                                                                                                    all = {
+                                                                                                                                                        { faction = "Horde" },
                                                                                                                                                         {
                                                                                                                                                             any = {
-                                                                                                                                                                { quest = { id = 582, state = "completed" } },
                                                                                                                                                                 {
-                                                                                                                                                                    all = {
-                                                                                                                                                                        { faction = "Horde" },
-                                                                                                                                                                        { any = { { any = { { quest = { id = 581, state = "completed" } }, { all = { { faction = "Horde" } } } } } } },
+                                                                                                                                                                    any = {
+                                                                                                                                                                        { quest = { id = 582, state = "completed" } },
+                                                                                                                                                                        {
+                                                                                                                                                                            all = {
+                                                                                                                                                                                { faction = "Horde" },
+                                                                                                                                                                                { any = { { any = { { quest = { id = 581, state = "completed" } }, { all = { { faction = "Horde" } } } } } } },
+                                                                                                                                                                            },
+                                                                                                                                                                        },
+                                                                                                                                                                    },
+                                                                                                                                                                },
+                                                                                                                                                            },
+                                                                                                                                                        },
+                                                                                                                                                    },
+                                                                                                                                                },
+                                                                                                                                            },
+                                                                                                                                        },
+                                                                                                                                    },
+                                                                                                                                },
+                                                                                                                            },
+                                                                                                                        },
+                                                                                                                    },
+                                                                                                                },
+                                                                                                                {
+                                                                                                                    any = {
+                                                                                                                        { quest = { id = 586, state = "completed" } },
+                                                                                                                        {
+                                                                                                                            all = {
+                                                                                                                                { faction = "Horde" },
+                                                                                                                                {
+                                                                                                                                    any = {
+                                                                                                                                        {
+                                                                                                                                            any = {
+                                                                                                                                                { quest = { id = 584, state = "completed" } },
+                                                                                                                                                {
+                                                                                                                                                    all = {
+                                                                                                                                                        { faction = "Horde" },
+                                                                                                                                                        {
+                                                                                                                                                            any = {
+                                                                                                                                                                {
+                                                                                                                                                                    any = {
+                                                                                                                                                                        { quest = { id = 582, state = "completed" } },
+                                                                                                                                                                        {
+                                                                                                                                                                            all = {
+                                                                                                                                                                                { faction = "Horde" },
+                                                                                                                                                                                { any = { { any = { { quest = { id = 581, state = "completed" } }, { all = { { faction = "Horde" } } } } } } },
+                                                                                                                                                                            },
+                                                                                                                                                                        },
                                                                                                                                                                     },
                                                                                                                                                                 },
                                                                                                                                                             },
@@ -20348,29 +21479,117 @@ ns:RegisterGuide({
                                                                                                                 },
                                                                                                             },
                                                                                                         },
+                                                                                                    },
+                                                                                                },
+                                                                                            },
+                                                                                        },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                            {
+                                ["not"] = {
+                                    any = {
+                                        { quest = { id = 591, state = "activeOrCompleted" } },
+                                        {
+                                            any = {
+                                                { quest = { id = 591, state = "completed" } },
+                                                {
+                                                    all = {
+                                                        { faction = "Horde" },
+                                                        {
+                                                            any = {
+                                                                {
+                                                                    any = {
+                                                                        { quest = { id = 589, state = "completed" } },
+                                                                        {
+                                                                            all = {
+                                                                                { faction = "Horde" },
+                                                                                {
+                                                                                    any = {
+                                                                                        {
+                                                                                            any = {
+                                                                                                { quest = { id = 588, state = "completed" } },
+                                                                                                {
+                                                                                                    all = {
+                                                                                                        { faction = "Horde" },
                                                                                                         {
-                                                                                                            any = {
-                                                                                                                { quest = { id = 586, state = "completed" } },
+                                                                                                            all = {
                                                                                                                 {
-                                                                                                                    all = {
-                                                                                                                        { faction = "Horde" },
+                                                                                                                    any = {
+                                                                                                                        { quest = { id = 585, state = "completed" } },
                                                                                                                         {
-                                                                                                                            any = {
+                                                                                                                            all = {
+                                                                                                                                { faction = "Horde" },
                                                                                                                                 {
                                                                                                                                     any = {
-                                                                                                                                        { quest = { id = 584, state = "completed" } },
                                                                                                                                         {
-                                                                                                                                            all = {
-                                                                                                                                                { faction = "Horde" },
+                                                                                                                                            any = {
+                                                                                                                                                { quest = { id = 584, state = "completed" } },
                                                                                                                                                 {
-                                                                                                                                                    any = {
+                                                                                                                                                    all = {
+                                                                                                                                                        { faction = "Horde" },
                                                                                                                                                         {
                                                                                                                                                             any = {
-                                                                                                                                                                { quest = { id = 582, state = "completed" } },
                                                                                                                                                                 {
-                                                                                                                                                                    all = {
-                                                                                                                                                                        { faction = "Horde" },
-                                                                                                                                                                        { any = { { any = { { quest = { id = 581, state = "completed" } }, { all = { { faction = "Horde" } } } } } } },
+                                                                                                                                                                    any = {
+                                                                                                                                                                        { quest = { id = 582, state = "completed" } },
+                                                                                                                                                                        {
+                                                                                                                                                                            all = {
+                                                                                                                                                                                { faction = "Horde" },
+                                                                                                                                                                                { any = { { any = { { quest = { id = 581, state = "completed" } }, { all = { { faction = "Horde" } } } } } } },
+                                                                                                                                                                            },
+                                                                                                                                                                        },
+                                                                                                                                                                    },
+                                                                                                                                                                },
+                                                                                                                                                            },
+                                                                                                                                                        },
+                                                                                                                                                    },
+                                                                                                                                                },
+                                                                                                                                            },
+                                                                                                                                        },
+                                                                                                                                    },
+                                                                                                                                },
+                                                                                                                            },
+                                                                                                                        },
+                                                                                                                    },
+                                                                                                                },
+                                                                                                                {
+                                                                                                                    any = {
+                                                                                                                        { quest = { id = 586, state = "completed" } },
+                                                                                                                        {
+                                                                                                                            all = {
+                                                                                                                                { faction = "Horde" },
+                                                                                                                                {
+                                                                                                                                    any = {
+                                                                                                                                        {
+                                                                                                                                            any = {
+                                                                                                                                                { quest = { id = 584, state = "completed" } },
+                                                                                                                                                {
+                                                                                                                                                    all = {
+                                                                                                                                                        { faction = "Horde" },
+                                                                                                                                                        {
+                                                                                                                                                            any = {
+                                                                                                                                                                {
+                                                                                                                                                                    any = {
+                                                                                                                                                                        { quest = { id = 582, state = "completed" } },
+                                                                                                                                                                        {
+                                                                                                                                                                            all = {
+                                                                                                                                                                                { faction = "Horde" },
+                                                                                                                                                                                { any = { { any = { { quest = { id = 581, state = "completed" } }, { all = { { faction = "Horde" } } } } } } },
+                                                                                                                                                                            },
+                                                                                                                                                                        },
                                                                                                                                                                     },
                                                                                                                                                                 },
                                                                                                                                                             },
@@ -20414,51 +21633,66 @@ ns:RegisterGuide({
                                 { quest = { id = 591, state = "activeOrCompleted" } },
                                 {
                                     any = {
-                                        { quest = { id = 591, state = "completed" } },
+                                        { quest = { id = 591, state = "activeOrCompleted" } },
                                         {
                                             all = {
                                                 { faction = "Horde" },
+                                                { race = { 2, 5, 6, 8 } },
                                                 {
                                                     any = {
                                                         {
                                                             any = {
-                                                                { quest = { id = 589, state = "completed" } },
+                                                                { quest = { id = 589, state = "activeOrCompleted" } },
                                                                 {
                                                                     all = {
                                                                         { faction = "Horde" },
+                                                                        { race = { 2, 5, 6, 8 } },
                                                                         {
                                                                             any = {
                                                                                 {
                                                                                     any = {
-                                                                                        { quest = { id = 588, state = "completed" } },
+                                                                                        { quest = { id = 588, state = "activeOrCompleted" } },
                                                                                         {
                                                                                             all = {
                                                                                                 { faction = "Horde" },
+                                                                                                { race = { 2, 5, 6, 8 } },
                                                                                                 {
                                                                                                     all = {
                                                                                                         {
                                                                                                             any = {
-                                                                                                                { quest = { id = 585, state = "completed" } },
+                                                                                                                { quest = { id = 585, state = "activeOrCompleted" } },
                                                                                                                 {
                                                                                                                     all = {
                                                                                                                         { faction = "Horde" },
+                                                                                                                        { race = { 2, 5, 6, 8 } },
                                                                                                                         {
                                                                                                                             any = {
                                                                                                                                 {
                                                                                                                                     any = {
-                                                                                                                                        { quest = { id = 584, state = "completed" } },
+                                                                                                                                        { quest = { id = 584, state = "activeOrCompleted" } },
                                                                                                                                         {
                                                                                                                                             all = {
                                                                                                                                                 { faction = "Horde" },
+                                                                                                                                                { race = { 2, 5, 6, 8 } },
                                                                                                                                                 {
                                                                                                                                                     any = {
                                                                                                                                                         {
                                                                                                                                                             any = {
-                                                                                                                                                                { quest = { id = 582, state = "completed" } },
+                                                                                                                                                                { quest = { id = 582, state = "activeOrCompleted" } },
                                                                                                                                                                 {
                                                                                                                                                                     all = {
                                                                                                                                                                         { faction = "Horde" },
-                                                                                                                                                                        { any = { { any = { { quest = { id = 581, state = "completed" } }, { all = { { faction = "Horde" } } } } } } },
+                                                                                                                                                                        { race = { 2, 5, 6, 8 } },
+                                                                                                                                                                        {
+                                                                                                                                                                            any = {
+                                                                                                                                                                                {
+                                                                                                                                                                                    any = {
+                                                                                                                                                                                        { quest = { id = 581, state = "activeOrCompleted" } },
+                                                                                                                                                                                        { all = { { faction = "Horde" }, { race = { 2, 5, 6, 8 } } } },
+                                                                                                                                                                                    },
+                                                                                                                                                                                },
+                                                                                                                                                                            },
+                                                                                                                                                                        },
                                                                                                                                                                     },
                                                                                                                                                                 },
                                                                                                                                                             },
@@ -20477,27 +21711,39 @@ ns:RegisterGuide({
                                                                                                         },
                                                                                                         {
                                                                                                             any = {
-                                                                                                                { quest = { id = 586, state = "completed" } },
+                                                                                                                { quest = { id = 586, state = "activeOrCompleted" } },
                                                                                                                 {
                                                                                                                     all = {
                                                                                                                         { faction = "Horde" },
+                                                                                                                        { race = { 2, 5, 6, 8 } },
                                                                                                                         {
                                                                                                                             any = {
                                                                                                                                 {
                                                                                                                                     any = {
-                                                                                                                                        { quest = { id = 584, state = "completed" } },
+                                                                                                                                        { quest = { id = 584, state = "activeOrCompleted" } },
                                                                                                                                         {
                                                                                                                                             all = {
                                                                                                                                                 { faction = "Horde" },
+                                                                                                                                                { race = { 2, 5, 6, 8 } },
                                                                                                                                                 {
                                                                                                                                                     any = {
                                                                                                                                                         {
                                                                                                                                                             any = {
-                                                                                                                                                                { quest = { id = 582, state = "completed" } },
+                                                                                                                                                                { quest = { id = 582, state = "activeOrCompleted" } },
                                                                                                                                                                 {
                                                                                                                                                                     all = {
                                                                                                                                                                         { faction = "Horde" },
-                                                                                                                                                                        { any = { { any = { { quest = { id = 581, state = "completed" } }, { all = { { faction = "Horde" } } } } } } },
+                                                                                                                                                                        { race = { 2, 5, 6, 8 } },
+                                                                                                                                                                        {
+                                                                                                                                                                            any = {
+                                                                                                                                                                                {
+                                                                                                                                                                                    any = {
+                                                                                                                                                                                        { quest = { id = 581, state = "activeOrCompleted" } },
+                                                                                                                                                                                        { all = { { faction = "Horde" }, { race = { 2, 5, 6, 8 } } } },
+                                                                                                                                                                                    },
+                                                                                                                                                                                },
+                                                                                                                                                                            },
+                                                                                                                                                                        },
                                                                                                                                                                     },
                                                                                                                                                                 },
                                                                                                                                                             },
@@ -20549,13 +21795,9 @@ ns:RegisterGuide({
             useQuestNavigation = true,
         },
         {
-            id = "horde-extra-613-level",
-            kind = "note",
             checkpointQuest = 613,
-            text = "Reach level 44 before this visit.",
+            complete = { level = { min = 30 } },
             conditions = { all = { { faction = "Horde" } } },
-            complete = { level = { min = 44 } },
-            requiredLevel = 44,
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -20595,6 +21837,10 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-extra-613-level",
+            kind = "note",
+            requiredLevel = 30,
+            text = "Reach level 30 before this visit.",
         },
         {
             complete = { quest = { id = 613, state = "activeOrCompleted" } },
@@ -20603,27 +21849,70 @@ ns:RegisterGuide({
             excludeWhen = {
                 any = {
                     {
-                        ["not"] = {
-                            any = {
-                                { quest = { id = 613, state = "activeOrCompleted" } },
-                                {
+                        any = {
+                            {
+                                ["not"] = {
                                     any = {
-                                        { quest = { id = 613, state = "completed" } },
+                                        { quest = { id = 613, state = "activeOrCompleted" } },
                                         {
-                                            all = {
+                                            any = {
+                                                { quest = { id = 613, state = "completed" } },
                                                 {
-                                                    any = {
+                                                    all = {
                                                         {
                                                             any = {
-                                                                { quest = { id = 609, state = "completed" } },
                                                                 {
-                                                                    all = {
+                                                                    any = {
+                                                                        { quest = { id = 609, state = "completed" } },
                                                                         {
-                                                                            any = {
+                                                                            all = {
                                                                                 {
                                                                                     any = {
-                                                                                        { quest = { id = 607, state = "completed" } },
-                                                                                        { all = { { any = { { any = { { quest = { id = 606, state = "completed" } }, { all = {} } } } } } } },
+                                                                                        {
+                                                                                            any = {
+                                                                                                { quest = { id = 607, state = "completed" } },
+                                                                                                { all = { { any = { { any = { { quest = { id = 606, state = "completed" } }, { all = {} } } } } } } },
+                                                                                            },
+                                                                                        },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                            {
+                                ["not"] = {
+                                    any = {
+                                        { quest = { id = 613, state = "activeOrCompleted" } },
+                                        {
+                                            any = {
+                                                { quest = { id = 613, state = "completed" } },
+                                                {
+                                                    all = {
+                                                        {
+                                                            any = {
+                                                                {
+                                                                    any = {
+                                                                        { quest = { id = 609, state = "completed" } },
+                                                                        {
+                                                                            all = {
+                                                                                {
+                                                                                    any = {
+                                                                                        {
+                                                                                            any = {
+                                                                                                { quest = { id = 607, state = "completed" } },
+                                                                                                { all = { { any = { { any = { { quest = { id = 606, state = "completed" } }, { all = {} } } } } } } },
+                                                                                            },
+                                                                                        },
                                                                                     },
                                                                                 },
                                                                             },
@@ -20647,22 +21936,22 @@ ns:RegisterGuide({
                                 { quest = { id = 613, state = "activeOrCompleted" } },
                                 {
                                     any = {
-                                        { quest = { id = 613, state = "completed" } },
+                                        { quest = { id = 613, state = "activeOrCompleted" } },
                                         {
                                             all = {
                                                 {
                                                     any = {
                                                         {
                                                             any = {
-                                                                { quest = { id = 609, state = "completed" } },
+                                                                { quest = { id = 609, state = "activeOrCompleted" } },
                                                                 {
                                                                     all = {
                                                                         {
                                                                             any = {
                                                                                 {
                                                                                     any = {
-                                                                                        { quest = { id = 607, state = "completed" } },
-                                                                                        { all = { { any = { { any = { { quest = { id = 606, state = "completed" } }, { all = {} } } } } } } },
+                                                                                        { quest = { id = 607, state = "activeOrCompleted" } },
+                                                                                        { all = { { any = { { any = { { quest = { id = 606, state = "activeOrCompleted" } }, { all = {} } } } } } } },
                                                                                     },
                                                                                 },
                                                                             },
@@ -20704,27 +21993,70 @@ ns:RegisterGuide({
             excludeWhen = {
                 any = {
                     {
-                        ["not"] = {
-                            any = {
-                                { quest = { id = 613, state = "activeOrCompleted" } },
-                                {
+                        any = {
+                            {
+                                ["not"] = {
                                     any = {
-                                        { quest = { id = 613, state = "completed" } },
+                                        { quest = { id = 613, state = "activeOrCompleted" } },
                                         {
-                                            all = {
+                                            any = {
+                                                { quest = { id = 613, state = "completed" } },
                                                 {
-                                                    any = {
+                                                    all = {
                                                         {
                                                             any = {
-                                                                { quest = { id = 609, state = "completed" } },
                                                                 {
-                                                                    all = {
+                                                                    any = {
+                                                                        { quest = { id = 609, state = "completed" } },
                                                                         {
-                                                                            any = {
+                                                                            all = {
                                                                                 {
                                                                                     any = {
-                                                                                        { quest = { id = 607, state = "completed" } },
-                                                                                        { all = { { any = { { any = { { quest = { id = 606, state = "completed" } }, { all = {} } } } } } } },
+                                                                                        {
+                                                                                            any = {
+                                                                                                { quest = { id = 607, state = "completed" } },
+                                                                                                { all = { { any = { { any = { { quest = { id = 606, state = "completed" } }, { all = {} } } } } } } },
+                                                                                            },
+                                                                                        },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                            {
+                                ["not"] = {
+                                    any = {
+                                        { quest = { id = 613, state = "activeOrCompleted" } },
+                                        {
+                                            any = {
+                                                { quest = { id = 613, state = "completed" } },
+                                                {
+                                                    all = {
+                                                        {
+                                                            any = {
+                                                                {
+                                                                    any = {
+                                                                        { quest = { id = 609, state = "completed" } },
+                                                                        {
+                                                                            all = {
+                                                                                {
+                                                                                    any = {
+                                                                                        {
+                                                                                            any = {
+                                                                                                { quest = { id = 607, state = "completed" } },
+                                                                                                { all = { { any = { { any = { { quest = { id = 606, state = "completed" } }, { all = {} } } } } } } },
+                                                                                            },
+                                                                                        },
                                                                                     },
                                                                                 },
                                                                             },
@@ -20748,22 +22080,22 @@ ns:RegisterGuide({
                                 { quest = { id = 613, state = "activeOrCompleted" } },
                                 {
                                     any = {
-                                        { quest = { id = 613, state = "completed" } },
+                                        { quest = { id = 613, state = "activeOrCompleted" } },
                                         {
                                             all = {
                                                 {
                                                     any = {
                                                         {
                                                             any = {
-                                                                { quest = { id = 609, state = "completed" } },
+                                                                { quest = { id = 609, state = "activeOrCompleted" } },
                                                                 {
                                                                     all = {
                                                                         {
                                                                             any = {
                                                                                 {
                                                                                     any = {
-                                                                                        { quest = { id = 607, state = "completed" } },
-                                                                                        { all = { { any = { { any = { { quest = { id = 606, state = "completed" } }, { all = {} } } } } } } },
+                                                                                        { quest = { id = 607, state = "activeOrCompleted" } },
+                                                                                        { all = { { any = { { any = { { quest = { id = 606, state = "activeOrCompleted" } }, { all = {} } } } } } } },
                                                                                     },
                                                                                 },
                                                                             },
@@ -20806,27 +22138,70 @@ ns:RegisterGuide({
             excludeWhen = {
                 any = {
                     {
-                        ["not"] = {
-                            any = {
-                                { quest = { id = 613, state = "activeOrCompleted" } },
-                                {
+                        any = {
+                            {
+                                ["not"] = {
                                     any = {
-                                        { quest = { id = 613, state = "completed" } },
+                                        { quest = { id = 613, state = "activeOrCompleted" } },
                                         {
-                                            all = {
+                                            any = {
+                                                { quest = { id = 613, state = "completed" } },
                                                 {
-                                                    any = {
+                                                    all = {
                                                         {
                                                             any = {
-                                                                { quest = { id = 609, state = "completed" } },
                                                                 {
-                                                                    all = {
+                                                                    any = {
+                                                                        { quest = { id = 609, state = "completed" } },
                                                                         {
-                                                                            any = {
+                                                                            all = {
                                                                                 {
                                                                                     any = {
-                                                                                        { quest = { id = 607, state = "completed" } },
-                                                                                        { all = { { any = { { any = { { quest = { id = 606, state = "completed" } }, { all = {} } } } } } } },
+                                                                                        {
+                                                                                            any = {
+                                                                                                { quest = { id = 607, state = "completed" } },
+                                                                                                { all = { { any = { { any = { { quest = { id = 606, state = "completed" } }, { all = {} } } } } } } },
+                                                                                            },
+                                                                                        },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                            {
+                                ["not"] = {
+                                    any = {
+                                        { quest = { id = 613, state = "activeOrCompleted" } },
+                                        {
+                                            any = {
+                                                { quest = { id = 613, state = "completed" } },
+                                                {
+                                                    all = {
+                                                        {
+                                                            any = {
+                                                                {
+                                                                    any = {
+                                                                        { quest = { id = 609, state = "completed" } },
+                                                                        {
+                                                                            all = {
+                                                                                {
+                                                                                    any = {
+                                                                                        {
+                                                                                            any = {
+                                                                                                { quest = { id = 607, state = "completed" } },
+                                                                                                { all = { { any = { { any = { { quest = { id = 606, state = "completed" } }, { all = {} } } } } } } },
+                                                                                            },
+                                                                                        },
                                                                                     },
                                                                                 },
                                                                             },
@@ -20850,22 +22225,22 @@ ns:RegisterGuide({
                                 { quest = { id = 613, state = "activeOrCompleted" } },
                                 {
                                     any = {
-                                        { quest = { id = 613, state = "completed" } },
+                                        { quest = { id = 613, state = "activeOrCompleted" } },
                                         {
                                             all = {
                                                 {
                                                     any = {
                                                         {
                                                             any = {
-                                                                { quest = { id = 609, state = "completed" } },
+                                                                { quest = { id = 609, state = "activeOrCompleted" } },
                                                                 {
                                                                     all = {
                                                                         {
                                                                             any = {
                                                                                 {
                                                                                     any = {
-                                                                                        { quest = { id = 607, state = "completed" } },
-                                                                                        { all = { { any = { { any = { { quest = { id = 606, state = "completed" } }, { all = {} } } } } } } },
+                                                                                        { quest = { id = 607, state = "activeOrCompleted" } },
+                                                                                        { all = { { any = { { any = { { quest = { id = 606, state = "activeOrCompleted" } }, { all = {} } } } } } } },
                                                                                     },
                                                                                 },
                                                                             },
@@ -20903,13 +22278,13 @@ ns:RegisterGuide({
             useQuestNavigation = true,
         },
         {
+            checkpointQuest = 8551,
+            complete = { level = { min = 35 } },
+            conditions = { all = { { faction = "Horde" } } },
             id = "horde-extra-8551-level",
             kind = "note",
-            checkpointQuest = 8551,
-            text = "Reach level 47 before this visit.",
-            conditions = { all = { { faction = "Horde" } } },
-            complete = { level = { min = 47 } },
-            requiredLevel = 47,
+            requiredLevel = 35,
+            text = "Reach level 35 before this visit.",
         },
         {
             id = "horde-extra-8551-accept",

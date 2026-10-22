@@ -6,22 +6,23 @@ import (
 	"flag"
 	"fmt"
 	"os"
-	"path/filepath"
 	"strconv"
 	"strings"
 
 	"github.com/TylerAkins/forever-guide-mate/internal/loremaster"
+	"github.com/TylerAkins/forever-guide-mate/internal/questexport"
+	"github.com/TylerAkins/forever-guide-mate/internal/questiepolicy"
 )
 
 func main() {
 	flags := flag.NewFlagSet("loremaster-facts", flag.ExitOnError)
-	database := flags.String("database", "../wow-database", "wow-database checkout")
-	questID := flags.Int("quest-id", 0, "read one quest's attributes from stdin")
+	questieExport := flags.String("questie-export", ".compiled/questiedb/export.json", "QuestieDB export from tools/questiedb/export_artifact.lua")
+	questiePolicy := flags.String("questie-policy", ".compiled/questiedb/policy.json", "policy export from tools/questiedb/export_policy.lua")
 	lua := flags.Bool("lua", false, "render the JSON value on stdin as a Lua table")
 	availability := flags.Int("availability", 0, "build a possible prerequisite condition for a quest")
 	buildActions := flags.Bool("build-actions", false, "build reviewed actions for one quest's source facts")
 	serveActions := flags.Bool("serve-build-actions", false, "serve newline-delimited action requests")
-	faction := flags.String("faction", "", "Alliance or Horde for --build-actions")
+	faction := flags.String("faction", "", "Alliance or Horde for the facts dump and --build-actions")
 	_ = flags.Parse(os.Args[1:])
 	if *serveActions {
 		serveActionRequests()
@@ -80,25 +81,18 @@ func main() {
 		encode(actions)
 		return
 	}
-	if *questID != 0 {
-		var attributes map[string]any
-		decoder := json.NewDecoder(os.Stdin)
-		decoder.UseNumber()
-		if err := decoder.Decode(&attributes); err != nil {
-			fail(err)
-		}
-		encoder := json.NewEncoder(os.Stdout)
-		encoder.SetEscapeHTML(false)
-		if err := encoder.Encode(loremaster.QuestFacts(*questID, attributes)); err != nil {
-			fail(err)
-		}
-		return
+	if *faction != "Alliance" && *faction != "Horde" {
+		fail(fmt.Errorf("--faction must be Alliance or Horde"))
 	}
-	root, err := filepath.Abs(*database)
+	export, err := questexport.Load(*questieExport)
 	if err != nil {
 		fail(err)
 	}
-	facts, err := loremaster.LoadSourceFacts(root)
+	policy, err := questiepolicy.Load(*questiePolicy)
+	if err != nil {
+		fail(err)
+	}
+	facts, err := loremaster.BuildQuestFacts(export, policy, *faction)
 	if err != nil {
 		fail(err)
 	}

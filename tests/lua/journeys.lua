@@ -22,7 +22,8 @@ local repeatableRewards = dofile('tests/fixtures/class_repeatable_rewards.lua')
 local total=0
 local function walk(guideID,race,class,faction)
  n.charDB={selectedGuide=guideID,orderedRoutes={},activeGoalByGuide={}};n.Engine.reviewingGoal=nil
-local s={raceID=race,classID=class,faction=faction,level=os.getenv("FGM_DUNGEONS") == "1" and 60 or 1,quests={},completedQuests={},questLogKnown=true,questCompletionKnown=true,professions={[171]=300,[182]=300,[185]=300,[356]=300},professionsKnown=true,items={}}
+local maxLevelContext = os.getenv("FGM_DUNGEONS") == "1" or os.getenv("FGM_LOREMASTER") == "1"
+local s={raceID=race,classID=class,faction=faction,level=maxLevelContext and 60 or 1,quests={},completedQuests={},questLogKnown=true,questCompletionKnown=true,professions={[171]=300,[182]=300,[185]=300,[356]=300},professionsKnown=true,items={}}
 if guideID:match('^loremaster%-') then
  -- Exercise every profession branch structurally; this is not an in-game profession build.
  for _, skill in ipairs({129,164,165,171,182,185,186,197,202,333,356,393}) do s.professions[skill] = 300 end
@@ -31,6 +32,9 @@ if guideID:match('^loremaster%-') then
  s.items['A Talking Head'] = 1
  s.items['Runed Scroll'] = 1
 end
+-- Duskwood's alliance Casual entry for quest 1241 follows the returned quest 1274
+-- in the shared cross-zone itinerary, so begin that zone journey after the handoff.
+if guideID == 'loremaster-duskwood' and faction == 'Alliance' then s.completedQuests[1274] = true end
 -- Players reach this helper from a class-chain handoff after its outdoor work.
 if guideID == 'dungeons-class-prerequisites' then
  local outside = { [2] = 7641, [7] = 7667, [8] = 1950 }

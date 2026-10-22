@@ -321,6 +321,7 @@ M.UnresolvedSameTitleQuestChains = {
 
 -- Forever quests woven into starter routes that unlock after a spine turn-in.
 M.WovenQuestTurninGates = {
+    [67] = 66,
     [1362] = 1361,
     [976] = 973,
     [1012] = 1011,
@@ -646,6 +647,11 @@ end
 
 -- Ordered routes follow list position, so each dependency must also come first in the goals list.
 M.RequiredGoalDependencies = {
+    {
+        guideID = "loremaster-duskwood",
+        goalID = "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-accept-67-the-legend-of-stalvan",
+        dependencies = { "alliance-extra-66-turnin" },
+    },
     {
         guideID = "leveling-era-mulgore",
         goalID = "woven-turnin-98430-the-longwalkers",

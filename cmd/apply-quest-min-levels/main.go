@@ -11,6 +11,7 @@ import (
 
 	"github.com/TylerAkins/forever-guide-mate/internal/loremaster"
 	"github.com/TylerAkins/forever-guide-mate/internal/questdb"
+	"github.com/TylerAkins/forever-guide-mate/internal/questexport"
 )
 
 var guideRoots = []string{"Guides/Leveling", "Guides/Loremaster", "Guides/Dungeons", "Guides/Class"}
@@ -24,8 +25,7 @@ type guideFile struct {
 
 func main() {
 	flags := flag.NewFlagSet("apply-quest-min-levels", flag.ExitOnError)
-	database := flags.String("database", "../wow-database", "wow-database checkout")
-	index := flags.String("index", "", "explicit raw quest index")
+	questieExport := flags.String("questie-export", "", "QuestieDB export (default .compiled/questiedb/export.json under --root)")
 	root := flags.String("root", ".", "repository root")
 	write := flags.Bool("write", false, "write changes to legacy guides; ordered guides are always rejected")
 	_ = flags.Parse(os.Args[1:])
@@ -34,11 +34,14 @@ func main() {
 	if err != nil {
 		fail(err)
 	}
-	absoluteDatabase, err := filepath.Abs(*database)
+	if *questieExport == "" {
+		*questieExport = filepath.Join(absoluteRoot, ".compiled", "questiedb", "export.json")
+	}
+	export, err := questexport.Load(*questieExport)
 	if err != nil {
 		fail(err)
 	}
-	levels, err := questdb.LoadMinLevels(*index, absoluteDatabase)
+	levels, err := questdb.LoadMinLevels(export)
 	if err != nil {
 		fail(err)
 	}

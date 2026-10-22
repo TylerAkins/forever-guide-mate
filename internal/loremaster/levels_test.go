@@ -12,15 +12,15 @@ func TestStepAndOfferLevel(t *testing.T) {
 		record      map[string]any
 		step, offer int
 	}{
-		{"classic offer", map[string]any{"list": map[string]any{"level": 10, "reqlevel": 6, "firstseenpatch": 11302}, "minLevel": 6}, 6, 6},
-		{"new level line", map[string]any{"list": map[string]any{"level": 11, "reqlevel": 5, "firstseenpatch": 16001, "reqclass": 0}, "minLevel": 5, "classes": []any{}}, 11, 5},
-		{"tomb weed offer", map[string]any{"id": 99142, "list": map[string]any{"id": 99142, "level": 11, "reqlevel": 5, "firstseenpatch": 16001, "reqclass": 0}, "minLevel": 5, "classes": []any{}}, 5, 5},
-		{"small gap", map[string]any{"list": map[string]any{"level": 3, "reqlevel": 2, "firstseenpatch": 16001, "reqclass": 0}, "minLevel": 2, "classes": []any{}}, 2, 2},
-		{"questie override", map[string]any{"list": map[string]any{"level": 11, "reqlevel": 5, "firstseenpatch": 16001, "reqclass": 0}, "minLevel": 5, "classes": []any{}, "detail": map[string]any{"questie": map[string]any{"fields": map[string]any{"questLevel": 18, "requiredLevel": 12}}}}, 18, 12},
-		{"questie offer without quest level", map[string]any{"list": map[string]any{"level": 20, "reqlevel": 10, "firstseenpatch": 16001}, "detail": map[string]any{"questie": map[string]any{"fields": map[string]any{"requiredLevel": 10}}}}, 20, 10},
-		{"questie zero keeps Wowhead level", map[string]any{"list": map[string]any{"level": 11, "reqlevel": 5, "firstseenpatch": 16001, "reqclass": 0}, "minLevel": 5, "classes": []any{}, "detail": map[string]any{"questie": map[string]any{"fields": map[string]any{"questLevel": 0, "requiredLevel": 0}}}}, 11, 5},
-		{"questie negative falls back", map[string]any{"list": map[string]any{"level": 3, "reqlevel": 2, "firstseenpatch": 16001, "reqclass": 0}, "minLevel": 2, "classes": []any{}, "detail": map[string]any{"questie": map[string]any{"fields": map[string]any{"questLevel": -1, "requiredLevel": 0}}}}, 2, 2},
-		{"class quest", map[string]any{"list": map[string]any{"level": 11, "reqlevel": 8, "firstseenpatch": 16001, "reqclass": 2}, "minLevel": 8, "classes": []any{2}}, 8, 8},
+		{"classic offer", map[string]any{"list": map[string]any{"level": 10, "reqlevel": 6}, "minLevel": 6}, 6, 6},
+		{"no first-seen rule", map[string]any{"list": map[string]any{"level": 11, "reqlevel": 5, "reqclass": 0}, "minLevel": 5, "classes": []any{}}, 5, 5},
+		{"tomb weed offer", map[string]any{"id": 99142, "list": map[string]any{"id": 99142, "level": 11, "reqlevel": 5, "reqclass": 0}, "minLevel": 5, "classes": []any{}}, 5, 5},
+		{"small gap", map[string]any{"list": map[string]any{"level": 3, "reqlevel": 2, "reqclass": 0}, "minLevel": 2, "classes": []any{}}, 2, 2},
+		{"questie override", map[string]any{"list": map[string]any{"level": 11, "reqlevel": 5, "reqclass": 0}, "minLevel": 5, "classes": []any{}, "detail": map[string]any{"questie": map[string]any{"fields": map[string]any{"questLevel": 18, "requiredLevel": 12}}}}, 18, 12},
+		{"questie offer without quest level", map[string]any{"list": map[string]any{"level": 20, "reqlevel": 10}, "detail": map[string]any{"questie": map[string]any{"fields": map[string]any{"requiredLevel": 10}}}}, 10, 10},
+		{"questie zero keeps Wowhead level", map[string]any{"list": map[string]any{"level": 11, "reqlevel": 5, "reqclass": 0}, "minLevel": 5, "classes": []any{}, "detail": map[string]any{"questie": map[string]any{"fields": map[string]any{"questLevel": 0, "requiredLevel": 0}}}}, 5, 5},
+		{"questie negative falls back", map[string]any{"list": map[string]any{"level": 3, "reqlevel": 2, "reqclass": 0}, "minLevel": 2, "classes": []any{}, "detail": map[string]any{"questie": map[string]any{"fields": map[string]any{"questLevel": -1, "requiredLevel": 0}}}}, 2, 2},
+		{"class quest", map[string]any{"list": map[string]any{"level": 11, "reqlevel": 8, "reqclass": 2}, "minLevel": 8, "classes": []any{2}}, 8, 8},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {

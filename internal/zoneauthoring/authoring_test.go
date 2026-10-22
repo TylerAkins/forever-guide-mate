@@ -2,7 +2,6 @@ package zoneauthoring
 
 import (
 	"bytes"
-	"compress/gzip"
 	"encoding/json"
 	"fmt"
 	"os"
@@ -15,6 +14,7 @@ import (
 	"testing"
 
 	"github.com/TylerAkins/forever-guide-mate/internal/loremaster"
+	"github.com/TylerAkins/forever-guide-mate/internal/questexport"
 )
 
 // scenario describes one zone preparation under test.
@@ -30,6 +30,8 @@ type scenario struct {
 	sourceCondition map[string]any
 	// catalogQuests overrides the quests the zone catalog lists.
 	catalogQuests []int
+	// holidayQuests are quests marked as holiday entries by the policy export.
+	holidayQuests []int
 	// existingGoals are the goals of the guide that already exists.
 	existingGoals []map[string]any
 	// registered lists the prerequisites recorded by the guide export.
@@ -95,6 +97,7 @@ func prepare(t *testing.T, s scenario) prepared {
 		t.Fatalf("write ClassChains.lua: %v", err)
 	}
 	writeDatabase(t, root, s)
+	writeQuestie(t, root, s)
 	snapshot := writeSnapshot(t, root, s)
 	revision := s.revision
 	if revision == "" {
@@ -102,12 +105,12 @@ func prepare(t *testing.T, s scenario) prepared {
 	}
 	environment := Environment{
 		Root:             root,
-		Database:         root,
+		QuestieExport:    filepath.Join(root, ".compiled", "questiedb", "export.json"),
+		QuestiePolicy:    filepath.Join(root, ".compiled", "questiedb", "policy.json"),
 		Upstream:         root,
 		Snapshot:         snapshot,
 		UpstreamRevision: func() (string, error) { return revision, nil },
 		VerifyUpstream:   func() error { return nil },
-		DatabaseRevision: func() (string, error) { return revision, nil },
 		UpstreamActions: func(string, string) ([]loremaster.Action, map[string]string, error) {
 			return []loremaster.Action{}, map[string]string{}, nil
 		},
@@ -134,6 +137,7 @@ func prepareError(t *testing.T, s scenario) error {
 		t.Fatalf("write ClassChains.lua: %v", err)
 	}
 	writeDatabase(t, root, s)
+	writeQuestie(t, root, s)
 	snapshot := writeSnapshot(t, root, s)
 	revision := s.revision
 	if revision == "" {
@@ -141,12 +145,12 @@ func prepareError(t *testing.T, s scenario) error {
 	}
 	environment := Environment{
 		Root:             root,
-		Database:         root,
+		QuestieExport:    filepath.Join(root, ".compiled", "questiedb", "export.json"),
+		QuestiePolicy:    filepath.Join(root, ".compiled", "questiedb", "policy.json"),
 		Upstream:         root,
 		Snapshot:         snapshot,
 		UpstreamRevision: func() (string, error) { return revision, nil },
 		VerifyUpstream:   func() error { return nil },
-		DatabaseRevision: func() (string, error) { return revision, nil },
 		UpstreamActions: func(string, string) ([]loremaster.Action, map[string]string, error) {
 			return []loremaster.Action{}, map[string]string{}, nil
 		},
@@ -161,15 +165,19 @@ func prepareError(t *testing.T, s scenario) error {
 	return err
 }
 
-// writeDatabase records the compiled observations of one zone.
+// testZoneAreas names the zones the scenarios place work in, with their area IDs.
+var testZoneAreas = map[string]int{"Redridge Mountains": 44, "Mount Hyjal": 616, "Durotar": 14}
+
+// testHordeRaces is the race mask the default scenario quest carries. It stands
+// in for the Horde-only observation the scenarios were written against.
+const testHordeRaces = 2 | 16 | 32 | 128
+
+// writeDatabase records the zone catalogs of one zone scenario.
 func writeDatabase(t *testing.T, root string, s scenario) {
 	t.Helper()
 	zones := filepath.Join(root, "data", "forever", "compiled", "zones")
-	compilation := filepath.Join(root, "data", "forever", "compilation")
-	for _, directory := range []string{zones, compilation} {
-		if err := os.MkdirAll(directory, 0o755); err != nil {
-			t.Fatalf("create %s: %v", directory, err)
-		}
+	if err := os.MkdirAll(zones, 0o755); err != nil {
+		t.Fatalf("create %s: %v", zones, err)
 	}
 	catalog := s.catalogQuests
 	if catalog == nil {
@@ -178,81 +186,183 @@ func writeDatabase(t *testing.T, root string, s scenario) {
 		}
 		sort.Ints(catalog)
 	}
-	quests := map[string]any{}
-	for _, quest := range catalog {
-		quests[strconv.Itoa(quest)] = map[string]any{}
+	for zone, area := range testZoneAreas {
+		quests := map[string]any{}
+		if zone == "Redridge Mountains" {
+			for _, quest := range catalog {
+				quests[strconv.Itoa(quest)] = map[string]any{}
+			}
+		}
+		bundle, err := json.Marshal(map[string]any{
+			"zone":   map[string]any{"zoneId": area},
+			"quests": quests,
+		})
+		if err != nil {
+			t.Fatalf("encode zone bundle: %v", err)
+		}
+		if err := os.WriteFile(filepath.Join(zones, loremaster.Slug(zone)+".json"), bundle, 0o644); err != nil {
+			t.Fatalf("write zone bundle: %v", err)
+		}
 	}
-	bundle, err := json.Marshal(map[string]any{
-		"zone":   map[string]any{"zoneId": 44},
-		"quests": quests,
-	})
-	if err != nil {
-		t.Fatalf("encode zone bundle: %v", err)
-	}
-	if err := os.WriteFile(filepath.Join(zones, "redridge-mountains.json"), bundle, 0o644); err != nil {
-		t.Fatalf("write zone bundle: %v", err)
-	}
-	if err := os.WriteFile(filepath.Join(compilation, "manifest.json"), []byte(`{"compilationFormatVersion":2}`), 0o644); err != nil {
-		t.Fatalf("write manifest: %v", err)
+}
+
+// writeQuestie writes the QuestieDB export and policy for one scenario. Each
+// scenario quest becomes a base Quest record. Its default start and return
+// NPCs sit in Redridge Mountains, as the wowhead mapper observations did.
+func writeQuestie(t *testing.T, root string, s scenario) {
+	t.Helper()
+	directory := filepath.Join(root, ".compiled", "questiedb")
+	if err := os.MkdirAll(directory, 0o755); err != nil {
+		t.Fatalf("create %s: %v", directory, err)
 	}
 	identifiers := make([]int, 0, len(s.quests))
 	for quest := range s.quests {
 		identifiers = append(identifiers, quest)
 	}
 	sort.Ints(identifiers)
-	var buffer bytes.Buffer
-	stream := gzip.NewWriter(&buffer)
+	quests := map[string]any{}
+	npcs := map[string]any{}
 	for _, quest := range identifiers {
-		fields := s.quests[quest]
-		wowhead := map[string]any{
-			"name":           fmt.Sprintf("Quest %d", quest),
-			"faction":        "Horde",
-			"races":          []any{},
-			"classes":        []any{},
-			"requiredLevel":  10,
-			"questLevel":     10,
-			"zoneId":         44,
-			"wowheadCatalog": map[string]any{"list": map[string]any{"firstseenpatch": 11302}},
-			"mapper": map[string]any{"objectives": map[string]any{"44": map[string]any{
-				"zone": "Redridge Mountains",
-				"levels": []any{[]any{
-					map[string]any{"point": "start", "id": 1, "name": "First", "coord": []any{10, 20}},
-					map[string]any{"point": "end", "id": 2, "name": "Second", "coord": []any{20, 20}},
-				}},
-			}}},
+		inCatalog := s.catalogQuests == nil || includesQuest(s.catalogQuests, quest)
+		quests[strconv.Itoa(quest)] = testQuestRecord(quest, s.quests[quest], npcs, inCatalog)
+	}
+	variants := map[string]any{}
+	for _, name := range questexport.Variants() {
+		variants[name] = map[string]any{}
+	}
+	export := map[string]any{
+		"areas": map[string]any{"14": 1411, "44": 1433, "616": 2482},
+		"manifest": map[string]any{
+			"artifactVersion": "test-1",
+			"buildCommit":     "test",
+			"counts":          map[string]any{"Quest": len(quests), "Npc": len(npcs), "Object": 0, "Item": 0},
+			"variants":        variants,
+		},
+		"base":     map[string]any{"Quest": quests, "Npc": npcs, "Object": map[string]any{}, "Item": map[string]any{}},
+		"variants": map[string]any{},
+	}
+	data, err := json.Marshal(export)
+	if err != nil {
+		t.Fatalf("encode export: %v", err)
+	}
+	if err := os.WriteFile(filepath.Join(directory, "export.json"), data, 0o644); err != nil {
+		t.Fatalf("write export: %v", err)
+	}
+	holidayEntries := make([]map[string]any, 0, len(s.holidayQuests))
+	for _, quest := range s.holidayQuests {
+		holidayEntries = append(holidayEntries, map[string]any{"event": "Winter Veil", "questId": quest})
+	}
+	policy, err := json.Marshal(map[string]any{"holidays": holidayEntries, "questTags": map[string]any{}})
+	if err != nil {
+		t.Fatalf("encode policy: %v", err)
+	}
+	if err := os.WriteFile(filepath.Join(directory, "policy.json"), policy, 0o644); err != nil {
+		t.Fatalf("write policy: %v", err)
+	}
+}
+
+// testQuestRecord builds one base Quest record. Mapper observations in the
+// scenario become NPC spawn records, which is how the QuestieDB record refers
+// to its providers.
+// includesQuest reports whether a quest list names the quest.
+func includesQuest(quests []int, quest int) bool {
+	for _, candidate := range quests {
+		if candidate == quest {
+			return true
 		}
-		questiedb := map[string]any{}
-		for key, value := range fields {
-			if key == "wowhead" {
-				continue
+	}
+	return false
+}
+
+// A quest outside the scenario's catalog starts in Durotar instead of
+// Redridge, so its pickup does not add it to the Redridge catalog.
+func testQuestRecord(quest int, fields map[string]any, npcs map[string]any, inCatalog bool) map[string]any {
+	zone, zoneOrSort := "Redridge Mountains", 44
+	if !inCatalog {
+		zone, zoneOrSort = "Durotar", 14
+	}
+	record := map[string]any{
+		"name":            fmt.Sprintf("Quest %d", quest),
+		"requiredLevel":   10,
+		"questLevel":      10,
+		"requiredRaces":   testHordeRaces,
+		"requiredClasses": 0,
+		"zoneOrSort":      zoneOrSort,
+	}
+	points := []map[string]any{
+		{"point": "start", "name": "First", "zone": zone, "coord": []any{10, 20}},
+		{"point": "end", "name": "Second", "zone": zone, "coord": []any{20, 20}},
+	}
+	wowhead, _ := fields["wowhead"].(map[string]any)
+	if mapper, ok := wowhead["mapper"].(map[string]any); ok {
+		points = nil
+		for _, group := range testObjectives(mapper) {
+			for _, level := range group["levels"].([]any) {
+				for _, raw := range level.([]any) {
+					point := raw.(map[string]any)
+					point["zone"] = group["zone"]
+					points = append(points, point)
+				}
 			}
-			questiedb[key] = value
 		}
-		if override, ok := fields["wowhead"].(map[string]any); ok {
-			for key, value := range override {
-				wowhead[key] = value
-			}
+	}
+	startedBy := []any{}
+	finishedBy := []any{}
+	for index, point := range points {
+		kind := point["point"].(string)
+		area, ok := testZoneAreas[point["zone"].(string)]
+		if !ok {
+			area = 44
 		}
-		record, err := json.Marshal(map[string]any{
-			"entityType": "quest",
-			"entityId":   strconv.Itoa(quest),
-			"attributes": map[string]any{"sourceData": map[string]any{
-				"wowhead":   map[string]any{"attributes": wowhead, "revision": "wh"},
-				"questiedb": map[string]any{"attributes": questiedb, "revision": "qd"},
-			}},
-		})
-		if err != nil {
-			t.Fatalf("encode record: %v", err)
+		id := 100000 + quest*100 + index
+		npcs[strconv.Itoa(id)] = map[string]any{
+			"name":              point["name"],
+			"friendlyToFaction": "AH",
+			"spawns":            map[string]any{strconv.Itoa(area): []any{point["coord"]}},
 		}
-		stream.Write(record)
-		stream.Write([]byte("\n"))
+		switch kind {
+		case "start":
+			startedBy = append(startedBy, []any{id})
+		case "end":
+			finishedBy = append(finishedBy, []any{id})
+		}
 	}
-	if err := stream.Close(); err != nil {
-		t.Fatalf("close records: %v", err)
+	if len(startedBy) > 0 {
+		record["startedBy"] = []any{groupIDs(startedBy)}
 	}
-	if err := os.WriteFile(filepath.Join(compilation, "records.jsonl.gz"), buffer.Bytes(), 0o644); err != nil {
-		t.Fatalf("write records: %v", err)
+	if len(finishedBy) > 0 {
+		record["finishedBy"] = []any{groupIDs(finishedBy)}
 	}
+	for key, value := range fields {
+		if key != "wowhead" {
+			record[key] = value
+		}
+	}
+	return record
+}
+
+// groupIDs flattens one-ID rows into the NPC group of a provider list.
+func groupIDs(rows []any) []any {
+	ids := make([]any, 0, len(rows))
+	for _, row := range rows {
+		ids = append(ids, row.([]any)[0])
+	}
+	return ids
+}
+
+// testObjectives returns the mapper zone groups in key order.
+func testObjectives(mapper map[string]any) []map[string]any {
+	objectives, _ := mapper["objectives"].(map[string]any)
+	keys := make([]string, 0, len(objectives))
+	for key := range objectives {
+		keys = append(keys, key)
+	}
+	sort.Strings(keys)
+	groups := []map[string]any{}
+	for _, key := range keys {
+		groups = append(groups, objectives[key].(map[string]any))
+	}
+	return groups
 }
 
 // writeSnapshot records the exported guides and prerequisites.
@@ -370,6 +480,17 @@ func TestBreadcrumbFinishesBeforeItsTargetPickup(t *testing.T) {
 		if !strings.Contains(goal.Raw, "alternativeQuests") {
 			t.Fatalf("goal %q records no breadcrumb alternative", goal.ID)
 		}
+	}
+}
+
+func TestHolidayQuestIsExcludedFromOutdoorItinerary(t *testing.T) {
+	result := prepare(t, scenario{
+		quests:        map[int]map[string]any{60: {}},
+		catalogQuests: []int{60},
+		holidayQuests: []int{60},
+	})
+	if got := auditStatus(t, result.audit, 60); got != "excluded" {
+		t.Fatalf("holiday quest status = %q, want excluded", got)
 	}
 }
 
@@ -684,12 +805,6 @@ func TestOrphanPrerequisiteExcursionsAreNotImported(t *testing.T) {
 	if result.text != "" {
 		t.Fatalf("the prepared guide records an unsupported itinerary:\n%s", result.text)
 	}
-	if status := auditStatus(t, result.audit, 11); status != "unresolved" {
-		t.Fatalf("quest 11 is %q instead of unresolved", status)
-	}
-	if status := auditStatus(t, result.audit, 10); status != "excluded" {
-		t.Fatalf("quest 10 is %q instead of excluded", status)
-	}
 }
 
 func TestFutureDuplicatePickupDependencyUsesObservedEarlierPickup(t *testing.T) {
@@ -798,7 +913,7 @@ func TestFutureDistinctObjectiveDependencyIsNotRewritten(t *testing.T) {
 	}
 }
 
-func TestFuturePickupDependencyKeepsAnUncoveredActorCycle(t *testing.T) {
+func TestCasualActionsWithDifferentCharacterConditionsStayUnresolved(t *testing.T) {
 	first := map[string]any{
 		"id": "accept-10-first", "kind": "accept",
 		"conditions": map[string]any{"faction": "Horde", "class": 8},
@@ -813,12 +928,17 @@ func TestFuturePickupDependencyKeepsAnUncoveredActorCycle(t *testing.T) {
 		"id": "accept-10-late", "kind": "accept", "conditions": map[string]any{"faction": "Horde"},
 		"complete": map[string]any{"quest": map[string]any{"id": 10, "state": "activeOrCompleted"}},
 	}
-	err := prepareError(t, scenario{
+	result := prepare(t, scenario{
 		quests:      map[int]map[string]any{10: {}},
 		sourceGoals: []map[string]any{first, returned, late},
 	})
-	if !strings.Contains(err.Error(), "Prerequisite/spine cycle") {
-		t.Fatalf("the preparation failed with %v instead of a cycle report", err)
+	if status := auditStatus(t, result.audit, 10); status != "unresolved" {
+		t.Fatalf("quest 10 is %q instead of unresolved", status)
+	}
+	for _, goal := range result.goals(t) {
+		if goal.QuestID == 10 {
+			t.Fatalf("conflicting Casual conditions produced an authored action: %s", goal.ID)
+		}
 	}
 }
 

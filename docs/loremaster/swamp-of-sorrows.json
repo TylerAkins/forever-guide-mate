@@ -8,13 +8,39 @@
     "leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows",
     "leveling-era-horde-swamp-of-sorrows",
     "leveling-era-horde-the-hinterlands",
-    "leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-part-2"
+    "leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-part-2",
+    "leveling-era-horde-thousand-needles",
+    "leveling-era-horde-thousand-needles-part-2",
+    "leveling-era-alliance-dustwallow-marsh-and-thousand-needles",
+    "leveling-era-alliance-desolace",
+    "leveling-era-alliance-stranglethorn-vale-part-2",
+    "leveling-era-alliance-stranglethorn-vale-part-3"
   ],
   "spineActions": [
+    "alliance-leveling-era-alliance-dustwallow-marsh-and-thousand-needles-accept-1111-wharfmaster-dizzywig",
+    "alliance-leveling-era-alliance-dustwallow-marsh-and-thousand-needles-turnin-1111-wharfmaster-dizzywig",
+    "alliance-leveling-era-alliance-dustwallow-marsh-and-thousand-needles-accept-1112-parts-for-kravel",
+    "alliance-leveling-era-alliance-desolace-turnin-1112-parts-for-kravel",
+    "alliance-leveling-era-alliance-desolace-accept-1114-delivery-to-the-gnomes",
+    "alliance-leveling-era-alliance-desolace-turnin-1114-delivery-to-the-gnomes",
+    "alliance-leveling-era-alliance-desolace-accept-1115-the-rumormonger",
+    "alliance-leveling-era-alliance-stranglethorn-vale-part-2-level-before-turnin-1115-the-rumormonger",
+    "alliance-leveling-era-alliance-stranglethorn-vale-part-2-turnin-1115-the-rumormonger",
+    "alliance-leveling-era-alliance-stranglethorn-vale-part-2-accept-1116-dream-dust-in-the-swamp",
+    "alliance-leveling-era-alliance-swamp-of-sorrows-level-before-accept-1363-mazen-s-behest",
+    "alliance-leveling-era-alliance-swamp-of-sorrows-accept-1363-mazen-s-behest",
+    "alliance-leveling-era-alliance-swamp-of-sorrows-turnin-1363-mazen-s-behest",
+    "alliance-leveling-era-alliance-swamp-of-sorrows-accept-1364-mazen-s-behest",
+    "alliance-leveling-era-alliance-swamp-of-sorrows-level-before-accept-1363-mazen-s-behest-2",
+    "alliance-leveling-era-alliance-swamp-of-sorrows-accept-1363-mazen-s-behest-2",
+    "alliance-leveling-era-alliance-swamp-of-sorrows-turnin-1363-mazen-s-behest-2",
+    "alliance-leveling-era-alliance-swamp-of-sorrows-level-before-objective-1116-1-adolescent-whelp",
+    "alliance-leveling-era-alliance-swamp-of-sorrows-objective-1116-1-adolescent-whelp",
     "alliance-leveling-era-alliance-swamp-of-sorrows-accept-1396-encroaching-wildlife",
     "alliance-leveling-era-alliance-swamp-of-sorrows-accept-1392-noboru-the-cudgel",
     "alliance-leveling-era-alliance-swamp-of-sorrows-turnin-1392-noboru-the-cudgel",
     "alliance-leveling-era-alliance-swamp-of-sorrows-accept-1389-draenethyst-crystals",
+    "alliance-leveling-era-alliance-swamp-of-sorrows-objective-1116-1-adolescent-whelp-2",
     "alliance-leveling-era-alliance-swamp-of-sorrows-objective-1396-1-young-sawtooth-crocolisk",
     "alliance-leveling-era-alliance-swamp-of-sorrows-objective-1396-2-sorrow-spinner",
     "alliance-leveling-era-alliance-swamp-of-sorrows-objective-1396-3-swamp-jaguar",
@@ -27,11 +53,28 @@
     "alliance-leveling-era-alliance-swamp-of-sorrows-turnin-1393-galen-s-escape",
     "alliance-leveling-era-alliance-swamp-of-sorrows-turnin-1389-draenethyst-crystals",
     "alliance-leveling-era-alliance-swamp-of-sorrows-turnin-1421-the-lost-caravan",
+    "alliance-leveling-era-alliance-swamp-of-sorrows-turnin-1116-dream-dust-in-the-swamp",
+    "alliance-leveling-era-alliance-stranglethorn-vale-part-3-accept-1364-mazen-s-behest",
     "alliance-leveling-era-alliance-swamp-of-sorrows-part-2-accept-1398-driftwood",
     "alliance-leveling-era-alliance-swamp-of-sorrows-part-2-objective-1398-1-sundried-driftwood",
+    "alliance-leveling-era-alliance-swamp-of-sorrows-part-2-objective-1364-1-khadgar-s-essays-on-dimensional-converge",
+    "alliance-leveling-era-alliance-swamp-of-sorrows-part-2-objective-1364-1-khadgar-s-essays-on-dimensional-converge-2",
     "alliance-leveling-era-alliance-swamp-of-sorrows-part-2-turnin-1398-driftwood",
     "alliance-leveling-era-alliance-swamp-of-sorrows-part-2-accept-1425-deliver-the-shipment",
+    "alliance-leveling-era-alliance-swamp-of-sorrows-part-2-turnin-1364-mazen-s-behest",
     "alliance-leveling-era-alliance-swamp-of-sorrows-part-2-turnin-1425-deliver-the-shipment",
+    "horde-leveling-era-horde-thousand-needles-level-before-accept-1111-wharfmaster-dizzywig",
+    "horde-leveling-era-horde-thousand-needles-accept-1111-wharfmaster-dizzywig",
+    "horde-leveling-era-horde-thousand-needles-turnin-1111-wharfmaster-dizzywig",
+    "horde-leveling-era-horde-thousand-needles-accept-1112-parts-for-kravel",
+    "horde-leveling-era-horde-thousand-needles-part-2-level-before-turnin-1112-parts-for-kravel",
+    "horde-leveling-era-horde-thousand-needles-part-2-turnin-1112-parts-for-kravel",
+    "horde-leveling-era-horde-thousand-needles-part-2-accept-1114-delivery-to-the-gnomes",
+    "horde-leveling-era-horde-thousand-needles-part-2-turnin-1114-delivery-to-the-gnomes",
+    "horde-leveling-era-horde-thousand-needles-part-2-accept-1115-the-rumormonger",
+    "horde-leveling-era-horde-thousand-needles-part-2-turnin-1115-the-rumormonger",
+    "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-accept-1116-dream-dust-in-the-swamp",
+    "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-objective-1116-1-adolescent-whelp",
     "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-accept-698-lack-of-surplus",
     "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-level-before-accept-1424-pool-of-tears",
     "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-accept-1424-pool-of-tears",
@@ -46,6 +89,7 @@
     "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-turnin-698-lack-of-surplus",
     "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-turnin-1424-pool-of-tears",
     "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-turnin-1389-draenethyst-crystals",
+    "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-turnin-1116-dream-dust-in-the-swamp",
     "horde-leveling-era-horde-swamp-of-sorrows-level-before-accept-2784-fall-from-grace",
     "horde-leveling-era-horde-swamp-of-sorrows-accept-2784-fall-from-grace",
     "horde-leveling-era-horde-swamp-of-sorrows-objective-2784-quest-work",
@@ -665,6 +709,314 @@
       "actions": [
         "horde-extra-1430-turnin"
       ],
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "visit-entry-leveling-era-alliance-dustwallow-marsh-and-thousand-needles"
+      ],
+      "anchor": "visit-entry-leveling-era-alliance-dustwallow-marsh-and-thousand-needles",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "alliance-leveling-era-alliance-dustwallow-marsh-and-thousand-needles-accept-1111-wharfmaster-dizzywig"
+      ],
+      "anchor": "visit-entry-leveling-era-alliance-dustwallow-marsh-and-thousand-needles",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "alliance-leveling-era-alliance-dustwallow-marsh-and-thousand-needles-turnin-1111-wharfmaster-dizzywig"
+      ],
+      "anchor": "alliance-leveling-era-alliance-dustwallow-marsh-and-thousand-needles-accept-1111-wharfmaster-dizzywig",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "alliance-leveling-era-alliance-dustwallow-marsh-and-thousand-needles-accept-1112-parts-for-kravel"
+      ],
+      "anchor": "alliance-leveling-era-alliance-dustwallow-marsh-and-thousand-needles-turnin-1111-wharfmaster-dizzywig",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "visit-entry-leveling-era-alliance-desolace"
+      ],
+      "anchor": "alliance-leveling-era-alliance-dustwallow-marsh-and-thousand-needles-accept-1112-parts-for-kravel",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "alliance-leveling-era-alliance-desolace-turnin-1112-parts-for-kravel"
+      ],
+      "anchor": "visit-entry-leveling-era-alliance-desolace",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "alliance-leveling-era-alliance-desolace-accept-1114-delivery-to-the-gnomes"
+      ],
+      "anchor": "alliance-leveling-era-alliance-desolace-turnin-1112-parts-for-kravel",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "alliance-leveling-era-alliance-desolace-turnin-1114-delivery-to-the-gnomes"
+      ],
+      "anchor": "alliance-leveling-era-alliance-desolace-accept-1114-delivery-to-the-gnomes",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "alliance-leveling-era-alliance-desolace-accept-1115-the-rumormonger"
+      ],
+      "anchor": "alliance-leveling-era-alliance-desolace-turnin-1114-delivery-to-the-gnomes",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "visit-entry-leveling-era-alliance-stranglethorn-vale-part-2"
+      ],
+      "anchor": "alliance-leveling-era-alliance-desolace-accept-1115-the-rumormonger",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "alliance-leveling-era-alliance-stranglethorn-vale-part-2-level-before-turnin-1115-the-rumormonger"
+      ],
+      "anchor": "visit-entry-leveling-era-alliance-stranglethorn-vale-part-2",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "alliance-leveling-era-alliance-stranglethorn-vale-part-2-turnin-1115-the-rumormonger"
+      ],
+      "anchor": "alliance-leveling-era-alliance-stranglethorn-vale-part-2-level-before-turnin-1115-the-rumormonger",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "alliance-leveling-era-alliance-stranglethorn-vale-part-2-accept-1116-dream-dust-in-the-swamp"
+      ],
+      "anchor": "alliance-leveling-era-alliance-stranglethorn-vale-part-2-turnin-1115-the-rumormonger",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "alliance-leveling-era-alliance-swamp-of-sorrows-level-before-accept-1363-mazen-s-behest"
+      ],
+      "anchor": "visit-entry-leveling-era-alliance-swamp-of-sorrows",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "alliance-leveling-era-alliance-swamp-of-sorrows-accept-1363-mazen-s-behest"
+      ],
+      "anchor": "alliance-leveling-era-alliance-swamp-of-sorrows-level-before-accept-1363-mazen-s-behest",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "alliance-leveling-era-alliance-swamp-of-sorrows-turnin-1363-mazen-s-behest"
+      ],
+      "anchor": "alliance-leveling-era-alliance-swamp-of-sorrows-accept-1363-mazen-s-behest",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "alliance-leveling-era-alliance-swamp-of-sorrows-accept-1364-mazen-s-behest"
+      ],
+      "anchor": "alliance-leveling-era-alliance-swamp-of-sorrows-turnin-1363-mazen-s-behest",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "alliance-leveling-era-alliance-swamp-of-sorrows-level-before-accept-1363-mazen-s-behest-2"
+      ],
+      "anchor": "alliance-leveling-era-alliance-swamp-of-sorrows-accept-1364-mazen-s-behest",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "alliance-leveling-era-alliance-swamp-of-sorrows-accept-1363-mazen-s-behest-2"
+      ],
+      "anchor": "alliance-leveling-era-alliance-swamp-of-sorrows-level-before-accept-1363-mazen-s-behest-2",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "alliance-leveling-era-alliance-swamp-of-sorrows-turnin-1363-mazen-s-behest-2"
+      ],
+      "anchor": "alliance-leveling-era-alliance-swamp-of-sorrows-accept-1363-mazen-s-behest-2",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "alliance-leveling-era-alliance-swamp-of-sorrows-level-before-objective-1116-1-adolescent-whelp"
+      ],
+      "anchor": "alliance-leveling-era-alliance-swamp-of-sorrows-turnin-1363-mazen-s-behest-2",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "alliance-leveling-era-alliance-swamp-of-sorrows-objective-1116-1-adolescent-whelp"
+      ],
+      "anchor": "alliance-leveling-era-alliance-swamp-of-sorrows-level-before-objective-1116-1-adolescent-whelp",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "alliance-leveling-era-alliance-swamp-of-sorrows-objective-1116-1-adolescent-whelp-2"
+      ],
+      "anchor": "alliance-leveling-era-alliance-swamp-of-sorrows-accept-1389-draenethyst-crystals",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "alliance-leveling-era-alliance-swamp-of-sorrows-turnin-1116-dream-dust-in-the-swamp"
+      ],
+      "anchor": "alliance-leveling-era-alliance-swamp-of-sorrows-turnin-1421-the-lost-caravan",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "visit-entry-leveling-era-alliance-stranglethorn-vale-part-3"
+      ],
+      "anchor": "alliance-leveling-era-alliance-swamp-of-sorrows-turnin-1116-dream-dust-in-the-swamp",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "alliance-leveling-era-alliance-stranglethorn-vale-part-3-accept-1364-mazen-s-behest"
+      ],
+      "anchor": "visit-entry-leveling-era-alliance-stranglethorn-vale-part-3",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "alliance-leveling-era-alliance-swamp-of-sorrows-part-2-objective-1364-1-khadgar-s-essays-on-dimensional-converge"
+      ],
+      "anchor": "alliance-leveling-era-alliance-swamp-of-sorrows-part-2-objective-1398-1-sundried-driftwood",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "alliance-leveling-era-alliance-swamp-of-sorrows-part-2-objective-1364-1-khadgar-s-essays-on-dimensional-converge-2"
+      ],
+      "anchor": "alliance-leveling-era-alliance-swamp-of-sorrows-part-2-objective-1364-1-khadgar-s-essays-on-dimensional-converge",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "alliance-leveling-era-alliance-swamp-of-sorrows-part-2-turnin-1364-mazen-s-behest"
+      ],
+      "anchor": "alliance-leveling-era-alliance-swamp-of-sorrows-part-2-accept-1425-deliver-the-shipment",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "visit-entry-leveling-era-horde-thousand-needles"
+      ],
+      "anchor": "alliance-extra-93429-turnin",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "horde-leveling-era-horde-thousand-needles-level-before-accept-1111-wharfmaster-dizzywig"
+      ],
+      "anchor": "visit-entry-leveling-era-horde-thousand-needles",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "horde-leveling-era-horde-thousand-needles-accept-1111-wharfmaster-dizzywig"
+      ],
+      "anchor": "horde-leveling-era-horde-thousand-needles-level-before-accept-1111-wharfmaster-dizzywig",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "horde-leveling-era-horde-thousand-needles-turnin-1111-wharfmaster-dizzywig"
+      ],
+      "anchor": "horde-leveling-era-horde-thousand-needles-accept-1111-wharfmaster-dizzywig",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "horde-leveling-era-horde-thousand-needles-accept-1112-parts-for-kravel"
+      ],
+      "anchor": "horde-leveling-era-horde-thousand-needles-turnin-1111-wharfmaster-dizzywig",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "visit-entry-leveling-era-horde-thousand-needles-part-2"
+      ],
+      "anchor": "horde-leveling-era-horde-thousand-needles-accept-1112-parts-for-kravel",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "horde-leveling-era-horde-thousand-needles-part-2-level-before-turnin-1112-parts-for-kravel"
+      ],
+      "anchor": "visit-entry-leveling-era-horde-thousand-needles-part-2",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "horde-leveling-era-horde-thousand-needles-part-2-turnin-1112-parts-for-kravel"
+      ],
+      "anchor": "horde-leveling-era-horde-thousand-needles-part-2-level-before-turnin-1112-parts-for-kravel",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "horde-leveling-era-horde-thousand-needles-part-2-accept-1114-delivery-to-the-gnomes"
+      ],
+      "anchor": "horde-leveling-era-horde-thousand-needles-part-2-turnin-1112-parts-for-kravel",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "horde-leveling-era-horde-thousand-needles-part-2-turnin-1114-delivery-to-the-gnomes"
+      ],
+      "anchor": "horde-leveling-era-horde-thousand-needles-part-2-accept-1114-delivery-to-the-gnomes",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "horde-leveling-era-horde-thousand-needles-part-2-accept-1115-the-rumormonger"
+      ],
+      "anchor": "horde-leveling-era-horde-thousand-needles-part-2-turnin-1114-delivery-to-the-gnomes",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "horde-leveling-era-horde-thousand-needles-part-2-turnin-1115-the-rumormonger"
+      ],
+      "anchor": "horde-leveling-era-horde-thousand-needles-part-2-accept-1115-the-rumormonger",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-accept-1116-dream-dust-in-the-swamp"
+      ],
+      "anchor": "visit-entry-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-objective-1116-1-adolescent-whelp"
+      ],
+      "anchor": "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-accept-1116-dream-dust-in-the-swamp",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-turnin-1116-dream-dust-in-the-swamp"
+      ],
+      "anchor": "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-turnin-1389-draenethyst-crystals",
       "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
     }
   ],
@@ -3690,630 +4042,15 @@
         "swamp-of-sorrows"
       ],
       "evidence": {
-        "wowhead": {
-          "classes": [],
-          "faction": "Alliance",
-          "flags": {
-            "daily": false,
-            "dungeon": false,
-            "monthly": false,
-            "pvp": false,
-            "raid": false,
-            "repeatable": false,
-            "sharable": true,
-            "weekly": false
-          },
-          "name": "Blood of My Blood",
-          "prerequisiteReferences": [],
-          "questLevel": 35,
-          "races": [],
-          "requiredLevel": 30
-        },
-        "questiedb": {
-          "name": "Blood of My Blood",
-          "objectivesText": [
-            "Slay 10 Lost Ones in the Fallow Sanctuary."
-          ],
-          "questLevel": 35,
-          "requiredLevel": 30,
-          "requiredRaces": 0,
-          "zoneOrSort": 8
-        },
-        "allthethings": {},
-        "foreverclient": {}
+        "artifactVersion": "1.0.6-dev.f844007",
+        "buildCommit": "f844007b329b72f18cf2bda3d87540012294732a",
+        "source": "QuestieDB"
       },
-      "sourceRevisions": {
-        "foreverclient": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
-        "questiedb": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
-        "wowhead": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330"
-      },
-      "locations": [
-        {
-          "coord": [
-            24.8,
-            32.4
-          ],
-          "coords": [
-            [
-              24.8,
-              32.4
-            ],
-            [
-              25.6,
-              31.4
-            ],
-            [
-              26,
-              32
-            ],
-            [
-              26.4,
-              32.6
-            ]
-          ],
-          "id": 254775,
-          "name": "Karana",
-          "point": "start",
-          "reactalliance": 0,
-          "reacthorde": 0,
-          "type": 1,
-          "zone": "Swamp of Sorrows"
-        },
-        {
-          "coord": [
-            24.8,
-            32.4
-          ],
-          "coords": [
-            [
-              24.8,
-              32.4
-            ],
-            [
-              25.6,
-              31.4
-            ],
-            [
-              26,
-              32
-            ],
-            [
-              26.4,
-              32.6
-            ]
-          ],
-          "id": 254775,
-          "name": "Karana",
-          "point": "end",
-          "reactalliance": 0,
-          "reacthorde": 0,
-          "type": 1,
-          "zone": "Swamp of Sorrows"
-        },
-        {
-          "coord": [
-            64.8,
-            20.8
-          ],
-          "coords": [
-            [
-              54.4,
-              30
-            ],
-            [
-              54.8,
-              30.2
-            ],
-            [
-              54.8,
-              30.6
-            ],
-            [
-              55.4,
-              28.8
-            ],
-            [
-              55.6,
-              29
-            ],
-            [
-              55.8,
-              28.4
-            ],
-            [
-              56.4,
-              25.2
-            ],
-            [
-              56.4,
-              25.6
-            ],
-            [
-              56.6,
-              25.2
-            ],
-            [
-              56.6,
-              25.6
-            ],
-            [
-              57.2,
-              24.4
-            ],
-            [
-              57.6,
-              23.4
-            ],
-            [
-              57.6,
-              23.8
-            ],
-            [
-              57.6,
-              25
-            ],
-            [
-              58.2,
-              26.6
-            ],
-            [
-              58.4,
-              26.4
-            ],
-            [
-              58.6,
-              26.4
-            ],
-            [
-              61.4,
-              22.4
-            ],
-            [
-              61.4,
-              22.6
-            ],
-            [
-              61.8,
-              22.4
-            ],
-            [
-              61.8,
-              23.4
-            ],
-            [
-              62.4,
-              23.8
-            ],
-            [
-              62.6,
-              23.4
-            ],
-            [
-              62.6,
-              23.8
-            ],
-            [
-              62.8,
-              24.6
-            ],
-            [
-              64.4,
-              23.4
-            ],
-            [
-              64.4,
-              23.6
-            ],
-            [
-              64.6,
-              23.6
-            ],
-            [
-              64.8,
-              20.8
-            ],
-            [
-              64.8,
-              22
-            ],
-            [
-              64.8,
-              23
-            ],
-            [
-              65.6,
-              21.4
-            ],
-            [
-              65.6,
-              21.6
-            ]
-          ],
-          "id": 759,
-          "name": "Lost One Hunter",
-          "objective": 254797,
-          "point": "requirement",
-          "reactalliance": -1,
-          "reacthorde": -1,
-          "type": 1,
-          "zone": "Swamp of Sorrows"
-        },
-        {
-          "coord": [
-            61.2,
-            26.4
-          ],
-          "coords": [
-            [
-              43,
-              37.2
-            ],
-            [
-              43.9,
-              36.4
-            ],
-            [
-              44.4,
-              34.2
-            ],
-            [
-              44.4,
-              34.6
-            ],
-            [
-              44.5,
-              34
-            ],
-            [
-              44.6,
-              33.2
-            ],
-            [
-              44.8,
-              32.4
-            ],
-            [
-              55.2,
-              28.1
-            ],
-            [
-              55.8,
-              28.4
-            ],
-            [
-              56.2,
-              31.6
-            ],
-            [
-              56.3,
-              28.8
-            ],
-            [
-              56.6,
-              31.6
-            ],
-            [
-              57.5,
-              29.8
-            ],
-            [
-              58.2,
-              23.6
-            ],
-            [
-              58.4,
-              24.8
-            ],
-            [
-              58.8,
-              23.4
-            ],
-            [
-              59,
-              24.4
-            ],
-            [
-              59,
-              24.6
-            ],
-            [
-              59.6,
-              24
-            ],
-            [
-              60.4,
-              26.6
-            ],
-            [
-              61.2,
-              25.2
-            ],
-            [
-              61.2,
-              26.4
-            ],
-            [
-              61.2,
-              26.6
-            ],
-            [
-              61.6,
-              26.4
-            ],
-            [
-              61.6,
-              26.6
-            ],
-            [
-              62.2,
-              19
-            ],
-            [
-              62.6,
-              18.8
-            ],
-            [
-              62.8,
-              26
-            ],
-            [
-              63,
-              18.4
-            ],
-            [
-              63.2,
-              17.2
-            ],
-            [
-              63.4,
-              21
-            ],
-            [
-              63.4,
-              25.4
-            ],
-            [
-              63.6,
-              21.6
-            ],
-            [
-              64,
-              17.2
-            ],
-            [
-              64,
-              25.6
-            ],
-            [
-              64.2,
-              20.6
-            ],
-            [
-              64.4,
-              18.4
-            ],
-            [
-              64.4,
-              18.6
-            ],
-            [
-              64.4,
-              20.4
-            ],
-            [
-              64.4,
-              25.2
-            ],
-            [
-              64.6,
-              18.4
-            ],
-            [
-              64.6,
-              18.6
-            ],
-            [
-              64.6,
-              20.2
-            ],
-            [
-              64.6,
-              25
-            ],
-            [
-              64.6,
-              25.6
-            ],
-            [
-              64.8,
-              21
-            ],
-            [
-              66.4,
-              17.6
-            ],
-            [
-              67.4,
-              21.4
-            ]
-          ],
-          "id": 760,
-          "name": "Lost One Muckdweller",
-          "objective": 254797,
-          "point": "requirement",
-          "reactalliance": -1,
-          "reacthorde": -1,
-          "type": 1,
-          "zone": "Swamp of Sorrows"
-        },
-        {
-          "coord": [
-            60,
-            22.4
-          ],
-          "coords": [
-            [
-              59.4,
-              21.4
-            ],
-            [
-              59.6,
-              21.4
-            ],
-            [
-              59.8,
-              23.8
-            ],
-            [
-              60,
-              22.4
-            ],
-            [
-              60,
-              22.8
-            ],
-            [
-              60.6,
-              20.6
-            ],
-            [
-              60.6,
-              22.2
-            ],
-            [
-              60.8,
-              22.6
-            ],
-            [
-              61,
-              24.4
-            ],
-            [
-              61.6,
-              21.2
-            ],
-            [
-              61.6,
-              24
-            ],
-            [
-              64,
-              23.2
-            ],
-            [
-              64.4,
-              20
-            ],
-            [
-              64.4,
-              22.2
-            ],
-            [
-              64.6,
-              22.6
-            ],
-            [
-              64.8,
-              22
-            ],
-            [
-              65,
-              21
-            ],
-            [
-              65.2,
-              19.2
-            ],
-            [
-              65.2,
-              19.8
-            ],
-            [
-              65.6,
-              20.2
-            ]
-          ],
-          "id": 761,
-          "name": "Lost One Seer",
-          "objective": 254797,
-          "point": "requirement",
-          "reactalliance": -1,
-          "reacthorde": -1,
-          "type": 1,
-          "zone": "Swamp of Sorrows"
-        },
-        {
-          "coord": [
-            64.6,
-            22.2
-          ],
-          "coords": [
-            [
-              60,
-              22.4
-            ],
-            [
-              60,
-              22.8
-            ],
-            [
-              60.6,
-              22.4
-            ],
-            [
-              60.8,
-              23.2
-            ],
-            [
-              61,
-              24
-            ],
-            [
-              61.8,
-              20.8
-            ],
-            [
-              64,
-              23.2
-            ],
-            [
-              64.2,
-              23.6
-            ],
-            [
-              64.4,
-              22.2
-            ],
-            [
-              64.6,
-              22.2
-            ],
-            [
-              64.6,
-              22.6
-            ],
-            [
-              65,
-              20.2
-            ],
-            [
-              65,
-              20.6
-            ]
-          ],
-          "id": 762,
-          "name": "Lost One Riftseeker",
-          "objective": 254797,
-          "point": "requirement",
-          "reactalliance": -1,
-          "reacthorde": -1,
-          "type": 1,
-          "zone": "Swamp of Sorrows"
-        }
-      ],
+      "locations": [],
       "supporting": false,
       "status": "included",
-      "reason": "Permanent outdoor quest woven using verified source requirements and advisory legacy order."
+      "reason": "Authored for an applicable faction; other faction limitations are recorded separately.",
+      "factionNotes": "missing supported pickup or return navigation"
     },
     "93430": {
       "catalogs": [
@@ -14225,372 +13962,1125 @@
       ],
       "status": "spine",
       "reason": "Preserved faction Casual actions."
+    },
+    "1116": {
+      "catalogs": [
+        "swamp-of-sorrows"
+      ],
+      "evidence": {
+        "artifactVersion": "1.0.6-dev.f844007",
+        "buildCommit": "f844007b329b72f18cf2bda3d87540012294732a",
+        "source": "QuestieDB"
+      },
+      "locations": [
+        {
+          "coord": [
+            26.95,
+            77.21
+          ],
+          "id": 773,
+          "name": "Krazek",
+          "point": "start",
+          "reactalliance": 1,
+          "reacthorde": 1,
+          "type": 1,
+          "zone": "Stranglethorn Vale"
+        },
+        {
+          "coord": [
+            26.95,
+            77.21
+          ],
+          "id": 773,
+          "name": "Krazek",
+          "point": "end",
+          "reactalliance": 1,
+          "reacthorde": 1,
+          "type": 1,
+          "zone": "Stranglethorn Vale"
+        }
+      ],
+      "supporting": false,
+      "status": "spine",
+      "reason": "Preserved faction Casual actions."
+    },
+    "1115": {
+      "catalogs": [
+        "thousand-needles"
+      ],
+      "supporting": true,
+      "evidence": {
+        "artifactVersion": "1.0.6-dev.f844007",
+        "buildCommit": "f844007b329b72f18cf2bda3d87540012294732a",
+        "source": "QuestieDB"
+      },
+      "locations": [
+        {
+          "coord": [
+            77.79,
+            77.27
+          ],
+          "id": 4452,
+          "name": "Kravel Koalbeard",
+          "point": "start",
+          "reactalliance": 1,
+          "reacthorde": 1,
+          "type": 1,
+          "zone": "Thousand Needles"
+        },
+        {
+          "coord": [
+            26.95,
+            77.21
+          ],
+          "id": 773,
+          "name": "Krazek",
+          "point": "end",
+          "reactalliance": 1,
+          "reacthorde": 1,
+          "type": 1,
+          "zone": "Stranglethorn Vale"
+        }
+      ],
+      "status": "spine",
+      "reason": "Preserved faction Casual actions."
+    },
+    "1114": {
+      "catalogs": [
+        "thousand-needles"
+      ],
+      "supporting": true,
+      "evidence": {
+        "artifactVersion": "1.0.6-dev.f844007",
+        "buildCommit": "f844007b329b72f18cf2bda3d87540012294732a",
+        "source": "QuestieDB"
+      },
+      "locations": [
+        {
+          "coord": [
+            77.79,
+            77.27
+          ],
+          "id": 4452,
+          "name": "Kravel Koalbeard",
+          "point": "start",
+          "reactalliance": 1,
+          "reacthorde": 1,
+          "type": 1,
+          "zone": "Thousand Needles"
+        },
+        {
+          "coord": [
+            78.06,
+            77.13
+          ],
+          "id": 4454,
+          "name": "Fizzle Brassbolts",
+          "point": "end",
+          "reactalliance": 1,
+          "reacthorde": 1,
+          "type": 1,
+          "zone": "Thousand Needles"
+        }
+      ],
+      "status": "spine",
+      "reason": "Preserved faction Casual actions."
+    },
+    "1112": {
+      "catalogs": [
+        "thousand-needles"
+      ],
+      "supporting": true,
+      "evidence": {
+        "artifactVersion": "1.0.6-dev.f844007",
+        "buildCommit": "f844007b329b72f18cf2bda3d87540012294732a",
+        "source": "QuestieDB"
+      },
+      "locations": [
+        {
+          "coord": [
+            63.35,
+            38.45
+          ],
+          "id": 3453,
+          "name": "Wharfmaster Dizzywig",
+          "point": "start",
+          "reactalliance": 1,
+          "reacthorde": 1,
+          "type": 1,
+          "zone": "The Barrens"
+        },
+        {
+          "coord": [
+            77.79,
+            77.27
+          ],
+          "id": 4452,
+          "name": "Kravel Koalbeard",
+          "point": "end",
+          "reactalliance": 1,
+          "reacthorde": 1,
+          "type": 1,
+          "zone": "Thousand Needles"
+        }
+      ],
+      "status": "spine",
+      "reason": "Preserved faction Casual actions."
+    },
+    "1111": {
+      "catalogs": [
+        "thousand-needles"
+      ],
+      "supporting": true,
+      "evidence": {
+        "artifactVersion": "1.0.6-dev.f844007",
+        "buildCommit": "f844007b329b72f18cf2bda3d87540012294732a",
+        "source": "QuestieDB"
+      },
+      "locations": [
+        {
+          "coord": [
+            77.79,
+            77.27
+          ],
+          "id": 4452,
+          "name": "Kravel Koalbeard",
+          "point": "start",
+          "reactalliance": 1,
+          "reacthorde": 1,
+          "type": 1,
+          "zone": "Thousand Needles"
+        },
+        {
+          "coord": [
+            63.35,
+            38.45
+          ],
+          "id": 3453,
+          "name": "Wharfmaster Dizzywig",
+          "point": "end",
+          "reactalliance": 1,
+          "reacthorde": 1,
+          "type": 1,
+          "zone": "The Barrens"
+        }
+      ],
+      "status": "spine",
+      "reason": "Preserved faction Casual actions."
+    },
+    "1364": {
+      "catalogs": [
+        "stormwind-city"
+      ],
+      "evidence": {
+        "artifactVersion": "1.0.6-dev.f844007",
+        "buildCommit": "f844007b329b72f18cf2bda3d87540012294732a",
+        "source": "QuestieDB"
+      },
+      "locations": [
+        {
+          "coord": [
+            51.4,
+            73.81
+          ],
+          "id": 5386,
+          "name": "Acolyte Dellis",
+          "point": "start",
+          "reactalliance": 1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Stormwind City"
+        },
+        {
+          "coord": [
+            67.65,
+            19.17
+          ],
+          "id": 5385,
+          "name": "Watcher Mahar Ba",
+          "point": "end",
+          "reactalliance": 1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Blasted Lands"
+        },
+        {
+          "coord": [
+            46.88,
+            37.1
+          ],
+          "id": 764,
+          "item": "Khadgar's Essays on Dimensional Convergence",
+          "name": "Swampwalker",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Swamp of Sorrows"
+        },
+        {
+          "coord": [
+            49.28,
+            35.27
+          ],
+          "id": 764,
+          "item": "Khadgar's Essays on Dimensional Convergence",
+          "name": "Swampwalker",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Swamp of Sorrows"
+        },
+        {
+          "coord": [
+            51.17,
+            36.76
+          ],
+          "id": 764,
+          "item": "Khadgar's Essays on Dimensional Convergence",
+          "name": "Swampwalker",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Swamp of Sorrows"
+        },
+        {
+          "coord": [
+            54.74,
+            32.1
+          ],
+          "id": 764,
+          "item": "Khadgar's Essays on Dimensional Convergence",
+          "name": "Swampwalker",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Swamp of Sorrows"
+        },
+        {
+          "coord": [
+            14.92,
+            38.73
+          ],
+          "id": 764,
+          "item": "Khadgar's Essays on Dimensional Convergence",
+          "name": "Swampwalker",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Swamp of Sorrows"
+        },
+        {
+          "coord": [
+            15.81,
+            36.55
+          ],
+          "id": 764,
+          "item": "Khadgar's Essays on Dimensional Convergence",
+          "name": "Swampwalker",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Swamp of Sorrows"
+        },
+        {
+          "coord": [
+            16.87,
+            38.78
+          ],
+          "id": 764,
+          "item": "Khadgar's Essays on Dimensional Convergence",
+          "name": "Swampwalker",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Swamp of Sorrows"
+        },
+        {
+          "coord": [
+            14.37,
+            34.71
+          ],
+          "id": 764,
+          "item": "Khadgar's Essays on Dimensional Convergence",
+          "name": "Swampwalker",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Swamp of Sorrows"
+        },
+        {
+          "coord": [
+            11.43,
+            38.66
+          ],
+          "id": 764,
+          "item": "Khadgar's Essays on Dimensional Convergence",
+          "name": "Swampwalker",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Swamp of Sorrows"
+        },
+        {
+          "coord": [
+            13,
+            37.04
+          ],
+          "id": 764,
+          "item": "Khadgar's Essays on Dimensional Convergence",
+          "name": "Swampwalker",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Swamp of Sorrows"
+        },
+        {
+          "coord": [
+            15.77,
+            40.78
+          ],
+          "id": 764,
+          "item": "Khadgar's Essays on Dimensional Convergence",
+          "name": "Swampwalker",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Swamp of Sorrows"
+        },
+        {
+          "coord": [
+            12.92,
+            32.51
+          ],
+          "id": 765,
+          "item": "Khadgar's Essays on Dimensional Convergence",
+          "name": "Swampwalker Elder",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Swamp of Sorrows"
+        },
+        {
+          "coord": [
+            10.07,
+            32.31
+          ],
+          "id": 765,
+          "item": "Khadgar's Essays on Dimensional Convergence",
+          "name": "Swampwalker Elder",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Swamp of Sorrows"
+        },
+        {
+          "coord": [
+            74.06,
+            71.51
+          ],
+          "id": 766,
+          "item": "Khadgar's Essays on Dimensional Convergence",
+          "name": "Tangled Horror",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Swamp of Sorrows"
+        },
+        {
+          "coord": [
+            78.82,
+            71.91
+          ],
+          "id": 766,
+          "item": "Khadgar's Essays on Dimensional Convergence",
+          "name": "Tangled Horror",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Swamp of Sorrows"
+        },
+        {
+          "coord": [
+            71.28,
+            23.54
+          ],
+          "id": 766,
+          "item": "Khadgar's Essays on Dimensional Convergence",
+          "name": "Tangled Horror",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Swamp of Sorrows"
+        },
+        {
+          "coord": [
+            68.05,
+            32.09
+          ],
+          "id": 766,
+          "item": "Khadgar's Essays on Dimensional Convergence",
+          "name": "Tangled Horror",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Swamp of Sorrows"
+        },
+        {
+          "coord": [
+            58.99,
+            45.42
+          ],
+          "id": 766,
+          "item": "Khadgar's Essays on Dimensional Convergence",
+          "name": "Tangled Horror",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Swamp of Sorrows"
+        },
+        {
+          "coord": [
+            73.62,
+            31.62
+          ],
+          "id": 766,
+          "item": "Khadgar's Essays on Dimensional Convergence",
+          "name": "Tangled Horror",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Swamp of Sorrows"
+        },
+        {
+          "coord": [
+            76.77,
+            30.88
+          ],
+          "id": 766,
+          "item": "Khadgar's Essays on Dimensional Convergence",
+          "name": "Tangled Horror",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Swamp of Sorrows"
+        },
+        {
+          "coord": [
+            62.75,
+            33.74
+          ],
+          "id": 766,
+          "item": "Khadgar's Essays on Dimensional Convergence",
+          "name": "Tangled Horror",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Swamp of Sorrows"
+        },
+        {
+          "coord": [
+            58.28,
+            55.48
+          ],
+          "id": 766,
+          "item": "Khadgar's Essays on Dimensional Convergence",
+          "name": "Tangled Horror",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Swamp of Sorrows"
+        },
+        {
+          "coord": [
+            60.47,
+            36.19
+          ],
+          "id": 766,
+          "item": "Khadgar's Essays on Dimensional Convergence",
+          "name": "Tangled Horror",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Swamp of Sorrows"
+        },
+        {
+          "coord": [
+            73.85,
+            27.14
+          ],
+          "id": 766,
+          "item": "Khadgar's Essays on Dimensional Convergence",
+          "name": "Tangled Horror",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Swamp of Sorrows"
+        },
+        {
+          "coord": [
+            57.96,
+            35.95
+          ],
+          "id": 766,
+          "item": "Khadgar's Essays on Dimensional Convergence",
+          "name": "Tangled Horror",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Swamp of Sorrows"
+        },
+        {
+          "coord": [
+            67.5,
+            24.54
+          ],
+          "id": 766,
+          "item": "Khadgar's Essays on Dimensional Convergence",
+          "name": "Tangled Horror",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Swamp of Sorrows"
+        },
+        {
+          "coord": [
+            57.33,
+            50.29
+          ],
+          "id": 766,
+          "item": "Khadgar's Essays on Dimensional Convergence",
+          "name": "Tangled Horror",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Swamp of Sorrows"
+        },
+        {
+          "coord": [
+            57.26,
+            41.49
+          ],
+          "id": 766,
+          "item": "Khadgar's Essays on Dimensional Convergence",
+          "name": "Tangled Horror",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Swamp of Sorrows"
+        },
+        {
+          "coord": [
+            85.06,
+            67.28
+          ],
+          "id": 766,
+          "item": "Khadgar's Essays on Dimensional Convergence",
+          "name": "Tangled Horror",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Swamp of Sorrows"
+        },
+        {
+          "coord": [
+            83.83,
+            72.9
+          ],
+          "id": 766,
+          "item": "Khadgar's Essays on Dimensional Convergence",
+          "name": "Tangled Horror",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Swamp of Sorrows"
+        },
+        {
+          "coord": [
+            11.21,
+            30.74
+          ],
+          "id": 766,
+          "item": "Khadgar's Essays on Dimensional Convergence",
+          "name": "Tangled Horror",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Swamp of Sorrows"
+        },
+        {
+          "coord": [
+            8.56,
+            30.45
+          ],
+          "id": 766,
+          "item": "Khadgar's Essays on Dimensional Convergence",
+          "name": "Tangled Horror",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Swamp of Sorrows"
+        },
+        {
+          "coord": [
+            8.43,
+            34.34
+          ],
+          "id": 766,
+          "item": "Khadgar's Essays on Dimensional Convergence",
+          "name": "Tangled Horror",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Swamp of Sorrows"
+        },
+        {
+          "coord": [
+            11.49,
+            34.74
+          ],
+          "id": 766,
+          "item": "Khadgar's Essays on Dimensional Convergence",
+          "name": "Tangled Horror",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Swamp of Sorrows"
+        },
+        {
+          "coord": [
+            10.11,
+            36.59
+          ],
+          "id": 766,
+          "item": "Khadgar's Essays on Dimensional Convergence",
+          "name": "Tangled Horror",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Swamp of Sorrows"
+        },
+        {
+          "coord": [
+            76.78,
+            73.14
+          ],
+          "id": 766,
+          "item": "Khadgar's Essays on Dimensional Convergence",
+          "name": "Tangled Horror",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Swamp of Sorrows"
+        },
+        {
+          "coord": [
+            77.54,
+            77.62
+          ],
+          "id": 766,
+          "item": "Khadgar's Essays on Dimensional Convergence",
+          "name": "Tangled Horror",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Swamp of Sorrows"
+        },
+        {
+          "coord": [
+            77.2,
+            81.09
+          ],
+          "id": 766,
+          "item": "Khadgar's Essays on Dimensional Convergence",
+          "name": "Tangled Horror",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Swamp of Sorrows"
+        },
+        {
+          "coord": [
+            72.41,
+            73.65
+          ],
+          "id": 766,
+          "item": "Khadgar's Essays on Dimensional Convergence",
+          "name": "Tangled Horror",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Swamp of Sorrows"
+        },
+        {
+          "coord": [
+            5.5,
+            31.38
+          ],
+          "id": 1081,
+          "item": "Khadgar's Essays on Dimensional Convergence",
+          "name": "Mire Lord",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Swamp of Sorrows"
+        }
+      ],
+      "supporting": false,
+      "status": "spine",
+      "reason": "Preserved faction Casual actions."
+    },
+    "1363": {
+      "catalogs": [
+        "stormwind-city"
+      ],
+      "supporting": true,
+      "evidence": {
+        "artifactVersion": "1.0.6-dev.f844007",
+        "buildCommit": "f844007b329b72f18cf2bda3d87540012294732a",
+        "source": "QuestieDB"
+      },
+      "locations": [
+        {
+          "coord": [
+            51.8,
+            74.24
+          ],
+          "id": 338,
+          "name": "Mazen Mac'Nadir",
+          "point": "start",
+          "reactalliance": 1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Stormwind City"
+        },
+        {
+          "coord": [
+            51.4,
+            73.81
+          ],
+          "id": 5386,
+          "name": "Acolyte Dellis",
+          "point": "end",
+          "reactalliance": 1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Stormwind City"
+        }
+      ],
+      "status": "spine",
+      "reason": "Preserved faction Casual actions."
     }
   },
   "supportingQuests": [
+    1111,
+    1112,
+    1114,
+    1115,
+    1363,
     2621,
     2784
   ],
   "clientWalkthrough": "unverified",
   "sourcePriority": [
-    "wowhead",
-    "questiedb",
-    "allthethings",
-    "foreverclient"
+    "questiedb"
   ],
   "sources": {
-    "databaseCommit": "5c92953420ab4a710fda39581a405a72a89b8c0d",
-    "compilation": {
-      "schemaVersion": 1,
-      "compilationFormatVersion": 2,
-      "flavor": "forever",
-      "source": "compilation",
-      "sourceRevision": "991cc5841d7b79dc85613431aa8ecf6f4c34070753426d60f323e321532d4b66",
-      "recordCount": 107209,
-      "recordsSha256": "9ab82625871b9df3a0ac5781bb194be6d8211a4a6337258fbf82224e00416727",
-      "status": "generated"
+    "questiedb": {
+      "artifactVersion": "1.0.6-dev.f844007",
+      "buildCommit": "f844007b329b72f18cf2bda3d87540012294732a",
+      "counts": {
+        "Item": 21294,
+        "Npc": 13393,
+        "Object": 7035,
+        "Quest": 5232
+      }
     },
     "sourceHashes": {
-      "data/forever/compilation/records.jsonl.gz": "35c74cb11823db372dc0bc289d5ffaf8296ca9d1c370e4f7b794a29af7f84b47"
+      "questiedb/export.json": "e26090e90df3aa2e94be4c13feb001390068b84c249ff2443c629d26a408e704",
+      "questiedb/policy.json": "835ba8f6361ef37bda275859bdb48852001c3ce2b6a2b3ecff586283633e2ad4"
     },
     "upstreamCommit": "9087c457e20fb96e73e5b362dd6fc50324b75718"
   },
   "coverageMode": "zone",
   "orderingEligibility": {
-    "1418": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "1421": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "1422": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      }
-    },
-    "1423": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "1424": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      }
-    },
-    "1425": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "1426": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      }
-    },
-    "1427": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      }
-    },
-    "1428": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      }
-    },
-    "1429": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      }
-    },
-    "1430": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "93585": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
-      }
-    },
-    "93464": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
-      }
-    },
-    "3374": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "3512": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
     "698": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
       "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
       }
     },
     "699": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
       "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
       }
     },
-    "2622": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
+    "1116": {
       "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": true
       }
     },
-    "2623": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
+    "1364": {
       "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      }
-    },
-    "93663": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
+        "inCasual": false
       },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
+      "Alliance": {
+        "inCasual": true
       }
     },
     "1389": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": true
       }
     },
     "1392": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": true
       }
     },
     "1393": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": true
       }
     },
     "1396": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "93429": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
+        "inCasual": false
       },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
+      "Alliance": {
+        "inCasual": true
       }
     },
     "1398": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
       }
     },
-    "93430": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
-      },
+    "1418": {
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "1421": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "1422": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "1423": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "1424": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "1425": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "1426": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "1427": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "1428": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "1429": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "1430": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "2622": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "2623": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "3374": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "3512": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
       }
     },
     "93176": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "93429": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "93430": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "93464": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "93585": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "93663": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
       }
     }
   },
@@ -14599,10 +15089,10 @@
     "commit": "9087c457e20fb96e73e5b362dd6fc50324b75718",
     "strict": false,
     "sourceHashes": {
+      "ZygorGuidesViewerRM/Guides/Leveling/ZygorGuidesHorde.lua": "2eaf5adb4865936cdb4257451c3ce920fdaff1c0ec17216c36e055480f389e54",
       "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-EasternKingdoms.lua": "8a5ec87d31698c612e50eb0655f5c1f28d723c3068552c1295d79ddcd934270f",
       "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-Kalimdor.lua": "4fb7b7f5bb2702dfe36ed33de31b4d3105153bfba62b7a14a7ab73386e2087fa",
-      "ZygorGuidesViewerRM/Guides/Leveling/ZygorGuidesAlliance.lua": "ffb9b7828817e098d74ee5931e15a64ce773142a4c1e60f9775d0713121ba67d",
-      "ZygorGuidesViewerRM/Guides/Leveling/ZygorGuidesHorde.lua": "2eaf5adb4865936cdb4257451c3ce920fdaff1c0ec17216c36e055480f389e54"
+      "ZygorGuidesViewerRM/Guides/Leveling/ZygorGuidesAlliance.lua": "ffb9b7828817e098d74ee5931e15a64ce773142a4c1e60f9775d0713121ba67d"
     },
     "matches": {}
   }

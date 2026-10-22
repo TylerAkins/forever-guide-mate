@@ -6,7 +6,7 @@ ns:RegisterGuide({
     id = "loremaster-the-hinterlands",
     title = "The Hinterlands",
     category = "Loremaster Guides",
-    revision = 1,
+    revision = 2,
     routeMode = "ordered",
     loremasterExpanded = true,
     goals = {
@@ -74,13 +74,13 @@ ns:RegisterGuide({
                     y = 0.2066,
                 },
             },
+            sourceActionID = "turnin-1448-in-search-of-the-temple",
+            sourceGuide = "leveling-era-alliance-swamp-of-sorrows",
             sourceStep = 43,
             text = "Turn in In Search of The Temple to Brohann Caskbelly.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-swamp-of-sorrows",
-            sourceActionID = "turnin-1448-in-search-of-the-temple",
         },
         {
             complete = { quest = { id = 1449, state = "activeOrCompleted" } },
@@ -174,25 +174,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 1449, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 38 } }, { race = { 1, 3, 4, 7, 95 } } } },
             dependsOn = {},
-            id = "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-turnin-1449-to-the-hinterlands",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 1448 } } },
-            route = {
-                {
-                    label = "Falstad Wildhammer",
-                    mapID = 1425,
-                    offMapText = "Travel to Falstad Wildhammer in The Hinterlands.",
-                    x = 0.1181,
-                    y = 0.4676,
-                },
-            },
-            sourceStep = 32,
-            text = "Turn in To The Hinterlands to Falstad Wildhammer.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-arathi-highlands-and-alterac-mountains",
-            sourceActionID = "turnin-1449-to-the-hinterlands",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -213,6 +194,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-turnin-1449-to-the-hinterlands",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 1448 } } },
+            route = {
+                {
+                    label = "Falstad Wildhammer",
+                    mapID = 1425,
+                    offMapText = "Travel to Falstad Wildhammer in The Hinterlands.",
+                    x = 0.1181,
+                    y = 0.4676,
+                },
+            },
+            sourceActionID = "turnin-1449-to-the-hinterlands",
+            sourceGuide = "leveling-era-alliance-arathi-highlands-and-alterac-mountains",
+            sourceStep = 32,
+            text = "Turn in To The Hinterlands to Falstad Wildhammer.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 1450, state = "activeOrCompleted" } },
@@ -275,25 +275,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 1450, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 38 } }, { race = { 1, 3, 4, 7, 95 } } } },
             dependsOn = { "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-accept-1450-gryphon-master-talonaxe" },
-            id = "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-turnin-1450-gryphon-master-talonaxe",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 1449 } } },
-            route = {
-                {
-                    label = "Gryphon Master Talonaxe",
-                    mapID = 1425,
-                    offMapText = "Travel to Gryphon Master Talonaxe in The Hinterlands.",
-                    x = 0.0976,
-                    y = 0.4448,
-                },
-            },
-            sourceStep = 33,
-            text = "Turn in Gryphon Master Talonaxe to Gryphon Master Talonaxe.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-arathi-highlands-and-alterac-mountains",
-            sourceActionID = "turnin-1450-gryphon-master-talonaxe",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -328,6 +309,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-turnin-1450-gryphon-master-talonaxe",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 1449 } } },
+            route = {
+                {
+                    label = "Gryphon Master Talonaxe",
+                    mapID = 1425,
+                    offMapText = "Travel to Gryphon Master Talonaxe in The Hinterlands.",
+                    x = 0.0976,
+                    y = 0.4448,
+                },
+            },
+            sourceActionID = "turnin-1450-gryphon-master-talonaxe",
+            sourceGuide = "leveling-era-alliance-arathi-highlands-and-alterac-mountains",
+            sourceStep = 33,
+            text = "Turn in Gryphon Master Talonaxe to Gryphon Master Talonaxe.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 1451, state = "activeOrCompleted" } },
@@ -404,25 +404,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 1451, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 38 } }, { race = { 1, 3, 4, 7, 95 } } } },
             dependsOn = { "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-accept-1451-rhapsody-shindigger" },
-            id = "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-turnin-1451-rhapsody-shindigger",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 1450 } } },
-            route = {
-                {
-                    label = "Rhapsody Shindigger",
-                    mapID = 1425,
-                    offMapText = "Travel to Rhapsody Shindigger in The Hinterlands.",
-                    x = 0.2694,
-                    y = 0.4859,
-                },
-            },
-            sourceStep = 34,
-            text = "Turn in Rhapsody Shindigger to Rhapsody Shindigger.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-arathi-highlands-and-alterac-mountains",
-            sourceActionID = "turnin-1451-rhapsody-shindigger",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -471,6 +452,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-arathi-highlands-and-alterac-mountains-turnin-1451-rhapsody-shindigger",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 1450 } } },
+            route = {
+                {
+                    label = "Rhapsody Shindigger",
+                    mapID = 1425,
+                    offMapText = "Travel to Rhapsody Shindigger in The Hinterlands.",
+                    x = 0.2694,
+                    y = 0.4859,
+                },
+            },
+            sourceActionID = "turnin-1451-rhapsody-shindigger",
+            sourceGuide = "leveling-era-alliance-arathi-highlands-and-alterac-mountains",
+            sourceStep = 34,
+            text = "Turn in Rhapsody Shindigger to Rhapsody Shindigger.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 1452, state = "activeOrCompleted" } },
@@ -1100,25 +1100,6 @@ ns:RegisterGuide({
                 "alliance-leveling-era-alliance-feralas-and-tanaris-objective-1452-2-ironfur-liver",
                 "alliance-leveling-era-alliance-feralas-and-tanaris-objective-1452-1-roc-gizzard",
             },
-            id = "alliance-leveling-era-alliance-the-hinterlands-turnin-1452-rhapsody-s-kalimdor-kocktail",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 1451 } } },
-            route = {
-                {
-                    label = "Rhapsody Shindigger",
-                    mapID = 1425,
-                    offMapText = "Travel to Rhapsody Shindigger in The Hinterlands.",
-                    x = 0.2694,
-                    y = 0.4859,
-                },
-            },
-            sourceStep = 2,
-            text = "Turn in Rhapsody's Kalimdor Kocktail to Rhapsody Shindigger.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-the-hinterlands",
-            sourceActionID = "turnin-1452-rhapsody-s-kalimdor-kocktail",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -1181,6 +1162,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-the-hinterlands-turnin-1452-rhapsody-s-kalimdor-kocktail",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 1451 } } },
+            route = {
+                {
+                    label = "Rhapsody Shindigger",
+                    mapID = 1425,
+                    offMapText = "Travel to Rhapsody Shindigger in The Hinterlands.",
+                    x = 0.2694,
+                    y = 0.4859,
+                },
+            },
+            sourceActionID = "turnin-1452-rhapsody-s-kalimdor-kocktail",
+            sourceGuide = "leveling-era-alliance-the-hinterlands",
+            sourceStep = 2,
+            text = "Turn in Rhapsody's Kalimdor Kocktail to Rhapsody Shindigger.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 1469, state = "activeOrCompleted" } },
@@ -1337,13 +1337,13 @@ ns:RegisterGuide({
                     y = 0.4456,
                 },
             },
+            sourceActionID = "turnin-2880-troll-necklace-bounty",
+            sourceGuide = "leveling-era-alliance-the-hinterlands",
             sourceStep = 9,
             text = "Turn in Troll Necklace Bounty to Fraggar Thundermantle.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-the-hinterlands",
-            sourceActionID = "turnin-2880-troll-necklace-bounty",
         },
         {
             complete = { quest = { id = 2877, state = "activeOrCompleted" } },
@@ -1401,13 +1401,13 @@ ns:RegisterGuide({
                     y = 0.4448,
                 },
             },
+            sourceActionID = "turnin-2988-witherbark-cages",
+            sourceGuide = "leveling-era-alliance-the-hinterlands",
             sourceStep = 10,
             text = "Turn in Witherbark Cages to Gryphon Master Talonaxe.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-the-hinterlands",
-            sourceActionID = "turnin-2988-witherbark-cages",
         },
         {
             complete = { quest = { id = 2989, state = "activeOrCompleted" } },
@@ -1553,13 +1553,13 @@ ns:RegisterGuide({
                     y = 0.3766,
                 },
             },
+            sourceActionID = "turnin-485-find-oox-09-hl",
+            sourceGuide = "leveling-era-alliance-the-hinterlands",
             sourceStep = 17,
             text = "Turn in Find OOX-09/HL! to Homing Robot OOX-09/HL.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-the-hinterlands",
-            sourceActionID = "turnin-485-find-oox-09-hl",
         },
         {
             id = "visit-entry-leveling-era-alliance-stranglethorn-vale-part-4",
@@ -1666,25 +1666,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 1469, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 38 } }, { race = { 1, 3, 4, 7, 95 } } } },
             dependsOn = {},
-            id = "alliance-leveling-era-alliance-stranglethorn-vale-part-4-turnin-1469-rhapsody-s-tale",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 1452 } } },
-            route = {
-                {
-                    label = "Brohann Caskbelly",
-                    mapID = 1453,
-                    offMapText = "Travel to Brohann Caskbelly in Stormwind City.",
-                    x = 0.6433,
-                    y = 0.2066,
-                },
-            },
-            sourceStep = 27,
-            text = "Turn in Rhapsody's Tale to Brohann Caskbelly.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-stranglethorn-vale-part-4",
-            sourceActionID = "turnin-1469-rhapsody-s-tale",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -1761,6 +1742,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-stranglethorn-vale-part-4-turnin-1469-rhapsody-s-tale",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 1452 } } },
+            route = {
+                {
+                    label = "Brohann Caskbelly",
+                    mapID = 1453,
+                    offMapText = "Travel to Brohann Caskbelly in Stormwind City.",
+                    x = 0.6433,
+                    y = 0.2066,
+                },
+            },
+            sourceActionID = "turnin-1469-rhapsody-s-tale",
+            sourceGuide = "leveling-era-alliance-stranglethorn-vale-part-4",
+            sourceStep = 27,
+            text = "Turn in Rhapsody's Tale to Brohann Caskbelly.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             id = "visit-entry-leveling-era-alliance-blasted-lands-and-burning-steppes",
@@ -1776,25 +1776,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 2989, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 40 } }, { race = { 1, 3, 4, 7, 95 } } } },
             dependsOn = {},
-            id = "alliance-leveling-era-alliance-blasted-lands-and-burning-steppes-turnin-2989-the-altar-of-zul",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 2988 } } },
-            route = {
-                {
-                    label = "Gryphon Master Talonaxe",
-                    mapID = 1425,
-                    offMapText = "Travel to Gryphon Master Talonaxe in The Hinterlands.",
-                    x = 0.0976,
-                    y = 0.4448,
-                },
-            },
-            sourceStep = 47,
-            text = "Turn in The Altar of Zul to Gryphon Master Talonaxe.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-blasted-lands-and-burning-steppes",
-            sourceActionID = "turnin-2989-the-altar-of-zul",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -1815,6 +1796,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-blasted-lands-and-burning-steppes-turnin-2989-the-altar-of-zul",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 2988 } } },
+            route = {
+                {
+                    label = "Gryphon Master Talonaxe",
+                    mapID = 1425,
+                    offMapText = "Travel to Gryphon Master Talonaxe in The Hinterlands.",
+                    x = 0.0976,
+                    y = 0.4448,
+                },
+            },
+            sourceActionID = "turnin-2989-the-altar-of-zul",
+            sourceGuide = "leveling-era-alliance-blasted-lands-and-burning-steppes",
+            sourceStep = 47,
+            text = "Turn in The Altar of Zul to Gryphon Master Talonaxe.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 2877, state = "complete" } },
@@ -1851,82 +1851,98 @@ ns:RegisterGuide({
                     y = 0.4456,
                 },
             },
+            sourceActionID = "turnin-2877-skulk-rock-clean-up",
+            sourceGuide = "leveling-era-alliance-blasted-lands-and-burning-steppes",
             sourceStep = 48,
             text = "Turn in Skulk Rock Clean-up to Fraggar Thundermantle.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-blasted-lands-and-burning-steppes",
-            sourceActionID = "turnin-2877-skulk-rock-clean-up",
         },
         {
+            checkpointQuest = 836,
+            complete = { level = { min = 43 } },
+            conditions = { all = { { faction = "Alliance" } } },
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 836, state = "activeOrCompleted" } },
+                        {
+                            any = {
+                                { quest = { id = 836, state = "activeOrCompleted" } },
+                                {
+                                    all = {
+                                        {
+                                            any = {
+                                                {
+                                                    any = {
+                                                        { quest = { id = 485, state = "activeOrCompleted" } },
+                                                        { all = { { item = { minCount = 1, name = "OOX-09/HL Distress Beacon" } } } },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
             id = "alliance-extra-836-level",
             kind = "note",
-            checkpointQuest = 836,
-            text = "Reach level 48 before this visit.",
-            conditions = { all = { { faction = "Alliance" } } },
-            complete = { level = { min = 48 } },
-            requiredLevel = 48,
-            excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 836, state = "activeOrCompleted" } },
-                        {
-                            any = {
-                                { quest = { id = 836, state = "activeOrCompleted" } },
-                                {
-                                    all = {
-                                        {
-                                            any = {
-                                                {
-                                                    any = {
-                                                        { quest = { id = 485, state = "activeOrCompleted" } },
-                                                        { all = { { item = { name = "OOX-09/HL Distress Beacon", minCount = 1 } } } },
-                                                    },
-                                                },
-                                            },
-                                        },
-                                    },
-                                },
-                            },
-                        },
-                    },
-                },
-            },
+            requiredLevel = 43,
+            text = "Reach level 43 before this visit.",
         },
         {
-            id = "alliance-extra-836-accept",
-            kind = "accept",
-            text = "Accept Rescue OOX-09/HL! from Homing Robot OOX-09/HL.",
-            conditions = { all = { { faction = "Alliance" }, { level = { min = 43 } } } },
-            route = {
-                {
-                    mapID = 1425,
-                    x = 0.494,
-                    y = 0.376,
-                    label = "Homing Robot OOX-09/HL",
-                    offMapText = "Travel to Homing Robot OOX-09/HL in The Hinterlands.",
-                },
-            },
             complete = { quest = { id = 836, state = "activeOrCompleted" } },
-            requiredQuests = { { mode = "any", quests = { 485 } } },
-            useClientText = false,
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 43 } } } },
             dependsOn = { "alliance-extra-836-level" },
             excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 836, state = "activeOrCompleted" } },
-                        {
+                any = {
+                    {
+                        ["not"] = {
                             any = {
                                 { quest = { id = 836, state = "activeOrCompleted" } },
                                 {
-                                    all = {
+                                    any = {
+                                        { quest = { id = 836, state = "activeOrCompleted" } },
                                         {
-                                            any = {
+                                            all = {
                                                 {
                                                     any = {
-                                                        { quest = { id = 485, state = "activeOrCompleted" } },
-                                                        { all = { { item = { name = "OOX-09/HL Distress Beacon", minCount = 1 } } } },
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 485, state = "activeOrCompleted" } },
+                                                                { all = { { item = { minCount = 1, name = "OOX-09/HL Distress Beacon" } } } },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 836, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 836, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 485, state = "activeOrCompleted" } },
+                                                                { all = { { item = { minCount = 1, name = "OOX-09/HL Distress Beacon" } } } },
+                                                            },
+                                                        },
                                                     },
                                                 },
                                             },
@@ -1938,78 +1954,70 @@ ns:RegisterGuide({
                     },
                 },
             },
-        },
-        {
-            id = "alliance-extra-836-objective",
-            kind = "objective",
-            text = "Escort OOX-09/HL to the shoreline beyond Overlook Cliff. Follow the quest log for the destination.",
-            conditions = { all = { { faction = "Alliance" }, { level = { min = 43 } } } },
-            route = {},
-            complete = { quest = { id = 836, state = "complete" } },
+            id = "alliance-extra-836-accept",
+            kind = "accept",
             requiredQuests = { { mode = "any", quests = { 485 } } },
-            useClientText = false,
-            dependsOn = { "alliance-extra-836-accept" },
-            useClientPin = true,
-            excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 836, state = "activeOrCompleted" } },
-                        {
-                            any = {
-                                { quest = { id = 836, state = "activeOrCompleted" } },
-                                {
-                                    all = {
-                                        {
-                                            any = {
-                                                {
-                                                    any = {
-                                                        { quest = { id = 485, state = "activeOrCompleted" } },
-                                                        { all = { { item = { name = "OOX-09/HL Distress Beacon", minCount = 1 } } } },
-                                                    },
-                                                },
-                                            },
-                                        },
-                                    },
-                                },
-                            },
-                        },
-                    },
-                },
-            },
-        },
-        {
-            id = "alliance-extra-836-turnin",
-            kind = "turnin",
-            text = "Turn in Rescue OOX-09/HL! to Oglethorpe Obnoticus.",
-            conditions = { all = { { faction = "Alliance" }, { level = { min = 43 } } } },
             route = {
                 {
-                    mapID = 1434,
-                    x = 0.282,
-                    y = 0.762,
-                    label = "Oglethorpe Obnoticus",
-                    offMapText = "Travel to Oglethorpe Obnoticus in Stranglethorn Vale.",
+                    label = "Homing Robot OOX-09/HL",
+                    mapID = 1425,
+                    offMapText = "Travel to Homing Robot OOX-09/HL in The Hinterlands.",
+                    x = 0.494,
+                    y = 0.376,
                 },
             },
-            complete = { quest = { id = 836, state = "completed" } },
-            requiredQuests = { { mode = "any", quests = { 485 } } },
+            text = "Accept Rescue OOX-09/HL! from Homing Robot OOX-09/HL.",
             useClientText = false,
-            dependsOn = { "alliance-extra-836-objective" },
+        },
+        {
+            complete = { quest = { id = 836, state = "complete" } },
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 43 } } } },
+            dependsOn = { "alliance-extra-836-accept" },
             excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 836, state = "activeOrCompleted" } },
-                        {
+                any = {
+                    {
+                        ["not"] = {
                             any = {
                                 { quest = { id = 836, state = "activeOrCompleted" } },
                                 {
-                                    all = {
+                                    any = {
+                                        { quest = { id = 836, state = "activeOrCompleted" } },
                                         {
-                                            any = {
+                                            all = {
                                                 {
                                                     any = {
-                                                        { quest = { id = 485, state = "activeOrCompleted" } },
-                                                        { all = { { item = { name = "OOX-09/HL Distress Beacon", minCount = 1 } } } },
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 485, state = "activeOrCompleted" } },
+                                                                { all = { { item = { minCount = 1, name = "OOX-09/HL Distress Beacon" } } } },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 836, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 836, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 485, state = "activeOrCompleted" } },
+                                                                { all = { { item = { minCount = 1, name = "OOX-09/HL Distress Beacon" } } } },
+                                                            },
+                                                        },
                                                     },
                                                 },
                                             },
@@ -2021,6 +2029,90 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-extra-836-objective",
+            kind = "objective",
+            requiredQuests = { { mode = "any", quests = { 485 } } },
+            route = {},
+            text = "Escort OOX-09/HL to the shoreline beyond Overlook Cliff. Follow the quest log for the destination.",
+            useClientPin = true,
+            useClientText = false,
+        },
+        {
+            complete = { quest = { id = 836, state = "completed" } },
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 43 } } } },
+            dependsOn = { "alliance-extra-836-objective" },
+            excludeWhen = {
+                any = {
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 836, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 836, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 485, state = "activeOrCompleted" } },
+                                                                { all = { { item = { minCount = 1, name = "OOX-09/HL Distress Beacon" } } } },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 836, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 836, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 485, state = "activeOrCompleted" } },
+                                                                { all = { { item = { minCount = 1, name = "OOX-09/HL Distress Beacon" } } } },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
+            id = "alliance-extra-836-turnin",
+            kind = "turnin",
+            requiredQuests = { { mode = "any", quests = { 485 } } },
+            route = {
+                {
+                    label = "Oglethorpe Obnoticus",
+                    mapID = 1434,
+                    offMapText = "Travel to Oglethorpe Obnoticus in Stranglethorn Vale.",
+                    x = 0.282,
+                    y = 0.762,
+                },
+            },
+            text = "Turn in Rescue OOX-09/HL! to Oglethorpe Obnoticus.",
+            useClientPin = true,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             id = "visit-entry-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows",
@@ -2101,13 +2193,13 @@ ns:RegisterGuide({
             route = {
                 { label = "Fel'zerul", mapID = 1435, offMapText = "Travel to Fel'zerul in Swamp of Sorrows.", x = 0.4793, y = 0.5479 },
             },
+            sourceActionID = "turnin-1424-pool-of-tears",
+            sourceGuide = "leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows",
             sourceStep = 48,
             text = "Turn in Pool of Tears to Fel'zerul.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows",
-            sourceActionID = "turnin-1424-pool-of-tears",
         },
         {
             id = "visit-entry-leveling-era-horde-feralas",
@@ -2252,13 +2344,13 @@ ns:RegisterGuide({
                     y = 0.3692,
                 },
             },
+            sourceActionID = "turnin-649-ripple-recovery",
+            sourceGuide = "leveling-era-horde-tanaris-and-dustwallow-marsh",
             sourceStep = 98,
             text = "Turn in Ripple Recovery to Malton Droffers.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-tanaris-and-dustwallow-marsh",
-            sourceActionID = "turnin-649-ripple-recovery",
         },
         {
             complete = { quest = { id = 650, state = "activeOrCompleted" } },
@@ -2426,25 +2518,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 650, state = "completed" } },
             conditions = { all = { { faction = "Horde" }, { level = { min = 42 } }, { race = { 2, 5, 6, 8, 96 } } } },
             dependsOn = {},
-            id = "horde-leveling-era-horde-the-hinterlands-turnin-650-ripple-recovery",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 649 } } },
-            route = {
-                {
-                    label = "Gilveradin Sunchaser",
-                    mapID = 1425,
-                    offMapText = "Travel to Gilveradin Sunchaser in The Hinterlands.",
-                    x = 0.2671,
-                    y = 0.4859,
-                },
-            },
-            sourceStep = 9,
-            text = "Turn in Ripple Recovery to Gilveradin Sunchaser.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-the-hinterlands",
-            sourceActionID = "turnin-650-ripple-recovery",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -2465,6 +2538,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-the-hinterlands-turnin-650-ripple-recovery",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 649 } } },
+            route = {
+                {
+                    label = "Gilveradin Sunchaser",
+                    mapID = 1425,
+                    offMapText = "Travel to Gilveradin Sunchaser in The Hinterlands.",
+                    x = 0.2671,
+                    y = 0.4859,
+                },
+            },
+            sourceActionID = "turnin-650-ripple-recovery",
+            sourceGuide = "leveling-era-horde-the-hinterlands",
+            sourceStep = 9,
+            text = "Turn in Ripple Recovery to Gilveradin Sunchaser.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 77, state = "activeOrCompleted" } },
@@ -2631,13 +2723,13 @@ ns:RegisterGuide({
             kind = "turnin",
             requiredQuests = {},
             route = { { label = "Lard", mapID = 1425, offMapText = "Travel to Lard in The Hinterlands.", x = 0.7814, y = 0.8138 } },
+            sourceActionID = "turnin-7840-lard-lost-his-lunch",
+            sourceGuide = "leveling-era-horde-the-hinterlands",
             sourceStep = 18,
             text = "Turn in Lard Lost His Lunch to Lard.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-the-hinterlands",
-            sourceActionID = "turnin-7840-lard-lost-his-lunch",
         },
         {
             complete = { quest = { id = 7815, state = "completed" } },
@@ -2658,13 +2750,13 @@ ns:RegisterGuide({
                     y = 0.8153,
                 },
             },
+            sourceActionID = "turnin-7815-snapjaws-mon",
+            sourceGuide = "leveling-era-horde-the-hinterlands",
             sourceStep = 19,
             text = "Turn in Snapjaws, Mon! to Katoom the Angler.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-the-hinterlands",
-            sourceActionID = "turnin-7815-snapjaws-mon",
         },
         {
             complete = { quest = { id = 7828, state = "activeOrCompleted" } },
@@ -3074,13 +3166,13 @@ ns:RegisterGuide({
                     y = 0.3766,
                 },
             },
+            sourceActionID = "turnin-485-find-oox-09-hl",
+            sourceGuide = "leveling-era-horde-the-hinterlands",
             sourceStep = 42,
             text = "Turn in Find OOX-09/HL! to Homing Robot OOX-09/HL.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-the-hinterlands",
-            sourceActionID = "turnin-485-find-oox-09-hl",
         },
         {
             complete = { quest = { id = 2742, state = "completed" } },
@@ -3092,13 +3184,13 @@ ns:RegisterGuide({
             route = {
                 { label = "Rin'ji is Trapped!", mapID = 1425, offMapText = "Travel to Rin'ji is Trapped!.", x = 0.863, y = 0.5901 },
             },
+            sourceActionID = "turnin-2742-rin-ji-is-trapped",
+            sourceGuide = "leveling-era-horde-the-hinterlands",
             sourceStep = 43,
             text = "Turn in Rin'ji is Trapped!.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-the-hinterlands",
-            sourceActionID = "turnin-2742-rin-ji-is-trapped",
         },
         {
             complete = { quest = { id = 2782, state = "activeOrCompleted" } },
@@ -3168,13 +3260,13 @@ ns:RegisterGuide({
                     y = 0.8012,
                 },
             },
+            sourceActionID = "turnin-7839-vilebranch-hooligans",
+            sourceGuide = "leveling-era-horde-the-hinterlands",
             sourceStep = 44,
             text = "Turn in Vilebranch Hooligans to Smith Slagtree.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-the-hinterlands",
-            sourceActionID = "turnin-7839-vilebranch-hooligans",
         },
         {
             complete = { quest = { id = 7844, state = "completed" } },
@@ -3196,13 +3288,13 @@ ns:RegisterGuide({
                     y = 0.7825,
                 },
             },
+            sourceActionID = "turnin-7844-cannibalistic-cousins",
+            sourceGuide = "leveling-era-horde-the-hinterlands",
             sourceStep = 45,
             text = "Turn in Cannibalistic Cousins to Mystic Yayo'jin.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-the-hinterlands",
-            sourceActionID = "turnin-7844-cannibalistic-cousins",
         },
         {
             complete = { quest = { id = 7841, state = "completed" } },
@@ -3226,13 +3318,13 @@ ns:RegisterGuide({
                     y = 0.7908,
                 },
             },
+            sourceActionID = "turnin-7841-message-to-the-wildhammer",
+            sourceGuide = "leveling-era-horde-the-hinterlands",
             sourceStep = 46,
             text = "Turn in Message to the Wildhammer to Otho Moji'ko.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-the-hinterlands",
-            sourceActionID = "turnin-7841-message-to-the-wildhammer",
         },
         {
             complete = { quest = { id = 7842, state = "activeOrCompleted" } },
@@ -3281,25 +3373,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 7842, state = "completed" } },
             conditions = { all = { { faction = "Horde" }, { level = { min = 44 } }, { race = { 2, 5, 6, 8, 96 } } } },
             dependsOn = { "horde-leveling-era-horde-the-hinterlands-accept-7842-another-message-to-the-wildhammer" },
-            id = "horde-leveling-era-horde-the-hinterlands-turnin-7842-another-message-to-the-wildhammer",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 7841 } } },
-            route = {
-                {
-                    label = "Otho Moji'ko",
-                    mapID = 1425,
-                    offMapText = "Travel to Otho Moji'ko in The Hinterlands.",
-                    x = 0.794,
-                    y = 0.7908,
-                },
-            },
-            sourceStep = 47,
-            text = "Turn in Another Message to the Wildhammer to Otho Moji'ko.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-the-hinterlands",
-            sourceActionID = "turnin-7842-another-message-to-the-wildhammer",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -3320,6 +3393,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-the-hinterlands-turnin-7842-another-message-to-the-wildhammer",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 7841 } } },
+            route = {
+                {
+                    label = "Otho Moji'ko",
+                    mapID = 1425,
+                    offMapText = "Travel to Otho Moji'ko in The Hinterlands.",
+                    x = 0.794,
+                    y = 0.7908,
+                },
+            },
+            sourceActionID = "turnin-7842-another-message-to-the-wildhammer",
+            sourceGuide = "leveling-era-horde-the-hinterlands",
+            sourceStep = 47,
+            text = "Turn in Another Message to the Wildhammer to Otho Moji'ko.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 7843, state = "activeOrCompleted" } },
@@ -3398,13 +3490,13 @@ ns:RegisterGuide({
                     y = 0.7953,
                 },
             },
+            sourceActionID = "turnin-7828-stalking-the-stalkers",
+            sourceGuide = "leveling-era-horde-the-hinterlands",
             sourceStep = 49,
             text = "Turn in Stalking the Stalkers to Huntsman Markhor.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-the-hinterlands",
-            sourceActionID = "turnin-7828-stalking-the-stalkers",
         },
         {
             complete = { quest = { id = 7829, state = "completed" } },
@@ -3425,13 +3517,13 @@ ns:RegisterGuide({
                     y = 0.7953,
                 },
             },
+            sourceActionID = "turnin-7829-hunt-the-savages",
+            sourceGuide = "leveling-era-horde-the-hinterlands",
             sourceStep = 49,
             text = "Turn in Hunt the Savages to Huntsman Markhor.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-the-hinterlands",
-            sourceActionID = "turnin-7829-hunt-the-savages",
         },
         {
             complete = { quest = { id = 7830, state = "completed" } },
@@ -3452,13 +3544,13 @@ ns:RegisterGuide({
                     y = 0.7953,
                 },
             },
+            sourceActionID = "turnin-7830-avenging-the-fallen",
+            sourceGuide = "leveling-era-horde-the-hinterlands",
             sourceStep = 49,
             text = "Turn in Avenging the Fallen to Huntsman Markhor.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-the-hinterlands",
-            sourceActionID = "turnin-7830-avenging-the-fallen",
         },
         {
             complete = { quest = { id = 2933, state = "completed" } },
@@ -3476,13 +3568,13 @@ ns:RegisterGuide({
                     y = 0.1906,
                 },
             },
+            sourceActionID = "turnin-2933-venom-bottles",
+            sourceGuide = "leveling-era-horde-the-hinterlands",
             sourceStep = 50,
             text = "Turn in Venom Bottles to Apothecary Lydon.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-the-hinterlands",
-            sourceActionID = "turnin-2933-venom-bottles",
         },
         {
             complete = { quest = { id = 2934, state = "activeOrCompleted" } },
@@ -3591,25 +3683,6 @@ ns:RegisterGuide({
                 "horde-leveling-era-horde-the-hinterlands-accept-77-a-sticky-situation",
                 "horde-leveling-era-horde-the-hinterlands-objective-77-1-hinterlands-honey-ripple",
             },
-            id = "horde-leveling-era-horde-the-hinterlands-turnin-77-a-sticky-situation",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 650 } } },
-            route = {
-                {
-                    label = "Gilveradin Sunchaser",
-                    mapID = 1425,
-                    offMapText = "Travel to Gilveradin Sunchaser in The Hinterlands.",
-                    x = 0.2671,
-                    y = 0.4859,
-                },
-            },
-            sourceStep = 52,
-            text = "Turn in A Sticky Situation to Gilveradin Sunchaser.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-the-hinterlands",
-            sourceActionID = "turnin-77-a-sticky-situation",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -3644,30 +3717,30 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-the-hinterlands-turnin-77-a-sticky-situation",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 650 } } },
+            route = {
+                {
+                    label = "Gilveradin Sunchaser",
+                    mapID = 1425,
+                    offMapText = "Travel to Gilveradin Sunchaser in The Hinterlands.",
+                    x = 0.2671,
+                    y = 0.4859,
+                },
+            },
+            sourceActionID = "turnin-77-a-sticky-situation",
+            sourceGuide = "leveling-era-horde-the-hinterlands",
+            sourceStep = 52,
+            text = "Turn in A Sticky Situation to Gilveradin Sunchaser.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 1429, state = "completed" } },
             conditions = { all = { { faction = "Horde" }, { level = { min = 38 } }, { race = { 2, 5, 6, 8, 96 } } } },
             dependsOn = {},
-            id = "horde-leveling-era-horde-the-hinterlands-turnin-1429-the-atal-ai-exile",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 1424 } } },
-            route = {
-                {
-                    label = "Atal'ai Exile",
-                    mapID = 1425,
-                    offMapText = "Travel to Atal'ai Exile in The Hinterlands.",
-                    x = 0.3375,
-                    y = 0.7521,
-                },
-            },
-            sourceStep = 54,
-            text = "Turn in The Atal'ai Exile to Atal'ai Exile.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-the-hinterlands",
-            sourceActionID = "turnin-1429-the-atal-ai-exile",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -3688,6 +3761,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-the-hinterlands-turnin-1429-the-atal-ai-exile",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 1424 } } },
+            route = {
+                {
+                    label = "Atal'ai Exile",
+                    mapID = 1425,
+                    offMapText = "Travel to Atal'ai Exile in The Hinterlands.",
+                    x = 0.3375,
+                    y = 0.7521,
+                },
+            },
+            sourceActionID = "turnin-1429-the-atal-ai-exile",
+            sourceGuide = "leveling-era-horde-the-hinterlands",
+            sourceStep = 54,
+            text = "Turn in The Atal'ai Exile to Atal'ai Exile.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 1444, state = "activeOrCompleted" } },
@@ -3800,12 +3892,12 @@ ns:RegisterGuide({
             kind = "turnin",
             requiredQuests = {},
             route = { { label = "Find OOX-09/HL!", mapID = 1425, offMapText = "Travel to Find OOX-09/HL!.", x = 0.358, y = 0.6419 } },
+            sourceActionID = "turnin-485-find-oox-09-hl-2",
+            sourceGuide = "leveling-era-horde-the-hinterlands",
             text = "Turn in Find OOX-09/HL!.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-the-hinterlands",
-            sourceActionID = "turnin-485-find-oox-09-hl-2",
         },
         {
             complete = { quest = { id = 7843, state = "completed" } },
@@ -3814,25 +3906,6 @@ ns:RegisterGuide({
                 "horde-leveling-era-horde-the-hinterlands-accept-7843-the-final-message-to-the-wildhammer",
                 "horde-leveling-era-horde-the-hinterlands-objective-7843-1-final-message-to-the-wildhammer",
             },
-            id = "horde-leveling-era-horde-the-hinterlands-turnin-7843-the-final-message-to-the-wildhammer",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 7842 } } },
-            route = {
-                {
-                    label = "Otho Moji'ko",
-                    mapID = 1425,
-                    offMapText = "Travel to Otho Moji'ko in The Hinterlands.",
-                    x = 0.7938,
-                    y = 0.7908,
-                },
-            },
-            sourceStep = 59,
-            text = "Turn in The Final Message to the Wildhammer to Otho Moji'ko.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-the-hinterlands",
-            sourceActionID = "turnin-7843-the-final-message-to-the-wildhammer",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -3867,6 +3940,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-the-hinterlands-turnin-7843-the-final-message-to-the-wildhammer",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 7842 } } },
+            route = {
+                {
+                    label = "Otho Moji'ko",
+                    mapID = 1425,
+                    offMapText = "Travel to Otho Moji'ko in The Hinterlands.",
+                    x = 0.7938,
+                    y = 0.7908,
+                },
+            },
+            sourceActionID = "turnin-7843-the-final-message-to-the-wildhammer",
+            sourceGuide = "leveling-era-horde-the-hinterlands",
+            sourceStep = 59,
+            text = "Turn in The Final Message to the Wildhammer to Otho Moji'ko.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 2934, state = "completed" } },
@@ -3875,25 +3967,6 @@ ns:RegisterGuide({
                 "horde-leveling-era-horde-the-hinterlands-accept-2934-undamaged-venom-sac",
                 "horde-leveling-era-horde-the-hinterlands-objective-2934-1-undamaged-venom-sac",
             },
-            id = "horde-leveling-era-horde-the-hinterlands-turnin-2934-undamaged-venom-sac",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 2933 } } },
-            route = {
-                {
-                    label = "Apothecary Lydon",
-                    mapID = 1424,
-                    offMapText = "Travel to Apothecary Lydon in Hillsbrad Foothills.",
-                    x = 0.6144,
-                    y = 0.1907,
-                },
-            },
-            sourceStep = 60,
-            text = "Turn in Undamaged Venom Sac to Apothecary Lydon.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-the-hinterlands",
-            sourceActionID = "turnin-2934-undamaged-venom-sac",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -3914,6 +3987,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-the-hinterlands-turnin-2934-undamaged-venom-sac",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 2933 } } },
+            route = {
+                {
+                    label = "Apothecary Lydon",
+                    mapID = 1424,
+                    offMapText = "Travel to Apothecary Lydon in Hillsbrad Foothills.",
+                    x = 0.6144,
+                    y = 0.1907,
+                },
+            },
+            sourceActionID = "turnin-2934-undamaged-venom-sac",
+            sourceGuide = "leveling-era-horde-the-hinterlands",
+            sourceStep = 60,
+            text = "Turn in Undamaged Venom Sac to Apothecary Lydon.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { questObjective = { count = 1, id = 2995, index = 1 } },
@@ -3985,37 +4077,18 @@ ns:RegisterGuide({
                     y = 0.3285,
                 },
             },
+            sourceActionID = "turnin-2995-lines-of-communication",
+            sourceGuide = "leveling-era-horde-the-hinterlands",
             sourceStep = 61,
             text = "Turn in Lines of Communication to Oran Snakewrithe.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-the-hinterlands",
-            sourceActionID = "turnin-2995-lines-of-communication",
         },
         {
             complete = { quest = { id = 2782, state = "completed" } },
             conditions = { all = { { faction = "Horde" }, { level = { min = 42 } }, { race = { 2, 5, 6, 8, 96 } } } },
             dependsOn = { "horde-leveling-era-horde-the-hinterlands-accept-2782-rin-ji-s-secret" },
-            id = "horde-leveling-era-horde-the-hinterlands-turnin-2782-rin-ji-s-secret",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 2742 } } },
-            route = {
-                {
-                    label = "Oran Snakewrithe",
-                    mapID = 1458,
-                    offMapText = "Travel to Oran Snakewrithe in Undercity.",
-                    x = 0.7307,
-                    y = 0.3285,
-                },
-            },
-            sourceStep = 61,
-            text = "Turn in Rin'ji's Secret to Oran Snakewrithe.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-the-hinterlands",
-            sourceActionID = "turnin-2782-rin-ji-s-secret",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -4036,6 +4109,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-the-hinterlands-turnin-2782-rin-ji-s-secret",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 2742 } } },
+            route = {
+                {
+                    label = "Oran Snakewrithe",
+                    mapID = 1458,
+                    offMapText = "Travel to Oran Snakewrithe in Undercity.",
+                    x = 0.7307,
+                    y = 0.3285,
+                },
+            },
+            sourceActionID = "turnin-2782-rin-ji-s-secret",
+            sourceGuide = "leveling-era-horde-the-hinterlands",
+            sourceStep = 61,
+            text = "Turn in Rin'ji's Secret to Oran Snakewrithe.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 8273, state = "activeOrCompleted" } },
@@ -4108,19 +4200,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 1444, state = "completed" } },
             conditions = { all = { { faction = "Horde" }, { level = { min = 38 } }, { race = { 2, 5, 6, 8, 96 } } } },
             dependsOn = {},
-            id = "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-part-2-turnin-1444-return-to-fel-zerul",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 1429 } } },
-            route = {
-                { label = "Fel'zerul", mapID = 1435, offMapText = "Travel to Fel'zerul in Swamp of Sorrows.", x = 0.4793, y = 0.5479 },
-            },
-            sourceStep = 23,
-            text = "Turn in Return to Fel'Zerul to Fel'zerul.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-part-2",
-            sourceActionID = "turnin-1444-return-to-fel-zerul",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -4155,6 +4234,19 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-part-2-turnin-1444-return-to-fel-zerul",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 1429 } } },
+            route = {
+                { label = "Fel'zerul", mapID = 1435, offMapText = "Travel to Fel'zerul in Swamp of Sorrows.", x = 0.4793, y = 0.5479 },
+            },
+            sourceActionID = "turnin-1444-return-to-fel-zerul",
+            sourceGuide = "leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-part-2",
+            sourceStep = 23,
+            text = "Turn in Return to Fel'Zerul to Fel'zerul.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             id = "visit-entry-leveling-era-horde-felwood-and-winterspring-part-2",
@@ -4226,82 +4318,98 @@ ns:RegisterGuide({
                     y = 0.8153,
                 },
             },
+            sourceActionID = "turnin-7816-gammerita-mon",
+            sourceGuide = "leveling-era-horde-felwood-and-winterspring-part-2",
             sourceStep = 98,
             text = "Turn in Gammerita, Mon! to Katoom the Angler.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-felwood-and-winterspring-part-2",
-            sourceActionID = "turnin-7816-gammerita-mon",
         },
         {
+            checkpointQuest = 836,
+            complete = { level = { min = 43 } },
+            conditions = { all = { { faction = "Horde" } } },
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 836, state = "activeOrCompleted" } },
+                        {
+                            any = {
+                                { quest = { id = 836, state = "activeOrCompleted" } },
+                                {
+                                    all = {
+                                        {
+                                            any = {
+                                                {
+                                                    any = {
+                                                        { quest = { id = 485, state = "activeOrCompleted" } },
+                                                        { all = { { item = { minCount = 1, name = "OOX-09/HL Distress Beacon" } } } },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
             id = "horde-extra-836-level",
             kind = "note",
-            checkpointQuest = 836,
-            text = "Reach level 48 before this visit.",
-            conditions = { all = { { faction = "Horde" } } },
-            complete = { level = { min = 48 } },
-            requiredLevel = 48,
-            excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 836, state = "activeOrCompleted" } },
-                        {
-                            any = {
-                                { quest = { id = 836, state = "activeOrCompleted" } },
-                                {
-                                    all = {
-                                        {
-                                            any = {
-                                                {
-                                                    any = {
-                                                        { quest = { id = 485, state = "activeOrCompleted" } },
-                                                        { all = { { item = { name = "OOX-09/HL Distress Beacon", minCount = 1 } } } },
-                                                    },
-                                                },
-                                            },
-                                        },
-                                    },
-                                },
-                            },
-                        },
-                    },
-                },
-            },
+            requiredLevel = 43,
+            text = "Reach level 43 before this visit.",
         },
         {
-            id = "horde-extra-836-accept",
-            kind = "accept",
-            text = "Accept Rescue OOX-09/HL! from Homing Robot OOX-09/HL.",
-            conditions = { all = { { faction = "Horde" }, { level = { min = 43 } } } },
-            route = {
-                {
-                    mapID = 1425,
-                    x = 0.494,
-                    y = 0.376,
-                    label = "Homing Robot OOX-09/HL",
-                    offMapText = "Travel to Homing Robot OOX-09/HL in The Hinterlands.",
-                },
-            },
             complete = { quest = { id = 836, state = "activeOrCompleted" } },
-            requiredQuests = { { mode = "any", quests = { 485 } } },
-            useClientText = false,
+            conditions = { all = { { faction = "Horde" }, { level = { min = 43 } } } },
             dependsOn = { "horde-extra-836-level" },
             excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 836, state = "activeOrCompleted" } },
-                        {
+                any = {
+                    {
+                        ["not"] = {
                             any = {
                                 { quest = { id = 836, state = "activeOrCompleted" } },
                                 {
-                                    all = {
+                                    any = {
+                                        { quest = { id = 836, state = "activeOrCompleted" } },
                                         {
-                                            any = {
+                                            all = {
                                                 {
                                                     any = {
-                                                        { quest = { id = 485, state = "activeOrCompleted" } },
-                                                        { all = { { item = { name = "OOX-09/HL Distress Beacon", minCount = 1 } } } },
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 485, state = "activeOrCompleted" } },
+                                                                { all = { { item = { minCount = 1, name = "OOX-09/HL Distress Beacon" } } } },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 836, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 836, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 485, state = "activeOrCompleted" } },
+                                                                { all = { { item = { minCount = 1, name = "OOX-09/HL Distress Beacon" } } } },
+                                                            },
+                                                        },
                                                     },
                                                 },
                                             },
@@ -4313,78 +4421,112 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-extra-836-accept",
+            kind = "accept",
+            requiredQuests = { { mode = "any", quests = { 485 } } },
+            route = {
+                {
+                    label = "Homing Robot OOX-09/HL",
+                    mapID = 1425,
+                    offMapText = "Travel to Homing Robot OOX-09/HL in The Hinterlands.",
+                    x = 0.494,
+                    y = 0.376,
+                },
+            },
+            text = "Accept Rescue OOX-09/HL! from Homing Robot OOX-09/HL.",
+            useClientText = false,
         },
         {
+            complete = { quest = { id = 836, state = "complete" } },
+            conditions = { all = { { faction = "Horde" }, { level = { min = 43 } } } },
+            dependsOn = { "horde-extra-836-accept" },
+            excludeWhen = {
+                any = {
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 836, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 836, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 485, state = "activeOrCompleted" } },
+                                                                { all = { { item = { minCount = 1, name = "OOX-09/HL Distress Beacon" } } } },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 836, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 836, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 485, state = "activeOrCompleted" } },
+                                                                { all = { { item = { minCount = 1, name = "OOX-09/HL Distress Beacon" } } } },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
             id = "horde-extra-836-objective",
             kind = "objective",
-            text = "Escort OOX-09/HL to the shoreline beyond Overlook Cliff. Follow the quest log for the destination.",
-            conditions = { all = { { faction = "Horde" }, { level = { min = 43 } } } },
-            route = {},
-            complete = { quest = { id = 836, state = "complete" } },
             requiredQuests = { { mode = "any", quests = { 485 } } },
-            useClientText = false,
-            dependsOn = { "horde-extra-836-accept" },
+            route = {},
+            text = "Escort OOX-09/HL to the shoreline beyond Overlook Cliff. Follow the quest log for the destination.",
             useClientPin = true,
-            excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 836, state = "activeOrCompleted" } },
-                        {
-                            any = {
-                                { quest = { id = 836, state = "activeOrCompleted" } },
-                                {
-                                    all = {
-                                        {
-                                            any = {
-                                                {
-                                                    any = {
-                                                        { quest = { id = 485, state = "activeOrCompleted" } },
-                                                        { all = { { item = { name = "OOX-09/HL Distress Beacon", minCount = 1 } } } },
-                                                    },
-                                                },
-                                            },
-                                        },
-                                    },
-                                },
-                            },
-                        },
-                    },
-                },
-            },
+            useClientText = false,
         },
         {
-            id = "horde-extra-836-turnin",
-            kind = "turnin",
-            text = "Turn in Rescue OOX-09/HL! to Oglethorpe Obnoticus.",
-            conditions = { all = { { faction = "Horde" }, { level = { min = 43 } } } },
-            route = {
-                {
-                    mapID = 1434,
-                    x = 0.282,
-                    y = 0.762,
-                    label = "Oglethorpe Obnoticus",
-                    offMapText = "Travel to Oglethorpe Obnoticus in Stranglethorn Vale.",
-                },
-            },
             complete = { quest = { id = 836, state = "completed" } },
-            requiredQuests = { { mode = "any", quests = { 485 } } },
-            useClientText = false,
+            conditions = { all = { { faction = "Horde" }, { level = { min = 43 } } } },
             dependsOn = { "horde-extra-836-objective" },
             excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 836, state = "activeOrCompleted" } },
-                        {
+                any = {
+                    {
+                        ["not"] = {
                             any = {
                                 { quest = { id = 836, state = "activeOrCompleted" } },
                                 {
-                                    all = {
+                                    any = {
+                                        { quest = { id = 836, state = "activeOrCompleted" } },
                                         {
-                                            any = {
+                                            all = {
                                                 {
                                                     any = {
-                                                        { quest = { id = 485, state = "activeOrCompleted" } },
-                                                        { all = { { item = { name = "OOX-09/HL Distress Beacon", minCount = 1 } } } },
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 485, state = "activeOrCompleted" } },
+                                                                { all = { { item = { minCount = 1, name = "OOX-09/HL Distress Beacon" } } } },
+                                                            },
+                                                        },
                                                     },
                                                 },
                                             },
@@ -4394,38 +4536,21 @@ ns:RegisterGuide({
                             },
                         },
                     },
-                },
-            },
-        },
-        {
-            id = "horde-extra-2935-level",
-            kind = "note",
-            checkpointQuest = 2935,
-            text = "Reach level 45 before this visit.",
-            conditions = { all = { { faction = "Horde" } } },
-            complete = { level = { min = 45 } },
-            requiredLevel = 45,
-            excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 2935, state = "activeOrCompleted" } },
-                        {
+                    {
+                        ["not"] = {
                             any = {
-                                { quest = { id = 2935, state = "activeOrCompleted" } },
+                                { quest = { id = 836, state = "activeOrCompleted" } },
                                 {
-                                    all = {
-                                        { faction = "Horde" },
+                                    any = {
+                                        { quest = { id = 836, state = "activeOrCompleted" } },
                                         {
-                                            any = {
+                                            all = {
                                                 {
                                                     any = {
-                                                        { quest = { id = 2934, state = "activeOrCompleted" } },
                                                         {
-                                                            all = {
-                                                                { faction = "Horde" },
-                                                                {
-                                                                    any = { { any = { { quest = { id = 2933, state = "activeOrCompleted" } }, { all = { { faction = "Horde" } } } } } },
-                                                                },
+                                                            any = {
+                                                                { quest = { id = 485, state = "activeOrCompleted" } },
+                                                                { all = { { item = { minCount = 1, name = "OOX-09/HL Distress Beacon" } } } },
                                                             },
                                                         },
                                                     },
@@ -4439,45 +4564,139 @@ ns:RegisterGuide({
                     },
                 },
             },
-        },
-        {
-            id = "horde-extra-2935-accept",
-            kind = "accept",
-            text = "Accept Consult Master Gadrin from Apothecary Lydon.",
-            conditions = { all = { { faction = "Horde" }, { level = { min = 40 } } } },
+            id = "horde-extra-836-turnin",
+            kind = "turnin",
+            requiredQuests = { { mode = "any", quests = { 485 } } },
             route = {
                 {
-                    mapID = 1424,
-                    x = 0.614,
-                    y = 0.192,
-                    label = "Apothecary Lydon",
-                    offMapText = "Travel to Apothecary Lydon in Hillsbrad Foothills.",
+                    label = "Oglethorpe Obnoticus",
+                    mapID = 1434,
+                    offMapText = "Travel to Oglethorpe Obnoticus in Stranglethorn Vale.",
+                    x = 0.282,
+                    y = 0.762,
                 },
             },
-            complete = { quest = { id = 2935, state = "activeOrCompleted" } },
-            requiredQuests = { { mode = "any", quests = { 2934 } } },
+            text = "Turn in Rescue OOX-09/HL! to Oglethorpe Obnoticus.",
+            useClientPin = true,
             useClientText = false,
+            useQuestNavigation = true,
+        },
+        {
+            checkpointQuest = 2935,
+            complete = { level = { min = 40 } },
+            conditions = { all = { { faction = "Horde" } } },
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 2935, state = "activeOrCompleted" } },
+                        {
+                            any = {
+                                { quest = { id = 2935, state = "activeOrCompleted" } },
+                                {
+                                    all = {
+                                        { faction = "Horde" },
+                                        {
+                                            any = {
+                                                {
+                                                    any = {
+                                                        { quest = { id = 2934, state = "activeOrCompleted" } },
+                                                        {
+                                                            all = {
+                                                                { faction = "Horde" },
+                                                                {
+                                                                    any = { { any = { { quest = { id = 2933, state = "activeOrCompleted" } }, { all = { { faction = "Horde" } } } } } },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
+            id = "horde-extra-2935-level",
+            kind = "note",
+            requiredLevel = 40,
+            text = "Reach level 40 before this visit.",
+        },
+        {
+            complete = { quest = { id = 2935, state = "activeOrCompleted" } },
+            conditions = { all = { { faction = "Horde" }, { level = { min = 40 } } } },
             dependsOn = { "horde-extra-2935-level" },
             excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 2935, state = "activeOrCompleted" } },
-                        {
+                any = {
+                    {
+                        ["not"] = {
                             any = {
                                 { quest = { id = 2935, state = "activeOrCompleted" } },
                                 {
-                                    all = {
-                                        { faction = "Horde" },
+                                    any = {
+                                        { quest = { id = 2935, state = "activeOrCompleted" } },
                                         {
-                                            any = {
+                                            all = {
+                                                { faction = "Horde" },
                                                 {
                                                     any = {
-                                                        { quest = { id = 2934, state = "activeOrCompleted" } },
                                                         {
-                                                            all = {
-                                                                { faction = "Horde" },
+                                                            any = {
+                                                                { quest = { id = 2934, state = "activeOrCompleted" } },
                                                                 {
-                                                                    any = { { any = { { quest = { id = 2933, state = "activeOrCompleted" } }, { all = { { faction = "Horde" } } } } } },
+                                                                    all = {
+                                                                        { faction = "Horde" },
+                                                                        {
+                                                                            any = { { any = { { quest = { id = 2933, state = "activeOrCompleted" } }, { all = { { faction = "Horde" } } } } } },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 2935, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 2935, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                { faction = "Horde" },
+                                                { race = { 2, 5, 6, 8 } },
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 2934, state = "activeOrCompleted" } },
+                                                                {
+                                                                    all = {
+                                                                        { faction = "Horde" },
+                                                                        { race = { 2, 5, 6, 8 } },
+                                                                        {
+                                                                            any = {
+                                                                                {
+                                                                                    any = {
+                                                                                        { quest = { id = 2933, state = "activeOrCompleted" } },
+                                                                                        {
+                                                                                            all = { { item = { minCount = 1, name = "Venom Bottle" } }, { faction = "Horde" }, { race = { 2, 5, 6, 8 } } },
+                                                                                        },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
                                                                 },
                                                             },
                                                         },
@@ -4492,85 +4711,189 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-extra-2935-accept",
+            kind = "accept",
+            requiredQuests = { { mode = "any", quests = { 2934 } } },
+            route = {
+                {
+                    label = "Apothecary Lydon",
+                    mapID = 1424,
+                    offMapText = "Travel to Apothecary Lydon in Hillsbrad Foothills.",
+                    x = 0.614,
+                    y = 0.192,
+                },
+            },
+            text = "Accept Consult Master Gadrin from Apothecary Lydon.",
+            useClientText = false,
         },
         {
+            complete = { quest = { id = 2935, state = "complete" } },
+            conditions = { all = { { faction = "Horde" }, { level = { min = 40 } } } },
+            dependsOn = { "horde-extra-2935-accept" },
+            excludeWhen = {
+                any = {
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 2935, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 2935, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                { faction = "Horde" },
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 2934, state = "activeOrCompleted" } },
+                                                                {
+                                                                    all = {
+                                                                        { faction = "Horde" },
+                                                                        {
+                                                                            any = { { any = { { quest = { id = 2933, state = "activeOrCompleted" } }, { all = { { faction = "Horde" } } } } } },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 2935, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 2935, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                { faction = "Horde" },
+                                                { race = { 2, 5, 6, 8 } },
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 2934, state = "activeOrCompleted" } },
+                                                                {
+                                                                    all = {
+                                                                        { faction = "Horde" },
+                                                                        { race = { 2, 5, 6, 8 } },
+                                                                        {
+                                                                            any = {
+                                                                                {
+                                                                                    any = {
+                                                                                        { quest = { id = 2933, state = "activeOrCompleted" } },
+                                                                                        {
+                                                                                            all = { { item = { minCount = 1, name = "Venom Bottle" } }, { faction = "Horde" }, { race = { 2, 5, 6, 8 } } },
+                                                                                        },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
             id = "horde-extra-2935-objective",
             kind = "objective",
-            text = "Speak with Master Gadrin in Sen'jin Village.",
-            conditions = { all = { { faction = "Horde" }, { level = { min = 40 } } } },
-            route = {},
-            complete = { quest = { id = 2935, state = "complete" } },
             requiredQuests = { { mode = "any", quests = { 2934 } } },
-            useClientText = false,
-            dependsOn = { "horde-extra-2935-accept" },
+            route = {},
+            text = "Speak with Master Gadrin in Sen'jin Village.",
             useClientPin = true,
-            excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 2935, state = "activeOrCompleted" } },
-                        {
-                            any = {
-                                { quest = { id = 2935, state = "activeOrCompleted" } },
-                                {
-                                    all = {
-                                        { faction = "Horde" },
-                                        {
-                                            any = {
-                                                {
-                                                    any = {
-                                                        { quest = { id = 2934, state = "activeOrCompleted" } },
-                                                        {
-                                                            all = {
-                                                                { faction = "Horde" },
-                                                                {
-                                                                    any = { { any = { { quest = { id = 2933, state = "activeOrCompleted" } }, { all = { { faction = "Horde" } } } } } },
-                                                                },
-                                                            },
-                                                        },
-                                                    },
-                                                },
-                                            },
-                                        },
-                                    },
-                                },
-                            },
-                        },
-                    },
-                },
-            },
+            useClientText = false,
         },
         {
-            id = "horde-extra-2935-turnin",
-            kind = "turnin",
-            text = "Turn in Consult Master Gadrin to Master Gadrin.",
-            conditions = { all = { { faction = "Horde" }, { level = { min = 40 } } } },
-            route = {
-                { mapID = 1411, x = 0.56, y = 0.746, label = "Master Gadrin", offMapText = "Travel to Master Gadrin in Durotar." },
-            },
             complete = { quest = { id = 2935, state = "completed" } },
-            requiredQuests = { { mode = "any", quests = { 2934 } } },
-            useClientText = false,
+            conditions = { all = { { faction = "Horde" }, { level = { min = 40 } } } },
             dependsOn = { "horde-extra-2935-objective" },
             excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 2935, state = "activeOrCompleted" } },
-                        {
+                any = {
+                    {
+                        ["not"] = {
                             any = {
                                 { quest = { id = 2935, state = "activeOrCompleted" } },
                                 {
-                                    all = {
-                                        { faction = "Horde" },
+                                    any = {
+                                        { quest = { id = 2935, state = "activeOrCompleted" } },
                                         {
-                                            any = {
+                                            all = {
+                                                { faction = "Horde" },
                                                 {
                                                     any = {
-                                                        { quest = { id = 2934, state = "activeOrCompleted" } },
                                                         {
-                                                            all = {
-                                                                { faction = "Horde" },
+                                                            any = {
+                                                                { quest = { id = 2934, state = "activeOrCompleted" } },
                                                                 {
-                                                                    any = { { any = { { quest = { id = 2933, state = "activeOrCompleted" } }, { all = { { faction = "Horde" } } } } } },
+                                                                    all = {
+                                                                        { faction = "Horde" },
+                                                                        {
+                                                                            any = { { any = { { quest = { id = 2933, state = "activeOrCompleted" } }, { all = { { faction = "Horde" } } } } } },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 2935, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 2935, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                { faction = "Horde" },
+                                                { race = { 2, 5, 6, 8 } },
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 2934, state = "activeOrCompleted" } },
+                                                                {
+                                                                    all = {
+                                                                        { faction = "Horde" },
+                                                                        { race = { 2, 5, 6, 8 } },
+                                                                        {
+                                                                            any = {
+                                                                                {
+                                                                                    any = {
+                                                                                        { quest = { id = 2933, state = "activeOrCompleted" } },
+                                                                                        {
+                                                                                            all = { { item = { minCount = 1, name = "Venom Bottle" } }, { faction = "Horde" }, { race = { 2, 5, 6, 8 } } },
+                                                                                        },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
                                                                 },
                                                             },
                                                         },
@@ -4585,15 +4908,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-extra-2935-turnin",
+            kind = "turnin",
+            requiredQuests = { { mode = "any", quests = { 2934 } } },
+            route = {
+                { label = "Master Gadrin", mapID = 1411, offMapText = "Travel to Master Gadrin in Durotar.", x = 0.56, y = 0.746 },
+            },
+            text = "Turn in Consult Master Gadrin to Master Gadrin.",
+            useClientPin = true,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
+            checkpointQuest = 7861,
+            complete = { level = { min = 46 } },
+            conditions = { all = { { faction = "Horde" } } },
             id = "horde-extra-7861-level",
             kind = "note",
-            checkpointQuest = 7861,
-            text = "Reach level 51 before this visit.",
-            conditions = { all = { { faction = "Horde" } } },
-            complete = { level = { min = 51 } },
-            requiredLevel = 51,
+            requiredLevel = 46,
+            text = "Reach level 46 before this visit.",
         },
         {
             id = "horde-extra-7861-accept",
@@ -4628,32 +4961,34 @@ ns:RegisterGuide({
             dependsOn = { "horde-extra-7861-accept" },
         },
         {
+            complete = { quest = { id = 7861, state = "completed" } },
+            conditions = { all = { { faction = "Horde" }, { level = { min = 46 } } } },
+            dependsOn = { "horde-extra-7861-objective" },
             id = "horde-extra-7861-turnin",
             kind = "turnin",
-            text = "Turn in Wanted: Vile Priestess Hexx and Her Minions to Primal Torntusk.",
-            conditions = { all = { { faction = "Horde" }, { level = { min = 46 } } } },
+            requiredQuests = {},
             route = {
                 {
+                    label = "Primal Torntusk",
                     mapID = 1425,
+                    offMapText = "Travel to Primal Torntusk in The Hinterlands.",
                     x = 0.782,
                     y = 0.812,
-                    label = "Primal Torntusk",
-                    offMapText = "Travel to Primal Torntusk in The Hinterlands.",
                 },
             },
-            complete = { quest = { id = 7861, state = "completed" } },
-            requiredQuests = {},
+            text = "Turn in Wanted: Vile Priestess Hexx and Her Minions to Primal Torntusk.",
+            useClientPin = true,
             useClientText = false,
-            dependsOn = { "horde-extra-7861-objective" },
+            useQuestNavigation = true,
         },
         {
+            checkpointQuest = 7862,
+            complete = { level = { min = 46 } },
+            conditions = { all = { { faction = "Horde" } } },
             id = "horde-extra-7862-level",
             kind = "note",
-            checkpointQuest = 7862,
-            text = "Reach level 51 before this visit.",
-            conditions = { all = { { faction = "Horde" } } },
-            complete = { level = { min = 51 } },
-            requiredLevel = 51,
+            requiredLevel = 46,
+            text = "Reach level 46 before this visit.",
         },
         {
             id = "horde-extra-7862-accept",
@@ -4688,23 +5023,25 @@ ns:RegisterGuide({
             dependsOn = { "horde-extra-7862-accept" },
         },
         {
+            complete = { quest = { id = 7862, state = "completed" } },
+            conditions = { all = { { faction = "Horde" }, { level = { min = 46 } } } },
+            dependsOn = { "horde-extra-7862-objective" },
             id = "horde-extra-7862-turnin",
             kind = "turnin",
-            text = "Turn in Job Opening: Guard Captain of Revantusk Village to Primal Torntusk.",
-            conditions = { all = { { faction = "Horde" }, { level = { min = 46 } } } },
+            requiredQuests = {},
             route = {
                 {
+                    label = "Primal Torntusk",
                     mapID = 1425,
+                    offMapText = "Travel to Primal Torntusk in The Hinterlands.",
                     x = 0.782,
                     y = 0.812,
-                    label = "Primal Torntusk",
-                    offMapText = "Travel to Primal Torntusk in The Hinterlands.",
                 },
             },
-            complete = { quest = { id = 7862, state = "completed" } },
-            requiredQuests = {},
+            text = "Turn in Job Opening: Guard Captain of Revantusk Village to Primal Torntusk.",
+            useClientPin = true,
             useClientText = false,
-            dependsOn = { "horde-extra-7862-objective" },
+            useQuestNavigation = true,
         },
     },
 })

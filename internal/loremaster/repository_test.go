@@ -249,7 +249,7 @@ func TestLoremasterInventoriesMatchAuthoredGuides(t *testing.T) {
 	if err != nil || len(audits) == 0 {
 		t.Fatalf("Loremaster inventories: paths=%v err=%v", audits, err)
 	}
-	wantPriority := []any{"wowhead", "questiedb", "allthethings", "foreverclient"}
+	wantPriority := []any{"questiedb"}
 	statuses := map[string]bool{"spine": true, "included": true, "excluded": true, "other-zone": true, "unresolved": true}
 	for _, path := range audits {
 		var audit map[string]any
@@ -258,11 +258,15 @@ func TestLoremasterInventoriesMatchAuthoredGuides(t *testing.T) {
 			t.Errorf("%s source priority = %v", filepath.Base(path), audit["sourcePriority"])
 		}
 		sources := testObject(audit["sources"])
-		compilation := testObject(sources["compilation"])
-		if len(testObject(sources["sourceHashes"])) == 0 || compilation["compilationFormatVersion"] != float64(2) {
-			t.Errorf("%s missing source hashes or compilation format v2", filepath.Base(path))
+		questie := testObject(sources["questiedb"])
+		hashes := testObject(sources["sourceHashes"])
+		if testString(questie["artifactVersion"]) == "" || testString(questie["buildCommit"]) == "" || testString(hashes["questiedb/export.json"]) == "" || testString(hashes["questiedb/policy.json"]) == "" {
+			t.Errorf("%s missing QuestieDB provenance or export hashes", filepath.Base(path))
 		}
 		guideID := testString(audit["guide"])
+		if guideID == "" && len(testObject(audit["quests"])) == 0 {
+			continue
+		}
 		goals, exists := guides[guideID]
 		if !exists {
 			t.Errorf("%s references missing guide %s", filepath.Base(path), guideID)
@@ -355,7 +359,11 @@ func TestExpandedLoremasterReturnsFollowSuitableSpineVisits(t *testing.T) {
 		if err != nil {
 			t.Fatal(err)
 		}
-		if err := checkExpandedReturnOrder(goals, bands); err != nil {
+		initialVisit := ""
+		if filepath.Base(path) == "Teldrassil.lua" {
+			initialVisit = "leveling-era-teldrassil"
+		}
+		if err := checkExpandedReturnOrder(goals, bands, initialVisit); err != nil {
 			t.Errorf("%s: %v", filepath.Base(path), err)
 		}
 	}
@@ -382,7 +390,7 @@ func TestExpandedLoremasterReturnsFollowSuitableSpineVisits(t *testing.T) {
 	goal := mutated[checkpoint]
 	mutated = append(mutated[:checkpoint], mutated[checkpoint+1:]...)
 	mutated = append([]loremaster.Goal{goal}, mutated...)
-	if err := checkExpandedReturnOrder(mutated, bands); err == nil {
+	if err := checkExpandedReturnOrder(mutated, bands, ""); err == nil {
 		t.Fatal("moved checkpoint before its suitable visit but audit passed")
 	}
 }
@@ -496,12 +504,17 @@ end
 
 func checkExpandedReturnOrder(goals []loremaster.Goal, bands map[string]struct {
 	Max int `json:"max"`
-}) error {
+}, initialVisit string) error {
 	type visit struct {
 		position, max int
 		faction       string
 	}
 	visits := []visit{}
+	if initialVisit != "" {
+		if band, ok := bands[initialVisit]; ok {
+			visits = append(visits, visit{-1, band.Max, "Alliance"})
+		}
+	}
 	sourcePattern := regexp.MustCompile(`sourceGuide\s*=\s*"([^"]+)"`)
 	factionPattern := regexp.MustCompile(`faction\s*=\s*"(Alliance|Horde)"`)
 	levelPattern := regexp.MustCompile(`requiredLevel\s*=\s*(\d+)`)

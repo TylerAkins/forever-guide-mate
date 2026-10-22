@@ -24,6 +24,9 @@ func ParseZoneQuestSummaries(html string) ([]map[string]any, error) {
 	return summaries, nil
 }
 
+// MissingQuestNames lists the zone quests the chapter does not cover. The
+// source records no first-seen patch, so the scan covers every quest in the
+// zone list instead of only the ones new to Forever.
 func MissingQuestNames(summaries []map[string]any, present, excluded map[int]bool, levelMax int) []string {
 	seen := map[int]bool{}
 	missing := []string{}
@@ -33,7 +36,7 @@ func MissingQuestNames(summaries []map[string]any, present, excluded map[int]boo
 			continue
 		}
 		seen[id] = true
-		if integer(summary["firstseenpatch"]) != 16001 || present[id] || excluded[id] {
+		if present[id] || excluded[id] {
 			continue
 		}
 		name, _ := summary["name"].(string)

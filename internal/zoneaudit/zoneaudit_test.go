@@ -24,16 +24,16 @@ func TestParseZoneQuestSummariesRejectsMissingList(t *testing.T) {
 
 func TestMissingQuestNamesAppliesZoneAuditFilters(t *testing.T) {
 	summaries := []map[string]any{
-		{"id": float64(1), "name": "present", "firstseenpatch": float64(16001), "level": float64(5)},
-		{"id": float64(2), "name": "excluded", "firstseenpatch": float64(16001), "level": float64(5)},
-		{"id": float64(3), "name": "classic", "firstseenpatch": float64(11302), "level": float64(5)},
-		{"id": float64(4), "name": "unused quest", "firstseenpatch": float64(16001), "level": float64(5)},
-		{"id": float64(5), "name": "too high", "firstseenpatch": float64(16001), "level": float64(30)},
-		{"id": float64(6), "name": "candidate", "firstseenpatch": float64(16001), "level": float64(12)},
-		{"id": float64(6), "name": "duplicate", "firstseenpatch": float64(16001), "level": float64(12)},
+		{"id": float64(1), "name": "present", "level": float64(5)},
+		{"id": float64(2), "name": "excluded", "level": float64(5)},
+		{"id": float64(3), "name": "classic", "level": float64(5)},
+		{"id": float64(4), "name": "unused quest", "level": float64(5)},
+		{"id": float64(5), "name": "too high", "level": float64(30)},
+		{"id": float64(6), "name": "candidate", "level": float64(12)},
+		{"id": float64(6), "name": "duplicate", "level": float64(12)},
 	}
 	got := MissingQuestNames(summaries, map[int]bool{1: true}, map[int]bool{2: true}, 10)
-	want := []string{"candidate (6, level 12)"}
+	want := []string{"candidate (6, level 12)", "classic (3, level 5)"}
 	if !reflect.DeepEqual(got, want) {
 		t.Fatalf("MissingQuestNames() = %#v, want %#v", got, want)
 	}

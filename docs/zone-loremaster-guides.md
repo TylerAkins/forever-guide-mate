@@ -5,10 +5,13 @@ and [guide authoring rules](guide-authoring.md). Guides use explicit ordered act
 arrays, preserving the leveling spine while adding permanent zone quests.
 
 The source inventories and insertion decisions live in [loremaster/](loremaster/).
-They record the database revision and source hashes, candidate dispositions, levels,
-prerequisite evidence, and the visits where new actions belong. Source priority is
-Wowhead, QuestieDB, ATT, then the client scrape. Compiled selections may use another
-priority; original source observations determine these inventories.
+They record the QuestieDB artifact manifest, Questie policy revision, candidate
+dispositions, levels, prerequisite evidence, and the visits where new actions
+belong. QuestieDB supplies quest facts, objectives, providers, levels, and NPC or
+object spawns. Questie's policy export supplies holiday membership and tag
+corrections. Upstream guides remain advisory ordering evidence only. Known losses
+and differences from the former source are recorded in the
+[QuestieDB migration review](loremaster/questiedb-migration.md).
 
 A capital pickup does not determine ownership. Use objective locations, supported
 zone classification, chain context, and the turn-in to assign a quest. Data Hoarders
@@ -62,8 +65,8 @@ as advisory ordering evidence. Prefer dedicated Alliance Loremaster routes and
 matching Horde leveling routes. Never substitute Alliance-only routes for Horde.
 `--no-strict` describes this policy, not a runtime flag: verified prerequisites,
 recommended levels, and suitable hub visits override upstream ordering. Missing
-upstream matches do not exclude quests. Upstream supplies ordering only; Forever
-quest facts continue to come from the local wow-database observations.
+upstream matches do not exclude quests. Upstream supplies ordering only; QuestieDB
+and Questie's exported Forever policy supply quest facts.
 
 Freeze the upstream commit, file hash, chapter, line, and matched action references
 in each zone inventory. Record conflicts and supported deviations. Do not copy
