@@ -2,27 +2,24 @@
   "guide": "loremaster-teldrassil",
   "title": "Teldrassil",
   "sources": {
-    "databaseCommit": "5c92953420ab4a710fda39581a405a72a89b8c0d",
-    "compilation": {
-      "schemaVersion": 1,
-      "compilationFormatVersion": 2,
-      "flavor": "forever",
-      "source": "compilation",
-      "sourceRevision": "991cc5841d7b79dc85613431aa8ecf6f4c34070753426d60f323e321532d4b66",
-      "recordCount": 107209,
-      "recordsSha256": "9ab82625871b9df3a0ac5781bb194be6d8211a4a6337258fbf82224e00416727",
-      "status": "generated"
+    "questiedb": {
+      "artifactVersion": "1.0.6-dev.f844007",
+      "buildCommit": "f844007b329b72f18cf2bda3d87540012294732a",
+      "counts": {
+        "Item": 21294,
+        "Npc": 13393,
+        "Object": 7035,
+        "Quest": 5232
+      }
     },
     "sourceHashes": {
-      "data/forever/raw/quest_index.json": "cb47391391cf9655e1f86b479aae60321ca78726482527c1d38074352baba0a7",
-      "data/forever/compilation/records.jsonl.gz": "35c74cb11823db372dc0bc289d5ffaf8296ca9d1c370e4f7b794a29af7f84b47"
-    }
+      "questiedb/export.json": "e26090e90df3aa2e94be4c13feb001390068b84c249ff2443c629d26a408e704",
+      "questiedb/policy.json": "835ba8f6361ef37bda275859bdb48852001c3ce2b6a2b3ecff586283633e2ad4"
+    },
+    "upstreamCommit": "9087c457e20fb96e73e5b362dd6fc50324b75718"
   },
   "sourcePriority": [
-    "wowhead",
-    "questiedb",
-    "allthethings",
-    "foreverclient"
+    "questiedb"
   ],
   "spine": "leveling-era-teldrassil",
   "spineActions": [
@@ -387,9 +384,224 @@
     "turnin-1640-beat-bartleby",
     "level-before-accept-1665-bartleby-s-mug",
     "accept-1665-bartleby-s-mug",
-    "turnin-1665-bartleby-s-mug"
+    "turnin-1665-bartleby-s-mug",
+    "alliance-leveling-era-alliance-feralas-and-tanaris-accept-3661-favored-of-elune",
+    "alliance-leveling-era-alliance-the-hinterlands-level-before-objective-3661-1-wildkin-feather",
+    "alliance-leveling-era-alliance-the-hinterlands-objective-3661-1-wildkin-feather",
+    "alliance-leveling-era-alliance-blasted-lands-and-burning-steppes-objective-3661-1-wildkin-feather",
+    "alliance-leveling-era-alliance-azshara-and-felwood-level-before-objective-3661-quest-work",
+    "alliance-leveling-era-alliance-azshara-and-felwood-objective-3661-quest-work",
+    "alliance-leveling-era-alliance-azshara-and-felwood-turnin-3661-favored-of-elune",
+    "alliance-leveling-era-alliance-azshara-and-felwood-level-before-accept-978-moontouched-wildkin",
+    "alliance-leveling-era-alliance-azshara-and-felwood-accept-978-moontouched-wildkin",
+    "alliance-leveling-era-alliance-azshara-and-felwood-objective-978-1-moontouched-feather",
+    "alliance-leveling-era-alliance-ungoro-crater-part-2-level-before-objective-978-1-moontouched-feather",
+    "alliance-leveling-era-alliance-ungoro-crater-part-2-objective-978-1-moontouched-feather",
+    "alliance-leveling-era-alliance-ungoro-crater-part-2-turnin-978-moontouched-wildkin",
+    "alliance-leveling-era-alliance-ungoro-crater-part-2-accept-979-find-ranshalla",
+    "alliance-leveling-era-alliance-ungoro-crater-part-2-accept-5250-starfall",
+    "alliance-leveling-era-alliance-winterspring-and-felwood-level-before-turnin-5250-starfall",
+    "alliance-leveling-era-alliance-winterspring-and-felwood-turnin-5250-starfall",
+    "alliance-leveling-era-alliance-winterspring-and-felwood-turnin-979-find-ranshalla"
   ],
-  "placements": [],
+  "placements": [
+    {
+      "actions": [
+        "alliance-extra-6721-level"
+      ],
+      "anchor": "level-before-accept-6063-taming-the-beast",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "alliance-extra-6721-accept"
+      ],
+      "anchor": "alliance-extra-6721-level",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "alliance-extra-6721-objective"
+      ],
+      "anchor": "alliance-extra-6721-accept",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "alliance-extra-6721-turnin"
+      ],
+      "anchor": "alliance-extra-6721-objective",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "visit-entry-leveling-era-alliance-feralas-and-tanaris"
+      ],
+      "anchor": "turnin-1665-bartleby-s-mug",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "alliance-leveling-era-alliance-feralas-and-tanaris-accept-3661-favored-of-elune"
+      ],
+      "anchor": "visit-entry-leveling-era-alliance-feralas-and-tanaris",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "visit-entry-leveling-era-alliance-the-hinterlands"
+      ],
+      "anchor": "alliance-leveling-era-alliance-feralas-and-tanaris-accept-3661-favored-of-elune",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "alliance-leveling-era-alliance-the-hinterlands-level-before-objective-3661-1-wildkin-feather"
+      ],
+      "anchor": "visit-entry-leveling-era-alliance-the-hinterlands",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "alliance-leveling-era-alliance-the-hinterlands-objective-3661-1-wildkin-feather"
+      ],
+      "anchor": "alliance-leveling-era-alliance-the-hinterlands-level-before-objective-3661-1-wildkin-feather",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "visit-entry-leveling-era-alliance-blasted-lands-and-burning-steppes"
+      ],
+      "anchor": "alliance-leveling-era-alliance-the-hinterlands-objective-3661-1-wildkin-feather",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "alliance-leveling-era-alliance-blasted-lands-and-burning-steppes-objective-3661-1-wildkin-feather"
+      ],
+      "anchor": "visit-entry-leveling-era-alliance-blasted-lands-and-burning-steppes",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "visit-entry-leveling-era-alliance-azshara-and-felwood"
+      ],
+      "anchor": "alliance-leveling-era-alliance-blasted-lands-and-burning-steppes-objective-3661-1-wildkin-feather",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "alliance-leveling-era-alliance-azshara-and-felwood-level-before-objective-3661-quest-work"
+      ],
+      "anchor": "visit-entry-leveling-era-alliance-azshara-and-felwood",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "alliance-leveling-era-alliance-azshara-and-felwood-objective-3661-quest-work"
+      ],
+      "anchor": "alliance-leveling-era-alliance-azshara-and-felwood-level-before-objective-3661-quest-work",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "alliance-leveling-era-alliance-azshara-and-felwood-turnin-3661-favored-of-elune"
+      ],
+      "anchor": "alliance-leveling-era-alliance-azshara-and-felwood-objective-3661-quest-work",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "alliance-leveling-era-alliance-azshara-and-felwood-level-before-accept-978-moontouched-wildkin"
+      ],
+      "anchor": "alliance-leveling-era-alliance-azshara-and-felwood-turnin-3661-favored-of-elune",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "alliance-leveling-era-alliance-azshara-and-felwood-accept-978-moontouched-wildkin"
+      ],
+      "anchor": "alliance-leveling-era-alliance-azshara-and-felwood-level-before-accept-978-moontouched-wildkin",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "alliance-leveling-era-alliance-azshara-and-felwood-objective-978-1-moontouched-feather"
+      ],
+      "anchor": "alliance-leveling-era-alliance-azshara-and-felwood-accept-978-moontouched-wildkin",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "visit-entry-leveling-era-alliance-ungoro-crater-part-2"
+      ],
+      "anchor": "alliance-leveling-era-alliance-azshara-and-felwood-objective-978-1-moontouched-feather",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "alliance-leveling-era-alliance-ungoro-crater-part-2-level-before-objective-978-1-moontouched-feather"
+      ],
+      "anchor": "visit-entry-leveling-era-alliance-ungoro-crater-part-2",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "alliance-leveling-era-alliance-ungoro-crater-part-2-objective-978-1-moontouched-feather"
+      ],
+      "anchor": "alliance-leveling-era-alliance-ungoro-crater-part-2-level-before-objective-978-1-moontouched-feather",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "alliance-leveling-era-alliance-ungoro-crater-part-2-turnin-978-moontouched-wildkin"
+      ],
+      "anchor": "alliance-leveling-era-alliance-ungoro-crater-part-2-objective-978-1-moontouched-feather",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "alliance-leveling-era-alliance-ungoro-crater-part-2-accept-979-find-ranshalla"
+      ],
+      "anchor": "alliance-leveling-era-alliance-ungoro-crater-part-2-turnin-978-moontouched-wildkin",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "alliance-leveling-era-alliance-ungoro-crater-part-2-accept-5250-starfall"
+      ],
+      "anchor": "alliance-leveling-era-alliance-ungoro-crater-part-2-accept-979-find-ranshalla",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "visit-entry-leveling-era-alliance-winterspring-and-felwood"
+      ],
+      "anchor": "alliance-leveling-era-alliance-ungoro-crater-part-2-accept-5250-starfall",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "alliance-leveling-era-alliance-winterspring-and-felwood-level-before-turnin-5250-starfall"
+      ],
+      "anchor": "visit-entry-leveling-era-alliance-winterspring-and-felwood",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "alliance-leveling-era-alliance-winterspring-and-felwood-turnin-5250-starfall"
+      ],
+      "anchor": "alliance-leveling-era-alliance-winterspring-and-felwood-level-before-turnin-5250-starfall",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "alliance-leveling-era-alliance-winterspring-and-felwood-turnin-979-find-ranshalla"
+      ],
+      "anchor": "alliance-leveling-era-alliance-winterspring-and-felwood-turnin-5250-starfall",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    }
+  ],
   "quests": {
     "456": {
       "name": "The Balance of Nature",
@@ -895,7 +1107,7 @@
       }
     },
     "490": {
-      "name": "<UNUSED>",
+      "name": "\u003cUNUSED\u003e",
       "status": "excluded",
       "reason": "Unused source record.",
       "catalogs": [
@@ -2524,7 +2736,7 @@
       }
     },
     "3622": {
-      "name": "<UNUSED>",
+      "name": "\u003cUNUSED\u003e",
       "status": "other-zone",
       "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
       "catalogs": [
@@ -4256,6 +4468,2035 @@
           }
         ]
       }
+    },
+    "978": {
+      "catalogs": [
+        "teldrassil"
+      ],
+      "evidence": {
+        "artifactVersion": "1.0.6-dev.f844007",
+        "buildCommit": "f844007b329b72f18cf2bda3d87540012294732a",
+        "source": "QuestieDB"
+      },
+      "locations": [
+        {
+          "coord": [
+            55.5,
+            92.05
+          ],
+          "id": 7916,
+          "name": "Erelas Ambersky",
+          "point": "start",
+          "reactalliance": 1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Teldrassil"
+        },
+        {
+          "coord": [
+            55.5,
+            92.05
+          ],
+          "id": 7916,
+          "name": "Erelas Ambersky",
+          "point": "end",
+          "reactalliance": 1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Teldrassil"
+        },
+        {
+          "coord": [
+            37.79,
+            45.7
+          ],
+          "id": 175407,
+          "item": "Moontouched Feather",
+          "name": "Moontouched Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "Winterspring"
+        },
+        {
+          "coord": [
+            45.95,
+            41.67
+          ],
+          "id": 175407,
+          "item": "Moontouched Feather",
+          "name": "Moontouched Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "Winterspring"
+        },
+        {
+          "coord": [
+            45.7,
+            42.62
+          ],
+          "id": 175407,
+          "item": "Moontouched Feather",
+          "name": "Moontouched Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "Winterspring"
+        },
+        {
+          "coord": [
+            56.86,
+            13.53
+          ],
+          "id": 175407,
+          "item": "Moontouched Feather",
+          "name": "Moontouched Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "Winterspring"
+        },
+        {
+          "coord": [
+            66.76,
+            50.54
+          ],
+          "id": 175407,
+          "item": "Moontouched Feather",
+          "name": "Moontouched Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "Winterspring"
+        },
+        {
+          "coord": [
+            65.29,
+            54.59
+          ],
+          "id": 175407,
+          "item": "Moontouched Feather",
+          "name": "Moontouched Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "Winterspring"
+        },
+        {
+          "coord": [
+            43.71,
+            44.89
+          ],
+          "id": 175407,
+          "item": "Moontouched Feather",
+          "name": "Moontouched Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "Winterspring"
+        },
+        {
+          "coord": [
+            37.27,
+            45.72
+          ],
+          "id": 175407,
+          "item": "Moontouched Feather",
+          "name": "Moontouched Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "Winterspring"
+        },
+        {
+          "coord": [
+            34.83,
+            45.93
+          ],
+          "id": 175407,
+          "item": "Moontouched Feather",
+          "name": "Moontouched Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "Winterspring"
+        },
+        {
+          "coord": [
+            45.18,
+            44.25
+          ],
+          "id": 175407,
+          "item": "Moontouched Feather",
+          "name": "Moontouched Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "Winterspring"
+        },
+        {
+          "coord": [
+            44.89,
+            44.72
+          ],
+          "id": 175407,
+          "item": "Moontouched Feather",
+          "name": "Moontouched Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "Winterspring"
+        },
+        {
+          "coord": [
+            57.56,
+            13.33
+          ],
+          "id": 175407,
+          "item": "Moontouched Feather",
+          "name": "Moontouched Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "Winterspring"
+        },
+        {
+          "coord": [
+            60.11,
+            18.2
+          ],
+          "id": 175407,
+          "item": "Moontouched Feather",
+          "name": "Moontouched Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "Winterspring"
+        },
+        {
+          "coord": [
+            62.43,
+            55.34
+          ],
+          "id": 175407,
+          "item": "Moontouched Feather",
+          "name": "Moontouched Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "Winterspring"
+        },
+        {
+          "coord": [
+            56.01,
+            14.44
+          ],
+          "id": 175407,
+          "item": "Moontouched Feather",
+          "name": "Moontouched Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "Winterspring"
+        },
+        {
+          "coord": [
+            63.74,
+            49.63
+          ],
+          "id": 175407,
+          "item": "Moontouched Feather",
+          "name": "Moontouched Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "Winterspring"
+        },
+        {
+          "coord": [
+            46.6,
+            44.26
+          ],
+          "id": 175407,
+          "item": "Moontouched Feather",
+          "name": "Moontouched Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "Winterspring"
+        },
+        {
+          "coord": [
+            58.01,
+            20.9
+          ],
+          "id": 175407,
+          "item": "Moontouched Feather",
+          "name": "Moontouched Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "Winterspring"
+        },
+        {
+          "coord": [
+            58.29,
+            17.25
+          ],
+          "id": 175407,
+          "item": "Moontouched Feather",
+          "name": "Moontouched Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "Winterspring"
+        },
+        {
+          "coord": [
+            36.34,
+            45.78
+          ],
+          "id": 175407,
+          "item": "Moontouched Feather",
+          "name": "Moontouched Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "Winterspring"
+        },
+        {
+          "coord": [
+            65.39,
+            52.52
+          ],
+          "id": 175407,
+          "item": "Moontouched Feather",
+          "name": "Moontouched Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "Winterspring"
+        },
+        {
+          "coord": [
+            58.78,
+            15.69
+          ],
+          "id": 175407,
+          "item": "Moontouched Feather",
+          "name": "Moontouched Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "Winterspring"
+        },
+        {
+          "coord": [
+            47.95,
+            45.05
+          ],
+          "id": 175407,
+          "item": "Moontouched Feather",
+          "name": "Moontouched Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "Winterspring"
+        },
+        {
+          "coord": [
+            60.65,
+            33.72
+          ],
+          "id": 175407,
+          "item": "Moontouched Feather",
+          "name": "Moontouched Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "Winterspring"
+        },
+        {
+          "coord": [
+            45.71,
+            43.71
+          ],
+          "id": 175407,
+          "item": "Moontouched Feather",
+          "name": "Moontouched Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "Winterspring"
+        },
+        {
+          "coord": [
+            45.6,
+            43.99
+          ],
+          "id": 175407,
+          "item": "Moontouched Feather",
+          "name": "Moontouched Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "Winterspring"
+        },
+        {
+          "coord": [
+            58.05,
+            32.83
+          ],
+          "id": 175407,
+          "item": "Moontouched Feather",
+          "name": "Moontouched Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "Winterspring"
+        },
+        {
+          "coord": [
+            63.35,
+            38.36
+          ],
+          "id": 175407,
+          "item": "Moontouched Feather",
+          "name": "Moontouched Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "Winterspring"
+        },
+        {
+          "coord": [
+            63.49,
+            47.11
+          ],
+          "id": 175407,
+          "item": "Moontouched Feather",
+          "name": "Moontouched Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "Winterspring"
+        },
+        {
+          "coord": [
+            30.95,
+            47.02
+          ],
+          "id": 175407,
+          "item": "Moontouched Feather",
+          "name": "Moontouched Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "Winterspring"
+        },
+        {
+          "coord": [
+            29.38,
+            46.67
+          ],
+          "id": 175407,
+          "item": "Moontouched Feather",
+          "name": "Moontouched Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "Winterspring"
+        },
+        {
+          "coord": [
+            58.33,
+            27.23
+          ],
+          "id": 175407,
+          "item": "Moontouched Feather",
+          "name": "Moontouched Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "Winterspring"
+        },
+        {
+          "coord": [
+            63.34,
+            54.69
+          ],
+          "id": 175407,
+          "item": "Moontouched Feather",
+          "name": "Moontouched Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "Winterspring"
+        },
+        {
+          "coord": [
+            65.38,
+            43.3
+          ],
+          "id": 175407,
+          "item": "Moontouched Feather",
+          "name": "Moontouched Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "Winterspring"
+        },
+        {
+          "coord": [
+            66.05,
+            47.3
+          ],
+          "id": 175407,
+          "item": "Moontouched Feather",
+          "name": "Moontouched Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "Winterspring"
+        },
+        {
+          "coord": [
+            67.38,
+            44.62
+          ],
+          "id": 175407,
+          "item": "Moontouched Feather",
+          "name": "Moontouched Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "Winterspring"
+        },
+        {
+          "coord": [
+            66.86,
+            53.46
+          ],
+          "id": 175407,
+          "item": "Moontouched Feather",
+          "name": "Moontouched Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "Winterspring"
+        },
+        {
+          "coord": [
+            60.72,
+            24.42
+          ],
+          "id": 175407,
+          "item": "Moontouched Feather",
+          "name": "Moontouched Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "Winterspring"
+        },
+        {
+          "coord": [
+            31.41,
+            43.31
+          ],
+          "id": 175407,
+          "item": "Moontouched Feather",
+          "name": "Moontouched Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "Winterspring"
+        },
+        {
+          "coord": [
+            43.1,
+            44.08
+          ],
+          "id": 175407,
+          "item": "Moontouched Feather",
+          "name": "Moontouched Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "Winterspring"
+        },
+        {
+          "coord": [
+            59.5,
+            34.2
+          ],
+          "id": 175407,
+          "item": "Moontouched Feather",
+          "name": "Moontouched Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "Winterspring"
+        },
+        {
+          "coord": [
+            50.47,
+            38.01
+          ],
+          "id": 175407,
+          "item": "Moontouched Feather",
+          "name": "Moontouched Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "Winterspring"
+        },
+        {
+          "coord": [
+            39.54,
+            39.01
+          ],
+          "id": 175407,
+          "item": "Moontouched Feather",
+          "name": "Moontouched Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "Winterspring"
+        },
+        {
+          "coord": [
+            40.44,
+            37.41
+          ],
+          "id": 175407,
+          "item": "Moontouched Feather",
+          "name": "Moontouched Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "Winterspring"
+        },
+        {
+          "coord": [
+            30.18,
+            45.24
+          ],
+          "id": 175407,
+          "item": "Moontouched Feather",
+          "name": "Moontouched Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "Winterspring"
+        },
+        {
+          "coord": [
+            49.48,
+            40.84
+          ],
+          "id": 175407,
+          "item": "Moontouched Feather",
+          "name": "Moontouched Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "Winterspring"
+        },
+        {
+          "coord": [
+            43.09,
+            41.95
+          ],
+          "id": 175407,
+          "item": "Moontouched Feather",
+          "name": "Moontouched Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "Winterspring"
+        },
+        {
+          "coord": [
+            43.55,
+            42.59
+          ],
+          "id": 175407,
+          "item": "Moontouched Feather",
+          "name": "Moontouched Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "Winterspring"
+        },
+        {
+          "coord": [
+            44.35,
+            42.17
+          ],
+          "id": 175407,
+          "item": "Moontouched Feather",
+          "name": "Moontouched Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "Winterspring"
+        },
+        {
+          "coord": [
+            38.66,
+            45.08
+          ],
+          "id": 175407,
+          "item": "Moontouched Feather",
+          "name": "Moontouched Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "Winterspring"
+        },
+        {
+          "coord": [
+            30.3,
+            44.03
+          ],
+          "id": 175407,
+          "item": "Moontouched Feather",
+          "name": "Moontouched Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "Winterspring"
+        },
+        {
+          "coord": [
+            31.35,
+            45.53
+          ],
+          "id": 175407,
+          "item": "Moontouched Feather",
+          "name": "Moontouched Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "Winterspring"
+        },
+        {
+          "coord": [
+            32.78,
+            44.36
+          ],
+          "id": 175407,
+          "item": "Moontouched Feather",
+          "name": "Moontouched Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "Winterspring"
+        },
+        {
+          "coord": [
+            32.02,
+            44.25
+          ],
+          "id": 175407,
+          "item": "Moontouched Feather",
+          "name": "Moontouched Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "Winterspring"
+        },
+        {
+          "coord": [
+            35.58,
+            43.85
+          ],
+          "id": 175407,
+          "item": "Moontouched Feather",
+          "name": "Moontouched Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "Winterspring"
+        },
+        {
+          "coord": [
+            34.85,
+            43.2
+          ],
+          "id": 175407,
+          "item": "Moontouched Feather",
+          "name": "Moontouched Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "Winterspring"
+        },
+        {
+          "coord": [
+            33.08,
+            44.01
+          ],
+          "id": 175407,
+          "item": "Moontouched Feather",
+          "name": "Moontouched Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "Winterspring"
+        },
+        {
+          "coord": [
+            38.29,
+            43.84
+          ],
+          "id": 175407,
+          "item": "Moontouched Feather",
+          "name": "Moontouched Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "Winterspring"
+        },
+        {
+          "coord": [
+            37.37,
+            44.21
+          ],
+          "id": 175407,
+          "item": "Moontouched Feather",
+          "name": "Moontouched Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "Winterspring"
+        },
+        {
+          "coord": [
+            37.5,
+            42.76
+          ],
+          "id": 175407,
+          "item": "Moontouched Feather",
+          "name": "Moontouched Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "Winterspring"
+        }
+      ],
+      "supporting": true,
+      "status": "spine",
+      "reason": "Preserved faction Casual actions."
+    },
+    "979": {
+      "catalogs": [
+        "teldrassil"
+      ],
+      "evidence": {
+        "artifactVersion": "1.0.6-dev.f844007",
+        "buildCommit": "f844007b329b72f18cf2bda3d87540012294732a",
+        "source": "QuestieDB"
+      },
+      "locations": [
+        {
+          "coord": [
+            55.5,
+            92.05
+          ],
+          "id": 7916,
+          "name": "Erelas Ambersky",
+          "point": "start",
+          "reactalliance": 1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Teldrassil"
+        },
+        {
+          "coord": [
+            63.07,
+            59.48
+          ],
+          "id": 10300,
+          "name": "Ranshalla",
+          "point": "end",
+          "reactalliance": 1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Winterspring"
+        }
+      ],
+      "supporting": false,
+      "status": "spine",
+      "reason": "Preserved faction Casual actions."
+    },
+    "3661": {
+      "catalogs": [
+        "teldrassil"
+      ],
+      "evidence": {
+        "artifactVersion": "1.0.6-dev.f844007",
+        "buildCommit": "f844007b329b72f18cf2bda3d87540012294732a",
+        "source": "QuestieDB"
+      },
+      "locations": [
+        {
+          "coord": [
+            55.5,
+            92.05
+          ],
+          "id": 7916,
+          "name": "Erelas Ambersky",
+          "point": "start",
+          "reactalliance": 1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Teldrassil"
+        },
+        {
+          "coord": [
+            55.5,
+            92.05
+          ],
+          "id": 7916,
+          "name": "Erelas Ambersky",
+          "point": "end",
+          "reactalliance": 1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Teldrassil"
+        },
+        {
+          "coord": [
+            52.02,
+            58
+          ],
+          "id": 153239,
+          "item": "Wildkin Feather",
+          "name": "Wildkin Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "The Hinterlands"
+        },
+        {
+          "coord": [
+            53.08,
+            55.38
+          ],
+          "id": 153239,
+          "item": "Wildkin Feather",
+          "name": "Wildkin Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "The Hinterlands"
+        },
+        {
+          "coord": [
+            56.61,
+            46
+          ],
+          "id": 153239,
+          "item": "Wildkin Feather",
+          "name": "Wildkin Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "The Hinterlands"
+        },
+        {
+          "coord": [
+            54.88,
+            43.84
+          ],
+          "id": 153239,
+          "item": "Wildkin Feather",
+          "name": "Wildkin Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "The Hinterlands"
+        },
+        {
+          "coord": [
+            51.52,
+            39.52
+          ],
+          "id": 153239,
+          "item": "Wildkin Feather",
+          "name": "Wildkin Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "The Hinterlands"
+        },
+        {
+          "coord": [
+            57.41,
+            47.66
+          ],
+          "id": 153239,
+          "item": "Wildkin Feather",
+          "name": "Wildkin Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "The Hinterlands"
+        },
+        {
+          "coord": [
+            54.8,
+            41.38
+          ],
+          "id": 153239,
+          "item": "Wildkin Feather",
+          "name": "Wildkin Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "The Hinterlands"
+        },
+        {
+          "coord": [
+            53.06,
+            40.67
+          ],
+          "id": 153239,
+          "item": "Wildkin Feather",
+          "name": "Wildkin Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "The Hinterlands"
+        },
+        {
+          "coord": [
+            50.22,
+            39.66
+          ],
+          "id": 153239,
+          "item": "Wildkin Feather",
+          "name": "Wildkin Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "The Hinterlands"
+        },
+        {
+          "coord": [
+            45.86,
+            60.01
+          ],
+          "id": 153239,
+          "item": "Wildkin Feather",
+          "name": "Wildkin Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "The Hinterlands"
+        },
+        {
+          "coord": [
+            56.8,
+            45.35
+          ],
+          "id": 153239,
+          "item": "Wildkin Feather",
+          "name": "Wildkin Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "The Hinterlands"
+        },
+        {
+          "coord": [
+            60.12,
+            49.26
+          ],
+          "id": 153239,
+          "item": "Wildkin Feather",
+          "name": "Wildkin Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "The Hinterlands"
+        },
+        {
+          "coord": [
+            52.96,
+            42.28
+          ],
+          "id": 153239,
+          "item": "Wildkin Feather",
+          "name": "Wildkin Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "The Hinterlands"
+        },
+        {
+          "coord": [
+            63.36,
+            61.61
+          ],
+          "id": 153239,
+          "item": "Wildkin Feather",
+          "name": "Wildkin Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "The Hinterlands"
+        },
+        {
+          "coord": [
+            60.15,
+            43.81
+          ],
+          "id": 153239,
+          "item": "Wildkin Feather",
+          "name": "Wildkin Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "The Hinterlands"
+        },
+        {
+          "coord": [
+            48.64,
+            63.49
+          ],
+          "id": 153239,
+          "item": "Wildkin Feather",
+          "name": "Wildkin Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "The Hinterlands"
+        },
+        {
+          "coord": [
+            52.69,
+            51.4
+          ],
+          "id": 153239,
+          "item": "Wildkin Feather",
+          "name": "Wildkin Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "The Hinterlands"
+        },
+        {
+          "coord": [
+            51.22,
+            62.84
+          ],
+          "id": 153239,
+          "item": "Wildkin Feather",
+          "name": "Wildkin Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "The Hinterlands"
+        },
+        {
+          "coord": [
+            63.48,
+            49.73
+          ],
+          "id": 153239,
+          "item": "Wildkin Feather",
+          "name": "Wildkin Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "The Hinterlands"
+        },
+        {
+          "coord": [
+            58.43,
+            46.2
+          ],
+          "id": 153239,
+          "item": "Wildkin Feather",
+          "name": "Wildkin Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "The Hinterlands"
+        },
+        {
+          "coord": [
+            53.74,
+            47.08
+          ],
+          "id": 153239,
+          "item": "Wildkin Feather",
+          "name": "Wildkin Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "The Hinterlands"
+        },
+        {
+          "coord": [
+            61.83,
+            52.4
+          ],
+          "id": 153239,
+          "item": "Wildkin Feather",
+          "name": "Wildkin Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "The Hinterlands"
+        },
+        {
+          "coord": [
+            46.81,
+            50.06
+          ],
+          "id": 153239,
+          "item": "Wildkin Feather",
+          "name": "Wildkin Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "The Hinterlands"
+        },
+        {
+          "coord": [
+            42.53,
+            54.4
+          ],
+          "id": 153239,
+          "item": "Wildkin Feather",
+          "name": "Wildkin Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "The Hinterlands"
+        },
+        {
+          "coord": [
+            37.3,
+            50.24
+          ],
+          "id": 153239,
+          "item": "Wildkin Feather",
+          "name": "Wildkin Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "The Hinterlands"
+        },
+        {
+          "coord": [
+            43.93,
+            59.26
+          ],
+          "id": 153239,
+          "item": "Wildkin Feather",
+          "name": "Wildkin Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "The Hinterlands"
+        },
+        {
+          "coord": [
+            44.19,
+            44.33
+          ],
+          "id": 153239,
+          "item": "Wildkin Feather",
+          "name": "Wildkin Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "The Hinterlands"
+        },
+        {
+          "coord": [
+            35.41,
+            43.04
+          ],
+          "id": 153239,
+          "item": "Wildkin Feather",
+          "name": "Wildkin Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "The Hinterlands"
+        },
+        {
+          "coord": [
+            33.19,
+            47.35
+          ],
+          "id": 153239,
+          "item": "Wildkin Feather",
+          "name": "Wildkin Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "The Hinterlands"
+        },
+        {
+          "coord": [
+            33.3,
+            42.95
+          ],
+          "id": 153239,
+          "item": "Wildkin Feather",
+          "name": "Wildkin Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "The Hinterlands"
+        },
+        {
+          "coord": [
+            37.47,
+            46.07
+          ],
+          "id": 153239,
+          "item": "Wildkin Feather",
+          "name": "Wildkin Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "The Hinterlands"
+        },
+        {
+          "coord": [
+            32.54,
+            43.16
+          ],
+          "id": 153239,
+          "item": "Wildkin Feather",
+          "name": "Wildkin Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "The Hinterlands"
+        },
+        {
+          "coord": [
+            35.5,
+            43.13
+          ],
+          "id": 153239,
+          "item": "Wildkin Feather",
+          "name": "Wildkin Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "The Hinterlands"
+        },
+        {
+          "coord": [
+            47.03,
+            44.21
+          ],
+          "id": 153239,
+          "item": "Wildkin Feather",
+          "name": "Wildkin Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "The Hinterlands"
+        },
+        {
+          "coord": [
+            48.65,
+            41.26
+          ],
+          "id": 153239,
+          "item": "Wildkin Feather",
+          "name": "Wildkin Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "The Hinterlands"
+        },
+        {
+          "coord": [
+            50.41,
+            59.26
+          ],
+          "id": 153239,
+          "item": "Wildkin Feather",
+          "name": "Wildkin Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "The Hinterlands"
+        },
+        {
+          "coord": [
+            55.66,
+            42.2
+          ],
+          "id": 153239,
+          "item": "Wildkin Feather",
+          "name": "Wildkin Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "The Hinterlands"
+        },
+        {
+          "coord": [
+            28.1,
+            58.12
+          ],
+          "id": 153239,
+          "item": "Wildkin Feather",
+          "name": "Wildkin Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "The Hinterlands"
+        },
+        {
+          "coord": [
+            40.62,
+            50.92
+          ],
+          "id": 153239,
+          "item": "Wildkin Feather",
+          "name": "Wildkin Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "The Hinterlands"
+        },
+        {
+          "coord": [
+            42.57,
+            58.49
+          ],
+          "id": 153239,
+          "item": "Wildkin Feather",
+          "name": "Wildkin Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "The Hinterlands"
+        },
+        {
+          "coord": [
+            43.17,
+            56.12
+          ],
+          "id": 153239,
+          "item": "Wildkin Feather",
+          "name": "Wildkin Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "The Hinterlands"
+        },
+        {
+          "coord": [
+            39.99,
+            45.26
+          ],
+          "id": 153239,
+          "item": "Wildkin Feather",
+          "name": "Wildkin Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "The Hinterlands"
+        },
+        {
+          "coord": [
+            34.19,
+            48.21
+          ],
+          "id": 153239,
+          "item": "Wildkin Feather",
+          "name": "Wildkin Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "The Hinterlands"
+        },
+        {
+          "coord": [
+            34.07,
+            52.95
+          ],
+          "id": 153239,
+          "item": "Wildkin Feather",
+          "name": "Wildkin Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "The Hinterlands"
+        },
+        {
+          "coord": [
+            42.15,
+            43.99
+          ],
+          "id": 153239,
+          "item": "Wildkin Feather",
+          "name": "Wildkin Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "The Hinterlands"
+        },
+        {
+          "coord": [
+            33.92,
+            47.99
+          ],
+          "id": 153239,
+          "item": "Wildkin Feather",
+          "name": "Wildkin Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "The Hinterlands"
+        },
+        {
+          "coord": [
+            38.5,
+            44.2
+          ],
+          "id": 153239,
+          "item": "Wildkin Feather",
+          "name": "Wildkin Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "The Hinterlands"
+        },
+        {
+          "coord": [
+            44.89,
+            46.31
+          ],
+          "id": 153239,
+          "item": "Wildkin Feather",
+          "name": "Wildkin Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "The Hinterlands"
+        },
+        {
+          "coord": [
+            29.57,
+            61.88
+          ],
+          "id": 153239,
+          "item": "Wildkin Feather",
+          "name": "Wildkin Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "The Hinterlands"
+        },
+        {
+          "coord": [
+            21.06,
+            56.06
+          ],
+          "id": 153239,
+          "item": "Wildkin Feather",
+          "name": "Wildkin Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "The Hinterlands"
+        },
+        {
+          "coord": [
+            26.66,
+            68.95
+          ],
+          "id": 153239,
+          "item": "Wildkin Feather",
+          "name": "Wildkin Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "The Hinterlands"
+        },
+        {
+          "coord": [
+            20.64,
+            57.61
+          ],
+          "id": 153239,
+          "item": "Wildkin Feather",
+          "name": "Wildkin Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "The Hinterlands"
+        },
+        {
+          "coord": [
+            31.5,
+            54.73
+          ],
+          "id": 153239,
+          "item": "Wildkin Feather",
+          "name": "Wildkin Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "The Hinterlands"
+        },
+        {
+          "coord": [
+            28.24,
+            68.51
+          ],
+          "id": 153239,
+          "item": "Wildkin Feather",
+          "name": "Wildkin Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "The Hinterlands"
+        },
+        {
+          "coord": [
+            19.49,
+            47.08
+          ],
+          "id": 153239,
+          "item": "Wildkin Feather",
+          "name": "Wildkin Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "The Hinterlands"
+        },
+        {
+          "coord": [
+            15.85,
+            54.76
+          ],
+          "id": 153239,
+          "item": "Wildkin Feather",
+          "name": "Wildkin Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "The Hinterlands"
+        },
+        {
+          "coord": [
+            38.26,
+            53.91
+          ],
+          "id": 153239,
+          "item": "Wildkin Feather",
+          "name": "Wildkin Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "The Hinterlands"
+        },
+        {
+          "coord": [
+            15.75,
+            52.53
+          ],
+          "id": 153239,
+          "item": "Wildkin Feather",
+          "name": "Wildkin Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "The Hinterlands"
+        },
+        {
+          "coord": [
+            27.72,
+            54.32
+          ],
+          "id": 153239,
+          "item": "Wildkin Feather",
+          "name": "Wildkin Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "The Hinterlands"
+        },
+        {
+          "coord": [
+            22.94,
+            54.84
+          ],
+          "id": 153239,
+          "item": "Wildkin Feather",
+          "name": "Wildkin Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "The Hinterlands"
+        },
+        {
+          "coord": [
+            23.22,
+            53.07
+          ],
+          "id": 153239,
+          "item": "Wildkin Feather",
+          "name": "Wildkin Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "The Hinterlands"
+        },
+        {
+          "coord": [
+            20.07,
+            48.22
+          ],
+          "id": 153239,
+          "item": "Wildkin Feather",
+          "name": "Wildkin Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "The Hinterlands"
+        },
+        {
+          "coord": [
+            26.13,
+            53.23
+          ],
+          "id": 153239,
+          "item": "Wildkin Feather",
+          "name": "Wildkin Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "The Hinterlands"
+        },
+        {
+          "coord": [
+            28.79,
+            52.23
+          ],
+          "id": 153239,
+          "item": "Wildkin Feather",
+          "name": "Wildkin Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "The Hinterlands"
+        },
+        {
+          "coord": [
+            34.03,
+            58.01
+          ],
+          "id": 153239,
+          "item": "Wildkin Feather",
+          "name": "Wildkin Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "The Hinterlands"
+        },
+        {
+          "coord": [
+            35.19,
+            55.63
+          ],
+          "id": 153239,
+          "item": "Wildkin Feather",
+          "name": "Wildkin Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "The Hinterlands"
+        },
+        {
+          "coord": [
+            28.8,
+            54.61
+          ],
+          "id": 153239,
+          "item": "Wildkin Feather",
+          "name": "Wildkin Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "The Hinterlands"
+        },
+        {
+          "coord": [
+            24.68,
+            58.73
+          ],
+          "id": 153239,
+          "item": "Wildkin Feather",
+          "name": "Wildkin Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "The Hinterlands"
+        },
+        {
+          "coord": [
+            22.21,
+            50.9
+          ],
+          "id": 153239,
+          "item": "Wildkin Feather",
+          "name": "Wildkin Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "The Hinterlands"
+        },
+        {
+          "coord": [
+            33.09,
+            60.4
+          ],
+          "id": 153239,
+          "item": "Wildkin Feather",
+          "name": "Wildkin Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "The Hinterlands"
+        },
+        {
+          "coord": [
+            26.38,
+            64.74
+          ],
+          "id": 153239,
+          "item": "Wildkin Feather",
+          "name": "Wildkin Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "The Hinterlands"
+        },
+        {
+          "coord": [
+            28.45,
+            60.4
+          ],
+          "id": 153239,
+          "item": "Wildkin Feather",
+          "name": "Wildkin Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "The Hinterlands"
+        },
+        {
+          "coord": [
+            29.97,
+            65.54
+          ],
+          "id": 153239,
+          "item": "Wildkin Feather",
+          "name": "Wildkin Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "The Hinterlands"
+        },
+        {
+          "coord": [
+            25.17,
+            61.95
+          ],
+          "id": 153239,
+          "item": "Wildkin Feather",
+          "name": "Wildkin Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "The Hinterlands"
+        },
+        {
+          "coord": [
+            31.03,
+            61.91
+          ],
+          "id": 153239,
+          "item": "Wildkin Feather",
+          "name": "Wildkin Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "The Hinterlands"
+        },
+        {
+          "coord": [
+            31.8,
+            63.9
+          ],
+          "id": 153239,
+          "item": "Wildkin Feather",
+          "name": "Wildkin Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "The Hinterlands"
+        },
+        {
+          "coord": [
+            28.38,
+            64.51
+          ],
+          "id": 153239,
+          "item": "Wildkin Feather",
+          "name": "Wildkin Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "The Hinterlands"
+        },
+        {
+          "coord": [
+            23.85,
+            52.18
+          ],
+          "id": 153239,
+          "item": "Wildkin Feather",
+          "name": "Wildkin Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "The Hinterlands"
+        },
+        {
+          "coord": [
+            15.57,
+            49.12
+          ],
+          "id": 153239,
+          "item": "Wildkin Feather",
+          "name": "Wildkin Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "The Hinterlands"
+        },
+        {
+          "coord": [
+            31.03,
+            54.43
+          ],
+          "id": 153239,
+          "item": "Wildkin Feather",
+          "name": "Wildkin Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "The Hinterlands"
+        },
+        {
+          "coord": [
+            21.31,
+            53.37
+          ],
+          "id": 153239,
+          "item": "Wildkin Feather",
+          "name": "Wildkin Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "The Hinterlands"
+        },
+        {
+          "coord": [
+            31.21,
+            55.3
+          ],
+          "id": 153239,
+          "item": "Wildkin Feather",
+          "name": "Wildkin Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "The Hinterlands"
+        },
+        {
+          "coord": [
+            18.35,
+            49.68
+          ],
+          "id": 153239,
+          "item": "Wildkin Feather",
+          "name": "Wildkin Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "The Hinterlands"
+        },
+        {
+          "coord": [
+            25.83,
+            57.03
+          ],
+          "id": 153239,
+          "item": "Wildkin Feather",
+          "name": "Wildkin Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "The Hinterlands"
+        },
+        {
+          "coord": [
+            24.76,
+            54.01
+          ],
+          "id": 153239,
+          "item": "Wildkin Feather",
+          "name": "Wildkin Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "The Hinterlands"
+        },
+        {
+          "coord": [
+            33.5,
+            51.69
+          ],
+          "id": 153239,
+          "item": "Wildkin Feather",
+          "name": "Wildkin Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "The Hinterlands"
+        },
+        {
+          "coord": [
+            26.34,
+            52.92
+          ],
+          "id": 153239,
+          "item": "Wildkin Feather",
+          "name": "Wildkin Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "The Hinterlands"
+        },
+        {
+          "coord": [
+            36.21,
+            52.79
+          ],
+          "id": 153239,
+          "item": "Wildkin Feather",
+          "name": "Wildkin Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "The Hinterlands"
+        },
+        {
+          "coord": [
+            33.65,
+            54.44
+          ],
+          "id": 153239,
+          "item": "Wildkin Feather",
+          "name": "Wildkin Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "The Hinterlands"
+        },
+        {
+          "coord": [
+            23.8,
+            49.56
+          ],
+          "id": 153239,
+          "item": "Wildkin Feather",
+          "name": "Wildkin Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "The Hinterlands"
+        },
+        {
+          "coord": [
+            25.9,
+            53.72
+          ],
+          "id": 153239,
+          "item": "Wildkin Feather",
+          "name": "Wildkin Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "The Hinterlands"
+        },
+        {
+          "coord": [
+            27.88,
+            52.94
+          ],
+          "id": 153239,
+          "item": "Wildkin Feather",
+          "name": "Wildkin Feather",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "The Hinterlands"
+        }
+      ],
+      "supporting": true,
+      "status": "spine",
+      "reason": "Preserved faction Casual actions."
+    },
+    "5250": {
+      "catalogs": [
+        "teldrassil"
+      ],
+      "evidence": {
+        "artifactVersion": "1.0.6-dev.f844007",
+        "buildCommit": "f844007b329b72f18cf2bda3d87540012294732a",
+        "source": "QuestieDB"
+      },
+      "locations": [
+        {
+          "coord": [
+            55.41,
+            92.23
+          ],
+          "id": 7907,
+          "name": "Daryn Lightwind",
+          "point": "start",
+          "reactalliance": 1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Teldrassil"
+        },
+        {
+          "coord": [
+            51.97,
+            30.39
+          ],
+          "id": 11079,
+          "name": "Wynd Nightchaser",
+          "point": "end",
+          "reactalliance": 1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Winterspring"
+        }
+      ],
+      "supporting": false,
+      "status": "spine",
+      "reason": "Preserved faction Casual actions."
+    },
+    "6721": {
+      "catalogs": [
+        "ironforge"
+      ],
+      "evidence": {
+        "artifactVersion": "1.0.6-dev.f844007",
+        "buildCommit": "f844007b329b72f18cf2bda3d87540012294732a",
+        "source": "QuestieDB"
+      },
+      "locations": [
+        {
+          "coord": [
+            70.89,
+            83.61
+          ],
+          "id": 5116,
+          "name": "Olmin Burningbeard",
+          "point": "start",
+          "reactalliance": 1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Ironforge"
+        },
+        {
+          "coord": [
+            56.68,
+            59.49
+          ],
+          "id": 3601,
+          "name": "Dazalar",
+          "point": "end",
+          "reactalliance": 1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Teldrassil"
+        }
+      ],
+      "supporting": false,
+      "status": "included",
+      "reason": "Permanent outdoor quest woven using verified source requirements and advisory legacy order."
     }
   },
   "clientWalkthrough": "Not performed.",
@@ -5197,6 +7438,7 @@
     955,
     956,
     957,
+    978,
     983,
     984,
     1639,
@@ -5209,6 +7451,7 @@
     2518,
     2520,
     3524,
+    3661,
     4681,
     4761,
     5627,
@@ -5225,5 +7468,580 @@
     1638,
     5921,
     5931
+  ],
+  "coverageMode": "zone",
+  "orderingEligibility": {
+    "456": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "457": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "458": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "459": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "475": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "476": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "483": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "486": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "487": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "488": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "489": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "490": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "916": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "917": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "918": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "919": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "920": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "921": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "922": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "923": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "927": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "928": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "929": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "930": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "931": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "932": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "933": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "934": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "935": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "937": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "938": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "940": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "941": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "978": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "979": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "997": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "2159": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "2399": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "2438": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "2459": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "2498": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "2499": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "2518": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "2541": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "2561": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "3519": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "3521": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "3522": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "3661": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "4495": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "5250": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "5842": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "6344": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "6721": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "7383": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "8734": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "87288": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "97236": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "97977": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "98046": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "98065": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "98392": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "98398": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "98403": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "99046": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "99047": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "99050": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "99053": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "99073": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    }
+  },
+  "upstream": {
+    "repository": "https://github.com/ErebusAres/ZygorGuidesRemaster-3.3.5a_WOTLK",
+    "commit": "9087c457e20fb96e73e5b362dd6fc50324b75718",
+    "strict": false,
+    "sourceHashes": {
+      "ZygorGuidesViewerRM/Guides/Leveling/ZygorGuidesHorde.lua": "2eaf5adb4865936cdb4257451c3ce920fdaff1c0ec17216c36e055480f389e54",
+      "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-EasternKingdoms.lua": "8a5ec87d31698c612e50eb0655f5c1f28d723c3068552c1295d79ddcd934270f",
+      "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-Kalimdor.lua": "4fb7b7f5bb2702dfe36ed33de31b4d3105153bfba62b7a14a7ab73386e2087fa",
+      "ZygorGuidesViewerRM/Guides/Leveling/ZygorGuidesAlliance.lua": "ffb9b7828817e098d74ee5931e15a64ce773142a4c1e60f9775d0713121ba67d"
+    },
+    "matches": {}
+  },
+  "additionalSpines": [
+    "leveling-era-alliance-feralas-and-tanaris",
+    "leveling-era-alliance-the-hinterlands",
+    "leveling-era-alliance-blasted-lands-and-burning-steppes",
+    "leveling-era-alliance-azshara-and-felwood",
+    "leveling-era-alliance-ungoro-crater-part-2",
+    "leveling-era-alliance-winterspring-and-felwood"
   ]
 }

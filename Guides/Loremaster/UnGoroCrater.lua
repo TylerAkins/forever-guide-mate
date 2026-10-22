@@ -6,7 +6,7 @@ ns:RegisterGuide({
     id = "loremaster-ungoro-crater",
     title = "Un'Goro Crater",
     category = "Loremaster Guides",
-    revision = 1,
+    revision = 2,
     routeMode = "ordered",
     loremasterExpanded = true,
     goals = {
@@ -189,13 +189,13 @@ ns:RegisterGuide({
                     y = 0.6902,
                 },
             },
+            sourceActionID = "turnin-3844-it-s-a-secret-to-everybody",
+            sourceGuide = "leveling-era-alliance-ungoro-crater",
             sourceStep = 4,
             text = "Turn in It's a Secret to Everybody.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-ungoro-crater",
-            sourceActionID = "turnin-3844-it-s-a-secret-to-everybody",
         },
         {
             complete = { quest = { id = 3845, state = "activeOrCompleted" } },
@@ -276,13 +276,13 @@ ns:RegisterGuide({
                     y = 0.7597,
                 },
             },
+            sourceActionID = "turnin-4290-the-fare-of-lar-korwi",
+            sourceGuide = "leveling-era-alliance-ungoro-crater",
             sourceStep = 6,
             text = "Turn in The Fare of Lar'korwi to Torwa Pathfinder.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-ungoro-crater",
-            sourceActionID = "turnin-4290-the-fare-of-lar-korwi",
         },
         {
             complete = { quest = { id = 4291, state = "activeOrCompleted" } },
@@ -356,25 +356,6 @@ ns:RegisterGuide({
                 "alliance-leveling-era-alliance-ungoro-crater-accept-4291-the-scent-of-lar-korwi",
                 "alliance-leveling-era-alliance-ungoro-crater-objective-4291-1-lar-korwi-mate",
             },
-            id = "alliance-leveling-era-alliance-ungoro-crater-turnin-4291-the-scent-of-lar-korwi",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 4290 } } },
-            route = {
-                {
-                    label = "Torwa Pathfinder",
-                    mapID = 1449,
-                    offMapText = "Travel to Torwa Pathfinder in Un'Goro Crater.",
-                    x = 0.7163,
-                    y = 0.7597,
-                },
-            },
-            sourceStep = 8,
-            text = "Turn in The Scent of Lar'korwi to Torwa Pathfinder.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-ungoro-crater",
-            sourceActionID = "turnin-4291-the-scent-of-lar-korwi",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -388,6 +369,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-ungoro-crater-turnin-4291-the-scent-of-lar-korwi",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 4290 } } },
+            route = {
+                {
+                    label = "Torwa Pathfinder",
+                    mapID = 1449,
+                    offMapText = "Travel to Torwa Pathfinder in Un'Goro Crater.",
+                    x = 0.7163,
+                    y = 0.7597,
+                },
+            },
+            sourceActionID = "turnin-4291-the-scent-of-lar-korwi",
+            sourceGuide = "leveling-era-alliance-ungoro-crater",
+            sourceStep = 8,
+            text = "Turn in The Scent of Lar'korwi to Torwa Pathfinder.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 4292, state = "activeOrCompleted" } },
@@ -545,19 +545,6 @@ ns:RegisterGuide({
                 "alliance-leveling-era-alliance-ungoro-crater-objective-3845-2-curled-map-parchment",
                 "alliance-leveling-era-alliance-ungoro-crater-objective-3845-3-lion-headed-key",
             },
-            id = "alliance-leveling-era-alliance-ungoro-crater-turnin-3845-it-s-a-secret-to-everybody",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 3844 } } },
-            route = {
-                { label = "Linken", mapID = 1449, offMapText = "Travel to Linken in Un'Goro Crater.", x = 0.4466, y = 0.0811 },
-            },
-            sourceStep = 14,
-            text = "Turn in It's a Secret to Everybody to Linken.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-ungoro-crater",
-            sourceActionID = "turnin-3845-it-s-a-secret-to-everybody",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -571,6 +558,19 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-ungoro-crater-turnin-3845-it-s-a-secret-to-everybody",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 3844 } } },
+            route = {
+                { label = "Linken", mapID = 1449, offMapText = "Travel to Linken in Un'Goro Crater.", x = 0.4466, y = 0.0811 },
+            },
+            sourceActionID = "turnin-3845-it-s-a-secret-to-everybody",
+            sourceGuide = "leveling-era-alliance-ungoro-crater",
+            sourceStep = 14,
+            text = "Turn in It's a Secret to Everybody to Linken.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 3908, state = "activeOrCompleted" } },
@@ -631,13 +631,13 @@ ns:RegisterGuide({
                     y = 0.0714,
                 },
             },
+            sourceActionID = "turnin-3884-williden-s-journal",
+            sourceGuide = "leveling-era-alliance-ungoro-crater",
             sourceStep = 15,
             text = "Turn in Williden's Journal to Williden Marshal.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-ungoro-crater",
-            sourceActionID = "turnin-3884-williden-s-journal",
         },
         {
             complete = { quest = { id = 4284, state = "activeOrCompleted" } },
@@ -683,13 +683,13 @@ ns:RegisterGuide({
             route = {
                 { label = "J.D. Collie", mapID = 1449, offMapText = "Travel to J.D. Collie in Un'Goro Crater.", x = 0.4192, y = 0.027 },
             },
+            sourceActionID = "turnin-4284-crystals-of-power",
+            sourceGuide = "leveling-era-alliance-ungoro-crater",
             sourceStep = 17,
             text = "Turn in Crystals of Power to J.D. Collie.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-ungoro-crater",
-            sourceActionID = "turnin-4284-crystals-of-power",
         },
         {
             checkpointQuest = 4141,
@@ -754,13 +754,13 @@ ns:RegisterGuide({
             route = {
                 { label = "Muigin", mapID = 1449, offMapText = "Travel to Muigin in Un'Goro Crater.", x = 0.4294, y = 0.0964 },
             },
+            sourceActionID = "turnin-4141-muigin-and-larion",
+            sourceGuide = "leveling-era-alliance-ungoro-crater",
             sourceStep = 22,
             text = "Turn in Muigin and Larion to Muigin.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-ungoro-crater",
-            sourceActionID = "turnin-4141-muigin-and-larion",
         },
         {
             complete = { quest = { id = 4142, state = "activeOrCompleted" } },
@@ -800,6 +800,39 @@ ns:RegisterGuide({
             },
         },
         {
+            complete = { level = { min = 51 } },
+            conditions = { all = { { faction = "Alliance" } } },
+            excludeWhen = { ["not"] = { all = { { faction = "Alliance" } } } },
+            id = "visit-entry-leveling-era-alliance-blasted-lands-and-burning-steppes",
+            kind = "note",
+            requiredLevel = 51,
+            text = "Reach level 51 before the Blasted Lands & Burning Steppes visit.",
+            visitSourceGuide = "leveling-era-alliance-blasted-lands-and-burning-steppes",
+        },
+        {
+            complete = { quest = { id = 4512, state = "activeOrCompleted" } },
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 48 } }, { race = { 1, 3, 4, 7, 95 } } } },
+            dependsOn = {},
+            id = "alliance-leveling-era-alliance-blasted-lands-and-burning-steppes-accept-4512-a-little-slime-goes-a-long-way",
+            kind = "accept",
+            requiredQuests = {},
+            route = {
+                {
+                    label = "Laris Geardawdle",
+                    mapID = 1455,
+                    offMapText = "Travel to Laris Geardawdle in Ironforge.",
+                    x = 0.7577,
+                    y = 0.2337,
+                },
+            },
+            sourceActionID = "accept-4512-a-little-slime-goes-a-long-way",
+            sourceGuide = "leveling-era-alliance-blasted-lands-and-burning-steppes",
+            sourceStep = 23,
+            text = "Accept A Little Slime Goes a Long Way from Laris Geardawdle.",
+            useClientPin = false,
+            useClientText = false,
+        },
+        {
             id = "visit-entry-leveling-era-alliance-azshara-and-felwood",
             kind = "note",
             visitSourceGuide = "leveling-era-alliance-azshara-and-felwood",
@@ -810,28 +843,130 @@ ns:RegisterGuide({
             requiredLevel = 52,
         },
         {
-            complete = { quest = { id = 3908, state = "completed" } },
-            conditions = { all = { { faction = "Alliance" }, { level = { min = 47 } } } },
+            complete = { quest = { id = 3764, state = "activeOrCompleted" } },
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 47 } }, { race = { 1, 3, 4, 7, 95 } } } },
             dependsOn = {},
-            id = "alliance-leveling-era-alliance-azshara-and-felwood-turnin-3908-it-s-a-secret-to-everybody",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 3845 } } },
+            id = "alliance-leveling-era-alliance-azshara-and-felwood-objective-3764-1-un-goro-soil",
+            kind = "note",
+            requiredQuests = {},
+            route = { { label = "Un'Goro Soil", mapID = 1457, offMapText = "Travel to Un'Goro Soil.", x = 0.396, y = 0.4198 } },
+            sourceActionID = "objective-3764-1-un-goro-soil",
+            sourceGuide = "leveling-era-alliance-azshara-and-felwood",
+            text = "Collect 20 Un'Goro Soil. Keep the required materials for the quest.",
+            useClientPin = false,
+            useClientText = false,
+        },
+        {
+            complete = { quest = { id = 3764, state = "activeOrCompleted" } },
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 47 } }, { race = { 1, 3, 4, 7, 95 } } } },
+            dependsOn = {},
+            id = "alliance-leveling-era-alliance-azshara-and-felwood-accept-3764-un-goro-soil",
+            kind = "accept",
+            requiredQuests = {},
             route = {
                 {
-                    label = "Donova Snowden",
-                    mapID = 1452,
-                    offMapText = "Travel to Donova Snowden in Winterspring.",
-                    x = 0.3127,
-                    y = 0.4516,
+                    label = "Arch Druid Fandral Staghelm",
+                    mapID = 1457,
+                    offMapText = "Travel to Arch Druid Fandral Staghelm in Darnassus.",
+                    x = 0.3482,
+                    y = 0.0925,
                 },
             },
-            sourceStep = 41,
-            text = "Turn in It's a Secret to Everybody to Donova Snowden.",
+            sourceActionID = "accept-3764-un-goro-soil",
+            sourceGuide = "leveling-era-alliance-azshara-and-felwood",
+            sourceStep = 5,
+            text = "Accept Un'Goro Soil from Arch Druid Fandral Staghelm.",
+            useClientPin = false,
+            useClientText = false,
+        },
+        {
+            complete = { quest = { id = 3764, state = "completed" } },
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 47 } }, { race = { 1, 3, 4, 7, 95 } } } },
+            dependsOn = { "alliance-leveling-era-alliance-azshara-and-felwood-accept-3764-un-goro-soil" },
+            id = "alliance-leveling-era-alliance-azshara-and-felwood-turnin-3764-un-goro-soil",
+            kind = "turnin",
+            requiredQuests = {},
+            route = { { label = "Jenal", mapID = 1457, offMapText = "Travel to Jenal in Darnassus.", x = 0.3149, y = 0.0823 } },
+            sourceActionID = "turnin-3764-un-goro-soil",
+            sourceGuide = "leveling-era-alliance-azshara-and-felwood",
+            sourceStep = 6,
+            text = "Turn in Un'Goro Soil to Jenal.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
+        },
+        {
+            checkpointQuest = 4512,
+            complete = {
+                any = {
+                    {
+                        all = {
+                            { item = { minCount = 6, name = "Empty Cursed Ooze Jar" } },
+                            { item = { minCount = 6, name = "Empty Tainted Ooze Jar" } },
+                        },
+                    },
+                    { quest = { id = 4512, state = "complete" } },
+                },
+            },
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 48 } }, { race = { 1, 3, 4, 7, 95 } } } },
+            dependsOn = {},
+            id = "alliance-leveling-era-alliance-azshara-and-felwood-objective-4512-1-package-of-empty-ooze-containers",
+            instructionOnly = true,
+            kind = "note",
+            rememberPreparation = 4512,
+            requiredQuests = {},
+            route = {
+                {
+                    label = "Filled Cursed Ooze Jar",
+                    mapID = 1448,
+                    offMapText = "Travel to Filled Cursed Ooze Jar.",
+                    x = 0.416,
+                    y = 0.716,
+                },
+            },
+            sourceActionID = "objective-4512-1-package-of-empty-ooze-containers",
             sourceGuide = "leveling-era-alliance-azshara-and-felwood",
-            sourceActionID = "turnin-3908-it-s-a-secret-to-everybody",
+            sourceInstructionIndex = 1,
+            sourceInstructionStep = 23,
+            text = "Open the Package of Empty Ooze Containers to obtain 6 Empty Cursed Ooze Jars and 6 Empty Tainted Ooze Jars.",
+            useClientPin = false,
+            useClientText = false,
+        },
+        {
+            complete = { questObjective = { count = 6, id = 4512, index = 1 } },
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 48 } }, { race = { 1, 3, 4, 7, 95 } } } },
+            dependsOn = {},
+            id = "alliance-leveling-era-alliance-azshara-and-felwood-objective-4512-1-cursed-ooze",
+            kind = "objective",
+            requiredQuests = {},
+            route = { { label = "Cursed Oozes", mapID = 1448, offMapText = "Travel to Cursed Oozes.", x = 0.416, y = 0.716 } },
+            sourceActionID = "objective-4512-1-cursed-ooze",
+            sourceGuide = "leveling-era-alliance-azshara-and-felwood",
+            text = "Kill Cursed Oozes in Felwood. Use an Empty Cursed Ooze Jar on each corpse to make 6 Filled Cursed Ooze Jars.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
+        },
+        {
+            complete = { questObjective = { count = 6, id = 4512, index = 2 } },
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 48 } }, { race = { 1, 3, 4, 7, 95 } } } },
+            dependsOn = {},
+            id = "alliance-leveling-era-alliance-azshara-and-felwood-objective-4512-2-tainted-ooze",
+            kind = "objective",
+            requiredQuests = {},
+            route = { { label = "Tainted Oozes", mapID = 1448, offMapText = "Travel to Tainted Oozes.", x = 0.408, y = 0.59 } },
+            sourceActionID = "objective-4512-2-tainted-ooze",
+            sourceGuide = "leveling-era-alliance-azshara-and-felwood",
+            sourceStep = 26,
+            text = "Kill Tainted Oozes in Felwood. Use an Empty Tainted Ooze Jar on each corpse to make 6 Filled Tainted Ooze Jars.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
+        },
+        {
+            complete = { quest = { id = 3908, state = "completed" } },
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 47 } } } },
+            dependsOn = {},
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -858,6 +993,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-azshara-and-felwood-turnin-3908-it-s-a-secret-to-everybody",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 3845 } } },
+            route = {
+                {
+                    label = "Donova Snowden",
+                    mapID = 1452,
+                    offMapText = "Travel to Donova Snowden in Winterspring.",
+                    x = 0.3127,
+                    y = 0.4516,
+                },
+            },
+            sourceActionID = "turnin-3908-it-s-a-secret-to-everybody",
+            sourceGuide = "leveling-era-alliance-azshara-and-felwood",
+            sourceStep = 41,
+            text = "Turn in It's a Secret to Everybody to Donova Snowden.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 3909, state = "activeOrCompleted" } },
@@ -970,25 +1124,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 4142, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 47 } }, { race = { 1, 3, 4, 7, 95 } } } },
             dependsOn = {},
-            id = "alliance-leveling-era-alliance-feralas-and-azshara-turnin-4142-a-visit-to-gregan",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 4141 } } },
-            route = {
-                {
-                    label = "Gregan Brewspewer",
-                    mapID = 1444,
-                    offMapText = "Travel to Gregan Brewspewer in Feralas.",
-                    x = 0.4512,
-                    y = 0.2557,
-                },
-            },
-            sourceStep = 24,
-            text = "Turn in A Visit to Gregan to Gregan Brewspewer.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-feralas-and-azshara",
-            sourceActionID = "turnin-4142-a-visit-to-gregan",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -1009,6 +1144,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-feralas-and-azshara-turnin-4142-a-visit-to-gregan",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 4141 } } },
+            route = {
+                {
+                    label = "Gregan Brewspewer",
+                    mapID = 1444,
+                    offMapText = "Travel to Gregan Brewspewer in Feralas.",
+                    x = 0.4512,
+                    y = 0.2557,
+                },
+            },
+            sourceActionID = "turnin-4142-a-visit-to-gregan",
+            sourceGuide = "leveling-era-alliance-feralas-and-azshara",
+            sourceStep = 24,
+            text = "Turn in A Visit to Gregan to Gregan Brewspewer.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             checkpointQuest = 3909,
@@ -1591,13 +1745,13 @@ ns:RegisterGuide({
                     y = 0.7597,
                 },
             },
+            sourceActionID = "turnin-4289-the-apes-of-un-goro",
+            sourceGuide = "leveling-era-alliance-ungoro-crater-part-2",
             sourceStep = 26,
             text = "Turn in The Apes of Un'Goro to Torwa Pathfinder.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-ungoro-crater-part-2",
-            sourceActionID = "turnin-4289-the-apes-of-un-goro",
         },
         {
             complete = { quest = { id = 4292, state = "completed" } },
@@ -1606,25 +1760,6 @@ ns:RegisterGuide({
                 "alliance-leveling-era-alliance-ungoro-crater-part-2-objective-4292-1-torwa-s-pouch",
                 "alliance-leveling-era-alliance-ungoro-crater-part-2-objective-4292-1-preserved-threshadon-meat",
             },
-            id = "alliance-leveling-era-alliance-ungoro-crater-part-2-turnin-4292-the-bait-for-lar-korwi",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 4291 } } },
-            route = {
-                {
-                    label = "Torwa Pathfinder",
-                    mapID = 1449,
-                    offMapText = "Travel to Torwa Pathfinder in Un'Goro Crater.",
-                    x = 0.7164,
-                    y = 0.7597,
-                },
-            },
-            sourceStep = 26,
-            text = "Turn in The Bait for Lar'korwi to Torwa Pathfinder.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-ungoro-crater-part-2",
-            sourceActionID = "turnin-4292-the-bait-for-lar-korwi",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -1651,6 +1786,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-ungoro-crater-part-2-turnin-4292-the-bait-for-lar-korwi",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 4291 } } },
+            route = {
+                {
+                    label = "Torwa Pathfinder",
+                    mapID = 1449,
+                    offMapText = "Travel to Torwa Pathfinder in Un'Goro Crater.",
+                    x = 0.7164,
+                    y = 0.7597,
+                },
+            },
+            sourceActionID = "turnin-4292-the-bait-for-lar-korwi",
+            sourceGuide = "leveling-era-alliance-ungoro-crater-part-2",
+            sourceStep = 26,
+            text = "Turn in The Bait for Lar'korwi to Torwa Pathfinder.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 4301, state = "activeOrCompleted" } },
@@ -1799,13 +1953,13 @@ ns:RegisterGuide({
             route = {
                 { label = "Krakle", mapID = 1449, offMapText = "Travel to Krakle in Un'Goro Crater.", x = 0.3093, y = 0.5043 },
             },
+            sourceActionID = "turnin-974-finding-the-source",
+            sourceGuide = "leveling-era-alliance-ungoro-crater-part-2",
             sourceStep = 34,
             text = "Turn in Finding the Source to Krakle.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-ungoro-crater-part-2",
-            sourceActionID = "turnin-974-finding-the-source",
         },
         {
             complete = { quest = { id = 980, state = "activeOrCompleted" } },
@@ -1927,13 +2081,13 @@ ns:RegisterGuide({
             kind = "turnin",
             requiredQuests = {},
             route = { { label = "Ringo", mapID = 1449, offMapText = "Travel to Ringo in Un'Goro Crater.", x = 0.519, y = 0.4985 } },
+            sourceActionID = "turnin-4492-lost",
+            sourceGuide = "leveling-era-alliance-ungoro-crater-part-2",
             sourceStep = 40,
             text = "Turn in Lost! to Ringo.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-ungoro-crater-part-2",
-            sourceActionID = "turnin-4492-lost",
         },
         {
             complete = { quest = { id = 4491, state = "activeOrCompleted" } },
@@ -1999,25 +2153,6 @@ ns:RegisterGuide({
                 "alliance-leveling-era-alliance-ungoro-crater-part-2-accept-4491-a-little-help-from-my-friends",
                 "alliance-leveling-era-alliance-ungoro-crater-part-2-objective-4491-authored-escort",
             },
-            id = "alliance-leveling-era-alliance-ungoro-crater-part-2-turnin-4491-a-little-help-from-my-friends",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 4492 } } },
-            route = {
-                {
-                    label = "Spraggle Frock",
-                    mapID = 1449,
-                    offMapText = "Travel to Spraggle Frock in Un'Goro Crater.",
-                    x = 0.4362,
-                    y = 0.0851,
-                },
-            },
-            sourceStep = 42,
-            text = "Turn in A Little Help From My Friends to Spraggle Frock.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-ungoro-crater-part-2",
-            sourceActionID = "turnin-4491-a-little-help-from-my-friends",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -2031,6 +2166,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-ungoro-crater-part-2-turnin-4491-a-little-help-from-my-friends",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 4492 } } },
+            route = {
+                {
+                    label = "Spraggle Frock",
+                    mapID = 1449,
+                    offMapText = "Travel to Spraggle Frock in Un'Goro Crater.",
+                    x = 0.4362,
+                    y = 0.0851,
+                },
+            },
+            sourceActionID = "turnin-4491-a-little-help-from-my-friends",
+            sourceGuide = "leveling-era-alliance-ungoro-crater-part-2",
+            sourceStep = 42,
+            text = "Turn in A Little Help From My Friends to Spraggle Frock.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 4501, state = "completed" } },
@@ -2053,13 +2207,13 @@ ns:RegisterGuide({
                     y = 0.0851,
                 },
             },
+            sourceActionID = "turnin-4501-beware-of-pterrordax",
+            sourceGuide = "leveling-era-alliance-ungoro-crater-part-2",
             sourceStep = 42,
             text = "Turn in Beware of Pterrordax to Spraggle Frock.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-ungoro-crater-part-2",
-            sourceActionID = "turnin-4501-beware-of-pterrordax",
         },
         {
             complete = { quest = { id = 3882, state = "completed" } },
@@ -2080,13 +2234,13 @@ ns:RegisterGuide({
                     y = 0.0743,
                 },
             },
+            sourceActionID = "turnin-3882-roll-the-bones",
+            sourceGuide = "leveling-era-alliance-ungoro-crater-part-2",
             sourceStep = 44,
             text = "Turn in Roll the Bones to Spark Nilminer.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-ungoro-crater-part-2",
-            sourceActionID = "turnin-3882-roll-the-bones",
         },
         {
             complete = { questObjective = { count = 1, id = 4285, index = 1 } },
@@ -2132,19 +2286,6 @@ ns:RegisterGuide({
                 "alliance-leveling-era-alliance-ungoro-crater-part-2-accept-4285-the-northern-pylon",
                 "alliance-leveling-era-alliance-ungoro-crater-part-2-objective-4285-quest-work",
             },
-            id = "alliance-leveling-era-alliance-ungoro-crater-part-2-turnin-4285-the-northern-pylon",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 4284 } } },
-            route = {
-                { label = "J.D. Collie", mapID = 1449, offMapText = "Travel to J.D. Collie in Un'Goro Crater.", x = 0.4192, y = 0.027 },
-            },
-            sourceStep = 45,
-            text = "Turn in The Northern Pylon to J.D. Collie.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-ungoro-crater-part-2",
-            sourceActionID = "turnin-4285-the-northern-pylon",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -2158,6 +2299,19 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-ungoro-crater-part-2-turnin-4285-the-northern-pylon",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 4284 } } },
+            route = {
+                { label = "J.D. Collie", mapID = 1449, offMapText = "Travel to J.D. Collie in Un'Goro Crater.", x = 0.4192, y = 0.027 },
+            },
+            sourceActionID = "turnin-4285-the-northern-pylon",
+            sourceGuide = "leveling-era-alliance-ungoro-crater-part-2",
+            sourceStep = 45,
+            text = "Turn in The Northern Pylon to J.D. Collie.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { questObjective = { count = 1, id = 4287, index = 1 } },
@@ -2203,19 +2357,6 @@ ns:RegisterGuide({
                 "alliance-leveling-era-alliance-ungoro-crater-part-2-accept-4287-the-eastern-pylon",
                 "alliance-leveling-era-alliance-ungoro-crater-part-2-objective-4287-quest-work",
             },
-            id = "alliance-leveling-era-alliance-ungoro-crater-part-2-turnin-4287-the-eastern-pylon",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 4284 } } },
-            route = {
-                { label = "J.D. Collie", mapID = 1449, offMapText = "Travel to J.D. Collie in Un'Goro Crater.", x = 0.4192, y = 0.027 },
-            },
-            sourceStep = 45,
-            text = "Turn in The Eastern Pylon to J.D. Collie.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-ungoro-crater-part-2",
-            sourceActionID = "turnin-4287-the-eastern-pylon",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -2229,6 +2370,19 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-ungoro-crater-part-2-turnin-4287-the-eastern-pylon",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 4284 } } },
+            route = {
+                { label = "J.D. Collie", mapID = 1449, offMapText = "Travel to J.D. Collie in Un'Goro Crater.", x = 0.4192, y = 0.027 },
+            },
+            sourceActionID = "turnin-4287-the-eastern-pylon",
+            sourceGuide = "leveling-era-alliance-ungoro-crater-part-2",
+            sourceStep = 45,
+            text = "Turn in The Eastern Pylon to J.D. Collie.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { questObjective = { count = 1, id = 4288, index = 1 } },
@@ -2274,19 +2428,6 @@ ns:RegisterGuide({
                 "alliance-leveling-era-alliance-ungoro-crater-part-2-accept-4288-the-western-pylon",
                 "alliance-leveling-era-alliance-ungoro-crater-part-2-objective-4288-quest-work",
             },
-            id = "alliance-leveling-era-alliance-ungoro-crater-part-2-turnin-4288-the-western-pylon",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 4284 } } },
-            route = {
-                { label = "J.D. Collie", mapID = 1449, offMapText = "Travel to J.D. Collie in Un'Goro Crater.", x = 0.4192, y = 0.027 },
-            },
-            sourceStep = 45,
-            text = "Turn in The Western Pylon to J.D. Collie.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-ungoro-crater-part-2",
-            sourceActionID = "turnin-4288-the-western-pylon",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -2300,6 +2441,19 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-ungoro-crater-part-2-turnin-4288-the-western-pylon",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 4284 } } },
+            route = {
+                { label = "J.D. Collie", mapID = 1449, offMapText = "Travel to J.D. Collie in Un'Goro Crater.", x = 0.4192, y = 0.027 },
+            },
+            sourceActionID = "turnin-4288-the-western-pylon",
+            sourceGuide = "leveling-era-alliance-ungoro-crater-part-2",
+            sourceStep = 45,
+            text = "Turn in The Western Pylon to J.D. Collie.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 4321, state = "activeOrCompleted" } },
@@ -2360,19 +2514,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 4321, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 47 } } } },
             dependsOn = { "alliance-leveling-era-alliance-ungoro-crater-part-2-accept-4321-making-sense-of-it" },
-            id = "alliance-leveling-era-alliance-ungoro-crater-part-2-turnin-4321-making-sense-of-it",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "all", quests = { 4285, 4287, 4288 } } },
-            route = {
-                { label = "J.D. Collie", mapID = 1449, offMapText = "Travel to J.D. Collie in Un'Goro Crater.", x = 0.4192, y = 0.027 },
-            },
-            sourceStep = 46,
-            text = "Turn in Making Sense of It to J.D. Collie.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-ungoro-crater-part-2",
-            sourceActionID = "turnin-4321-making-sense-of-it",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -2411,6 +2552,19 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-ungoro-crater-part-2-turnin-4321-making-sense-of-it",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "all", quests = { 4285, 4287, 4288 } } },
+            route = {
+                { label = "J.D. Collie", mapID = 1449, offMapText = "Travel to J.D. Collie in Un'Goro Crater.", x = 0.4192, y = 0.027 },
+            },
+            sourceActionID = "turnin-4321-making-sense-of-it",
+            sourceGuide = "leveling-era-alliance-ungoro-crater-part-2",
+            sourceStep = 46,
+            text = "Turn in Making Sense of It to J.D. Collie.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 3883, state = "completed" } },
@@ -2431,13 +2585,13 @@ ns:RegisterGuide({
                     y = 0.0679,
                 },
             },
+            sourceActionID = "turnin-3883-alien-ecology",
+            sourceGuide = "leveling-era-alliance-ungoro-crater-part-2",
             sourceStep = 48,
             text = "Turn in Alien Ecology to Hol'anyee Marshal.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-ungoro-crater-part-2",
-            sourceActionID = "turnin-3883-alien-ecology",
         },
         {
             complete = { quest = { id = 3881, state = "completed" } },
@@ -2459,13 +2613,13 @@ ns:RegisterGuide({
                     y = 0.0714,
                 },
             },
+            sourceActionID = "turnin-3881-expedition-salvation",
+            sourceGuide = "leveling-era-alliance-ungoro-crater-part-2",
             sourceStep = 49,
             text = "Turn in Expedition Salvation to Williden Marshal.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-ungoro-crater-part-2",
-            sourceActionID = "turnin-3881-expedition-salvation",
         },
         {
             complete = { quest = { id = 4503, state = "completed" } },
@@ -2481,13 +2635,13 @@ ns:RegisterGuide({
             route = {
                 { label = "Shizzle", mapID = 1449, offMapText = "Travel to Shizzle in Un'Goro Crater.", x = 0.4423, y = 0.1159 },
             },
+            sourceActionID = "turnin-4503-shizzle-s-flyer",
+            sourceGuide = "leveling-era-alliance-ungoro-crater-part-2",
             sourceStep = 50,
             text = "Turn in Shizzle's Flyer to Shizzle.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-ungoro-crater-part-2",
-            sourceActionID = "turnin-4503-shizzle-s-flyer",
         },
         {
             complete = { quest = { id = 4243, state = "activeOrCompleted" } },
@@ -2551,13 +2705,13 @@ ns:RegisterGuide({
             route = {
                 { label = "A-Me 01", mapID = 1449, offMapText = "Travel to A-Me 01 in Un'Goro Crater.", x = 0.6765, y = 0.1676 },
             },
+            sourceActionID = "turnin-4243-chasing-a-me-01",
+            sourceGuide = "leveling-era-alliance-ungoro-crater-part-2",
             sourceStep = 53,
             text = "Turn in Chasing A-Me 01 to A-Me 01.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-ungoro-crater-part-2",
-            sourceActionID = "turnin-4243-chasing-a-me-01",
         },
         {
             complete = { quest = { id = 4244, state = "activeOrCompleted" } },
@@ -2623,19 +2777,6 @@ ns:RegisterGuide({
                 "alliance-leveling-era-alliance-ungoro-crater-part-2-accept-4244-chasing-a-me-01",
                 "alliance-leveling-era-alliance-ungoro-crater-part-2-objective-4244-quest-work",
             },
-            id = "alliance-leveling-era-alliance-ungoro-crater-part-2-turnin-4244-chasing-a-me-01",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 4243 } } },
-            route = {
-                { label = "A-Me 01", mapID = 1449, offMapText = "Travel to A-Me 01 in Un'Goro Crater.", x = 0.6765, y = 0.1676 },
-            },
-            sourceStep = 54,
-            text = "Turn in Chasing A-Me 01 to A-Me 01.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-ungoro-crater-part-2",
-            sourceActionID = "turnin-4244-chasing-a-me-01",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -2649,6 +2790,19 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-ungoro-crater-part-2-turnin-4244-chasing-a-me-01",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 4243 } } },
+            route = {
+                { label = "A-Me 01", mapID = 1449, offMapText = "Travel to A-Me 01 in Un'Goro Crater.", x = 0.6765, y = 0.1676 },
+            },
+            sourceActionID = "turnin-4244-chasing-a-me-01",
+            sourceGuide = "leveling-era-alliance-ungoro-crater-part-2",
+            sourceStep = 54,
+            text = "Turn in Chasing A-Me 01 to A-Me 01.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 4245, state = "activeOrCompleted" } },
@@ -2743,25 +2897,6 @@ ns:RegisterGuide({
                 "alliance-leveling-era-alliance-ungoro-crater-part-2-accept-4245-chasing-a-me-01",
                 "alliance-leveling-era-alliance-ungoro-crater-part-2-objective-4245-reviewed-escort",
             },
-            id = "alliance-leveling-era-alliance-ungoro-crater-part-2-turnin-4245-chasing-a-me-01",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 4244 } } },
-            route = {
-                {
-                    label = "Karna Remtravel",
-                    mapID = 1449,
-                    offMapText = "Travel to Karna Remtravel in Un'Goro Crater.",
-                    x = 0.4638,
-                    y = 0.1345,
-                },
-            },
-            sourceStep = 56,
-            text = "Turn in Chasing A-Me 01 to Karna Remtravel.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-ungoro-crater-part-2",
-            sourceActionID = "turnin-4245-chasing-a-me-01",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -2788,6 +2923,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-ungoro-crater-part-2-turnin-4245-chasing-a-me-01",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 4244 } } },
+            route = {
+                {
+                    label = "Karna Remtravel",
+                    mapID = 1449,
+                    offMapText = "Travel to Karna Remtravel in Un'Goro Crater.",
+                    x = 0.4638,
+                    y = 0.1345,
+                },
+            },
+            sourceActionID = "turnin-4245-chasing-a-me-01",
+            sourceGuide = "leveling-era-alliance-ungoro-crater-part-2",
+            sourceStep = 56,
+            text = "Turn in Chasing A-Me 01 to Karna Remtravel.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 4301, state = "completed" } },
@@ -2796,25 +2950,6 @@ ns:RegisterGuide({
                 "alliance-leveling-era-alliance-ungoro-crater-part-2-accept-4301-the-mighty-u-cha",
                 "alliance-leveling-era-alliance-ungoro-crater-part-2-objective-4301-1-u-cha",
             },
-            id = "alliance-leveling-era-alliance-ungoro-crater-part-2-turnin-4301-the-mighty-u-cha",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 4289 } } },
-            route = {
-                {
-                    label = "Torwa Pathfinder",
-                    mapID = 1449,
-                    offMapText = "Travel to Torwa Pathfinder in Un'Goro Crater.",
-                    x = 0.7163,
-                    y = 0.7596,
-                },
-            },
-            sourceStep = 57,
-            text = "Turn in The Mighty U'cha to Torwa Pathfinder.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-ungoro-crater-part-2",
-            sourceActionID = "turnin-4301-the-mighty-u-cha",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -2828,6 +2963,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-ungoro-crater-part-2-turnin-4301-the-mighty-u-cha",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 4289 } } },
+            route = {
+                {
+                    label = "Torwa Pathfinder",
+                    mapID = 1449,
+                    offMapText = "Travel to Torwa Pathfinder in Un'Goro Crater.",
+                    x = 0.7163,
+                    y = 0.7596,
+                },
+            },
+            sourceActionID = "turnin-4301-the-mighty-u-cha",
+            sourceGuide = "leveling-era-alliance-ungoro-crater-part-2",
+            sourceStep = 57,
+            text = "Turn in The Mighty U'cha to Torwa Pathfinder.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 3908, state = "activeOrCompleted" } },
@@ -2948,13 +3102,13 @@ ns:RegisterGuide({
             route = {
                 { label = "Liv Rizzlefix", mapID = 1413, offMapText = "Travel to Liv Rizzlefix in The Barrens.", x = 0.6245, y = 0.3874 },
             },
+            sourceActionID = "turnin-4502-volcanic-activity",
+            sourceGuide = "leveling-era-alliance-ungoro-crater-part-2",
             sourceStep = 64,
             text = "Turn in Volcanic Activity to Liv Rizzlefix.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-ungoro-crater-part-2",
-            sourceActionID = "turnin-4502-volcanic-activity",
         },
         {
             id = "visit-entry-leveling-era-alliance-winterspring-and-felwood",
@@ -3028,25 +3182,6 @@ ns:RegisterGuide({
                 "alliance-leveling-era-alliance-feralas-and-azshara-objective-3909-1-evoroot",
                 "alliance-leveling-era-alliance-ungoro-crater-part-2-objective-3909-1-videre-elixir",
             },
-            id = "alliance-leveling-era-alliance-winterspring-and-felwood-turnin-3909-the-videre-elixir",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 3908 } } },
-            route = {
-                {
-                    label = "Donova Snowden",
-                    mapID = 1452,
-                    offMapText = "Travel to Donova Snowden in Winterspring.",
-                    x = 0.3127,
-                    y = 0.4516,
-                },
-            },
-            sourceStep = 20,
-            text = "Turn in The Videre Elixir to Donova Snowden.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-winterspring-and-felwood",
-            sourceActionID = "turnin-3909-the-videre-elixir",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -3086,6 +3221,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-winterspring-and-felwood-turnin-3909-the-videre-elixir",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 3908 } } },
+            route = {
+                {
+                    label = "Donova Snowden",
+                    mapID = 1452,
+                    offMapText = "Travel to Donova Snowden in Winterspring.",
+                    x = 0.3127,
+                    y = 0.4516,
+                },
+            },
+            sourceActionID = "turnin-3909-the-videre-elixir",
+            sourceGuide = "leveling-era-alliance-winterspring-and-felwood",
+            sourceStep = 20,
+            text = "Turn in The Videre Elixir to Donova Snowden.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 3912, state = "activeOrCompleted" } },
@@ -3194,25 +3348,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 980, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 51 } } } },
             dependsOn = {},
-            id = "alliance-leveling-era-alliance-winterspring-and-felwood-turnin-980-the-new-springs",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 974 } } },
-            route = {
-                {
-                    label = "Donova Snowden",
-                    mapID = 1452,
-                    offMapText = "Travel to Donova Snowden in Winterspring.",
-                    x = 0.3127,
-                    y = 0.4516,
-                },
-            },
-            sourceStep = 20,
-            text = "Turn in The New Springs to Donova Snowden.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-winterspring-and-felwood",
-            sourceActionID = "turnin-980-the-new-springs",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -3226,6 +3361,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-winterspring-and-felwood-turnin-980-the-new-springs",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 974 } } },
+            route = {
+                {
+                    label = "Donova Snowden",
+                    mapID = 1452,
+                    offMapText = "Travel to Donova Snowden in Winterspring.",
+                    x = 0.3127,
+                    y = 0.4516,
+                },
+            },
+            sourceActionID = "turnin-980-the-new-springs",
+            sourceGuide = "leveling-era-alliance-winterspring-and-felwood",
+            sourceStep = 20,
+            text = "Turn in The New Springs to Donova Snowden.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { questObjective = { id = 3912, index = 1, text = "Videre Elixir" } },
@@ -3301,17 +3455,6 @@ ns:RegisterGuide({
                 "alliance-leveling-era-alliance-winterspring-and-felwood-accept-3912-meet-at-the-grave",
                 "alliance-leveling-era-alliance-winterspring-and-felwood-objective-3912-1-videre-elixir",
             },
-            id = "alliance-leveling-era-alliance-winterspring-and-felwood-turnin-3912-meet-at-the-grave",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 3909 } } },
-            route = { { label = "Gaeriyan", mapID = 1446, offMapText = "Travel to Gaeriyan in Tanaris.", x = 0.5398, y = 0.2339 } },
-            sourceStep = 29,
-            text = "Turn in Meet at the Grave to Gaeriyan.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-winterspring-and-felwood",
-            sourceActionID = "turnin-3912-meet-at-the-grave",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -3364,6 +3507,17 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-winterspring-and-felwood-turnin-3912-meet-at-the-grave",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 3909 } } },
+            route = { { label = "Gaeriyan", mapID = 1446, offMapText = "Travel to Gaeriyan in Tanaris.", x = 0.5398, y = 0.2339 } },
+            sourceActionID = "turnin-3912-meet-at-the-grave",
+            sourceGuide = "leveling-era-alliance-winterspring-and-felwood",
+            sourceStep = 29,
+            text = "Turn in Meet at the Grave to Gaeriyan.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 3913, state = "activeOrCompleted" } },
@@ -3449,19 +3603,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 3913, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 47 } } } },
             dependsOn = { "alliance-leveling-era-alliance-winterspring-and-felwood-accept-3913-a-grave-situation" },
-            id = "alliance-leveling-era-alliance-winterspring-and-felwood-turnin-3913-a-grave-situation",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 3912 } } },
-            route = {
-                { label = "A Grave Situation", mapID = 1446, offMapText = "Travel to A Grave Situation.", x = 0.5382, y = 0.2906 },
-            },
-            sourceStep = 31,
-            text = "Turn in A Grave Situation.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-winterspring-and-felwood",
-            sourceActionID = "turnin-3913-a-grave-situation",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -3527,6 +3668,19 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-winterspring-and-felwood-turnin-3913-a-grave-situation",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 3912 } } },
+            route = {
+                { label = "A Grave Situation", mapID = 1446, offMapText = "Travel to A Grave Situation.", x = 0.5382, y = 0.2906 },
+            },
+            sourceActionID = "turnin-3913-a-grave-situation",
+            sourceGuide = "leveling-era-alliance-winterspring-and-felwood",
+            sourceStep = 31,
+            text = "Turn in A Grave Situation.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 3914, state = "activeOrCompleted" } },
@@ -3625,17 +3779,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 3914, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 47 } } } },
             dependsOn = { "alliance-leveling-era-alliance-winterspring-and-felwood-accept-3914-linken-s-sword" },
-            id = "alliance-leveling-era-alliance-winterspring-and-felwood-turnin-3914-linken-s-sword",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 3913 } } },
-            route = { { label = "Linken", mapID = 1449, offMapText = "Travel to Linken in Un'Goro Crater.", x = 0.4466, y = 0.081 } },
-            sourceStep = 33,
-            text = "Turn in Linken's Sword to Linken.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-winterspring-and-felwood",
-            sourceActionID = "turnin-3914-linken-s-sword",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -3714,6 +3857,17 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-winterspring-and-felwood-turnin-3914-linken-s-sword",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 3913 } } },
+            route = { { label = "Linken", mapID = 1449, offMapText = "Travel to Linken in Un'Goro Crater.", x = 0.4466, y = 0.081 } },
+            sourceActionID = "turnin-3914-linken-s-sword",
+            sourceGuide = "leveling-era-alliance-winterspring-and-felwood",
+            sourceStep = 33,
+            text = "Turn in Linken's Sword to Linken.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 3941, state = "activeOrCompleted" } },
@@ -3825,19 +3979,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 3941, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 47 } } } },
             dependsOn = { "alliance-leveling-era-alliance-winterspring-and-felwood-accept-3941-a-gnome-s-assistance" },
-            id = "alliance-leveling-era-alliance-winterspring-and-felwood-turnin-3941-a-gnome-s-assistance",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 3914 } } },
-            route = {
-                { label = "J.D. Collie", mapID = 1449, offMapText = "Travel to J.D. Collie in Un'Goro Crater.", x = 0.4192, y = 0.027 },
-            },
-            sourceStep = 34,
-            text = "Turn in A Gnome's Assistance to J.D. Collie.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-winterspring-and-felwood",
-            sourceActionID = "turnin-3941-a-gnome-s-assistance",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -3929,6 +4070,19 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-winterspring-and-felwood-turnin-3941-a-gnome-s-assistance",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 3914 } } },
+            route = {
+                { label = "J.D. Collie", mapID = 1449, offMapText = "Travel to J.D. Collie in Un'Goro Crater.", x = 0.4192, y = 0.027 },
+            },
+            sourceActionID = "turnin-3941-a-gnome-s-assistance",
+            sourceGuide = "leveling-era-alliance-winterspring-and-felwood",
+            sourceStep = 34,
+            text = "Turn in A Gnome's Assistance to J.D. Collie.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 3942, state = "activeOrCompleted" } },
@@ -4055,19 +4209,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 3942, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 47 } } } },
             dependsOn = { "alliance-leveling-era-alliance-winterspring-and-felwood-accept-3942-linken-s-memory" },
-            id = "alliance-leveling-era-alliance-winterspring-and-felwood-turnin-3942-linken-s-memory",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 3941 } } },
-            route = {
-                { label = "Eridan Bluewind", mapID = 1448, offMapText = "Travel to Eridan Bluewind in Felwood.", x = 0.5135, y = 0.8151 },
-            },
-            sourceStep = 37,
-            text = "Turn in Linken's Memory to Eridan Bluewind.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-winterspring-and-felwood",
-            sourceActionID = "turnin-3942-linken-s-memory",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -4172,6 +4313,19 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-winterspring-and-felwood-turnin-3942-linken-s-memory",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 3941 } } },
+            route = {
+                { label = "Eridan Bluewind", mapID = 1448, offMapText = "Travel to Eridan Bluewind in Felwood.", x = 0.5135, y = 0.8151 },
+            },
+            sourceActionID = "turnin-3942-linken-s-memory",
+            sourceGuide = "leveling-era-alliance-winterspring-and-felwood",
+            sourceStep = 37,
+            text = "Turn in Linken's Memory to Eridan Bluewind.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 4084, state = "activeOrCompleted" } },
@@ -4576,6 +4730,269 @@ ns:RegisterGuide({
             },
         },
         {
+            complete = { questObjective = { id = 4512, index = 1, text = "Filled Cursed Ooze Jar" } },
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 48 } }, { race = { 1, 3, 4, 7, 95 } } } },
+            dependsOn = {},
+            id = "alliance-leveling-era-alliance-winterspring-and-felwood-objective-4512-1-filled-cursed-ooze-jar",
+            kind = "objective",
+            requiredQuests = {},
+            route = {
+                {
+                    label = "Filled Cursed Ooze Jar",
+                    mapID = 1457,
+                    offMapText = "Travel to Filled Cursed Ooze Jar.",
+                    x = 0.396,
+                    y = 0.4199,
+                },
+            },
+            sourceActionID = "objective-4512-1-filled-cursed-ooze-jar",
+            sourceGuide = "leveling-era-alliance-winterspring-and-felwood",
+            text = "Collect 6 Filled Cursed Ooze Jar.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
+        },
+        {
+            complete = { level = { min = 56 } },
+            conditions = { all = { { faction = "Alliance" } } },
+            excludeWhen = { ["not"] = { all = { { faction = "Alliance" } } } },
+            id = "visit-entry-leveling-era-alliance-burning-steppes",
+            kind = "note",
+            requiredLevel = 56,
+            text = "Reach level 56 before the Burning Steppes visit.",
+            visitSourceGuide = "leveling-era-alliance-burning-steppes",
+        },
+        {
+            complete = { quest = { id = 4512, state = "complete" } },
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 48 } }, { race = { 1, 3, 4, 7, 95 } } } },
+            dependsOn = {},
+            id = "alliance-leveling-era-alliance-burning-steppes-objective-4512-quest-work",
+            kind = "objective",
+            requiredQuests = {},
+            route = {
+                {
+                    label = "Filled Cursed Ooze Jar",
+                    mapID = 1448,
+                    offMapText = "Travel to Filled Cursed Ooze Jar.",
+                    x = 0.416,
+                    y = 0.716,
+                },
+            },
+            sourceActionID = "objective-4512-quest-work",
+            sourceGuide = "leveling-era-alliance-burning-steppes",
+            sourceStep = 9,
+            text = "For A Little Slime Goes a Long Way: Bring 6 Filled Cursed Ooze Jars and 6 Filled Tainted Ooze Jars to Laris Geardawdle in Ironforge.",
+            useClientPin = false,
+            useClientText = false,
+        },
+        {
+            complete = { quest = { id = 4512, state = "completed" } },
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 48 } }, { race = { 1, 3, 4, 7, 95 } } } },
+            dependsOn = {
+                "alliance-leveling-era-alliance-burning-steppes-objective-4512-quest-work",
+                "alliance-leveling-era-alliance-azshara-and-felwood-objective-4512-1-cursed-ooze",
+                "alliance-leveling-era-alliance-azshara-and-felwood-objective-4512-2-tainted-ooze",
+                "alliance-leveling-era-alliance-winterspring-and-felwood-objective-4512-1-filled-cursed-ooze-jar",
+            },
+            id = "alliance-leveling-era-alliance-burning-steppes-turnin-4512-a-little-slime-goes-a-long-way",
+            kind = "turnin",
+            requiredQuests = {},
+            route = {
+                {
+                    label = "Laris Geardawdle",
+                    mapID = 1455,
+                    offMapText = "Travel to Laris Geardawdle in Ironforge.",
+                    x = 0.7577,
+                    y = 0.2337,
+                },
+            },
+            sourceActionID = "turnin-4512-a-little-slime-goes-a-long-way",
+            sourceGuide = "leveling-era-alliance-burning-steppes",
+            sourceStep = 9,
+            text = "Turn in A Little Slime Goes a Long Way to Laris Geardawdle.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
+        },
+        {
+            checkpointQuest = 4513,
+            complete = { level = { min = 48 } },
+            conditions = { all = { { faction = "Alliance" }, { race = { 1, 3, 4, 7 } } } },
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 4513, state = "activeOrCompleted" } },
+                        {
+                            any = {
+                                { quest = { id = 4513, state = "activeOrCompleted" } },
+                                {
+                                    all = {
+                                        { faction = "Alliance" },
+                                        { race = { 1, 3, 4, 7 } },
+                                        {
+                                            any = {
+                                                {
+                                                    any = {
+                                                        { quest = { id = 4512, state = "activeOrCompleted" } },
+                                                        { all = { { faction = "Alliance" }, { race = { 1, 3, 4, 7 } } } },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
+            id = "alliance-extra-4513-level",
+            kind = "note",
+            requiredLevel = 48,
+            text = "Reach level 48 before this visit.",
+        },
+        {
+            complete = { quest = { id = 4513, state = "activeOrCompleted" } },
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 48 } }, { race = { 1, 3, 4, 7 } } } },
+            dependsOn = { "alliance-extra-4513-level" },
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 4513, state = "activeOrCompleted" } },
+                        {
+                            any = {
+                                { quest = { id = 4513, state = "activeOrCompleted" } },
+                                {
+                                    all = {
+                                        { faction = "Alliance" },
+                                        { race = { 1, 3, 4, 7 } },
+                                        {
+                                            any = {
+                                                {
+                                                    any = {
+                                                        { quest = { id = 4512, state = "activeOrCompleted" } },
+                                                        { all = { { faction = "Alliance" }, { race = { 1, 3, 4, 7 } } } },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
+            id = "alliance-extra-4513-accept",
+            kind = "accept",
+            requiredQuests = { { mode = "any", quests = { 4512 } } },
+            route = {
+                {
+                    label = "Laris Geardawdle",
+                    mapID = 1455,
+                    offMapText = "Travel to Laris Geardawdle in Ironforge.",
+                    x = 0.7576999999999999,
+                    y = 0.23379999999999998,
+                },
+            },
+            text = "Accept A Little Slime Goes a Long Way from Laris Geardawdle.",
+            useClientText = false,
+        },
+        {
+            complete = { quest = { id = 4513, state = "complete" } },
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 48 } }, { race = { 1, 3, 4, 7 } } } },
+            dependsOn = { "alliance-extra-4513-accept" },
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 4513, state = "activeOrCompleted" } },
+                        {
+                            any = {
+                                { quest = { id = 4513, state = "activeOrCompleted" } },
+                                {
+                                    all = {
+                                        { faction = "Alliance" },
+                                        { race = { 1, 3, 4, 7 } },
+                                        {
+                                            any = {
+                                                {
+                                                    any = {
+                                                        { quest = { id = 4512, state = "activeOrCompleted" } },
+                                                        { all = { { faction = "Alliance" }, { race = { 1, 3, 4, 7 } } } },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
+            id = "alliance-extra-4513-objective",
+            kind = "objective",
+            requiredQuests = { { mode = "any", quests = { 4512 } } },
+            route = {
+                {
+                    label = "Muculent Ooze",
+                    mapID = 1449,
+                    offMapText = "Travel to Muculent Ooze in Un'Goro Crater.",
+                    x = 0.6184000000000001,
+                    y = 0.25420000000000004,
+                },
+            },
+            text = "Defeat Muculent Ooze and loot the Filled Pure Sample Jar. Bring 10 Filled Pure Sample Jars to Laris Geardawdle in Ironforge.  If you have trouble finding them, perhaps try to get more clues from Laris.",
+            useClientText = false,
+        },
+        {
+            complete = { quest = { id = 4513, state = "completed" } },
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 48 } }, { race = { 1, 3, 4, 7 } } } },
+            dependsOn = { "alliance-extra-4513-objective" },
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 4513, state = "activeOrCompleted" } },
+                        {
+                            any = {
+                                { quest = { id = 4513, state = "activeOrCompleted" } },
+                                {
+                                    all = {
+                                        { faction = "Alliance" },
+                                        { race = { 1, 3, 4, 7 } },
+                                        {
+                                            any = {
+                                                {
+                                                    any = {
+                                                        { quest = { id = 4512, state = "activeOrCompleted" } },
+                                                        { all = { { faction = "Alliance" }, { race = { 1, 3, 4, 7 } } } },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
+            id = "alliance-extra-4513-turnin",
+            kind = "turnin",
+            requiredQuests = { { mode = "any", quests = { 4512 } } },
+            route = {
+                {
+                    label = "Laris Geardawdle",
+                    mapID = 1455,
+                    offMapText = "Travel to Laris Geardawdle in Ironforge.",
+                    x = 0.7576999999999999,
+                    y = 0.23379999999999998,
+                },
+            },
+            text = "Turn in A Little Slime Goes a Long Way to Laris Geardawdle.",
+            useClientText = false,
+        },
+        {
             id = "visit-entry-leveling-era-alliance-winterspring",
             kind = "note",
             visitSourceGuide = "leveling-era-alliance-winterspring",
@@ -4725,19 +5142,6 @@ ns:RegisterGuide({
                 "alliance-leveling-era-alliance-winterspring-and-felwood-objective-4084-2-irontree-stomper",
                 "alliance-leveling-era-alliance-winterspring-and-felwood-objective-4084-1-silvery-claws",
             },
-            id = "alliance-leveling-era-alliance-winterspring-turnin-4084-silver-heart",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 3942 } } },
-            route = {
-                { label = "Eridan Bluewind", mapID = 1448, offMapText = "Travel to Eridan Bluewind in Felwood.", x = 0.5135, y = 0.8151 },
-            },
-            sourceStep = 25,
-            text = "Turn in Silver Heart to Eridan Bluewind.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-winterspring",
-            sourceActionID = "turnin-4084-silver-heart",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -4855,6 +5259,19 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-winterspring-turnin-4084-silver-heart",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 3942 } } },
+            route = {
+                { label = "Eridan Bluewind", mapID = 1448, offMapText = "Travel to Eridan Bluewind in Felwood.", x = 0.5135, y = 0.8151 },
+            },
+            sourceActionID = "turnin-4084-silver-heart",
+            sourceGuide = "leveling-era-alliance-winterspring",
+            sourceStep = 25,
+            text = "Turn in Silver Heart to Eridan Bluewind.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 4005, state = "activeOrCompleted" } },
@@ -5332,25 +5749,6 @@ ns:RegisterGuide({
                 "alliance-leveling-era-alliance-winterspring-objective-4005-1-eridan-s-supplies",
                 "alliance-leveling-era-alliance-winterspring-objective-4005-1-book-of-aquor",
             },
-            id = "alliance-leveling-era-alliance-winterspring-turnin-4005-aquementas",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 4084 } } },
-            route = {
-                {
-                    label = "J.D. Collie at Marshal's Refuge",
-                    mapID = 1449,
-                    offMapText = "Travel to J.D. Collie at Marshal's Refuge.",
-                    x = 0.4192,
-                    y = 0.027,
-                },
-            },
-            sourceStep = 31,
-            text = "Enter the cave at Marshal's Refuge in Un'Goro Crater and turn in Aquementas to J.D. Collie.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-winterspring",
-            sourceActionID = "turnin-4005-aquementas",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -5481,6 +5879,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-winterspring-turnin-4005-aquementas",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 4084 } } },
+            route = {
+                {
+                    label = "J.D. Collie at Marshal's Refuge",
+                    mapID = 1449,
+                    offMapText = "Travel to J.D. Collie at Marshal's Refuge.",
+                    x = 0.4192,
+                    y = 0.027,
+                },
+            },
+            sourceActionID = "turnin-4005-aquementas",
+            sourceGuide = "leveling-era-alliance-winterspring",
+            sourceStep = 31,
+            text = "Enter the cave at Marshal's Refuge in Un'Goro Crater and turn in Aquementas to J.D. Collie.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 3961, state = "activeOrCompleted" } },
@@ -5646,17 +6063,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 3961, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 47 } } } },
             dependsOn = { "alliance-leveling-era-alliance-winterspring-accept-3961-linken-s-adventure" },
-            id = "alliance-leveling-era-alliance-winterspring-turnin-3961-linken-s-adventure",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 4005 } } },
-            route = { { label = "Linken", mapID = 1449, offMapText = "Travel to Linken in Un'Goro Crater.", x = 0.4466, y = 0.081 } },
-            sourceStep = 33,
-            text = "Turn in Linken's Adventure to Linken.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-winterspring",
-            sourceActionID = "turnin-3961-linken-s-adventure",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -5800,275 +6206,438 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-winterspring-turnin-3961-linken-s-adventure",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 4005 } } },
+            route = { { label = "Linken", mapID = 1449, offMapText = "Travel to Linken in Un'Goro Crater.", x = 0.4466, y = 0.081 } },
+            sourceActionID = "turnin-3961-linken-s-adventure",
+            sourceGuide = "leveling-era-alliance-winterspring",
+            sourceStep = 33,
+            text = "Turn in Linken's Adventure to Linken.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
+            checkpointQuest = 3962,
+            complete = { level = { min = 47 } },
+            conditions = { all = { { faction = "Alliance" } } },
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 3962, state = "activeOrCompleted" } },
+                        {
+                            any = {
+                                { quest = { id = 3962, state = "activeOrCompleted" } },
+                                {
+                                    all = {
+                                        {
+                                            any = {
+                                                {
+                                                    any = {
+                                                        { quest = { id = 3961, state = "activeOrCompleted" } },
+                                                        {
+                                                            all = {
+                                                                {
+                                                                    any = {
+                                                                        {
+                                                                            any = {
+                                                                                { quest = { id = 4005, state = "activeOrCompleted" } },
+                                                                                {
+                                                                                    all = {
+                                                                                        {
+                                                                                            any = {
+                                                                                                {
+                                                                                                    any = {
+                                                                                                        { quest = { id = 4084, state = "activeOrCompleted" } },
+                                                                                                        {
+                                                                                                            all = {
+                                                                                                                {
+                                                                                                                    any = {
+                                                                                                                        {
+                                                                                                                            any = {
+                                                                                                                                { quest = { id = 3942, state = "activeOrCompleted" } },
+                                                                                                                                {
+                                                                                                                                    all = {
+                                                                                                                                        {
+                                                                                                                                            any = {
+                                                                                                                                                {
+                                                                                                                                                    any = {
+                                                                                                                                                        { quest = { id = 3941, state = "activeOrCompleted" } },
+                                                                                                                                                        {
+                                                                                                                                                            all = {
+                                                                                                                                                                {
+                                                                                                                                                                    any = {
+                                                                                                                                                                        {
+                                                                                                                                                                            any = {
+                                                                                                                                                                                { quest = { id = 3914, state = "activeOrCompleted" } },
+                                                                                                                                                                                {
+                                                                                                                                                                                    all = {
+                                                                                                                                                                                        {
+                                                                                                                                                                                            any = {
+                                                                                                                                                                                                {
+                                                                                                                                                                                                    any = {
+                                                                                                                                                                                                        { quest = { id = 3913, state = "activeOrCompleted" } },
+                                                                                                                                                                                                        {
+                                                                                                                                                                                                            all = {
+                                                                                                                                                                                                                {
+                                                                                                                                                                                                                    any = {
+                                                                                                                                                                                                                        {
+                                                                                                                                                                                                                            any = {
+                                                                                                                                                                                                                                { quest = { id = 3912, state = "activeOrCompleted" } },
+                                                                                                                                                                                                                                {
+                                                                                                                                                                                                                                    all = {
+                                                                                                                                                                                                                                        {
+                                                                                                                                                                                                                                            any = {
+                                                                                                                                                                                                                                                {
+                                                                                                                                                                                                                                                    any = {
+                                                                                                                                                                                                                                                        { quest = { id = 3909, state = "activeOrCompleted" } },
+                                                                                                                                                                                                                                                        {
+                                                                                                                                                                                                                                                            all = {
+                                                                                                                                                                                                                                                                {
+                                                                                                                                                                                                                                                                    any = {
+                                                                                                                                                                                                                                                                        {
+                                                                                                                                                                                                                                                                            any = {
+                                                                                                                                                                                                                                                                                { quest = { id = 3908, state = "activeOrCompleted" } },
+                                                                                                                                                                                                                                                                                {
+                                                                                                                                                                                                                                                                                    all = {
+                                                                                                                                                                                                                                                                                        {
+                                                                                                                                                                                                                                                                                            any = {
+                                                                                                                                                                                                                                                                                                {
+                                                                                                                                                                                                                                                                                                    any = {
+                                                                                                                                                                                                                                                                                                        { quest = { id = 3845, state = "activeOrCompleted" } },
+                                                                                                                                                                                                                                                                                                        { all = { { any = { { any = { { quest = { id = 3844, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                                                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                },
+                                                                                                                                                                                                            },
+                                                                                                                                                                                                        },
+                                                                                                                                                                                                    },
+                                                                                                                                                                                                },
+                                                                                                                                                                                            },
+                                                                                                                                                                                        },
+                                                                                                                                                                                    },
+                                                                                                                                                                                },
+                                                                                                                                                                            },
+                                                                                                                                                                        },
+                                                                                                                                                                    },
+                                                                                                                                                                },
+                                                                                                                                                            },
+                                                                                                                                                        },
+                                                                                                                                                    },
+                                                                                                                                                },
+                                                                                                                                            },
+                                                                                                                                        },
+                                                                                                                                    },
+                                                                                                                                },
+                                                                                                                            },
+                                                                                                                        },
+                                                                                                                    },
+                                                                                                                },
+                                                                                                            },
+                                                                                                        },
+                                                                                                    },
+                                                                                                },
+                                                                                            },
+                                                                                        },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
             id = "alliance-extra-3962-level",
             kind = "note",
-            checkpointQuest = 3962,
-            text = "Reach level 56 before this visit.",
-            conditions = { all = { { faction = "Alliance" } } },
-            complete = { level = { min = 56 } },
-            requiredLevel = 56,
-            excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 3962, state = "activeOrCompleted" } },
-                        {
-                            any = {
-                                { quest = { id = 3962, state = "activeOrCompleted" } },
-                                {
-                                    all = {
-                                        {
-                                            any = {
-                                                {
-                                                    any = {
-                                                        { quest = { id = 3961, state = "activeOrCompleted" } },
-                                                        {
-                                                            all = {
-                                                                {
-                                                                    any = {
-                                                                        {
-                                                                            any = {
-                                                                                { quest = { id = 4005, state = "activeOrCompleted" } },
-                                                                                {
-                                                                                    all = {
-                                                                                        {
-                                                                                            any = {
-                                                                                                {
-                                                                                                    any = {
-                                                                                                        { quest = { id = 4084, state = "activeOrCompleted" } },
-                                                                                                        {
-                                                                                                            all = {
-                                                                                                                {
-                                                                                                                    any = {
-                                                                                                                        {
-                                                                                                                            any = {
-                                                                                                                                { quest = { id = 3942, state = "activeOrCompleted" } },
-                                                                                                                                {
-                                                                                                                                    all = {
-                                                                                                                                        {
-                                                                                                                                            any = {
-                                                                                                                                                {
-                                                                                                                                                    any = {
-                                                                                                                                                        { quest = { id = 3941, state = "activeOrCompleted" } },
-                                                                                                                                                        {
-                                                                                                                                                            all = {
-                                                                                                                                                                {
-                                                                                                                                                                    any = {
-                                                                                                                                                                        {
-                                                                                                                                                                            any = {
-                                                                                                                                                                                { quest = { id = 3914, state = "activeOrCompleted" } },
-                                                                                                                                                                                {
-                                                                                                                                                                                    all = {
-                                                                                                                                                                                        {
-                                                                                                                                                                                            any = {
-                                                                                                                                                                                                {
-                                                                                                                                                                                                    any = {
-                                                                                                                                                                                                        { quest = { id = 3913, state = "activeOrCompleted" } },
-                                                                                                                                                                                                        {
-                                                                                                                                                                                                            all = {
-                                                                                                                                                                                                                {
-                                                                                                                                                                                                                    any = {
-                                                                                                                                                                                                                        {
-                                                                                                                                                                                                                            any = {
-                                                                                                                                                                                                                                { quest = { id = 3912, state = "activeOrCompleted" } },
-                                                                                                                                                                                                                                {
-                                                                                                                                                                                                                                    all = {
-                                                                                                                                                                                                                                        {
-                                                                                                                                                                                                                                            any = {
-                                                                                                                                                                                                                                                {
-                                                                                                                                                                                                                                                    any = {
-                                                                                                                                                                                                                                                        { quest = { id = 3909, state = "activeOrCompleted" } },
-                                                                                                                                                                                                                                                        {
-                                                                                                                                                                                                                                                            all = {
-                                                                                                                                                                                                                                                                {
-                                                                                                                                                                                                                                                                    any = {
-                                                                                                                                                                                                                                                                        {
-                                                                                                                                                                                                                                                                            any = {
-                                                                                                                                                                                                                                                                                { quest = { id = 3908, state = "activeOrCompleted" } },
-                                                                                                                                                                                                                                                                                {
-                                                                                                                                                                                                                                                                                    all = {
-                                                                                                                                                                                                                                                                                        {
-                                                                                                                                                                                                                                                                                            any = {
-                                                                                                                                                                                                                                                                                                {
-                                                                                                                                                                                                                                                                                                    any = {
-                                                                                                                                                                                                                                                                                                        { quest = { id = 3845, state = "activeOrCompleted" } },
-                                                                                                                                                                                                                                                                                                        { all = { { any = { { any = { { quest = { id = 3844, state = "activeOrCompleted" } }, { all = {} } } } } } } },
-                                                                                                                                                                                                                                                                                                    },
-                                                                                                                                                                                                                                                                                                },
-                                                                                                                                                                                                                                                                                            },
-                                                                                                                                                                                                                                                                                        },
-                                                                                                                                                                                                                                                                                    },
-                                                                                                                                                                                                                                                                                },
-                                                                                                                                                                                                                                                                            },
-                                                                                                                                                                                                                                                                        },
-                                                                                                                                                                                                                                                                    },
-                                                                                                                                                                                                                                                                },
-                                                                                                                                                                                                                                                            },
-                                                                                                                                                                                                                                                        },
-                                                                                                                                                                                                                                                    },
-                                                                                                                                                                                                                                                },
-                                                                                                                                                                                                                                            },
-                                                                                                                                                                                                                                        },
-                                                                                                                                                                                                                                    },
-                                                                                                                                                                                                                                },
-                                                                                                                                                                                                                            },
-                                                                                                                                                                                                                        },
-                                                                                                                                                                                                                    },
-                                                                                                                                                                                                                },
-                                                                                                                                                                                                            },
-                                                                                                                                                                                                        },
-                                                                                                                                                                                                    },
-                                                                                                                                                                                                },
-                                                                                                                                                                                            },
-                                                                                                                                                                                        },
-                                                                                                                                                                                    },
-                                                                                                                                                                                },
-                                                                                                                                                                            },
-                                                                                                                                                                        },
-                                                                                                                                                                    },
-                                                                                                                                                                },
-                                                                                                                                                            },
-                                                                                                                                                        },
-                                                                                                                                                    },
-                                                                                                                                                },
-                                                                                                                                            },
-                                                                                                                                        },
-                                                                                                                                    },
-                                                                                                                                },
-                                                                                                                            },
-                                                                                                                        },
-                                                                                                                    },
-                                                                                                                },
-                                                                                                            },
-                                                                                                        },
-                                                                                                    },
-                                                                                                },
-                                                                                            },
-                                                                                        },
-                                                                                    },
-                                                                                },
-                                                                            },
-                                                                        },
-                                                                    },
-                                                                },
-                                                            },
-                                                        },
-                                                    },
-                                                },
-                                            },
-                                        },
-                                    },
-                                },
-                            },
-                        },
-                    },
-                },
-            },
+            requiredLevel = 47,
+            text = "Reach level 47 before this visit.",
         },
         {
-            id = "alliance-extra-3962-accept",
-            kind = "accept",
-            text = "Accept It's Dangerous to Go Alone from Linken.",
-            conditions = { all = { { faction = "Alliance" }, { level = { min = 47 } } } },
-            route = {
-                {
-                    mapID = 1449,
-                    x = 0.446,
-                    y = 0.08199999999999999,
-                    label = "Linken",
-                    offMapText = "Travel to Linken in Un'Goro Crater.",
-                },
-            },
             complete = { quest = { id = 3962, state = "activeOrCompleted" } },
-            requiredQuests = { { mode = "any", quests = { 3961 } } },
-            useClientText = false,
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 47 } } } },
             dependsOn = { "alliance-extra-3962-level" },
             excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 3962, state = "activeOrCompleted" } },
-                        {
+                any = {
+                    {
+                        ["not"] = {
                             any = {
                                 { quest = { id = 3962, state = "activeOrCompleted" } },
                                 {
-                                    all = {
+                                    any = {
+                                        { quest = { id = 3962, state = "activeOrCompleted" } },
                                         {
-                                            any = {
+                                            all = {
                                                 {
                                                     any = {
-                                                        { quest = { id = 3961, state = "activeOrCompleted" } },
                                                         {
-                                                            all = {
+                                                            any = {
+                                                                { quest = { id = 3961, state = "activeOrCompleted" } },
                                                                 {
-                                                                    any = {
+                                                                    all = {
                                                                         {
                                                                             any = {
-                                                                                { quest = { id = 4005, state = "activeOrCompleted" } },
                                                                                 {
-                                                                                    all = {
+                                                                                    any = {
+                                                                                        { quest = { id = 4005, state = "activeOrCompleted" } },
                                                                                         {
-                                                                                            any = {
+                                                                                            all = {
                                                                                                 {
                                                                                                     any = {
-                                                                                                        { quest = { id = 4084, state = "activeOrCompleted" } },
                                                                                                         {
-                                                                                                            all = {
+                                                                                                            any = {
+                                                                                                                { quest = { id = 4084, state = "activeOrCompleted" } },
                                                                                                                 {
-                                                                                                                    any = {
+                                                                                                                    all = {
                                                                                                                         {
                                                                                                                             any = {
-                                                                                                                                { quest = { id = 3942, state = "activeOrCompleted" } },
                                                                                                                                 {
-                                                                                                                                    all = {
+                                                                                                                                    any = {
+                                                                                                                                        { quest = { id = 3942, state = "activeOrCompleted" } },
                                                                                                                                         {
-                                                                                                                                            any = {
+                                                                                                                                            all = {
                                                                                                                                                 {
                                                                                                                                                     any = {
-                                                                                                                                                        { quest = { id = 3941, state = "activeOrCompleted" } },
                                                                                                                                                         {
-                                                                                                                                                            all = {
+                                                                                                                                                            any = {
+                                                                                                                                                                { quest = { id = 3941, state = "activeOrCompleted" } },
                                                                                                                                                                 {
-                                                                                                                                                                    any = {
+                                                                                                                                                                    all = {
                                                                                                                                                                         {
                                                                                                                                                                             any = {
-                                                                                                                                                                                { quest = { id = 3914, state = "activeOrCompleted" } },
                                                                                                                                                                                 {
-                                                                                                                                                                                    all = {
+                                                                                                                                                                                    any = {
+                                                                                                                                                                                        { quest = { id = 3914, state = "activeOrCompleted" } },
                                                                                                                                                                                         {
-                                                                                                                                                                                            any = {
+                                                                                                                                                                                            all = {
                                                                                                                                                                                                 {
                                                                                                                                                                                                     any = {
-                                                                                                                                                                                                        { quest = { id = 3913, state = "activeOrCompleted" } },
                                                                                                                                                                                                         {
-                                                                                                                                                                                                            all = {
+                                                                                                                                                                                                            any = {
+                                                                                                                                                                                                                { quest = { id = 3913, state = "activeOrCompleted" } },
                                                                                                                                                                                                                 {
-                                                                                                                                                                                                                    any = {
+                                                                                                                                                                                                                    all = {
                                                                                                                                                                                                                         {
                                                                                                                                                                                                                             any = {
-                                                                                                                                                                                                                                { quest = { id = 3912, state = "activeOrCompleted" } },
                                                                                                                                                                                                                                 {
-                                                                                                                                                                                                                                    all = {
+                                                                                                                                                                                                                                    any = {
+                                                                                                                                                                                                                                        { quest = { id = 3912, state = "activeOrCompleted" } },
                                                                                                                                                                                                                                         {
-                                                                                                                                                                                                                                            any = {
+                                                                                                                                                                                                                                            all = {
                                                                                                                                                                                                                                                 {
                                                                                                                                                                                                                                                     any = {
-                                                                                                                                                                                                                                                        { quest = { id = 3909, state = "activeOrCompleted" } },
                                                                                                                                                                                                                                                         {
-                                                                                                                                                                                                                                                            all = {
+                                                                                                                                                                                                                                                            any = {
+                                                                                                                                                                                                                                                                { quest = { id = 3909, state = "activeOrCompleted" } },
                                                                                                                                                                                                                                                                 {
-                                                                                                                                                                                                                                                                    any = {
+                                                                                                                                                                                                                                                                    all = {
                                                                                                                                                                                                                                                                         {
                                                                                                                                                                                                                                                                             any = {
-                                                                                                                                                                                                                                                                                { quest = { id = 3908, state = "activeOrCompleted" } },
                                                                                                                                                                                                                                                                                 {
-                                                                                                                                                                                                                                                                                    all = {
+                                                                                                                                                                                                                                                                                    any = {
+                                                                                                                                                                                                                                                                                        { quest = { id = 3908, state = "activeOrCompleted" } },
                                                                                                                                                                                                                                                                                         {
-                                                                                                                                                                                                                                                                                            any = {
+                                                                                                                                                                                                                                                                                            all = {
                                                                                                                                                                                                                                                                                                 {
                                                                                                                                                                                                                                                                                                     any = {
-                                                                                                                                                                                                                                                                                                        { quest = { id = 3845, state = "activeOrCompleted" } },
-                                                                                                                                                                                                                                                                                                        { all = { { any = { { any = { { quest = { id = 3844, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                                                                                                                                                                                                                                                                        {
+                                                                                                                                                                                                                                                                                                            any = {
+                                                                                                                                                                                                                                                                                                                { quest = { id = 3845, state = "activeOrCompleted" } },
+                                                                                                                                                                                                                                                                                                                { all = { { any = { { any = { { quest = { id = 3844, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                                                                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                },
+                                                                                                                                                                                                            },
+                                                                                                                                                                                                        },
+                                                                                                                                                                                                    },
+                                                                                                                                                                                                },
+                                                                                                                                                                                            },
+                                                                                                                                                                                        },
+                                                                                                                                                                                    },
+                                                                                                                                                                                },
+                                                                                                                                                                            },
+                                                                                                                                                                        },
+                                                                                                                                                                    },
+                                                                                                                                                                },
+                                                                                                                                                            },
+                                                                                                                                                        },
+                                                                                                                                                    },
+                                                                                                                                                },
+                                                                                                                                            },
+                                                                                                                                        },
+                                                                                                                                    },
+                                                                                                                                },
+                                                                                                                            },
+                                                                                                                        },
+                                                                                                                    },
+                                                                                                                },
+                                                                                                            },
+                                                                                                        },
+                                                                                                    },
+                                                                                                },
+                                                                                            },
+                                                                                        },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 3962, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 3962, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 3961, state = "activeOrCompleted" } },
+                                                                {
+                                                                    all = {
+                                                                        {
+                                                                            any = {
+                                                                                {
+                                                                                    any = {
+                                                                                        { quest = { id = 4005, state = "activeOrCompleted" } },
+                                                                                        {
+                                                                                            all = {
+                                                                                                {
+                                                                                                    any = {
+                                                                                                        {
+                                                                                                            any = {
+                                                                                                                { quest = { id = 4084, state = "activeOrCompleted" } },
+                                                                                                                {
+                                                                                                                    all = {
+                                                                                                                        {
+                                                                                                                            any = {
+                                                                                                                                {
+                                                                                                                                    any = {
+                                                                                                                                        { quest = { id = 3942, state = "activeOrCompleted" } },
+                                                                                                                                        {
+                                                                                                                                            all = {
+                                                                                                                                                {
+                                                                                                                                                    any = {
+                                                                                                                                                        {
+                                                                                                                                                            any = {
+                                                                                                                                                                { quest = { id = 3941, state = "activeOrCompleted" } },
+                                                                                                                                                                {
+                                                                                                                                                                    all = {
+                                                                                                                                                                        {
+                                                                                                                                                                            any = {
+                                                                                                                                                                                {
+                                                                                                                                                                                    any = {
+                                                                                                                                                                                        { quest = { id = 3914, state = "activeOrCompleted" } },
+                                                                                                                                                                                        {
+                                                                                                                                                                                            all = {
+                                                                                                                                                                                                { item = { minCount = 1, name = "Linken's Superior Sword" } },
+                                                                                                                                                                                                {
+                                                                                                                                                                                                    any = {
+                                                                                                                                                                                                        {
+                                                                                                                                                                                                            any = {
+                                                                                                                                                                                                                { quest = { id = 3913, state = "activeOrCompleted" } },
+                                                                                                                                                                                                                {
+                                                                                                                                                                                                                    all = {
+                                                                                                                                                                                                                        {
+                                                                                                                                                                                                                            any = {
+                                                                                                                                                                                                                                {
+                                                                                                                                                                                                                                    any = {
+                                                                                                                                                                                                                                        { quest = { id = 3912, state = "activeOrCompleted" } },
+                                                                                                                                                                                                                                        {
+                                                                                                                                                                                                                                            all = {
+                                                                                                                                                                                                                                                {
+                                                                                                                                                                                                                                                    any = {
+                                                                                                                                                                                                                                                        {
+                                                                                                                                                                                                                                                            any = {
+                                                                                                                                                                                                                                                                { quest = { id = 3909, state = "activeOrCompleted" } },
+                                                                                                                                                                                                                                                                {
+                                                                                                                                                                                                                                                                    all = {
+                                                                                                                                                                                                                                                                        {
+                                                                                                                                                                                                                                                                            any = {
+                                                                                                                                                                                                                                                                                {
+                                                                                                                                                                                                                                                                                    any = {
+                                                                                                                                                                                                                                                                                        { quest = { id = 3908, state = "activeOrCompleted" } },
+                                                                                                                                                                                                                                                                                        {
+                                                                                                                                                                                                                                                                                            all = {
+                                                                                                                                                                                                                                                                                                {
+                                                                                                                                                                                                                                                                                                    any = {
+                                                                                                                                                                                                                                                                                                        {
+                                                                                                                                                                                                                                                                                                            any = {
+                                                                                                                                                                                                                                                                                                                { quest = { id = 3845, state = "activeOrCompleted" } },
+                                                                                                                                                                                                                                                                                                                {
+                                                                                                                                                                                                                                                                                                                    all = {
+                                                                                                                                                                                                                                                                                                                        { item = { minCount = 1, name = "A Small Pack" } },
+                                                                                                                                                                                                                                                                                                                        { any = { { any = { { quest = { id = 3844, state = "activeOrCompleted" } }, { all = {} } } } } },
+                                                                                                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                                                                                                        },
                                                                                                                                                                                                                                                                                                     },
                                                                                                                                                                                                                                                                                                 },
                                                                                                                                                                                                                                                                                             },
@@ -6140,117 +6709,268 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-extra-3962-accept",
+            kind = "accept",
+            requiredQuests = { { mode = "any", quests = { 3961 } } },
+            route = { { label = "Linken", mapID = 1449, offMapText = "Travel to Linken in Un'Goro Crater.", x = 0.446, y = 0.082 } },
+            text = "Accept It's Dangerous to Go Alone from Linken.",
+            useClientText = false,
         },
         {
-            id = "alliance-extra-3962-objective",
-            kind = "objective",
-            text = "Use the quest item to remove Blazerunner's protective aura, then defeat him. Loot the Golden Flame from the Ornate Chest in the cave at Fire Plume Ridge. This is an elite. Bring a group.",
-            conditions = { all = { { faction = "Alliance" }, { level = { min = 47 } } } },
-            route = {
-                {
-                    mapID = 1449,
-                    x = 0.492,
-                    y = 0.49,
-                    label = "Blazerunner",
-                    offMapText = "Travel to Blazerunner in Un'Goro Crater.",
-                },
-                {
-                    mapID = 1449,
-                    x = 0.502,
-                    y = 0.5,
-                    label = "Ornate Chest",
-                    offMapText = "Travel to the Ornate Chest in Fire Plume Ridge.",
-                },
-            },
             complete = { quest = { id = 3962, state = "complete" } },
-            requiredQuests = { { mode = "any", quests = { 3961 } } },
-            useClientText = false,
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 47 } } } },
             dependsOn = { "alliance-extra-3962-accept" },
             excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 3962, state = "activeOrCompleted" } },
-                        {
+                any = {
+                    {
+                        ["not"] = {
                             any = {
                                 { quest = { id = 3962, state = "activeOrCompleted" } },
                                 {
-                                    all = {
+                                    any = {
+                                        { quest = { id = 3962, state = "activeOrCompleted" } },
                                         {
-                                            any = {
+                                            all = {
                                                 {
                                                     any = {
-                                                        { quest = { id = 3961, state = "activeOrCompleted" } },
                                                         {
-                                                            all = {
+                                                            any = {
+                                                                { quest = { id = 3961, state = "activeOrCompleted" } },
                                                                 {
-                                                                    any = {
+                                                                    all = {
                                                                         {
                                                                             any = {
-                                                                                { quest = { id = 4005, state = "activeOrCompleted" } },
                                                                                 {
-                                                                                    all = {
+                                                                                    any = {
+                                                                                        { quest = { id = 4005, state = "activeOrCompleted" } },
                                                                                         {
-                                                                                            any = {
+                                                                                            all = {
                                                                                                 {
                                                                                                     any = {
-                                                                                                        { quest = { id = 4084, state = "activeOrCompleted" } },
                                                                                                         {
-                                                                                                            all = {
+                                                                                                            any = {
+                                                                                                                { quest = { id = 4084, state = "activeOrCompleted" } },
                                                                                                                 {
-                                                                                                                    any = {
+                                                                                                                    all = {
                                                                                                                         {
                                                                                                                             any = {
-                                                                                                                                { quest = { id = 3942, state = "activeOrCompleted" } },
                                                                                                                                 {
-                                                                                                                                    all = {
+                                                                                                                                    any = {
+                                                                                                                                        { quest = { id = 3942, state = "activeOrCompleted" } },
                                                                                                                                         {
-                                                                                                                                            any = {
+                                                                                                                                            all = {
                                                                                                                                                 {
                                                                                                                                                     any = {
-                                                                                                                                                        { quest = { id = 3941, state = "activeOrCompleted" } },
                                                                                                                                                         {
-                                                                                                                                                            all = {
+                                                                                                                                                            any = {
+                                                                                                                                                                { quest = { id = 3941, state = "activeOrCompleted" } },
                                                                                                                                                                 {
-                                                                                                                                                                    any = {
+                                                                                                                                                                    all = {
                                                                                                                                                                         {
                                                                                                                                                                             any = {
-                                                                                                                                                                                { quest = { id = 3914, state = "activeOrCompleted" } },
                                                                                                                                                                                 {
-                                                                                                                                                                                    all = {
+                                                                                                                                                                                    any = {
+                                                                                                                                                                                        { quest = { id = 3914, state = "activeOrCompleted" } },
                                                                                                                                                                                         {
-                                                                                                                                                                                            any = {
+                                                                                                                                                                                            all = {
                                                                                                                                                                                                 {
                                                                                                                                                                                                     any = {
-                                                                                                                                                                                                        { quest = { id = 3913, state = "activeOrCompleted" } },
                                                                                                                                                                                                         {
-                                                                                                                                                                                                            all = {
+                                                                                                                                                                                                            any = {
+                                                                                                                                                                                                                { quest = { id = 3913, state = "activeOrCompleted" } },
                                                                                                                                                                                                                 {
-                                                                                                                                                                                                                    any = {
+                                                                                                                                                                                                                    all = {
                                                                                                                                                                                                                         {
                                                                                                                                                                                                                             any = {
-                                                                                                                                                                                                                                { quest = { id = 3912, state = "activeOrCompleted" } },
                                                                                                                                                                                                                                 {
-                                                                                                                                                                                                                                    all = {
+                                                                                                                                                                                                                                    any = {
+                                                                                                                                                                                                                                        { quest = { id = 3912, state = "activeOrCompleted" } },
                                                                                                                                                                                                                                         {
-                                                                                                                                                                                                                                            any = {
+                                                                                                                                                                                                                                            all = {
                                                                                                                                                                                                                                                 {
                                                                                                                                                                                                                                                     any = {
-                                                                                                                                                                                                                                                        { quest = { id = 3909, state = "activeOrCompleted" } },
                                                                                                                                                                                                                                                         {
-                                                                                                                                                                                                                                                            all = {
+                                                                                                                                                                                                                                                            any = {
+                                                                                                                                                                                                                                                                { quest = { id = 3909, state = "activeOrCompleted" } },
                                                                                                                                                                                                                                                                 {
-                                                                                                                                                                                                                                                                    any = {
+                                                                                                                                                                                                                                                                    all = {
                                                                                                                                                                                                                                                                         {
                                                                                                                                                                                                                                                                             any = {
-                                                                                                                                                                                                                                                                                { quest = { id = 3908, state = "activeOrCompleted" } },
                                                                                                                                                                                                                                                                                 {
-                                                                                                                                                                                                                                                                                    all = {
+                                                                                                                                                                                                                                                                                    any = {
+                                                                                                                                                                                                                                                                                        { quest = { id = 3908, state = "activeOrCompleted" } },
                                                                                                                                                                                                                                                                                         {
-                                                                                                                                                                                                                                                                                            any = {
+                                                                                                                                                                                                                                                                                            all = {
                                                                                                                                                                                                                                                                                                 {
                                                                                                                                                                                                                                                                                                     any = {
-                                                                                                                                                                                                                                                                                                        { quest = { id = 3845, state = "activeOrCompleted" } },
-                                                                                                                                                                                                                                                                                                        { all = { { any = { { any = { { quest = { id = 3844, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                                                                                                                                                                                                                                                                        {
+                                                                                                                                                                                                                                                                                                            any = {
+                                                                                                                                                                                                                                                                                                                { quest = { id = 3845, state = "activeOrCompleted" } },
+                                                                                                                                                                                                                                                                                                                { all = { { any = { { any = { { quest = { id = 3844, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                                                                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                },
+                                                                                                                                                                                                            },
+                                                                                                                                                                                                        },
+                                                                                                                                                                                                    },
+                                                                                                                                                                                                },
+                                                                                                                                                                                            },
+                                                                                                                                                                                        },
+                                                                                                                                                                                    },
+                                                                                                                                                                                },
+                                                                                                                                                                            },
+                                                                                                                                                                        },
+                                                                                                                                                                    },
+                                                                                                                                                                },
+                                                                                                                                                            },
+                                                                                                                                                        },
+                                                                                                                                                    },
+                                                                                                                                                },
+                                                                                                                                            },
+                                                                                                                                        },
+                                                                                                                                    },
+                                                                                                                                },
+                                                                                                                            },
+                                                                                                                        },
+                                                                                                                    },
+                                                                                                                },
+                                                                                                            },
+                                                                                                        },
+                                                                                                    },
+                                                                                                },
+                                                                                            },
+                                                                                        },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 3962, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 3962, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 3961, state = "activeOrCompleted" } },
+                                                                {
+                                                                    all = {
+                                                                        {
+                                                                            any = {
+                                                                                {
+                                                                                    any = {
+                                                                                        { quest = { id = 4005, state = "activeOrCompleted" } },
+                                                                                        {
+                                                                                            all = {
+                                                                                                {
+                                                                                                    any = {
+                                                                                                        {
+                                                                                                            any = {
+                                                                                                                { quest = { id = 4084, state = "activeOrCompleted" } },
+                                                                                                                {
+                                                                                                                    all = {
+                                                                                                                        {
+                                                                                                                            any = {
+                                                                                                                                {
+                                                                                                                                    any = {
+                                                                                                                                        { quest = { id = 3942, state = "activeOrCompleted" } },
+                                                                                                                                        {
+                                                                                                                                            all = {
+                                                                                                                                                {
+                                                                                                                                                    any = {
+                                                                                                                                                        {
+                                                                                                                                                            any = {
+                                                                                                                                                                { quest = { id = 3941, state = "activeOrCompleted" } },
+                                                                                                                                                                {
+                                                                                                                                                                    all = {
+                                                                                                                                                                        {
+                                                                                                                                                                            any = {
+                                                                                                                                                                                {
+                                                                                                                                                                                    any = {
+                                                                                                                                                                                        { quest = { id = 3914, state = "activeOrCompleted" } },
+                                                                                                                                                                                        {
+                                                                                                                                                                                            all = {
+                                                                                                                                                                                                { item = { minCount = 1, name = "Linken's Superior Sword" } },
+                                                                                                                                                                                                {
+                                                                                                                                                                                                    any = {
+                                                                                                                                                                                                        {
+                                                                                                                                                                                                            any = {
+                                                                                                                                                                                                                { quest = { id = 3913, state = "activeOrCompleted" } },
+                                                                                                                                                                                                                {
+                                                                                                                                                                                                                    all = {
+                                                                                                                                                                                                                        {
+                                                                                                                                                                                                                            any = {
+                                                                                                                                                                                                                                {
+                                                                                                                                                                                                                                    any = {
+                                                                                                                                                                                                                                        { quest = { id = 3912, state = "activeOrCompleted" } },
+                                                                                                                                                                                                                                        {
+                                                                                                                                                                                                                                            all = {
+                                                                                                                                                                                                                                                {
+                                                                                                                                                                                                                                                    any = {
+                                                                                                                                                                                                                                                        {
+                                                                                                                                                                                                                                                            any = {
+                                                                                                                                                                                                                                                                { quest = { id = 3909, state = "activeOrCompleted" } },
+                                                                                                                                                                                                                                                                {
+                                                                                                                                                                                                                                                                    all = {
+                                                                                                                                                                                                                                                                        {
+                                                                                                                                                                                                                                                                            any = {
+                                                                                                                                                                                                                                                                                {
+                                                                                                                                                                                                                                                                                    any = {
+                                                                                                                                                                                                                                                                                        { quest = { id = 3908, state = "activeOrCompleted" } },
+                                                                                                                                                                                                                                                                                        {
+                                                                                                                                                                                                                                                                                            all = {
+                                                                                                                                                                                                                                                                                                {
+                                                                                                                                                                                                                                                                                                    any = {
+                                                                                                                                                                                                                                                                                                        {
+                                                                                                                                                                                                                                                                                                            any = {
+                                                                                                                                                                                                                                                                                                                { quest = { id = 3845, state = "activeOrCompleted" } },
+                                                                                                                                                                                                                                                                                                                {
+                                                                                                                                                                                                                                                                                                                    all = {
+                                                                                                                                                                                                                                                                                                                        { item = { minCount = 1, name = "A Small Pack" } },
+                                                                                                                                                                                                                                                                                                                        { any = { { any = { { quest = { id = 3844, state = "activeOrCompleted" } }, { all = {} } } } } },
+                                                                                                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                                                                                                        },
                                                                                                                                                                                                                                                                                                     },
                                                                                                                                                                                                                                                                                                 },
                                                                                                                                                                                                                                                                                             },
@@ -6322,110 +7042,278 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-extra-3962-objective",
+            kind = "objective",
+            requiredQuests = { { mode = "any", quests = { 3961 } } },
+            route = {
+                { label = "Blazerunner", mapID = 1449, offMapText = "Travel to Blazerunner in Un'Goro Crater.", x = 0.492, y = 0.49 },
+                {
+                    label = "Ornate Chest",
+                    mapID = 1449,
+                    offMapText = "Travel to the Ornate Chest in Fire Plume Ridge.",
+                    x = 0.502,
+                    y = 0.5,
+                },
+            },
+            text = "Use the quest item to remove Blazerunner's protective aura, then defeat him. Loot the Golden Flame from the Ornate Chest in the cave at Fire Plume Ridge. This is an elite. Bring a group.",
+            useClientPin = true,
+            useClientText = false,
         },
         {
-            id = "alliance-extra-3962-turnin",
-            kind = "turnin",
-            text = "Turn in It's Dangerous to Go Alone to Linken.",
-            conditions = { all = { { faction = "Alliance" }, { level = { min = 47 } } } },
-            route = {
-                {
-                    mapID = 1449,
-                    x = 0.446,
-                    y = 0.08199999999999999,
-                    label = "Linken",
-                    offMapText = "Travel to Linken in Un'Goro Crater.",
-                },
-            },
             complete = { quest = { id = 3962, state = "completed" } },
-            requiredQuests = { { mode = "any", quests = { 3961 } } },
-            useClientText = false,
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 47 } } } },
             dependsOn = { "alliance-extra-3962-objective" },
             excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 3962, state = "activeOrCompleted" } },
-                        {
+                any = {
+                    {
+                        ["not"] = {
                             any = {
                                 { quest = { id = 3962, state = "activeOrCompleted" } },
                                 {
-                                    all = {
+                                    any = {
+                                        { quest = { id = 3962, state = "activeOrCompleted" } },
                                         {
-                                            any = {
+                                            all = {
                                                 {
                                                     any = {
-                                                        { quest = { id = 3961, state = "activeOrCompleted" } },
                                                         {
-                                                            all = {
+                                                            any = {
+                                                                { quest = { id = 3961, state = "activeOrCompleted" } },
                                                                 {
-                                                                    any = {
+                                                                    all = {
                                                                         {
                                                                             any = {
-                                                                                { quest = { id = 4005, state = "activeOrCompleted" } },
                                                                                 {
-                                                                                    all = {
+                                                                                    any = {
+                                                                                        { quest = { id = 4005, state = "activeOrCompleted" } },
                                                                                         {
-                                                                                            any = {
+                                                                                            all = {
                                                                                                 {
                                                                                                     any = {
-                                                                                                        { quest = { id = 4084, state = "activeOrCompleted" } },
                                                                                                         {
-                                                                                                            all = {
+                                                                                                            any = {
+                                                                                                                { quest = { id = 4084, state = "activeOrCompleted" } },
                                                                                                                 {
-                                                                                                                    any = {
+                                                                                                                    all = {
                                                                                                                         {
                                                                                                                             any = {
-                                                                                                                                { quest = { id = 3942, state = "activeOrCompleted" } },
                                                                                                                                 {
-                                                                                                                                    all = {
+                                                                                                                                    any = {
+                                                                                                                                        { quest = { id = 3942, state = "activeOrCompleted" } },
                                                                                                                                         {
-                                                                                                                                            any = {
+                                                                                                                                            all = {
                                                                                                                                                 {
                                                                                                                                                     any = {
-                                                                                                                                                        { quest = { id = 3941, state = "activeOrCompleted" } },
                                                                                                                                                         {
-                                                                                                                                                            all = {
+                                                                                                                                                            any = {
+                                                                                                                                                                { quest = { id = 3941, state = "activeOrCompleted" } },
                                                                                                                                                                 {
-                                                                                                                                                                    any = {
+                                                                                                                                                                    all = {
                                                                                                                                                                         {
                                                                                                                                                                             any = {
-                                                                                                                                                                                { quest = { id = 3914, state = "activeOrCompleted" } },
                                                                                                                                                                                 {
-                                                                                                                                                                                    all = {
+                                                                                                                                                                                    any = {
+                                                                                                                                                                                        { quest = { id = 3914, state = "activeOrCompleted" } },
                                                                                                                                                                                         {
-                                                                                                                                                                                            any = {
+                                                                                                                                                                                            all = {
                                                                                                                                                                                                 {
                                                                                                                                                                                                     any = {
-                                                                                                                                                                                                        { quest = { id = 3913, state = "activeOrCompleted" } },
                                                                                                                                                                                                         {
-                                                                                                                                                                                                            all = {
+                                                                                                                                                                                                            any = {
+                                                                                                                                                                                                                { quest = { id = 3913, state = "activeOrCompleted" } },
                                                                                                                                                                                                                 {
-                                                                                                                                                                                                                    any = {
+                                                                                                                                                                                                                    all = {
                                                                                                                                                                                                                         {
                                                                                                                                                                                                                             any = {
-                                                                                                                                                                                                                                { quest = { id = 3912, state = "activeOrCompleted" } },
                                                                                                                                                                                                                                 {
-                                                                                                                                                                                                                                    all = {
+                                                                                                                                                                                                                                    any = {
+                                                                                                                                                                                                                                        { quest = { id = 3912, state = "activeOrCompleted" } },
                                                                                                                                                                                                                                         {
-                                                                                                                                                                                                                                            any = {
+                                                                                                                                                                                                                                            all = {
                                                                                                                                                                                                                                                 {
                                                                                                                                                                                                                                                     any = {
-                                                                                                                                                                                                                                                        { quest = { id = 3909, state = "activeOrCompleted" } },
                                                                                                                                                                                                                                                         {
-                                                                                                                                                                                                                                                            all = {
+                                                                                                                                                                                                                                                            any = {
+                                                                                                                                                                                                                                                                { quest = { id = 3909, state = "activeOrCompleted" } },
                                                                                                                                                                                                                                                                 {
-                                                                                                                                                                                                                                                                    any = {
+                                                                                                                                                                                                                                                                    all = {
                                                                                                                                                                                                                                                                         {
                                                                                                                                                                                                                                                                             any = {
-                                                                                                                                                                                                                                                                                { quest = { id = 3908, state = "activeOrCompleted" } },
                                                                                                                                                                                                                                                                                 {
-                                                                                                                                                                                                                                                                                    all = {
+                                                                                                                                                                                                                                                                                    any = {
+                                                                                                                                                                                                                                                                                        { quest = { id = 3908, state = "activeOrCompleted" } },
                                                                                                                                                                                                                                                                                         {
-                                                                                                                                                                                                                                                                                            any = {
+                                                                                                                                                                                                                                                                                            all = {
                                                                                                                                                                                                                                                                                                 {
                                                                                                                                                                                                                                                                                                     any = {
-                                                                                                                                                                                                                                                                                                        { quest = { id = 3845, state = "activeOrCompleted" } },
-                                                                                                                                                                                                                                                                                                        { all = { { any = { { any = { { quest = { id = 3844, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                                                                                                                                                                                                                                                                        {
+                                                                                                                                                                                                                                                                                                            any = {
+                                                                                                                                                                                                                                                                                                                { quest = { id = 3845, state = "activeOrCompleted" } },
+                                                                                                                                                                                                                                                                                                                { all = { { any = { { any = { { quest = { id = 3844, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                                                                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                },
+                                                                                                                                                                                                            },
+                                                                                                                                                                                                        },
+                                                                                                                                                                                                    },
+                                                                                                                                                                                                },
+                                                                                                                                                                                            },
+                                                                                                                                                                                        },
+                                                                                                                                                                                    },
+                                                                                                                                                                                },
+                                                                                                                                                                            },
+                                                                                                                                                                        },
+                                                                                                                                                                    },
+                                                                                                                                                                },
+                                                                                                                                                            },
+                                                                                                                                                        },
+                                                                                                                                                    },
+                                                                                                                                                },
+                                                                                                                                            },
+                                                                                                                                        },
+                                                                                                                                    },
+                                                                                                                                },
+                                                                                                                            },
+                                                                                                                        },
+                                                                                                                    },
+                                                                                                                },
+                                                                                                            },
+                                                                                                        },
+                                                                                                    },
+                                                                                                },
+                                                                                            },
+                                                                                        },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 3962, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 3962, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 3961, state = "activeOrCompleted" } },
+                                                                {
+                                                                    all = {
+                                                                        {
+                                                                            any = {
+                                                                                {
+                                                                                    any = {
+                                                                                        { quest = { id = 4005, state = "activeOrCompleted" } },
+                                                                                        {
+                                                                                            all = {
+                                                                                                {
+                                                                                                    any = {
+                                                                                                        {
+                                                                                                            any = {
+                                                                                                                { quest = { id = 4084, state = "activeOrCompleted" } },
+                                                                                                                {
+                                                                                                                    all = {
+                                                                                                                        {
+                                                                                                                            any = {
+                                                                                                                                {
+                                                                                                                                    any = {
+                                                                                                                                        { quest = { id = 3942, state = "activeOrCompleted" } },
+                                                                                                                                        {
+                                                                                                                                            all = {
+                                                                                                                                                {
+                                                                                                                                                    any = {
+                                                                                                                                                        {
+                                                                                                                                                            any = {
+                                                                                                                                                                { quest = { id = 3941, state = "activeOrCompleted" } },
+                                                                                                                                                                {
+                                                                                                                                                                    all = {
+                                                                                                                                                                        {
+                                                                                                                                                                            any = {
+                                                                                                                                                                                {
+                                                                                                                                                                                    any = {
+                                                                                                                                                                                        { quest = { id = 3914, state = "activeOrCompleted" } },
+                                                                                                                                                                                        {
+                                                                                                                                                                                            all = {
+                                                                                                                                                                                                { item = { minCount = 1, name = "Linken's Superior Sword" } },
+                                                                                                                                                                                                {
+                                                                                                                                                                                                    any = {
+                                                                                                                                                                                                        {
+                                                                                                                                                                                                            any = {
+                                                                                                                                                                                                                { quest = { id = 3913, state = "activeOrCompleted" } },
+                                                                                                                                                                                                                {
+                                                                                                                                                                                                                    all = {
+                                                                                                                                                                                                                        {
+                                                                                                                                                                                                                            any = {
+                                                                                                                                                                                                                                {
+                                                                                                                                                                                                                                    any = {
+                                                                                                                                                                                                                                        { quest = { id = 3912, state = "activeOrCompleted" } },
+                                                                                                                                                                                                                                        {
+                                                                                                                                                                                                                                            all = {
+                                                                                                                                                                                                                                                {
+                                                                                                                                                                                                                                                    any = {
+                                                                                                                                                                                                                                                        {
+                                                                                                                                                                                                                                                            any = {
+                                                                                                                                                                                                                                                                { quest = { id = 3909, state = "activeOrCompleted" } },
+                                                                                                                                                                                                                                                                {
+                                                                                                                                                                                                                                                                    all = {
+                                                                                                                                                                                                                                                                        {
+                                                                                                                                                                                                                                                                            any = {
+                                                                                                                                                                                                                                                                                {
+                                                                                                                                                                                                                                                                                    any = {
+                                                                                                                                                                                                                                                                                        { quest = { id = 3908, state = "activeOrCompleted" } },
+                                                                                                                                                                                                                                                                                        {
+                                                                                                                                                                                                                                                                                            all = {
+                                                                                                                                                                                                                                                                                                {
+                                                                                                                                                                                                                                                                                                    any = {
+                                                                                                                                                                                                                                                                                                        {
+                                                                                                                                                                                                                                                                                                            any = {
+                                                                                                                                                                                                                                                                                                                { quest = { id = 3845, state = "activeOrCompleted" } },
+                                                                                                                                                                                                                                                                                                                {
+                                                                                                                                                                                                                                                                                                                    all = {
+                                                                                                                                                                                                                                                                                                                        { item = { minCount = 1, name = "A Small Pack" } },
+                                                                                                                                                                                                                                                                                                                        { any = { { any = { { quest = { id = 3844, state = "activeOrCompleted" } }, { all = {} } } } } },
+                                                                                                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                                                                                                        },
                                                                                                                                                                                                                                                                                                     },
                                                                                                                                                                                                                                                                                                 },
                                                                                                                                                                                                                                                                                             },
@@ -6497,6 +7385,56 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-extra-3962-turnin",
+            kind = "turnin",
+            requiredQuests = { { mode = "any", quests = { 3961 } } },
+            route = { { label = "Linken", mapID = 1449, offMapText = "Travel to Linken in Un'Goro Crater.", x = 0.446, y = 0.082 } },
+            text = "Turn in It's Dangerous to Go Alone to Linken.",
+            useClientPin = true,
+            useClientText = false,
+            useQuestNavigation = true,
+        },
+        {
+            complete = { level = { min = 46 } },
+            conditions = { all = { { faction = "Horde" } } },
+            excludeWhen = { ["not"] = { all = { { faction = "Horde" } } } },
+            id = "visit-entry-leveling-era-horde-tanaris-and-dustwallow-marsh",
+            kind = "note",
+            requiredLevel = 46,
+            text = "Reach level 46 before the Tanaris & Dustwallow Marsh visit.",
+            visitSourceGuide = "leveling-era-horde-tanaris-and-dustwallow-marsh",
+        },
+        {
+            checkpointQuest = 4300,
+            complete = { level = { min = 48 } },
+            conditions = { all = { { faction = "Horde" }, { race = { 2, 5, 6, 8, 96 } } } },
+            dependsOn = {},
+            id = "horde-leveling-era-horde-tanaris-and-dustwallow-marsh-level-before-accept-4300-bone-bladed-weapons",
+            kind = "note",
+            requiredLevel = 48,
+            requiredQuests = {},
+            sourceActionID = "level-before-accept-4300-bone-bladed-weapons",
+            sourceGuide = "leveling-era-horde-tanaris-and-dustwallow-marsh",
+            text = "Reach level 48 before continuing. Choose how to gain XP, then return to this route.",
+            useClientPin = false,
+            useClientText = false,
+        },
+        {
+            complete = { quest = { id = 4300, state = "activeOrCompleted" } },
+            conditions = { all = { { faction = "Horde" }, { level = { min = 48 } }, { race = { 2, 5, 6, 8, 96 } } } },
+            dependsOn = {},
+            id = "horde-leveling-era-horde-tanaris-and-dustwallow-marsh-accept-4300-bone-bladed-weapons",
+            kind = "accept",
+            requiredQuests = {},
+            route = {
+                { label = "Jes'rimon", mapID = 1454, offMapText = "Travel to Jes'rimon in Orgrimmar.", x = 0.5551, y = 0.3409 },
+            },
+            sourceActionID = "accept-4300-bone-bladed-weapons",
+            sourceGuide = "leveling-era-horde-tanaris-and-dustwallow-marsh",
+            sourceStep = 99,
+            text = "Accept Bone-Bladed Weapons from Jes'rimon.",
+            useClientPin = false,
+            useClientText = false,
         },
         {
             id = "visit-entry-leveling-era-horde-the-hinterlands",
@@ -6666,13 +7604,13 @@ ns:RegisterGuide({
                     y = 0.6902,
                 },
             },
+            sourceActionID = "turnin-3844-it-s-a-secret-to-everybody",
+            sourceGuide = "leveling-era-horde-feralas-and-ungoro-crater",
             sourceStep = 58,
             text = "Turn in It's a Secret to Everybody.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-feralas-and-ungoro-crater",
-            sourceActionID = "turnin-3844-it-s-a-secret-to-everybody",
         },
         {
             complete = { quest = { id = 3845, state = "activeOrCompleted" } },
@@ -6753,13 +7691,13 @@ ns:RegisterGuide({
                     y = 0.7597,
                 },
             },
+            sourceActionID = "turnin-4290-the-fare-of-lar-korwi",
+            sourceGuide = "leveling-era-horde-feralas-and-ungoro-crater",
             sourceStep = 60,
             text = "Turn in The Fare of Lar'korwi to Torwa Pathfinder.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-feralas-and-ungoro-crater",
-            sourceActionID = "turnin-4290-the-fare-of-lar-korwi",
         },
         {
             complete = { quest = { id = 4291, state = "activeOrCompleted" } },
@@ -6827,6 +7765,39 @@ ns:RegisterGuide({
             },
         },
         {
+            checkpointQuest = 4300,
+            complete = { level = { min = 48 } },
+            conditions = { all = { { faction = "Horde" }, { race = { 2, 5, 6, 8, 96 } } } },
+            dependsOn = {},
+            id = "horde-leveling-era-horde-feralas-and-ungoro-crater-level-before-objective-4300-1-white-ravasaur-claw",
+            kind = "note",
+            requiredLevel = 48,
+            requiredQuests = {},
+            sourceActionID = "level-before-objective-4300-1-white-ravasaur-claw",
+            sourceGuide = "leveling-era-horde-feralas-and-ungoro-crater",
+            text = "Reach level 48 before continuing. Choose how to gain XP, then return to this route.",
+            useClientPin = false,
+            useClientText = false,
+        },
+        {
+            complete = { questObjective = { count = 8, id = 4300, index = 1, text = "White Ravasaur Claw" } },
+            conditions = { all = { { faction = "Horde" }, { level = { min = 48 } }, { race = { 2, 5, 6, 8, 96 } } } },
+            dependsOn = {},
+            id = "horde-leveling-era-horde-feralas-and-ungoro-crater-objective-4300-1-white-ravasaur-claw",
+            kind = "objective",
+            requiredQuests = {},
+            route = {
+                { label = "White Ravasaur Claw", mapID = 1449, offMapText = "Travel to White Ravasaur Claw.", x = 0.65, y = 0.704 },
+            },
+            sourceActionID = "objective-4300-1-white-ravasaur-claw",
+            sourceGuide = "leveling-era-horde-feralas-and-ungoro-crater",
+            sourceStep = 62,
+            text = "Collect 8 White Ravasaur Claw.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
+        },
+        {
             complete = { quest = { id = 3884, state = "activeOrCompleted" } },
             conditions = { all = { { faction = "Horde" }, { level = { min = 48 } } } },
             dependsOn = {},
@@ -6847,25 +7818,6 @@ ns:RegisterGuide({
                 "horde-leveling-era-horde-feralas-and-ungoro-crater-accept-4291-the-scent-of-lar-korwi",
                 "horde-leveling-era-horde-feralas-and-ungoro-crater-objective-4291-1-lar-korwi-mate",
             },
-            id = "horde-leveling-era-horde-feralas-and-ungoro-crater-turnin-4291-the-scent-of-lar-korwi",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 4290 } } },
-            route = {
-                {
-                    label = "Torwa Pathfinder",
-                    mapID = 1449,
-                    offMapText = "Travel to Torwa Pathfinder in Un'Goro Crater.",
-                    x = 0.7163,
-                    y = 0.7597,
-                },
-            },
-            sourceStep = 65,
-            text = "Turn in The Scent of Lar'korwi to Torwa Pathfinder.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-feralas-and-ungoro-crater",
-            sourceActionID = "turnin-4291-the-scent-of-lar-korwi",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -6879,6 +7831,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-feralas-and-ungoro-crater-turnin-4291-the-scent-of-lar-korwi",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 4290 } } },
+            route = {
+                {
+                    label = "Torwa Pathfinder",
+                    mapID = 1449,
+                    offMapText = "Travel to Torwa Pathfinder in Un'Goro Crater.",
+                    x = 0.7163,
+                    y = 0.7597,
+                },
+            },
+            sourceActionID = "turnin-4291-the-scent-of-lar-korwi",
+            sourceGuide = "leveling-era-horde-feralas-and-ungoro-crater",
+            sourceStep = 65,
+            text = "Turn in The Scent of Lar'korwi to Torwa Pathfinder.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 4292, state = "activeOrCompleted" } },
@@ -7022,19 +7993,6 @@ ns:RegisterGuide({
                 "horde-leveling-era-horde-feralas-and-ungoro-crater-objective-3845-2-curled-map-parchment",
                 "horde-leveling-era-horde-feralas-and-ungoro-crater-objective-3845-3-lion-headed-key",
             },
-            id = "horde-leveling-era-horde-feralas-and-ungoro-crater-turnin-3845-it-s-a-secret-to-everybody",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 3844 } } },
-            route = {
-                { label = "Linken", mapID = 1449, offMapText = "Travel to Linken in Un'Goro Crater.", x = 0.4466, y = 0.0811 },
-            },
-            sourceStep = 69,
-            text = "Turn in It's a Secret to Everybody to Linken.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-feralas-and-ungoro-crater",
-            sourceActionID = "turnin-3845-it-s-a-secret-to-everybody",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -7048,6 +8006,19 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-feralas-and-ungoro-crater-turnin-3845-it-s-a-secret-to-everybody",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 3844 } } },
+            route = {
+                { label = "Linken", mapID = 1449, offMapText = "Travel to Linken in Un'Goro Crater.", x = 0.4466, y = 0.0811 },
+            },
+            sourceActionID = "turnin-3845-it-s-a-secret-to-everybody",
+            sourceGuide = "leveling-era-horde-feralas-and-ungoro-crater",
+            sourceStep = 69,
+            text = "Turn in It's a Secret to Everybody to Linken.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 3908, state = "activeOrCompleted" } },
@@ -7108,13 +8079,13 @@ ns:RegisterGuide({
                     y = 0.0714,
                 },
             },
+            sourceActionID = "turnin-3884-williden-s-journal",
+            sourceGuide = "leveling-era-horde-feralas-and-ungoro-crater",
             sourceStep = 70,
             text = "Turn in Williden's Journal to Williden Marshal.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-feralas-and-ungoro-crater",
-            sourceActionID = "turnin-3884-williden-s-journal",
         },
         {
             complete = { quest = { id = 4284, state = "activeOrCompleted" } },
@@ -7143,13 +8114,31 @@ ns:RegisterGuide({
             route = {
                 { label = "J.D. Collie", mapID = 1449, offMapText = "Travel to J.D. Collie in Un'Goro Crater.", x = 0.4192, y = 0.027 },
             },
+            sourceActionID = "turnin-4284-crystals-of-power",
+            sourceGuide = "leveling-era-horde-feralas-and-ungoro-crater",
             sourceStep = 72,
             text = "Turn in Crystals of Power to J.D. Collie.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
+        },
+        {
+            complete = { quest = { id = 4300, state = "completed" } },
+            conditions = { all = { { faction = "Horde" }, { level = { min = 48 } }, { race = { 2, 5, 6, 8, 96 } } } },
+            dependsOn = { "horde-leveling-era-horde-feralas-and-ungoro-crater-objective-4300-1-white-ravasaur-claw" },
+            id = "horde-leveling-era-horde-feralas-and-ungoro-crater-turnin-4300-bone-bladed-weapons",
+            kind = "turnin",
+            requiredQuests = {},
+            route = {
+                { label = "Jes'rimon", mapID = 1454, offMapText = "Travel to Jes'rimon in Orgrimmar.", x = 0.5551, y = 0.3409 },
+            },
+            sourceActionID = "turnin-4300-bone-bladed-weapons",
             sourceGuide = "leveling-era-horde-feralas-and-ungoro-crater",
-            sourceActionID = "turnin-4284-crystals-of-power",
+            sourceStep = 91,
+            text = "Turn in Bone-Bladed Weapons to Jes'rimon.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             checkpointQuest = 4502,
@@ -7197,25 +8186,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 3908, state = "completed" } },
             conditions = { all = { { faction = "Horde" }, { level = { min = 47 } } } },
             dependsOn = {},
-            id = "horde-leveling-era-horde-felwood-and-winterspring-turnin-3908-it-s-a-secret-to-everybody",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 3845 } } },
-            route = {
-                {
-                    label = "Donova Snowden",
-                    mapID = 1452,
-                    offMapText = "Travel to Donova Snowden in Winterspring.",
-                    x = 0.3127,
-                    y = 0.4516,
-                },
-            },
-            sourceStep = 24,
-            text = "Turn in It's a Secret to Everybody to Donova Snowden.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-felwood-and-winterspring",
-            sourceActionID = "turnin-3908-it-s-a-secret-to-everybody",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -7242,6 +8212,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-felwood-and-winterspring-turnin-3908-it-s-a-secret-to-everybody",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 3845 } } },
+            route = {
+                {
+                    label = "Donova Snowden",
+                    mapID = 1452,
+                    offMapText = "Travel to Donova Snowden in Winterspring.",
+                    x = 0.3127,
+                    y = 0.4516,
+                },
+            },
+            sourceActionID = "turnin-3908-it-s-a-secret-to-everybody",
+            sourceGuide = "leveling-era-horde-felwood-and-winterspring",
+            sourceStep = 24,
+            text = "Turn in It's a Secret to Everybody to Donova Snowden.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 3909, state = "activeOrCompleted" } },
@@ -7756,13 +8745,13 @@ ns:RegisterGuide({
                     y = 0.7597,
                 },
             },
+            sourceActionID = "turnin-4289-the-apes-of-un-goro",
+            sourceGuide = "leveling-era-horde-ungoro-crater",
             sourceStep = 19,
             text = "Turn in The Apes of Un'Goro to Torwa Pathfinder.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-ungoro-crater",
-            sourceActionID = "turnin-4289-the-apes-of-un-goro",
         },
         {
             complete = { quest = { id = 4292, state = "completed" } },
@@ -7771,25 +8760,6 @@ ns:RegisterGuide({
                 "horde-leveling-era-horde-ungoro-crater-objective-4292-1-torwa-s-pouch",
                 "horde-leveling-era-horde-ungoro-crater-objective-4292-1-preserved-threshadon-meat",
             },
-            id = "horde-leveling-era-horde-ungoro-crater-turnin-4292-the-bait-for-lar-korwi",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 4291 } } },
-            route = {
-                {
-                    label = "Torwa Pathfinder",
-                    mapID = 1449,
-                    offMapText = "Travel to Torwa Pathfinder in Un'Goro Crater.",
-                    x = 0.7164,
-                    y = 0.7597,
-                },
-            },
-            sourceStep = 19,
-            text = "Turn in The Bait for Lar'korwi to Torwa Pathfinder.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-ungoro-crater",
-            sourceActionID = "turnin-4292-the-bait-for-lar-korwi",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -7816,6 +8786,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-ungoro-crater-turnin-4292-the-bait-for-lar-korwi",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 4291 } } },
+            route = {
+                {
+                    label = "Torwa Pathfinder",
+                    mapID = 1449,
+                    offMapText = "Travel to Torwa Pathfinder in Un'Goro Crater.",
+                    x = 0.7164,
+                    y = 0.7597,
+                },
+            },
+            sourceActionID = "turnin-4292-the-bait-for-lar-korwi",
+            sourceGuide = "leveling-era-horde-ungoro-crater",
+            sourceStep = 19,
+            text = "Turn in The Bait for Lar'korwi to Torwa Pathfinder.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 4301, state = "activeOrCompleted" } },
@@ -7964,13 +8953,13 @@ ns:RegisterGuide({
             route = {
                 { label = "Krakle", mapID = 1449, offMapText = "Travel to Krakle in Un'Goro Crater.", x = 0.3093, y = 0.5043 },
             },
+            sourceActionID = "turnin-974-finding-the-source",
+            sourceGuide = "leveling-era-horde-ungoro-crater",
             sourceStep = 27,
             text = "Turn in Finding the Source to Krakle.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-ungoro-crater",
-            sourceActionID = "turnin-974-finding-the-source",
         },
         {
             complete = { quest = { id = 980, state = "activeOrCompleted" } },
@@ -8110,13 +9099,13 @@ ns:RegisterGuide({
             kind = "turnin",
             requiredQuests = {},
             route = { { label = "Ringo", mapID = 1449, offMapText = "Travel to Ringo in Un'Goro Crater.", x = 0.519, y = 0.4985 } },
+            sourceActionID = "turnin-4492-lost",
+            sourceGuide = "leveling-era-horde-ungoro-crater",
             sourceStep = 34,
             text = "Turn in Lost! to Ringo.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-ungoro-crater",
-            sourceActionID = "turnin-4492-lost",
         },
         {
             complete = { quest = { id = 4491, state = "activeOrCompleted" } },
@@ -8188,25 +9177,6 @@ ns:RegisterGuide({
                 "horde-leveling-era-horde-ungoro-crater-accept-4491-a-little-help-from-my-friends",
                 "horde-leveling-era-horde-ungoro-crater-objective-4491-authored-escort",
             },
-            id = "horde-leveling-era-horde-ungoro-crater-turnin-4491-a-little-help-from-my-friends",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 4492 } } },
-            route = {
-                {
-                    label = "Spraggle Frock",
-                    mapID = 1449,
-                    offMapText = "Travel to Spraggle Frock in Un'Goro Crater.",
-                    x = 0.4362,
-                    y = 0.0851,
-                },
-            },
-            sourceStep = 36,
-            text = "Turn in A Little Help From My Friends to Spraggle Frock.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-ungoro-crater",
-            sourceActionID = "turnin-4491-a-little-help-from-my-friends",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -8220,6 +9190,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-ungoro-crater-turnin-4491-a-little-help-from-my-friends",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 4492 } } },
+            route = {
+                {
+                    label = "Spraggle Frock",
+                    mapID = 1449,
+                    offMapText = "Travel to Spraggle Frock in Un'Goro Crater.",
+                    x = 0.4362,
+                    y = 0.0851,
+                },
+            },
+            sourceActionID = "turnin-4491-a-little-help-from-my-friends",
+            sourceGuide = "leveling-era-horde-ungoro-crater",
+            sourceStep = 36,
+            text = "Turn in A Little Help From My Friends to Spraggle Frock.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 4501, state = "completed" } },
@@ -8242,13 +9231,13 @@ ns:RegisterGuide({
                     y = 0.0851,
                 },
             },
+            sourceActionID = "turnin-4501-beware-of-pterrordax",
+            sourceGuide = "leveling-era-horde-ungoro-crater",
             sourceStep = 36,
             text = "Turn in Beware of Pterrordax to Spraggle Frock.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-ungoro-crater",
-            sourceActionID = "turnin-4501-beware-of-pterrordax",
         },
         {
             complete = { quest = { id = 3882, state = "completed" } },
@@ -8269,13 +9258,13 @@ ns:RegisterGuide({
                     y = 0.0743,
                 },
             },
+            sourceActionID = "turnin-3882-roll-the-bones",
+            sourceGuide = "leveling-era-horde-ungoro-crater",
             sourceStep = 38,
             text = "Turn in Roll the Bones to Spark Nilminer.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-ungoro-crater",
-            sourceActionID = "turnin-3882-roll-the-bones",
         },
         {
             complete = { questObjective = { count = 1, id = 4288, index = 1 } },
@@ -8315,19 +9304,6 @@ ns:RegisterGuide({
                 "horde-leveling-era-horde-ungoro-crater-accept-4288-the-western-pylon",
                 "horde-leveling-era-horde-ungoro-crater-objective-4288-quest-work",
             },
-            id = "horde-leveling-era-horde-ungoro-crater-turnin-4288-the-western-pylon",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 4284 } } },
-            route = {
-                { label = "J.D. Collie", mapID = 1449, offMapText = "Travel to J.D. Collie in Un'Goro Crater.", x = 0.4192, y = 0.027 },
-            },
-            sourceStep = 39,
-            text = "Turn in The Western Pylon to J.D. Collie.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-ungoro-crater",
-            sourceActionID = "turnin-4288-the-western-pylon",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -8341,6 +9317,19 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-ungoro-crater-turnin-4288-the-western-pylon",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 4284 } } },
+            route = {
+                { label = "J.D. Collie", mapID = 1449, offMapText = "Travel to J.D. Collie in Un'Goro Crater.", x = 0.4192, y = 0.027 },
+            },
+            sourceActionID = "turnin-4288-the-western-pylon",
+            sourceGuide = "leveling-era-horde-ungoro-crater",
+            sourceStep = 39,
+            text = "Turn in The Western Pylon to J.D. Collie.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 4285, state = "activeOrCompleted" } },
@@ -8421,13 +9410,13 @@ ns:RegisterGuide({
                     y = 0.0679,
                 },
             },
+            sourceActionID = "turnin-3883-alien-ecology",
+            sourceGuide = "leveling-era-horde-ungoro-crater",
             sourceStep = 40,
             text = "Turn in Alien Ecology to Hol'anyee Marshal.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-ungoro-crater",
-            sourceActionID = "turnin-3883-alien-ecology",
         },
         {
             complete = { quest = { id = 3881, state = "completed" } },
@@ -8449,13 +9438,13 @@ ns:RegisterGuide({
                     y = 0.0714,
                 },
             },
+            sourceActionID = "turnin-3881-expedition-salvation",
+            sourceGuide = "leveling-era-horde-ungoro-crater",
             sourceStep = 41,
             text = "Turn in Expedition Salvation to Williden Marshal.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-ungoro-crater",
-            sourceActionID = "turnin-3881-expedition-salvation",
         },
         {
             complete = { quest = { id = 4145, state = "completed" } },
@@ -8473,13 +9462,13 @@ ns:RegisterGuide({
             route = {
                 { label = "Larion", mapID = 1449, offMapText = "Travel to Larion in Un'Goro Crater.", x = 0.4554, y = 0.0872 },
             },
+            sourceActionID = "turnin-4145-larion-and-muigin",
+            sourceGuide = "leveling-era-horde-ungoro-crater",
             sourceStep = 42,
             text = "Turn in Larion and Muigin to Larion.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-ungoro-crater",
-            sourceActionID = "turnin-4145-larion-and-muigin",
         },
         {
             complete = { quest = { id = 4147, state = "activeOrCompleted" } },
@@ -8532,13 +9521,13 @@ ns:RegisterGuide({
             route = {
                 { label = "Shizzle", mapID = 1449, offMapText = "Travel to Shizzle in Un'Goro Crater.", x = 0.4423, y = 0.1159 },
             },
+            sourceActionID = "turnin-4503-shizzle-s-flyer",
+            sourceGuide = "leveling-era-horde-ungoro-crater",
             sourceStep = 43,
             text = "Turn in Shizzle's Flyer to Shizzle.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-ungoro-crater",
-            sourceActionID = "turnin-4503-shizzle-s-flyer",
         },
         {
             complete = { quest = { id = 4243, state = "activeOrCompleted" } },
@@ -8602,13 +9591,13 @@ ns:RegisterGuide({
             route = {
                 { label = "A-Me 01", mapID = 1449, offMapText = "Travel to A-Me 01 in Un'Goro Crater.", x = 0.6765, y = 0.1676 },
             },
+            sourceActionID = "turnin-4243-chasing-a-me-01",
+            sourceGuide = "leveling-era-horde-ungoro-crater",
             sourceStep = 47,
             text = "Turn in Chasing A-Me 01 to A-Me 01.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-ungoro-crater",
-            sourceActionID = "turnin-4243-chasing-a-me-01",
         },
         {
             complete = { quest = { id = 4244, state = "activeOrCompleted" } },
@@ -8674,19 +9663,6 @@ ns:RegisterGuide({
                 "horde-leveling-era-horde-ungoro-crater-accept-4244-chasing-a-me-01",
                 "horde-leveling-era-horde-ungoro-crater-objective-4244-quest-work",
             },
-            id = "horde-leveling-era-horde-ungoro-crater-turnin-4244-chasing-a-me-01",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 4243 } } },
-            route = {
-                { label = "A-Me 01", mapID = 1449, offMapText = "Travel to A-Me 01 in Un'Goro Crater.", x = 0.6765, y = 0.1676 },
-            },
-            sourceStep = 48,
-            text = "Turn in Chasing A-Me 01 to A-Me 01.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-ungoro-crater",
-            sourceActionID = "turnin-4244-chasing-a-me-01",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -8700,6 +9676,19 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-ungoro-crater-turnin-4244-chasing-a-me-01",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 4243 } } },
+            route = {
+                { label = "A-Me 01", mapID = 1449, offMapText = "Travel to A-Me 01 in Un'Goro Crater.", x = 0.6765, y = 0.1676 },
+            },
+            sourceActionID = "turnin-4244-chasing-a-me-01",
+            sourceGuide = "leveling-era-horde-ungoro-crater",
+            sourceStep = 48,
+            text = "Turn in Chasing A-Me 01 to A-Me 01.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 4245, state = "activeOrCompleted" } },
@@ -8748,25 +9737,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 4245, state = "completed" } },
             conditions = { all = { { faction = "Horde" }, { level = { min = 48 } } } },
             dependsOn = { "horde-leveling-era-horde-ungoro-crater-accept-4245-chasing-a-me-01" },
-            id = "horde-leveling-era-horde-ungoro-crater-turnin-4245-chasing-a-me-01",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 4244 } } },
-            route = {
-                {
-                    label = "Karna Remtravel",
-                    mapID = 1449,
-                    offMapText = "Travel to Karna Remtravel in Un'Goro Crater.",
-                    x = 0.4638,
-                    y = 0.1345,
-                },
-            },
-            sourceStep = 50,
-            text = "Turn in Chasing A-Me 01 to Karna Remtravel.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-ungoro-crater",
-            sourceActionID = "turnin-4245-chasing-a-me-01",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -8793,6 +9763,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-ungoro-crater-turnin-4245-chasing-a-me-01",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 4244 } } },
+            route = {
+                {
+                    label = "Karna Remtravel",
+                    mapID = 1449,
+                    offMapText = "Travel to Karna Remtravel in Un'Goro Crater.",
+                    x = 0.4638,
+                    y = 0.1345,
+                },
+            },
+            sourceActionID = "turnin-4245-chasing-a-me-01",
+            sourceGuide = "leveling-era-horde-ungoro-crater",
+            sourceStep = 50,
+            text = "Turn in Chasing A-Me 01 to Karna Remtravel.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 4301, state = "completed" } },
@@ -8801,25 +9790,6 @@ ns:RegisterGuide({
                 "horde-leveling-era-horde-ungoro-crater-accept-4301-the-mighty-u-cha",
                 "horde-leveling-era-horde-ungoro-crater-objective-4301-1-u-cha",
             },
-            id = "horde-leveling-era-horde-ungoro-crater-turnin-4301-the-mighty-u-cha",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 4289 } } },
-            route = {
-                {
-                    label = "Torwa Pathfinder",
-                    mapID = 1449,
-                    offMapText = "Travel to Torwa Pathfinder in Un'Goro Crater.",
-                    x = 0.7163,
-                    y = 0.7596,
-                },
-            },
-            sourceStep = 52,
-            text = "Turn in The Mighty U'cha to Torwa Pathfinder.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-ungoro-crater",
-            sourceActionID = "turnin-4301-the-mighty-u-cha",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -8833,6 +9803,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-ungoro-crater-turnin-4301-the-mighty-u-cha",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 4289 } } },
+            route = {
+                {
+                    label = "Torwa Pathfinder",
+                    mapID = 1449,
+                    offMapText = "Travel to Torwa Pathfinder in Un'Goro Crater.",
+                    x = 0.7163,
+                    y = 0.7596,
+                },
+            },
+            sourceActionID = "turnin-4301-the-mighty-u-cha",
+            sourceGuide = "leveling-era-horde-ungoro-crater",
+            sourceStep = 52,
+            text = "Turn in The Mighty U'cha to Torwa Pathfinder.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { questObjective = { count = 1, id = 4285, index = 1 } },
@@ -8872,19 +9861,6 @@ ns:RegisterGuide({
                 "horde-leveling-era-horde-ungoro-crater-accept-4285-the-northern-pylon",
                 "horde-leveling-era-horde-ungoro-crater-objective-4285-quest-work",
             },
-            id = "horde-leveling-era-horde-ungoro-crater-turnin-4285-the-northern-pylon",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 4284 } } },
-            route = {
-                { label = "J.D. Collie", mapID = 1449, offMapText = "Travel to J.D. Collie in Un'Goro Crater.", x = 0.4192, y = 0.027 },
-            },
-            sourceStep = 53,
-            text = "Turn in The Northern Pylon to J.D. Collie.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-ungoro-crater",
-            sourceActionID = "turnin-4285-the-northern-pylon",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -8898,6 +9874,19 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-ungoro-crater-turnin-4285-the-northern-pylon",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 4284 } } },
+            route = {
+                { label = "J.D. Collie", mapID = 1449, offMapText = "Travel to J.D. Collie in Un'Goro Crater.", x = 0.4192, y = 0.027 },
+            },
+            sourceActionID = "turnin-4285-the-northern-pylon",
+            sourceGuide = "leveling-era-horde-ungoro-crater",
+            sourceStep = 53,
+            text = "Turn in The Northern Pylon to J.D. Collie.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { questObjective = { count = 1, id = 4287, index = 1 } },
@@ -8937,19 +9926,6 @@ ns:RegisterGuide({
                 "horde-leveling-era-horde-ungoro-crater-accept-4287-the-eastern-pylon",
                 "horde-leveling-era-horde-ungoro-crater-objective-4287-quest-work",
             },
-            id = "horde-leveling-era-horde-ungoro-crater-turnin-4287-the-eastern-pylon",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 4284 } } },
-            route = {
-                { label = "J.D. Collie", mapID = 1449, offMapText = "Travel to J.D. Collie in Un'Goro Crater.", x = 0.4192, y = 0.027 },
-            },
-            sourceStep = 53,
-            text = "Turn in The Eastern Pylon to J.D. Collie.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-ungoro-crater",
-            sourceActionID = "turnin-4287-the-eastern-pylon",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -8963,6 +9939,19 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-ungoro-crater-turnin-4287-the-eastern-pylon",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 4284 } } },
+            route = {
+                { label = "J.D. Collie", mapID = 1449, offMapText = "Travel to J.D. Collie in Un'Goro Crater.", x = 0.4192, y = 0.027 },
+            },
+            sourceActionID = "turnin-4287-the-eastern-pylon",
+            sourceGuide = "leveling-era-horde-ungoro-crater",
+            sourceStep = 53,
+            text = "Turn in The Eastern Pylon to J.D. Collie.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 4321, state = "activeOrCompleted" } },
@@ -9023,19 +10012,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 4321, state = "completed" } },
             conditions = { all = { { faction = "Horde" }, { level = { min = 47 } } } },
             dependsOn = { "horde-leveling-era-horde-ungoro-crater-accept-4321-making-sense-of-it" },
-            id = "horde-leveling-era-horde-ungoro-crater-turnin-4321-making-sense-of-it",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "all", quests = { 4285, 4287, 4288 } } },
-            route = {
-                { label = "J.D. Collie", mapID = 1449, offMapText = "Travel to J.D. Collie in Un'Goro Crater.", x = 0.4192, y = 0.027 },
-            },
-            sourceStep = 54,
-            text = "Turn in Making Sense of It to J.D. Collie.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-ungoro-crater",
-            sourceActionID = "turnin-4321-making-sense-of-it",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -9074,6 +10050,19 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-ungoro-crater-turnin-4321-making-sense-of-it",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "all", quests = { 4285, 4287, 4288 } } },
+            route = {
+                { label = "J.D. Collie", mapID = 1449, offMapText = "Travel to J.D. Collie in Un'Goro Crater.", x = 0.4192, y = 0.027 },
+            },
+            sourceActionID = "turnin-4321-making-sense-of-it",
+            sourceGuide = "leveling-era-horde-ungoro-crater",
+            sourceStep = 54,
+            text = "Turn in Making Sense of It to J.D. Collie.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { questObjective = { count = 1, id = 3909, index = 1, text = "Evoroot" } },
@@ -9131,22 +10120,65 @@ ns:RegisterGuide({
             },
         },
         {
-            complete = { quest = { id = 4147, state = "completed" } },
+            complete = { quest = { id = 3761, state = "activeOrCompleted" } },
             conditions = { all = { { faction = "Horde" }, { level = { min = 47 } }, { race = { 2, 5, 6, 8, 96 } } } },
-            dependsOn = { "horde-leveling-era-horde-ungoro-crater-accept-4147-marvon-s-workshop" },
-            id = "horde-leveling-era-horde-ungoro-crater-turnin-4147-marvon-s-workshop",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 4145 } } },
+            dependsOn = {},
+            id = "horde-leveling-era-horde-ungoro-crater-accept-3761-un-goro-soil",
+            kind = "accept",
+            requiredQuests = {},
             route = {
-                { label = "Liv Rizzlefix", mapID = 1413, offMapText = "Travel to Liv Rizzlefix in The Barrens.", x = 0.6245, y = 0.3873 },
+                {
+                    label = "Arch Druid Hamuul Runetotem",
+                    mapID = 1456,
+                    offMapText = "Travel to Arch Druid Hamuul Runetotem in Thunder Bluff.",
+                    x = 0.7859,
+                    y = 0.2857,
+                },
             },
-            sourceStep = 78,
-            text = "Turn in Marvon's Workshop to Liv Rizzlefix.",
+            sourceActionID = "accept-3761-un-goro-soil",
+            sourceGuide = "leveling-era-horde-ungoro-crater",
+            sourceStep = 72,
+            text = "Accept Un'Goro Soil from Arch Druid Hamuul Runetotem.",
+            useClientPin = false,
+            useClientText = false,
+        },
+        {
+            complete = { quest = { id = 3761, state = "complete" } },
+            conditions = { all = { { faction = "Horde" }, { level = { min = 47 } }, { race = { 2, 5, 6, 8, 96 } } } },
+            dependsOn = { "horde-leveling-era-horde-ungoro-crater-accept-3761-un-goro-soil" },
+            id = "horde-leveling-era-horde-ungoro-crater-objective-3761-quest-work",
+            kind = "objective",
+            requiredQuests = {},
+            sourceActionID = "objective-3761-quest-work",
+            sourceGuide = "leveling-era-horde-ungoro-crater",
+            sourceStep = 73,
+            text = "For Un'Goro Soil: Bring 20 Un'Goro Soil samples to Ghede on the Elder Rise of Thunder Bluff.",
+            useClientPin = true,
+            useClientText = false,
+        },
+        {
+            complete = { quest = { id = 3761, state = "completed" } },
+            conditions = { all = { { faction = "Horde" }, { level = { min = 47 } }, { race = { 2, 5, 6, 8, 96 } } } },
+            dependsOn = {
+                "horde-leveling-era-horde-ungoro-crater-accept-3761-un-goro-soil",
+                "horde-leveling-era-horde-ungoro-crater-objective-3761-quest-work",
+            },
+            id = "horde-leveling-era-horde-ungoro-crater-turnin-3761-un-goro-soil",
+            kind = "turnin",
+            requiredQuests = {},
+            route = { { label = "Ghede", mapID = 1456, offMapText = "Travel to Ghede in Thunder Bluff.", x = 0.7745, y = 0.2198 } },
+            sourceActionID = "turnin-3761-un-goro-soil",
+            sourceGuide = "leveling-era-horde-ungoro-crater",
+            sourceStep = 73,
+            text = "Turn in Un'Goro Soil to Ghede.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-ungoro-crater",
-            sourceActionID = "turnin-4147-marvon-s-workshop",
+        },
+        {
+            complete = { quest = { id = 4147, state = "completed" } },
+            conditions = { all = { { faction = "Horde" }, { level = { min = 47 } }, { race = { 2, 5, 6, 8, 96 } } } },
+            dependsOn = { "horde-leveling-era-horde-ungoro-crater-accept-4147-marvon-s-workshop" },
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -9167,6 +10199,19 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-ungoro-crater-turnin-4147-marvon-s-workshop",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 4145 } } },
+            route = {
+                { label = "Liv Rizzlefix", mapID = 1413, offMapText = "Travel to Liv Rizzlefix in The Barrens.", x = 0.6245, y = 0.3873 },
+            },
+            sourceActionID = "turnin-4147-marvon-s-workshop",
+            sourceGuide = "leveling-era-horde-ungoro-crater",
+            sourceStep = 78,
+            text = "Turn in Marvon's Workshop to Liv Rizzlefix.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 4502, state = "complete" } },
@@ -9192,13 +10237,13 @@ ns:RegisterGuide({
             route = {
                 { label = "Liv Rizzlefix", mapID = 1413, offMapText = "Travel to Liv Rizzlefix in The Barrens.", x = 0.6245, y = 0.3873 },
             },
+            sourceActionID = "turnin-4502-volcanic-activity",
+            sourceGuide = "leveling-era-horde-ungoro-crater",
             sourceStep = 78,
             text = "Turn in Volcanic Activity to Liv Rizzlefix.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-ungoro-crater",
-            sourceActionID = "turnin-4502-volcanic-activity",
         },
         {
             id = "visit-entry-leveling-era-horde-felwood-and-winterspring-part-2",
@@ -9214,25 +10259,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 980, state = "completed" } },
             conditions = { all = { { faction = "Horde" }, { level = { min = 51 } } } },
             dependsOn = {},
-            id = "horde-leveling-era-horde-felwood-and-winterspring-part-2-turnin-980-the-new-springs",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 974 } } },
-            route = {
-                {
-                    label = "Donova Snowden",
-                    mapID = 1452,
-                    offMapText = "Travel to Donova Snowden in Winterspring.",
-                    x = 0.3127,
-                    y = 0.4516,
-                },
-            },
-            sourceStep = 28,
-            text = "Turn in The New Springs to Donova Snowden.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-felwood-and-winterspring-part-2",
-            sourceActionID = "turnin-980-the-new-springs",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -9246,6 +10272,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-felwood-and-winterspring-part-2-turnin-980-the-new-springs",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 974 } } },
+            route = {
+                {
+                    label = "Donova Snowden",
+                    mapID = 1452,
+                    offMapText = "Travel to Donova Snowden in Winterspring.",
+                    x = 0.3127,
+                    y = 0.4516,
+                },
+            },
+            sourceActionID = "turnin-980-the-new-springs",
+            sourceGuide = "leveling-era-horde-felwood-and-winterspring-part-2",
+            sourceStep = 28,
+            text = "Turn in The New Springs to Donova Snowden.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 3909, state = "complete" } },
@@ -9308,25 +10353,6 @@ ns:RegisterGuide({
                 "horde-leveling-era-horde-felwood-and-winterspring-part-2-objective-3909-quest-work",
                 "horde-leveling-era-horde-ungoro-crater-objective-3909-1-evoroot",
             },
-            id = "horde-leveling-era-horde-felwood-and-winterspring-part-2-turnin-3909-the-videre-elixir",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 3908 } } },
-            route = {
-                {
-                    label = "Donova Snowden",
-                    mapID = 1452,
-                    offMapText = "Travel to Donova Snowden in Winterspring.",
-                    x = 0.3127,
-                    y = 0.4516,
-                },
-            },
-            sourceStep = 28,
-            text = "Turn in The Videre Elixir to Donova Snowden.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-felwood-and-winterspring-part-2",
-            sourceActionID = "turnin-3909-the-videre-elixir",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -9366,6 +10392,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-felwood-and-winterspring-part-2-turnin-3909-the-videre-elixir",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 3908 } } },
+            route = {
+                {
+                    label = "Donova Snowden",
+                    mapID = 1452,
+                    offMapText = "Travel to Donova Snowden in Winterspring.",
+                    x = 0.3127,
+                    y = 0.4516,
+                },
+            },
+            sourceActionID = "turnin-3909-the-videre-elixir",
+            sourceGuide = "leveling-era-horde-felwood-and-winterspring-part-2",
+            sourceStep = 28,
+            text = "Turn in The Videre Elixir to Donova Snowden.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 3912, state = "activeOrCompleted" } },
@@ -9516,17 +10561,6 @@ ns:RegisterGuide({
                 "horde-leveling-era-horde-felwood-and-winterspring-part-2-accept-3912-meet-at-the-grave",
                 "horde-leveling-era-horde-felwood-and-winterspring-part-2-objective-3912-1-videre-elixir",
             },
-            id = "horde-leveling-era-horde-felwood-and-winterspring-part-2-turnin-3912-meet-at-the-grave",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 3909 } } },
-            route = { { label = "Gaeriyan", mapID = 1446, offMapText = "Travel to Gaeriyan in Tanaris.", x = 0.5398, y = 0.2339 } },
-            sourceStep = 40,
-            text = "Turn in Meet at the Grave to Gaeriyan.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-felwood-and-winterspring-part-2",
-            sourceActionID = "turnin-3912-meet-at-the-grave",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -9579,6 +10613,17 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-felwood-and-winterspring-part-2-turnin-3912-meet-at-the-grave",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 3909 } } },
+            route = { { label = "Gaeriyan", mapID = 1446, offMapText = "Travel to Gaeriyan in Tanaris.", x = 0.5398, y = 0.2339 } },
+            sourceActionID = "turnin-3912-meet-at-the-grave",
+            sourceGuide = "leveling-era-horde-felwood-and-winterspring-part-2",
+            sourceStep = 40,
+            text = "Turn in Meet at the Grave to Gaeriyan.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 3913, state = "activeOrCompleted" } },
@@ -9664,19 +10709,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 3913, state = "completed" } },
             conditions = { all = { { faction = "Horde" }, { level = { min = 47 } } } },
             dependsOn = { "horde-leveling-era-horde-felwood-and-winterspring-part-2-accept-3913-a-grave-situation" },
-            id = "horde-leveling-era-horde-felwood-and-winterspring-part-2-turnin-3913-a-grave-situation",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 3912 } } },
-            route = {
-                { label = "A Grave Situation", mapID = 1446, offMapText = "Travel to A Grave Situation.", x = 0.5382, y = 0.2906 },
-            },
-            sourceStep = 42,
-            text = "Turn in A Grave Situation.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-felwood-and-winterspring-part-2",
-            sourceActionID = "turnin-3913-a-grave-situation",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -9742,6 +10774,19 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-felwood-and-winterspring-part-2-turnin-3913-a-grave-situation",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 3912 } } },
+            route = {
+                { label = "A Grave Situation", mapID = 1446, offMapText = "Travel to A Grave Situation.", x = 0.5382, y = 0.2906 },
+            },
+            sourceActionID = "turnin-3913-a-grave-situation",
+            sourceGuide = "leveling-era-horde-felwood-and-winterspring-part-2",
+            sourceStep = 42,
+            text = "Turn in A Grave Situation.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 3914, state = "activeOrCompleted" } },
@@ -9840,17 +10885,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 3914, state = "completed" } },
             conditions = { all = { { faction = "Horde" }, { level = { min = 47 } } } },
             dependsOn = { "horde-leveling-era-horde-felwood-and-winterspring-part-2-accept-3914-linken-s-sword" },
-            id = "horde-leveling-era-horde-felwood-and-winterspring-part-2-turnin-3914-linken-s-sword",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 3913 } } },
-            route = { { label = "Linken", mapID = 1449, offMapText = "Travel to Linken in Un'Goro Crater.", x = 0.4466, y = 0.081 } },
-            sourceStep = 45,
-            text = "Turn in Linken's Sword to Linken.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-felwood-and-winterspring-part-2",
-            sourceActionID = "turnin-3914-linken-s-sword",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -9929,6 +10963,17 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-felwood-and-winterspring-part-2-turnin-3914-linken-s-sword",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 3913 } } },
+            route = { { label = "Linken", mapID = 1449, offMapText = "Travel to Linken in Un'Goro Crater.", x = 0.4466, y = 0.081 } },
+            sourceActionID = "turnin-3914-linken-s-sword",
+            sourceGuide = "leveling-era-horde-felwood-and-winterspring-part-2",
+            sourceStep = 45,
+            text = "Turn in Linken's Sword to Linken.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 3941, state = "activeOrCompleted" } },
@@ -10040,19 +11085,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 3941, state = "completed" } },
             conditions = { all = { { faction = "Horde" }, { level = { min = 47 } } } },
             dependsOn = { "horde-leveling-era-horde-felwood-and-winterspring-part-2-accept-3941-a-gnome-s-assistance" },
-            id = "horde-leveling-era-horde-felwood-and-winterspring-part-2-turnin-3941-a-gnome-s-assistance",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 3914 } } },
-            route = {
-                { label = "J.D. Collie", mapID = 1449, offMapText = "Travel to J.D. Collie in Un'Goro Crater.", x = 0.4192, y = 0.027 },
-            },
-            sourceStep = 46,
-            text = "Turn in A Gnome's Assistance to J.D. Collie.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-felwood-and-winterspring-part-2",
-            sourceActionID = "turnin-3941-a-gnome-s-assistance",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -10144,6 +11176,19 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-felwood-and-winterspring-part-2-turnin-3941-a-gnome-s-assistance",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 3914 } } },
+            route = {
+                { label = "J.D. Collie", mapID = 1449, offMapText = "Travel to J.D. Collie in Un'Goro Crater.", x = 0.4192, y = 0.027 },
+            },
+            sourceActionID = "turnin-3941-a-gnome-s-assistance",
+            sourceGuide = "leveling-era-horde-felwood-and-winterspring-part-2",
+            sourceStep = 46,
+            text = "Turn in A Gnome's Assistance to J.D. Collie.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 3942, state = "activeOrCompleted" } },
@@ -10270,19 +11315,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 3942, state = "completed" } },
             conditions = { all = { { faction = "Horde" }, { level = { min = 47 } } } },
             dependsOn = { "horde-leveling-era-horde-felwood-and-winterspring-part-2-accept-3942-linken-s-memory" },
-            id = "horde-leveling-era-horde-felwood-and-winterspring-part-2-turnin-3942-linken-s-memory",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 3941 } } },
-            route = {
-                { label = "Eridan Bluewind", mapID = 1448, offMapText = "Travel to Eridan Bluewind in Felwood.", x = 0.5135, y = 0.8151 },
-            },
-            sourceStep = 55,
-            text = "Turn in Linken's Memory to Eridan Bluewind.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-felwood-and-winterspring-part-2",
-            sourceActionID = "turnin-3942-linken-s-memory",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -10387,6 +11419,19 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-felwood-and-winterspring-part-2-turnin-3942-linken-s-memory",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 3941 } } },
+            route = {
+                { label = "Eridan Bluewind", mapID = 1448, offMapText = "Travel to Eridan Bluewind in Felwood.", x = 0.5135, y = 0.8151 },
+            },
+            sourceActionID = "turnin-3942-linken-s-memory",
+            sourceGuide = "leveling-era-horde-felwood-and-winterspring-part-2",
+            sourceStep = 55,
+            text = "Turn in Linken's Memory to Eridan Bluewind.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 4084, state = "activeOrCompleted" } },
@@ -10798,19 +11843,6 @@ ns:RegisterGuide({
                 "horde-leveling-era-horde-felwood-and-winterspring-part-2-objective-4084-2-irontree-stomper",
                 "horde-leveling-era-horde-felwood-and-winterspring-part-2-objective-4084-1-silvery-claws",
             },
-            id = "horde-leveling-era-horde-felwood-and-winterspring-part-2-turnin-4084-silver-heart",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 3942 } } },
-            route = {
-                { label = "Eridan Bluewind", mapID = 1448, offMapText = "Travel to Eridan Bluewind in Felwood.", x = 0.5135, y = 0.8151 },
-            },
-            sourceStep = 70,
-            text = "Turn in Silver Heart to Eridan Bluewind.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-felwood-and-winterspring-part-2",
-            sourceActionID = "turnin-4084-silver-heart",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -10928,6 +11960,19 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-felwood-and-winterspring-part-2-turnin-4084-silver-heart",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 3942 } } },
+            route = {
+                { label = "Eridan Bluewind", mapID = 1448, offMapText = "Travel to Eridan Bluewind in Felwood.", x = 0.5135, y = 0.8151 },
+            },
+            sourceActionID = "turnin-4084-silver-heart",
+            sourceGuide = "leveling-era-horde-felwood-and-winterspring-part-2",
+            sourceStep = 70,
+            text = "Turn in Silver Heart to Eridan Bluewind.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 4005, state = "activeOrCompleted" } },
@@ -11414,25 +12459,6 @@ ns:RegisterGuide({
                 "horde-leveling-era-horde-winterspring-objective-4005-1-eridan-s-supplies",
                 "horde-leveling-era-horde-winterspring-objective-4005-1-book-of-aquor",
             },
-            id = "horde-leveling-era-horde-winterspring-turnin-4005-aquementas",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 4084 } } },
-            route = {
-                {
-                    label = "J.D. Collie at Marshal's Refuge",
-                    mapID = 1449,
-                    offMapText = "Travel to J.D. Collie at Marshal's Refuge.",
-                    x = 0.4192,
-                    y = 0.027,
-                },
-            },
-            sourceStep = 50,
-            text = "Enter the cave at Marshal's Refuge in Un'Goro Crater and turn in Aquementas to J.D. Collie.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-winterspring",
-            sourceActionID = "turnin-4005-aquementas",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -11563,6 +12589,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-winterspring-turnin-4005-aquementas",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 4084 } } },
+            route = {
+                {
+                    label = "J.D. Collie at Marshal's Refuge",
+                    mapID = 1449,
+                    offMapText = "Travel to J.D. Collie at Marshal's Refuge.",
+                    x = 0.4192,
+                    y = 0.027,
+                },
+            },
+            sourceActionID = "turnin-4005-aquementas",
+            sourceGuide = "leveling-era-horde-winterspring",
+            sourceStep = 50,
+            text = "Enter the cave at Marshal's Refuge in Un'Goro Crater and turn in Aquementas to J.D. Collie.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 3961, state = "activeOrCompleted" } },
@@ -11728,17 +12773,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 3961, state = "completed" } },
             conditions = { all = { { faction = "Horde" }, { level = { min = 47 } } } },
             dependsOn = { "horde-leveling-era-horde-winterspring-accept-3961-linken-s-adventure" },
-            id = "horde-leveling-era-horde-winterspring-turnin-3961-linken-s-adventure",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 4005 } } },
-            route = { { label = "Linken", mapID = 1449, offMapText = "Travel to Linken in Un'Goro Crater.", x = 0.4466, y = 0.081 } },
-            sourceStep = 52,
-            text = "Turn in Linken's Adventure to Linken.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-winterspring",
-            sourceActionID = "turnin-3961-linken-s-adventure",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -11882,275 +12916,438 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-winterspring-turnin-3961-linken-s-adventure",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 4005 } } },
+            route = { { label = "Linken", mapID = 1449, offMapText = "Travel to Linken in Un'Goro Crater.", x = 0.4466, y = 0.081 } },
+            sourceActionID = "turnin-3961-linken-s-adventure",
+            sourceGuide = "leveling-era-horde-winterspring",
+            sourceStep = 52,
+            text = "Turn in Linken's Adventure to Linken.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
+            checkpointQuest = 3962,
+            complete = { level = { min = 47 } },
+            conditions = { all = { { faction = "Horde" } } },
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 3962, state = "activeOrCompleted" } },
+                        {
+                            any = {
+                                { quest = { id = 3962, state = "activeOrCompleted" } },
+                                {
+                                    all = {
+                                        {
+                                            any = {
+                                                {
+                                                    any = {
+                                                        { quest = { id = 3961, state = "activeOrCompleted" } },
+                                                        {
+                                                            all = {
+                                                                {
+                                                                    any = {
+                                                                        {
+                                                                            any = {
+                                                                                { quest = { id = 4005, state = "activeOrCompleted" } },
+                                                                                {
+                                                                                    all = {
+                                                                                        {
+                                                                                            any = {
+                                                                                                {
+                                                                                                    any = {
+                                                                                                        { quest = { id = 4084, state = "activeOrCompleted" } },
+                                                                                                        {
+                                                                                                            all = {
+                                                                                                                {
+                                                                                                                    any = {
+                                                                                                                        {
+                                                                                                                            any = {
+                                                                                                                                { quest = { id = 3942, state = "activeOrCompleted" } },
+                                                                                                                                {
+                                                                                                                                    all = {
+                                                                                                                                        {
+                                                                                                                                            any = {
+                                                                                                                                                {
+                                                                                                                                                    any = {
+                                                                                                                                                        { quest = { id = 3941, state = "activeOrCompleted" } },
+                                                                                                                                                        {
+                                                                                                                                                            all = {
+                                                                                                                                                                {
+                                                                                                                                                                    any = {
+                                                                                                                                                                        {
+                                                                                                                                                                            any = {
+                                                                                                                                                                                { quest = { id = 3914, state = "activeOrCompleted" } },
+                                                                                                                                                                                {
+                                                                                                                                                                                    all = {
+                                                                                                                                                                                        {
+                                                                                                                                                                                            any = {
+                                                                                                                                                                                                {
+                                                                                                                                                                                                    any = {
+                                                                                                                                                                                                        { quest = { id = 3913, state = "activeOrCompleted" } },
+                                                                                                                                                                                                        {
+                                                                                                                                                                                                            all = {
+                                                                                                                                                                                                                {
+                                                                                                                                                                                                                    any = {
+                                                                                                                                                                                                                        {
+                                                                                                                                                                                                                            any = {
+                                                                                                                                                                                                                                { quest = { id = 3912, state = "activeOrCompleted" } },
+                                                                                                                                                                                                                                {
+                                                                                                                                                                                                                                    all = {
+                                                                                                                                                                                                                                        {
+                                                                                                                                                                                                                                            any = {
+                                                                                                                                                                                                                                                {
+                                                                                                                                                                                                                                                    any = {
+                                                                                                                                                                                                                                                        { quest = { id = 3909, state = "activeOrCompleted" } },
+                                                                                                                                                                                                                                                        {
+                                                                                                                                                                                                                                                            all = {
+                                                                                                                                                                                                                                                                {
+                                                                                                                                                                                                                                                                    any = {
+                                                                                                                                                                                                                                                                        {
+                                                                                                                                                                                                                                                                            any = {
+                                                                                                                                                                                                                                                                                { quest = { id = 3908, state = "activeOrCompleted" } },
+                                                                                                                                                                                                                                                                                {
+                                                                                                                                                                                                                                                                                    all = {
+                                                                                                                                                                                                                                                                                        {
+                                                                                                                                                                                                                                                                                            any = {
+                                                                                                                                                                                                                                                                                                {
+                                                                                                                                                                                                                                                                                                    any = {
+                                                                                                                                                                                                                                                                                                        { quest = { id = 3845, state = "activeOrCompleted" } },
+                                                                                                                                                                                                                                                                                                        { all = { { any = { { any = { { quest = { id = 3844, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                                                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                },
+                                                                                                                                                                                                            },
+                                                                                                                                                                                                        },
+                                                                                                                                                                                                    },
+                                                                                                                                                                                                },
+                                                                                                                                                                                            },
+                                                                                                                                                                                        },
+                                                                                                                                                                                    },
+                                                                                                                                                                                },
+                                                                                                                                                                            },
+                                                                                                                                                                        },
+                                                                                                                                                                    },
+                                                                                                                                                                },
+                                                                                                                                                            },
+                                                                                                                                                        },
+                                                                                                                                                    },
+                                                                                                                                                },
+                                                                                                                                            },
+                                                                                                                                        },
+                                                                                                                                    },
+                                                                                                                                },
+                                                                                                                            },
+                                                                                                                        },
+                                                                                                                    },
+                                                                                                                },
+                                                                                                            },
+                                                                                                        },
+                                                                                                    },
+                                                                                                },
+                                                                                            },
+                                                                                        },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
             id = "horde-extra-3962-level",
             kind = "note",
-            checkpointQuest = 3962,
-            text = "Reach level 56 before this visit.",
-            conditions = { all = { { faction = "Horde" } } },
-            complete = { level = { min = 56 } },
-            requiredLevel = 56,
-            excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 3962, state = "activeOrCompleted" } },
-                        {
-                            any = {
-                                { quest = { id = 3962, state = "activeOrCompleted" } },
-                                {
-                                    all = {
-                                        {
-                                            any = {
-                                                {
-                                                    any = {
-                                                        { quest = { id = 3961, state = "activeOrCompleted" } },
-                                                        {
-                                                            all = {
-                                                                {
-                                                                    any = {
-                                                                        {
-                                                                            any = {
-                                                                                { quest = { id = 4005, state = "activeOrCompleted" } },
-                                                                                {
-                                                                                    all = {
-                                                                                        {
-                                                                                            any = {
-                                                                                                {
-                                                                                                    any = {
-                                                                                                        { quest = { id = 4084, state = "activeOrCompleted" } },
-                                                                                                        {
-                                                                                                            all = {
-                                                                                                                {
-                                                                                                                    any = {
-                                                                                                                        {
-                                                                                                                            any = {
-                                                                                                                                { quest = { id = 3942, state = "activeOrCompleted" } },
-                                                                                                                                {
-                                                                                                                                    all = {
-                                                                                                                                        {
-                                                                                                                                            any = {
-                                                                                                                                                {
-                                                                                                                                                    any = {
-                                                                                                                                                        { quest = { id = 3941, state = "activeOrCompleted" } },
-                                                                                                                                                        {
-                                                                                                                                                            all = {
-                                                                                                                                                                {
-                                                                                                                                                                    any = {
-                                                                                                                                                                        {
-                                                                                                                                                                            any = {
-                                                                                                                                                                                { quest = { id = 3914, state = "activeOrCompleted" } },
-                                                                                                                                                                                {
-                                                                                                                                                                                    all = {
-                                                                                                                                                                                        {
-                                                                                                                                                                                            any = {
-                                                                                                                                                                                                {
-                                                                                                                                                                                                    any = {
-                                                                                                                                                                                                        { quest = { id = 3913, state = "activeOrCompleted" } },
-                                                                                                                                                                                                        {
-                                                                                                                                                                                                            all = {
-                                                                                                                                                                                                                {
-                                                                                                                                                                                                                    any = {
-                                                                                                                                                                                                                        {
-                                                                                                                                                                                                                            any = {
-                                                                                                                                                                                                                                { quest = { id = 3912, state = "activeOrCompleted" } },
-                                                                                                                                                                                                                                {
-                                                                                                                                                                                                                                    all = {
-                                                                                                                                                                                                                                        {
-                                                                                                                                                                                                                                            any = {
-                                                                                                                                                                                                                                                {
-                                                                                                                                                                                                                                                    any = {
-                                                                                                                                                                                                                                                        { quest = { id = 3909, state = "activeOrCompleted" } },
-                                                                                                                                                                                                                                                        {
-                                                                                                                                                                                                                                                            all = {
-                                                                                                                                                                                                                                                                {
-                                                                                                                                                                                                                                                                    any = {
-                                                                                                                                                                                                                                                                        {
-                                                                                                                                                                                                                                                                            any = {
-                                                                                                                                                                                                                                                                                { quest = { id = 3908, state = "activeOrCompleted" } },
-                                                                                                                                                                                                                                                                                {
-                                                                                                                                                                                                                                                                                    all = {
-                                                                                                                                                                                                                                                                                        {
-                                                                                                                                                                                                                                                                                            any = {
-                                                                                                                                                                                                                                                                                                {
-                                                                                                                                                                                                                                                                                                    any = {
-                                                                                                                                                                                                                                                                                                        { quest = { id = 3845, state = "activeOrCompleted" } },
-                                                                                                                                                                                                                                                                                                        { all = { { any = { { any = { { quest = { id = 3844, state = "activeOrCompleted" } }, { all = {} } } } } } } },
-                                                                                                                                                                                                                                                                                                    },
-                                                                                                                                                                                                                                                                                                },
-                                                                                                                                                                                                                                                                                            },
-                                                                                                                                                                                                                                                                                        },
-                                                                                                                                                                                                                                                                                    },
-                                                                                                                                                                                                                                                                                },
-                                                                                                                                                                                                                                                                            },
-                                                                                                                                                                                                                                                                        },
-                                                                                                                                                                                                                                                                    },
-                                                                                                                                                                                                                                                                },
-                                                                                                                                                                                                                                                            },
-                                                                                                                                                                                                                                                        },
-                                                                                                                                                                                                                                                    },
-                                                                                                                                                                                                                                                },
-                                                                                                                                                                                                                                            },
-                                                                                                                                                                                                                                        },
-                                                                                                                                                                                                                                    },
-                                                                                                                                                                                                                                },
-                                                                                                                                                                                                                            },
-                                                                                                                                                                                                                        },
-                                                                                                                                                                                                                    },
-                                                                                                                                                                                                                },
-                                                                                                                                                                                                            },
-                                                                                                                                                                                                        },
-                                                                                                                                                                                                    },
-                                                                                                                                                                                                },
-                                                                                                                                                                                            },
-                                                                                                                                                                                        },
-                                                                                                                                                                                    },
-                                                                                                                                                                                },
-                                                                                                                                                                            },
-                                                                                                                                                                        },
-                                                                                                                                                                    },
-                                                                                                                                                                },
-                                                                                                                                                            },
-                                                                                                                                                        },
-                                                                                                                                                    },
-                                                                                                                                                },
-                                                                                                                                            },
-                                                                                                                                        },
-                                                                                                                                    },
-                                                                                                                                },
-                                                                                                                            },
-                                                                                                                        },
-                                                                                                                    },
-                                                                                                                },
-                                                                                                            },
-                                                                                                        },
-                                                                                                    },
-                                                                                                },
-                                                                                            },
-                                                                                        },
-                                                                                    },
-                                                                                },
-                                                                            },
-                                                                        },
-                                                                    },
-                                                                },
-                                                            },
-                                                        },
-                                                    },
-                                                },
-                                            },
-                                        },
-                                    },
-                                },
-                            },
-                        },
-                    },
-                },
-            },
+            requiredLevel = 47,
+            text = "Reach level 47 before this visit.",
         },
         {
-            id = "horde-extra-3962-accept",
-            kind = "accept",
-            text = "Accept It's Dangerous to Go Alone from Linken.",
-            conditions = { all = { { faction = "Horde" }, { level = { min = 47 } } } },
-            route = {
-                {
-                    mapID = 1449,
-                    x = 0.446,
-                    y = 0.08199999999999999,
-                    label = "Linken",
-                    offMapText = "Travel to Linken in Un'Goro Crater.",
-                },
-            },
             complete = { quest = { id = 3962, state = "activeOrCompleted" } },
-            requiredQuests = { { mode = "any", quests = { 3961 } } },
-            useClientText = false,
+            conditions = { all = { { faction = "Horde" }, { level = { min = 47 } } } },
             dependsOn = { "horde-extra-3962-level" },
             excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 3962, state = "activeOrCompleted" } },
-                        {
+                any = {
+                    {
+                        ["not"] = {
                             any = {
                                 { quest = { id = 3962, state = "activeOrCompleted" } },
                                 {
-                                    all = {
+                                    any = {
+                                        { quest = { id = 3962, state = "activeOrCompleted" } },
                                         {
-                                            any = {
+                                            all = {
                                                 {
                                                     any = {
-                                                        { quest = { id = 3961, state = "activeOrCompleted" } },
                                                         {
-                                                            all = {
+                                                            any = {
+                                                                { quest = { id = 3961, state = "activeOrCompleted" } },
                                                                 {
-                                                                    any = {
+                                                                    all = {
                                                                         {
                                                                             any = {
-                                                                                { quest = { id = 4005, state = "activeOrCompleted" } },
                                                                                 {
-                                                                                    all = {
+                                                                                    any = {
+                                                                                        { quest = { id = 4005, state = "activeOrCompleted" } },
                                                                                         {
-                                                                                            any = {
+                                                                                            all = {
                                                                                                 {
                                                                                                     any = {
-                                                                                                        { quest = { id = 4084, state = "activeOrCompleted" } },
                                                                                                         {
-                                                                                                            all = {
+                                                                                                            any = {
+                                                                                                                { quest = { id = 4084, state = "activeOrCompleted" } },
                                                                                                                 {
-                                                                                                                    any = {
+                                                                                                                    all = {
                                                                                                                         {
                                                                                                                             any = {
-                                                                                                                                { quest = { id = 3942, state = "activeOrCompleted" } },
                                                                                                                                 {
-                                                                                                                                    all = {
+                                                                                                                                    any = {
+                                                                                                                                        { quest = { id = 3942, state = "activeOrCompleted" } },
                                                                                                                                         {
-                                                                                                                                            any = {
+                                                                                                                                            all = {
                                                                                                                                                 {
                                                                                                                                                     any = {
-                                                                                                                                                        { quest = { id = 3941, state = "activeOrCompleted" } },
                                                                                                                                                         {
-                                                                                                                                                            all = {
+                                                                                                                                                            any = {
+                                                                                                                                                                { quest = { id = 3941, state = "activeOrCompleted" } },
                                                                                                                                                                 {
-                                                                                                                                                                    any = {
+                                                                                                                                                                    all = {
                                                                                                                                                                         {
                                                                                                                                                                             any = {
-                                                                                                                                                                                { quest = { id = 3914, state = "activeOrCompleted" } },
                                                                                                                                                                                 {
-                                                                                                                                                                                    all = {
+                                                                                                                                                                                    any = {
+                                                                                                                                                                                        { quest = { id = 3914, state = "activeOrCompleted" } },
                                                                                                                                                                                         {
-                                                                                                                                                                                            any = {
+                                                                                                                                                                                            all = {
                                                                                                                                                                                                 {
                                                                                                                                                                                                     any = {
-                                                                                                                                                                                                        { quest = { id = 3913, state = "activeOrCompleted" } },
                                                                                                                                                                                                         {
-                                                                                                                                                                                                            all = {
+                                                                                                                                                                                                            any = {
+                                                                                                                                                                                                                { quest = { id = 3913, state = "activeOrCompleted" } },
                                                                                                                                                                                                                 {
-                                                                                                                                                                                                                    any = {
+                                                                                                                                                                                                                    all = {
                                                                                                                                                                                                                         {
                                                                                                                                                                                                                             any = {
-                                                                                                                                                                                                                                { quest = { id = 3912, state = "activeOrCompleted" } },
                                                                                                                                                                                                                                 {
-                                                                                                                                                                                                                                    all = {
+                                                                                                                                                                                                                                    any = {
+                                                                                                                                                                                                                                        { quest = { id = 3912, state = "activeOrCompleted" } },
                                                                                                                                                                                                                                         {
-                                                                                                                                                                                                                                            any = {
+                                                                                                                                                                                                                                            all = {
                                                                                                                                                                                                                                                 {
                                                                                                                                                                                                                                                     any = {
-                                                                                                                                                                                                                                                        { quest = { id = 3909, state = "activeOrCompleted" } },
                                                                                                                                                                                                                                                         {
-                                                                                                                                                                                                                                                            all = {
+                                                                                                                                                                                                                                                            any = {
+                                                                                                                                                                                                                                                                { quest = { id = 3909, state = "activeOrCompleted" } },
                                                                                                                                                                                                                                                                 {
-                                                                                                                                                                                                                                                                    any = {
+                                                                                                                                                                                                                                                                    all = {
                                                                                                                                                                                                                                                                         {
                                                                                                                                                                                                                                                                             any = {
-                                                                                                                                                                                                                                                                                { quest = { id = 3908, state = "activeOrCompleted" } },
                                                                                                                                                                                                                                                                                 {
-                                                                                                                                                                                                                                                                                    all = {
+                                                                                                                                                                                                                                                                                    any = {
+                                                                                                                                                                                                                                                                                        { quest = { id = 3908, state = "activeOrCompleted" } },
                                                                                                                                                                                                                                                                                         {
-                                                                                                                                                                                                                                                                                            any = {
+                                                                                                                                                                                                                                                                                            all = {
                                                                                                                                                                                                                                                                                                 {
                                                                                                                                                                                                                                                                                                     any = {
-                                                                                                                                                                                                                                                                                                        { quest = { id = 3845, state = "activeOrCompleted" } },
-                                                                                                                                                                                                                                                                                                        { all = { { any = { { any = { { quest = { id = 3844, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                                                                                                                                                                                                                                                                        {
+                                                                                                                                                                                                                                                                                                            any = {
+                                                                                                                                                                                                                                                                                                                { quest = { id = 3845, state = "activeOrCompleted" } },
+                                                                                                                                                                                                                                                                                                                { all = { { any = { { any = { { quest = { id = 3844, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                                                                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                },
+                                                                                                                                                                                                            },
+                                                                                                                                                                                                        },
+                                                                                                                                                                                                    },
+                                                                                                                                                                                                },
+                                                                                                                                                                                            },
+                                                                                                                                                                                        },
+                                                                                                                                                                                    },
+                                                                                                                                                                                },
+                                                                                                                                                                            },
+                                                                                                                                                                        },
+                                                                                                                                                                    },
+                                                                                                                                                                },
+                                                                                                                                                            },
+                                                                                                                                                        },
+                                                                                                                                                    },
+                                                                                                                                                },
+                                                                                                                                            },
+                                                                                                                                        },
+                                                                                                                                    },
+                                                                                                                                },
+                                                                                                                            },
+                                                                                                                        },
+                                                                                                                    },
+                                                                                                                },
+                                                                                                            },
+                                                                                                        },
+                                                                                                    },
+                                                                                                },
+                                                                                            },
+                                                                                        },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 3962, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 3962, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 3961, state = "activeOrCompleted" } },
+                                                                {
+                                                                    all = {
+                                                                        {
+                                                                            any = {
+                                                                                {
+                                                                                    any = {
+                                                                                        { quest = { id = 4005, state = "activeOrCompleted" } },
+                                                                                        {
+                                                                                            all = {
+                                                                                                {
+                                                                                                    any = {
+                                                                                                        {
+                                                                                                            any = {
+                                                                                                                { quest = { id = 4084, state = "activeOrCompleted" } },
+                                                                                                                {
+                                                                                                                    all = {
+                                                                                                                        {
+                                                                                                                            any = {
+                                                                                                                                {
+                                                                                                                                    any = {
+                                                                                                                                        { quest = { id = 3942, state = "activeOrCompleted" } },
+                                                                                                                                        {
+                                                                                                                                            all = {
+                                                                                                                                                {
+                                                                                                                                                    any = {
+                                                                                                                                                        {
+                                                                                                                                                            any = {
+                                                                                                                                                                { quest = { id = 3941, state = "activeOrCompleted" } },
+                                                                                                                                                                {
+                                                                                                                                                                    all = {
+                                                                                                                                                                        {
+                                                                                                                                                                            any = {
+                                                                                                                                                                                {
+                                                                                                                                                                                    any = {
+                                                                                                                                                                                        { quest = { id = 3914, state = "activeOrCompleted" } },
+                                                                                                                                                                                        {
+                                                                                                                                                                                            all = {
+                                                                                                                                                                                                { item = { minCount = 1, name = "Linken's Superior Sword" } },
+                                                                                                                                                                                                {
+                                                                                                                                                                                                    any = {
+                                                                                                                                                                                                        {
+                                                                                                                                                                                                            any = {
+                                                                                                                                                                                                                { quest = { id = 3913, state = "activeOrCompleted" } },
+                                                                                                                                                                                                                {
+                                                                                                                                                                                                                    all = {
+                                                                                                                                                                                                                        {
+                                                                                                                                                                                                                            any = {
+                                                                                                                                                                                                                                {
+                                                                                                                                                                                                                                    any = {
+                                                                                                                                                                                                                                        { quest = { id = 3912, state = "activeOrCompleted" } },
+                                                                                                                                                                                                                                        {
+                                                                                                                                                                                                                                            all = {
+                                                                                                                                                                                                                                                {
+                                                                                                                                                                                                                                                    any = {
+                                                                                                                                                                                                                                                        {
+                                                                                                                                                                                                                                                            any = {
+                                                                                                                                                                                                                                                                { quest = { id = 3909, state = "activeOrCompleted" } },
+                                                                                                                                                                                                                                                                {
+                                                                                                                                                                                                                                                                    all = {
+                                                                                                                                                                                                                                                                        {
+                                                                                                                                                                                                                                                                            any = {
+                                                                                                                                                                                                                                                                                {
+                                                                                                                                                                                                                                                                                    any = {
+                                                                                                                                                                                                                                                                                        { quest = { id = 3908, state = "activeOrCompleted" } },
+                                                                                                                                                                                                                                                                                        {
+                                                                                                                                                                                                                                                                                            all = {
+                                                                                                                                                                                                                                                                                                {
+                                                                                                                                                                                                                                                                                                    any = {
+                                                                                                                                                                                                                                                                                                        {
+                                                                                                                                                                                                                                                                                                            any = {
+                                                                                                                                                                                                                                                                                                                { quest = { id = 3845, state = "activeOrCompleted" } },
+                                                                                                                                                                                                                                                                                                                {
+                                                                                                                                                                                                                                                                                                                    all = {
+                                                                                                                                                                                                                                                                                                                        { item = { minCount = 1, name = "A Small Pack" } },
+                                                                                                                                                                                                                                                                                                                        { any = { { any = { { quest = { id = 3844, state = "activeOrCompleted" } }, { all = {} } } } } },
+                                                                                                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                                                                                                        },
                                                                                                                                                                                                                                                                                                     },
                                                                                                                                                                                                                                                                                                 },
                                                                                                                                                                                                                                                                                             },
@@ -12222,117 +13419,268 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-extra-3962-accept",
+            kind = "accept",
+            requiredQuests = { { mode = "any", quests = { 3961 } } },
+            route = { { label = "Linken", mapID = 1449, offMapText = "Travel to Linken in Un'Goro Crater.", x = 0.446, y = 0.082 } },
+            text = "Accept It's Dangerous to Go Alone from Linken.",
+            useClientText = false,
         },
         {
-            id = "horde-extra-3962-objective",
-            kind = "objective",
-            text = "Use the quest item to remove Blazerunner's protective aura, then defeat him. Loot the Golden Flame from the Ornate Chest in the cave at Fire Plume Ridge. This is an elite. Bring a group.",
-            conditions = { all = { { faction = "Horde" }, { level = { min = 47 } } } },
-            route = {
-                {
-                    mapID = 1449,
-                    x = 0.492,
-                    y = 0.49,
-                    label = "Blazerunner",
-                    offMapText = "Travel to Blazerunner in Un'Goro Crater.",
-                },
-                {
-                    mapID = 1449,
-                    x = 0.502,
-                    y = 0.5,
-                    label = "Ornate Chest",
-                    offMapText = "Travel to the Ornate Chest in Fire Plume Ridge.",
-                },
-            },
             complete = { quest = { id = 3962, state = "complete" } },
-            requiredQuests = { { mode = "any", quests = { 3961 } } },
-            useClientText = false,
+            conditions = { all = { { faction = "Horde" }, { level = { min = 47 } } } },
             dependsOn = { "horde-extra-3962-accept" },
             excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 3962, state = "activeOrCompleted" } },
-                        {
+                any = {
+                    {
+                        ["not"] = {
                             any = {
                                 { quest = { id = 3962, state = "activeOrCompleted" } },
                                 {
-                                    all = {
+                                    any = {
+                                        { quest = { id = 3962, state = "activeOrCompleted" } },
                                         {
-                                            any = {
+                                            all = {
                                                 {
                                                     any = {
-                                                        { quest = { id = 3961, state = "activeOrCompleted" } },
                                                         {
-                                                            all = {
+                                                            any = {
+                                                                { quest = { id = 3961, state = "activeOrCompleted" } },
                                                                 {
-                                                                    any = {
+                                                                    all = {
                                                                         {
                                                                             any = {
-                                                                                { quest = { id = 4005, state = "activeOrCompleted" } },
                                                                                 {
-                                                                                    all = {
+                                                                                    any = {
+                                                                                        { quest = { id = 4005, state = "activeOrCompleted" } },
                                                                                         {
-                                                                                            any = {
+                                                                                            all = {
                                                                                                 {
                                                                                                     any = {
-                                                                                                        { quest = { id = 4084, state = "activeOrCompleted" } },
                                                                                                         {
-                                                                                                            all = {
+                                                                                                            any = {
+                                                                                                                { quest = { id = 4084, state = "activeOrCompleted" } },
                                                                                                                 {
-                                                                                                                    any = {
+                                                                                                                    all = {
                                                                                                                         {
                                                                                                                             any = {
-                                                                                                                                { quest = { id = 3942, state = "activeOrCompleted" } },
                                                                                                                                 {
-                                                                                                                                    all = {
+                                                                                                                                    any = {
+                                                                                                                                        { quest = { id = 3942, state = "activeOrCompleted" } },
                                                                                                                                         {
-                                                                                                                                            any = {
+                                                                                                                                            all = {
                                                                                                                                                 {
                                                                                                                                                     any = {
-                                                                                                                                                        { quest = { id = 3941, state = "activeOrCompleted" } },
                                                                                                                                                         {
-                                                                                                                                                            all = {
+                                                                                                                                                            any = {
+                                                                                                                                                                { quest = { id = 3941, state = "activeOrCompleted" } },
                                                                                                                                                                 {
-                                                                                                                                                                    any = {
+                                                                                                                                                                    all = {
                                                                                                                                                                         {
                                                                                                                                                                             any = {
-                                                                                                                                                                                { quest = { id = 3914, state = "activeOrCompleted" } },
                                                                                                                                                                                 {
-                                                                                                                                                                                    all = {
+                                                                                                                                                                                    any = {
+                                                                                                                                                                                        { quest = { id = 3914, state = "activeOrCompleted" } },
                                                                                                                                                                                         {
-                                                                                                                                                                                            any = {
+                                                                                                                                                                                            all = {
                                                                                                                                                                                                 {
                                                                                                                                                                                                     any = {
-                                                                                                                                                                                                        { quest = { id = 3913, state = "activeOrCompleted" } },
                                                                                                                                                                                                         {
-                                                                                                                                                                                                            all = {
+                                                                                                                                                                                                            any = {
+                                                                                                                                                                                                                { quest = { id = 3913, state = "activeOrCompleted" } },
                                                                                                                                                                                                                 {
-                                                                                                                                                                                                                    any = {
+                                                                                                                                                                                                                    all = {
                                                                                                                                                                                                                         {
                                                                                                                                                                                                                             any = {
-                                                                                                                                                                                                                                { quest = { id = 3912, state = "activeOrCompleted" } },
                                                                                                                                                                                                                                 {
-                                                                                                                                                                                                                                    all = {
+                                                                                                                                                                                                                                    any = {
+                                                                                                                                                                                                                                        { quest = { id = 3912, state = "activeOrCompleted" } },
                                                                                                                                                                                                                                         {
-                                                                                                                                                                                                                                            any = {
+                                                                                                                                                                                                                                            all = {
                                                                                                                                                                                                                                                 {
                                                                                                                                                                                                                                                     any = {
-                                                                                                                                                                                                                                                        { quest = { id = 3909, state = "activeOrCompleted" } },
                                                                                                                                                                                                                                                         {
-                                                                                                                                                                                                                                                            all = {
+                                                                                                                                                                                                                                                            any = {
+                                                                                                                                                                                                                                                                { quest = { id = 3909, state = "activeOrCompleted" } },
                                                                                                                                                                                                                                                                 {
-                                                                                                                                                                                                                                                                    any = {
+                                                                                                                                                                                                                                                                    all = {
                                                                                                                                                                                                                                                                         {
                                                                                                                                                                                                                                                                             any = {
-                                                                                                                                                                                                                                                                                { quest = { id = 3908, state = "activeOrCompleted" } },
                                                                                                                                                                                                                                                                                 {
-                                                                                                                                                                                                                                                                                    all = {
+                                                                                                                                                                                                                                                                                    any = {
+                                                                                                                                                                                                                                                                                        { quest = { id = 3908, state = "activeOrCompleted" } },
                                                                                                                                                                                                                                                                                         {
-                                                                                                                                                                                                                                                                                            any = {
+                                                                                                                                                                                                                                                                                            all = {
                                                                                                                                                                                                                                                                                                 {
                                                                                                                                                                                                                                                                                                     any = {
-                                                                                                                                                                                                                                                                                                        { quest = { id = 3845, state = "activeOrCompleted" } },
-                                                                                                                                                                                                                                                                                                        { all = { { any = { { any = { { quest = { id = 3844, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                                                                                                                                                                                                                                                                        {
+                                                                                                                                                                                                                                                                                                            any = {
+                                                                                                                                                                                                                                                                                                                { quest = { id = 3845, state = "activeOrCompleted" } },
+                                                                                                                                                                                                                                                                                                                { all = { { any = { { any = { { quest = { id = 3844, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                                                                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                },
+                                                                                                                                                                                                            },
+                                                                                                                                                                                                        },
+                                                                                                                                                                                                    },
+                                                                                                                                                                                                },
+                                                                                                                                                                                            },
+                                                                                                                                                                                        },
+                                                                                                                                                                                    },
+                                                                                                                                                                                },
+                                                                                                                                                                            },
+                                                                                                                                                                        },
+                                                                                                                                                                    },
+                                                                                                                                                                },
+                                                                                                                                                            },
+                                                                                                                                                        },
+                                                                                                                                                    },
+                                                                                                                                                },
+                                                                                                                                            },
+                                                                                                                                        },
+                                                                                                                                    },
+                                                                                                                                },
+                                                                                                                            },
+                                                                                                                        },
+                                                                                                                    },
+                                                                                                                },
+                                                                                                            },
+                                                                                                        },
+                                                                                                    },
+                                                                                                },
+                                                                                            },
+                                                                                        },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 3962, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 3962, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 3961, state = "activeOrCompleted" } },
+                                                                {
+                                                                    all = {
+                                                                        {
+                                                                            any = {
+                                                                                {
+                                                                                    any = {
+                                                                                        { quest = { id = 4005, state = "activeOrCompleted" } },
+                                                                                        {
+                                                                                            all = {
+                                                                                                {
+                                                                                                    any = {
+                                                                                                        {
+                                                                                                            any = {
+                                                                                                                { quest = { id = 4084, state = "activeOrCompleted" } },
+                                                                                                                {
+                                                                                                                    all = {
+                                                                                                                        {
+                                                                                                                            any = {
+                                                                                                                                {
+                                                                                                                                    any = {
+                                                                                                                                        { quest = { id = 3942, state = "activeOrCompleted" } },
+                                                                                                                                        {
+                                                                                                                                            all = {
+                                                                                                                                                {
+                                                                                                                                                    any = {
+                                                                                                                                                        {
+                                                                                                                                                            any = {
+                                                                                                                                                                { quest = { id = 3941, state = "activeOrCompleted" } },
+                                                                                                                                                                {
+                                                                                                                                                                    all = {
+                                                                                                                                                                        {
+                                                                                                                                                                            any = {
+                                                                                                                                                                                {
+                                                                                                                                                                                    any = {
+                                                                                                                                                                                        { quest = { id = 3914, state = "activeOrCompleted" } },
+                                                                                                                                                                                        {
+                                                                                                                                                                                            all = {
+                                                                                                                                                                                                { item = { minCount = 1, name = "Linken's Superior Sword" } },
+                                                                                                                                                                                                {
+                                                                                                                                                                                                    any = {
+                                                                                                                                                                                                        {
+                                                                                                                                                                                                            any = {
+                                                                                                                                                                                                                { quest = { id = 3913, state = "activeOrCompleted" } },
+                                                                                                                                                                                                                {
+                                                                                                                                                                                                                    all = {
+                                                                                                                                                                                                                        {
+                                                                                                                                                                                                                            any = {
+                                                                                                                                                                                                                                {
+                                                                                                                                                                                                                                    any = {
+                                                                                                                                                                                                                                        { quest = { id = 3912, state = "activeOrCompleted" } },
+                                                                                                                                                                                                                                        {
+                                                                                                                                                                                                                                            all = {
+                                                                                                                                                                                                                                                {
+                                                                                                                                                                                                                                                    any = {
+                                                                                                                                                                                                                                                        {
+                                                                                                                                                                                                                                                            any = {
+                                                                                                                                                                                                                                                                { quest = { id = 3909, state = "activeOrCompleted" } },
+                                                                                                                                                                                                                                                                {
+                                                                                                                                                                                                                                                                    all = {
+                                                                                                                                                                                                                                                                        {
+                                                                                                                                                                                                                                                                            any = {
+                                                                                                                                                                                                                                                                                {
+                                                                                                                                                                                                                                                                                    any = {
+                                                                                                                                                                                                                                                                                        { quest = { id = 3908, state = "activeOrCompleted" } },
+                                                                                                                                                                                                                                                                                        {
+                                                                                                                                                                                                                                                                                            all = {
+                                                                                                                                                                                                                                                                                                {
+                                                                                                                                                                                                                                                                                                    any = {
+                                                                                                                                                                                                                                                                                                        {
+                                                                                                                                                                                                                                                                                                            any = {
+                                                                                                                                                                                                                                                                                                                { quest = { id = 3845, state = "activeOrCompleted" } },
+                                                                                                                                                                                                                                                                                                                {
+                                                                                                                                                                                                                                                                                                                    all = {
+                                                                                                                                                                                                                                                                                                                        { item = { minCount = 1, name = "A Small Pack" } },
+                                                                                                                                                                                                                                                                                                                        { any = { { any = { { quest = { id = 3844, state = "activeOrCompleted" } }, { all = {} } } } } },
+                                                                                                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                                                                                                        },
                                                                                                                                                                                                                                                                                                     },
                                                                                                                                                                                                                                                                                                 },
                                                                                                                                                                                                                                                                                             },
@@ -12404,110 +13752,278 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-extra-3962-objective",
+            kind = "objective",
+            requiredQuests = { { mode = "any", quests = { 3961 } } },
+            route = {
+                { label = "Blazerunner", mapID = 1449, offMapText = "Travel to Blazerunner in Un'Goro Crater.", x = 0.492, y = 0.49 },
+                {
+                    label = "Ornate Chest",
+                    mapID = 1449,
+                    offMapText = "Travel to the Ornate Chest in Fire Plume Ridge.",
+                    x = 0.502,
+                    y = 0.5,
+                },
+            },
+            text = "Use the quest item to remove Blazerunner's protective aura, then defeat him. Loot the Golden Flame from the Ornate Chest in the cave at Fire Plume Ridge. This is an elite. Bring a group.",
+            useClientPin = true,
+            useClientText = false,
         },
         {
-            id = "horde-extra-3962-turnin",
-            kind = "turnin",
-            text = "Turn in It's Dangerous to Go Alone to Linken.",
-            conditions = { all = { { faction = "Horde" }, { level = { min = 47 } } } },
-            route = {
-                {
-                    mapID = 1449,
-                    x = 0.446,
-                    y = 0.08199999999999999,
-                    label = "Linken",
-                    offMapText = "Travel to Linken in Un'Goro Crater.",
-                },
-            },
             complete = { quest = { id = 3962, state = "completed" } },
-            requiredQuests = { { mode = "any", quests = { 3961 } } },
-            useClientText = false,
+            conditions = { all = { { faction = "Horde" }, { level = { min = 47 } } } },
             dependsOn = { "horde-extra-3962-objective" },
             excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 3962, state = "activeOrCompleted" } },
-                        {
+                any = {
+                    {
+                        ["not"] = {
                             any = {
                                 { quest = { id = 3962, state = "activeOrCompleted" } },
                                 {
-                                    all = {
+                                    any = {
+                                        { quest = { id = 3962, state = "activeOrCompleted" } },
                                         {
-                                            any = {
+                                            all = {
                                                 {
                                                     any = {
-                                                        { quest = { id = 3961, state = "activeOrCompleted" } },
                                                         {
-                                                            all = {
+                                                            any = {
+                                                                { quest = { id = 3961, state = "activeOrCompleted" } },
                                                                 {
-                                                                    any = {
+                                                                    all = {
                                                                         {
                                                                             any = {
-                                                                                { quest = { id = 4005, state = "activeOrCompleted" } },
                                                                                 {
-                                                                                    all = {
+                                                                                    any = {
+                                                                                        { quest = { id = 4005, state = "activeOrCompleted" } },
                                                                                         {
-                                                                                            any = {
+                                                                                            all = {
                                                                                                 {
                                                                                                     any = {
-                                                                                                        { quest = { id = 4084, state = "activeOrCompleted" } },
                                                                                                         {
-                                                                                                            all = {
+                                                                                                            any = {
+                                                                                                                { quest = { id = 4084, state = "activeOrCompleted" } },
                                                                                                                 {
-                                                                                                                    any = {
+                                                                                                                    all = {
                                                                                                                         {
                                                                                                                             any = {
-                                                                                                                                { quest = { id = 3942, state = "activeOrCompleted" } },
                                                                                                                                 {
-                                                                                                                                    all = {
+                                                                                                                                    any = {
+                                                                                                                                        { quest = { id = 3942, state = "activeOrCompleted" } },
                                                                                                                                         {
-                                                                                                                                            any = {
+                                                                                                                                            all = {
                                                                                                                                                 {
                                                                                                                                                     any = {
-                                                                                                                                                        { quest = { id = 3941, state = "activeOrCompleted" } },
                                                                                                                                                         {
-                                                                                                                                                            all = {
+                                                                                                                                                            any = {
+                                                                                                                                                                { quest = { id = 3941, state = "activeOrCompleted" } },
                                                                                                                                                                 {
-                                                                                                                                                                    any = {
+                                                                                                                                                                    all = {
                                                                                                                                                                         {
                                                                                                                                                                             any = {
-                                                                                                                                                                                { quest = { id = 3914, state = "activeOrCompleted" } },
                                                                                                                                                                                 {
-                                                                                                                                                                                    all = {
+                                                                                                                                                                                    any = {
+                                                                                                                                                                                        { quest = { id = 3914, state = "activeOrCompleted" } },
                                                                                                                                                                                         {
-                                                                                                                                                                                            any = {
+                                                                                                                                                                                            all = {
                                                                                                                                                                                                 {
                                                                                                                                                                                                     any = {
-                                                                                                                                                                                                        { quest = { id = 3913, state = "activeOrCompleted" } },
                                                                                                                                                                                                         {
-                                                                                                                                                                                                            all = {
+                                                                                                                                                                                                            any = {
+                                                                                                                                                                                                                { quest = { id = 3913, state = "activeOrCompleted" } },
                                                                                                                                                                                                                 {
-                                                                                                                                                                                                                    any = {
+                                                                                                                                                                                                                    all = {
                                                                                                                                                                                                                         {
                                                                                                                                                                                                                             any = {
-                                                                                                                                                                                                                                { quest = { id = 3912, state = "activeOrCompleted" } },
                                                                                                                                                                                                                                 {
-                                                                                                                                                                                                                                    all = {
+                                                                                                                                                                                                                                    any = {
+                                                                                                                                                                                                                                        { quest = { id = 3912, state = "activeOrCompleted" } },
                                                                                                                                                                                                                                         {
-                                                                                                                                                                                                                                            any = {
+                                                                                                                                                                                                                                            all = {
                                                                                                                                                                                                                                                 {
                                                                                                                                                                                                                                                     any = {
-                                                                                                                                                                                                                                                        { quest = { id = 3909, state = "activeOrCompleted" } },
                                                                                                                                                                                                                                                         {
-                                                                                                                                                                                                                                                            all = {
+                                                                                                                                                                                                                                                            any = {
+                                                                                                                                                                                                                                                                { quest = { id = 3909, state = "activeOrCompleted" } },
                                                                                                                                                                                                                                                                 {
-                                                                                                                                                                                                                                                                    any = {
+                                                                                                                                                                                                                                                                    all = {
                                                                                                                                                                                                                                                                         {
                                                                                                                                                                                                                                                                             any = {
-                                                                                                                                                                                                                                                                                { quest = { id = 3908, state = "activeOrCompleted" } },
                                                                                                                                                                                                                                                                                 {
-                                                                                                                                                                                                                                                                                    all = {
+                                                                                                                                                                                                                                                                                    any = {
+                                                                                                                                                                                                                                                                                        { quest = { id = 3908, state = "activeOrCompleted" } },
                                                                                                                                                                                                                                                                                         {
-                                                                                                                                                                                                                                                                                            any = {
+                                                                                                                                                                                                                                                                                            all = {
                                                                                                                                                                                                                                                                                                 {
                                                                                                                                                                                                                                                                                                     any = {
-                                                                                                                                                                                                                                                                                                        { quest = { id = 3845, state = "activeOrCompleted" } },
-                                                                                                                                                                                                                                                                                                        { all = { { any = { { any = { { quest = { id = 3844, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                                                                                                                                                                                                                                                                        {
+                                                                                                                                                                                                                                                                                                            any = {
+                                                                                                                                                                                                                                                                                                                { quest = { id = 3845, state = "activeOrCompleted" } },
+                                                                                                                                                                                                                                                                                                                { all = { { any = { { any = { { quest = { id = 3844, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                                                                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                },
+                                                                                                                                                                                                            },
+                                                                                                                                                                                                        },
+                                                                                                                                                                                                    },
+                                                                                                                                                                                                },
+                                                                                                                                                                                            },
+                                                                                                                                                                                        },
+                                                                                                                                                                                    },
+                                                                                                                                                                                },
+                                                                                                                                                                            },
+                                                                                                                                                                        },
+                                                                                                                                                                    },
+                                                                                                                                                                },
+                                                                                                                                                            },
+                                                                                                                                                        },
+                                                                                                                                                    },
+                                                                                                                                                },
+                                                                                                                                            },
+                                                                                                                                        },
+                                                                                                                                    },
+                                                                                                                                },
+                                                                                                                            },
+                                                                                                                        },
+                                                                                                                    },
+                                                                                                                },
+                                                                                                            },
+                                                                                                        },
+                                                                                                    },
+                                                                                                },
+                                                                                            },
+                                                                                        },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 3962, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 3962, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 3961, state = "activeOrCompleted" } },
+                                                                {
+                                                                    all = {
+                                                                        {
+                                                                            any = {
+                                                                                {
+                                                                                    any = {
+                                                                                        { quest = { id = 4005, state = "activeOrCompleted" } },
+                                                                                        {
+                                                                                            all = {
+                                                                                                {
+                                                                                                    any = {
+                                                                                                        {
+                                                                                                            any = {
+                                                                                                                { quest = { id = 4084, state = "activeOrCompleted" } },
+                                                                                                                {
+                                                                                                                    all = {
+                                                                                                                        {
+                                                                                                                            any = {
+                                                                                                                                {
+                                                                                                                                    any = {
+                                                                                                                                        { quest = { id = 3942, state = "activeOrCompleted" } },
+                                                                                                                                        {
+                                                                                                                                            all = {
+                                                                                                                                                {
+                                                                                                                                                    any = {
+                                                                                                                                                        {
+                                                                                                                                                            any = {
+                                                                                                                                                                { quest = { id = 3941, state = "activeOrCompleted" } },
+                                                                                                                                                                {
+                                                                                                                                                                    all = {
+                                                                                                                                                                        {
+                                                                                                                                                                            any = {
+                                                                                                                                                                                {
+                                                                                                                                                                                    any = {
+                                                                                                                                                                                        { quest = { id = 3914, state = "activeOrCompleted" } },
+                                                                                                                                                                                        {
+                                                                                                                                                                                            all = {
+                                                                                                                                                                                                { item = { minCount = 1, name = "Linken's Superior Sword" } },
+                                                                                                                                                                                                {
+                                                                                                                                                                                                    any = {
+                                                                                                                                                                                                        {
+                                                                                                                                                                                                            any = {
+                                                                                                                                                                                                                { quest = { id = 3913, state = "activeOrCompleted" } },
+                                                                                                                                                                                                                {
+                                                                                                                                                                                                                    all = {
+                                                                                                                                                                                                                        {
+                                                                                                                                                                                                                            any = {
+                                                                                                                                                                                                                                {
+                                                                                                                                                                                                                                    any = {
+                                                                                                                                                                                                                                        { quest = { id = 3912, state = "activeOrCompleted" } },
+                                                                                                                                                                                                                                        {
+                                                                                                                                                                                                                                            all = {
+                                                                                                                                                                                                                                                {
+                                                                                                                                                                                                                                                    any = {
+                                                                                                                                                                                                                                                        {
+                                                                                                                                                                                                                                                            any = {
+                                                                                                                                                                                                                                                                { quest = { id = 3909, state = "activeOrCompleted" } },
+                                                                                                                                                                                                                                                                {
+                                                                                                                                                                                                                                                                    all = {
+                                                                                                                                                                                                                                                                        {
+                                                                                                                                                                                                                                                                            any = {
+                                                                                                                                                                                                                                                                                {
+                                                                                                                                                                                                                                                                                    any = {
+                                                                                                                                                                                                                                                                                        { quest = { id = 3908, state = "activeOrCompleted" } },
+                                                                                                                                                                                                                                                                                        {
+                                                                                                                                                                                                                                                                                            all = {
+                                                                                                                                                                                                                                                                                                {
+                                                                                                                                                                                                                                                                                                    any = {
+                                                                                                                                                                                                                                                                                                        {
+                                                                                                                                                                                                                                                                                                            any = {
+                                                                                                                                                                                                                                                                                                                { quest = { id = 3845, state = "activeOrCompleted" } },
+                                                                                                                                                                                                                                                                                                                {
+                                                                                                                                                                                                                                                                                                                    all = {
+                                                                                                                                                                                                                                                                                                                        { item = { minCount = 1, name = "A Small Pack" } },
+                                                                                                                                                                                                                                                                                                                        { any = { { any = { { quest = { id = 3844, state = "activeOrCompleted" } }, { all = {} } } } } },
+                                                                                                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                                                                                                        },
                                                                                                                                                                                                                                                                                                     },
                                                                                                                                                                                                                                                                                                 },
                                                                                                                                                                                                                                                                                             },
@@ -12579,6 +14095,14 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-extra-3962-turnin",
+            kind = "turnin",
+            requiredQuests = { { mode = "any", quests = { 3961 } } },
+            route = { { label = "Linken", mapID = 1449, offMapText = "Travel to Linken in Un'Goro Crater.", x = 0.446, y = 0.082 } },
+            text = "Turn in It's Dangerous to Go Alone to Linken.",
+            useClientPin = true,
+            useClientText = false,
+            useQuestNavigation = true,
         },
     },
 })

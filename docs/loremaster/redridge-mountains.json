@@ -1088,6 +1088,48 @@
         "alliance-extra-95999-turnin"
       ],
       "reason": "Insert in the suitable Casual visit band after verified prerequisite returns; upstream order is advisory."
+    },
+    {
+      "actions": [
+        "visit-entry-leveling-era-alliance-redridge-and-westfall"
+      ],
+      "anchor": "visit-entry-leveling-era-alliance-redridge-and-westfall",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "visit-entry-leveling-era-alliance-duskwood-and-redridge-mountains"
+      ],
+      "anchor": "alliance-leveling-era-alliance-redridge-and-westfall-woven-turnin-98407-show-of-force",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "horde-extra-3741-level"
+      ],
+      "anchor": "alliance-extra-95999-turnin",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "horde-extra-3741-accept"
+      ],
+      "anchor": "horde-extra-3741-level",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "horde-extra-3741-objective"
+      ],
+      "anchor": "horde-extra-3741-accept",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "horde-extra-3741-turnin"
+      ],
+      "anchor": "horde-extra-3741-objective",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
     }
   ],
   "quests": {
@@ -29873,89 +29915,15 @@
         "redridge-mountains"
       ],
       "evidence": {
-        "wowhead": {
-          "classes": [],
-          "faction": "Alliance",
-          "flags": {
-            "daily": false,
-            "dungeon": false,
-            "monthly": false,
-            "pvp": false,
-            "raid": false,
-            "repeatable": false,
-            "sharable": true,
-            "weekly": false
-          },
-          "name": "Hilary's Necklace",
-          "prerequisiteReferences": [],
-          "questLevel": 15,
-          "races": [],
-          "requiredLevel": 12
-        },
-        "questiedb": {
-          "finishedBy": [
-            [
-              8962
-            ]
-          ],
-          "name": "Hilary's Necklace",
-          "objectivesText": [
-            "Find Hilary's Necklace, and return it to Hilary in Lakeshire."
-          ],
-          "questLevel": 15,
-          "requiredLevel": 12,
-          "requiredRaces": 0,
-          "startedBy": [
-            [
-              8965
-            ]
-          ],
-          "zoneOrSort": 44
-        },
-        "allthethings": {
-          "name": "Hilary's Necklace",
-          "requiredLevel": 12,
-          "startedBy": [
-            {
-              "id": 8965,
-              "spawns": [
-                [
-                  44,
-                  24.2,
-                  53.6
-                ]
-              ],
-              "type": "npc"
-            }
-          ]
-        },
-        "foreverclient": {}
-      },
-      "sourceRevisions": {
-        "allthethings": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
-        "foreverclient": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
-        "questiedb": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
-        "wowhead": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330"
+        "artifactVersion": "1.0.6-dev.f844007",
+        "buildCommit": "f844007b329b72f18cf2bda3d87540012294732a",
+        "source": "QuestieDB"
       },
       "locations": [
         {
           "coord": [
-            29.2,
-            53.4
-          ],
-          "coords": [
-            [
-              24.2,
-              53.4
-            ],
-            [
-              29.2,
-              53.4
-            ],
-            [
-              29.2,
-              53.6
-            ]
+            24.23,
+            53.64
           ],
           "id": 8965,
           "name": "Shawn",
@@ -29967,22 +29935,8 @@
         },
         {
           "coord": [
-            29.2,
-            53.4
-          ],
-          "coords": [
-            [
-              24.2,
-              53.4
-            ],
-            [
-              29.2,
-              53.4
-            ],
-            [
-              29.2,
-              53.6
-            ]
+            24.15,
+            53.63
           ],
           "id": 8962,
           "name": "Hilary",
@@ -29991,11 +29945,155 @@
           "reacthorde": 1,
           "type": 1,
           "zone": "Redridge Mountains"
+        },
+        {
+          "coord": [
+            16.81,
+            53.2
+          ],
+          "id": 154357,
+          "item": "Hilary's Necklace",
+          "name": "Glinting Mud",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "Redridge Mountains"
+        },
+        {
+          "coord": [
+            19.01,
+            54.6
+          ],
+          "id": 154357,
+          "item": "Hilary's Necklace",
+          "name": "Glinting Mud",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "Redridge Mountains"
+        },
+        {
+          "coord": [
+            20.81,
+            54.1
+          ],
+          "id": 154357,
+          "item": "Hilary's Necklace",
+          "name": "Glinting Mud",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "Redridge Mountains"
+        },
+        {
+          "coord": [
+            21.31,
+            51.3
+          ],
+          "id": 154357,
+          "item": "Hilary's Necklace",
+          "name": "Glinting Mud",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "Redridge Mountains"
+        },
+        {
+          "coord": [
+            22.91,
+            56
+          ],
+          "id": 154357,
+          "item": "Hilary's Necklace",
+          "name": "Glinting Mud",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "Redridge Mountains"
+        },
+        {
+          "coord": [
+            25.71,
+            54.3
+          ],
+          "id": 154357,
+          "item": "Hilary's Necklace",
+          "name": "Glinting Mud",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "Redridge Mountains"
+        },
+        {
+          "coord": [
+            28.51,
+            55.2
+          ],
+          "id": 154357,
+          "item": "Hilary's Necklace",
+          "name": "Glinting Mud",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "Redridge Mountains"
+        },
+        {
+          "coord": [
+            31.71,
+            54.3
+          ],
+          "id": 154357,
+          "item": "Hilary's Necklace",
+          "name": "Glinting Mud",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "Redridge Mountains"
+        },
+        {
+          "coord": [
+            32.81,
+            54.5
+          ],
+          "id": 154357,
+          "item": "Hilary's Necklace",
+          "name": "Glinting Mud",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "Redridge Mountains"
+        },
+        {
+          "coord": [
+            14.07,
+            51.74
+          ],
+          "id": 154357,
+          "item": "Hilary's Necklace",
+          "name": "Glinting Mud",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "Redridge Mountains"
+        },
+        {
+          "coord": [
+            29.04,
+            53.37
+          ],
+          "id": 154357,
+          "item": "Hilary's Necklace",
+          "name": "Glinting Mud",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "Redridge Mountains"
+        },
+        {
+          "coord": [
+            24.43,
+            53.72
+          ],
+          "id": 154357,
+          "item": "Hilary's Necklace",
+          "name": "Glinting Mud",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "Redridge Mountains"
         }
       ],
       "supporting": false,
-      "status": "spine",
-      "reason": "Preserved faction Casual actions."
+      "status": "included",
+      "reason": "Permanent outdoor quest woven using verified source requirements and advisory legacy order."
     },
     "95816": {
       "catalogs": [
@@ -32012,6 +32110,34 @@
       ],
       "status": "included",
       "reason": "Permanent outdoor quest woven using verified source requirements and advisory legacy order."
+    },
+    "98248": {
+      "catalogs": [
+        "redridge-mountains"
+      ],
+      "evidence": {
+        "artifactVersion": "1.0.6-dev.f844007",
+        "buildCommit": "f844007b329b72f18cf2bda3d87540012294732a",
+        "source": "QuestieDB"
+      },
+      "locations": [
+        {
+          "coord": [
+            50.13,
+            29.37
+          ],
+          "id": 256386,
+          "name": "Dokimi",
+          "point": "end",
+          "reactalliance": -1,
+          "reacthorde": 1,
+          "type": 1,
+          "zone": "The Barrens"
+        }
+      ],
+      "supporting": false,
+      "status": "unresolved",
+      "reason": "missing supported pickup or return navigation"
     }
   },
   "supportingQuests": [
@@ -32020,556 +32146,385 @@
   ],
   "clientWalkthrough": "unverified",
   "sourcePriority": [
-    "wowhead",
-    "questiedb",
-    "allthethings",
-    "foreverclient"
+    "questiedb"
   ],
   "sources": {
-    "databaseCommit": "5c92953420ab4a710fda39581a405a72a89b8c0d",
-    "compilation": {
-      "schemaVersion": 1,
-      "compilationFormatVersion": 2,
-      "flavor": "forever",
-      "source": "compilation",
-      "sourceRevision": "991cc5841d7b79dc85613431aa8ecf6f4c34070753426d60f323e321532d4b66",
-      "recordCount": 107209,
-      "recordsSha256": "9ab82625871b9df3a0ac5781bb194be6d8211a4a6337258fbf82224e00416727",
-      "status": "generated"
+    "questiedb": {
+      "artifactVersion": "1.0.6-dev.f844007",
+      "buildCommit": "f844007b329b72f18cf2bda3d87540012294732a",
+      "counts": {
+        "Item": 21294,
+        "Npc": 13393,
+        "Object": 7035,
+        "Quest": 5232
+      }
     },
     "sourceHashes": {
-      "data/forever/compilation/records.jsonl.gz": "35c74cb11823db372dc0bc289d5ffaf8296ca9d1c370e4f7b794a29af7f84b47"
+      "questiedb/export.json": "e26090e90df3aa2e94be4c13feb001390068b84c249ff2443c629d26a408e704",
+      "questiedb/policy.json": "835ba8f6361ef37bda275859bdb48852001c3ce2b6a2b3ecff586283633e2ad4"
     },
     "upstreamCommit": "9087c457e20fb96e73e5b362dd6fc50324b75718"
   },
   "coverageMode": "zone",
   "orderingEligibility": {
-    "128": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "129": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "130": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "131": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "143": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "144": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "145": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "146": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
     "19": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
       }
     },
     "20": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "150": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
+        "inCasual": false
       },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "3741": {
       "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": true
       }
     },
     "34": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "169": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
       },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "178": {
       "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "95999": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
-      }
-    },
-    "180": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "98247": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
-      }
-    },
-    "95816": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
-      }
-    },
-    "98386": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
-      }
-    },
-    "98387": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
+        "inCasual": true
       }
     },
     "89": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "345": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
       },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+      "Alliance": {
+        "inCasual": true
       }
     },
     "91": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
       }
     },
     "92": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "219": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
+        "inCasual": false
       },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+      "Alliance": {
+        "inCasual": true
       }
     },
     "94": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "347": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
       },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "248": {
       "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "249": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "98407": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": true,
-        "upstreamAdvisory": false
+        "inCasual": true
       }
     },
     "115": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
       }
     },
     "116": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "244": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
+        "inCasual": false
       },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+      "Alliance": {
+        "inCasual": false
       }
     },
     "118": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
       }
     },
     "119": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
       }
     },
     "120": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
       }
     },
     "121": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
       }
     },
     "122": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "246": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
+        "inCasual": false
       },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+      "Alliance": {
+        "inCasual": true
       }
     },
     "124": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
       }
     },
     "125": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
       }
     },
     "126": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
       }
     },
     "127": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "128": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "129": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "130": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "131": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "143": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "144": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "145": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "146": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "150": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "169": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "178": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "180": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "219": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "244": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "246": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "248": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "249": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "345": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "347": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "3741": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "95816": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "95999": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "98247": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "98248": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "98386": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "98387": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "98407": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
       }
     }
   },
@@ -32578,10 +32533,10 @@
     "commit": "9087c457e20fb96e73e5b362dd6fc50324b75718",
     "strict": false,
     "sourceHashes": {
+      "ZygorGuidesViewerRM/Guides/Leveling/ZygorGuidesHorde.lua": "2eaf5adb4865936cdb4257451c3ce920fdaff1c0ec17216c36e055480f389e54",
       "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-EasternKingdoms.lua": "8a5ec87d31698c612e50eb0655f5c1f28d723c3068552c1295d79ddcd934270f",
       "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-Kalimdor.lua": "4fb7b7f5bb2702dfe36ed33de31b4d3105153bfba62b7a14a7ab73386e2087fa",
-      "ZygorGuidesViewerRM/Guides/Leveling/ZygorGuidesAlliance.lua": "ffb9b7828817e098d74ee5931e15a64ce773142a4c1e60f9775d0713121ba67d",
-      "ZygorGuidesViewerRM/Guides/Leveling/ZygorGuidesHorde.lua": "2eaf5adb4865936cdb4257451c3ce920fdaff1c0ec17216c36e055480f389e54"
+      "ZygorGuidesViewerRM/Guides/Leveling/ZygorGuidesAlliance.lua": "ffb9b7828817e098d74ee5931e15a64ce773142a4c1e60f9775d0713121ba67d"
     },
     "matches": {
       "alliance-extra-143-level": {
@@ -32602,60 +32557,6 @@
         "source": "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-EasternKingdoms.lua",
         "line": 1070
       },
-      "alliance-extra-144-level": {
-        "quest": 144,
-        "kind": "accept",
-        "index": 0,
-        "faction": "Alliance",
-        "chapter": "Ding80's Loremaster Alliance Guides\\\\Eastern Kingdoms\\\\[25] Redridge Mountains",
-        "source": "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-EasternKingdoms.lua",
-        "line": 1075
-      },
-      "alliance-extra-144-accept": {
-        "quest": 144,
-        "kind": "accept",
-        "index": 0,
-        "faction": "Alliance",
-        "chapter": "Ding80's Loremaster Alliance Guides\\\\Eastern Kingdoms\\\\[25] Redridge Mountains",
-        "source": "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-EasternKingdoms.lua",
-        "line": 1075
-      },
-      "alliance-extra-145-level": {
-        "quest": 145,
-        "kind": "accept",
-        "index": 0,
-        "faction": "Alliance",
-        "chapter": "Ding80's Loremaster Alliance Guides\\\\Eastern Kingdoms\\\\[25] Redridge Mountains",
-        "source": "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-EasternKingdoms.lua",
-        "line": 1094
-      },
-      "alliance-extra-145-accept": {
-        "quest": 145,
-        "kind": "accept",
-        "index": 0,
-        "faction": "Alliance",
-        "chapter": "Ding80's Loremaster Alliance Guides\\\\Eastern Kingdoms\\\\[25] Redridge Mountains",
-        "source": "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-EasternKingdoms.lua",
-        "line": 1094
-      },
-      "alliance-extra-146-level": {
-        "quest": 146,
-        "kind": "accept",
-        "index": 0,
-        "faction": "Alliance",
-        "chapter": "Ding80's Loremaster Alliance Guides\\\\Eastern Kingdoms\\\\[25] Redridge Mountains",
-        "source": "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-EasternKingdoms.lua",
-        "line": 1099
-      },
-      "alliance-extra-146-accept": {
-        "quest": 146,
-        "kind": "accept",
-        "index": 0,
-        "faction": "Alliance",
-        "chapter": "Ding80's Loremaster Alliance Guides\\\\Eastern Kingdoms\\\\[25] Redridge Mountains",
-        "source": "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-EasternKingdoms.lua",
-        "line": 1099
-      },
       "alliance-extra-343-level": {
         "quest": 343,
         "kind": "accept",
@@ -32673,69 +32574,6 @@
         "chapter": "Ding80's Loremaster Alliance Guides\\\\Eastern Kingdoms\\\\[25] Redridge Mountains",
         "source": "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-EasternKingdoms.lua",
         "line": 885
-      },
-      "alliance-extra-344-level": {
-        "quest": 344,
-        "kind": "accept",
-        "index": 0,
-        "faction": "Alliance",
-        "chapter": "Ding80's Loremaster Alliance Guides\\\\Eastern Kingdoms\\\\[25] Redridge Mountains",
-        "source": "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-EasternKingdoms.lua",
-        "line": 890
-      },
-      "alliance-extra-344-accept": {
-        "quest": 344,
-        "kind": "accept",
-        "index": 0,
-        "faction": "Alliance",
-        "chapter": "Ding80's Loremaster Alliance Guides\\\\Eastern Kingdoms\\\\[25] Redridge Mountains",
-        "source": "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-EasternKingdoms.lua",
-        "line": 890
-      },
-      "alliance-extra-345-level": {
-        "quest": 345,
-        "kind": "accept",
-        "index": 0,
-        "faction": "Alliance",
-        "chapter": "Ding80's Loremaster Alliance Guides\\\\Eastern Kingdoms\\\\[25] Redridge Mountains",
-        "source": "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-EasternKingdoms.lua",
-        "line": 895
-      },
-      "alliance-extra-345-accept": {
-        "quest": 345,
-        "kind": "accept",
-        "index": 0,
-        "faction": "Alliance",
-        "chapter": "Ding80's Loremaster Alliance Guides\\\\Eastern Kingdoms\\\\[25] Redridge Mountains",
-        "source": "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-EasternKingdoms.lua",
-        "line": 895
-      },
-      "alliance-extra-347-level": {
-        "quest": 347,
-        "kind": "accept",
-        "index": 0,
-        "faction": "Alliance",
-        "chapter": "Ding80's Loremaster Alliance Guides\\\\Eastern Kingdoms\\\\[25] Redridge Mountains",
-        "source": "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-EasternKingdoms.lua",
-        "line": 922
-      },
-      "alliance-extra-347-accept": {
-        "quest": 347,
-        "kind": "accept",
-        "index": 0,
-        "faction": "Alliance",
-        "chapter": "Ding80's Loremaster Alliance Guides\\\\Eastern Kingdoms\\\\[25] Redridge Mountains",
-        "source": "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-EasternKingdoms.lua",
-        "line": 922
-      },
-      "alliance-extra-347-objective": {
-        "quest": 347,
-        "kind": "objective",
-        "index": 1,
-        "faction": "Alliance",
-        "chapter": "Ding80's Loremaster Alliance Guides\\\\Eastern Kingdoms\\\\[25] Redridge Mountains",
-        "source": "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-EasternKingdoms.lua",
-        "line": 1138
       },
       "alliance-extra-19-level": {
         "quest": 19,
@@ -32836,33 +32674,6 @@
         "source": "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-EasternKingdoms.lua",
         "line": 1198
       },
-      "alliance-extra-249-level": {
-        "quest": 249,
-        "kind": "accept",
-        "index": 0,
-        "faction": "Alliance",
-        "chapter": "Ding80's Loremaster Alliance Guides\\\\Eastern Kingdoms\\\\[25] Redridge Mountains",
-        "source": "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-EasternKingdoms.lua",
-        "line": 1213
-      },
-      "alliance-extra-249-accept": {
-        "quest": 249,
-        "kind": "accept",
-        "index": 0,
-        "faction": "Alliance",
-        "chapter": "Ding80's Loremaster Alliance Guides\\\\Eastern Kingdoms\\\\[25] Redridge Mountains",
-        "source": "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-EasternKingdoms.lua",
-        "line": 1213
-      },
-      "alliance-extra-249-objective": {
-        "quest": 249,
-        "kind": "objective",
-        "index": 1,
-        "faction": "Alliance",
-        "chapter": "Ding80's Loremaster Alliance Guides\\\\Eastern Kingdoms\\\\[25] Redridge Mountains",
-        "source": "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-EasternKingdoms.lua",
-        "line": 1218
-      },
       "alliance-extra-19-turnin": {
         "quest": 19,
         "kind": "turnin",
@@ -32890,24 +32701,6 @@
         "source": "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-EasternKingdoms.lua",
         "line": 1231
       },
-      "alliance-extra-249-turnin": {
-        "quest": 249,
-        "kind": "turnin",
-        "index": 0,
-        "faction": "Alliance",
-        "chapter": "Ding80's Loremaster Alliance Guides\\\\Eastern Kingdoms\\\\[25] Redridge Mountains",
-        "source": "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-EasternKingdoms.lua",
-        "line": 1236
-      },
-      "alliance-extra-347-turnin": {
-        "quest": 347,
-        "kind": "turnin",
-        "index": 0,
-        "faction": "Alliance",
-        "chapter": "Ding80's Loremaster Alliance Guides\\\\Eastern Kingdoms\\\\[25] Redridge Mountains",
-        "source": "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-EasternKingdoms.lua",
-        "line": 1240
-      },
       "alliance-extra-143-turnin": {
         "quest": 143,
         "kind": "turnin",
@@ -32916,6 +32709,24 @@
         "chapter": "Ding80's Loremaster Alliance Guides\\\\Eastern Kingdoms\\\\[25] Redridge Mountains",
         "source": "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-EasternKingdoms.lua",
         "line": 1074
+      },
+      "alliance-extra-144-level": {
+        "quest": 144,
+        "kind": "accept",
+        "index": 0,
+        "faction": "Alliance",
+        "chapter": "Ding80's Loremaster Alliance Guides\\\\Eastern Kingdoms\\\\[25] Redridge Mountains",
+        "source": "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-EasternKingdoms.lua",
+        "line": 1075
+      },
+      "alliance-extra-144-accept": {
+        "quest": 144,
+        "kind": "accept",
+        "index": 0,
+        "faction": "Alliance",
+        "chapter": "Ding80's Loremaster Alliance Guides\\\\Eastern Kingdoms\\\\[25] Redridge Mountains",
+        "source": "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-EasternKingdoms.lua",
+        "line": 1075
       },
       "alliance-extra-144-turnin": {
         "quest": 144,
@@ -32926,6 +32737,24 @@
         "source": "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-EasternKingdoms.lua",
         "line": 1093
       },
+      "alliance-extra-145-level": {
+        "quest": 145,
+        "kind": "accept",
+        "index": 0,
+        "faction": "Alliance",
+        "chapter": "Ding80's Loremaster Alliance Guides\\\\Eastern Kingdoms\\\\[25] Redridge Mountains",
+        "source": "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-EasternKingdoms.lua",
+        "line": 1094
+      },
+      "alliance-extra-145-accept": {
+        "quest": 145,
+        "kind": "accept",
+        "index": 0,
+        "faction": "Alliance",
+        "chapter": "Ding80's Loremaster Alliance Guides\\\\Eastern Kingdoms\\\\[25] Redridge Mountains",
+        "source": "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-EasternKingdoms.lua",
+        "line": 1094
+      },
       "alliance-extra-145-turnin": {
         "quest": 145,
         "kind": "turnin",
@@ -32934,6 +32763,24 @@
         "chapter": "Ding80's Loremaster Alliance Guides\\\\Eastern Kingdoms\\\\[25] Redridge Mountains",
         "source": "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-EasternKingdoms.lua",
         "line": 1098
+      },
+      "alliance-extra-146-level": {
+        "quest": 146,
+        "kind": "accept",
+        "index": 0,
+        "faction": "Alliance",
+        "chapter": "Ding80's Loremaster Alliance Guides\\\\Eastern Kingdoms\\\\[25] Redridge Mountains",
+        "source": "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-EasternKingdoms.lua",
+        "line": 1099
+      },
+      "alliance-extra-146-accept": {
+        "quest": 146,
+        "kind": "accept",
+        "index": 0,
+        "faction": "Alliance",
+        "chapter": "Ding80's Loremaster Alliance Guides\\\\Eastern Kingdoms\\\\[25] Redridge Mountains",
+        "source": "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-EasternKingdoms.lua",
+        "line": 1099
       },
       "alliance-extra-146-turnin": {
         "quest": 146,
@@ -32953,6 +32800,42 @@
         "source": "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-EasternKingdoms.lua",
         "line": 1209
       },
+      "alliance-extra-249-level": {
+        "quest": 249,
+        "kind": "accept",
+        "index": 0,
+        "faction": "Alliance",
+        "chapter": "Ding80's Loremaster Alliance Guides\\\\Eastern Kingdoms\\\\[25] Redridge Mountains",
+        "source": "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-EasternKingdoms.lua",
+        "line": 1213
+      },
+      "alliance-extra-249-accept": {
+        "quest": 249,
+        "kind": "accept",
+        "index": 0,
+        "faction": "Alliance",
+        "chapter": "Ding80's Loremaster Alliance Guides\\\\Eastern Kingdoms\\\\[25] Redridge Mountains",
+        "source": "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-EasternKingdoms.lua",
+        "line": 1213
+      },
+      "alliance-extra-249-objective": {
+        "quest": 249,
+        "kind": "objective",
+        "index": 1,
+        "faction": "Alliance",
+        "chapter": "Ding80's Loremaster Alliance Guides\\\\Eastern Kingdoms\\\\[25] Redridge Mountains",
+        "source": "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-EasternKingdoms.lua",
+        "line": 1218
+      },
+      "alliance-extra-249-turnin": {
+        "quest": 249,
+        "kind": "turnin",
+        "index": 0,
+        "faction": "Alliance",
+        "chapter": "Ding80's Loremaster Alliance Guides\\\\Eastern Kingdoms\\\\[25] Redridge Mountains",
+        "source": "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-EasternKingdoms.lua",
+        "line": 1236
+      },
       "alliance-extra-343-turnin": {
         "quest": 343,
         "kind": "turnin",
@@ -32961,6 +32844,24 @@
         "chapter": "Ding80's Loremaster Alliance Guides\\\\Eastern Kingdoms\\\\[25] Redridge Mountains",
         "source": "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-EasternKingdoms.lua",
         "line": 889
+      },
+      "alliance-extra-344-level": {
+        "quest": 344,
+        "kind": "accept",
+        "index": 0,
+        "faction": "Alliance",
+        "chapter": "Ding80's Loremaster Alliance Guides\\\\Eastern Kingdoms\\\\[25] Redridge Mountains",
+        "source": "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-EasternKingdoms.lua",
+        "line": 890
+      },
+      "alliance-extra-344-accept": {
+        "quest": 344,
+        "kind": "accept",
+        "index": 0,
+        "faction": "Alliance",
+        "chapter": "Ding80's Loremaster Alliance Guides\\\\Eastern Kingdoms\\\\[25] Redridge Mountains",
+        "source": "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-EasternKingdoms.lua",
+        "line": 890
       },
       "alliance-extra-344-turnin": {
         "quest": 344,
@@ -32971,6 +32872,24 @@
         "source": "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-EasternKingdoms.lua",
         "line": 894
       },
+      "alliance-extra-345-level": {
+        "quest": 345,
+        "kind": "accept",
+        "index": 0,
+        "faction": "Alliance",
+        "chapter": "Ding80's Loremaster Alliance Guides\\\\Eastern Kingdoms\\\\[25] Redridge Mountains",
+        "source": "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-EasternKingdoms.lua",
+        "line": 895
+      },
+      "alliance-extra-345-accept": {
+        "quest": 345,
+        "kind": "accept",
+        "index": 0,
+        "faction": "Alliance",
+        "chapter": "Ding80's Loremaster Alliance Guides\\\\Eastern Kingdoms\\\\[25] Redridge Mountains",
+        "source": "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-EasternKingdoms.lua",
+        "line": 895
+      },
       "alliance-extra-345-turnin": {
         "quest": 345,
         "kind": "turnin",
@@ -32979,6 +32898,42 @@
         "chapter": "Ding80's Loremaster Alliance Guides\\\\Eastern Kingdoms\\\\[25] Redridge Mountains",
         "source": "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-EasternKingdoms.lua",
         "line": 920
+      },
+      "alliance-extra-347-level": {
+        "quest": 347,
+        "kind": "accept",
+        "index": 0,
+        "faction": "Alliance",
+        "chapter": "Ding80's Loremaster Alliance Guides\\\\Eastern Kingdoms\\\\[25] Redridge Mountains",
+        "source": "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-EasternKingdoms.lua",
+        "line": 922
+      },
+      "alliance-extra-347-accept": {
+        "quest": 347,
+        "kind": "accept",
+        "index": 0,
+        "faction": "Alliance",
+        "chapter": "Ding80's Loremaster Alliance Guides\\\\Eastern Kingdoms\\\\[25] Redridge Mountains",
+        "source": "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-EasternKingdoms.lua",
+        "line": 922
+      },
+      "alliance-extra-347-objective": {
+        "quest": 347,
+        "kind": "objective",
+        "index": 1,
+        "faction": "Alliance",
+        "chapter": "Ding80's Loremaster Alliance Guides\\\\Eastern Kingdoms\\\\[25] Redridge Mountains",
+        "source": "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-EasternKingdoms.lua",
+        "line": 1138
+      },
+      "alliance-extra-347-turnin": {
+        "quest": 347,
+        "kind": "turnin",
+        "index": 0,
+        "faction": "Alliance",
+        "chapter": "Ding80's Loremaster Alliance Guides\\\\Eastern Kingdoms\\\\[25] Redridge Mountains",
+        "source": "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-EasternKingdoms.lua",
+        "line": 1240
       }
     }
   },

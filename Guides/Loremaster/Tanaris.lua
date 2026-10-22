@@ -6,7 +6,7 @@ ns:RegisterGuide({
     id = "loremaster-tanaris",
     title = "Tanaris",
     category = "Loremaster Guides",
-    revision = 1,
+    revision = 2,
     routeMode = "ordered",
     loremasterExpanded = true,
     goals = {
@@ -162,13 +162,13 @@ ns:RegisterGuide({
             kind = "turnin",
             requiredQuests = {},
             route = { { label = "Stoley", mapID = 1446, offMapText = "Travel to Stoley in Tanaris.", x = 0.6711, y = 0.2398 } },
+            sourceActionID = "turnin-2872-stoley-s-debt",
+            sourceGuide = "leveling-era-alliance-tanaris",
             sourceStep = 20,
             text = "Turn in Stoley's Debt to Stoley.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-tanaris",
-            sourceActionID = "turnin-2872-stoley-s-debt",
         },
         {
             complete = { quest = { id = 2873, state = "activeOrCompleted" } },
@@ -265,13 +265,13 @@ ns:RegisterGuide({
                     y = 0.2851,
                 },
             },
+            sourceActionID = "turnin-1690-wastewander-justice",
+            sourceGuide = "leveling-era-alliance-tanaris",
             sourceStep = 23,
             text = "Turn in Wastewander Justice to Chief Engineer Bilgewhizzle.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-tanaris",
-            sourceActionID = "turnin-1690-wastewander-justice",
         },
         {
             complete = { quest = { id = 1707, state = "completed" } },
@@ -292,13 +292,13 @@ ns:RegisterGuide({
                     y = 0.2844,
                 },
             },
+            sourceActionID = "turnin-1707-water-pouch-bounty",
+            sourceGuide = "leveling-era-alliance-tanaris",
             sourceStep = 24,
             text = "Turn in Water Pouch Bounty to Spigot Operator Luglunket.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-tanaris",
-            sourceActionID = "turnin-1707-water-pouch-bounty",
         },
         {
             id = "visit-entry-leveling-era-alliance-feralas-and-tanaris",
@@ -402,13 +402,13 @@ ns:RegisterGuide({
                     y = 0.9205,
                 },
             },
+            sourceActionID = "turnin-3022-handle-with-care",
+            sourceGuide = "leveling-era-alliance-feralas-and-tanaris",
             sourceStep = 73,
             text = "Turn in Handle With Care to Erelas Ambersky.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-feralas-and-tanaris",
-            sourceActionID = "turnin-3022-handle-with-care",
         },
         {
             complete = { quest = { id = 992, state = "activeOrCompleted" } },
@@ -476,13 +476,13 @@ ns:RegisterGuide({
                     y = 0.2748,
                 },
             },
+            sourceActionID = "turnin-992-gadgetzan-water-survey",
+            sourceGuide = "leveling-era-alliance-feralas-and-tanaris",
             sourceStep = 105,
             text = "Turn in Gadgetzan Water Survey to Senior Surveyor Fizzledowser.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-feralas-and-tanaris",
-            sourceActionID = "turnin-992-gadgetzan-water-survey",
         },
         {
             complete = { quest = { id = 82, state = "activeOrCompleted" } },
@@ -556,25 +556,6 @@ ns:RegisterGuide({
                 "alliance-leveling-era-alliance-feralas-and-tanaris-accept-82-noxious-lair-investigation",
                 "alliance-leveling-era-alliance-feralas-and-tanaris-objective-82-1-centipaar-wasp",
             },
-            id = "alliance-leveling-era-alliance-feralas-and-tanaris-turnin-82-noxious-lair-investigation",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 992 } } },
-            route = {
-                {
-                    label = "Alchemist Pestlezugg",
-                    mapID = 1446,
-                    offMapText = "Travel to Alchemist Pestlezugg in Tanaris.",
-                    x = 0.5089,
-                    y = 0.2696,
-                },
-            },
-            sourceStep = 107,
-            text = "Turn in Noxious Lair Investigation to Alchemist Pestlezugg.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-feralas-and-tanaris",
-            sourceActionID = "turnin-82-noxious-lair-investigation",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -588,6 +569,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-feralas-and-tanaris-turnin-82-noxious-lair-investigation",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 992 } } },
+            route = {
+                {
+                    label = "Alchemist Pestlezugg",
+                    mapID = 1446,
+                    offMapText = "Travel to Alchemist Pestlezugg in Tanaris.",
+                    x = 0.5089,
+                    y = 0.2696,
+                },
+            },
+            sourceActionID = "turnin-82-noxious-lair-investigation",
+            sourceGuide = "leveling-era-alliance-feralas-and-tanaris",
+            sourceStep = 107,
+            text = "Turn in Noxious Lair Investigation to Alchemist Pestlezugg.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             id = "visit-entry-leveling-era-alliance-tanaris-part-2",
@@ -789,13 +789,13 @@ ns:RegisterGuide({
                     y = 0.4593,
                 },
             },
+            sourceActionID = "turnin-3445-the-sunken-temple",
+            sourceGuide = "leveling-era-alliance-tanaris-part-2",
             sourceStep = 5,
             text = "Turn in The Sunken Temple to Marvon Rivetseeker.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-tanaris-part-2",
-            sourceActionID = "turnin-3445-the-sunken-temple",
         },
         {
             checkpointQuest = 3161,
@@ -1211,13 +1211,13 @@ ns:RegisterGuide({
                     y = 0.2389,
                 },
             },
+            sourceActionID = "turnin-2875-wanted-andre-firebeard",
+            sourceGuide = "leveling-era-alliance-tanaris-part-2",
             sourceStep = 17,
             text = "Turn in WANTED: Andre Firebeard to Security Chief Bilgewhizzle.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-tanaris-part-2",
-            sourceActionID = "turnin-2875-wanted-andre-firebeard",
         },
         {
             complete = { quest = { id = 8366, state = "completed" } },
@@ -1240,13 +1240,13 @@ ns:RegisterGuide({
                     y = 0.2389,
                 },
             },
+            sourceActionID = "turnin-8366-southsea-shakedown",
+            sourceGuide = "leveling-era-alliance-tanaris-part-2",
             sourceStep = 17,
             text = "Turn in Southsea Shakedown to Security Chief Bilgewhizzle.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-tanaris-part-2",
-            sourceActionID = "turnin-8366-southsea-shakedown",
         },
         {
             complete = { quest = { id = 2876, state = "completed" } },
@@ -1272,13 +1272,13 @@ ns:RegisterGuide({
                     y = 0.2389,
                 },
             },
+            sourceActionID = "turnin-2876-ship-schedules",
+            sourceGuide = "leveling-era-alliance-tanaris-part-2",
             sourceStep = 17,
             text = "Turn in Ship Schedules to Security Chief Bilgewhizzle.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-tanaris-part-2",
-            sourceActionID = "turnin-2876-ship-schedules",
         },
         {
             complete = { quest = { id = 2873, state = "completed" } },
@@ -1288,13 +1288,13 @@ ns:RegisterGuide({
             kind = "turnin",
             requiredQuests = {},
             route = { { label = "Stoley", mapID = 1446, offMapText = "Travel to Stoley in Tanaris.", x = 0.6711, y = 0.2397 } },
+            sourceActionID = "turnin-2873-stoley-s-shipment",
+            sourceGuide = "leveling-era-alliance-tanaris-part-2",
             sourceStep = 18,
             text = "Turn in Stoley's Shipment to Stoley.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-tanaris-part-2",
-            sourceActionID = "turnin-2873-stoley-s-shipment",
         },
         {
             complete = { quest = { id = 2874, state = "activeOrCompleted" } },
@@ -1334,13 +1334,13 @@ ns:RegisterGuide({
             route = {
                 { label = "Haughty Modiste", mapID = 1446, offMapText = "Travel to Haughty Modiste in Tanaris.", x = 0.6656, y = 0.2227 },
             },
+            sourceActionID = "turnin-8365-pirate-hats-ahoy",
+            sourceGuide = "leveling-era-alliance-tanaris-part-2",
             sourceStep = 19,
             text = "Turn in Pirate Hats Ahoy! to Haughty Modiste.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-tanaris-part-2",
-            sourceActionID = "turnin-8365-pirate-hats-ahoy",
         },
         {
             complete = { quest = { id = 351, state = "completed" } },
@@ -1366,13 +1366,13 @@ ns:RegisterGuide({
                     y = 0.6472,
                 },
             },
+            sourceActionID = "turnin-351-find-oox-17-tn",
+            sourceGuide = "leveling-era-alliance-tanaris-part-2",
             sourceStep = 21,
             text = "Turn in Find OOX-17/TN! to Homing Robot OOX-17/TN.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-tanaris-part-2",
-            sourceActionID = "turnin-351-find-oox-17-tn",
         },
         {
             complete = { questObjective = { count = 1, id = 10, index = 1, text = "Scrimshank's Surveying Gear" } },
@@ -1443,13 +1443,13 @@ ns:RegisterGuide({
                     y = 0.2851,
                 },
             },
+            sourceActionID = "turnin-2781-wanted-caliph-scorpidsting",
+            sourceGuide = "leveling-era-alliance-tanaris-part-2",
             sourceStep = 23,
             text = "Turn in WANTED: Caliph Scorpidsting to Chief Engineer Bilgewhizzle.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-tanaris-part-2",
-            sourceActionID = "turnin-2781-wanted-caliph-scorpidsting",
         },
         {
             complete = { quest = { id = 1691, state = "completed" } },
@@ -1460,25 +1460,6 @@ ns:RegisterGuide({
                 "alliance-leveling-era-alliance-tanaris-part-2-objective-1691-1-wastewander-rogue",
                 "alliance-leveling-era-alliance-tanaris-part-2-objective-1691-3-wastewander-shadow-mage",
             },
-            id = "alliance-leveling-era-alliance-tanaris-part-2-turnin-1691-more-wastewander-justice",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 1690 } } },
-            route = {
-                {
-                    label = "Chief Engineer Bilgewhizzle",
-                    mapID = 1446,
-                    offMapText = "Travel to Chief Engineer Bilgewhizzle in Tanaris.",
-                    x = 0.5246,
-                    y = 0.2851,
-                },
-            },
-            sourceStep = 23,
-            text = "Turn in More Wastewander Justice to Chief Engineer Bilgewhizzle.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-tanaris-part-2",
-            sourceActionID = "turnin-1691-more-wastewander-justice",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -1492,6 +1473,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-tanaris-part-2-turnin-1691-more-wastewander-justice",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 1690 } } },
+            route = {
+                {
+                    label = "Chief Engineer Bilgewhizzle",
+                    mapID = 1446,
+                    offMapText = "Travel to Chief Engineer Bilgewhizzle in Tanaris.",
+                    x = 0.5246,
+                    y = 0.2851,
+                },
+            },
+            sourceActionID = "turnin-1691-more-wastewander-justice",
+            sourceGuide = "leveling-era-alliance-tanaris-part-2",
+            sourceStep = 23,
+            text = "Turn in More Wastewander Justice to Chief Engineer Bilgewhizzle.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             checkpointQuest = 2605,
@@ -1532,73 +1532,89 @@ ns:RegisterGuide({
             sourceActionID = "accept-2605-the-thirsty-goblin",
         },
         {
+            checkpointQuest = 648,
+            complete = { level = { min = 43 } },
+            conditions = { all = { { faction = "Alliance" } } },
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 648, state = "activeOrCompleted" } },
+                        {
+                            any = {
+                                { quest = { id = 648, state = "activeOrCompleted" } },
+                                {
+                                    all = {
+                                        {
+                                            any = {
+                                                {
+                                                    any = {
+                                                        { quest = { id = 351, state = "activeOrCompleted" } },
+                                                        { all = { { item = { minCount = 1, name = "OOX-17/TN Distress Beacon" } } } },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
             id = "alliance-extra-648-level",
             kind = "note",
-            checkpointQuest = 648,
-            text = "Reach level 48 before this visit.",
-            conditions = { all = { { faction = "Alliance" } } },
-            complete = { level = { min = 48 } },
-            requiredLevel = 48,
-            excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 648, state = "activeOrCompleted" } },
-                        {
-                            any = {
-                                { quest = { id = 648, state = "activeOrCompleted" } },
-                                {
-                                    all = {
-                                        {
-                                            any = {
-                                                {
-                                                    any = {
-                                                        { quest = { id = 351, state = "activeOrCompleted" } },
-                                                        { all = { { item = { name = "OOX-17/TN Distress Beacon", minCount = 1 } } } },
-                                                    },
-                                                },
-                                            },
-                                        },
-                                    },
-                                },
-                            },
-                        },
-                    },
-                },
-            },
+            requiredLevel = 43,
+            text = "Reach level 43 before this visit.",
         },
         {
-            id = "alliance-extra-648-accept",
-            kind = "accept",
-            text = "Accept Rescue OOX-17/TN! from Homing Robot OOX-17/TN.",
-            conditions = { all = { { faction = "Alliance" }, { level = { min = 43 } } } },
-            route = {
-                {
-                    mapID = 1446,
-                    x = 0.602,
-                    y = 0.6459999999999999,
-                    label = "Homing Robot OOX-17/TN",
-                    offMapText = "Travel to Homing Robot OOX-17/TN in Tanaris.",
-                },
-            },
             complete = { quest = { id = 648, state = "activeOrCompleted" } },
-            requiredQuests = { { mode = "any", quests = { 351 } } },
-            useClientText = false,
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 43 } } } },
             dependsOn = { "alliance-extra-648-level" },
             excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 648, state = "activeOrCompleted" } },
-                        {
+                any = {
+                    {
+                        ["not"] = {
                             any = {
                                 { quest = { id = 648, state = "activeOrCompleted" } },
                                 {
-                                    all = {
+                                    any = {
+                                        { quest = { id = 648, state = "activeOrCompleted" } },
                                         {
-                                            any = {
+                                            all = {
                                                 {
                                                     any = {
-                                                        { quest = { id = 351, state = "activeOrCompleted" } },
-                                                        { all = { { item = { name = "OOX-17/TN Distress Beacon", minCount = 1 } } } },
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 351, state = "activeOrCompleted" } },
+                                                                { all = { { item = { minCount = 1, name = "OOX-17/TN Distress Beacon" } } } },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 648, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 648, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 351, state = "activeOrCompleted" } },
+                                                                { all = { { item = { minCount = 1, name = "OOX-17/TN Distress Beacon" } } } },
+                                                            },
+                                                        },
                                                     },
                                                 },
                                             },
@@ -1610,33 +1626,70 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-extra-648-accept",
+            kind = "accept",
+            requiredQuests = { { mode = "any", quests = { 351 } } },
+            route = {
+                {
+                    label = "Homing Robot OOX-17/TN",
+                    mapID = 1446,
+                    offMapText = "Travel to Homing Robot OOX-17/TN in Tanaris.",
+                    x = 0.602,
+                    y = 0.646,
+                },
+            },
+            text = "Accept Rescue OOX-17/TN! from Homing Robot OOX-17/TN.",
+            useClientText = false,
         },
         {
-            id = "alliance-extra-648-objective",
-            kind = "objective",
-            text = "Escort OOX-17/TN to Steamwheedle Port. Follow the quest log for the destination.",
-            conditions = { all = { { faction = "Alliance" }, { level = { min = 43 } } } },
-            route = {},
             complete = { quest = { id = 648, state = "complete" } },
-            requiredQuests = { { mode = "any", quests = { 351 } } },
-            useClientText = false,
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 43 } } } },
             dependsOn = { "alliance-extra-648-accept" },
-            useClientPin = true,
             excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 648, state = "activeOrCompleted" } },
-                        {
+                any = {
+                    {
+                        ["not"] = {
                             any = {
                                 { quest = { id = 648, state = "activeOrCompleted" } },
                                 {
-                                    all = {
+                                    any = {
+                                        { quest = { id = 648, state = "activeOrCompleted" } },
                                         {
-                                            any = {
+                                            all = {
                                                 {
                                                     any = {
-                                                        { quest = { id = 351, state = "activeOrCompleted" } },
-                                                        { all = { { item = { name = "OOX-17/TN Distress Beacon", minCount = 1 } } } },
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 351, state = "activeOrCompleted" } },
+                                                                { all = { { item = { minCount = 1, name = "OOX-17/TN Distress Beacon" } } } },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 648, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 648, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 351, state = "activeOrCompleted" } },
+                                                                { all = { { item = { minCount = 1, name = "OOX-17/TN Distress Beacon" } } } },
+                                                            },
+                                                        },
                                                     },
                                                 },
                                             },
@@ -1648,6 +1701,13 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-extra-648-objective",
+            kind = "objective",
+            requiredQuests = { { mode = "any", quests = { 351 } } },
+            route = {},
+            text = "Escort OOX-17/TN to Steamwheedle Port. Follow the quest log for the destination.",
+            useClientPin = true,
+            useClientText = false,
         },
         {
             complete = { quest = { id = 10, state = "completed" } },
@@ -1656,25 +1716,6 @@ ns:RegisterGuide({
                 "alliance-leveling-era-alliance-tanaris-part-2-accept-10-the-scrimshank-redemption",
                 "alliance-leveling-era-alliance-tanaris-part-2-objective-10-1-scrimshank-s-surveying-gear",
             },
-            id = "alliance-leveling-era-alliance-tanaris-part-2-turnin-10-the-scrimshank-redemption",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 82 } } },
-            route = {
-                {
-                    label = "Senior Surveyor Fizzledowser",
-                    mapID = 1446,
-                    offMapText = "Travel to Senior Surveyor Fizzledowser in Tanaris.",
-                    x = 0.5021,
-                    y = 0.2748,
-                },
-            },
-            sourceStep = 27,
-            text = "Turn in The Scrimshank Redemption to Senior Surveyor Fizzledowser.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-tanaris-part-2",
-            sourceActionID = "turnin-10-the-scrimshank-redemption",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -1701,6 +1742,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-tanaris-part-2-turnin-10-the-scrimshank-redemption",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 82 } } },
+            route = {
+                {
+                    label = "Senior Surveyor Fizzledowser",
+                    mapID = 1446,
+                    offMapText = "Travel to Senior Surveyor Fizzledowser in Tanaris.",
+                    x = 0.5021,
+                    y = 0.2748,
+                },
+            },
+            sourceActionID = "turnin-10-the-scrimshank-redemption",
+            sourceGuide = "leveling-era-alliance-tanaris-part-2",
+            sourceStep = 27,
+            text = "Turn in The Scrimshank Redemption to Senior Surveyor Fizzledowser.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 110, state = "activeOrCompleted" } },
@@ -1768,25 +1828,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 110, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 39 } } } },
             dependsOn = { "alliance-leveling-era-alliance-tanaris-part-2-accept-110-insect-part-analysis" },
-            id = "alliance-leveling-era-alliance-tanaris-part-2-turnin-110-insect-part-analysis",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 10 } } },
-            route = {
-                {
-                    label = "Alchemist Pestlezugg",
-                    mapID = 1446,
-                    offMapText = "Travel to Alchemist Pestlezugg in Tanaris.",
-                    x = 0.5089,
-                    y = 0.2696,
-                },
-            },
-            sourceStep = 28,
-            text = "Turn in Insect Part Analysis to Alchemist Pestlezugg.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-tanaris-part-2",
-            sourceActionID = "turnin-110-insect-part-analysis",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -1826,6 +1867,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-tanaris-part-2-turnin-110-insect-part-analysis",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 10 } } },
+            route = {
+                {
+                    label = "Alchemist Pestlezugg",
+                    mapID = 1446,
+                    offMapText = "Travel to Alchemist Pestlezugg in Tanaris.",
+                    x = 0.5089,
+                    y = 0.2696,
+                },
+            },
+            sourceActionID = "turnin-110-insect-part-analysis",
+            sourceGuide = "leveling-era-alliance-tanaris-part-2",
+            sourceStep = 28,
+            text = "Turn in Insect Part Analysis to Alchemist Pestlezugg.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 113, state = "activeOrCompleted" } },
@@ -1951,25 +2011,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 113, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 39 } } } },
             dependsOn = { "alliance-leveling-era-alliance-tanaris-part-2-accept-113-insect-part-analysis" },
-            id = "alliance-leveling-era-alliance-tanaris-part-2-turnin-113-insect-part-analysis",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 110 } } },
-            route = {
-                {
-                    label = "Senior Surveyor Fizzledowser",
-                    mapID = 1446,
-                    offMapText = "Travel to Senior Surveyor Fizzledowser in Tanaris.",
-                    x = 0.5021,
-                    y = 0.2748,
-                },
-            },
-            sourceStep = 31,
-            text = "Turn in Insect Part Analysis to Senior Surveyor Fizzledowser.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-tanaris-part-2",
-            sourceActionID = "turnin-113-insect-part-analysis",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -2022,6 +2063,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-tanaris-part-2-turnin-113-insect-part-analysis",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 110 } } },
+            route = {
+                {
+                    label = "Senior Surveyor Fizzledowser",
+                    mapID = 1446,
+                    offMapText = "Travel to Senior Surveyor Fizzledowser in Tanaris.",
+                    x = 0.5021,
+                    y = 0.2748,
+                },
+            },
+            sourceActionID = "turnin-113-insect-part-analysis",
+            sourceGuide = "leveling-era-alliance-tanaris-part-2",
+            sourceStep = 31,
+            text = "Turn in Insect Part Analysis to Senior Surveyor Fizzledowser.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { questObjective = { id = 5863, index = 3, text = "Gor'marok the Ravager" } },
@@ -2160,6 +2220,83 @@ ns:RegisterGuide({
             sourceActionID = "objective-3362-2-thistleshrub-rootshaper",
         },
         {
+            complete = { quest = { id = 648, state = "completed" } },
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 43 } } } },
+            dependsOn = { "alliance-extra-648-objective" },
+            excludeWhen = {
+                any = {
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 648, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 648, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 351, state = "activeOrCompleted" } },
+                                                                { all = { { item = { minCount = 1, name = "OOX-17/TN Distress Beacon" } } } },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 648, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 648, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 351, state = "activeOrCompleted" } },
+                                                                { all = { { item = { minCount = 1, name = "OOX-17/TN Distress Beacon" } } } },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
+            id = "alliance-extra-648-turnin",
+            kind = "turnin",
+            requiredQuests = { { mode = "any", quests = { 351 } } },
+            route = {
+                {
+                    label = "Oglethorpe Obnoticus",
+                    mapID = 1434,
+                    offMapText = "Travel to Oglethorpe Obnoticus in Stranglethorn Vale.",
+                    x = 0.282,
+                    y = 0.762,
+                },
+            },
+            text = "Turn in Rescue OOX-17/TN! to Oglethorpe Obnoticus.",
+            useClientPin = true,
+            useClientText = false,
+            useQuestNavigation = true,
+        },
+        {
             id = "visit-entry-leveling-era-alliance-ungoro-crater",
             kind = "note",
             visitSourceGuide = "leveling-era-alliance-ungoro-crater",
@@ -2203,13 +2340,13 @@ ns:RegisterGuide({
                     y = 0.2866,
                 },
             },
+            sourceActionID = "turnin-2605-the-thirsty-goblin",
+            sourceGuide = "leveling-era-alliance-ungoro-crater",
             sourceStep = 25,
             text = "Turn in The Thirsty Goblin to Marin Noggenfogger.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-ungoro-crater",
-            sourceActionID = "turnin-2605-the-thirsty-goblin",
         },
         {
             complete = { quest = { id = 2606, state = "activeOrCompleted" } },
@@ -2277,13 +2414,13 @@ ns:RegisterGuide({
             kind = "turnin",
             requiredQuests = {},
             route = { { label = "Andi Lynn", mapID = 1446, offMapText = "Travel to Andi Lynn in Tanaris.", x = 0.5282, y = 0.274 } },
+            sourceActionID = "turnin-5863-the-dunemaul-compound",
+            sourceGuide = "leveling-era-alliance-ungoro-crater",
             sourceStep = 28,
             text = "Turn in The Dunemaul Compound to Andi Lynn.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-ungoro-crater",
-            sourceActionID = "turnin-5863-the-dunemaul-compound",
         },
         {
             complete = { quest = { id = 3362, state = "complete" } },
@@ -2314,29 +2451,18 @@ ns:RegisterGuide({
             kind = "turnin",
             requiredQuests = {},
             route = { { label = "Tran'rek", mapID = 1446, offMapText = "Travel to Tran'rek in Tanaris.", x = 0.5157, y = 0.2676 } },
+            sourceActionID = "turnin-3362-thistleshrub-valley",
+            sourceGuide = "leveling-era-alliance-ungoro-crater",
             sourceStep = 29,
             text = "Turn in Thistleshrub Valley to Tran'rek.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-ungoro-crater",
-            sourceActionID = "turnin-3362-thistleshrub-valley",
         },
         {
             complete = { quest = { id = 2606, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 44 } } } },
             dependsOn = { "alliance-leveling-era-alliance-ungoro-crater-accept-2606-in-good-taste" },
-            id = "alliance-leveling-era-alliance-ungoro-crater-turnin-2606-in-good-taste",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 2605 } } },
-            route = { { label = "Sprinkle", mapID = 1446, offMapText = "Travel to Sprinkle in Tanaris.", x = 0.5106, y = 0.2687 } },
-            sourceStep = 30,
-            text = "Turn in In Good Taste to Sprinkle.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-ungoro-crater",
-            sourceActionID = "turnin-2606-in-good-taste",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -2350,6 +2476,17 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-ungoro-crater-turnin-2606-in-good-taste",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 2605 } } },
+            route = { { label = "Sprinkle", mapID = 1446, offMapText = "Travel to Sprinkle in Tanaris.", x = 0.5106, y = 0.2687 } },
+            sourceActionID = "turnin-2606-in-good-taste",
+            sourceGuide = "leveling-era-alliance-ungoro-crater",
+            sourceStep = 30,
+            text = "Turn in In Good Taste to Sprinkle.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 2641, state = "activeOrCompleted" } },
@@ -2517,58 +2654,13 @@ ns:RegisterGuide({
                     y = 0.4593,
                 },
             },
+            sourceActionID = "turnin-3161-gahz-ridian",
+            sourceGuide = "leveling-era-alliance-ungoro-crater",
             sourceStep = 32,
             text = "Turn in Gahz'ridian to Marvon Rivetseeker.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-ungoro-crater",
-            sourceActionID = "turnin-3161-gahz-ridian",
-        },
-        {
-            id = "alliance-extra-648-turnin",
-            kind = "turnin",
-            text = "Turn in Rescue OOX-17/TN! to Oglethorpe Obnoticus.",
-            conditions = { all = { { faction = "Alliance" }, { level = { min = 43 } } } },
-            route = {
-                {
-                    mapID = 1434,
-                    x = 0.282,
-                    y = 0.762,
-                    label = "Oglethorpe Obnoticus",
-                    offMapText = "Travel to Oglethorpe Obnoticus in Stranglethorn Vale.",
-                },
-            },
-            complete = { quest = { id = 648, state = "completed" } },
-            requiredQuests = { { mode = "any", quests = { 351 } } },
-            useClientText = false,
-            dependsOn = { "alliance-extra-648-objective" },
-            excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 648, state = "activeOrCompleted" } },
-                        {
-                            any = {
-                                { quest = { id = 648, state = "activeOrCompleted" } },
-                                {
-                                    all = {
-                                        {
-                                            any = {
-                                                {
-                                                    any = {
-                                                        { quest = { id = 351, state = "activeOrCompleted" } },
-                                                        { all = { { item = { name = "OOX-17/TN Distress Beacon", minCount = 1 } } } },
-                                                    },
-                                                },
-                                            },
-                                        },
-                                    },
-                                },
-                            },
-                        },
-                    },
-                },
-            },
         },
         {
             complete = { quest = { id = 3444, state = "activeOrCompleted" } },
@@ -2658,25 +2750,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 2874, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 40 } } } },
             dependsOn = {},
-            id = "alliance-leveling-era-alliance-stranglethorn-vale-part-4-turnin-2874-deliver-to-mackinley",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 2873 } } },
-            route = {
-                {
-                    label = "\"Sea Wolf\" MacKinley",
-                    mapID = 1434,
-                    offMapText = "Travel to \"Sea Wolf\" MacKinley in Stranglethorn Vale.",
-                    x = 0.2778,
-                    y = 0.7707,
-                },
-            },
-            sourceStep = 2,
-            text = "Turn in Deliver to MacKinley to \"Sea Wolf\" MacKinley.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-stranglethorn-vale-part-4",
-            sourceActionID = "turnin-2874-deliver-to-mackinley",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -2690,6 +2763,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-stranglethorn-vale-part-4-turnin-2874-deliver-to-mackinley",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 2873 } } },
+            route = {
+                {
+                    label = "\"Sea Wolf\" MacKinley",
+                    mapID = 1434,
+                    offMapText = "Travel to \"Sea Wolf\" MacKinley in Stranglethorn Vale.",
+                    x = 0.2778,
+                    y = 0.7707,
+                },
+            },
+            sourceActionID = "turnin-2874-deliver-to-mackinley",
+            sourceGuide = "leveling-era-alliance-stranglethorn-vale-part-4",
+            sourceStep = 2,
+            text = "Turn in Deliver to MacKinley to \"Sea Wolf\" MacKinley.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             id = "visit-entry-leveling-era-alliance-blasted-lands-and-burning-steppes",
@@ -2757,25 +2849,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 162, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 39 } }, { race = { 1, 3, 4, 7, 95 } } } },
             dependsOn = {},
-            id = "alliance-leveling-era-alliance-azshara-and-felwood-turnin-162-rise-of-the-silithid",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 113 } } },
-            route = {
-                {
-                    label = "Gracina Spiritmight",
-                    mapID = 1457,
-                    offMapText = "Travel to Gracina Spiritmight in Darnassus.",
-                    x = 0.4184,
-                    y = 0.8562,
-                },
-            },
-            sourceStep = 8,
-            text = "Turn in Rise of the Silithid to Gracina Spiritmight.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-azshara-and-felwood",
-            sourceActionID = "turnin-162-rise-of-the-silithid",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -2842,6 +2915,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-azshara-and-felwood-turnin-162-rise-of-the-silithid",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 113 } } },
+            route = {
+                {
+                    label = "Gracina Spiritmight",
+                    mapID = 1457,
+                    offMapText = "Travel to Gracina Spiritmight in Darnassus.",
+                    x = 0.4184,
+                    y = 0.8562,
+                },
+            },
+            sourceActionID = "turnin-162-rise-of-the-silithid",
+            sourceGuide = "leveling-era-alliance-azshara-and-felwood",
+            sourceStep = 8,
+            text = "Turn in Rise of the Silithid to Gracina Spiritmight.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 4493, state = "activeOrCompleted" } },
@@ -3083,17 +3175,6 @@ ns:RegisterGuide({
                 "alliance-leveling-era-alliance-ungoro-crater-part-2-objective-2641-quest-work",
                 "alliance-leveling-era-alliance-blasted-lands-and-burning-steppes-objective-2641-1-violet-tragan",
             },
-            id = "alliance-leveling-era-alliance-ungoro-crater-part-2-turnin-2641-sprinkle-s-secret-ingredient",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 2606 } } },
-            route = { { label = "Sprinkle", mapID = 1446, offMapText = "Travel to Sprinkle in Tanaris.", x = 0.5106, y = 0.2687 } },
-            sourceStep = 4,
-            text = "Turn in Sprinkle's Secret Ingredient to Sprinkle.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-ungoro-crater-part-2",
-            sourceActionID = "turnin-2641-sprinkle-s-secret-ingredient",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -3120,6 +3201,17 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-ungoro-crater-part-2-turnin-2641-sprinkle-s-secret-ingredient",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 2606 } } },
+            route = { { label = "Sprinkle", mapID = 1446, offMapText = "Travel to Sprinkle in Tanaris.", x = 0.5106, y = 0.2687 } },
+            sourceActionID = "turnin-2641-sprinkle-s-secret-ingredient",
+            sourceGuide = "leveling-era-alliance-ungoro-crater-part-2",
+            sourceStep = 4,
+            text = "Turn in Sprinkle's Secret Ingredient to Sprinkle.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 2661, state = "activeOrCompleted" } },
@@ -3274,25 +3366,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 4493, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 50 } }, { race = { 1, 3, 4, 7, 95 } } } },
             dependsOn = {},
-            id = "alliance-leveling-era-alliance-ungoro-crater-part-2-turnin-4493-march-of-the-silithid",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 162 } } },
-            route = {
-                {
-                    label = "Alchemist Pestlezugg",
-                    mapID = 1446,
-                    offMapText = "Travel to Alchemist Pestlezugg in Tanaris.",
-                    x = 0.5089,
-                    y = 0.2696,
-                },
-            },
-            sourceStep = 6,
-            text = "Turn in March of the Silithid to Alchemist Pestlezugg.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-ungoro-crater-part-2",
-            sourceActionID = "turnin-4493-march-of-the-silithid",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -3373,6 +3446,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-ungoro-crater-part-2-turnin-4493-march-of-the-silithid",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 162 } } },
+            route = {
+                {
+                    label = "Alchemist Pestlezugg",
+                    mapID = 1446,
+                    offMapText = "Travel to Alchemist Pestlezugg in Tanaris.",
+                    x = 0.5089,
+                    y = 0.2696,
+                },
+            },
+            sourceActionID = "turnin-4493-march-of-the-silithid",
+            sourceGuide = "leveling-era-alliance-ungoro-crater-part-2",
+            sourceStep = 6,
+            text = "Turn in March of the Silithid to Alchemist Pestlezugg.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             checkpointQuest = 4496,
@@ -3606,25 +3698,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 2661, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 44 } } } },
             dependsOn = { "alliance-leveling-era-alliance-ungoro-crater-part-2-accept-2661-delivery-for-marin" },
-            id = "alliance-leveling-era-alliance-ungoro-crater-part-2-turnin-2661-delivery-for-marin",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 2641 } } },
-            route = {
-                {
-                    label = "Marin Noggenfogger",
-                    mapID = 1446,
-                    offMapText = "Travel to Marin Noggenfogger in Tanaris.",
-                    x = 0.5181,
-                    y = 0.2866,
-                },
-            },
-            sourceStep = 7,
-            text = "Turn in Delivery for Marin to Marin Noggenfogger.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-ungoro-crater-part-2",
-            sourceActionID = "turnin-2661-delivery-for-marin",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -3664,6 +3737,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-ungoro-crater-part-2-turnin-2661-delivery-for-marin",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 2641 } } },
+            route = {
+                {
+                    label = "Marin Noggenfogger",
+                    mapID = 1446,
+                    offMapText = "Travel to Marin Noggenfogger in Tanaris.",
+                    x = 0.5181,
+                    y = 0.2866,
+                },
+            },
+            sourceActionID = "turnin-2661-delivery-for-marin",
+            sourceGuide = "leveling-era-alliance-ungoro-crater-part-2",
+            sourceStep = 7,
+            text = "Turn in Delivery for Marin to Marin Noggenfogger.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 2662, state = "activeOrCompleted" } },
@@ -3744,25 +3836,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 2662, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 44 } } } },
             dependsOn = { "alliance-leveling-era-alliance-ungoro-crater-part-2-accept-2662-noggenfogger-elixir" },
-            id = "alliance-leveling-era-alliance-ungoro-crater-part-2-turnin-2662-noggenfogger-elixir",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 2661 } } },
-            route = {
-                {
-                    label = "Marin Noggenfogger",
-                    mapID = 1446,
-                    offMapText = "Travel to Marin Noggenfogger in Tanaris.",
-                    x = 0.5181,
-                    y = 0.2866,
-                },
-            },
-            sourceStep = 8,
-            text = "Turn in Noggenfogger Elixir to Marin Noggenfogger.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-ungoro-crater-part-2",
-            sourceActionID = "turnin-2662-noggenfogger-elixir",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -3815,6 +3888,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-ungoro-crater-part-2-turnin-2662-noggenfogger-elixir",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 2661 } } },
+            route = {
+                {
+                    label = "Marin Noggenfogger",
+                    mapID = 1446,
+                    offMapText = "Travel to Marin Noggenfogger in Tanaris.",
+                    x = 0.5181,
+                    y = 0.2866,
+                },
+            },
+            sourceActionID = "turnin-2662-noggenfogger-elixir",
+            sourceGuide = "leveling-era-alliance-ungoro-crater-part-2",
+            sourceStep = 8,
+            text = "Turn in Noggenfogger Elixir to Marin Noggenfogger.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 3444, state = "complete" } },
@@ -3861,25 +3953,6 @@ ns:RegisterGuide({
                 "alliance-leveling-era-alliance-ungoro-crater-part-2-objective-3444-quest-work",
                 "alliance-leveling-era-alliance-feralas-and-azshara-objective-3444-1-marvon-s-chest",
             },
-            id = "alliance-leveling-era-alliance-ungoro-crater-part-2-turnin-3444-the-stone-circle",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 3380, 3445 } } },
-            route = {
-                {
-                    label = "Marvon Rivetseeker",
-                    mapID = 1446,
-                    offMapText = "Travel to Marvon Rivetseeker in Tanaris.",
-                    x = 0.5271,
-                    y = 0.4592,
-                },
-            },
-            sourceStep = 9,
-            text = "Turn in The Stone Circle to Marvon Rivetseeker.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-ungoro-crater-part-2",
-            sourceActionID = "turnin-3444-the-stone-circle",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -3902,7 +3975,26 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-ungoro-crater-part-2-turnin-3444-the-stone-circle",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 3380, 3445 } } },
+            route = {
+                {
+                    label = "Marvon Rivetseeker",
+                    mapID = 1446,
+                    offMapText = "Travel to Marvon Rivetseeker in Tanaris.",
+                    x = 0.5271,
+                    y = 0.4592,
+                },
+            },
+            sourceActionID = "turnin-3444-the-stone-circle",
+            sourceGuide = "leveling-era-alliance-ungoro-crater-part-2",
+            sourceStep = 9,
+            text = "Turn in The Stone Circle to Marvon Rivetseeker.",
             unresolvedPrerequisites = { 3380 },
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { questObjective = { count = 1, id = 4496, index = 1, text = "Gorishi Scent Gland" } },
@@ -4152,25 +4244,6 @@ ns:RegisterGuide({
                 "alliance-leveling-era-alliance-ungoro-crater-part-2-objective-4496-1-gorishi-scent-gland",
                 "alliance-leveling-era-alliance-ungoro-crater-part-2-objective-4496-2-un-goro-soil",
             },
-            id = "alliance-leveling-era-alliance-ungoro-crater-part-2-turnin-4496-bungle-in-the-jungle",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 4493, 4494 } } },
-            route = {
-                {
-                    label = "Alchemist Pestlezugg",
-                    mapID = 1446,
-                    offMapText = "Travel to Alchemist Pestlezugg in Tanaris.",
-                    x = 0.5089,
-                    y = 0.2696,
-                },
-            },
-            sourceStep = 60,
-            text = "Turn in Bungle in the Jungle to Alchemist Pestlezugg.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-ungoro-crater-part-2",
-            sourceActionID = "turnin-4496-bungle-in-the-jungle",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -4265,7 +4338,26 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-ungoro-crater-part-2-turnin-4496-bungle-in-the-jungle",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 4493, 4494 } } },
+            route = {
+                {
+                    label = "Alchemist Pestlezugg",
+                    mapID = 1446,
+                    offMapText = "Travel to Alchemist Pestlezugg in Tanaris.",
+                    x = 0.5089,
+                    y = 0.2696,
+                },
+            },
+            sourceActionID = "turnin-4496-bungle-in-the-jungle",
+            sourceGuide = "leveling-era-alliance-ungoro-crater-part-2",
+            sourceStep = 60,
+            text = "Turn in Bungle in the Jungle to Alchemist Pestlezugg.",
             unresolvedPrerequisites = { 4494 },
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 4504, state = "completed" } },
@@ -4278,13 +4370,13 @@ ns:RegisterGuide({
             kind = "turnin",
             requiredQuests = {},
             route = { { label = "Tran'rek", mapID = 1446, offMapText = "Travel to Tran'rek in Tanaris.", x = 0.5157, y = 0.2676 } },
+            sourceActionID = "turnin-4504-super-sticky",
+            sourceGuide = "leveling-era-alliance-ungoro-crater-part-2",
             sourceStep = 61,
             text = "Turn in Super Sticky to Tran'rek.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-ungoro-crater-part-2",
-            sourceActionID = "turnin-4504-super-sticky",
         },
         {
             id = "visit-entry-leveling-era-horde-dustwallow-marsh",
@@ -4350,13 +4442,13 @@ ns:RegisterGuide({
                     y = 0.5467,
                 },
             },
+            sourceActionID = "turnin-232-errand-for-apothecary-zinge",
+            sourceGuide = "leveling-era-horde-dustwallow-marsh",
             sourceStep = 63,
             text = "Turn in Errand for Apothecary Zinge to Alessandro Luca.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-dustwallow-marsh",
-            sourceActionID = "turnin-232-errand-for-apothecary-zinge",
         },
         {
             complete = { quest = { id = 238, state = "activeOrCompleted" } },
@@ -4405,25 +4497,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 238, state = "completed" } },
             conditions = { all = { { faction = "Horde" }, { level = { min = 38 } }, { race = { 2, 5, 6, 8, 96 } } } },
             dependsOn = { "horde-leveling-era-horde-dustwallow-marsh-accept-238-errand-for-apothecary-zinge" },
-            id = "horde-leveling-era-horde-dustwallow-marsh-turnin-238-errand-for-apothecary-zinge",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 232 } } },
-            route = {
-                {
-                    label = "Apothecary Zinge",
-                    mapID = 1458,
-                    offMapText = "Travel to Apothecary Zinge in Undercity.",
-                    x = 0.5013,
-                    y = 0.6799,
-                },
-            },
-            sourceStep = 64,
-            text = "Turn in Errand for Apothecary Zinge to Apothecary Zinge.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-dustwallow-marsh",
-            sourceActionID = "turnin-238-errand-for-apothecary-zinge",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -4444,6 +4517,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-dustwallow-marsh-turnin-238-errand-for-apothecary-zinge",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 232 } } },
+            route = {
+                {
+                    label = "Apothecary Zinge",
+                    mapID = 1458,
+                    offMapText = "Travel to Apothecary Zinge in Undercity.",
+                    x = 0.5013,
+                    y = 0.6799,
+                },
+            },
+            sourceActionID = "turnin-238-errand-for-apothecary-zinge",
+            sourceGuide = "leveling-era-horde-dustwallow-marsh",
+            sourceStep = 64,
+            text = "Turn in Errand for Apothecary Zinge to Apothecary Zinge.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 243, state = "activeOrCompleted" } },
@@ -4651,25 +4743,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 243, state = "completed" } },
             conditions = { all = { { faction = "Horde" }, { level = { min = 38 } }, { race = { 2, 5, 6, 8, 96 } } } },
             dependsOn = {},
-            id = "horde-leveling-era-horde-tanaris-turnin-243-into-the-field",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 238 } } },
-            route = {
-                {
-                    label = "Chief Engineer Bilgewhizzle",
-                    mapID = 1446,
-                    offMapText = "Travel to Chief Engineer Bilgewhizzle in Tanaris.",
-                    x = 0.5246,
-                    y = 0.2851,
-                },
-            },
-            sourceStep = 7,
-            text = "Turn in Into the Field to Chief Engineer Bilgewhizzle.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-tanaris",
-            sourceActionID = "turnin-243-into-the-field",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -4704,6 +4777,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-tanaris-turnin-243-into-the-field",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 238 } } },
+            route = {
+                {
+                    label = "Chief Engineer Bilgewhizzle",
+                    mapID = 1446,
+                    offMapText = "Travel to Chief Engineer Bilgewhizzle in Tanaris.",
+                    x = 0.5246,
+                    y = 0.2851,
+                },
+            },
+            sourceActionID = "turnin-243-into-the-field",
+            sourceGuide = "leveling-era-horde-tanaris",
+            sourceStep = 7,
+            text = "Turn in Into the Field to Chief Engineer Bilgewhizzle.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 379, state = "activeOrCompleted" } },
@@ -4807,13 +4899,13 @@ ns:RegisterGuide({
             kind = "turnin",
             requiredQuests = {},
             route = { { label = "Stoley", mapID = 1446, offMapText = "Travel to Stoley in Tanaris.", x = 0.6711, y = 0.2398 } },
+            sourceActionID = "turnin-2872-stoley-s-debt",
+            sourceGuide = "leveling-era-horde-tanaris",
             sourceStep = 13,
             text = "Turn in Stoley's Debt to Stoley.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-tanaris",
-            sourceActionID = "turnin-2872-stoley-s-debt",
         },
         {
             complete = { questObjective = { count = 10, id = 1690, index = 1, text = "Wastewander Bandit" } },
@@ -4920,25 +5012,6 @@ ns:RegisterGuide({
                 "horde-leveling-era-horde-tanaris-accept-379-slake-that-thirst",
                 "horde-leveling-era-horde-tanaris-objective-379-quest-work",
             },
-            id = "horde-leveling-era-horde-tanaris-turnin-379-slake-that-thirst",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 243 } } },
-            route = {
-                {
-                    label = "Chief Engineer Bilgewhizzle",
-                    mapID = 1446,
-                    offMapText = "Travel to Chief Engineer Bilgewhizzle in Tanaris.",
-                    x = 0.5246,
-                    y = 0.2851,
-                },
-            },
-            sourceStep = 17,
-            text = "Turn in Slake That Thirst to Chief Engineer Bilgewhizzle.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-tanaris",
-            sourceActionID = "turnin-379-slake-that-thirst",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -4987,6 +5060,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-tanaris-turnin-379-slake-that-thirst",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 243 } } },
+            route = {
+                {
+                    label = "Chief Engineer Bilgewhizzle",
+                    mapID = 1446,
+                    offMapText = "Travel to Chief Engineer Bilgewhizzle in Tanaris.",
+                    x = 0.5246,
+                    y = 0.2851,
+                },
+            },
+            sourceActionID = "turnin-379-slake-that-thirst",
+            sourceGuide = "leveling-era-horde-tanaris",
+            sourceStep = 17,
+            text = "Turn in Slake That Thirst to Chief Engineer Bilgewhizzle.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 1690, state = "completed" } },
@@ -5008,13 +5100,13 @@ ns:RegisterGuide({
                     y = 0.2851,
                 },
             },
+            sourceActionID = "turnin-1690-wastewander-justice",
+            sourceGuide = "leveling-era-horde-tanaris",
             sourceStep = 17,
             text = "Turn in Wastewander Justice to Chief Engineer Bilgewhizzle.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-tanaris",
-            sourceActionID = "turnin-1690-wastewander-justice",
         },
         {
             complete = { quest = { id = 1707, state = "complete" } },
@@ -5058,13 +5150,13 @@ ns:RegisterGuide({
                     y = 0.2844,
                 },
             },
+            sourceActionID = "turnin-1707-water-pouch-bounty",
+            sourceGuide = "leveling-era-horde-tanaris",
             sourceStep = 18,
             text = "Turn in Water Pouch Bounty to Spigot Operator Luglunket.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-tanaris",
-            sourceActionID = "turnin-1707-water-pouch-bounty",
         },
         {
             id = "visit-entry-leveling-era-horde-tanaris-part-2",
@@ -6067,7 +6159,7 @@ ns:RegisterGuide({
                                         { quest = { id = 654, state = "activeOrCompleted" } },
                                         {
                                             all = {
-                                                { item = { name = "Model 4711-FTZ Power Source", minCount = 1 } },
+                                                { item = { minCount = 1, name = "Model 4711-FTZ Power Source" } },
                                                 { faction = "Horde" },
                                                 {
                                                     any = {
@@ -6135,13 +6227,13 @@ ns:RegisterGuide({
                     y = 0.2851,
                 },
             },
+            sourceActionID = "turnin-654-tanaris-field-sampling",
+            sourceGuide = "leveling-era-horde-tanaris-part-2",
             sourceStep = 10,
             text = "Turn in Tanaris Field Sampling to Chief Engineer Bilgewhizzle.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-tanaris-part-2",
-            sourceActionID = "turnin-654-tanaris-field-sampling",
         },
         {
             complete = { quest = { id = 992, state = "completed" } },
@@ -6162,13 +6254,13 @@ ns:RegisterGuide({
                     y = 0.2748,
                 },
             },
+            sourceActionID = "turnin-992-gadgetzan-water-survey",
+            sourceGuide = "leveling-era-horde-tanaris-part-2",
             sourceStep = 12,
             text = "Turn in Gadgetzan Water Survey to Senior Surveyor Fizzledowser.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-tanaris-part-2",
-            sourceActionID = "turnin-992-gadgetzan-water-survey",
         },
         {
             id = "visit-entry-leveling-era-horde-feralas",
@@ -6253,13 +6345,13 @@ ns:RegisterGuide({
                     y = 0.4247,
                 },
             },
+            sourceActionID = "turnin-2862-war-on-the-woodpaw",
+            sourceGuide = "leveling-era-horde-feralas",
             sourceStep = 11,
             text = "Turn in War on the Woodpaw to Hadoken Swiftstrider.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-feralas",
-            sourceActionID = "turnin-2862-war-on-the-woodpaw",
         },
         {
             complete = { quest = { id = 2863, state = "activeOrCompleted" } },
@@ -6347,25 +6439,6 @@ ns:RegisterGuide({
                 "horde-leveling-era-horde-feralas-accept-2863-alpha-strike",
                 "horde-leveling-era-horde-feralas-objective-2863-1-woodpaw-alpha",
             },
-            id = "horde-leveling-era-horde-feralas-turnin-2863-alpha-strike",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 2862 } } },
-            route = {
-                {
-                    label = "Hadoken Swiftstrider",
-                    mapID = 1444,
-                    offMapText = "Travel to Hadoken Swiftstrider in Feralas.",
-                    x = 0.7491,
-                    y = 0.4246,
-                },
-            },
-            sourceStep = 17,
-            text = "Turn in Alpha Strike to Hadoken Swiftstrider.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-feralas",
-            sourceActionID = "turnin-2863-alpha-strike",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -6386,6 +6459,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-feralas-turnin-2863-alpha-strike",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 2862 } } },
+            route = {
+                {
+                    label = "Hadoken Swiftstrider",
+                    mapID = 1444,
+                    offMapText = "Travel to Hadoken Swiftstrider in Feralas.",
+                    x = 0.7491,
+                    y = 0.4246,
+                },
+            },
+            sourceActionID = "turnin-2863-alpha-strike",
+            sourceGuide = "leveling-era-horde-feralas",
+            sourceStep = 17,
+            text = "Turn in Alpha Strike to Hadoken Swiftstrider.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 2902, state = "activeOrCompleted" } },
@@ -6448,25 +6540,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 2902, state = "completed" } },
             conditions = { all = { { faction = "Horde" }, { level = { min = 39 } }, { race = { 2, 5, 6, 8, 96 } } } },
             dependsOn = { "horde-leveling-era-horde-feralas-accept-2902-woodpaw-investigation" },
-            id = "horde-leveling-era-horde-feralas-turnin-2902-woodpaw-investigation",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 2863 } } },
-            route = {
-                {
-                    label = "Woodpaw Investigation",
-                    mapID = 1444,
-                    offMapText = "Travel to Woodpaw Investigation.",
-                    x = 0.7163,
-                    y = 0.5592,
-                },
-            },
-            sourceStep = 20,
-            text = "Turn in Woodpaw Investigation.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-feralas",
-            sourceActionID = "turnin-2902-woodpaw-investigation",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -6501,6 +6574,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-feralas-turnin-2902-woodpaw-investigation",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 2863 } } },
+            route = {
+                {
+                    label = "Woodpaw Investigation",
+                    mapID = 1444,
+                    offMapText = "Travel to Woodpaw Investigation.",
+                    x = 0.7163,
+                    y = 0.5592,
+                },
+            },
+            sourceActionID = "turnin-2902-woodpaw-investigation",
+            sourceGuide = "leveling-era-horde-feralas",
+            sourceStep = 20,
+            text = "Turn in Woodpaw Investigation.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 2903, state = "activeOrCompleted" } },
@@ -6571,25 +6663,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 2903, state = "completed" } },
             conditions = { all = { { faction = "Horde" }, { level = { min = 39 } }, { race = { 2, 5, 6, 8, 96 } } } },
             dependsOn = { "horde-leveling-era-horde-feralas-accept-2903-the-battle-plans" },
-            id = "horde-leveling-era-horde-feralas-turnin-2903-the-battle-plans",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 2902 } } },
-            route = {
-                {
-                    label = "Hadoken Swiftstrider",
-                    mapID = 1444,
-                    offMapText = "Travel to Hadoken Swiftstrider in Feralas.",
-                    x = 0.7491,
-                    y = 0.4247,
-                },
-            },
-            sourceStep = 22,
-            text = "Turn in The Battle Plans to Hadoken Swiftstrider.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-feralas",
-            sourceActionID = "turnin-2903-the-battle-plans",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -6638,6 +6711,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-feralas-turnin-2903-the-battle-plans",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 2902 } } },
+            route = {
+                {
+                    label = "Hadoken Swiftstrider",
+                    mapID = 1444,
+                    offMapText = "Travel to Hadoken Swiftstrider in Feralas.",
+                    x = 0.7491,
+                    y = 0.4247,
+                },
+            },
+            sourceActionID = "turnin-2903-the-battle-plans",
+            sourceGuide = "leveling-era-horde-feralas",
+            sourceStep = 22,
+            text = "Turn in The Battle Plans to Hadoken Swiftstrider.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 7730, state = "activeOrCompleted" } },
@@ -6974,25 +7066,6 @@ ns:RegisterGuide({
                 "horde-leveling-era-horde-feralas-accept-7730-zukk-ash-infestation",
                 "horde-leveling-era-horde-feralas-objective-7730-1-zukk-ash-carapace",
             },
-            id = "horde-leveling-era-horde-feralas-turnin-7730-zukk-ash-infestation",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 2903 } } },
-            route = {
-                {
-                    label = "Hadoken Swiftstrider",
-                    mapID = 1444,
-                    offMapText = "Travel to Hadoken Swiftstrider in Feralas.",
-                    x = 0.7491,
-                    y = 0.4247,
-                },
-            },
-            sourceStep = 44,
-            text = "Turn in Zukk'ash Infestation to Hadoken Swiftstrider.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-feralas",
-            sourceActionID = "turnin-7730-zukk-ash-infestation",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -7055,15 +7128,7 @@ ns:RegisterGuide({
                     },
                 },
             },
-        },
-        {
-            complete = { quest = { id = 7731, state = "completed" } },
-            conditions = { all = { { faction = "Horde" }, { level = { min = 39 } }, { race = { 2, 5, 6, 8, 96 } } } },
-            dependsOn = {
-                "horde-leveling-era-horde-feralas-accept-7731-stinglasher",
-                "horde-leveling-era-horde-feralas-objective-7731-1-stinglasher",
-            },
-            id = "horde-leveling-era-horde-feralas-turnin-7731-stinglasher",
+            id = "horde-leveling-era-horde-feralas-turnin-7730-zukk-ash-infestation",
             kind = "turnin",
             requiredQuests = { { conditions = {}, mode = "any", quests = { 2903 } } },
             route = {
@@ -7075,13 +7140,21 @@ ns:RegisterGuide({
                     y = 0.4247,
                 },
             },
+            sourceActionID = "turnin-7730-zukk-ash-infestation",
+            sourceGuide = "leveling-era-horde-feralas",
             sourceStep = 44,
-            text = "Turn in Stinglasher to Hadoken Swiftstrider.",
+            text = "Turn in Zukk'ash Infestation to Hadoken Swiftstrider.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-feralas",
-            sourceActionID = "turnin-7731-stinglasher",
+        },
+        {
+            complete = { quest = { id = 7731, state = "completed" } },
+            conditions = { all = { { faction = "Horde" }, { level = { min = 39 } }, { race = { 2, 5, 6, 8, 96 } } } },
+            dependsOn = {
+                "horde-leveling-era-horde-feralas-accept-7731-stinglasher",
+                "horde-leveling-era-horde-feralas-objective-7731-1-stinglasher",
+            },
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -7144,6 +7217,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-feralas-turnin-7731-stinglasher",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 2903 } } },
+            route = {
+                {
+                    label = "Hadoken Swiftstrider",
+                    mapID = 1444,
+                    offMapText = "Travel to Hadoken Swiftstrider in Feralas.",
+                    x = 0.7491,
+                    y = 0.4247,
+                },
+            },
+            sourceActionID = "turnin-7731-stinglasher",
+            sourceGuide = "leveling-era-horde-feralas",
+            sourceStep = 44,
+            text = "Turn in Stinglasher to Hadoken Swiftstrider.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 7732, state = "activeOrCompleted" } },
@@ -7303,25 +7395,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 7732, state = "completed" } },
             conditions = { all = { { faction = "Horde" }, { level = { min = 39 } }, { race = { 2, 5, 6, 8, 96 } } } },
             dependsOn = { "horde-leveling-era-horde-feralas-accept-7732-zukk-ash-report" },
-            id = "horde-leveling-era-horde-feralas-turnin-7732-zukk-ash-report",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "all", quests = { 7730, 7731 } } },
-            route = {
-                {
-                    label = "Zilzibin Drumlore",
-                    mapID = 1454,
-                    offMapText = "Travel to Zilzibin Drumlore in Orgrimmar.",
-                    x = 0.5628,
-                    y = 0.4667,
-                },
-            },
-            sourceStep = 62,
-            text = "Turn in Zukk'ash Report to Zilzibin Drumlore.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-feralas",
-            sourceActionID = "turnin-7732-zukk-ash-report",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -7453,6 +7526,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-feralas-turnin-7732-zukk-ash-report",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "all", quests = { 7730, 7731 } } },
+            route = {
+                {
+                    label = "Zilzibin Drumlore",
+                    mapID = 1454,
+                    offMapText = "Travel to Zilzibin Drumlore in Orgrimmar.",
+                    x = 0.5628,
+                    y = 0.4667,
+                },
+            },
+            sourceActionID = "turnin-7732-zukk-ash-report",
+            sourceGuide = "leveling-era-horde-feralas",
+            sourceStep = 62,
+            text = "Turn in Zukk'ash Report to Zilzibin Drumlore.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             id = "visit-entry-leveling-era-horde-tanaris-and-dustwallow-marsh",
@@ -7561,13 +7653,13 @@ ns:RegisterGuide({
                     y = 0.2748,
                 },
             },
+            sourceActionID = "turnin-992-gadgetzan-water-survey",
+            sourceGuide = "leveling-era-horde-tanaris-and-dustwallow-marsh",
             sourceStep = 10,
             text = "Turn in Gadgetzan Water Survey to Senior Surveyor Fizzledowser.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-tanaris-and-dustwallow-marsh",
-            sourceActionID = "turnin-992-gadgetzan-water-survey",
         },
         {
             complete = { quest = { id = 82, state = "activeOrCompleted" } },
@@ -8156,13 +8248,13 @@ ns:RegisterGuide({
                     y = 0.2389,
                 },
             },
+            sourceActionID = "turnin-2875-wanted-andre-firebeard",
+            sourceGuide = "leveling-era-horde-tanaris-and-dustwallow-marsh",
             sourceStep = 37,
             text = "Turn in WANTED: Andre Firebeard to Security Chief Bilgewhizzle.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-tanaris-and-dustwallow-marsh",
-            sourceActionID = "turnin-2875-wanted-andre-firebeard",
         },
         {
             complete = { quest = { id = 8366, state = "completed" } },
@@ -8186,13 +8278,13 @@ ns:RegisterGuide({
                     y = 0.2389,
                 },
             },
+            sourceActionID = "turnin-8366-southsea-shakedown",
+            sourceGuide = "leveling-era-horde-tanaris-and-dustwallow-marsh",
             sourceStep = 37,
             text = "Turn in Southsea Shakedown to Security Chief Bilgewhizzle.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-tanaris-and-dustwallow-marsh",
-            sourceActionID = "turnin-8366-southsea-shakedown",
         },
         {
             complete = { quest = { id = 2876, state = "completed" } },
@@ -8218,13 +8310,13 @@ ns:RegisterGuide({
                     y = 0.2389,
                 },
             },
+            sourceActionID = "turnin-2876-ship-schedules",
+            sourceGuide = "leveling-era-horde-tanaris-and-dustwallow-marsh",
             sourceStep = 37,
             text = "Turn in Ship Schedules to Security Chief Bilgewhizzle.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-tanaris-and-dustwallow-marsh",
-            sourceActionID = "turnin-2876-ship-schedules",
         },
         {
             complete = { quest = { id = 2873, state = "completed" } },
@@ -8237,13 +8329,13 @@ ns:RegisterGuide({
             kind = "turnin",
             requiredQuests = {},
             route = { { label = "Stoley", mapID = 1446, offMapText = "Travel to Stoley in Tanaris.", x = 0.6711, y = 0.2397 } },
+            sourceActionID = "turnin-2873-stoley-s-shipment",
+            sourceGuide = "leveling-era-horde-tanaris-and-dustwallow-marsh",
             sourceStep = 38,
             text = "Turn in Stoley's Shipment to Stoley.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-tanaris-and-dustwallow-marsh",
-            sourceActionID = "turnin-2873-stoley-s-shipment",
         },
         {
             complete = { quest = { id = 2874, state = "activeOrCompleted" } },
@@ -8286,13 +8378,13 @@ ns:RegisterGuide({
             route = {
                 { label = "Haughty Modiste", mapID = 1446, offMapText = "Travel to Haughty Modiste in Tanaris.", x = 0.6656, y = 0.2227 },
             },
+            sourceActionID = "turnin-8365-pirate-hats-ahoy",
+            sourceGuide = "leveling-era-horde-tanaris-and-dustwallow-marsh",
             sourceStep = 39,
             text = "Turn in Pirate Hats Ahoy! to Haughty Modiste.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-tanaris-and-dustwallow-marsh",
-            sourceActionID = "turnin-8365-pirate-hats-ahoy",
         },
         {
             complete = { quest = { id = 2781, state = "completed" } },
@@ -8313,13 +8405,13 @@ ns:RegisterGuide({
                     y = 0.2851,
                 },
             },
+            sourceActionID = "turnin-2781-wanted-caliph-scorpidsting",
+            sourceGuide = "leveling-era-horde-tanaris-and-dustwallow-marsh",
             sourceStep = 40,
             text = "Turn in WANTED: Caliph Scorpidsting to Chief Engineer Bilgewhizzle.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-tanaris-and-dustwallow-marsh",
-            sourceActionID = "turnin-2781-wanted-caliph-scorpidsting",
         },
         {
             complete = { quest = { id = 1691, state = "completed" } },
@@ -8330,25 +8422,6 @@ ns:RegisterGuide({
                 "horde-leveling-era-horde-tanaris-and-dustwallow-marsh-objective-1691-1-wastewander-rogue",
                 "horde-leveling-era-horde-tanaris-and-dustwallow-marsh-objective-1691-3-wastewander-shadow-mage",
             },
-            id = "horde-leveling-era-horde-tanaris-and-dustwallow-marsh-turnin-1691-more-wastewander-justice",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 1690 } } },
-            route = {
-                {
-                    label = "Chief Engineer Bilgewhizzle",
-                    mapID = 1446,
-                    offMapText = "Travel to Chief Engineer Bilgewhizzle in Tanaris.",
-                    x = 0.5246,
-                    y = 0.2851,
-                },
-            },
-            sourceStep = 40,
-            text = "Turn in More Wastewander Justice to Chief Engineer Bilgewhizzle.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-tanaris-and-dustwallow-marsh",
-            sourceActionID = "turnin-1691-more-wastewander-justice",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -8362,6 +8435,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-tanaris-and-dustwallow-marsh-turnin-1691-more-wastewander-justice",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 1690 } } },
+            route = {
+                {
+                    label = "Chief Engineer Bilgewhizzle",
+                    mapID = 1446,
+                    offMapText = "Travel to Chief Engineer Bilgewhizzle in Tanaris.",
+                    x = 0.5246,
+                    y = 0.2851,
+                },
+            },
+            sourceActionID = "turnin-1691-more-wastewander-justice",
+            sourceGuide = "leveling-era-horde-tanaris-and-dustwallow-marsh",
+            sourceStep = 40,
+            text = "Turn in More Wastewander Justice to Chief Engineer Bilgewhizzle.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 3161, state = "activeOrCompleted" } },
@@ -8570,13 +8662,13 @@ ns:RegisterGuide({
                     y = 0.4593,
                 },
             },
+            sourceActionID = "turnin-3161-gahz-ridian",
+            sourceGuide = "leveling-era-horde-tanaris-and-dustwallow-marsh",
             sourceStep = 49,
             text = "Turn in Gahz'ridian to Marvon Rivetseeker.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-tanaris-and-dustwallow-marsh",
-            sourceActionID = "turnin-3161-gahz-ridian",
         },
         {
             complete = { quest = { id = 2605, state = "completed" } },
@@ -8597,13 +8689,13 @@ ns:RegisterGuide({
                     y = 0.2866,
                 },
             },
+            sourceActionID = "turnin-2605-the-thirsty-goblin",
+            sourceGuide = "leveling-era-horde-tanaris-and-dustwallow-marsh",
             sourceStep = 50,
             text = "Turn in The Thirsty Goblin to Marin Noggenfogger.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-tanaris-and-dustwallow-marsh",
-            sourceActionID = "turnin-2605-the-thirsty-goblin",
         },
         {
             complete = { quest = { id = 2606, state = "activeOrCompleted" } },
@@ -8654,13 +8746,13 @@ ns:RegisterGuide({
             kind = "turnin",
             requiredQuests = {},
             route = { { label = "Andi Lynn", mapID = 1446, offMapText = "Travel to Andi Lynn in Tanaris.", x = 0.5282, y = 0.274 } },
+            sourceActionID = "turnin-5863-the-dunemaul-compound",
+            sourceGuide = "leveling-era-horde-tanaris-and-dustwallow-marsh",
             sourceStep = 52,
             text = "Turn in The Dunemaul Compound to Andi Lynn.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-tanaris-and-dustwallow-marsh",
-            sourceActionID = "turnin-5863-the-dunemaul-compound",
         },
         {
             complete = { quest = { id = 3362, state = "completed" } },
@@ -8674,29 +8766,18 @@ ns:RegisterGuide({
             kind = "turnin",
             requiredQuests = {},
             route = { { label = "Tran'rek", mapID = 1446, offMapText = "Travel to Tran'rek in Tanaris.", x = 0.5157, y = 0.2676 } },
+            sourceActionID = "turnin-3362-thistleshrub-valley",
+            sourceGuide = "leveling-era-horde-tanaris-and-dustwallow-marsh",
             sourceStep = 53,
             text = "Turn in Thistleshrub Valley to Tran'rek.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-tanaris-and-dustwallow-marsh",
-            sourceActionID = "turnin-3362-thistleshrub-valley",
         },
         {
             complete = { quest = { id = 2606, state = "completed" } },
             conditions = { all = { { faction = "Horde" }, { level = { min = 44 } } } },
             dependsOn = { "horde-leveling-era-horde-tanaris-and-dustwallow-marsh-accept-2606-in-good-taste" },
-            id = "horde-leveling-era-horde-tanaris-and-dustwallow-marsh-turnin-2606-in-good-taste",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 2605 } } },
-            route = { { label = "Sprinkle", mapID = 1446, offMapText = "Travel to Sprinkle in Tanaris.", x = 0.5106, y = 0.2687 } },
-            sourceStep = 54,
-            text = "Turn in In Good Taste to Sprinkle.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-tanaris-and-dustwallow-marsh",
-            sourceActionID = "turnin-2606-in-good-taste",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -8710,6 +8791,17 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-tanaris-and-dustwallow-marsh-turnin-2606-in-good-taste",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 2605 } } },
+            route = { { label = "Sprinkle", mapID = 1446, offMapText = "Travel to Sprinkle in Tanaris.", x = 0.5106, y = 0.2687 } },
+            sourceActionID = "turnin-2606-in-good-taste",
+            sourceGuide = "leveling-era-horde-tanaris-and-dustwallow-marsh",
+            sourceStep = 54,
+            text = "Turn in In Good Taste to Sprinkle.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 2641, state = "activeOrCompleted" } },
@@ -8759,25 +8851,6 @@ ns:RegisterGuide({
                 "horde-leveling-era-horde-tanaris-and-dustwallow-marsh-accept-82-noxious-lair-investigation",
                 "horde-leveling-era-horde-tanaris-and-dustwallow-marsh-objective-82-1-centipaar-wasp",
             },
-            id = "horde-leveling-era-horde-tanaris-and-dustwallow-marsh-turnin-82-noxious-lair-investigation",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 992 } } },
-            route = {
-                {
-                    label = "Alchemist Pestlezugg",
-                    mapID = 1446,
-                    offMapText = "Travel to Alchemist Pestlezugg in Tanaris.",
-                    x = 0.5089,
-                    y = 0.2696,
-                },
-            },
-            sourceStep = 55,
-            text = "Turn in Noxious Lair Investigation to Alchemist Pestlezugg.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-tanaris-and-dustwallow-marsh",
-            sourceActionID = "turnin-82-noxious-lair-investigation",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -8791,6 +8864,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-tanaris-and-dustwallow-marsh-turnin-82-noxious-lair-investigation",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 992 } } },
+            route = {
+                {
+                    label = "Alchemist Pestlezugg",
+                    mapID = 1446,
+                    offMapText = "Travel to Alchemist Pestlezugg in Tanaris.",
+                    x = 0.5089,
+                    y = 0.2696,
+                },
+            },
+            sourceActionID = "turnin-82-noxious-lair-investigation",
+            sourceGuide = "leveling-era-horde-tanaris-and-dustwallow-marsh",
+            sourceStep = 55,
+            text = "Turn in Noxious Lair Investigation to Alchemist Pestlezugg.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 10, state = "activeOrCompleted" } },
@@ -8865,13 +8957,13 @@ ns:RegisterGuide({
                     y = 0.6472,
                 },
             },
+            sourceActionID = "turnin-351-find-oox-17-tn",
+            sourceGuide = "leveling-era-horde-tanaris-and-dustwallow-marsh",
             sourceStep = 57,
             text = "Turn in Find OOX-17/TN! to Homing Robot OOX-17/TN.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-tanaris-and-dustwallow-marsh",
-            sourceActionID = "turnin-351-find-oox-17-tn",
         },
         {
             complete = { questObjective = { count = 1, id = 10, index = 1, text = "Scrimshank's Surveying Gear" } },
@@ -8930,25 +9022,6 @@ ns:RegisterGuide({
                 "horde-leveling-era-horde-tanaris-and-dustwallow-marsh-accept-10-the-scrimshank-redemption",
                 "horde-leveling-era-horde-tanaris-and-dustwallow-marsh-objective-10-1-scrimshank-s-surveying-gear",
             },
-            id = "horde-leveling-era-horde-tanaris-and-dustwallow-marsh-turnin-10-the-scrimshank-redemption",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 82 } } },
-            route = {
-                {
-                    label = "Senior Surveyor Fizzledowser",
-                    mapID = 1446,
-                    offMapText = "Travel to Senior Surveyor Fizzledowser in Tanaris.",
-                    x = 0.5021,
-                    y = 0.2748,
-                },
-            },
-            sourceStep = 61,
-            text = "Turn in The Scrimshank Redemption to Senior Surveyor Fizzledowser.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-tanaris-and-dustwallow-marsh",
-            sourceActionID = "turnin-10-the-scrimshank-redemption",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -8975,6 +9048,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-tanaris-and-dustwallow-marsh-turnin-10-the-scrimshank-redemption",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 82 } } },
+            route = {
+                {
+                    label = "Senior Surveyor Fizzledowser",
+                    mapID = 1446,
+                    offMapText = "Travel to Senior Surveyor Fizzledowser in Tanaris.",
+                    x = 0.5021,
+                    y = 0.2748,
+                },
+            },
+            sourceActionID = "turnin-10-the-scrimshank-redemption",
+            sourceGuide = "leveling-era-horde-tanaris-and-dustwallow-marsh",
+            sourceStep = 61,
+            text = "Turn in The Scrimshank Redemption to Senior Surveyor Fizzledowser.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 110, state = "activeOrCompleted" } },
@@ -9042,25 +9134,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 110, state = "completed" } },
             conditions = { all = { { faction = "Horde" }, { level = { min = 39 } } } },
             dependsOn = { "horde-leveling-era-horde-tanaris-and-dustwallow-marsh-accept-110-insect-part-analysis" },
-            id = "horde-leveling-era-horde-tanaris-and-dustwallow-marsh-turnin-110-insect-part-analysis",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 10 } } },
-            route = {
-                {
-                    label = "Alchemist Pestlezugg",
-                    mapID = 1446,
-                    offMapText = "Travel to Alchemist Pestlezugg in Tanaris.",
-                    x = 0.5089,
-                    y = 0.2696,
-                },
-            },
-            sourceStep = 62,
-            text = "Turn in Insect Part Analysis to Alchemist Pestlezugg.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-tanaris-and-dustwallow-marsh",
-            sourceActionID = "turnin-110-insect-part-analysis",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -9100,6 +9173,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-tanaris-and-dustwallow-marsh-turnin-110-insect-part-analysis",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 10 } } },
+            route = {
+                {
+                    label = "Alchemist Pestlezugg",
+                    mapID = 1446,
+                    offMapText = "Travel to Alchemist Pestlezugg in Tanaris.",
+                    x = 0.5089,
+                    y = 0.2696,
+                },
+            },
+            sourceActionID = "turnin-110-insect-part-analysis",
+            sourceGuide = "leveling-era-horde-tanaris-and-dustwallow-marsh",
+            sourceStep = 62,
+            text = "Turn in Insect Part Analysis to Alchemist Pestlezugg.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 113, state = "activeOrCompleted" } },
@@ -9180,25 +9272,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 113, state = "completed" } },
             conditions = { all = { { faction = "Horde" }, { level = { min = 39 } } } },
             dependsOn = { "horde-leveling-era-horde-tanaris-and-dustwallow-marsh-accept-113-insect-part-analysis" },
-            id = "horde-leveling-era-horde-tanaris-and-dustwallow-marsh-turnin-113-insect-part-analysis",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 110 } } },
-            route = {
-                {
-                    label = "Senior Surveyor Fizzledowser",
-                    mapID = 1446,
-                    offMapText = "Travel to Senior Surveyor Fizzledowser in Tanaris.",
-                    x = 0.5021,
-                    y = 0.2748,
-                },
-            },
-            sourceStep = 63,
-            text = "Turn in Insect Part Analysis to Senior Surveyor Fizzledowser.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-tanaris-and-dustwallow-marsh",
-            sourceActionID = "turnin-113-insect-part-analysis",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -9251,6 +9324,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-tanaris-and-dustwallow-marsh-turnin-113-insect-part-analysis",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 110 } } },
+            route = {
+                {
+                    label = "Senior Surveyor Fizzledowser",
+                    mapID = 1446,
+                    offMapText = "Travel to Senior Surveyor Fizzledowser in Tanaris.",
+                    x = 0.5021,
+                    y = 0.2748,
+                },
+            },
+            sourceActionID = "turnin-113-insect-part-analysis",
+            sourceGuide = "leveling-era-horde-tanaris-and-dustwallow-marsh",
+            sourceStep = 63,
+            text = "Turn in Insect Part Analysis to Senior Surveyor Fizzledowser.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 32, state = "activeOrCompleted" } },
@@ -9345,25 +9437,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 32, state = "completed" } },
             conditions = { all = { { faction = "Horde" }, { level = { min = 39 } }, { race = { 2, 5, 6, 8, 96 } } } },
             dependsOn = { "horde-leveling-era-horde-tanaris-and-dustwallow-marsh-accept-32-rise-of-the-silithid" },
-            id = "horde-leveling-era-horde-tanaris-and-dustwallow-marsh-turnin-32-rise-of-the-silithid",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 113 } } },
-            route = {
-                {
-                    label = "Zilzibin Drumlore",
-                    mapID = 1454,
-                    offMapText = "Travel to Zilzibin Drumlore in Orgrimmar.",
-                    x = 0.5627,
-                    y = 0.4667,
-                },
-            },
-            sourceStep = 96,
-            text = "Turn in Rise of the Silithid to Zilzibin Drumlore.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-tanaris-and-dustwallow-marsh",
-            sourceActionID = "turnin-32-rise-of-the-silithid",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -9430,6 +9503,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-tanaris-and-dustwallow-marsh-turnin-32-rise-of-the-silithid",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 113 } } },
+            route = {
+                {
+                    label = "Zilzibin Drumlore",
+                    mapID = 1454,
+                    offMapText = "Travel to Zilzibin Drumlore in Orgrimmar.",
+                    x = 0.5627,
+                    y = 0.4667,
+                },
+            },
+            sourceActionID = "turnin-32-rise-of-the-silithid",
+            sourceGuide = "leveling-era-horde-tanaris-and-dustwallow-marsh",
+            sourceStep = 96,
+            text = "Turn in Rise of the Silithid to Zilzibin Drumlore.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             id = "visit-entry-leveling-era-horde-the-hinterlands",
@@ -9528,17 +9620,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 2641, state = "completed" } },
             conditions = { all = { { faction = "Horde" }, { level = { min = 44 } } } },
             dependsOn = { "horde-leveling-era-horde-the-hinterlands-objective-2641-1-violet-tragan" },
-            id = "horde-leveling-era-horde-the-hinterlands-turnin-2641-sprinkle-s-secret-ingredient",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 2606 } } },
-            route = { { label = "Sprinkle", mapID = 1446, offMapText = "Travel to Sprinkle in Tanaris.", x = 0.5106, y = 0.2687 } },
-            sourceStep = 64,
-            text = "Turn in Sprinkle's Secret Ingredient to Sprinkle.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-the-hinterlands",
-            sourceActionID = "turnin-2641-sprinkle-s-secret-ingredient",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -9565,6 +9646,17 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-the-hinterlands-turnin-2641-sprinkle-s-secret-ingredient",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 2606 } } },
+            route = { { label = "Sprinkle", mapID = 1446, offMapText = "Travel to Sprinkle in Tanaris.", x = 0.5106, y = 0.2687 } },
+            sourceActionID = "turnin-2641-sprinkle-s-secret-ingredient",
+            sourceGuide = "leveling-era-horde-the-hinterlands",
+            sourceStep = 64,
+            text = "Turn in Sprinkle's Secret Ingredient to Sprinkle.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 2661, state = "activeOrCompleted" } },
@@ -9624,25 +9716,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 2661, state = "completed" } },
             conditions = { all = { { faction = "Horde" }, { level = { min = 44 } } } },
             dependsOn = { "horde-leveling-era-horde-the-hinterlands-accept-2661-delivery-for-marin" },
-            id = "horde-leveling-era-horde-the-hinterlands-turnin-2661-delivery-for-marin",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 2641 } } },
-            route = {
-                {
-                    label = "Marin Noggenfogger",
-                    mapID = 1446,
-                    offMapText = "Travel to Marin Noggenfogger in Tanaris.",
-                    x = 0.5181,
-                    y = 0.2866,
-                },
-            },
-            sourceStep = 66,
-            text = "Turn in Delivery for Marin to Marin Noggenfogger.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-the-hinterlands",
-            sourceActionID = "turnin-2661-delivery-for-marin",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -9682,6 +9755,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-the-hinterlands-turnin-2661-delivery-for-marin",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 2641 } } },
+            route = {
+                {
+                    label = "Marin Noggenfogger",
+                    mapID = 1446,
+                    offMapText = "Travel to Marin Noggenfogger in Tanaris.",
+                    x = 0.5181,
+                    y = 0.2866,
+                },
+            },
+            sourceActionID = "turnin-2661-delivery-for-marin",
+            sourceGuide = "leveling-era-horde-the-hinterlands",
+            sourceStep = 66,
+            text = "Turn in Delivery for Marin to Marin Noggenfogger.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 2662, state = "activeOrCompleted" } },
@@ -9762,25 +9854,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 2662, state = "completed" } },
             conditions = { all = { { faction = "Horde" }, { level = { min = 44 } } } },
             dependsOn = { "horde-leveling-era-horde-the-hinterlands-accept-2662-noggenfogger-elixir" },
-            id = "horde-leveling-era-horde-the-hinterlands-turnin-2662-noggenfogger-elixir",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 2661 } } },
-            route = {
-                {
-                    label = "Marin Noggenfogger",
-                    mapID = 1446,
-                    offMapText = "Travel to Marin Noggenfogger in Tanaris.",
-                    x = 0.5181,
-                    y = 0.2866,
-                },
-            },
-            sourceStep = 67,
-            text = "Turn in Noggenfogger Elixir to Marin Noggenfogger.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-the-hinterlands",
-            sourceActionID = "turnin-2662-noggenfogger-elixir",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -9833,6 +9906,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-the-hinterlands-turnin-2662-noggenfogger-elixir",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 2661 } } },
+            route = {
+                {
+                    label = "Marin Noggenfogger",
+                    mapID = 1446,
+                    offMapText = "Travel to Marin Noggenfogger in Tanaris.",
+                    x = 0.5181,
+                    y = 0.2866,
+                },
+            },
+            sourceActionID = "turnin-2662-noggenfogger-elixir",
+            sourceGuide = "leveling-era-horde-the-hinterlands",
+            sourceStep = 67,
+            text = "Turn in Noggenfogger Elixir to Marin Noggenfogger.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             id = "visit-entry-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-part-2",
@@ -9876,25 +9968,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 2874, state = "completed" } },
             conditions = { all = { { faction = "Horde" }, { level = { min = 40 } } } },
             dependsOn = {},
-            id = "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-part-2-turnin-2874-deliver-to-mackinley",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 2873 } } },
-            route = {
-                {
-                    label = "\"Sea Wolf\" MacKinley",
-                    mapID = 1434,
-                    offMapText = "Travel to \"Sea Wolf\" MacKinley in Stranglethorn Vale.",
-                    x = 0.2778,
-                    y = 0.7707,
-                },
-            },
-            sourceStep = 1,
-            text = "Turn in Deliver to MacKinley to \"Sea Wolf\" MacKinley.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-part-2",
-            sourceActionID = "turnin-2874-deliver-to-mackinley",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -9908,6 +9981,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-part-2-turnin-2874-deliver-to-mackinley",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 2873 } } },
+            route = {
+                {
+                    label = "\"Sea Wolf\" MacKinley",
+                    mapID = 1434,
+                    offMapText = "Travel to \"Sea Wolf\" MacKinley in Stranglethorn Vale.",
+                    x = 0.2778,
+                    y = 0.7707,
+                },
+            },
+            sourceActionID = "turnin-2874-deliver-to-mackinley",
+            sourceGuide = "leveling-era-horde-stranglethorn-vale-and-swamp-of-sorrows-part-2",
+            sourceStep = 1,
+            text = "Turn in Deliver to MacKinley to \"Sea Wolf\" MacKinley.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             id = "visit-entry-leveling-era-horde-burning-steppes-and-azshara",
@@ -10598,25 +10690,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 4494, state = "completed" } },
             conditions = { all = { { faction = "Horde" }, { level = { min = 50 } }, { race = { 2, 5, 6, 8, 96 } } } },
             dependsOn = {},
-            id = "horde-leveling-era-horde-ungoro-crater-turnin-4494-march-of-the-silithid",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 32, 7732 } } },
-            route = {
-                {
-                    label = "Alchemist Pestlezugg",
-                    mapID = 1446,
-                    offMapText = "Travel to Alchemist Pestlezugg in Tanaris.",
-                    x = 0.5089,
-                    y = 0.2696,
-                },
-            },
-            sourceStep = 1,
-            text = "Turn in March of the Silithid to Alchemist Pestlezugg.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-ungoro-crater",
-            sourceActionID = "turnin-4494-march-of-the-silithid",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -10821,6 +10894,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-ungoro-crater-turnin-4494-march-of-the-silithid",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 32, 7732 } } },
+            route = {
+                {
+                    label = "Alchemist Pestlezugg",
+                    mapID = 1446,
+                    offMapText = "Travel to Alchemist Pestlezugg in Tanaris.",
+                    x = 0.5089,
+                    y = 0.2696,
+                },
+            },
+            sourceActionID = "turnin-4494-march-of-the-silithid",
+            sourceGuide = "leveling-era-horde-ungoro-crater",
+            sourceStep = 1,
+            text = "Turn in March of the Silithid to Alchemist Pestlezugg.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             checkpointQuest = 4496,
@@ -11542,25 +11634,6 @@ ns:RegisterGuide({
                 "horde-leveling-era-horde-ungoro-crater-accept-4496-bungle-in-the-jungle",
                 "horde-leveling-era-horde-ungoro-crater-objective-4496-1-gorishi-scent-gland",
             },
-            id = "horde-leveling-era-horde-ungoro-crater-turnin-4496-bungle-in-the-jungle",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 4493, 4494 } } },
-            route = {
-                {
-                    label = "Alchemist Pestlezugg",
-                    mapID = 1446,
-                    offMapText = "Travel to Alchemist Pestlezugg in Tanaris.",
-                    x = 0.5089,
-                    y = 0.2696,
-                },
-            },
-            sourceStep = 56,
-            text = "Turn in Bungle in the Jungle to Alchemist Pestlezugg.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-ungoro-crater",
-            sourceActionID = "turnin-4496-bungle-in-the-jungle",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -11779,7 +11852,26 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-ungoro-crater-turnin-4496-bungle-in-the-jungle",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 4493, 4494 } } },
+            route = {
+                {
+                    label = "Alchemist Pestlezugg",
+                    mapID = 1446,
+                    offMapText = "Travel to Alchemist Pestlezugg in Tanaris.",
+                    x = 0.5089,
+                    y = 0.2696,
+                },
+            },
+            sourceActionID = "turnin-4496-bungle-in-the-jungle",
+            sourceGuide = "leveling-era-horde-ungoro-crater",
+            sourceStep = 56,
+            text = "Turn in Bungle in the Jungle to Alchemist Pestlezugg.",
             unresolvedPrerequisites = { 4493 },
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             id = "visit-entry-leveling-era-horde-felwood-and-winterspring-part-2",
@@ -11835,82 +11927,98 @@ ns:RegisterGuide({
             kind = "turnin",
             requiredQuests = {},
             route = { { label = "Tran'rek", mapID = 1446, offMapText = "Travel to Tran'rek in Tanaris.", x = 0.5157, y = 0.2676 } },
+            sourceActionID = "turnin-4504-super-sticky",
+            sourceGuide = "leveling-era-horde-felwood-and-winterspring-part-2",
             sourceStep = 49,
             text = "Turn in Super Sticky to Tran'rek.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-felwood-and-winterspring-part-2",
-            sourceActionID = "turnin-4504-super-sticky",
         },
         {
+            checkpointQuest = 648,
+            complete = { level = { min = 43 } },
+            conditions = { all = { { faction = "Horde" } } },
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 648, state = "activeOrCompleted" } },
+                        {
+                            any = {
+                                { quest = { id = 648, state = "activeOrCompleted" } },
+                                {
+                                    all = {
+                                        {
+                                            any = {
+                                                {
+                                                    any = {
+                                                        { quest = { id = 351, state = "activeOrCompleted" } },
+                                                        { all = { { item = { minCount = 1, name = "OOX-17/TN Distress Beacon" } } } },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
             id = "horde-extra-648-level",
             kind = "note",
-            checkpointQuest = 648,
-            text = "Reach level 48 before this visit.",
-            conditions = { all = { { faction = "Horde" } } },
-            complete = { level = { min = 48 } },
-            requiredLevel = 48,
-            excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 648, state = "activeOrCompleted" } },
-                        {
-                            any = {
-                                { quest = { id = 648, state = "activeOrCompleted" } },
-                                {
-                                    all = {
-                                        {
-                                            any = {
-                                                {
-                                                    any = {
-                                                        { quest = { id = 351, state = "activeOrCompleted" } },
-                                                        { all = { { item = { name = "OOX-17/TN Distress Beacon", minCount = 1 } } } },
-                                                    },
-                                                },
-                                            },
-                                        },
-                                    },
-                                },
-                            },
-                        },
-                    },
-                },
-            },
+            requiredLevel = 43,
+            text = "Reach level 43 before this visit.",
         },
         {
-            id = "horde-extra-648-accept",
-            kind = "accept",
-            text = "Accept Rescue OOX-17/TN! from Homing Robot OOX-17/TN.",
-            conditions = { all = { { faction = "Horde" }, { level = { min = 43 } } } },
-            route = {
-                {
-                    mapID = 1446,
-                    x = 0.602,
-                    y = 0.6459999999999999,
-                    label = "Homing Robot OOX-17/TN",
-                    offMapText = "Travel to Homing Robot OOX-17/TN in Tanaris.",
-                },
-            },
             complete = { quest = { id = 648, state = "activeOrCompleted" } },
-            requiredQuests = { { mode = "any", quests = { 351 } } },
-            useClientText = false,
+            conditions = { all = { { faction = "Horde" }, { level = { min = 43 } } } },
             dependsOn = { "horde-extra-648-level" },
             excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 648, state = "activeOrCompleted" } },
-                        {
+                any = {
+                    {
+                        ["not"] = {
                             any = {
                                 { quest = { id = 648, state = "activeOrCompleted" } },
                                 {
-                                    all = {
+                                    any = {
+                                        { quest = { id = 648, state = "activeOrCompleted" } },
                                         {
-                                            any = {
+                                            all = {
                                                 {
                                                     any = {
-                                                        { quest = { id = 351, state = "activeOrCompleted" } },
-                                                        { all = { { item = { name = "OOX-17/TN Distress Beacon", minCount = 1 } } } },
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 351, state = "activeOrCompleted" } },
+                                                                { all = { { item = { minCount = 1, name = "OOX-17/TN Distress Beacon" } } } },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 648, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 648, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 351, state = "activeOrCompleted" } },
+                                                                { all = { { item = { minCount = 1, name = "OOX-17/TN Distress Beacon" } } } },
+                                                            },
+                                                        },
                                                     },
                                                 },
                                             },
@@ -11922,78 +12030,70 @@ ns:RegisterGuide({
                     },
                 },
             },
-        },
-        {
-            id = "horde-extra-648-objective",
-            kind = "objective",
-            text = "Escort OOX-17/TN to Steamwheedle Port. Follow the quest log for the destination.",
-            conditions = { all = { { faction = "Horde" }, { level = { min = 43 } } } },
-            route = {},
-            complete = { quest = { id = 648, state = "complete" } },
+            id = "horde-extra-648-accept",
+            kind = "accept",
             requiredQuests = { { mode = "any", quests = { 351 } } },
-            useClientText = false,
-            dependsOn = { "horde-extra-648-accept" },
-            useClientPin = true,
-            excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 648, state = "activeOrCompleted" } },
-                        {
-                            any = {
-                                { quest = { id = 648, state = "activeOrCompleted" } },
-                                {
-                                    all = {
-                                        {
-                                            any = {
-                                                {
-                                                    any = {
-                                                        { quest = { id = 351, state = "activeOrCompleted" } },
-                                                        { all = { { item = { name = "OOX-17/TN Distress Beacon", minCount = 1 } } } },
-                                                    },
-                                                },
-                                            },
-                                        },
-                                    },
-                                },
-                            },
-                        },
-                    },
-                },
-            },
-        },
-        {
-            id = "horde-extra-648-turnin",
-            kind = "turnin",
-            text = "Turn in Rescue OOX-17/TN! to Oglethorpe Obnoticus.",
-            conditions = { all = { { faction = "Horde" }, { level = { min = 43 } } } },
             route = {
                 {
-                    mapID = 1434,
-                    x = 0.282,
-                    y = 0.762,
-                    label = "Oglethorpe Obnoticus",
-                    offMapText = "Travel to Oglethorpe Obnoticus in Stranglethorn Vale.",
+                    label = "Homing Robot OOX-17/TN",
+                    mapID = 1446,
+                    offMapText = "Travel to Homing Robot OOX-17/TN in Tanaris.",
+                    x = 0.602,
+                    y = 0.646,
                 },
             },
-            complete = { quest = { id = 648, state = "completed" } },
-            requiredQuests = { { mode = "any", quests = { 351 } } },
+            text = "Accept Rescue OOX-17/TN! from Homing Robot OOX-17/TN.",
             useClientText = false,
-            dependsOn = { "horde-extra-648-objective" },
+        },
+        {
+            complete = { quest = { id = 648, state = "complete" } },
+            conditions = { all = { { faction = "Horde" }, { level = { min = 43 } } } },
+            dependsOn = { "horde-extra-648-accept" },
             excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 648, state = "activeOrCompleted" } },
-                        {
+                any = {
+                    {
+                        ["not"] = {
                             any = {
                                 { quest = { id = 648, state = "activeOrCompleted" } },
                                 {
-                                    all = {
+                                    any = {
+                                        { quest = { id = 648, state = "activeOrCompleted" } },
                                         {
-                                            any = {
+                                            all = {
                                                 {
                                                     any = {
-                                                        { quest = { id = 351, state = "activeOrCompleted" } },
-                                                        { all = { { item = { name = "OOX-17/TN Distress Beacon", minCount = 1 } } } },
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 351, state = "activeOrCompleted" } },
+                                                                { all = { { item = { minCount = 1, name = "OOX-17/TN Distress Beacon" } } } },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 648, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 648, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 351, state = "activeOrCompleted" } },
+                                                                { all = { { item = { minCount = 1, name = "OOX-17/TN Distress Beacon" } } } },
+                                                            },
+                                                        },
                                                     },
                                                 },
                                             },
@@ -12005,6 +12105,90 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-extra-648-objective",
+            kind = "objective",
+            requiredQuests = { { mode = "any", quests = { 351 } } },
+            route = {},
+            text = "Escort OOX-17/TN to Steamwheedle Port. Follow the quest log for the destination.",
+            useClientPin = true,
+            useClientText = false,
+        },
+        {
+            complete = { quest = { id = 648, state = "completed" } },
+            conditions = { all = { { faction = "Horde" }, { level = { min = 43 } } } },
+            dependsOn = { "horde-extra-648-objective" },
+            excludeWhen = {
+                any = {
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 648, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 648, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 351, state = "activeOrCompleted" } },
+                                                                { all = { { item = { minCount = 1, name = "OOX-17/TN Distress Beacon" } } } },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 648, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 648, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 351, state = "activeOrCompleted" } },
+                                                                { all = { { item = { minCount = 1, name = "OOX-17/TN Distress Beacon" } } } },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
+            id = "horde-extra-648-turnin",
+            kind = "turnin",
+            requiredQuests = { { mode = "any", quests = { 351 } } },
+            route = {
+                {
+                    label = "Oglethorpe Obnoticus",
+                    mapID = 1434,
+                    offMapText = "Travel to Oglethorpe Obnoticus in Stranglethorn Vale.",
+                    x = 0.282,
+                    y = 0.762,
+                },
+            },
+            text = "Turn in Rescue OOX-17/TN! to Oglethorpe Obnoticus.",
+            useClientPin = true,
+            useClientText = false,
+            useQuestNavigation = true,
         },
     },
 })

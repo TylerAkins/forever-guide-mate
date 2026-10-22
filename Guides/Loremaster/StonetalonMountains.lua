@@ -6,7 +6,7 @@ ns:RegisterGuide({
     id = "loremaster-stonetalon-mountains",
     title = "Stonetalon Mountains",
     category = "Loremaster Guides",
-    revision = 1,
+    revision = 2,
     routeMode = "ordered",
     loremasterExpanded = true,
     goals = {
@@ -59,13 +59,13 @@ ns:RegisterGuide({
                     y = 0.6715,
                 },
             },
+            sourceActionID = "turnin-1085-on-guard-in-stonetalon",
+            sourceGuide = "leveling-era-alliance-ashenvale-and-stonetalon-mountains",
             sourceStep = 64,
             text = "Turn in On Guard in Stonetalon to Gaxim Rustfizzle.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-ashenvale-and-stonetalon-mountains",
-            sourceActionID = "turnin-1085-on-guard-in-stonetalon",
         },
         {
             complete = { quest = { id = 1071, state = "activeOrCompleted" } },
@@ -261,13 +261,13 @@ ns:RegisterGuide({
                     y = 0.626,
                 },
             },
+            sourceActionID = "turnin-1093-super-reaper-6000",
+            sourceGuide = "leveling-era-alliance-ashenvale-and-stonetalon-mountains",
             sourceStep = 68,
             text = "Turn in Super Reaper 6000 to Ziz Fizziks.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-ashenvale-and-stonetalon-mountains",
-            sourceActionID = "turnin-1093-super-reaper-6000",
         },
         {
             complete = { quest = { id = 1071, state = "completed" } },
@@ -277,25 +277,6 @@ ns:RegisterGuide({
                 "alliance-leveling-era-alliance-ashenvale-and-stonetalon-mountains-objective-1071-1-venture-co-logger",
                 "alliance-leveling-era-alliance-ashenvale-and-stonetalon-mountains-objective-1071-2-venture-co-deforester",
             },
-            id = "alliance-leveling-era-alliance-ashenvale-and-stonetalon-mountains-turnin-1071-a-gnome-s-respite",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 1085 } } },
-            route = {
-                {
-                    label = "Gaxim Rustfizzle",
-                    mapID = 1442,
-                    offMapText = "Travel to Gaxim Rustfizzle in Stonetalon Mountains.",
-                    x = 0.5952,
-                    y = 0.6715,
-                },
-            },
-            sourceStep = 69,
-            text = "Turn in A Gnome's Respite to Gaxim Rustfizzle.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-ashenvale-and-stonetalon-mountains",
-            sourceActionID = "turnin-1071-a-gnome-s-respite",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -316,6 +297,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-ashenvale-and-stonetalon-mountains-turnin-1071-a-gnome-s-respite",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 1085 } } },
+            route = {
+                {
+                    label = "Gaxim Rustfizzle",
+                    mapID = 1442,
+                    offMapText = "Travel to Gaxim Rustfizzle in Stonetalon Mountains.",
+                    x = 0.5952,
+                    y = 0.6715,
+                },
+            },
+            sourceActionID = "turnin-1071-a-gnome-s-respite",
+            sourceGuide = "leveling-era-alliance-ashenvale-and-stonetalon-mountains",
+            sourceStep = 69,
+            text = "Turn in A Gnome's Respite to Gaxim Rustfizzle.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 1072, state = "activeOrCompleted" } },
@@ -515,25 +515,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 1072, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 17 } }, { race = { 1, 3, 4, 7, 95 } } } },
             dependsOn = {},
-            id = "alliance-leveling-era-alliance-wetlands-turnin-1072-an-old-colleague",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 1071 } } },
-            route = {
-                {
-                    label = "Lomac Gearstrip",
-                    mapID = 1455,
-                    offMapText = "Travel to Lomac Gearstrip in Ironforge.",
-                    x = 0.7209,
-                    y = 0.5188,
-                },
-            },
-            sourceStep = 42,
-            text = "Turn in An Old Colleague to Lomac Gearstrip.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-wetlands",
-            sourceActionID = "turnin-1072-an-old-colleague",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -568,6 +549,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-wetlands-turnin-1072-an-old-colleague",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 1071 } } },
+            route = {
+                {
+                    label = "Lomac Gearstrip",
+                    mapID = 1455,
+                    offMapText = "Travel to Lomac Gearstrip in Ironforge.",
+                    x = 0.7209,
+                    y = 0.5188,
+                },
+            },
+            sourceActionID = "turnin-1072-an-old-colleague",
+            sourceGuide = "leveling-era-alliance-wetlands",
+            sourceStep = 42,
+            text = "Turn in An Old Colleague to Lomac Gearstrip.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 1073, state = "activeOrCompleted" } },
@@ -721,25 +721,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 1073, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 17 } }, { race = { 1, 3, 4, 7, 95 } } } },
             dependsOn = { "alliance-leveling-era-alliance-wetlands-accept-1073-ineptitude-chemicals-fun" },
-            id = "alliance-leveling-era-alliance-wetlands-turnin-1073-ineptitude-chemicals-fun",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 1072 } } },
-            route = {
-                {
-                    label = "Lomac Gearstrip",
-                    mapID = 1455,
-                    offMapText = "Travel to Lomac Gearstrip in Ironforge.",
-                    x = 0.7209,
-                    y = 0.5188,
-                },
-            },
-            sourceStep = 44,
-            text = "Turn in Ineptitude + Chemicals = Fun to Lomac Gearstrip.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-wetlands",
-            sourceActionID = "turnin-1073-ineptitude-chemicals-fun",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -788,30 +769,30 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-wetlands-turnin-1073-ineptitude-chemicals-fun",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 1072 } } },
+            route = {
+                {
+                    label = "Lomac Gearstrip",
+                    mapID = 1455,
+                    offMapText = "Travel to Lomac Gearstrip in Ironforge.",
+                    x = 0.7209,
+                    y = 0.5188,
+                },
+            },
+            sourceActionID = "turnin-1073-ineptitude-chemicals-fun",
+            sourceGuide = "leveling-era-alliance-wetlands",
+            sourceStep = 44,
+            text = "Turn in Ineptitude + Chemicals = Fun to Lomac Gearstrip.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 1075, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 17 } }, { race = { 1, 3, 4, 7, 95 } } } },
             dependsOn = {},
-            id = "alliance-leveling-era-alliance-wetlands-turnin-1075-a-scroll-from-mauren",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 1071 } } },
-            route = {
-                {
-                    label = "Collin Mauren",
-                    mapID = 1453,
-                    offMapText = "Travel to Collin Mauren in Stormwind City.",
-                    x = 0.4309,
-                    y = 0.8038,
-                },
-            },
-            sourceStep = 51,
-            text = "Turn in A Scroll from Mauren to Collin Mauren.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-wetlands",
-            sourceActionID = "turnin-1075-a-scroll-from-mauren",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -846,6 +827,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-wetlands-turnin-1075-a-scroll-from-mauren",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 1071 } } },
+            route = {
+                {
+                    label = "Collin Mauren",
+                    mapID = 1453,
+                    offMapText = "Travel to Collin Mauren in Stormwind City.",
+                    x = 0.4309,
+                    y = 0.8038,
+                },
+            },
+            sourceActionID = "turnin-1075-a-scroll-from-mauren",
+            sourceGuide = "leveling-era-alliance-wetlands",
+            sourceStep = 51,
+            text = "Turn in A Scroll from Mauren to Collin Mauren.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             id = "visit-entry-leveling-era-alliance-stonetalon-mountains-and-ashenvale",
@@ -993,13 +993,13 @@ ns:RegisterGuide({
                     y = 0.081,
                 },
             },
+            sourceActionID = "turnin-1057-reclaiming-the-charred-vale",
+            sourceGuide = "leveling-era-alliance-stonetalon-mountains-and-ashenvale",
             sourceStep = 8,
             text = "Turn in Reclaiming the Charred Vale to Keeper Albagorm.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-stonetalon-mountains-and-ashenvale",
-            sourceActionID = "turnin-1057-reclaiming-the-charred-vale",
         },
         {
             complete = { quest = { id = 1059, state = "activeOrCompleted" } },
@@ -1058,25 +1058,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 1059, state = "completed" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 20 } }, { race = { 1, 3, 4, 7, 95 } } } },
             dependsOn = {},
-            id = "alliance-leveling-era-alliance-dustwallow-marsh-and-thousand-needles-turnin-1059-reclaiming-the-charred-vale",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 1057 } } },
-            route = {
-                {
-                    label = "Falfindel Waywarder",
-                    mapID = 1444,
-                    offMapText = "Travel to Falfindel Waywarder in Feralas.",
-                    x = 0.8964,
-                    y = 0.4656,
-                },
-            },
-            sourceStep = 27,
-            text = "Turn in Reclaiming the Charred Vale to Falfindel Waywarder.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-alliance-dustwallow-marsh-and-thousand-needles",
-            sourceActionID = "turnin-1059-reclaiming-the-charred-vale",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -1097,6 +1078,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-leveling-era-alliance-dustwallow-marsh-and-thousand-needles-turnin-1059-reclaiming-the-charred-vale",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 1057 } } },
+            route = {
+                {
+                    label = "Falfindel Waywarder",
+                    mapID = 1444,
+                    offMapText = "Travel to Falfindel Waywarder in Feralas.",
+                    x = 0.8964,
+                    y = 0.4656,
+                },
+            },
+            sourceActionID = "turnin-1059-reclaiming-the-charred-vale",
+            sourceGuide = "leveling-era-alliance-dustwallow-marsh-and-thousand-needles",
+            sourceStep = 27,
+            text = "Turn in Reclaiming the Charred Vale to Falfindel Waywarder.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             id = "visit-entry-leveling-era-horde-the-barrens-and-stonetalon-mountain",
@@ -1124,13 +1124,13 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
+            checkpointQuest = 6421,
+            complete = { level = { min = 14 } },
+            conditions = { all = { { faction = "Horde" } } },
             id = "horde-extra-6421-level",
             kind = "note",
-            checkpointQuest = 6421,
-            text = "Reach level 18 before this visit.",
-            conditions = { all = { { faction = "Horde" } } },
-            complete = { level = { min = 18 } },
-            requiredLevel = 18,
+            requiredLevel = 14,
+            text = "Reach level 14 before this visit.",
         },
         {
             id = "horde-extra-6421-accept",
@@ -1171,32 +1171,28 @@ ns:RegisterGuide({
             dependsOn = { "horde-extra-6421-accept" },
         },
         {
+            complete = { quest = { id = 6421, state = "completed" } },
+            conditions = { all = { { faction = "Horde" }, { level = { min = 14 } } } },
+            dependsOn = { "horde-extra-6421-objective" },
             id = "horde-extra-6421-turnin",
             kind = "turnin",
-            text = "Turn in Boulderslide Ravine to Mor'rogal.",
-            conditions = { all = { { faction = "Horde" }, { level = { min = 14 } } } },
-            route = {
-                {
-                    mapID = 1442,
-                    x = 0.47200000000000003,
-                    y = 0.64,
-                    label = "Mor'rogal",
-                    offMapText = "Travel to Mor'rogal in Stonetalon Mountains.",
-                },
-            },
-            complete = { quest = { id = 6421, state = "completed" } },
             requiredQuests = {},
+            route = {
+                { label = "Mor'rogal", mapID = 1442, offMapText = "Travel to Mor'rogal in Stonetalon Mountains.", x = 0.472, y = 0.64 },
+            },
+            text = "Turn in Boulderslide Ravine to Mor'rogal.",
+            useClientPin = true,
             useClientText = false,
-            dependsOn = { "horde-extra-6421-objective" },
+            useQuestNavigation = true,
         },
         {
+            checkpointQuest = 6284,
+            complete = { level = { min = 15 } },
+            conditions = { all = { { faction = "Horde" } } },
             id = "horde-extra-6284-level",
             kind = "note",
-            checkpointQuest = 6284,
-            text = "Reach level 21 before this visit.",
-            conditions = { all = { { faction = "Horde" } } },
-            complete = { level = { min = 21 } },
-            requiredLevel = 21,
+            requiredLevel = 15,
+            text = "Reach level 15 before this visit.",
         },
         {
             id = "horde-extra-6284-accept",
@@ -1231,23 +1227,25 @@ ns:RegisterGuide({
             dependsOn = { "horde-extra-6284-accept" },
         },
         {
+            complete = { quest = { id = 6284, state = "completed" } },
+            conditions = { all = { { faction = "Horde" }, { level = { min = 15 } } } },
+            dependsOn = { "horde-extra-6284-objective" },
             id = "horde-extra-6284-turnin",
             kind = "turnin",
-            text = "Turn in Arachnophobia to Maggran Earthbinder.",
-            conditions = { all = { { faction = "Horde" }, { level = { min = 15 } } } },
+            requiredQuests = {},
             route = {
                 {
-                    mapID = 1442,
-                    x = 0.47200000000000003,
-                    y = 0.61,
                     label = "Maggran Earthbinder",
+                    mapID = 1442,
                     offMapText = "Travel to Maggran Earthbinder in Stonetalon Mountains.",
+                    x = 0.472,
+                    y = 0.61,
                 },
             },
-            complete = { quest = { id = 6284, state = "completed" } },
-            requiredQuests = {},
+            text = "Turn in Arachnophobia to Maggran Earthbinder.",
+            useClientPin = true,
             useClientText = false,
-            dependsOn = { "horde-extra-6284-objective" },
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 1061, state = "activeOrCompleted" } },
@@ -1282,13 +1280,13 @@ ns:RegisterGuide({
                     y = 0.2787,
                 },
             },
+            sourceActionID = "turnin-1061-the-spirits-of-stonetalon",
+            sourceGuide = "leveling-era-horde-the-barrens-and-stonetalon-mountain",
             sourceStep = 136,
             text = "Turn in The Spirits of Stonetalon to Seereth Stonebreak.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-the-barrens-and-stonetalon-mountain",
-            sourceActionID = "turnin-1061-the-spirits-of-stonetalon",
         },
         {
             complete = { quest = { id = 1062, state = "activeOrCompleted" } },
@@ -1417,13 +1415,13 @@ ns:RegisterGuide({
                     y = 0.2779,
                 },
             },
+            sourceActionID = "turnin-6548-avenge-my-village",
+            sourceGuide = "leveling-era-horde-the-barrens-and-stonetalon-mountain",
             sourceStep = 139,
             text = "Turn in Avenge My Village to Makaba Flathoof.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-the-barrens-and-stonetalon-mountain",
-            sourceActionID = "turnin-6548-avenge-my-village",
         },
         {
             complete = { quest = { id = 6629, state = "activeOrCompleted" } },
@@ -1687,13 +1685,13 @@ ns:RegisterGuide({
                     y = 0.626,
                 },
             },
+            sourceActionID = "turnin-1093-super-reaper-6000",
+            sourceGuide = "leveling-era-horde-the-barrens-and-stonetalon-mountain",
             sourceStep = 153,
             text = "Turn in Super Reaper 6000 to Ziz Fizziks.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-the-barrens-and-stonetalon-mountain",
-            sourceActionID = "turnin-1093-super-reaper-6000",
         },
         {
             complete = { quest = { id = 1094, state = "activeOrCompleted" } },
@@ -1735,19 +1733,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 1094, state = "completed" } },
             conditions = { all = { { faction = "Horde" }, { level = { min = 16 } } } },
             dependsOn = { "horde-leveling-era-horde-the-barrens-and-stonetalon-mountain-accept-1094-further-instructions" },
-            id = "horde-leveling-era-horde-the-barrens-and-stonetalon-mountain-turnin-1094-further-instructions",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 1093 } } },
-            route = {
-                { label = "Sputtervalve", mapID = 1413, offMapText = "Travel to Sputtervalve in The Barrens.", x = 0.6298, y = 0.3722 },
-            },
-            sourceStep = 167,
-            text = "Turn in Further Instructions to Sputtervalve.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-the-barrens-and-stonetalon-mountain",
-            sourceActionID = "turnin-1094-further-instructions",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -1761,6 +1746,19 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-the-barrens-and-stonetalon-mountain-turnin-1094-further-instructions",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 1093 } } },
+            route = {
+                { label = "Sputtervalve", mapID = 1413, offMapText = "Travel to Sputtervalve in The Barrens.", x = 0.6298, y = 0.3722 },
+            },
+            sourceActionID = "turnin-1094-further-instructions",
+            sourceGuide = "leveling-era-horde-the-barrens-and-stonetalon-mountain",
+            sourceStep = 167,
+            text = "Turn in Further Instructions to Sputtervalve.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 1095, state = "activeOrCompleted" } },
@@ -1812,25 +1810,6 @@ ns:RegisterGuide({
                 "horde-leveling-era-horde-the-barrens-and-stonetalon-mountain-accept-1062-goblin-invaders",
                 "horde-leveling-era-horde-the-barrens-and-stonetalon-mountain-objective-1062-1-venture-co-logger",
             },
-            id = "horde-leveling-era-horde-the-barrens-and-stonetalon-mountain-turnin-1062-goblin-invaders",
-            kind = "turnin",
-            requiredQuests = { { conditions = { faction = "Horde" }, mode = "all", quests = { 1061 } } },
-            route = {
-                {
-                    label = "Seereth Stonebreak",
-                    mapID = 1413,
-                    offMapText = "Travel to Seereth Stonebreak in The Barrens.",
-                    x = 0.3526,
-                    y = 0.2788,
-                },
-            },
-            sourceStep = 249,
-            text = "Turn in Goblin Invaders to Seereth Stonebreak.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-the-barrens-and-stonetalon-mountain",
-            sourceActionID = "turnin-1062-goblin-invaders",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -1856,6 +1835,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-the-barrens-and-stonetalon-mountain-turnin-1062-goblin-invaders",
+            kind = "turnin",
+            requiredQuests = { { conditions = { faction = "Horde" }, mode = "all", quests = { 1061 } } },
+            route = {
+                {
+                    label = "Seereth Stonebreak",
+                    mapID = 1413,
+                    offMapText = "Travel to Seereth Stonebreak in The Barrens.",
+                    x = 0.3526,
+                    y = 0.2788,
+                },
+            },
+            sourceActionID = "turnin-1062-goblin-invaders",
+            sourceGuide = "leveling-era-horde-the-barrens-and-stonetalon-mountain",
+            sourceStep = 249,
+            text = "Turn in Goblin Invaders to Seereth Stonebreak.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 1063, state = "activeOrCompleted" } },
@@ -1997,13 +1995,13 @@ ns:RegisterGuide({
                     y = 0.2779,
                 },
             },
+            sourceActionID = "turnin-6523-protect-kaya",
+            sourceGuide = "leveling-era-horde-the-barrens-and-stonetalon-mountain",
             sourceStep = 251,
             text = "Turn in Protect Kaya to Makaba Flathoof.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-the-barrens-and-stonetalon-mountain",
-            sourceActionID = "turnin-6523-protect-kaya",
         },
         {
             complete = { quest = { id = 6401, state = "activeOrCompleted" } },
@@ -2055,25 +2053,6 @@ ns:RegisterGuide({
                 "horde-leveling-era-horde-the-barrens-and-stonetalon-mountain-accept-6629-kill-grundig-darkcloud",
                 "horde-leveling-era-horde-the-barrens-and-stonetalon-mountain-objective-6629-2-grimtotem-brute",
             },
-            id = "horde-leveling-era-horde-the-barrens-and-stonetalon-mountain-turnin-6629-kill-grundig-darkcloud",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 6548 } } },
-            route = {
-                {
-                    label = "Makaba Flathoof",
-                    mapID = 1413,
-                    offMapText = "Travel to Makaba Flathoof in The Barrens.",
-                    x = 0.3519,
-                    y = 0.2779,
-                },
-            },
-            sourceStep = 251,
-            text = "Turn in Kill Grundig Darkcloud to Makaba Flathoof.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-the-barrens-and-stonetalon-mountain",
-            sourceActionID = "turnin-6629-kill-grundig-darkcloud",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -2094,6 +2073,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-the-barrens-and-stonetalon-mountain-turnin-6629-kill-grundig-darkcloud",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 6548 } } },
+            route = {
+                {
+                    label = "Makaba Flathoof",
+                    mapID = 1413,
+                    offMapText = "Travel to Makaba Flathoof in The Barrens.",
+                    x = 0.3519,
+                    y = 0.2779,
+                },
+            },
+            sourceActionID = "turnin-6629-kill-grundig-darkcloud",
+            sourceGuide = "leveling-era-horde-the-barrens-and-stonetalon-mountain",
+            sourceStep = 251,
+            text = "Turn in Kill Grundig Darkcloud to Makaba Flathoof.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             checkpointQuest = 1058,
@@ -2153,37 +2151,18 @@ ns:RegisterGuide({
                     y = 0.9502,
                 },
             },
+            sourceActionID = "turnin-6461-blood-feeders",
+            sourceGuide = "leveling-era-horde-the-barrens-and-stonetalon-mountain",
             sourceStep = 254,
             text = "Turn in Blood Feeders to Xen'Zilla.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-the-barrens-and-stonetalon-mountain",
-            sourceActionID = "turnin-6461-blood-feeders",
         },
         {
             complete = { quest = { id = 6401, state = "completed" } },
             conditions = { all = { { faction = "Horde" }, { level = { min = 12 } }, { race = { 2, 5, 6, 8, 96 } } } },
             dependsOn = { "horde-leveling-era-horde-the-barrens-and-stonetalon-mountain-accept-6401-kaya-s-alive" },
-            id = "horde-leveling-era-horde-the-barrens-and-stonetalon-mountain-turnin-6401-kaya-s-alive",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 6523 } } },
-            route = {
-                {
-                    label = "Tammra Windfield",
-                    mapID = 1442,
-                    offMapText = "Travel to Tammra Windfield in Stonetalon Mountains.",
-                    x = 0.4746,
-                    y = 0.5838,
-                },
-            },
-            sourceStep = 255,
-            text = "Turn in Kaya's Alive to Tammra Windfield.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-the-barrens-and-stonetalon-mountain",
-            sourceActionID = "turnin-6401-kaya-s-alive",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -2204,30 +2183,30 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-the-barrens-and-stonetalon-mountain-turnin-6401-kaya-s-alive",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 6523 } } },
+            route = {
+                {
+                    label = "Tammra Windfield",
+                    mapID = 1442,
+                    offMapText = "Travel to Tammra Windfield in Stonetalon Mountains.",
+                    x = 0.4746,
+                    y = 0.5838,
+                },
+            },
+            sourceActionID = "turnin-6401-kaya-s-alive",
+            sourceGuide = "leveling-era-horde-the-barrens-and-stonetalon-mountain",
+            sourceStep = 255,
+            text = "Turn in Kaya's Alive to Tammra Windfield.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 1095, state = "completed" } },
             conditions = { all = { { faction = "Horde" }, { level = { min = 16 } } } },
             dependsOn = { "horde-leveling-era-horde-the-barrens-and-stonetalon-mountain-accept-1095-further-instructions" },
-            id = "horde-leveling-era-horde-the-barrens-and-stonetalon-mountain-turnin-1095-further-instructions",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 1094 } } },
-            route = {
-                {
-                    label = "Ziz Fizziks",
-                    mapID = 1442,
-                    offMapText = "Travel to Ziz Fizziks in Stonetalon Mountains.",
-                    x = 0.5899,
-                    y = 0.626,
-                },
-            },
-            sourceStep = 257,
-            text = "Turn in Further Instructions to Ziz Fizziks.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-the-barrens-and-stonetalon-mountain",
-            sourceActionID = "turnin-1095-further-instructions",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -2254,6 +2233,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-the-barrens-and-stonetalon-mountain-turnin-1095-further-instructions",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 1094 } } },
+            route = {
+                {
+                    label = "Ziz Fizziks",
+                    mapID = 1442,
+                    offMapText = "Travel to Ziz Fizziks in Stonetalon Mountains.",
+                    x = 0.5899,
+                    y = 0.626,
+                },
+            },
+            sourceActionID = "turnin-1095-further-instructions",
+            sourceGuide = "leveling-era-horde-the-barrens-and-stonetalon-mountain",
+            sourceStep = 257,
+            text = "Turn in Further Instructions to Ziz Fizziks.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { questObjective = { count = 1, id = 1068, index = 2 } },
@@ -2379,25 +2377,6 @@ ns:RegisterGuide({
             complete = { quest = { id = 1063, state = "completed" } },
             conditions = { all = { { faction = "Horde" }, { level = { min = 13 } }, { race = { 2, 5, 6, 8, 96 } } } },
             dependsOn = {},
-            id = "horde-leveling-era-horde-ashenvale-turnin-1063-the-elder-crone",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 1062 } } },
-            route = {
-                {
-                    label = "Magatha Grimtotem",
-                    mapID = 1456,
-                    offMapText = "Travel to Magatha Grimtotem in Thunder Bluff.",
-                    x = 0.6985,
-                    y = 0.3091,
-                },
-            },
-            sourceStep = 14,
-            text = "Turn in The Elder Crone to Magatha Grimtotem.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-ashenvale",
-            sourceActionID = "turnin-1063-the-elder-crone",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -2437,6 +2416,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-ashenvale-turnin-1063-the-elder-crone",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 1062 } } },
+            route = {
+                {
+                    label = "Magatha Grimtotem",
+                    mapID = 1456,
+                    offMapText = "Travel to Magatha Grimtotem in Thunder Bluff.",
+                    x = 0.6985,
+                    y = 0.3091,
+                },
+            },
+            sourceActionID = "turnin-1063-the-elder-crone",
+            sourceGuide = "leveling-era-horde-ashenvale",
+            sourceStep = 14,
+            text = "Turn in The Elder Crone to Magatha Grimtotem.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             id = "visit-entry-leveling-era-horde-stonetalon-mountains",
@@ -2763,25 +2761,6 @@ ns:RegisterGuide({
                 "horde-leveling-era-horde-stonetalon-mountains-accept-1096-gerenzo-wrenchwhistle",
                 "horde-leveling-era-horde-stonetalon-mountains-objective-1096-quest-work",
             },
-            id = "horde-leveling-era-horde-stonetalon-mountains-turnin-1096-gerenzo-wrenchwhistle",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 1095 } } },
-            route = {
-                {
-                    label = "Ziz Fizziks",
-                    mapID = 1442,
-                    offMapText = "Travel to Ziz Fizziks in Stonetalon Mountains.",
-                    x = 0.5899,
-                    y = 0.626,
-                },
-            },
-            sourceStep = 8,
-            text = "Turn in Gerenzo Wrenchwhistle to Ziz Fizziks.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-stonetalon-mountains",
-            sourceActionID = "turnin-1096-gerenzo-wrenchwhistle",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -2821,6 +2800,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-stonetalon-mountains-turnin-1096-gerenzo-wrenchwhistle",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 1095 } } },
+            route = {
+                {
+                    label = "Ziz Fizziks",
+                    mapID = 1442,
+                    offMapText = "Travel to Ziz Fizziks in Stonetalon Mountains.",
+                    x = 0.5899,
+                    y = 0.626,
+                },
+            },
+            sourceActionID = "turnin-1096-gerenzo-wrenchwhistle",
+            sourceGuide = "leveling-era-horde-stonetalon-mountains",
+            sourceStep = 8,
+            text = "Turn in Gerenzo Wrenchwhistle to Ziz Fizziks.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { questObjective = { count = 10, id = 6393, index = 1, text = "Burning Ravager" } },
@@ -3077,13 +3075,13 @@ ns:RegisterGuide({
             route = {
                 { label = "Tsunaman", mapID = 1442, offMapText = "Travel to Tsunaman in Stonetalon Mountains.", x = 0.4737, y = 0.6429 },
             },
+            sourceActionID = "turnin-6393-elemental-war",
+            sourceGuide = "leveling-era-horde-stonetalon-mountains",
             sourceStep = 22,
             text = "Turn in Elemental War to Tsunaman.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-stonetalon-mountains",
-            sourceActionID = "turnin-6393-elemental-war",
         },
         {
             complete = { quest = { id = 6282, state = "completed" } },
@@ -3107,13 +3105,13 @@ ns:RegisterGuide({
                     y = 0.6114,
                 },
             },
+            sourceActionID = "turnin-6282-harpies-threaten",
+            sourceGuide = "leveling-era-horde-stonetalon-mountains",
             sourceStep = 23,
             text = "Turn in Harpies Threaten to Maggran Earthbinder.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-stonetalon-mountains",
-            sourceActionID = "turnin-6282-harpies-threaten",
         },
         {
             complete = { quest = { id = 6301, state = "completed" } },
@@ -3134,13 +3132,13 @@ ns:RegisterGuide({
                     y = 0.5838,
                 },
             },
+            sourceActionID = "turnin-6301-cycle-of-rebirth",
+            sourceGuide = "leveling-era-horde-stonetalon-mountains",
             sourceStep = 24,
             text = "Turn in Cycle of Rebirth to Tammra Windfield.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-stonetalon-mountains",
-            sourceActionID = "turnin-6301-cycle-of-rebirth",
         },
         {
             complete = { quest = { id = 6381, state = "activeOrCompleted" } },
@@ -3206,73 +3204,91 @@ ns:RegisterGuide({
                     y = 0.6042,
                 },
             },
+            sourceActionID = "turnin-1087-cenarius-legacy",
+            sourceGuide = "leveling-era-horde-stonetalon-mountains",
             sourceStep = 25,
             text = "Turn in Cenarius' Legacy to Braelyn Firehand.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-stonetalon-mountains",
-            sourceActionID = "turnin-1087-cenarius-legacy",
         },
         {
+            checkpointQuest = 6283,
+            complete = { level = { min = 18 } },
+            conditions = { all = { { faction = "Horde" } } },
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 6283, state = "activeOrCompleted" } },
+                        {
+                            any = {
+                                { quest = { id = 6283, state = "activeOrCompleted" } },
+                                {
+                                    all = {
+                                        { faction = "Horde" },
+                                        {
+                                            any = { { any = { { quest = { id = 6282, state = "activeOrCompleted" } }, { all = { { faction = "Horde" } } } } } },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
             id = "horde-extra-6283-level",
             kind = "note",
-            checkpointQuest = 6283,
-            text = "Reach level 26 before this visit.",
-            conditions = { all = { { faction = "Horde" } } },
-            complete = { level = { min = 26 } },
-            requiredLevel = 26,
-            excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 6283, state = "activeOrCompleted" } },
-                        {
-                            any = {
-                                { quest = { id = 6283, state = "activeOrCompleted" } },
-                                {
-                                    all = {
-                                        { faction = "Horde" },
-                                        {
-                                            any = { { any = { { quest = { id = 6282, state = "activeOrCompleted" } }, { all = { { faction = "Horde" } } } } } },
-                                        },
-                                    },
-                                },
-                            },
-                        },
-                    },
-                },
-            },
+            requiredLevel = 18,
+            text = "Reach level 18 before this visit.",
         },
         {
-            id = "horde-extra-6283-accept",
-            kind = "accept",
-            text = "Accept Bloodfury Bloodline from Maggran Earthbinder.",
-            conditions = { all = { { faction = "Horde" }, { level = { min = 18 } } } },
-            route = {
-                {
-                    mapID = 1442,
-                    x = 0.47200000000000003,
-                    y = 0.61,
-                    label = "Maggran Earthbinder",
-                    offMapText = "Travel to Maggran Earthbinder in Stonetalon Mountains.",
-                },
-            },
             complete = { quest = { id = 6283, state = "activeOrCompleted" } },
-            requiredQuests = { { mode = "any", quests = { 6282 } } },
-            useClientText = false,
+            conditions = { all = { { faction = "Horde" }, { level = { min = 18 } } } },
             dependsOn = { "horde-extra-6283-level" },
             excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 6283, state = "activeOrCompleted" } },
-                        {
+                any = {
+                    {
+                        ["not"] = {
                             any = {
                                 { quest = { id = 6283, state = "activeOrCompleted" } },
                                 {
-                                    all = {
-                                        { faction = "Horde" },
+                                    any = {
+                                        { quest = { id = 6283, state = "activeOrCompleted" } },
                                         {
-                                            any = { { any = { { quest = { id = 6282, state = "activeOrCompleted" } }, { all = { { faction = "Horde" } } } } } },
+                                            all = {
+                                                { faction = "Horde" },
+                                                {
+                                                    any = { { any = { { quest = { id = 6282, state = "activeOrCompleted" } }, { all = { { faction = "Horde" } } } } } },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 6283, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 6283, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                { faction = "Horde" },
+                                                { race = { 2, 5, 6, 8 } },
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 6282, state = "activeOrCompleted" } },
+                                                                { all = { { faction = "Horde" }, { race = { 2, 5, 6, 8 } } } },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
                                         },
                                     },
                                 },
@@ -3281,37 +3297,69 @@ ns:RegisterGuide({
                     },
                 },
             },
-        },
-        {
-            id = "horde-extra-6283-objective",
-            kind = "objective",
-            text = "Slay Bloodfury Ripper and loot Bloodfury Ripper's Remains. This is an elite. Bring a group.",
-            conditions = { all = { { faction = "Horde" }, { level = { min = 18 } } } },
+            id = "horde-extra-6283-accept",
+            kind = "accept",
+            requiredQuests = { { mode = "any", quests = { 6282 } } },
             route = {
                 {
+                    label = "Maggran Earthbinder",
                     mapID = 1442,
-                    x = 0.31,
-                    y = 0.62,
-                    label = "Bloodfury Ripper",
-                    offMapText = "Travel to Bloodfury Ripper in Stonetalon Mountains.",
+                    offMapText = "Travel to Maggran Earthbinder in Stonetalon Mountains.",
+                    x = 0.472,
+                    y = 0.61,
                 },
             },
-            complete = { quest = { id = 6283, state = "complete" } },
-            requiredQuests = { { mode = "any", quests = { 6282 } } },
+            text = "Accept Bloodfury Bloodline from Maggran Earthbinder.",
             useClientText = false,
+        },
+        {
+            complete = { quest = { id = 6283, state = "complete" } },
+            conditions = { all = { { faction = "Horde" }, { level = { min = 18 } } } },
             dependsOn = { "horde-extra-6283-accept" },
             excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 6283, state = "activeOrCompleted" } },
-                        {
+                any = {
+                    {
+                        ["not"] = {
                             any = {
                                 { quest = { id = 6283, state = "activeOrCompleted" } },
                                 {
-                                    all = {
-                                        { faction = "Horde" },
+                                    any = {
+                                        { quest = { id = 6283, state = "activeOrCompleted" } },
                                         {
-                                            any = { { any = { { quest = { id = 6282, state = "activeOrCompleted" } }, { all = { { faction = "Horde" } } } } } },
+                                            all = {
+                                                { faction = "Horde" },
+                                                {
+                                                    any = { { any = { { quest = { id = 6282, state = "activeOrCompleted" } }, { all = { { faction = "Horde" } } } } } },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 6283, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 6283, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                { faction = "Horde" },
+                                                { race = { 2, 5, 6, 8 } },
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 6282, state = "activeOrCompleted" } },
+                                                                { all = { { faction = "Horde" }, { race = { 2, 5, 6, 8 } } } },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
                                         },
                                     },
                                 },
@@ -3320,37 +3368,70 @@ ns:RegisterGuide({
                     },
                 },
             },
-        },
-        {
-            id = "horde-extra-6283-turnin",
-            kind = "turnin",
-            text = "Turn in Bloodfury Bloodline to Maggran Earthbinder.",
-            conditions = { all = { { faction = "Horde" }, { level = { min = 18 } } } },
+            id = "horde-extra-6283-objective",
+            kind = "objective",
+            requiredQuests = { { mode = "any", quests = { 6282 } } },
             route = {
                 {
+                    label = "Bloodfury Ripper",
                     mapID = 1442,
-                    x = 0.47200000000000003,
-                    y = 0.61,
-                    label = "Maggran Earthbinder",
-                    offMapText = "Travel to Maggran Earthbinder in Stonetalon Mountains.",
+                    offMapText = "Travel to Bloodfury Ripper in Stonetalon Mountains.",
+                    x = 0.31,
+                    y = 0.62,
                 },
             },
-            complete = { quest = { id = 6283, state = "completed" } },
-            requiredQuests = { { mode = "any", quests = { 6282 } } },
+            text = "Slay Bloodfury Ripper and loot Bloodfury Ripper's Remains. This is an elite. Bring a group.",
+            useClientPin = true,
             useClientText = false,
+        },
+        {
+            complete = { quest = { id = 6283, state = "completed" } },
+            conditions = { all = { { faction = "Horde" }, { level = { min = 18 } } } },
             dependsOn = { "horde-extra-6283-objective" },
             excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 6283, state = "activeOrCompleted" } },
-                        {
+                any = {
+                    {
+                        ["not"] = {
                             any = {
                                 { quest = { id = 6283, state = "activeOrCompleted" } },
                                 {
-                                    all = {
-                                        { faction = "Horde" },
+                                    any = {
+                                        { quest = { id = 6283, state = "activeOrCompleted" } },
                                         {
-                                            any = { { any = { { quest = { id = 6282, state = "activeOrCompleted" } }, { all = { { faction = "Horde" } } } } } },
+                                            all = {
+                                                { faction = "Horde" },
+                                                {
+                                                    any = { { any = { { quest = { id = 6282, state = "activeOrCompleted" } }, { all = { { faction = "Horde" } } } } } },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 6283, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 6283, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                { faction = "Horde" },
+                                                { race = { 2, 5, 6, 8 } },
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 6282, state = "activeOrCompleted" } },
+                                                                { all = { { faction = "Horde" }, { race = { 2, 5, 6, 8 } } } },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
                                         },
                                     },
                                 },
@@ -3359,6 +3440,22 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-extra-6283-turnin",
+            kind = "turnin",
+            requiredQuests = { { mode = "any", quests = { 6282 } } },
+            route = {
+                {
+                    label = "Maggran Earthbinder",
+                    mapID = 1442,
+                    offMapText = "Travel to Maggran Earthbinder in Stonetalon Mountains.",
+                    x = 0.472,
+                    y = 0.61,
+                },
+            },
+            text = "Turn in Bloodfury Bloodline to Maggran Earthbinder.",
+            useClientPin = true,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { questObjective = { count = 10, id = 6381, index = 1 } },
@@ -3403,25 +3500,6 @@ ns:RegisterGuide({
                 "horde-leveling-era-horde-stonetalon-mountains-accept-6381-new-life",
                 "horde-leveling-era-horde-stonetalon-mountains-objective-6381-quest-work",
             },
-            id = "horde-leveling-era-horde-stonetalon-mountains-turnin-6381-new-life",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 6301 } } },
-            route = {
-                {
-                    label = "Tammra Windfield",
-                    mapID = 1442,
-                    offMapText = "Travel to Tammra Windfield in Stonetalon Mountains.",
-                    x = 0.4746,
-                    y = 0.5838,
-                },
-            },
-            sourceStep = 27,
-            text = "Turn in New Life to Tammra Windfield.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-stonetalon-mountains",
-            sourceActionID = "turnin-6381-new-life",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -3442,6 +3520,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-stonetalon-mountains-turnin-6381-new-life",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 6301 } } },
+            route = {
+                {
+                    label = "Tammra Windfield",
+                    mapID = 1442,
+                    offMapText = "Travel to Tammra Windfield in Stonetalon Mountains.",
+                    x = 0.4746,
+                    y = 0.5838,
+                },
+            },
+            sourceActionID = "turnin-6381-new-life",
+            sourceGuide = "leveling-era-horde-stonetalon-mountains",
+            sourceStep = 27,
+            text = "Turn in New Life to Tammra Windfield.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 1058, state = "completed" } },
@@ -3464,13 +3561,13 @@ ns:RegisterGuide({
                     y = 0.9794,
                 },
             },
+            sourceActionID = "turnin-1058-jin-zil-s-forest-magic",
+            sourceGuide = "leveling-era-horde-stonetalon-mountains",
             sourceStep = 28,
             text = "Turn in Jin'Zil's Forest Magic to Witch Doctor Jin'Zil.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-stonetalon-mountains",
-            sourceActionID = "turnin-1058-jin-zil-s-forest-magic",
         },
         {
             complete = { questObjective = { count = 1, id = 1068, index = 2 } },
@@ -3589,25 +3686,6 @@ ns:RegisterGuide({
                 "horde-leveling-era-horde-the-barrens-and-stonetalon-mountain-objective-1068-2-authored-XT-9",
                 "horde-leveling-era-horde-the-barrens-and-stonetalon-mountain-objective-1068-1-authored-XT-4",
             },
-            id = "horde-leveling-era-horde-stonetalon-mountains-turnin-1068-shredding-machines",
-            kind = "turnin",
-            requiredQuests = { { conditions = {}, mode = "any", quests = { 1062 } } },
-            route = {
-                {
-                    label = "Seereth Stonebreak",
-                    mapID = 1413,
-                    offMapText = "Travel to Seereth Stonebreak in The Barrens.",
-                    x = 0.3526,
-                    y = 0.2788,
-                },
-            },
-            sourceStep = 29,
-            text = "Turn in Shredding Machines to Seereth Stonebreak.",
-            useClientPin = false,
-            useClientText = false,
-            useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-stonetalon-mountains",
-            sourceActionID = "turnin-1068-shredding-machines",
             excludeWhen = {
                 ["not"] = {
                     any = {
@@ -3647,6 +3725,25 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-leveling-era-horde-stonetalon-mountains-turnin-1068-shredding-machines",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 1062 } } },
+            route = {
+                {
+                    label = "Seereth Stonebreak",
+                    mapID = 1413,
+                    offMapText = "Travel to Seereth Stonebreak in The Barrens.",
+                    x = 0.3526,
+                    y = 0.2788,
+                },
+            },
+            sourceActionID = "turnin-1068-shredding-machines",
+            sourceGuide = "leveling-era-horde-stonetalon-mountains",
+            sourceStep = 29,
+            text = "Turn in Shredding Machines to Seereth Stonebreak.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             id = "visit-entry-leveling-era-horde-thousand-needles",
@@ -3674,73 +3771,91 @@ ns:RegisterGuide({
                     y = 0.2166,
                 },
             },
+            sourceActionID = "turnin-5881-calling-in-the-reserves",
+            sourceGuide = "leveling-era-horde-thousand-needles",
             sourceStep = 3,
             text = "Turn in Calling in the Reserves to Grish Longrunner.",
             useClientPin = false,
             useClientText = false,
             useQuestNavigation = true,
-            sourceGuide = "leveling-era-horde-thousand-needles",
-            sourceActionID = "turnin-5881-calling-in-the-reserves",
         },
         {
+            checkpointQuest = 6481,
+            complete = { level = { min = 14 } },
+            conditions = { all = { { faction = "Horde" } } },
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 6481, state = "activeOrCompleted" } },
+                        {
+                            any = {
+                                { quest = { id = 6481, state = "activeOrCompleted" } },
+                                {
+                                    all = {
+                                        { faction = "Horde" },
+                                        {
+                                            any = { { any = { { quest = { id = 6421, state = "activeOrCompleted" } }, { all = { { faction = "Horde" } } } } } },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
             id = "horde-extra-6481-level",
             kind = "note",
-            checkpointQuest = 6481,
-            text = "Reach level 20 before this visit.",
-            conditions = { all = { { faction = "Horde" } } },
-            complete = { level = { min = 20 } },
-            requiredLevel = 20,
-            excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 6481, state = "activeOrCompleted" } },
-                        {
-                            any = {
-                                { quest = { id = 6481, state = "activeOrCompleted" } },
-                                {
-                                    all = {
-                                        { faction = "Horde" },
-                                        {
-                                            any = { { any = { { quest = { id = 6421, state = "activeOrCompleted" } }, { all = { { faction = "Horde" } } } } } },
-                                        },
-                                    },
-                                },
-                            },
-                        },
-                    },
-                },
-            },
+            requiredLevel = 14,
+            text = "Reach level 14 before this visit.",
         },
         {
-            id = "horde-extra-6481-accept",
-            kind = "accept",
-            text = "Accept Earthen Arise from Mor'rogal.",
-            conditions = { all = { { faction = "Horde" }, { level = { min = 14 } } } },
-            route = {
-                {
-                    mapID = 1442,
-                    x = 0.47200000000000003,
-                    y = 0.64,
-                    label = "Mor'rogal",
-                    offMapText = "Travel to Mor'rogal in Stonetalon Mountains.",
-                },
-            },
             complete = { quest = { id = 6481, state = "activeOrCompleted" } },
-            requiredQuests = { { mode = "any", quests = { 6421 } } },
-            useClientText = false,
+            conditions = { all = { { faction = "Horde" }, { level = { min = 14 } } } },
             dependsOn = { "horde-extra-6481-level" },
             excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 6481, state = "activeOrCompleted" } },
-                        {
+                any = {
+                    {
+                        ["not"] = {
                             any = {
                                 { quest = { id = 6481, state = "activeOrCompleted" } },
                                 {
-                                    all = {
-                                        { faction = "Horde" },
+                                    any = {
+                                        { quest = { id = 6481, state = "activeOrCompleted" } },
                                         {
-                                            any = { { any = { { quest = { id = 6421, state = "activeOrCompleted" } }, { all = { { faction = "Horde" } } } } } },
+                                            all = {
+                                                { faction = "Horde" },
+                                                {
+                                                    any = { { any = { { quest = { id = 6421, state = "activeOrCompleted" } }, { all = { { faction = "Horde" } } } } } },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 6481, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 6481, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                { faction = "Horde" },
+                                                { race = { 2, 5, 6, 8 } },
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 6421, state = "activeOrCompleted" } },
+                                                                { all = { { faction = "Horde" }, { race = { 2, 5, 6, 8 } } } },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
                                         },
                                     },
                                 },
@@ -3749,37 +3864,63 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-extra-6481-accept",
+            kind = "accept",
+            requiredQuests = { { mode = "any", quests = { 6421 } } },
+            route = {
+                { label = "Mor'rogal", mapID = 1442, offMapText = "Travel to Mor'rogal in Stonetalon Mountains.", x = 0.472, y = 0.64 },
+            },
+            text = "Accept Earthen Arise from Mor'rogal.",
+            useClientText = false,
         },
         {
-            id = "horde-extra-6481-objective",
-            kind = "objective",
-            text = "Open the Resonite cask with the Enchanted Resonite Crystal, then slay Goggeroc. This is an elite. Bring a group.",
-            conditions = { all = { { faction = "Horde" }, { level = { min = 14 } } } },
-            route = {
-                {
-                    mapID = 1442,
-                    x = 0.5760000000000001,
-                    y = 0.894,
-                    label = "Goggeroc",
-                    offMapText = "Travel to Goggeroc in Stonetalon Mountains.",
-                },
-            },
             complete = { quest = { id = 6481, state = "complete" } },
-            requiredQuests = { { mode = "any", quests = { 6421 } } },
-            useClientText = false,
+            conditions = { all = { { faction = "Horde" }, { level = { min = 14 } } } },
             dependsOn = { "horde-extra-6481-accept" },
             excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 6481, state = "activeOrCompleted" } },
-                        {
+                any = {
+                    {
+                        ["not"] = {
                             any = {
                                 { quest = { id = 6481, state = "activeOrCompleted" } },
                                 {
-                                    all = {
-                                        { faction = "Horde" },
+                                    any = {
+                                        { quest = { id = 6481, state = "activeOrCompleted" } },
                                         {
-                                            any = { { any = { { quest = { id = 6421, state = "activeOrCompleted" } }, { all = { { faction = "Horde" } } } } } },
+                                            all = {
+                                                { faction = "Horde" },
+                                                {
+                                                    any = { { any = { { quest = { id = 6421, state = "activeOrCompleted" } }, { all = { { faction = "Horde" } } } } } },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 6481, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 6481, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                { faction = "Horde" },
+                                                { race = { 2, 5, 6, 8 } },
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 6421, state = "activeOrCompleted" } },
+                                                                { all = { { faction = "Horde" }, { race = { 2, 5, 6, 8 } } } },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
                                         },
                                     },
                                 },
@@ -3788,37 +3929,64 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-extra-6481-objective",
+            kind = "objective",
+            requiredQuests = { { mode = "any", quests = { 6421 } } },
+            route = {
+                { label = "Goggeroc", mapID = 1442, offMapText = "Travel to Goggeroc in Stonetalon Mountains.", x = 0.576, y = 0.894 },
+            },
+            text = "Open the Resonite cask with the Enchanted Resonite Crystal, then slay Goggeroc. This is an elite. Bring a group.",
+            useClientPin = true,
+            useClientText = false,
         },
         {
-            id = "horde-extra-6481-turnin",
-            kind = "turnin",
-            text = "Turn in Earthen Arise to Mor'rogal.",
-            conditions = { all = { { faction = "Horde" }, { level = { min = 14 } } } },
-            route = {
-                {
-                    mapID = 1442,
-                    x = 0.47200000000000003,
-                    y = 0.64,
-                    label = "Mor'rogal",
-                    offMapText = "Travel to Mor'rogal in Stonetalon Mountains.",
-                },
-            },
             complete = { quest = { id = 6481, state = "completed" } },
-            requiredQuests = { { mode = "any", quests = { 6421 } } },
-            useClientText = false,
+            conditions = { all = { { faction = "Horde" }, { level = { min = 14 } } } },
             dependsOn = { "horde-extra-6481-objective" },
             excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 6481, state = "activeOrCompleted" } },
-                        {
+                any = {
+                    {
+                        ["not"] = {
                             any = {
                                 { quest = { id = 6481, state = "activeOrCompleted" } },
                                 {
-                                    all = {
-                                        { faction = "Horde" },
+                                    any = {
+                                        { quest = { id = 6481, state = "activeOrCompleted" } },
                                         {
-                                            any = { { any = { { quest = { id = 6421, state = "activeOrCompleted" } }, { all = { { faction = "Horde" } } } } } },
+                                            all = {
+                                                { faction = "Horde" },
+                                                {
+                                                    any = { { any = { { quest = { id = 6421, state = "activeOrCompleted" } }, { all = { { faction = "Horde" } } } } } },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 6481, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 6481, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                { faction = "Horde" },
+                                                { race = { 2, 5, 6, 8 } },
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 6421, state = "activeOrCompleted" } },
+                                                                { all = { { faction = "Horde" }, { race = { 2, 5, 6, 8 } } } },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
                                         },
                                     },
                                 },
@@ -3827,16 +3995,26 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-extra-6481-turnin",
+            kind = "turnin",
+            requiredQuests = { { mode = "any", quests = { 6421 } } },
+            route = {
+                { label = "Mor'rogal", mapID = 1442, offMapText = "Travel to Mor'rogal in Stonetalon Mountains.", x = 0.472, y = 0.64 },
+            },
+            text = "Turn in Earthen Arise to Mor'rogal.",
+            useClientPin = true,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
+            alternativeQuests = { 6543 },
+            checkpointQuest = 6542,
+            complete = { level = { min = 17 } },
+            conditions = { all = { { faction = "Horde" } } },
             id = "horde-extra-6542-level",
             kind = "note",
-            checkpointQuest = 6542,
-            text = "Reach level 19 before this visit.",
-            conditions = { all = { { faction = "Horde" } } },
-            complete = { level = { min = 19 } },
-            requiredLevel = 19,
-            alternativeQuests = { 6543 },
+            requiredLevel = 17,
+            text = "Reach level 17 before this visit.",
         },
         {
             id = "horde-extra-6542-accept",
@@ -3872,27 +4050,27 @@ ns:RegisterGuide({
             useClientPin = true,
         },
         {
+            alternativeQuests = { 6543 },
+            complete = { quest = { id = 6542, state = "completed" } },
+            conditions = { all = { { faction = "Horde" }, { level = { min = 17 } } } },
+            dependsOn = { "horde-extra-6542-objective" },
             id = "horde-extra-6542-turnin",
             kind = "turnin",
-            text = "Turn in Report to Kadrak to Kadrak.",
-            conditions = { all = { { faction = "Horde" }, { level = { min = 17 } } } },
-            route = {
-                { mapID = 1413, x = 0.48, y = 0.054000000000000006, label = "Kadrak", offMapText = "Travel to Kadrak in The Barrens." },
-            },
-            complete = { quest = { id = 6542, state = "completed" } },
             requiredQuests = {},
+            route = { { label = "Kadrak", mapID = 1413, offMapText = "Travel to Kadrak in The Barrens.", x = 0.48, y = 0.054 } },
+            text = "Turn in Report to Kadrak to Kadrak.",
+            useClientPin = true,
             useClientText = false,
-            alternativeQuests = { 6543 },
-            dependsOn = { "horde-extra-6542-objective" },
+            useQuestNavigation = true,
         },
         {
+            checkpointQuest = 86576,
+            complete = { level = { min = 18 } },
+            conditions = { all = { { faction = "Horde" } } },
             id = "horde-extra-86576-level",
             kind = "note",
-            checkpointQuest = 86576,
-            text = "Reach level 26 before this visit.",
-            conditions = { all = { { faction = "Horde" } } },
-            complete = { level = { min = 26 } },
-            requiredLevel = 26,
+            requiredLevel = 18,
+            text = "Reach level 18 before this visit.",
         },
         {
             id = "horde-extra-86576-accept",
@@ -3933,23 +4111,19 @@ ns:RegisterGuide({
             dependsOn = { "horde-extra-86576-accept" },
         },
         {
+            complete = { quest = { id = 86576, state = "completed" } },
+            conditions = { all = { { faction = "Horde" }, { level = { min = 18 } } } },
+            dependsOn = { "horde-extra-86576-objective" },
             id = "horde-extra-86576-turnin",
             kind = "turnin",
-            text = "Turn in Bloodfury Trinkets to Mor'rogal.",
-            conditions = { all = { { faction = "Horde" }, { level = { min = 18 } } } },
-            route = {
-                {
-                    mapID = 1442,
-                    x = 0.47200000000000003,
-                    y = 0.64,
-                    label = "Mor'rogal",
-                    offMapText = "Travel to Mor'rogal in Stonetalon Mountains.",
-                },
-            },
-            complete = { quest = { id = 86576, state = "completed" } },
             requiredQuests = {},
+            route = {
+                { label = "Mor'rogal", mapID = 1442, offMapText = "Travel to Mor'rogal in Stonetalon Mountains.", x = 0.472, y = 0.64 },
+            },
+            text = "Turn in Bloodfury Trinkets to Mor'rogal.",
+            useClientPin = true,
             useClientText = false,
-            dependsOn = { "horde-extra-86576-objective" },
+            useQuestNavigation = true,
         },
     },
 })

@@ -29,6 +29,8 @@ ns:RegisterQuestPrerequisite({ quest = 2399, mode = "any", quests = { 931 } })
 ns:RegisterQuestPrerequisite({ quest = 2498, mode = "any", quests = { 923 } })
 ns:RegisterQuestPrerequisite({ quest = 2499, mode = "any", quests = { 2498 } })
 ns:RegisterQuestPrerequisite({ quest = 941, mode = "any", quests = { 927 } })
+ns:RegisterQuestPrerequisite({ quest = 4513, mode = "any", quests = { 4512 },
+    note = "A Little Slime Goes a Long Way follows quest 4512 in QuestieDB." })
 
 ns:RegisterQuestPrerequisite({ quest = 764, mode = "any", quests = { 751 },
     note = "The Venture Co. follows The Ravaged Caravan." })

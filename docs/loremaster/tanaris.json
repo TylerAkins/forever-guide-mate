@@ -5071,7 +5071,7 @@
             "sharable": true,
             "weekly": false
           },
-          "name": "<NYI> <TXT> pestlezugg needs items",
+          "name": "\u003cNYI\u003e \u003cTXT\u003e pestlezugg needs items",
           "prerequisiteReferences": [],
           "questLevel": 57,
           "races": [],
@@ -5107,7 +5107,7 @@
             "sharable": true,
             "weekly": false
           },
-          "name": "<NYI> <TXT> speak to rabine saturna",
+          "name": "\u003cNYI\u003e \u003cTXT\u003e speak to rabine saturna",
           "prerequisiteReferences": [],
           "questLevel": 58,
           "races": [],
@@ -10854,7 +10854,7 @@
             "sharable": true,
             "weekly": false
           },
-          "name": "<NYI> <TXT> Pirate Hats",
+          "name": "\u003cNYI\u003e \u003cTXT\u003e Pirate Hats",
           "prerequisiteReferences": [],
           "questLevel": 45,
           "races": [],
@@ -11360,111 +11360,15 @@
         "tanaris"
       ],
       "evidence": {
-        "wowhead": {
-          "classes": [],
-          "flags": {
-            "daily": false,
-            "dungeon": false,
-            "monthly": false,
-            "pvp": false,
-            "raid": false,
-            "repeatable": false,
-            "sharable": true,
-            "weekly": false
-          },
-          "name": "The Stone Circle",
-          "prerequisiteReferences": [],
-          "questLevel": 51,
-          "races": [],
-          "requiredLevel": 46
-        },
-        "questiedb": {
-          "finishedBy": [
-            [
-              7771
-            ]
-          ],
-          "name": "The Stone Circle",
-          "objectives": [
-            null,
-            null,
-            [
-              [
-                10556
-              ]
-            ]
-          ],
-          "objectivesText": [
-            "Retrieve the Stone Circle from Marvon Rivetseeker's workshop in Ratchet."
-          ],
-          "preQuestSingle": [
-            3380,
-            3445
-          ],
-          "questLevel": 51,
-          "requiredLevel": 46,
-          "requiredRaces": 0,
-          "startedBy": [
-            [
-              7771
-            ]
-          ],
-          "zoneOrSort": 440
-        },
-        "allthethings": {
-          "name": "The Stone Circle",
-          "objectives": {
-            "item": [
-              {
-                "id": 10556,
-                "text": "0/1 Stone Circle"
-              }
-            ],
-            "object": [
-              {
-                "id": 149036,
-                "text": "0/1 Stone Circle"
-              }
-            ]
-          },
-          "preQuestGroup": [
-            3445,
-            3380
-          ],
-          "requiredLevel": 46,
-          "startedBy": [
-            {
-              "id": 7771,
-              "spawns": [
-                [
-                  440,
-                  52.6,
-                  45.8
-                ]
-              ],
-              "type": "npc"
-            }
-          ]
-        },
-        "foreverclient": {}
-      },
-      "sourceRevisions": {
-        "allthethings": "74ce335c82fa2489bb86e90af45bf479a0fb15fe",
-        "foreverclient": "client:1.60.1.70338/70338;dbd:07d008f28907c00827cacadf2d7c1a40f578b6a3;manifest:346c41046a0630dcbe64f37867d8407433a0d8d43f157aef79dffe9a975886e5;tables:fd1b6cd29acaeda1690a826b31f78965b68b58e0ae56f5243c5def2a9db035df",
-        "questiedb": "e9a67d1a2753a0e64c4c96bf7864788fac7b765f",
-        "wowhead": "sha256:e3ff06f254953b7ebadd908ca2b5962c796fd4c397ee99f5f61f85afab90a330"
+        "artifactVersion": "1.0.6-dev.f844007",
+        "buildCommit": "f844007b329b72f18cf2bda3d87540012294732a",
+        "source": "QuestieDB"
       },
       "locations": [
         {
           "coord": [
-            52.6,
-            45.8
-          ],
-          "coords": [
-            [
-              52.6,
-              45.8
-            ]
+            52.71,
+            45.92
           ],
           "id": 7771,
           "name": "Marvon Rivetseeker",
@@ -11476,14 +11380,8 @@
         },
         {
           "coord": [
-            52.6,
-            45.8
-          ],
-          "coords": [
-            [
-              52.6,
-              45.8
-            ]
+            52.71,
+            45.92
           ],
           "id": 7771,
           "name": "Marvon Rivetseeker",
@@ -11492,12 +11390,24 @@
           "reacthorde": 1,
           "type": 1,
           "zone": "Tanaris"
+        },
+        {
+          "coord": [
+            62.5,
+            38.54
+          ],
+          "id": 149036,
+          "item": "Stone Circle",
+          "name": "Marvon's Chest",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "The Barrens"
         }
       ],
       "supporting": false,
       "status": "included",
       "reason": "Authored for an applicable faction; other faction limitations are recorded separately.",
-      "factionNotes": "A required prerequisite remains unresolved"
+      "factionNotes": "Quest work belongs to The Barrens, not its pickup catalog."
     },
     "3520": {
       "catalogs": [
@@ -37615,6 +37525,751 @@
       ],
       "status": "spine",
       "reason": "Preserved faction Casual actions."
+    },
+    "2768": {
+      "catalogs": [
+        "tanaris"
+      ],
+      "evidence": {
+        "artifactVersion": "1.0.6-dev.f844007",
+        "buildCommit": "f844007b329b72f18cf2bda3d87540012294732a",
+        "source": "QuestieDB"
+      },
+      "locations": [
+        {
+          "coord": [
+            52.46,
+            28.51
+          ],
+          "id": 7407,
+          "name": "Chief Engineer Bilgewhizzle",
+          "point": "start",
+          "reactalliance": 1,
+          "reacthorde": 1,
+          "type": 1,
+          "zone": "Tanaris"
+        },
+        {
+          "coord": [
+            52.46,
+            28.51
+          ],
+          "id": 7407,
+          "name": "Chief Engineer Bilgewhizzle",
+          "point": "end",
+          "reactalliance": 1,
+          "reacthorde": 1,
+          "type": 1,
+          "zone": "Tanaris"
+        },
+        {
+          "coord": [
+            -1,
+            -1
+          ],
+          "id": 7604,
+          "item": "Divino-matic Rod",
+          "name": "Sergeant Bly",
+          "point": "sourcerequirement",
+          "reactalliance": 1,
+          "reacthorde": 1,
+          "type": 1,
+          "zone": ""
+        }
+      ],
+      "supporting": false,
+      "status": "excluded",
+      "reason": "Dungeon, raid, event/repeatable, or unused work is outside this outdoor itinerary."
+    },
+    "2770": {
+      "catalogs": [
+        "tanaris"
+      ],
+      "evidence": {
+        "artifactVersion": "1.0.6-dev.f844007",
+        "buildCommit": "f844007b329b72f18cf2bda3d87540012294732a",
+        "source": "QuestieDB"
+      },
+      "locations": [
+        {
+          "coord": [
+            78.14,
+            77.12
+          ],
+          "id": 4453,
+          "name": "Wizzle Brassbolts",
+          "point": "start",
+          "reactalliance": 1,
+          "reacthorde": 1,
+          "type": 1,
+          "zone": "Thousand Needles"
+        },
+        {
+          "coord": [
+            78.14,
+            77.12
+          ],
+          "id": 4453,
+          "name": "Wizzle Brassbolts",
+          "point": "end",
+          "reactalliance": 1,
+          "reacthorde": 1,
+          "type": 1,
+          "zone": "Thousand Needles"
+        },
+        {
+          "coord": [
+            -1,
+            -1
+          ],
+          "id": 7273,
+          "item": "Gahz'rilla's Electrified Scale",
+          "name": "Gahz'rilla",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": ""
+        }
+      ],
+      "supporting": false,
+      "status": "excluded",
+      "reason": "Dungeon, raid, event/repeatable, or unused work is outside this outdoor itinerary."
+    },
+    "2846": {
+      "catalogs": [
+        "tanaris"
+      ],
+      "evidence": {
+        "artifactVersion": "1.0.6-dev.f844007",
+        "buildCommit": "f844007b329b72f18cf2bda3d87540012294732a",
+        "source": "QuestieDB"
+      },
+      "locations": [
+        {
+          "coord": [
+            46.06,
+            57.09
+          ],
+          "id": 6546,
+          "name": "Tabetha",
+          "point": "start",
+          "reactalliance": 1,
+          "reacthorde": 1,
+          "type": 1,
+          "zone": "Dustwallow Marsh"
+        },
+        {
+          "coord": [
+            46.06,
+            57.09
+          ],
+          "id": 6546,
+          "name": "Tabetha",
+          "point": "end",
+          "reactalliance": 1,
+          "reacthorde": 1,
+          "type": 1,
+          "zone": "Dustwallow Marsh"
+        },
+        {
+          "coord": [
+            -1,
+            -1
+          ],
+          "id": 7795,
+          "item": "Tiara of the Deep",
+          "name": "Hydromancer Velratha",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": ""
+        }
+      ],
+      "supporting": false,
+      "status": "excluded",
+      "reason": "Dungeon, raid, event/repeatable, or unused work is outside this outdoor itinerary."
+    },
+    "2861": {
+      "catalogs": [
+        "tanaris"
+      ],
+      "evidence": {
+        "artifactVersion": "1.0.6-dev.f844007",
+        "buildCommit": "f844007b329b72f18cf2bda3d87540012294732a",
+        "source": "QuestieDB"
+      },
+      "locations": [
+        {
+          "coord": [
+            85.14,
+            10.03
+          ],
+          "id": 4568,
+          "name": "Anastasia Hartwell",
+          "point": "start",
+          "reactalliance": -1,
+          "reacthorde": 1,
+          "type": 1,
+          "zone": "Undercity"
+        },
+        {
+          "coord": [
+            38.45,
+            86.13
+          ],
+          "id": 5885,
+          "name": "Deino",
+          "point": "start",
+          "reactalliance": -1,
+          "reacthorde": 1,
+          "type": 1,
+          "zone": "Orgrimmar"
+        },
+        {
+          "coord": [
+            46.06,
+            57.09
+          ],
+          "id": 6546,
+          "name": "Tabetha",
+          "point": "end",
+          "reactalliance": 1,
+          "reacthorde": 1,
+          "type": 1,
+          "zone": "Dustwallow Marsh"
+        }
+      ],
+      "supporting": false,
+      "status": "excluded",
+      "reason": "Dungeon, raid, event/repeatable, or unused work is outside this outdoor itinerary."
+    },
+    "2864": {
+      "catalogs": [
+        "tanaris"
+      ],
+      "evidence": {
+        "artifactVersion": "1.0.6-dev.f844007",
+        "buildCommit": "f844007b329b72f18cf2bda3d87540012294732a",
+        "source": "QuestieDB"
+      },
+      "locations": [
+        {
+          "coord": [
+            26.95,
+            77.21
+          ],
+          "id": 773,
+          "name": "Krazek",
+          "point": "start",
+          "reactalliance": 1,
+          "reacthorde": 1,
+          "type": 1,
+          "zone": "Stranglethorn Vale"
+        },
+        {
+          "coord": [
+            51.57,
+            26.76
+          ],
+          "id": 7876,
+          "name": "Tran'rek",
+          "point": "end",
+          "reactalliance": 1,
+          "reacthorde": 1,
+          "type": 1,
+          "zone": "Tanaris"
+        }
+      ],
+      "supporting": false,
+      "status": "excluded",
+      "reason": "Dungeon, raid, event/repeatable, or unused work is outside this outdoor itinerary."
+    },
+    "2865": {
+      "catalogs": [
+        "tanaris"
+      ],
+      "evidence": {
+        "artifactVersion": "1.0.6-dev.f844007",
+        "buildCommit": "f844007b329b72f18cf2bda3d87540012294732a",
+        "source": "QuestieDB"
+      },
+      "locations": [
+        {
+          "coord": [
+            51.57,
+            26.76
+          ],
+          "id": 7876,
+          "name": "Tran'rek",
+          "point": "start",
+          "reactalliance": 1,
+          "reacthorde": 1,
+          "type": 1,
+          "zone": "Tanaris"
+        },
+        {
+          "coord": [
+            51.57,
+            26.76
+          ],
+          "id": 7876,
+          "name": "Tran'rek",
+          "point": "end",
+          "reactalliance": 1,
+          "reacthorde": 1,
+          "type": 1,
+          "zone": "Tanaris"
+        },
+        {
+          "coord": [
+            -1,
+            -1
+          ],
+          "id": 7269,
+          "item": "Uncracked Scarab Shell",
+          "name": "Scarab",
+          "point": "sourcerequirement",
+          "reactalliance": 1,
+          "reacthorde": 1,
+          "type": 1,
+          "zone": ""
+        }
+      ],
+      "supporting": false,
+      "status": "excluded",
+      "reason": "Dungeon, raid, event/repeatable, or unused work is outside this outdoor itinerary."
+    },
+    "2882": {
+      "catalogs": [
+        "tanaris"
+      ],
+      "evidence": {
+        "artifactVersion": "1.0.6-dev.f844007",
+        "buildCommit": "f844007b329b72f18cf2bda3d87540012294732a",
+        "source": "QuestieDB"
+      },
+      "locations": [],
+      "supporting": false,
+      "status": "excluded",
+      "reason": "Dungeon, raid, event/repeatable, or unused work is outside this outdoor itinerary."
+    },
+    "2936": {
+      "catalogs": [
+        "tanaris"
+      ],
+      "evidence": {
+        "artifactVersion": "1.0.6-dev.f844007",
+        "buildCommit": "f844007b329b72f18cf2bda3d87540012294732a",
+        "source": "QuestieDB"
+      },
+      "locations": [
+        {
+          "coord": [
+            55.95,
+            74.72
+          ],
+          "id": 3188,
+          "name": "Master Gadrin",
+          "point": "start",
+          "reactalliance": -1,
+          "reacthorde": 1,
+          "type": 1,
+          "zone": "Durotar"
+        },
+        {
+          "coord": [
+            55.95,
+            74.72
+          ],
+          "id": 3188,
+          "name": "Master Gadrin",
+          "point": "end",
+          "reactalliance": -1,
+          "reacthorde": 1,
+          "type": 1,
+          "zone": "Durotar"
+        }
+      ],
+      "supporting": false,
+      "status": "excluded",
+      "reason": "Dungeon, raid, event/repeatable, or unused work is outside this outdoor itinerary."
+    },
+    "3042": {
+      "catalogs": [
+        "tanaris"
+      ],
+      "evidence": {
+        "artifactVersion": "1.0.6-dev.f844007",
+        "buildCommit": "f844007b329b72f18cf2bda3d87540012294732a",
+        "source": "QuestieDB"
+      },
+      "locations": [
+        {
+          "coord": [
+            51.41,
+            28.75
+          ],
+          "id": 7804,
+          "name": "Trenton Lighthammer",
+          "point": "start",
+          "reactalliance": 1,
+          "reacthorde": 1,
+          "type": 1,
+          "zone": "Tanaris"
+        },
+        {
+          "coord": [
+            51.41,
+            28.75
+          ],
+          "id": 7804,
+          "name": "Trenton Lighthammer",
+          "point": "end",
+          "reactalliance": 1,
+          "reacthorde": 1,
+          "type": 1,
+          "zone": "Tanaris"
+        },
+        {
+          "coord": [
+            -1,
+            -1
+          ],
+          "id": 5648,
+          "item": "Troll Temper",
+          "name": "Sandfury Shadowcaster",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": ""
+        },
+        {
+          "coord": [
+            -1,
+            -1
+          ],
+          "id": 5649,
+          "item": "Troll Temper",
+          "name": "Sandfury Blood Drinker",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": ""
+        },
+        {
+          "coord": [
+            -1,
+            -1
+          ],
+          "id": 5650,
+          "item": "Troll Temper",
+          "name": "Sandfury Witch Doctor",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": ""
+        },
+        {
+          "coord": [
+            -1,
+            -1
+          ],
+          "id": 7246,
+          "item": "Troll Temper",
+          "name": "Sandfury Shadowhunter",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": ""
+        },
+        {
+          "coord": [
+            -1,
+            -1
+          ],
+          "id": 7247,
+          "item": "Troll Temper",
+          "name": "Sandfury Soul Eater",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": ""
+        },
+        {
+          "coord": [
+            -1,
+            -1
+          ],
+          "id": 7267,
+          "item": "Troll Temper",
+          "name": "Chief Ukorz Sandscalp",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": ""
+        },
+        {
+          "coord": [
+            -1,
+            -1
+          ],
+          "id": 7272,
+          "item": "Troll Temper",
+          "name": "Theka the Martyr",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": ""
+        },
+        {
+          "coord": [
+            -1,
+            -1
+          ],
+          "id": 7274,
+          "item": "Troll Temper",
+          "name": "Sandfury Executioner",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": ""
+        },
+        {
+          "coord": [
+            -1,
+            -1
+          ],
+          "id": 7276,
+          "item": "Troll Temper",
+          "name": "Zul'Farrak Dead Hero",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": ""
+        },
+        {
+          "coord": [
+            -1,
+            -1
+          ],
+          "id": 7286,
+          "item": "Troll Temper",
+          "name": "Zul'Farrak Zombie",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": ""
+        },
+        {
+          "coord": [
+            -1,
+            -1
+          ],
+          "id": 7796,
+          "item": "Troll Temper",
+          "name": "Nekrum Gutchewer",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": ""
+        },
+        {
+          "coord": [
+            -1,
+            -1
+          ],
+          "id": 7797,
+          "item": "Troll Temper",
+          "name": "Ruuzlu",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": ""
+        },
+        {
+          "coord": [
+            -1,
+            -1
+          ],
+          "id": 8127,
+          "item": "Troll Temper",
+          "name": "Antu'sul",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": ""
+        },
+        {
+          "coord": [
+            -1,
+            -1
+          ],
+          "id": 10080,
+          "item": "Troll Temper",
+          "name": "Sandarr Dunereaver",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": ""
+        },
+        {
+          "coord": [
+            -1,
+            -1
+          ],
+          "id": 10081,
+          "item": "Troll Temper",
+          "name": "Dustwraith",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": ""
+        },
+        {
+          "coord": [
+            -1,
+            -1
+          ],
+          "id": 10082,
+          "item": "Troll Temper",
+          "name": "Zerillis",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": ""
+        }
+      ],
+      "supporting": false,
+      "status": "excluded",
+      "reason": "Dungeon, raid, event/repeatable, or unused work is outside this outdoor itinerary."
+    },
+    "3527": {
+      "catalogs": [
+        "tanaris"
+      ],
+      "evidence": {
+        "artifactVersion": "1.0.6-dev.f844007",
+        "buildCommit": "f844007b329b72f18cf2bda3d87540012294732a",
+        "source": "QuestieDB"
+      },
+      "locations": [
+        {
+          "coord": [
+            66.99,
+            22.36
+          ],
+          "id": 8579,
+          "name": "Yeh'kinya",
+          "point": "start",
+          "reactalliance": 1,
+          "reacthorde": 1,
+          "type": 1,
+          "zone": "Tanaris"
+        },
+        {
+          "coord": [
+            66.99,
+            22.36
+          ],
+          "id": 8579,
+          "name": "Yeh'kinya",
+          "point": "end",
+          "reactalliance": 1,
+          "reacthorde": 1,
+          "type": 1,
+          "zone": "Tanaris"
+        },
+        {
+          "coord": [
+            -1,
+            -1
+          ],
+          "id": 7795,
+          "item": "Second Mosh'aru Tablet",
+          "name": "Hydromancer Velratha",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": ""
+        }
+      ],
+      "supporting": false,
+      "status": "excluded",
+      "reason": "Dungeon, raid, event/repeatable, or unused work is outside this outdoor itinerary."
+    },
+    "2991": {
+      "catalogs": [
+        "tanaris"
+      ],
+      "evidence": {
+        "artifactVersion": "1.0.6-dev.f844007",
+        "buildCommit": "f844007b329b72f18cf2bda3d87540012294732a",
+        "source": "QuestieDB"
+      },
+      "locations": [
+        {
+          "coord": [
+            66.9,
+            19.47
+          ],
+          "id": 8022,
+          "name": "Thadius Grimshade",
+          "point": "start",
+          "reactalliance": 1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Blasted Lands"
+        },
+        {
+          "coord": [
+            66.9,
+            19.47
+          ],
+          "id": 8022,
+          "name": "Thadius Grimshade",
+          "point": "end",
+          "reactalliance": 1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Blasted Lands"
+        },
+        {
+          "coord": [
+            -1,
+            -1
+          ],
+          "id": 7796,
+          "item": "Nekrum's Medallion",
+          "name": "Nekrum Gutchewer",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": ""
+        }
+      ],
+      "supporting": false,
+      "status": "excluded",
+      "reason": "Dungeon, raid, event/repeatable, or unused work is outside this outdoor itinerary."
     }
   },
   "supportingQuests": [
@@ -37633,1204 +38288,857 @@
   ],
   "clientWalkthrough": "unverified",
   "sourcePriority": [
-    "wowhead",
-    "questiedb",
-    "allthethings",
-    "foreverclient"
+    "questiedb"
   ],
   "sources": {
-    "databaseCommit": "5c92953420ab4a710fda39581a405a72a89b8c0d",
-    "compilation": {
-      "schemaVersion": 1,
-      "compilationFormatVersion": 2,
-      "flavor": "forever",
-      "source": "compilation",
-      "sourceRevision": "991cc5841d7b79dc85613431aa8ecf6f4c34070753426d60f323e321532d4b66",
-      "recordCount": 107209,
-      "recordsSha256": "9ab82625871b9df3a0ac5781bb194be6d8211a4a6337258fbf82224e00416727",
-      "status": "generated"
+    "questiedb": {
+      "artifactVersion": "1.0.6-dev.f844007",
+      "buildCommit": "f844007b329b72f18cf2bda3d87540012294732a",
+      "counts": {
+        "Item": 21294,
+        "Npc": 13393,
+        "Object": 7035,
+        "Quest": 5232
+      }
     },
     "sourceHashes": {
-      "data/forever/compilation/records.jsonl.gz": "35c74cb11823db372dc0bc289d5ffaf8296ca9d1c370e4f7b794a29af7f84b47"
+      "questiedb/export.json": "e26090e90df3aa2e94be4c13feb001390068b84c249ff2443c629d26a408e704",
+      "questiedb/policy.json": "835ba8f6361ef37bda275859bdb48852001c3ce2b6a2b3ecff586283633e2ad4"
     },
     "upstreamCommit": "9087c457e20fb96e73e5b362dd6fc50324b75718"
   },
   "coverageMode": "zone",
   "orderingEligibility": {
     "10": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      }
-    },
-    "1560": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": true
       },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "8728": {
       "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": true
       }
     },
     "32": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
       "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      }
-    },
-    "8742": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": true
       },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "9268": {
       "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "8747": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "8748": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "2605": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      }
-    },
-    "2606": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      }
-    },
-    "8749": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "8750": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "8753": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "8754": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "8755": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "8751": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "8752": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "8756": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "8757": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "8758": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "8759": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "8760": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "8761": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "8764": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "8765": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "8766": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "2641": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
+        "inCasual": false
       }
     },
     "82": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      }
-    },
-    "3161": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
+        "inCasual": true
       },
-      "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      }
-    },
-    "2661": {
       "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      }
-    },
-    "2662": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
+        "inCasual": true
       }
     },
     "110": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": true
       }
     },
     "113": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      }
-    },
-    "1157": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": true
       },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "1158": {
       "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "648": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "654": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      }
-    },
-    "1690": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      }
-    },
-    "1691": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
+        "inCasual": true
       }
     },
     "162": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "5801": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
       },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "5802": {
       "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "1707": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      }
-    },
-    "8365": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      }
-    },
-    "8366": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      }
-    },
-    "2741": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "2747": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "2748": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "2749": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "2750": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "8893": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "8921": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "8922": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "8923": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "8924": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "2781": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      }
-    },
-    "8925": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "8928": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "5863": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
+        "inCasual": true
       }
     },
     "243": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
       "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      }
-    },
-    "3362": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
+        "inCasual": true
       },
-      "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      }
-    },
-    "2872": {
       "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      }
-    },
-    "2873": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      }
-    },
-    "2874": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      }
-    },
-    "2875": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      }
-    },
-    "2876": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      }
-    },
-    "841": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "1878": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
       }
     },
     "351": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      }
-    },
-    "8555": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": true
       },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "3444": {
       "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
+        "inCasual": true
       }
     },
     "379": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
       "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
       }
     },
-    "8576": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
+    "648": {
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
       }
     },
-    "8577": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
+    "654": {
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
       }
     },
-    "2946": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
+    "841": {
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "8584": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
       },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "8585": {
       "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "2954": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "8586": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "8587": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "4493": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "4494": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      }
-    },
-    "4496": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      }
-    },
-    "8597": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "8598": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "8599": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "4504": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      }
-    },
-    "2966": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "4507": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "4508": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "4509": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "8606": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "8620": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "3520": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      }
-    },
-    "3022": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
       }
     },
     "992": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "1560": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "1690": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "1691": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "1707": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "1878": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "2605": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "2606": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "2641": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "2661": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "2662": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "2741": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "2747": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "2748": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "2749": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "2750": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "2768": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "2770": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "2781": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "2846": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "2861": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "2864": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "2865": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "2872": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "2873": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "2874": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "2875": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "2876": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "2882": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "2936": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "2954": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "2991": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "3022": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "3042": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "3161": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "3362": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "3444": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "3520": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "3527": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "4493": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "4494": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "4496": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "4504": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "4507": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "4508": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "4509": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "5801": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "5802": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "5863": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": true
       }
     },
     "8182": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
       }
     },
-    "3064": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
+    "8365": {
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "8366": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "8555": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "8576": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "8577": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "8584": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "8585": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "8586": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "8587": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "8597": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "8598": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "8599": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "8606": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "8620": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "8728": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "8742": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "8747": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "8748": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "8749": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "8750": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "8751": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "8752": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "8753": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "8754": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "8755": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "8756": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "8757": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "8758": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "8759": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "8760": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "8761": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "8764": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "8765": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "8766": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "8893": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "8921": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "8922": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "8923": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "8924": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "8925": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "8928": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "9268": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
       }
     }
   },
@@ -38839,10 +39147,10 @@
     "commit": "9087c457e20fb96e73e5b362dd6fc50324b75718",
     "strict": false,
     "sourceHashes": {
+      "ZygorGuidesViewerRM/Guides/Leveling/ZygorGuidesHorde.lua": "2eaf5adb4865936cdb4257451c3ce920fdaff1c0ec17216c36e055480f389e54",
       "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-EasternKingdoms.lua": "8a5ec87d31698c612e50eb0655f5c1f28d723c3068552c1295d79ddcd934270f",
       "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-Kalimdor.lua": "4fb7b7f5bb2702dfe36ed33de31b4d3105153bfba62b7a14a7ab73386e2087fa",
-      "ZygorGuidesViewerRM/Guides/Leveling/ZygorGuidesAlliance.lua": "ffb9b7828817e098d74ee5931e15a64ce773142a4c1e60f9775d0713121ba67d",
-      "ZygorGuidesViewerRM/Guides/Leveling/ZygorGuidesHorde.lua": "2eaf5adb4865936cdb4257451c3ce920fdaff1c0ec17216c36e055480f389e54"
+      "ZygorGuidesViewerRM/Guides/Leveling/ZygorGuidesAlliance.lua": "ffb9b7828817e098d74ee5931e15a64ce773142a4c1e60f9775d0713121ba67d"
     },
     "matches": {
       "alliance-extra-648-level": {

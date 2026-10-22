@@ -6,7 +6,7 @@ ns:RegisterGuide({
     id = "loremaster-hillsbrad-foothills",
     title = "Hillsbrad Foothills",
     category = "Loremaster Guides",
-    revision = 1,
+    revision = 2,
     routeMode = "ordered",
     loremasterExpanded = true,
     goals = {
@@ -602,6 +602,20 @@ ns:RegisterGuide({
             useQuestNavigation = true,
         },
         {
+            complete = { quest = { id = 637, state = "activeOrCompleted" } },
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 25 } }, { race = { 1, 3, 4, 7, 95 } } } },
+            dependsOn = {},
+            id = "alliance-leveling-era-alliance-wetlands-part-2-accept-637-sully-balloo-s-letter",
+            kind = "accept",
+            requiredQuests = {},
+            sourceActionID = "accept-637-sully-balloo-s-letter",
+            sourceGuide = "leveling-era-alliance-wetlands-part-2",
+            sourceStep = 55,
+            text = "Use the Waterlogged Envelope to accept Sully Balloo's Letter.",
+            useClientPin = false,
+            useClientText = false,
+        },
+        {
             complete = { item = { minCount = 10, name = "Turtle Meat" } },
             conditions = { all = { { faction = "Alliance" }, { race = { 1, 3, 4, 7, 95 } } } },
             dependsOn = {},
@@ -615,6 +629,355 @@ ns:RegisterGuide({
             useClientText = false,
             sourceGuide = "leveling-era-alliance-wetlands-part-2",
             sourceActionID = "collect-before-pickup-objective-555-1-snapjaw",
+        },
+        {
+            complete = { level = { min = 29 } },
+            conditions = { all = { { faction = "Alliance" } } },
+            excludeWhen = { ["not"] = { all = { { faction = "Alliance" } } } },
+            id = "visit-entry-leveling-era-alliance-stonetalon-mountains-and-ashenvale",
+            kind = "note",
+            requiredLevel = 29,
+            text = "Reach level 29 before the Stonetalon Mountains & Ashenvale visit.",
+            visitSourceGuide = "leveling-era-alliance-stonetalon-mountains-and-ashenvale",
+        },
+        {
+            complete = { quest = { id = 637, state = "completed" } },
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 25 } }, { race = { 1, 3, 4, 7, 95 } } } },
+            dependsOn = {},
+            id = "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-turnin-637-sully-balloo-s-letter",
+            kind = "turnin",
+            requiredQuests = {},
+            route = {
+                { label = "Sara Balloo", mapID = 1455, offMapText = "Travel to Sara Balloo in Ironforge.", x = 0.6348, y = 0.6729 },
+            },
+            sourceActionID = "turnin-637-sully-balloo-s-letter",
+            sourceGuide = "leveling-era-alliance-stonetalon-mountains-and-ashenvale",
+            sourceStep = 68,
+            text = "Turn in Sully Balloo's Letter to Sara Balloo.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
+        },
+        {
+            complete = { quest = { id = 683, state = "activeOrCompleted" } },
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 25 } }, { race = { 1, 3, 4, 7, 95 } } } },
+            dependsOn = {},
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 683, state = "activeOrCompleted" } },
+                        {
+                            any = {
+                                { quest = { id = 683, state = "activeOrCompleted" } },
+                                {
+                                    all = {
+                                        { faction = "Alliance" },
+                                        { race = { 1, 3, 4, 7 } },
+                                        {
+                                            any = {
+                                                {
+                                                    any = {
+                                                        { quest = { id = 637, state = "activeOrCompleted" } },
+                                                        {
+                                                            all = { { item = { minCount = 1, name = "Sully Balloo's Letter" } }, { faction = "Alliance" }, { race = { 1, 3, 4, 7 } } },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
+            id = "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-accept-683-sara-balloo-s-plea",
+            kind = "accept",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 637 } } },
+            route = {
+                { label = "Sara Balloo", mapID = 1455, offMapText = "Travel to Sara Balloo in Ironforge.", x = 0.6348, y = 0.6729 },
+            },
+            sourceActionID = "accept-683-sara-balloo-s-plea",
+            sourceGuide = "leveling-era-alliance-stonetalon-mountains-and-ashenvale",
+            sourceStep = 69,
+            text = "Accept Sara Balloo's Plea from Sara Balloo.",
+            useClientPin = false,
+            useClientText = false,
+        },
+        {
+            complete = { quest = { id = 683, state = "completed" } },
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 25 } }, { race = { 1, 3, 4, 7, 95 } } } },
+            dependsOn = { "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-accept-683-sara-balloo-s-plea" },
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 683, state = "activeOrCompleted" } },
+                        {
+                            any = {
+                                { quest = { id = 683, state = "activeOrCompleted" } },
+                                {
+                                    all = {
+                                        { faction = "Alliance" },
+                                        { race = { 1, 3, 4, 7 } },
+                                        {
+                                            any = {
+                                                {
+                                                    any = {
+                                                        { quest = { id = 637, state = "activeOrCompleted" } },
+                                                        {
+                                                            all = { { item = { minCount = 1, name = "Sully Balloo's Letter" } }, { faction = "Alliance" }, { race = { 1, 3, 4, 7 } } },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
+            id = "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-turnin-683-sara-balloo-s-plea",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 637 } } },
+            route = {
+                {
+                    label = "King Magni Bronzebeard",
+                    mapID = 1455,
+                    offMapText = "Travel to King Magni Bronzebeard in Ironforge.",
+                    x = 0.3911,
+                    y = 0.5617,
+                },
+            },
+            sourceActionID = "turnin-683-sara-balloo-s-plea",
+            sourceGuide = "leveling-era-alliance-stonetalon-mountains-and-ashenvale",
+            sourceStep = 70,
+            text = "Turn in Sara Balloo's Plea to King Magni Bronzebeard.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
+        },
+        {
+            complete = { quest = { id = 686, state = "activeOrCompleted" } },
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 25 } }, { race = { 1, 3, 4, 7, 95 } } } },
+            dependsOn = {},
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 686, state = "activeOrCompleted" } },
+                        {
+                            any = {
+                                { quest = { id = 686, state = "activeOrCompleted" } },
+                                {
+                                    all = {
+                                        { faction = "Alliance" },
+                                        { race = { 1, 3, 4, 7 } },
+                                        {
+                                            any = {
+                                                {
+                                                    any = {
+                                                        { quest = { id = 683, state = "activeOrCompleted" } },
+                                                        {
+                                                            all = {
+                                                                { faction = "Alliance" },
+                                                                { race = { 1, 3, 4, 7 } },
+                                                                {
+                                                                    any = {
+                                                                        {
+                                                                            any = {
+                                                                                { quest = { id = 637, state = "activeOrCompleted" } },
+                                                                                {
+                                                                                    all = { { item = { minCount = 1, name = "Sully Balloo's Letter" } }, { faction = "Alliance" }, { race = { 1, 3, 4, 7 } } },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
+            id = "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-accept-686-a-king-s-tribute",
+            kind = "accept",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 683 } } },
+            route = {
+                {
+                    label = "King Magni Bronzebeard",
+                    mapID = 1455,
+                    offMapText = "Travel to King Magni Bronzebeard in Ironforge.",
+                    x = 0.3911,
+                    y = 0.5617,
+                },
+            },
+            sourceActionID = "accept-686-a-king-s-tribute",
+            sourceGuide = "leveling-era-alliance-stonetalon-mountains-and-ashenvale",
+            sourceStep = 70,
+            text = "Accept A King's Tribute from King Magni Bronzebeard.",
+            useClientPin = false,
+            useClientText = false,
+        },
+        {
+            complete = { quest = { id = 686, state = "completed" } },
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 25 } }, { race = { 1, 3, 4, 7, 95 } } } },
+            dependsOn = { "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-accept-686-a-king-s-tribute" },
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 686, state = "activeOrCompleted" } },
+                        {
+                            any = {
+                                { quest = { id = 686, state = "activeOrCompleted" } },
+                                {
+                                    all = {
+                                        { faction = "Alliance" },
+                                        { race = { 1, 3, 4, 7 } },
+                                        {
+                                            any = {
+                                                {
+                                                    any = {
+                                                        { quest = { id = 683, state = "activeOrCompleted" } },
+                                                        {
+                                                            all = {
+                                                                { faction = "Alliance" },
+                                                                { race = { 1, 3, 4, 7 } },
+                                                                {
+                                                                    any = {
+                                                                        {
+                                                                            any = {
+                                                                                { quest = { id = 637, state = "activeOrCompleted" } },
+                                                                                {
+                                                                                    all = { { item = { minCount = 1, name = "Sully Balloo's Letter" } }, { faction = "Alliance" }, { race = { 1, 3, 4, 7 } } },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
+            id = "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-turnin-686-a-king-s-tribute",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 683 } } },
+            route = {
+                {
+                    label = "Grand Mason Marblesten",
+                    mapID = 1455,
+                    offMapText = "Travel to Grand Mason Marblesten in Ironforge.",
+                    x = 0.3903,
+                    y = 0.8802,
+                },
+            },
+            sourceActionID = "turnin-686-a-king-s-tribute",
+            sourceGuide = "leveling-era-alliance-stonetalon-mountains-and-ashenvale",
+            sourceStep = 71,
+            text = "Turn in A King's Tribute to Grand Mason Marblesten.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
+        },
+        {
+            complete = { quest = { id = 689, state = "activeOrCompleted" } },
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 25 } }, { race = { 1, 3, 4, 7, 95 } } } },
+            dependsOn = {},
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 689, state = "activeOrCompleted" } },
+                        {
+                            any = {
+                                { quest = { id = 689, state = "activeOrCompleted" } },
+                                {
+                                    all = {
+                                        { faction = "Alliance" },
+                                        { race = { 1, 3, 4, 7 } },
+                                        {
+                                            any = {
+                                                {
+                                                    any = {
+                                                        { quest = { id = 686, state = "activeOrCompleted" } },
+                                                        {
+                                                            all = {
+                                                                { faction = "Alliance" },
+                                                                { race = { 1, 3, 4, 7 } },
+                                                                {
+                                                                    any = {
+                                                                        {
+                                                                            any = {
+                                                                                { quest = { id = 683, state = "activeOrCompleted" } },
+                                                                                {
+                                                                                    all = {
+                                                                                        { faction = "Alliance" },
+                                                                                        { race = { 1, 3, 4, 7 } },
+                                                                                        {
+                                                                                            any = {
+                                                                                                {
+                                                                                                    any = {
+                                                                                                        { quest = { id = 637, state = "activeOrCompleted" } },
+                                                                                                        {
+                                                                                                            all = { { item = { minCount = 1, name = "Sully Balloo's Letter" } }, { faction = "Alliance" }, { race = { 1, 3, 4, 7 } } },
+                                                                                                        },
+                                                                                                    },
+                                                                                                },
+                                                                                            },
+                                                                                        },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
+            id = "alliance-leveling-era-alliance-stonetalon-mountains-and-ashenvale-accept-689-a-king-s-tribute",
+            kind = "accept",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 686 } } },
+            route = {
+                {
+                    label = "Grand Mason Marblesten",
+                    mapID = 1455,
+                    offMapText = "Travel to Grand Mason Marblesten in Ironforge.",
+                    x = 0.386,
+                    y = 0.87,
+                },
+            },
+            sourceActionID = "accept-689-a-king-s-tribute",
+            sourceGuide = "leveling-era-alliance-stonetalon-mountains-and-ashenvale",
+            sourceStep = 71,
+            text = "Accept A King's Tribute from Grand Mason Marblesten.",
+            useClientPin = false,
+            useClientText = false,
         },
         {
             id = "visit-entry-leveling-era-alliance-duskwood-and-stranglethorn-vale",
@@ -1868,6 +2231,84 @@ ns:RegisterGuide({
             sourceActionID = "accept-659-hints-of-a-new-plague",
         },
         {
+            complete = { questObjective = { count = 5, id = 689, index = 1, text = "Alterac Granite" } },
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 25 } }, { race = { 1, 3, 4, 7, 95 } } } },
+            dependsOn = {},
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 689, state = "activeOrCompleted" } },
+                        {
+                            any = {
+                                { quest = { id = 689, state = "activeOrCompleted" } },
+                                {
+                                    all = {
+                                        { faction = "Alliance" },
+                                        { race = { 1, 3, 4, 7 } },
+                                        {
+                                            any = {
+                                                {
+                                                    any = {
+                                                        { quest = { id = 686, state = "activeOrCompleted" } },
+                                                        {
+                                                            all = {
+                                                                { faction = "Alliance" },
+                                                                { race = { 1, 3, 4, 7 } },
+                                                                {
+                                                                    any = {
+                                                                        {
+                                                                            any = {
+                                                                                { quest = { id = 683, state = "activeOrCompleted" } },
+                                                                                {
+                                                                                    all = {
+                                                                                        { faction = "Alliance" },
+                                                                                        { race = { 1, 3, 4, 7 } },
+                                                                                        {
+                                                                                            any = {
+                                                                                                {
+                                                                                                    any = {
+                                                                                                        { quest = { id = 637, state = "activeOrCompleted" } },
+                                                                                                        {
+                                                                                                            all = { { item = { minCount = 1, name = "Sully Balloo's Letter" } }, { faction = "Alliance" }, { race = { 1, 3, 4, 7 } } },
+                                                                                                        },
+                                                                                                    },
+                                                                                                },
+                                                                                            },
+                                                                                        },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
+            id = "alliance-leveling-era-alliance-hillsbrad-foothills-and-arathi-highlands-objective-689-1-alterac-granite",
+            kind = "objective",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 686 } } },
+            route = {
+                { label = "Alterac Granite", mapID = 1424, offMapText = "Travel to Alterac Granite.", x = 0.4618, y = 0.3183 },
+            },
+            sourceActionID = "objective-689-1-alterac-granite",
+            sourceGuide = "leveling-era-alliance-hillsbrad-foothills-and-arathi-highlands",
+            sourceStep = 19,
+            text = "Collect 5 Alterac Granite.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
+        },
+        {
             complete = { questObjective = { count = 10, id = 565, index = 4, text = "Yeti Fur" } },
             conditions = { all = { { faction = "Alliance" }, { level = { min = 29 } }, { race = { 1, 3, 4, 7, 95 } } } },
             dependsOn = { "alliance-leveling-era-alliance-hillsbrad-foothills-and-arathi-highlands-accept-565-bartolo-s-yeti-fur-cloak" },
@@ -2170,6 +2611,90 @@ ns:RegisterGuide({
                     },
                 },
             },
+        },
+        {
+            complete = { quest = { id = 689, state = "completed" } },
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 25 } }, { race = { 1, 3, 4, 7, 95 } } } },
+            dependsOn = { "alliance-leveling-era-alliance-hillsbrad-foothills-and-arathi-highlands-objective-689-1-alterac-granite" },
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 689, state = "activeOrCompleted" } },
+                        {
+                            any = {
+                                { quest = { id = 689, state = "activeOrCompleted" } },
+                                {
+                                    all = {
+                                        { faction = "Alliance" },
+                                        { race = { 1, 3, 4, 7 } },
+                                        {
+                                            any = {
+                                                {
+                                                    any = {
+                                                        { quest = { id = 686, state = "activeOrCompleted" } },
+                                                        {
+                                                            all = {
+                                                                { faction = "Alliance" },
+                                                                { race = { 1, 3, 4, 7 } },
+                                                                {
+                                                                    any = {
+                                                                        {
+                                                                            any = {
+                                                                                { quest = { id = 683, state = "activeOrCompleted" } },
+                                                                                {
+                                                                                    all = {
+                                                                                        { faction = "Alliance" },
+                                                                                        { race = { 1, 3, 4, 7 } },
+                                                                                        {
+                                                                                            any = {
+                                                                                                {
+                                                                                                    any = {
+                                                                                                        { quest = { id = 637, state = "activeOrCompleted" } },
+                                                                                                        {
+                                                                                                            all = { { item = { minCount = 1, name = "Sully Balloo's Letter" } }, { faction = "Alliance" }, { race = { 1, 3, 4, 7 } } },
+                                                                                                        },
+                                                                                                    },
+                                                                                                },
+                                                                                            },
+                                                                                        },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
+            id = "alliance-leveling-era-alliance-hillsbrad-foothills-and-arathi-highlands-turnin-689-a-king-s-tribute",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 686 } } },
+            route = {
+                {
+                    label = "Grand Mason Marblesten",
+                    mapID = 1455,
+                    offMapText = "Travel to Grand Mason Marblesten in Ironforge.",
+                    x = 0.3904,
+                    y = 0.8805,
+                },
+            },
+            sourceActionID = "turnin-689-a-king-s-tribute",
+            sourceGuide = "leveling-era-alliance-hillsbrad-foothills-and-arathi-highlands",
+            sourceStep = 38,
+            text = "Turn in A King's Tribute to Grand Mason Marblesten.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             id = "visit-entry-leveling-era-alliance-stranglethorn-vale",
@@ -7503,6 +8028,100 @@ ns:RegisterGuide({
             requiredLevel = 38,
         },
         {
+            checkpointQuest = 545,
+            complete = { level = { min = 30 } },
+            conditions = { all = { { faction = "Horde" }, { race = { 2, 5, 6, 8, 96 } } } },
+            dependsOn = {},
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 545, state = "activeOrCompleted" } },
+                        {
+                            any = {
+                                { quest = { id = 545, state = "activeOrCompleted" } },
+                                {
+                                    all = {
+                                        { faction = "Horde" },
+                                        { race = { 2, 5, 6, 8 } },
+                                        {
+                                            any = {
+                                                {
+                                                    any = {
+                                                        { quest = { id = 544, state = "activeOrCompleted" } },
+                                                        { all = { { faction = "Horde" }, { race = { 2, 5, 6, 8 } } } },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
+            id = "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-level-before-accept-545-dalaran-patrols",
+            kind = "note",
+            requiredLevel = 30,
+            requiredQuests = {},
+            sourceActionID = "level-before-accept-545-dalaran-patrols",
+            sourceGuide = "leveling-era-horde-alterac-mountains-and-arathi-highlands",
+            text = "Reach level 30 before continuing. Choose how to gain XP, then return to this route.",
+            useClientPin = false,
+            useClientText = false,
+        },
+        {
+            complete = { quest = { id = 545, state = "activeOrCompleted" } },
+            conditions = { all = { { faction = "Horde" }, { level = { min = 30 } }, { race = { 2, 5, 6, 8, 96 } } } },
+            dependsOn = {},
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 545, state = "activeOrCompleted" } },
+                        {
+                            any = {
+                                { quest = { id = 545, state = "activeOrCompleted" } },
+                                {
+                                    all = {
+                                        { faction = "Horde" },
+                                        { race = { 2, 5, 6, 8 } },
+                                        {
+                                            any = {
+                                                {
+                                                    any = {
+                                                        { quest = { id = 544, state = "activeOrCompleted" } },
+                                                        { all = { { faction = "Horde" }, { race = { 2, 5, 6, 8 } } } },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
+            id = "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-accept-545-dalaran-patrols",
+            kind = "accept",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 544 } } },
+            route = {
+                {
+                    label = "Magus Wordeen Voidglare",
+                    mapID = 1424,
+                    offMapText = "Travel to Magus Wordeen Voidglare in Hillsbrad Foothills.",
+                    x = 0.616,
+                    y = 0.2084,
+                },
+            },
+            sourceActionID = "accept-545-dalaran-patrols",
+            sourceGuide = "leveling-era-horde-alterac-mountains-and-arathi-highlands",
+            sourceStep = 1,
+            text = "Accept Dalaran Patrols from Magus Wordeen Voidglare.",
+            useClientPin = false,
+            useClientText = false,
+        },
+        {
             complete = { quest = { id = 557, state = "activeOrCompleted" } },
             conditions = { all = { { faction = "Horde" }, { level = { min = 30 } }, { race = { 2, 5, 6, 8, 96 } } } },
             dependsOn = {},
@@ -8122,6 +8741,96 @@ ns:RegisterGuide({
             },
         },
         {
+            complete = { questObjective = { count = 6, id = 545, index = 1, text = "Dalaran Summoner" } },
+            conditions = { all = { { faction = "Horde" }, { level = { min = 30 } }, { race = { 2, 5, 6, 8, 96 } } } },
+            dependsOn = { "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-accept-545-dalaran-patrols" },
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 545, state = "activeOrCompleted" } },
+                        {
+                            any = {
+                                { quest = { id = 545, state = "activeOrCompleted" } },
+                                {
+                                    all = {
+                                        { faction = "Horde" },
+                                        { race = { 2, 5, 6, 8 } },
+                                        {
+                                            any = {
+                                                {
+                                                    any = {
+                                                        { quest = { id = 544, state = "activeOrCompleted" } },
+                                                        { all = { { faction = "Horde" }, { race = { 2, 5, 6, 8 } } } },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
+            id = "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-objective-545-1-dalaran-summoner",
+            kind = "objective",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 544 } } },
+            route = {
+                { label = "Dalaran Summoner", mapID = 1416, offMapText = "Travel to Dalaran Summoner.", x = 0.206, y = 0.764 },
+            },
+            sourceActionID = "objective-545-1-dalaran-summoner",
+            sourceGuide = "leveling-era-horde-alterac-mountains-and-arathi-highlands",
+            sourceStep = 20,
+            text = "Kill 6 Dalaran Summoner.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
+        },
+        {
+            complete = { questObjective = { count = 12, id = 545, index = 2, text = "Elemental Slave" } },
+            conditions = { all = { { faction = "Horde" }, { level = { min = 30 } }, { race = { 2, 5, 6, 8, 96 } } } },
+            dependsOn = { "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-accept-545-dalaran-patrols" },
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 545, state = "activeOrCompleted" } },
+                        {
+                            any = {
+                                { quest = { id = 545, state = "activeOrCompleted" } },
+                                {
+                                    all = {
+                                        { faction = "Horde" },
+                                        { race = { 2, 5, 6, 8 } },
+                                        {
+                                            any = {
+                                                {
+                                                    any = {
+                                                        { quest = { id = 544, state = "activeOrCompleted" } },
+                                                        { all = { { faction = "Horde" }, { race = { 2, 5, 6, 8 } } } },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
+            id = "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-objective-545-2-elemental-slave",
+            kind = "objective",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 544 } } },
+            route = { { label = "Elemental Slave", mapID = 1416, offMapText = "Travel to Elemental Slave.", x = 0.206, y = 0.764 } },
+            sourceActionID = "objective-545-2-elemental-slave",
+            sourceGuide = "leveling-era-horde-alterac-mountains-and-arathi-highlands",
+            sourceStep = 20,
+            text = "Kill 12 Elemental Slave.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
+        },
+        {
             complete = { questObjective = { id = 507, index = 1, text = "Lord Aliden Perenolde" } },
             conditions = { all = { { faction = "Horde" }, { level = { min = 29 } }, { race = { 2, 5, 6, 8, 96 } } } },
             dependsOn = { "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-accept-507-lord-aliden-perenolde" },
@@ -8378,6 +9087,62 @@ ns:RegisterGuide({
             },
         },
         {
+            complete = { quest = { id = 545, state = "completed" } },
+            conditions = { all = { { faction = "Horde" }, { level = { min = 30 } }, { race = { 2, 5, 6, 8, 96 } } } },
+            dependsOn = {
+                "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-accept-545-dalaran-patrols",
+                "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-objective-545-1-dalaran-summoner",
+                "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-objective-545-2-elemental-slave",
+            },
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 545, state = "activeOrCompleted" } },
+                        {
+                            any = {
+                                { quest = { id = 545, state = "activeOrCompleted" } },
+                                {
+                                    all = {
+                                        { faction = "Horde" },
+                                        { race = { 2, 5, 6, 8 } },
+                                        {
+                                            any = {
+                                                {
+                                                    any = {
+                                                        { quest = { id = 544, state = "activeOrCompleted" } },
+                                                        { all = { { faction = "Horde" }, { race = { 2, 5, 6, 8 } } } },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
+            id = "horde-leveling-era-horde-alterac-mountains-and-arathi-highlands-turnin-545-dalaran-patrols",
+            kind = "turnin",
+            requiredQuests = { { conditions = {}, mode = "any", quests = { 544 } } },
+            route = {
+                {
+                    label = "Magus Wordeen Voidglare",
+                    mapID = 1424,
+                    offMapText = "Travel to Magus Wordeen Voidglare in Hillsbrad Foothills.",
+                    x = 0.616,
+                    y = 0.2084,
+                },
+            },
+            sourceActionID = "turnin-545-dalaran-patrols",
+            sourceGuide = "leveling-era-horde-alterac-mountains-and-arathi-highlands",
+            sourceStep = 24,
+            text = "Turn in Dalaran Patrols to Magus Wordeen Voidglare.",
+            useClientPin = false,
+            useClientText = false,
+            useQuestNavigation = true,
+        },
+        {
             complete = { quest = { id = 557, state = "completed" } },
             conditions = { all = { { faction = "Horde" }, { level = { min = 30 } }, { race = { 2, 5, 6, 8, 96 } } } },
             dependsOn = {
@@ -8515,14 +9280,14 @@ ns:RegisterGuide({
             useQuestNavigation = true,
         },
         {
+            alternativeQuests = { 518 },
+            checkpointQuest = 495,
+            complete = { level = { min = 34 } },
+            conditions = { all = { { faction = "Horde" } } },
             id = "horde-extra-495-level",
             kind = "note",
-            checkpointQuest = 495,
-            text = "Reach level 39 before this visit.",
-            conditions = { all = { { faction = "Horde" } } },
-            complete = { level = { min = 39 } },
-            requiredLevel = 39,
-            alternativeQuests = { 518 },
+            requiredLevel = 34,
+            text = "Reach level 34 before this visit.",
         },
         {
             id = "horde-extra-495-accept",
@@ -8574,13 +9339,13 @@ ns:RegisterGuide({
             useQuestNavigation = true,
         },
         {
+            checkpointQuest = 518,
+            complete = { level = { min = 34 } },
+            conditions = { all = { { faction = "Horde" } } },
             id = "horde-extra-518-level",
             kind = "note",
-            checkpointQuest = 518,
-            text = "Reach level 39 before this visit.",
-            conditions = { all = { { faction = "Horde" } } },
-            complete = { level = { min = 39 } },
-            requiredLevel = 39,
+            requiredLevel = 34,
+            text = "Reach level 34 before this visit.",
         },
         {
             id = "horde-extra-518-accept",
@@ -8636,13 +9401,13 @@ ns:RegisterGuide({
             useQuestNavigation = true,
         },
         {
+            checkpointQuest = 547,
+            complete = { level = { min = 26 } },
+            conditions = { all = { { faction = "Horde" } } },
             id = "horde-extra-547-level",
             kind = "note",
-            checkpointQuest = 547,
-            text = "Reach level 30 before this visit.",
-            conditions = { all = { { faction = "Horde" } } },
-            complete = { level = { min = 30 } },
-            requiredLevel = 30,
+            requiredLevel = 26,
+            text = "Reach level 26 before this visit.",
         },
         {
             id = "horde-extra-547-accept",

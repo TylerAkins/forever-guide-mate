@@ -2,31 +2,38 @@
   "guide": "loremaster-loch-modan",
   "title": "Loch Modan",
   "sources": {
-    "databaseCommit": "5c92953420ab4a710fda39581a405a72a89b8c0d",
-    "compilation": {
-      "schemaVersion": 1,
-      "compilationFormatVersion": 2,
-      "flavor": "forever",
-      "source": "compilation",
-      "sourceRevision": "991cc5841d7b79dc85613431aa8ecf6f4c34070753426d60f323e321532d4b66",
-      "recordCount": 107209,
-      "recordsSha256": "9ab82625871b9df3a0ac5781bb194be6d8211a4a6337258fbf82224e00416727",
-      "status": "generated"
+    "questiedb": {
+      "artifactVersion": "1.0.6-dev.f844007",
+      "buildCommit": "f844007b329b72f18cf2bda3d87540012294732a",
+      "counts": {
+        "Item": 21294,
+        "Npc": 13393,
+        "Object": 7035,
+        "Quest": 5232
+      }
     },
     "sourceHashes": {
-      "data/forever/raw/quest_index.json": "cb47391391cf9655e1f86b479aae60321ca78726482527c1d38074352baba0a7",
-      "data/forever/compilation/records.jsonl.gz": "35c74cb11823db372dc0bc289d5ffaf8296ca9d1c370e4f7b794a29af7f84b47"
-    }
+      "questiedb/export.json": "e26090e90df3aa2e94be4c13feb001390068b84c249ff2443c629d26a408e704",
+      "questiedb/policy.json": "835ba8f6361ef37bda275859bdb48852001c3ce2b6a2b3ecff586283633e2ad4"
+    },
+    "upstreamCommit": "9087c457e20fb96e73e5b362dd6fc50324b75718"
   },
   "sourcePriority": [
-    "wowhead",
-    "questiedb",
-    "allthethings",
-    "foreverclient"
+    "questiedb"
   ],
   "spine": "leveling-era-alliance-loch-modan",
-  "additionalSpines": [],
+  "additionalSpines": [
+    "leveling-era-elwynn-forest",
+    "leveling-era-dun-morogh",
+    "leveling-era-alliance-loch-modan",
+    "leveling-era-alliance-badlands",
+    "leveling-era-alliance-searing-gorge",
+    "leveling-era-alliance-blasted-lands-and-burning-steppes"
+  ],
   "spineActions": [
+    "alliance-leveling-era-elwynn-forest-level-before-accept-353-stormpike-s-delivery",
+    "alliance-leveling-era-elwynn-forest-accept-353-stormpike-s-delivery",
+    "alliance-leveling-era-elwynn-forest-turnin-353-stormpike-s-delivery",
     "accept-418-thelsamar-blood-sausages",
     "accept-416-rat-catching",
     "accept-1339-mountaineer-stormpike-s-task",
@@ -51,8 +58,13 @@
     "accept-6388-gryth-thurden",
     "turnin-6388-gryth-thurden",
     "accept-6392-return-to-brock",
+    "alliance-leveling-era-dun-morogh-level-before-accept-353-stormpike-s-delivery",
+    "alliance-leveling-era-dun-morogh-accept-353-stormpike-s-delivery",
     "turnin-6392-return-to-brock",
+    "alliance-leveling-era-dun-morogh-turnin-353-stormpike-s-delivery",
     "accept-436-ironband-s-excavation",
+    "alliance-leveling-era-alliance-loch-modan-level-before-turnin-353-stormpike-s-delivery",
+    "alliance-leveling-era-alliance-loch-modan-turnin-353-stormpike-s-delivery",
     "accept-307-filthy-paws",
     "objective-307-1-miners-league-crates",
     "turnin-307-filthy-paws",
@@ -71,7 +83,16 @@
     "turnin-297-gathering-idols",
     "turnin-298-excavation-progress-report",
     "accept-301-report-to-ironforge",
-    "turnin-301-report-to-ironforge"
+    "turnin-301-report-to-ironforge",
+    "alliance-leveling-era-alliance-badlands-accept-707-ironband-wants-you",
+    "alliance-leveling-era-alliance-badlands-turnin-707-ironband-wants-you",
+    "alliance-leveling-era-alliance-searing-gorge-level-before-note-3181-margol-loot",
+    "alliance-leveling-era-alliance-searing-gorge-accept-3181-the-horn-of-the-beast",
+    "alliance-leveling-era-alliance-searing-gorge-turnin-3181-the-horn-of-the-beast",
+    "alliance-leveling-era-alliance-searing-gorge-accept-3182-proof-of-deed",
+    "alliance-leveling-era-alliance-blasted-lands-and-burning-steppes-turnin-3182-proof-of-deed",
+    "alliance-leveling-era-alliance-blasted-lands-and-burning-steppes-accept-3201-at-last",
+    "alliance-leveling-era-alliance-blasted-lands-and-burning-steppes-turnin-3201-at-last"
   ],
   "placements": [
     {
@@ -314,6 +335,153 @@
         "turnin-86776-loremaster"
       ],
       "reason": "Placed with the suitable giver visit after verified predecessors and before later return checkpoints."
+    },
+    {
+      "actions": [
+        "alliance-leveling-era-elwynn-forest-level-before-accept-353-stormpike-s-delivery"
+      ],
+      "anchor": "alliance-leveling-era-elwynn-forest-level-before-accept-353-stormpike-s-delivery",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "alliance-leveling-era-elwynn-forest-accept-353-stormpike-s-delivery"
+      ],
+      "anchor": "alliance-leveling-era-elwynn-forest-level-before-accept-353-stormpike-s-delivery",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "alliance-leveling-era-elwynn-forest-turnin-353-stormpike-s-delivery"
+      ],
+      "anchor": "alliance-leveling-era-elwynn-forest-accept-353-stormpike-s-delivery",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "alliance-leveling-era-dun-morogh-level-before-accept-353-stormpike-s-delivery"
+      ],
+      "anchor": "accept-6392-return-to-brock",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "alliance-leveling-era-dun-morogh-accept-353-stormpike-s-delivery"
+      ],
+      "anchor": "alliance-leveling-era-dun-morogh-level-before-accept-353-stormpike-s-delivery",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "alliance-leveling-era-dun-morogh-turnin-353-stormpike-s-delivery"
+      ],
+      "anchor": "turnin-6392-return-to-brock",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "visit-entry-leveling-era-alliance-loch-modan"
+      ],
+      "anchor": "accept-436-ironband-s-excavation",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "alliance-leveling-era-alliance-loch-modan-level-before-turnin-353-stormpike-s-delivery"
+      ],
+      "anchor": "visit-entry-leveling-era-alliance-loch-modan",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "alliance-leveling-era-alliance-loch-modan-turnin-353-stormpike-s-delivery"
+      ],
+      "anchor": "alliance-leveling-era-alliance-loch-modan-level-before-turnin-353-stormpike-s-delivery",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "visit-entry-leveling-era-alliance-badlands"
+      ],
+      "anchor": "turnin-301-report-to-ironforge",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "alliance-leveling-era-alliance-badlands-accept-707-ironband-wants-you"
+      ],
+      "anchor": "visit-entry-leveling-era-alliance-badlands",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "alliance-leveling-era-alliance-badlands-turnin-707-ironband-wants-you"
+      ],
+      "anchor": "alliance-leveling-era-alliance-badlands-accept-707-ironband-wants-you",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "visit-entry-leveling-era-alliance-searing-gorge"
+      ],
+      "anchor": "alliance-leveling-era-alliance-badlands-turnin-707-ironband-wants-you",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "alliance-leveling-era-alliance-searing-gorge-level-before-note-3181-margol-loot"
+      ],
+      "anchor": "visit-entry-leveling-era-alliance-searing-gorge",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "alliance-leveling-era-alliance-searing-gorge-accept-3181-the-horn-of-the-beast"
+      ],
+      "anchor": "alliance-leveling-era-alliance-searing-gorge-level-before-note-3181-margol-loot",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "alliance-leveling-era-alliance-searing-gorge-turnin-3181-the-horn-of-the-beast"
+      ],
+      "anchor": "alliance-leveling-era-alliance-searing-gorge-accept-3181-the-horn-of-the-beast",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "alliance-leveling-era-alliance-searing-gorge-accept-3182-proof-of-deed"
+      ],
+      "anchor": "alliance-leveling-era-alliance-searing-gorge-turnin-3181-the-horn-of-the-beast",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "visit-entry-leveling-era-alliance-blasted-lands-and-burning-steppes"
+      ],
+      "anchor": "alliance-leveling-era-alliance-searing-gorge-accept-3182-proof-of-deed",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "alliance-leveling-era-alliance-blasted-lands-and-burning-steppes-turnin-3182-proof-of-deed"
+      ],
+      "anchor": "visit-entry-leveling-era-alliance-blasted-lands-and-burning-steppes",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "alliance-leveling-era-alliance-blasted-lands-and-burning-steppes-accept-3201-at-last"
+      ],
+      "anchor": "alliance-leveling-era-alliance-blasted-lands-and-burning-steppes-turnin-3182-proof-of-deed",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "alliance-leveling-era-alliance-blasted-lands-and-burning-steppes-turnin-3201-at-last"
+      ],
+      "anchor": "alliance-leveling-era-alliance-blasted-lands-and-burning-steppes-accept-3201-at-last",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
     }
   ],
   "quests": {
@@ -4741,12 +4909,12 @@
       ]
     },
     "3182": {
-      "status": "other-zone",
-      "reason": "Objectives and chain belong to another zone; capital or zone pickup does not establish ownership.",
+      "status": "spine",
+      "reason": "Preserved faction Casual actions.",
       "catalogs": [
         "loch-modan"
       ],
-      "supporting": false,
+      "supporting": true,
       "evidence": {
         "allthethings": {
           "name": "Proof of Deed",
@@ -5865,10 +6033,600 @@
         }
       ],
       "restrictionPolicy": "Wowhead restrictions and offer minimum; explicit Questie prerequisites, then ATT where missing."
+    },
+    "79975": {
+      "catalogs": [
+        "loch-modan"
+      ],
+      "evidence": {
+        "artifactVersion": "1.0.6-dev.f844007",
+        "buildCommit": "f844007b329b72f18cf2bda3d87540012294732a",
+        "source": "QuestieDB"
+      },
+      "locations": [],
+      "supporting": false,
+      "status": "unresolved",
+      "reason": "missing supported pickup or return navigation"
+    },
+    "353": {
+      "catalogs": [
+        "stormwind-city"
+      ],
+      "evidence": {
+        "artifactVersion": "1.0.6-dev.f844007",
+        "buildCommit": "f844007b329b72f18cf2bda3d87540012294732a",
+        "source": "QuestieDB"
+      },
+      "locations": [
+        {
+          "coord": [
+            59.73,
+            33.78
+          ],
+          "id": 1416,
+          "name": "Grimand Elmore",
+          "point": "start",
+          "reactalliance": 1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Stormwind City"
+        },
+        {
+          "coord": [
+            24.76,
+            18.4
+          ],
+          "id": 1343,
+          "name": "Mountaineer Stormpike",
+          "point": "end",
+          "reactalliance": 1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Loch Modan"
+        }
+      ],
+      "supporting": false,
+      "status": "spine",
+      "reason": "Preserved faction Casual actions."
+    },
+    "707": {
+      "catalogs": [
+        "ironforge"
+      ],
+      "evidence": {
+        "artifactVersion": "1.0.6-dev.f844007",
+        "buildCommit": "f844007b329b72f18cf2bda3d87540012294732a",
+        "source": "QuestieDB"
+      },
+      "locations": [
+        {
+          "coord": [
+            74.64,
+            11.74
+          ],
+          "id": 1356,
+          "name": "Prospector Stormpike",
+          "point": "start",
+          "reactalliance": 1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Ironforge"
+        },
+        {
+          "coord": [
+            65.93,
+            65.62
+          ],
+          "id": 1344,
+          "name": "Prospector Ironband",
+          "point": "end",
+          "reactalliance": 1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Loch Modan"
+        }
+      ],
+      "supporting": false,
+      "status": "spine",
+      "reason": "Preserved faction Casual actions."
+    },
+    "3201": {
+      "catalogs": [
+        "ironforge"
+      ],
+      "evidence": {
+        "artifactVersion": "1.0.6-dev.f844007",
+        "buildCommit": "f844007b329b72f18cf2bda3d87540012294732a",
+        "source": "QuestieDB"
+      },
+      "locations": [
+        {
+          "coord": [
+            71.5,
+            15.74
+          ],
+          "id": 8256,
+          "name": "Curator Thorius",
+          "point": "start",
+          "reactalliance": 1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Ironforge"
+        },
+        {
+          "coord": [
+            18.18,
+            84.01
+          ],
+          "id": 3836,
+          "name": "Mountaineer Pebblebitty",
+          "point": "end",
+          "reactalliance": 1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Loch Modan"
+        }
+      ],
+      "supporting": false,
+      "status": "spine",
+      "reason": "Preserved faction Casual actions."
+    },
+    "3181": {
+      "catalogs": [
+        "searing-gorge"
+      ],
+      "supporting": true,
+      "evidence": {
+        "artifactVersion": "1.0.6-dev.f844007",
+        "buildCommit": "f844007b329b72f18cf2bda3d87540012294732a",
+        "source": "QuestieDB"
+      },
+      "locations": [
+        {
+          "coord": [
+            18.18,
+            84.01
+          ],
+          "id": 3836,
+          "name": "Mountaineer Pebblebitty",
+          "point": "end",
+          "reactalliance": 1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Loch Modan"
+        }
+      ],
+      "status": "spine",
+      "reason": "Preserved faction Casual actions."
     }
   },
   "supportingQuests": [
-    2039
+    2039,
+    3181,
+    3182
   ],
-  "clientWalkthrough": "unverified"
+  "clientWalkthrough": "unverified",
+  "coverageMode": "zone",
+  "orderingEligibility": {
+    "161": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "199": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "217": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "224": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "237": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "250": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "255": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "256": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "257": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "258": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "263": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "267": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "271": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "273": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "274": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "278": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "280": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "283": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "297": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "298": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "301": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "302": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "307": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "309": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "353": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "385": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "416": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "418": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "436": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "454": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "531": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "707": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "1338": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "1339": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "2038": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "2039": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "2500": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "2501": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "3182": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "3201": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "6387": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "6388": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "6391": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "6392": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "79975": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "86585": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "86613": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "86614": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "86667": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "86758": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "86776": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    }
+  },
+  "upstream": {
+    "repository": "https://github.com/ErebusAres/ZygorGuidesRemaster-3.3.5a_WOTLK",
+    "commit": "9087c457e20fb96e73e5b362dd6fc50324b75718",
+    "strict": false,
+    "sourceHashes": {
+      "ZygorGuidesViewerRM/Guides/Leveling/ZygorGuidesHorde.lua": "2eaf5adb4865936cdb4257451c3ce920fdaff1c0ec17216c36e055480f389e54",
+      "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-EasternKingdoms.lua": "8a5ec87d31698c612e50eb0655f5c1f28d723c3068552c1295d79ddcd934270f",
+      "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-Kalimdor.lua": "4fb7b7f5bb2702dfe36ed33de31b4d3105153bfba62b7a14a7ab73386e2087fa",
+      "ZygorGuidesViewerRM/Guides/Leveling/ZygorGuidesAlliance.lua": "ffb9b7828817e098d74ee5931e15a64ce773142a4c1e60f9775d0713121ba67d"
+    },
+    "matches": {}
+  }
 }

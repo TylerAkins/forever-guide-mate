@@ -1,6 +1,6 @@
 # Loremaster coverage and verification
 
-Run `python3 tools/loremaster_report.py` from the repository root with Lua 5.1 available. The JSON report reads registered actions after shared-action expansion and Casual composition. Use `--lua /path/to/lua` for another Lua 5.1 executable. No database checkout is needed.
+Run `go run ./cmd/loremaster-report` from the repository root with LuaJIT installed. The JSON report reads registered actions after shared-action expansion and Casual composition. Use `--lua /path/to/luajit` to select another LuaJIT executable. No database checkout is needed.
 
 Counts are unique quest IDs with authored pickups, across all race, class, and profession branches. They include supporting excursions and are not a single-character completion total. Overlap is the intersection of the relevant Leveling pickups and Loremaster. Added quests are Loremaster pickups absent from that comparison set. The new zones compare against all shipped Leveling visits, restricted to their frozen catalog and identified supporting quests. Starter zones compare their recorded source itineraries.
 
@@ -87,7 +87,7 @@ The synchronization check compares current expanded actions, including completio
 
 ## Automated verification
 
-Python checks pass (114 tests). Lua 5.1 checks pass for the engine, authored guides, ordered routes, catalog, UI, lint (73,680 checks), and accept-chain audit. The full race/class matrix passes 246,059 observed actions; the affected Skyborne matrix also passes after the prerequisite repair (51,828 actions). The expanded Loremaster journeys pass 57,811 observed actions; dungeon journeys pass 19,024. Visitor regressions cover faction, class, professions, missing and completed prerequisites, and midway entry. Synchronization regressions detect changed source restrictions, prerequisites, navigation, identities, guide restrictions, and shared-action membership. Compilation and patch-release validation pass for 0.6.4 with Interface 16001 preserved. These are simulated observations, not server quest-offer verification.
+Go checks pass (120 test functions). Lua 5.1 checks pass for the engine, authored guides, ordered routes, catalog, UI, lint (73,680 checks), and accept-chain audit. The full race/class matrix passes 246,059 observed actions; the affected Skyborne matrix also passes after the prerequisite repair (51,828 actions). The expanded Loremaster journeys pass 57,811 observed actions; dungeon journeys pass 19,024. Visitor regressions cover faction, class, professions, missing and completed prerequisites, and midway entry. Synchronization regressions detect changed source restrictions, prerequisites, navigation, identities, guide restrictions, and shared-action membership. Compilation and patch-release validation pass for 0.6.4 with Interface 16001 preserved. These are simulated observations, not server quest-offer verification.
 
 ## Client walkthroughs requested
 

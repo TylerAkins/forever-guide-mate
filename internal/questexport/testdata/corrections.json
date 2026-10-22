@@ -1,0 +1,4090 @@
+{
+ "manifest": {
+  "artifactVersion": "1.0.6-dev.f844007",
+  "buildCommit": "f844007b329b72f18cf2bda3d87540012294732a",
+  "counts": {
+   "Quest": 6,
+   "Npc": 2,
+   "Object": 1,
+   "Item": 1
+  },
+  "variants": {
+   "Alliance/DRUID": {
+    "Quest": 3
+   },
+   "Alliance/HUNTER": {
+    "Quest": 3
+   },
+   "Alliance/MAGE": {
+    "Quest": 3
+   },
+   "Alliance/PALADIN": {
+    "Quest": 3
+   },
+   "Alliance/PRIEST": {
+    "Quest": 3
+   },
+   "Alliance/ROGUE": {
+    "Quest": 3
+   },
+   "Alliance/SHAMAN": {
+    "Quest": 2
+   },
+   "Alliance/WARLOCK": {
+    "Quest": 3
+   },
+   "Alliance/WARRIOR": {
+    "Quest": 3
+   },
+   "Horde/DRUID": {
+    "Quest": 5
+   },
+   "Horde/HUNTER": {
+    "Quest": 5
+   },
+   "Horde/MAGE": {
+    "Quest": 5
+   },
+   "Horde/PALADIN": {
+    "Quest": 2
+   },
+   "Horde/PRIEST": {
+    "Quest": 5
+   },
+   "Horde/ROGUE": {
+    "Quest": 5
+   },
+   "Horde/SHAMAN": {
+    "Quest": 5
+   },
+   "Horde/WARLOCK": {
+    "Quest": 5
+   },
+   "Horde/WARRIOR": {
+    "Quest": 5
+   }
+  }
+ },
+ "base": {
+  "Quest": {
+   "78124": {
+    "availableStartingWith": 0,
+    "availableUntilCompleted": 0,
+    "breadcrumbForQuestId": 0,
+    "disabledByQuest": 0,
+    "finishedBy": [
+     [
+      211022,
+      211033
+     ]
+    ],
+    "name": "Nar'thalas Almanac",
+    "nextQuestInChain": 0,
+    "objectives": {
+     "3": [
+      {
+       "1": 209843,
+       "3": 0
+      }
+     ]
+    },
+    "parentQuest": 0,
+    "questFlags": 0,
+    "questLevel": 20,
+    "requiredClasses": 0,
+    "requiredLevel": 1,
+    "requiredMaxLevel": 0,
+    "requiredRaces": 0,
+    "requiredSpecialization": 0,
+    "requiredSpell": 0,
+    "sourceItemId": 0,
+    "specialFlags": 0,
+    "startedBy": [
+     [
+      211022,
+      211033
+     ],
+     [
+      409496
+     ]
+    ],
+    "zoneOrSort": 0
+   },
+   "8315": {
+    "availableStartingWith": 0,
+    "availableUntilCompleted": 0,
+    "breadcrumbForQuestId": 0,
+    "disabledByQuest": 0,
+    "extraObjectives": [
+     [
+      {
+       "1377": [
+        [
+         47.5,
+         54.5
+        ]
+       ]
+      },
+      3,
+      "Draw the glyphs into the sand to summon the Qiraji Emissary.",
+      0
+     ]
+    ],
+    "finishedBy": [
+     [
+      15183
+     ]
+    ],
+    "name": "The Calling",
+    "nextQuestInChain": 0,
+    "objectives": {
+     "3": [
+      {
+       "1": 20465,
+       "3": 0
+      }
+     ]
+    },
+    "objectivesText": [
+     "Geologist Larksbane at Cenarion Hold in Silithus wants you to recover the Crystal Unlocking Mechanism from the Qiraji Emissary.",
+     "",
+     "You have been instructed to take the Glyphs of Calling to the Bones of Grakkarond, south of Cenarion Hold, and draw them in the sand. Should the Qiraji Emissary appear, slay it and recover the Crystal Unlocking Mechanism. Return to Geologist Larksbane if you succeed.",
+     "",
+     "Assemble an army for this task, <Name>!"
+    ],
+    "parentQuest": 0,
+    "preQuestSingle": [
+     8314
+    ],
+    "questFlags": 64,
+    "questLevel": 60,
+    "reputationReward": [
+     [
+      609,
+      200
+     ]
+    ],
+    "requiredClasses": 0,
+    "requiredLevel": 58,
+    "requiredMaxLevel": 0,
+    "requiredRaces": 0,
+    "requiredSpecialization": 0,
+    "requiredSpell": 0,
+    "sourceItemId": 20464,
+    "specialFlags": 0,
+    "startedBy": [
+     [
+      15183
+     ]
+    ],
+    "zoneOrSort": 1377
+   },
+   "8978": {
+    "availableStartingWith": 0,
+    "availableUntilCompleted": 0,
+    "breadcrumbForQuestId": 0,
+    "disabledByQuest": 0,
+    "finishedBy": [
+     [
+      16012
+     ]
+    ],
+    "name": "Return to Mokvar",
+    "nextQuestInChain": 0,
+    "objectives": {},
+    "objectivesText": [
+     "Return to Mokvar in Orgrimmar with the Extra-Dimensional Ghost Revealer."
+    ],
+    "parentQuest": 0,
+    "preQuestSingle": [
+     8928
+    ],
+    "questFlags": 0,
+    "questLevel": 60,
+    "requiredClasses": 0,
+    "requiredLevel": 58,
+    "requiredMaxLevel": 0,
+    "requiredRaces": 8589934770,
+    "requiredSpecialization": 0,
+    "requiredSpell": 0,
+    "sourceItemId": 22115,
+    "specialFlags": 0,
+    "startedBy": [
+     [
+      16014
+     ]
+    ],
+    "zoneOrSort": 1637
+   },
+   "8998": {
+    "availableStartingWith": 0,
+    "availableUntilCompleted": 0,
+    "breadcrumbForQuestId": 0,
+    "disabledByQuest": 0,
+    "finishedBy": [
+     [
+      16012
+     ]
+    ],
+    "name": "Back to the Beginning",
+    "nextQuestInChain": 0,
+    "objectives": {},
+    "objectivesText": [
+     "Speak with Mokvar at Grommash Hold in Orgrimmar's Valley of Wisdom."
+    ],
+    "parentQuest": 0,
+    "preQuestSingle": [
+     8996
+    ],
+    "questFlags": 8,
+    "questLevel": 60,
+    "requiredClasses": 0,
+    "requiredLevel": 58,
+    "requiredMaxLevel": 0,
+    "requiredRaces": 8589934770,
+    "requiredSpecialization": 0,
+    "requiredSpell": 0,
+    "sourceItemId": 0,
+    "specialFlags": 0,
+    "startedBy": [
+     [
+      16033
+     ]
+    ],
+    "zoneOrSort": 1637
+   },
+   "9015": {
+    "availableStartingWith": 0,
+    "availableUntilCompleted": 0,
+    "breadcrumbForQuestId": 0,
+    "disabledByQuest": 0,
+    "finishedBy": [
+     [
+      16016
+     ]
+    ],
+    "name": "The Challenge",
+    "nextQuestInChain": 0,
+    "objectives": {
+     "1": [
+      {
+       "1": 16059,
+       "3": 3
+      }
+     ],
+     "3": [
+      {
+       "1": 22047,
+       "3": 0
+      }
+     ]
+    },
+    "objectivesText": [
+     "Travel to the Ring of the Law in Blackrock Depths and place the Banner of Provocation in its center as you are sentenced by High Justice Grimstone. Slay Theldren and his gladiators and return to Anthion Harmon in the Eastern Plaguelands with the first piece of Lord Valthalak's amulet."
+    ],
+    "parentQuest": 0,
+    "preQuestSingle": [
+     8950
+    ],
+    "questFlags": 0,
+    "questLevel": 60,
+    "requiredClasses": 0,
+    "requiredLevel": 58,
+    "requiredMaxLevel": 0,
+    "requiredRaces": 0,
+    "requiredSpecialization": 0,
+    "requiredSpell": 0,
+    "sourceItemId": 21986,
+    "specialFlags": 0,
+    "startedBy": [
+     [
+      16032
+     ]
+    ],
+    "zoneOrSort": 1584
+   },
+   "2": {
+    "availableStartingWith": 0,
+    "availableUntilCompleted": 0,
+    "breadcrumbForQuestId": 0,
+    "disabledByQuest": 0,
+    "finishedBy": [
+     [
+      12696
+     ]
+    ],
+    "inGroupWith": [
+     23,
+     24
+    ],
+    "name": "Sharptalon's Claw",
+    "nextQuestInChain": 0,
+    "objectives": {},
+    "objectivesText": [
+     "Bring Sharptalon's Claw to Senani Thunderheart at Splintertree Post, Ashenvale."
+    ],
+    "parentQuest": 0,
+    "preQuestSingle": [
+     6383
+    ],
+    "questFlags": 0,
+    "questLevel": 30,
+    "reputationReward": [
+     [
+      81,
+      100
+     ]
+    ],
+    "requiredClasses": 0,
+    "requiredLevel": 20,
+    "requiredMaxLevel": 0,
+    "requiredRaces": 8589934770,
+    "requiredSpecialization": 0,
+    "requiredSpell": 0,
+    "sourceItemId": 16305,
+    "specialFlags": 0,
+    "startedBy": {
+     "3": [
+      16305
+     ]
+    },
+    "zoneOrSort": 331
+   }
+  },
+  "Npc": {
+   "211022": {
+    "factionID": 0,
+    "friendlyToFaction": "H",
+    "maxLevel": 40,
+    "maxLevelHealth": 1,
+    "minLevel": 40,
+    "minLevelHealth": 0,
+    "name": "Owen Thadd",
+    "npcFlags": 0,
+    "questEnds": [
+     78148,
+     79092,
+     79095,
+     79536,
+     82208,
+     97286,
+     78124,
+     78127,
+     78142,
+     78143,
+     78145,
+     78146,
+     78147,
+     78149,
+     78150,
+     79091,
+     79093,
+     79094,
+     79096,
+     79097,
+     79535,
+     79947,
+     79948,
+     79949,
+     79950,
+     79951,
+     79952,
+     81947,
+     81949,
+     81952,
+     81953,
+     81955,
+     81956,
+     79953,
+     81951,
+     81954
+    ],
+    "questStarts": [
+     79095,
+     78150,
+     79536,
+     82208,
+     78124,
+     78127,
+     78142,
+     78143,
+     78145,
+     78146,
+     78147,
+     78148,
+     78149,
+     79091,
+     79092,
+     79093,
+     79094,
+     79096,
+     79097,
+     79535,
+     79947,
+     79948,
+     79949,
+     79950,
+     79951,
+     79952,
+     79953,
+     81947,
+     81949,
+     81951,
+     81952,
+     81953,
+     81954,
+     81955,
+     81956,
+     97286
+    ],
+    "rank": 0,
+    "spawns": {
+     "1497": [
+      [
+       73.4,
+       33
+      ]
+     ]
+    },
+    "subName": "Librarian",
+    "zoneID": 1497
+   },
+   "211033": {
+    "factionID": 0,
+    "friendlyToFaction": "A",
+    "maxLevel": 60,
+    "maxLevelHealth": 1,
+    "minLevel": 60,
+    "minLevelHealth": 0,
+    "name": "Garion Wendell",
+    "npcFlags": 0,
+    "questEnds": [
+     78148,
+     79092,
+     79536,
+     82208,
+     97286,
+     78124,
+     78127,
+     78142,
+     78143,
+     78145,
+     78146,
+     78147,
+     78149,
+     78150,
+     79091,
+     79093,
+     79094,
+     79097,
+     79947,
+     79948,
+     79949,
+     79951,
+     79952,
+     81947,
+     81952,
+     81953,
+     81954,
+     81955,
+     81956,
+     79095,
+     79096,
+     79535,
+     79950,
+     79953,
+     81949,
+     81951
+    ],
+    "questStarts": [
+     78148,
+     79092,
+     79536,
+     82208,
+     97286,
+     78150,
+     78124,
+     78127,
+     78142,
+     78143,
+     78145,
+     78146,
+     78147,
+     78149,
+     79091,
+     79093,
+     79094,
+     79095,
+     79096,
+     79097,
+     79535,
+     79947,
+     79948,
+     79949,
+     79950,
+     79951,
+     79952,
+     79953,
+     81947,
+     81949,
+     81951,
+     81952,
+     81953,
+     81954,
+     81955,
+     81956
+    ],
+    "rank": 0,
+    "spawns": {
+     "1519": [
+      [
+       48.94,
+       86.54
+      ]
+     ]
+    },
+    "subName": "Librarian",
+    "zoneID": 1519
+   }
+  },
+  "Object": {
+   "409496": {
+    "factionID": 0,
+    "name": "Scrolls",
+    "questStarts": [
+     78124
+    ],
+    "spawns": {
+     "148": [
+      [
+       59.6,
+       22.2
+      ]
+     ]
+    },
+    "zoneID": 148
+   }
+  },
+  "Item": {
+   "209843": {
+    "ammoType": 0,
+    "class": 0,
+    "flags": 0,
+    "foodType": 0,
+    "itemLevel": 0,
+    "name": "Nar'thalas Almanac, Vol. 74",
+    "objectDrops": [
+     409496
+    ],
+    "requiredLevel": 0,
+    "startQuest": 0,
+    "subClass": 0,
+    "teachesSpell": 0
+   }
+  }
+ },
+ "variants": {
+  "Alliance/DRUID": {
+   "Quest": {
+    "78124": {
+     "availableStartingWith": 0,
+     "availableUntilCompleted": 0,
+     "breadcrumbForQuestId": 0,
+     "disabledByQuest": 0,
+     "finishedBy": [
+      [
+       211033
+      ]
+     ],
+     "name": "Nar'thalas Almanac",
+     "nextQuestInChain": 0,
+     "objectives": {
+      "3": [
+       {
+        "1": 209843,
+        "3": 0
+       }
+      ]
+     },
+     "objectivesText": [
+      "Collect 'Nar'thalas Almanac, Vol. 74' and bring it to Garion Wendell in Stormwind."
+     ],
+     "parentQuest": 0,
+     "questFlags": 0,
+     "questLevel": 20,
+     "requiredClasses": 0,
+     "requiredLevel": 1,
+     "requiredMaxLevel": 0,
+     "requiredRaces": 0,
+     "requiredSpecialization": 0,
+     "requiredSpell": 0,
+     "sourceItemId": 0,
+     "specialFlags": 0,
+     "startedBy": [
+      [
+       211033
+      ],
+      [
+       409496
+      ]
+     ],
+     "zoneOrSort": 1519
+    },
+    "8315": {
+     "availableStartingWith": 0,
+     "availableUntilCompleted": 0,
+     "breadcrumbForQuestId": 0,
+     "disabledByQuest": 0,
+     "extraObjectives": [
+      [
+       {
+        "1377": [
+         [
+          47.5,
+          54.5
+         ]
+        ]
+       },
+       3,
+       "Draw the glyphs into the sand to summon the Qiraji Emissary.",
+       0
+      ]
+     ],
+     "finishedBy": [
+      [
+       15183
+      ]
+     ],
+     "name": "The Calling",
+     "nextQuestInChain": 8382,
+     "objectives": {
+      "3": [
+       {
+        "1": 20465,
+        "3": 0
+       }
+      ]
+     },
+     "objectivesText": [
+      "Geologist Larksbane at Cenarion Hold in Silithus wants you to recover the Crystal Unlocking Mechanism from the Qiraji Emissary.",
+      "",
+      "You have been instructed to take the Glyphs of Calling to the Bones of Grakkarond, south of Cenarion Hold, and draw them in the sand. Should the Qiraji Emissary appear, slay it and recover the Crystal Unlocking Mechanism. Return to Geologist Larksbane if you succeed.",
+      "",
+      "Assemble an army for this task, <Name>!"
+     ],
+     "parentQuest": 0,
+     "preQuestSingle": [
+      8314
+     ],
+     "questFlags": 64,
+     "questLevel": 60,
+     "reputationReward": [
+      [
+       609,
+       200
+      ]
+     ],
+     "requiredClasses": 0,
+     "requiredLevel": 58,
+     "requiredMaxLevel": 0,
+     "requiredRaces": 0,
+     "requiredSpecialization": 0,
+     "requiredSpell": 0,
+     "sourceItemId": 20464,
+     "specialFlags": 0,
+     "startedBy": [
+      [
+       15183
+      ]
+     ],
+     "zoneOrSort": 1377
+    },
+    "9015": {
+     "availableStartingWith": 0,
+     "availableUntilCompleted": 0,
+     "breadcrumbForQuestId": 0,
+     "disabledByQuest": 0,
+     "finishedBy": [
+      [
+       16016
+      ]
+     ],
+     "name": "The Challenge",
+     "nextQuestInChain": 8951,
+     "objectives": {
+      "1": [
+       {
+        "1": 16059,
+        "3": 3
+       }
+      ],
+      "3": [
+       {
+        "1": 22047,
+        "3": 0
+       }
+      ]
+     },
+     "objectivesText": [
+      "Travel to the Ring of the Law in Blackrock Depths and place the Banner of Provocation in its center as you are sentenced by High Justice Grimstone. Slay Theldren and his gladiators and return to Anthion Harmon in the Eastern Plaguelands with the first piece of Lord Valthalak's amulet."
+     ],
+     "parentQuest": 0,
+     "preQuestSingle": [
+      8950
+     ],
+     "questFlags": 0,
+     "questLevel": 60,
+     "requiredClasses": 0,
+     "requiredLevel": 58,
+     "requiredMaxLevel": 0,
+     "requiredRaces": 0,
+     "requiredSpecialization": 0,
+     "requiredSpell": 0,
+     "sourceItemId": 21986,
+     "specialFlags": 0,
+     "startedBy": [
+      [
+       16032
+      ]
+     ],
+     "zoneOrSort": 1584
+    }
+   }
+  },
+  "Alliance/HUNTER": {
+   "Quest": {
+    "78124": {
+     "availableStartingWith": 0,
+     "availableUntilCompleted": 0,
+     "breadcrumbForQuestId": 0,
+     "disabledByQuest": 0,
+     "finishedBy": [
+      [
+       211033
+      ]
+     ],
+     "name": "Nar'thalas Almanac",
+     "nextQuestInChain": 0,
+     "objectives": {
+      "3": [
+       {
+        "1": 209843,
+        "3": 0
+       }
+      ]
+     },
+     "objectivesText": [
+      "Collect 'Nar'thalas Almanac, Vol. 74' and bring it to Garion Wendell in Stormwind."
+     ],
+     "parentQuest": 0,
+     "questFlags": 0,
+     "questLevel": 20,
+     "requiredClasses": 0,
+     "requiredLevel": 1,
+     "requiredMaxLevel": 0,
+     "requiredRaces": 0,
+     "requiredSpecialization": 0,
+     "requiredSpell": 0,
+     "sourceItemId": 0,
+     "specialFlags": 0,
+     "startedBy": [
+      [
+       211033
+      ],
+      [
+       409496
+      ]
+     ],
+     "zoneOrSort": 1519
+    },
+    "8315": {
+     "availableStartingWith": 0,
+     "availableUntilCompleted": 0,
+     "breadcrumbForQuestId": 0,
+     "disabledByQuest": 0,
+     "extraObjectives": [
+      [
+       {
+        "1377": [
+         [
+          47.5,
+          54.5
+         ]
+        ]
+       },
+       3,
+       "Draw the glyphs into the sand to summon the Qiraji Emissary.",
+       0
+      ]
+     ],
+     "finishedBy": [
+      [
+       15183
+      ]
+     ],
+     "name": "The Calling",
+     "nextQuestInChain": 8377,
+     "objectives": {
+      "3": [
+       {
+        "1": 20465,
+        "3": 0
+       }
+      ]
+     },
+     "objectivesText": [
+      "Geologist Larksbane at Cenarion Hold in Silithus wants you to recover the Crystal Unlocking Mechanism from the Qiraji Emissary.",
+      "",
+      "You have been instructed to take the Glyphs of Calling to the Bones of Grakkarond, south of Cenarion Hold, and draw them in the sand. Should the Qiraji Emissary appear, slay it and recover the Crystal Unlocking Mechanism. Return to Geologist Larksbane if you succeed.",
+      "",
+      "Assemble an army for this task, <Name>!"
+     ],
+     "parentQuest": 0,
+     "preQuestSingle": [
+      8314
+     ],
+     "questFlags": 64,
+     "questLevel": 60,
+     "reputationReward": [
+      [
+       609,
+       200
+      ]
+     ],
+     "requiredClasses": 0,
+     "requiredLevel": 58,
+     "requiredMaxLevel": 0,
+     "requiredRaces": 0,
+     "requiredSpecialization": 0,
+     "requiredSpell": 0,
+     "sourceItemId": 20464,
+     "specialFlags": 0,
+     "startedBy": [
+      [
+       15183
+      ]
+     ],
+     "zoneOrSort": 1377
+    },
+    "9015": {
+     "availableStartingWith": 0,
+     "availableUntilCompleted": 0,
+     "breadcrumbForQuestId": 0,
+     "disabledByQuest": 0,
+     "finishedBy": [
+      [
+       16016
+      ]
+     ],
+     "name": "The Challenge",
+     "nextQuestInChain": 8952,
+     "objectives": {
+      "1": [
+       {
+        "1": 16059,
+        "3": 3
+       }
+      ],
+      "3": [
+       {
+        "1": 22047,
+        "3": 0
+       }
+      ]
+     },
+     "objectivesText": [
+      "Travel to the Ring of the Law in Blackrock Depths and place the Banner of Provocation in its center as you are sentenced by High Justice Grimstone. Slay Theldren and his gladiators and return to Anthion Harmon in the Eastern Plaguelands with the first piece of Lord Valthalak's amulet."
+     ],
+     "parentQuest": 0,
+     "preQuestSingle": [
+      8950
+     ],
+     "questFlags": 0,
+     "questLevel": 60,
+     "requiredClasses": 0,
+     "requiredLevel": 58,
+     "requiredMaxLevel": 0,
+     "requiredRaces": 0,
+     "requiredSpecialization": 0,
+     "requiredSpell": 0,
+     "sourceItemId": 21986,
+     "specialFlags": 0,
+     "startedBy": [
+      [
+       16032
+      ]
+     ],
+     "zoneOrSort": 1584
+    }
+   }
+  },
+  "Alliance/MAGE": {
+   "Quest": {
+    "78124": {
+     "availableStartingWith": 0,
+     "availableUntilCompleted": 0,
+     "breadcrumbForQuestId": 0,
+     "disabledByQuest": 0,
+     "finishedBy": [
+      [
+       211033
+      ]
+     ],
+     "name": "Nar'thalas Almanac",
+     "nextQuestInChain": 0,
+     "objectives": {
+      "3": [
+       {
+        "1": 209843,
+        "3": 0
+       }
+      ]
+     },
+     "objectivesText": [
+      "Collect 'Nar'thalas Almanac, Vol. 74' and bring it to Garion Wendell in Stormwind."
+     ],
+     "parentQuest": 0,
+     "questFlags": 0,
+     "questLevel": 20,
+     "requiredClasses": 0,
+     "requiredLevel": 1,
+     "requiredMaxLevel": 0,
+     "requiredRaces": 0,
+     "requiredSpecialization": 0,
+     "requiredSpell": 0,
+     "sourceItemId": 0,
+     "specialFlags": 0,
+     "startedBy": [
+      [
+       211033
+      ],
+      [
+       409496
+      ]
+     ],
+     "zoneOrSort": 1519
+    },
+    "8315": {
+     "availableStartingWith": 0,
+     "availableUntilCompleted": 0,
+     "breadcrumbForQuestId": 0,
+     "disabledByQuest": 0,
+     "extraObjectives": [
+      [
+       {
+        "1377": [
+         [
+          47.5,
+          54.5
+         ]
+        ]
+       },
+       3,
+       "Draw the glyphs into the sand to summon the Qiraji Emissary.",
+       0
+      ]
+     ],
+     "finishedBy": [
+      [
+       15183
+      ]
+     ],
+     "name": "The Calling",
+     "nextQuestInChain": 8381,
+     "objectives": {
+      "3": [
+       {
+        "1": 20465,
+        "3": 0
+       }
+      ]
+     },
+     "objectivesText": [
+      "Geologist Larksbane at Cenarion Hold in Silithus wants you to recover the Crystal Unlocking Mechanism from the Qiraji Emissary.",
+      "",
+      "You have been instructed to take the Glyphs of Calling to the Bones of Grakkarond, south of Cenarion Hold, and draw them in the sand. Should the Qiraji Emissary appear, slay it and recover the Crystal Unlocking Mechanism. Return to Geologist Larksbane if you succeed.",
+      "",
+      "Assemble an army for this task, <Name>!"
+     ],
+     "parentQuest": 0,
+     "preQuestSingle": [
+      8314
+     ],
+     "questFlags": 64,
+     "questLevel": 60,
+     "reputationReward": [
+      [
+       609,
+       200
+      ]
+     ],
+     "requiredClasses": 0,
+     "requiredLevel": 58,
+     "requiredMaxLevel": 0,
+     "requiredRaces": 0,
+     "requiredSpecialization": 0,
+     "requiredSpell": 0,
+     "sourceItemId": 20464,
+     "specialFlags": 0,
+     "startedBy": [
+      [
+       15183
+      ]
+     ],
+     "zoneOrSort": 1377
+    },
+    "9015": {
+     "availableStartingWith": 0,
+     "availableUntilCompleted": 0,
+     "breadcrumbForQuestId": 0,
+     "disabledByQuest": 0,
+     "finishedBy": [
+      [
+       16016
+      ]
+     ],
+     "name": "The Challenge",
+     "nextQuestInChain": 8953,
+     "objectives": {
+      "1": [
+       {
+        "1": 16059,
+        "3": 3
+       }
+      ],
+      "3": [
+       {
+        "1": 22047,
+        "3": 0
+       }
+      ]
+     },
+     "objectivesText": [
+      "Travel to the Ring of the Law in Blackrock Depths and place the Banner of Provocation in its center as you are sentenced by High Justice Grimstone. Slay Theldren and his gladiators and return to Anthion Harmon in the Eastern Plaguelands with the first piece of Lord Valthalak's amulet."
+     ],
+     "parentQuest": 0,
+     "preQuestSingle": [
+      8950
+     ],
+     "questFlags": 0,
+     "questLevel": 60,
+     "requiredClasses": 0,
+     "requiredLevel": 58,
+     "requiredMaxLevel": 0,
+     "requiredRaces": 0,
+     "requiredSpecialization": 0,
+     "requiredSpell": 0,
+     "sourceItemId": 21986,
+     "specialFlags": 0,
+     "startedBy": [
+      [
+       16032
+      ]
+     ],
+     "zoneOrSort": 1584
+    }
+   }
+  },
+  "Alliance/PALADIN": {
+   "Quest": {
+    "78124": {
+     "availableStartingWith": 0,
+     "availableUntilCompleted": 0,
+     "breadcrumbForQuestId": 0,
+     "disabledByQuest": 0,
+     "finishedBy": [
+      [
+       211033
+      ]
+     ],
+     "name": "Nar'thalas Almanac",
+     "nextQuestInChain": 0,
+     "objectives": {
+      "3": [
+       {
+        "1": 209843,
+        "3": 0
+       }
+      ]
+     },
+     "objectivesText": [
+      "Collect 'Nar'thalas Almanac, Vol. 74' and bring it to Garion Wendell in Stormwind."
+     ],
+     "parentQuest": 0,
+     "questFlags": 0,
+     "questLevel": 20,
+     "requiredClasses": 0,
+     "requiredLevel": 1,
+     "requiredMaxLevel": 0,
+     "requiredRaces": 0,
+     "requiredSpecialization": 0,
+     "requiredSpell": 0,
+     "sourceItemId": 0,
+     "specialFlags": 0,
+     "startedBy": [
+      [
+       211033
+      ],
+      [
+       409496
+      ]
+     ],
+     "zoneOrSort": 1519
+    },
+    "8315": {
+     "availableStartingWith": 0,
+     "availableUntilCompleted": 0,
+     "breadcrumbForQuestId": 0,
+     "disabledByQuest": 0,
+     "extraObjectives": [
+      [
+       {
+        "1377": [
+         [
+          47.5,
+          54.5
+         ]
+        ]
+       },
+       3,
+       "Draw the glyphs into the sand to summon the Qiraji Emissary.",
+       0
+      ]
+     ],
+     "finishedBy": [
+      [
+       15183
+      ]
+     ],
+     "name": "The Calling",
+     "nextQuestInChain": 8376,
+     "objectives": {
+      "3": [
+       {
+        "1": 20465,
+        "3": 0
+       }
+      ]
+     },
+     "objectivesText": [
+      "Geologist Larksbane at Cenarion Hold in Silithus wants you to recover the Crystal Unlocking Mechanism from the Qiraji Emissary.",
+      "",
+      "You have been instructed to take the Glyphs of Calling to the Bones of Grakkarond, south of Cenarion Hold, and draw them in the sand. Should the Qiraji Emissary appear, slay it and recover the Crystal Unlocking Mechanism. Return to Geologist Larksbane if you succeed.",
+      "",
+      "Assemble an army for this task, <Name>!"
+     ],
+     "parentQuest": 0,
+     "preQuestSingle": [
+      8314
+     ],
+     "questFlags": 64,
+     "questLevel": 60,
+     "reputationReward": [
+      [
+       609,
+       200
+      ]
+     ],
+     "requiredClasses": 0,
+     "requiredLevel": 58,
+     "requiredMaxLevel": 0,
+     "requiredRaces": 0,
+     "requiredSpecialization": 0,
+     "requiredSpell": 0,
+     "sourceItemId": 20464,
+     "specialFlags": 0,
+     "startedBy": [
+      [
+       15183
+      ]
+     ],
+     "zoneOrSort": 1377
+    },
+    "9015": {
+     "availableStartingWith": 0,
+     "availableUntilCompleted": 0,
+     "breadcrumbForQuestId": 0,
+     "disabledByQuest": 0,
+     "finishedBy": [
+      [
+       16016
+      ]
+     ],
+     "name": "The Challenge",
+     "nextQuestInChain": 8954,
+     "objectives": {
+      "1": [
+       {
+        "1": 16059,
+        "3": 3
+       }
+      ],
+      "3": [
+       {
+        "1": 22047,
+        "3": 0
+       }
+      ]
+     },
+     "objectivesText": [
+      "Travel to the Ring of the Law in Blackrock Depths and place the Banner of Provocation in its center as you are sentenced by High Justice Grimstone. Slay Theldren and his gladiators and return to Anthion Harmon in the Eastern Plaguelands with the first piece of Lord Valthalak's amulet."
+     ],
+     "parentQuest": 0,
+     "preQuestSingle": [
+      8950
+     ],
+     "questFlags": 0,
+     "questLevel": 60,
+     "requiredClasses": 0,
+     "requiredLevel": 58,
+     "requiredMaxLevel": 0,
+     "requiredRaces": 0,
+     "requiredSpecialization": 0,
+     "requiredSpell": 0,
+     "sourceItemId": 21986,
+     "specialFlags": 0,
+     "startedBy": [
+      [
+       16032
+      ]
+     ],
+     "zoneOrSort": 1584
+    }
+   }
+  },
+  "Alliance/PRIEST": {
+   "Quest": {
+    "78124": {
+     "availableStartingWith": 0,
+     "availableUntilCompleted": 0,
+     "breadcrumbForQuestId": 0,
+     "disabledByQuest": 0,
+     "finishedBy": [
+      [
+       211033
+      ]
+     ],
+     "name": "Nar'thalas Almanac",
+     "nextQuestInChain": 0,
+     "objectives": {
+      "3": [
+       {
+        "1": 209843,
+        "3": 0
+       }
+      ]
+     },
+     "objectivesText": [
+      "Collect 'Nar'thalas Almanac, Vol. 74' and bring it to Garion Wendell in Stormwind."
+     ],
+     "parentQuest": 0,
+     "questFlags": 0,
+     "questLevel": 20,
+     "requiredClasses": 0,
+     "requiredLevel": 1,
+     "requiredMaxLevel": 0,
+     "requiredRaces": 0,
+     "requiredSpecialization": 0,
+     "requiredSpell": 0,
+     "sourceItemId": 0,
+     "specialFlags": 0,
+     "startedBy": [
+      [
+       211033
+      ],
+      [
+       409496
+      ]
+     ],
+     "zoneOrSort": 1519
+    },
+    "8315": {
+     "availableStartingWith": 0,
+     "availableUntilCompleted": 0,
+     "breadcrumbForQuestId": 0,
+     "disabledByQuest": 0,
+     "extraObjectives": [
+      [
+       {
+        "1377": [
+         [
+          47.5,
+          54.5
+         ]
+        ]
+       },
+       3,
+       "Draw the glyphs into the sand to summon the Qiraji Emissary.",
+       0
+      ]
+     ],
+     "finishedBy": [
+      [
+       15183
+      ]
+     ],
+     "name": "The Calling",
+     "nextQuestInChain": 8379,
+     "objectives": {
+      "3": [
+       {
+        "1": 20465,
+        "3": 0
+       }
+      ]
+     },
+     "objectivesText": [
+      "Geologist Larksbane at Cenarion Hold in Silithus wants you to recover the Crystal Unlocking Mechanism from the Qiraji Emissary.",
+      "",
+      "You have been instructed to take the Glyphs of Calling to the Bones of Grakkarond, south of Cenarion Hold, and draw them in the sand. Should the Qiraji Emissary appear, slay it and recover the Crystal Unlocking Mechanism. Return to Geologist Larksbane if you succeed.",
+      "",
+      "Assemble an army for this task, <Name>!"
+     ],
+     "parentQuest": 0,
+     "preQuestSingle": [
+      8314
+     ],
+     "questFlags": 64,
+     "questLevel": 60,
+     "reputationReward": [
+      [
+       609,
+       200
+      ]
+     ],
+     "requiredClasses": 0,
+     "requiredLevel": 58,
+     "requiredMaxLevel": 0,
+     "requiredRaces": 0,
+     "requiredSpecialization": 0,
+     "requiredSpell": 0,
+     "sourceItemId": 20464,
+     "specialFlags": 0,
+     "startedBy": [
+      [
+       15183
+      ]
+     ],
+     "zoneOrSort": 1377
+    },
+    "9015": {
+     "availableStartingWith": 0,
+     "availableUntilCompleted": 0,
+     "breadcrumbForQuestId": 0,
+     "disabledByQuest": 0,
+     "finishedBy": [
+      [
+       16016
+      ]
+     ],
+     "name": "The Challenge",
+     "nextQuestInChain": 8955,
+     "objectives": {
+      "1": [
+       {
+        "1": 16059,
+        "3": 3
+       }
+      ],
+      "3": [
+       {
+        "1": 22047,
+        "3": 0
+       }
+      ]
+     },
+     "objectivesText": [
+      "Travel to the Ring of the Law in Blackrock Depths and place the Banner of Provocation in its center as you are sentenced by High Justice Grimstone. Slay Theldren and his gladiators and return to Anthion Harmon in the Eastern Plaguelands with the first piece of Lord Valthalak's amulet."
+     ],
+     "parentQuest": 0,
+     "preQuestSingle": [
+      8950
+     ],
+     "questFlags": 0,
+     "questLevel": 60,
+     "requiredClasses": 0,
+     "requiredLevel": 58,
+     "requiredMaxLevel": 0,
+     "requiredRaces": 0,
+     "requiredSpecialization": 0,
+     "requiredSpell": 0,
+     "sourceItemId": 21986,
+     "specialFlags": 0,
+     "startedBy": [
+      [
+       16032
+      ]
+     ],
+     "zoneOrSort": 1584
+    }
+   }
+  },
+  "Alliance/ROGUE": {
+   "Quest": {
+    "78124": {
+     "availableStartingWith": 0,
+     "availableUntilCompleted": 0,
+     "breadcrumbForQuestId": 0,
+     "disabledByQuest": 0,
+     "finishedBy": [
+      [
+       211033
+      ]
+     ],
+     "name": "Nar'thalas Almanac",
+     "nextQuestInChain": 0,
+     "objectives": {
+      "3": [
+       {
+        "1": 209843,
+        "3": 0
+       }
+      ]
+     },
+     "objectivesText": [
+      "Collect 'Nar'thalas Almanac, Vol. 74' and bring it to Garion Wendell in Stormwind."
+     ],
+     "parentQuest": 0,
+     "questFlags": 0,
+     "questLevel": 20,
+     "requiredClasses": 0,
+     "requiredLevel": 1,
+     "requiredMaxLevel": 0,
+     "requiredRaces": 0,
+     "requiredSpecialization": 0,
+     "requiredSpell": 0,
+     "sourceItemId": 0,
+     "specialFlags": 0,
+     "startedBy": [
+      [
+       211033
+      ],
+      [
+       409496
+      ]
+     ],
+     "zoneOrSort": 1519
+    },
+    "8315": {
+     "availableStartingWith": 0,
+     "availableUntilCompleted": 0,
+     "breadcrumbForQuestId": 0,
+     "disabledByQuest": 0,
+     "extraObjectives": [
+      [
+       {
+        "1377": [
+         [
+          47.5,
+          54.5
+         ]
+        ]
+       },
+       3,
+       "Draw the glyphs into the sand to summon the Qiraji Emissary.",
+       0
+      ]
+     ],
+     "finishedBy": [
+      [
+       15183
+      ]
+     ],
+     "name": "The Calling",
+     "nextQuestInChain": 8378,
+     "objectives": {
+      "3": [
+       {
+        "1": 20465,
+        "3": 0
+       }
+      ]
+     },
+     "objectivesText": [
+      "Geologist Larksbane at Cenarion Hold in Silithus wants you to recover the Crystal Unlocking Mechanism from the Qiraji Emissary.",
+      "",
+      "You have been instructed to take the Glyphs of Calling to the Bones of Grakkarond, south of Cenarion Hold, and draw them in the sand. Should the Qiraji Emissary appear, slay it and recover the Crystal Unlocking Mechanism. Return to Geologist Larksbane if you succeed.",
+      "",
+      "Assemble an army for this task, <Name>!"
+     ],
+     "parentQuest": 0,
+     "preQuestSingle": [
+      8314
+     ],
+     "questFlags": 64,
+     "questLevel": 60,
+     "reputationReward": [
+      [
+       609,
+       200
+      ]
+     ],
+     "requiredClasses": 0,
+     "requiredLevel": 58,
+     "requiredMaxLevel": 0,
+     "requiredRaces": 0,
+     "requiredSpecialization": 0,
+     "requiredSpell": 0,
+     "sourceItemId": 20464,
+     "specialFlags": 0,
+     "startedBy": [
+      [
+       15183
+      ]
+     ],
+     "zoneOrSort": 1377
+    },
+    "9015": {
+     "availableStartingWith": 0,
+     "availableUntilCompleted": 0,
+     "breadcrumbForQuestId": 0,
+     "disabledByQuest": 0,
+     "finishedBy": [
+      [
+       16016
+      ]
+     ],
+     "name": "The Challenge",
+     "nextQuestInChain": 8956,
+     "objectives": {
+      "1": [
+       {
+        "1": 16059,
+        "3": 3
+       }
+      ],
+      "3": [
+       {
+        "1": 22047,
+        "3": 0
+       }
+      ]
+     },
+     "objectivesText": [
+      "Travel to the Ring of the Law in Blackrock Depths and place the Banner of Provocation in its center as you are sentenced by High Justice Grimstone. Slay Theldren and his gladiators and return to Anthion Harmon in the Eastern Plaguelands with the first piece of Lord Valthalak's amulet."
+     ],
+     "parentQuest": 0,
+     "preQuestSingle": [
+      8950
+     ],
+     "questFlags": 0,
+     "questLevel": 60,
+     "requiredClasses": 0,
+     "requiredLevel": 58,
+     "requiredMaxLevel": 0,
+     "requiredRaces": 0,
+     "requiredSpecialization": 0,
+     "requiredSpell": 0,
+     "sourceItemId": 21986,
+     "specialFlags": 0,
+     "startedBy": [
+      [
+       16032
+      ]
+     ],
+     "zoneOrSort": 1584
+    }
+   }
+  },
+  "Alliance/SHAMAN": {
+   "Quest": {
+    "78124": {
+     "availableStartingWith": 0,
+     "availableUntilCompleted": 0,
+     "breadcrumbForQuestId": 0,
+     "disabledByQuest": 0,
+     "finishedBy": [
+      [
+       211033
+      ]
+     ],
+     "name": "Nar'thalas Almanac",
+     "nextQuestInChain": 0,
+     "objectives": {
+      "3": [
+       {
+        "1": 209843,
+        "3": 0
+       }
+      ]
+     },
+     "objectivesText": [
+      "Collect 'Nar'thalas Almanac, Vol. 74' and bring it to Garion Wendell in Stormwind."
+     ],
+     "parentQuest": 0,
+     "questFlags": 0,
+     "questLevel": 20,
+     "requiredClasses": 0,
+     "requiredLevel": 1,
+     "requiredMaxLevel": 0,
+     "requiredRaces": 0,
+     "requiredSpecialization": 0,
+     "requiredSpell": 0,
+     "sourceItemId": 0,
+     "specialFlags": 0,
+     "startedBy": [
+      [
+       211033
+      ],
+      [
+       409496
+      ]
+     ],
+     "zoneOrSort": 1519
+    },
+    "8315": {
+     "availableStartingWith": 0,
+     "availableUntilCompleted": 0,
+     "breadcrumbForQuestId": 0,
+     "disabledByQuest": 0,
+     "extraObjectives": [
+      [
+       {
+        "1377": [
+         [
+          47.5,
+          54.5
+         ]
+        ]
+       },
+       3,
+       "Draw the glyphs into the sand to summon the Qiraji Emissary.",
+       0
+      ]
+     ],
+     "finishedBy": [
+      [
+       15183
+      ]
+     ],
+     "name": "The Calling",
+     "nextQuestInChain": 8380,
+     "objectives": {
+      "3": [
+       {
+        "1": 20465,
+        "3": 0
+       }
+      ]
+     },
+     "objectivesText": [
+      "Geologist Larksbane at Cenarion Hold in Silithus wants you to recover the Crystal Unlocking Mechanism from the Qiraji Emissary.",
+      "",
+      "You have been instructed to take the Glyphs of Calling to the Bones of Grakkarond, south of Cenarion Hold, and draw them in the sand. Should the Qiraji Emissary appear, slay it and recover the Crystal Unlocking Mechanism. Return to Geologist Larksbane if you succeed.",
+      "",
+      "Assemble an army for this task, <Name>!"
+     ],
+     "parentQuest": 0,
+     "preQuestSingle": [
+      8314
+     ],
+     "questFlags": 64,
+     "questLevel": 60,
+     "reputationReward": [
+      [
+       609,
+       200
+      ]
+     ],
+     "requiredClasses": 0,
+     "requiredLevel": 58,
+     "requiredMaxLevel": 0,
+     "requiredRaces": 0,
+     "requiredSpecialization": 0,
+     "requiredSpell": 0,
+     "sourceItemId": 20464,
+     "specialFlags": 0,
+     "startedBy": [
+      [
+       15183
+      ]
+     ],
+     "zoneOrSort": 1377
+    }
+   }
+  },
+  "Alliance/WARLOCK": {
+   "Quest": {
+    "78124": {
+     "availableStartingWith": 0,
+     "availableUntilCompleted": 0,
+     "breadcrumbForQuestId": 0,
+     "disabledByQuest": 0,
+     "finishedBy": [
+      [
+       211033
+      ]
+     ],
+     "name": "Nar'thalas Almanac",
+     "nextQuestInChain": 0,
+     "objectives": {
+      "3": [
+       {
+        "1": 209843,
+        "3": 0
+       }
+      ]
+     },
+     "objectivesText": [
+      "Collect 'Nar'thalas Almanac, Vol. 74' and bring it to Garion Wendell in Stormwind."
+     ],
+     "parentQuest": 0,
+     "questFlags": 0,
+     "questLevel": 20,
+     "requiredClasses": 0,
+     "requiredLevel": 1,
+     "requiredMaxLevel": 0,
+     "requiredRaces": 0,
+     "requiredSpecialization": 0,
+     "requiredSpell": 0,
+     "sourceItemId": 0,
+     "specialFlags": 0,
+     "startedBy": [
+      [
+       211033
+      ],
+      [
+       409496
+      ]
+     ],
+     "zoneOrSort": 1519
+    },
+    "8315": {
+     "availableStartingWith": 0,
+     "availableUntilCompleted": 0,
+     "breadcrumbForQuestId": 0,
+     "disabledByQuest": 0,
+     "extraObjectives": [
+      [
+       {
+        "1377": [
+         [
+          47.5,
+          54.5
+         ]
+        ]
+       },
+       3,
+       "Draw the glyphs into the sand to summon the Qiraji Emissary.",
+       0
+      ]
+     ],
+     "finishedBy": [
+      [
+       15183
+      ]
+     ],
+     "name": "The Calling",
+     "nextQuestInChain": 8381,
+     "objectives": {
+      "3": [
+       {
+        "1": 20465,
+        "3": 0
+       }
+      ]
+     },
+     "objectivesText": [
+      "Geologist Larksbane at Cenarion Hold in Silithus wants you to recover the Crystal Unlocking Mechanism from the Qiraji Emissary.",
+      "",
+      "You have been instructed to take the Glyphs of Calling to the Bones of Grakkarond, south of Cenarion Hold, and draw them in the sand. Should the Qiraji Emissary appear, slay it and recover the Crystal Unlocking Mechanism. Return to Geologist Larksbane if you succeed.",
+      "",
+      "Assemble an army for this task, <Name>!"
+     ],
+     "parentQuest": 0,
+     "preQuestSingle": [
+      8314
+     ],
+     "questFlags": 64,
+     "questLevel": 60,
+     "reputationReward": [
+      [
+       609,
+       200
+      ]
+     ],
+     "requiredClasses": 0,
+     "requiredLevel": 58,
+     "requiredMaxLevel": 0,
+     "requiredRaces": 0,
+     "requiredSpecialization": 0,
+     "requiredSpell": 0,
+     "sourceItemId": 20464,
+     "specialFlags": 0,
+     "startedBy": [
+      [
+       15183
+      ]
+     ],
+     "zoneOrSort": 1377
+    },
+    "9015": {
+     "availableStartingWith": 0,
+     "availableUntilCompleted": 0,
+     "breadcrumbForQuestId": 0,
+     "disabledByQuest": 0,
+     "finishedBy": [
+      [
+       16016
+      ]
+     ],
+     "name": "The Challenge",
+     "nextQuestInChain": 8958,
+     "objectives": {
+      "1": [
+       {
+        "1": 16059,
+        "3": 3
+       }
+      ],
+      "3": [
+       {
+        "1": 22047,
+        "3": 0
+       }
+      ]
+     },
+     "objectivesText": [
+      "Travel to the Ring of the Law in Blackrock Depths and place the Banner of Provocation in its center as you are sentenced by High Justice Grimstone. Slay Theldren and his gladiators and return to Anthion Harmon in the Eastern Plaguelands with the first piece of Lord Valthalak's amulet."
+     ],
+     "parentQuest": 0,
+     "preQuestSingle": [
+      8950
+     ],
+     "questFlags": 0,
+     "questLevel": 60,
+     "requiredClasses": 0,
+     "requiredLevel": 58,
+     "requiredMaxLevel": 0,
+     "requiredRaces": 0,
+     "requiredSpecialization": 0,
+     "requiredSpell": 0,
+     "sourceItemId": 21986,
+     "specialFlags": 0,
+     "startedBy": [
+      [
+       16032
+      ]
+     ],
+     "zoneOrSort": 1584
+    }
+   }
+  },
+  "Alliance/WARRIOR": {
+   "Quest": {
+    "78124": {
+     "availableStartingWith": 0,
+     "availableUntilCompleted": 0,
+     "breadcrumbForQuestId": 0,
+     "disabledByQuest": 0,
+     "finishedBy": [
+      [
+       211033
+      ]
+     ],
+     "name": "Nar'thalas Almanac",
+     "nextQuestInChain": 0,
+     "objectives": {
+      "3": [
+       {
+        "1": 209843,
+        "3": 0
+       }
+      ]
+     },
+     "objectivesText": [
+      "Collect 'Nar'thalas Almanac, Vol. 74' and bring it to Garion Wendell in Stormwind."
+     ],
+     "parentQuest": 0,
+     "questFlags": 0,
+     "questLevel": 20,
+     "requiredClasses": 0,
+     "requiredLevel": 1,
+     "requiredMaxLevel": 0,
+     "requiredRaces": 0,
+     "requiredSpecialization": 0,
+     "requiredSpell": 0,
+     "sourceItemId": 0,
+     "specialFlags": 0,
+     "startedBy": [
+      [
+       211033
+      ],
+      [
+       409496
+      ]
+     ],
+     "zoneOrSort": 1519
+    },
+    "8315": {
+     "availableStartingWith": 0,
+     "availableUntilCompleted": 0,
+     "breadcrumbForQuestId": 0,
+     "disabledByQuest": 0,
+     "extraObjectives": [
+      [
+       {
+        "1377": [
+         [
+          47.5,
+          54.5
+         ]
+        ]
+       },
+       3,
+       "Draw the glyphs into the sand to summon the Qiraji Emissary.",
+       0
+      ]
+     ],
+     "finishedBy": [
+      [
+       15183
+      ]
+     ],
+     "name": "The Calling",
+     "nextQuestInChain": 8316,
+     "objectives": {
+      "3": [
+       {
+        "1": 20465,
+        "3": 0
+       }
+      ]
+     },
+     "objectivesText": [
+      "Geologist Larksbane at Cenarion Hold in Silithus wants you to recover the Crystal Unlocking Mechanism from the Qiraji Emissary.",
+      "",
+      "You have been instructed to take the Glyphs of Calling to the Bones of Grakkarond, south of Cenarion Hold, and draw them in the sand. Should the Qiraji Emissary appear, slay it and recover the Crystal Unlocking Mechanism. Return to Geologist Larksbane if you succeed.",
+      "",
+      "Assemble an army for this task, <Name>!"
+     ],
+     "parentQuest": 0,
+     "preQuestSingle": [
+      8314
+     ],
+     "questFlags": 64,
+     "questLevel": 60,
+     "reputationReward": [
+      [
+       609,
+       200
+      ]
+     ],
+     "requiredClasses": 0,
+     "requiredLevel": 58,
+     "requiredMaxLevel": 0,
+     "requiredRaces": 0,
+     "requiredSpecialization": 0,
+     "requiredSpell": 0,
+     "sourceItemId": 20464,
+     "specialFlags": 0,
+     "startedBy": [
+      [
+       15183
+      ]
+     ],
+     "zoneOrSort": 1377
+    },
+    "9015": {
+     "availableStartingWith": 0,
+     "availableUntilCompleted": 0,
+     "breadcrumbForQuestId": 0,
+     "disabledByQuest": 0,
+     "finishedBy": [
+      [
+       16016
+      ]
+     ],
+     "name": "The Challenge",
+     "nextQuestInChain": 8959,
+     "objectives": {
+      "1": [
+       {
+        "1": 16059,
+        "3": 3
+       }
+      ],
+      "3": [
+       {
+        "1": 22047,
+        "3": 0
+       }
+      ]
+     },
+     "objectivesText": [
+      "Travel to the Ring of the Law in Blackrock Depths and place the Banner of Provocation in its center as you are sentenced by High Justice Grimstone. Slay Theldren and his gladiators and return to Anthion Harmon in the Eastern Plaguelands with the first piece of Lord Valthalak's amulet."
+     ],
+     "parentQuest": 0,
+     "preQuestSingle": [
+      8950
+     ],
+     "questFlags": 0,
+     "questLevel": 60,
+     "requiredClasses": 0,
+     "requiredLevel": 58,
+     "requiredMaxLevel": 0,
+     "requiredRaces": 0,
+     "requiredSpecialization": 0,
+     "requiredSpell": 0,
+     "sourceItemId": 21986,
+     "specialFlags": 0,
+     "startedBy": [
+      [
+       16032
+      ]
+     ],
+     "zoneOrSort": 1584
+    }
+   }
+  },
+  "Horde/DRUID": {
+   "Quest": {
+    "78124": {
+     "availableStartingWith": 0,
+     "availableUntilCompleted": 0,
+     "breadcrumbForQuestId": 0,
+     "disabledByQuest": 0,
+     "finishedBy": [
+      [
+       211022
+      ]
+     ],
+     "name": "Nar'thalas Almanac",
+     "nextQuestInChain": 0,
+     "objectives": {
+      "3": [
+       {
+        "1": 209843,
+        "3": 0
+       }
+      ]
+     },
+     "objectivesText": [
+      "Collect 'Nar'thalas Almanac, Vol. 74' and bring it to Owen Thadd in Undercity."
+     ],
+     "parentQuest": 0,
+     "questFlags": 0,
+     "questLevel": 20,
+     "requiredClasses": 0,
+     "requiredLevel": 1,
+     "requiredMaxLevel": 0,
+     "requiredRaces": 0,
+     "requiredSpecialization": 0,
+     "requiredSpell": 0,
+     "sourceItemId": 0,
+     "specialFlags": 0,
+     "startedBy": [
+      [
+       211022
+      ],
+      [
+       409496
+      ]
+     ],
+     "zoneOrSort": 1497
+    },
+    "8315": {
+     "availableStartingWith": 0,
+     "availableUntilCompleted": 0,
+     "breadcrumbForQuestId": 0,
+     "disabledByQuest": 0,
+     "extraObjectives": [
+      [
+       {
+        "1377": [
+         [
+          47.5,
+          54.5
+         ]
+        ]
+       },
+       3,
+       "Draw the glyphs into the sand to summon the Qiraji Emissary.",
+       0
+      ]
+     ],
+     "finishedBy": [
+      [
+       15183
+      ]
+     ],
+     "name": "The Calling",
+     "nextQuestInChain": 8382,
+     "objectives": {
+      "3": [
+       {
+        "1": 20465,
+        "3": 0
+       }
+      ]
+     },
+     "objectivesText": [
+      "Geologist Larksbane at Cenarion Hold in Silithus wants you to recover the Crystal Unlocking Mechanism from the Qiraji Emissary.",
+      "",
+      "You have been instructed to take the Glyphs of Calling to the Bones of Grakkarond, south of Cenarion Hold, and draw them in the sand. Should the Qiraji Emissary appear, slay it and recover the Crystal Unlocking Mechanism. Return to Geologist Larksbane if you succeed.",
+      "",
+      "Assemble an army for this task, <Name>!"
+     ],
+     "parentQuest": 0,
+     "preQuestSingle": [
+      8314
+     ],
+     "questFlags": 64,
+     "questLevel": 60,
+     "reputationReward": [
+      [
+       609,
+       200
+      ]
+     ],
+     "requiredClasses": 0,
+     "requiredLevel": 58,
+     "requiredMaxLevel": 0,
+     "requiredRaces": 0,
+     "requiredSpecialization": 0,
+     "requiredSpell": 0,
+     "sourceItemId": 20464,
+     "specialFlags": 0,
+     "startedBy": [
+      [
+       15183
+      ]
+     ],
+     "zoneOrSort": 1377
+    },
+    "8978": {
+     "availableStartingWith": 0,
+     "availableUntilCompleted": 0,
+     "breadcrumbForQuestId": 0,
+     "disabledByQuest": 0,
+     "finishedBy": [
+      [
+       16012
+      ]
+     ],
+     "name": "Return to Mokvar",
+     "nextQuestInChain": 8927,
+     "objectives": {},
+     "objectivesText": [
+      "Return to Mokvar in Orgrimmar with the Extra-Dimensional Ghost Revealer."
+     ],
+     "parentQuest": 0,
+     "preQuestSingle": [
+      8928
+     ],
+     "questFlags": 0,
+     "questLevel": 60,
+     "requiredClasses": 0,
+     "requiredLevel": 58,
+     "requiredMaxLevel": 0,
+     "requiredRaces": 8589934770,
+     "requiredSpecialization": 0,
+     "requiredSpell": 0,
+     "sourceItemId": 22115,
+     "specialFlags": 0,
+     "startedBy": [
+      [
+       16014
+      ]
+     ],
+     "zoneOrSort": 1637
+    },
+    "8998": {
+     "availableStartingWith": 0,
+     "availableUntilCompleted": 0,
+     "breadcrumbForQuestId": 0,
+     "disabledByQuest": 0,
+     "finishedBy": [
+      [
+       16012
+      ]
+     ],
+     "name": "Back to the Beginning",
+     "nextQuestInChain": 9007,
+     "objectives": {},
+     "objectivesText": [
+      "Speak with Mokvar at Grommash Hold in Orgrimmar's Valley of Wisdom."
+     ],
+     "parentQuest": 0,
+     "preQuestSingle": [
+      8996
+     ],
+     "questFlags": 8,
+     "questLevel": 60,
+     "requiredClasses": 0,
+     "requiredLevel": 58,
+     "requiredMaxLevel": 0,
+     "requiredRaces": 8589934770,
+     "requiredSpecialization": 0,
+     "requiredSpell": 0,
+     "sourceItemId": 0,
+     "specialFlags": 0,
+     "startedBy": [
+      [
+       16033
+      ]
+     ],
+     "zoneOrSort": 1637
+    },
+    "9015": {
+     "availableStartingWith": 0,
+     "availableUntilCompleted": 0,
+     "breadcrumbForQuestId": 0,
+     "disabledByQuest": 0,
+     "finishedBy": [
+      [
+       16016
+      ]
+     ],
+     "name": "The Challenge",
+     "nextQuestInChain": 9016,
+     "objectives": {
+      "1": [
+       {
+        "1": 16059,
+        "3": 3
+       }
+      ],
+      "3": [
+       {
+        "1": 22047,
+        "3": 0
+       }
+      ]
+     },
+     "objectivesText": [
+      "Travel to the Ring of the Law in Blackrock Depths and place the Banner of Provocation in its center as you are sentenced by High Justice Grimstone. Slay Theldren and his gladiators and return to Anthion Harmon in the Eastern Plaguelands with the first piece of Lord Valthalak's amulet."
+     ],
+     "parentQuest": 0,
+     "preQuestSingle": [
+      8950
+     ],
+     "questFlags": 0,
+     "questLevel": 60,
+     "requiredClasses": 0,
+     "requiredLevel": 58,
+     "requiredMaxLevel": 0,
+     "requiredRaces": 0,
+     "requiredSpecialization": 0,
+     "requiredSpell": 0,
+     "sourceItemId": 21986,
+     "specialFlags": 0,
+     "startedBy": [
+      [
+       16032
+      ]
+     ],
+     "zoneOrSort": 1584
+    }
+   }
+  },
+  "Horde/HUNTER": {
+   "Quest": {
+    "78124": {
+     "availableStartingWith": 0,
+     "availableUntilCompleted": 0,
+     "breadcrumbForQuestId": 0,
+     "disabledByQuest": 0,
+     "finishedBy": [
+      [
+       211022
+      ]
+     ],
+     "name": "Nar'thalas Almanac",
+     "nextQuestInChain": 0,
+     "objectives": {
+      "3": [
+       {
+        "1": 209843,
+        "3": 0
+       }
+      ]
+     },
+     "objectivesText": [
+      "Collect 'Nar'thalas Almanac, Vol. 74' and bring it to Owen Thadd in Undercity."
+     ],
+     "parentQuest": 0,
+     "questFlags": 0,
+     "questLevel": 20,
+     "requiredClasses": 0,
+     "requiredLevel": 1,
+     "requiredMaxLevel": 0,
+     "requiredRaces": 0,
+     "requiredSpecialization": 0,
+     "requiredSpell": 0,
+     "sourceItemId": 0,
+     "specialFlags": 0,
+     "startedBy": [
+      [
+       211022
+      ],
+      [
+       409496
+      ]
+     ],
+     "zoneOrSort": 1497
+    },
+    "8315": {
+     "availableStartingWith": 0,
+     "availableUntilCompleted": 0,
+     "breadcrumbForQuestId": 0,
+     "disabledByQuest": 0,
+     "extraObjectives": [
+      [
+       {
+        "1377": [
+         [
+          47.5,
+          54.5
+         ]
+        ]
+       },
+       3,
+       "Draw the glyphs into the sand to summon the Qiraji Emissary.",
+       0
+      ]
+     ],
+     "finishedBy": [
+      [
+       15183
+      ]
+     ],
+     "name": "The Calling",
+     "nextQuestInChain": 8377,
+     "objectives": {
+      "3": [
+       {
+        "1": 20465,
+        "3": 0
+       }
+      ]
+     },
+     "objectivesText": [
+      "Geologist Larksbane at Cenarion Hold in Silithus wants you to recover the Crystal Unlocking Mechanism from the Qiraji Emissary.",
+      "",
+      "You have been instructed to take the Glyphs of Calling to the Bones of Grakkarond, south of Cenarion Hold, and draw them in the sand. Should the Qiraji Emissary appear, slay it and recover the Crystal Unlocking Mechanism. Return to Geologist Larksbane if you succeed.",
+      "",
+      "Assemble an army for this task, <Name>!"
+     ],
+     "parentQuest": 0,
+     "preQuestSingle": [
+      8314
+     ],
+     "questFlags": 64,
+     "questLevel": 60,
+     "reputationReward": [
+      [
+       609,
+       200
+      ]
+     ],
+     "requiredClasses": 0,
+     "requiredLevel": 58,
+     "requiredMaxLevel": 0,
+     "requiredRaces": 0,
+     "requiredSpecialization": 0,
+     "requiredSpell": 0,
+     "sourceItemId": 20464,
+     "specialFlags": 0,
+     "startedBy": [
+      [
+       15183
+      ]
+     ],
+     "zoneOrSort": 1377
+    },
+    "8978": {
+     "availableStartingWith": 0,
+     "availableUntilCompleted": 0,
+     "breadcrumbForQuestId": 0,
+     "disabledByQuest": 0,
+     "finishedBy": [
+      [
+       16012
+      ]
+     ],
+     "name": "Return to Mokvar",
+     "nextQuestInChain": 8938,
+     "objectives": {},
+     "objectivesText": [
+      "Return to Mokvar in Orgrimmar with the Extra-Dimensional Ghost Revealer."
+     ],
+     "parentQuest": 0,
+     "preQuestSingle": [
+      8928
+     ],
+     "questFlags": 0,
+     "questLevel": 60,
+     "requiredClasses": 0,
+     "requiredLevel": 58,
+     "requiredMaxLevel": 0,
+     "requiredRaces": 8589934770,
+     "requiredSpecialization": 0,
+     "requiredSpell": 0,
+     "sourceItemId": 22115,
+     "specialFlags": 0,
+     "startedBy": [
+      [
+       16014
+      ]
+     ],
+     "zoneOrSort": 1637
+    },
+    "8998": {
+     "availableStartingWith": 0,
+     "availableUntilCompleted": 0,
+     "breadcrumbForQuestId": 0,
+     "disabledByQuest": 0,
+     "finishedBy": [
+      [
+       16012
+      ]
+     ],
+     "name": "Back to the Beginning",
+     "nextQuestInChain": 9008,
+     "objectives": {},
+     "objectivesText": [
+      "Speak with Mokvar at Grommash Hold in Orgrimmar's Valley of Wisdom."
+     ],
+     "parentQuest": 0,
+     "preQuestSingle": [
+      8996
+     ],
+     "questFlags": 8,
+     "questLevel": 60,
+     "requiredClasses": 0,
+     "requiredLevel": 58,
+     "requiredMaxLevel": 0,
+     "requiredRaces": 8589934770,
+     "requiredSpecialization": 0,
+     "requiredSpell": 0,
+     "sourceItemId": 0,
+     "specialFlags": 0,
+     "startedBy": [
+      [
+       16033
+      ]
+     ],
+     "zoneOrSort": 1637
+    },
+    "9015": {
+     "availableStartingWith": 0,
+     "availableUntilCompleted": 0,
+     "breadcrumbForQuestId": 0,
+     "disabledByQuest": 0,
+     "finishedBy": [
+      [
+       16016
+      ]
+     ],
+     "name": "The Challenge",
+     "nextQuestInChain": 9017,
+     "objectives": {
+      "1": [
+       {
+        "1": 16059,
+        "3": 3
+       }
+      ],
+      "3": [
+       {
+        "1": 22047,
+        "3": 0
+       }
+      ]
+     },
+     "objectivesText": [
+      "Travel to the Ring of the Law in Blackrock Depths and place the Banner of Provocation in its center as you are sentenced by High Justice Grimstone. Slay Theldren and his gladiators and return to Anthion Harmon in the Eastern Plaguelands with the first piece of Lord Valthalak's amulet."
+     ],
+     "parentQuest": 0,
+     "preQuestSingle": [
+      8950
+     ],
+     "questFlags": 0,
+     "questLevel": 60,
+     "requiredClasses": 0,
+     "requiredLevel": 58,
+     "requiredMaxLevel": 0,
+     "requiredRaces": 0,
+     "requiredSpecialization": 0,
+     "requiredSpell": 0,
+     "sourceItemId": 21986,
+     "specialFlags": 0,
+     "startedBy": [
+      [
+       16032
+      ]
+     ],
+     "zoneOrSort": 1584
+    }
+   }
+  },
+  "Horde/MAGE": {
+   "Quest": {
+    "78124": {
+     "availableStartingWith": 0,
+     "availableUntilCompleted": 0,
+     "breadcrumbForQuestId": 0,
+     "disabledByQuest": 0,
+     "finishedBy": [
+      [
+       211022
+      ]
+     ],
+     "name": "Nar'thalas Almanac",
+     "nextQuestInChain": 0,
+     "objectives": {
+      "3": [
+       {
+        "1": 209843,
+        "3": 0
+       }
+      ]
+     },
+     "objectivesText": [
+      "Collect 'Nar'thalas Almanac, Vol. 74' and bring it to Owen Thadd in Undercity."
+     ],
+     "parentQuest": 0,
+     "questFlags": 0,
+     "questLevel": 20,
+     "requiredClasses": 0,
+     "requiredLevel": 1,
+     "requiredMaxLevel": 0,
+     "requiredRaces": 0,
+     "requiredSpecialization": 0,
+     "requiredSpell": 0,
+     "sourceItemId": 0,
+     "specialFlags": 0,
+     "startedBy": [
+      [
+       211022
+      ],
+      [
+       409496
+      ]
+     ],
+     "zoneOrSort": 1497
+    },
+    "8315": {
+     "availableStartingWith": 0,
+     "availableUntilCompleted": 0,
+     "breadcrumbForQuestId": 0,
+     "disabledByQuest": 0,
+     "extraObjectives": [
+      [
+       {
+        "1377": [
+         [
+          47.5,
+          54.5
+         ]
+        ]
+       },
+       3,
+       "Draw the glyphs into the sand to summon the Qiraji Emissary.",
+       0
+      ]
+     ],
+     "finishedBy": [
+      [
+       15183
+      ]
+     ],
+     "name": "The Calling",
+     "nextQuestInChain": 8381,
+     "objectives": {
+      "3": [
+       {
+        "1": 20465,
+        "3": 0
+       }
+      ]
+     },
+     "objectivesText": [
+      "Geologist Larksbane at Cenarion Hold in Silithus wants you to recover the Crystal Unlocking Mechanism from the Qiraji Emissary.",
+      "",
+      "You have been instructed to take the Glyphs of Calling to the Bones of Grakkarond, south of Cenarion Hold, and draw them in the sand. Should the Qiraji Emissary appear, slay it and recover the Crystal Unlocking Mechanism. Return to Geologist Larksbane if you succeed.",
+      "",
+      "Assemble an army for this task, <Name>!"
+     ],
+     "parentQuest": 0,
+     "preQuestSingle": [
+      8314
+     ],
+     "questFlags": 64,
+     "questLevel": 60,
+     "reputationReward": [
+      [
+       609,
+       200
+      ]
+     ],
+     "requiredClasses": 0,
+     "requiredLevel": 58,
+     "requiredMaxLevel": 0,
+     "requiredRaces": 0,
+     "requiredSpecialization": 0,
+     "requiredSpell": 0,
+     "sourceItemId": 20464,
+     "specialFlags": 0,
+     "startedBy": [
+      [
+       15183
+      ]
+     ],
+     "zoneOrSort": 1377
+    },
+    "8978": {
+     "availableStartingWith": 0,
+     "availableUntilCompleted": 0,
+     "breadcrumbForQuestId": 0,
+     "disabledByQuest": 0,
+     "finishedBy": [
+      [
+       16012
+      ]
+     ],
+     "name": "Return to Mokvar",
+     "nextQuestInChain": 8939,
+     "objectives": {},
+     "objectivesText": [
+      "Return to Mokvar in Orgrimmar with the Extra-Dimensional Ghost Revealer."
+     ],
+     "parentQuest": 0,
+     "preQuestSingle": [
+      8928
+     ],
+     "questFlags": 0,
+     "questLevel": 60,
+     "requiredClasses": 0,
+     "requiredLevel": 58,
+     "requiredMaxLevel": 0,
+     "requiredRaces": 8589934770,
+     "requiredSpecialization": 0,
+     "requiredSpell": 0,
+     "sourceItemId": 22115,
+     "specialFlags": 0,
+     "startedBy": [
+      [
+       16014
+      ]
+     ],
+     "zoneOrSort": 1637
+    },
+    "8998": {
+     "availableStartingWith": 0,
+     "availableUntilCompleted": 0,
+     "breadcrumbForQuestId": 0,
+     "disabledByQuest": 0,
+     "finishedBy": [
+      [
+       16012
+      ]
+     ],
+     "name": "Back to the Beginning",
+     "nextQuestInChain": 9014,
+     "objectives": {},
+     "objectivesText": [
+      "Speak with Mokvar at Grommash Hold in Orgrimmar's Valley of Wisdom."
+     ],
+     "parentQuest": 0,
+     "preQuestSingle": [
+      8996
+     ],
+     "questFlags": 8,
+     "questLevel": 60,
+     "requiredClasses": 0,
+     "requiredLevel": 58,
+     "requiredMaxLevel": 0,
+     "requiredRaces": 8589934770,
+     "requiredSpecialization": 0,
+     "requiredSpell": 0,
+     "sourceItemId": 0,
+     "specialFlags": 0,
+     "startedBy": [
+      [
+       16033
+      ]
+     ],
+     "zoneOrSort": 1637
+    },
+    "9015": {
+     "availableStartingWith": 0,
+     "availableUntilCompleted": 0,
+     "breadcrumbForQuestId": 0,
+     "disabledByQuest": 0,
+     "finishedBy": [
+      [
+       16016
+      ]
+     ],
+     "name": "The Challenge",
+     "nextQuestInChain": 9018,
+     "objectives": {
+      "1": [
+       {
+        "1": 16059,
+        "3": 3
+       }
+      ],
+      "3": [
+       {
+        "1": 22047,
+        "3": 0
+       }
+      ]
+     },
+     "objectivesText": [
+      "Travel to the Ring of the Law in Blackrock Depths and place the Banner of Provocation in its center as you are sentenced by High Justice Grimstone. Slay Theldren and his gladiators and return to Anthion Harmon in the Eastern Plaguelands with the first piece of Lord Valthalak's amulet."
+     ],
+     "parentQuest": 0,
+     "preQuestSingle": [
+      8950
+     ],
+     "questFlags": 0,
+     "questLevel": 60,
+     "requiredClasses": 0,
+     "requiredLevel": 58,
+     "requiredMaxLevel": 0,
+     "requiredRaces": 0,
+     "requiredSpecialization": 0,
+     "requiredSpell": 0,
+     "sourceItemId": 21986,
+     "specialFlags": 0,
+     "startedBy": [
+      [
+       16032
+      ]
+     ],
+     "zoneOrSort": 1584
+    }
+   }
+  },
+  "Horde/PALADIN": {
+   "Quest": {
+    "78124": {
+     "availableStartingWith": 0,
+     "availableUntilCompleted": 0,
+     "breadcrumbForQuestId": 0,
+     "disabledByQuest": 0,
+     "finishedBy": [
+      [
+       211022
+      ]
+     ],
+     "name": "Nar'thalas Almanac",
+     "nextQuestInChain": 0,
+     "objectives": {
+      "3": [
+       {
+        "1": 209843,
+        "3": 0
+       }
+      ]
+     },
+     "objectivesText": [
+      "Collect 'Nar'thalas Almanac, Vol. 74' and bring it to Owen Thadd in Undercity."
+     ],
+     "parentQuest": 0,
+     "questFlags": 0,
+     "questLevel": 20,
+     "requiredClasses": 0,
+     "requiredLevel": 1,
+     "requiredMaxLevel": 0,
+     "requiredRaces": 0,
+     "requiredSpecialization": 0,
+     "requiredSpell": 0,
+     "sourceItemId": 0,
+     "specialFlags": 0,
+     "startedBy": [
+      [
+       211022
+      ],
+      [
+       409496
+      ]
+     ],
+     "zoneOrSort": 1497
+    },
+    "8315": {
+     "availableStartingWith": 0,
+     "availableUntilCompleted": 0,
+     "breadcrumbForQuestId": 0,
+     "disabledByQuest": 0,
+     "extraObjectives": [
+      [
+       {
+        "1377": [
+         [
+          47.5,
+          54.5
+         ]
+        ]
+       },
+       3,
+       "Draw the glyphs into the sand to summon the Qiraji Emissary.",
+       0
+      ]
+     ],
+     "finishedBy": [
+      [
+       15183
+      ]
+     ],
+     "name": "The Calling",
+     "nextQuestInChain": 8376,
+     "objectives": {
+      "3": [
+       {
+        "1": 20465,
+        "3": 0
+       }
+      ]
+     },
+     "objectivesText": [
+      "Geologist Larksbane at Cenarion Hold in Silithus wants you to recover the Crystal Unlocking Mechanism from the Qiraji Emissary.",
+      "",
+      "You have been instructed to take the Glyphs of Calling to the Bones of Grakkarond, south of Cenarion Hold, and draw them in the sand. Should the Qiraji Emissary appear, slay it and recover the Crystal Unlocking Mechanism. Return to Geologist Larksbane if you succeed.",
+      "",
+      "Assemble an army for this task, <Name>!"
+     ],
+     "parentQuest": 0,
+     "preQuestSingle": [
+      8314
+     ],
+     "questFlags": 64,
+     "questLevel": 60,
+     "reputationReward": [
+      [
+       609,
+       200
+      ]
+     ],
+     "requiredClasses": 0,
+     "requiredLevel": 58,
+     "requiredMaxLevel": 0,
+     "requiredRaces": 0,
+     "requiredSpecialization": 0,
+     "requiredSpell": 0,
+     "sourceItemId": 20464,
+     "specialFlags": 0,
+     "startedBy": [
+      [
+       15183
+      ]
+     ],
+     "zoneOrSort": 1377
+    }
+   }
+  },
+  "Horde/PRIEST": {
+   "Quest": {
+    "78124": {
+     "availableStartingWith": 0,
+     "availableUntilCompleted": 0,
+     "breadcrumbForQuestId": 0,
+     "disabledByQuest": 0,
+     "finishedBy": [
+      [
+       211022
+      ]
+     ],
+     "name": "Nar'thalas Almanac",
+     "nextQuestInChain": 0,
+     "objectives": {
+      "3": [
+       {
+        "1": 209843,
+        "3": 0
+       }
+      ]
+     },
+     "objectivesText": [
+      "Collect 'Nar'thalas Almanac, Vol. 74' and bring it to Owen Thadd in Undercity."
+     ],
+     "parentQuest": 0,
+     "questFlags": 0,
+     "questLevel": 20,
+     "requiredClasses": 0,
+     "requiredLevel": 1,
+     "requiredMaxLevel": 0,
+     "requiredRaces": 0,
+     "requiredSpecialization": 0,
+     "requiredSpell": 0,
+     "sourceItemId": 0,
+     "specialFlags": 0,
+     "startedBy": [
+      [
+       211022
+      ],
+      [
+       409496
+      ]
+     ],
+     "zoneOrSort": 1497
+    },
+    "8315": {
+     "availableStartingWith": 0,
+     "availableUntilCompleted": 0,
+     "breadcrumbForQuestId": 0,
+     "disabledByQuest": 0,
+     "extraObjectives": [
+      [
+       {
+        "1377": [
+         [
+          47.5,
+          54.5
+         ]
+        ]
+       },
+       3,
+       "Draw the glyphs into the sand to summon the Qiraji Emissary.",
+       0
+      ]
+     ],
+     "finishedBy": [
+      [
+       15183
+      ]
+     ],
+     "name": "The Calling",
+     "nextQuestInChain": 8379,
+     "objectives": {
+      "3": [
+       {
+        "1": 20465,
+        "3": 0
+       }
+      ]
+     },
+     "objectivesText": [
+      "Geologist Larksbane at Cenarion Hold in Silithus wants you to recover the Crystal Unlocking Mechanism from the Qiraji Emissary.",
+      "",
+      "You have been instructed to take the Glyphs of Calling to the Bones of Grakkarond, south of Cenarion Hold, and draw them in the sand. Should the Qiraji Emissary appear, slay it and recover the Crystal Unlocking Mechanism. Return to Geologist Larksbane if you succeed.",
+      "",
+      "Assemble an army for this task, <Name>!"
+     ],
+     "parentQuest": 0,
+     "preQuestSingle": [
+      8314
+     ],
+     "questFlags": 64,
+     "questLevel": 60,
+     "reputationReward": [
+      [
+       609,
+       200
+      ]
+     ],
+     "requiredClasses": 0,
+     "requiredLevel": 58,
+     "requiredMaxLevel": 0,
+     "requiredRaces": 0,
+     "requiredSpecialization": 0,
+     "requiredSpell": 0,
+     "sourceItemId": 20464,
+     "specialFlags": 0,
+     "startedBy": [
+      [
+       15183
+      ]
+     ],
+     "zoneOrSort": 1377
+    },
+    "8978": {
+     "availableStartingWith": 0,
+     "availableUntilCompleted": 0,
+     "breadcrumbForQuestId": 0,
+     "disabledByQuest": 0,
+     "finishedBy": [
+      [
+       16012
+      ]
+     ],
+     "name": "Return to Mokvar",
+     "nextQuestInChain": 8940,
+     "objectives": {},
+     "objectivesText": [
+      "Return to Mokvar in Orgrimmar with the Extra-Dimensional Ghost Revealer."
+     ],
+     "parentQuest": 0,
+     "preQuestSingle": [
+      8928
+     ],
+     "questFlags": 0,
+     "questLevel": 60,
+     "requiredClasses": 0,
+     "requiredLevel": 58,
+     "requiredMaxLevel": 0,
+     "requiredRaces": 8589934770,
+     "requiredSpecialization": 0,
+     "requiredSpell": 0,
+     "sourceItemId": 22115,
+     "specialFlags": 0,
+     "startedBy": [
+      [
+       16014
+      ]
+     ],
+     "zoneOrSort": 1637
+    },
+    "8998": {
+     "availableStartingWith": 0,
+     "availableUntilCompleted": 0,
+     "breadcrumbForQuestId": 0,
+     "disabledByQuest": 0,
+     "finishedBy": [
+      [
+       16012
+      ]
+     ],
+     "name": "Back to the Beginning",
+     "nextQuestInChain": 9009,
+     "objectives": {},
+     "objectivesText": [
+      "Speak with Mokvar at Grommash Hold in Orgrimmar's Valley of Wisdom."
+     ],
+     "parentQuest": 0,
+     "preQuestSingle": [
+      8996
+     ],
+     "questFlags": 8,
+     "questLevel": 60,
+     "requiredClasses": 0,
+     "requiredLevel": 58,
+     "requiredMaxLevel": 0,
+     "requiredRaces": 8589934770,
+     "requiredSpecialization": 0,
+     "requiredSpell": 0,
+     "sourceItemId": 0,
+     "specialFlags": 0,
+     "startedBy": [
+      [
+       16033
+      ]
+     ],
+     "zoneOrSort": 1637
+    },
+    "9015": {
+     "availableStartingWith": 0,
+     "availableUntilCompleted": 0,
+     "breadcrumbForQuestId": 0,
+     "disabledByQuest": 0,
+     "finishedBy": [
+      [
+       16016
+      ]
+     ],
+     "name": "The Challenge",
+     "nextQuestInChain": 9019,
+     "objectives": {
+      "1": [
+       {
+        "1": 16059,
+        "3": 3
+       }
+      ],
+      "3": [
+       {
+        "1": 22047,
+        "3": 0
+       }
+      ]
+     },
+     "objectivesText": [
+      "Travel to the Ring of the Law in Blackrock Depths and place the Banner of Provocation in its center as you are sentenced by High Justice Grimstone. Slay Theldren and his gladiators and return to Anthion Harmon in the Eastern Plaguelands with the first piece of Lord Valthalak's amulet."
+     ],
+     "parentQuest": 0,
+     "preQuestSingle": [
+      8950
+     ],
+     "questFlags": 0,
+     "questLevel": 60,
+     "requiredClasses": 0,
+     "requiredLevel": 58,
+     "requiredMaxLevel": 0,
+     "requiredRaces": 0,
+     "requiredSpecialization": 0,
+     "requiredSpell": 0,
+     "sourceItemId": 21986,
+     "specialFlags": 0,
+     "startedBy": [
+      [
+       16032
+      ]
+     ],
+     "zoneOrSort": 1584
+    }
+   }
+  },
+  "Horde/ROGUE": {
+   "Quest": {
+    "78124": {
+     "availableStartingWith": 0,
+     "availableUntilCompleted": 0,
+     "breadcrumbForQuestId": 0,
+     "disabledByQuest": 0,
+     "finishedBy": [
+      [
+       211022
+      ]
+     ],
+     "name": "Nar'thalas Almanac",
+     "nextQuestInChain": 0,
+     "objectives": {
+      "3": [
+       {
+        "1": 209843,
+        "3": 0
+       }
+      ]
+     },
+     "objectivesText": [
+      "Collect 'Nar'thalas Almanac, Vol. 74' and bring it to Owen Thadd in Undercity."
+     ],
+     "parentQuest": 0,
+     "questFlags": 0,
+     "questLevel": 20,
+     "requiredClasses": 0,
+     "requiredLevel": 1,
+     "requiredMaxLevel": 0,
+     "requiredRaces": 0,
+     "requiredSpecialization": 0,
+     "requiredSpell": 0,
+     "sourceItemId": 0,
+     "specialFlags": 0,
+     "startedBy": [
+      [
+       211022
+      ],
+      [
+       409496
+      ]
+     ],
+     "zoneOrSort": 1497
+    },
+    "8315": {
+     "availableStartingWith": 0,
+     "availableUntilCompleted": 0,
+     "breadcrumbForQuestId": 0,
+     "disabledByQuest": 0,
+     "extraObjectives": [
+      [
+       {
+        "1377": [
+         [
+          47.5,
+          54.5
+         ]
+        ]
+       },
+       3,
+       "Draw the glyphs into the sand to summon the Qiraji Emissary.",
+       0
+      ]
+     ],
+     "finishedBy": [
+      [
+       15183
+      ]
+     ],
+     "name": "The Calling",
+     "nextQuestInChain": 8378,
+     "objectives": {
+      "3": [
+       {
+        "1": 20465,
+        "3": 0
+       }
+      ]
+     },
+     "objectivesText": [
+      "Geologist Larksbane at Cenarion Hold in Silithus wants you to recover the Crystal Unlocking Mechanism from the Qiraji Emissary.",
+      "",
+      "You have been instructed to take the Glyphs of Calling to the Bones of Grakkarond, south of Cenarion Hold, and draw them in the sand. Should the Qiraji Emissary appear, slay it and recover the Crystal Unlocking Mechanism. Return to Geologist Larksbane if you succeed.",
+      "",
+      "Assemble an army for this task, <Name>!"
+     ],
+     "parentQuest": 0,
+     "preQuestSingle": [
+      8314
+     ],
+     "questFlags": 64,
+     "questLevel": 60,
+     "reputationReward": [
+      [
+       609,
+       200
+      ]
+     ],
+     "requiredClasses": 0,
+     "requiredLevel": 58,
+     "requiredMaxLevel": 0,
+     "requiredRaces": 0,
+     "requiredSpecialization": 0,
+     "requiredSpell": 0,
+     "sourceItemId": 20464,
+     "specialFlags": 0,
+     "startedBy": [
+      [
+       15183
+      ]
+     ],
+     "zoneOrSort": 1377
+    },
+    "8978": {
+     "availableStartingWith": 0,
+     "availableUntilCompleted": 0,
+     "breadcrumbForQuestId": 0,
+     "disabledByQuest": 0,
+     "finishedBy": [
+      [
+       16012
+      ]
+     ],
+     "name": "Return to Mokvar",
+     "nextQuestInChain": 8941,
+     "objectives": {},
+     "objectivesText": [
+      "Return to Mokvar in Orgrimmar with the Extra-Dimensional Ghost Revealer."
+     ],
+     "parentQuest": 0,
+     "preQuestSingle": [
+      8928
+     ],
+     "questFlags": 0,
+     "questLevel": 60,
+     "requiredClasses": 0,
+     "requiredLevel": 58,
+     "requiredMaxLevel": 0,
+     "requiredRaces": 8589934770,
+     "requiredSpecialization": 0,
+     "requiredSpell": 0,
+     "sourceItemId": 22115,
+     "specialFlags": 0,
+     "startedBy": [
+      [
+       16014
+      ]
+     ],
+     "zoneOrSort": 1637
+    },
+    "8998": {
+     "availableStartingWith": 0,
+     "availableUntilCompleted": 0,
+     "breadcrumbForQuestId": 0,
+     "disabledByQuest": 0,
+     "finishedBy": [
+      [
+       16012
+      ]
+     ],
+     "name": "Back to the Beginning",
+     "nextQuestInChain": 9010,
+     "objectives": {},
+     "objectivesText": [
+      "Speak with Mokvar at Grommash Hold in Orgrimmar's Valley of Wisdom."
+     ],
+     "parentQuest": 0,
+     "preQuestSingle": [
+      8996
+     ],
+     "questFlags": 8,
+     "questLevel": 60,
+     "requiredClasses": 0,
+     "requiredLevel": 58,
+     "requiredMaxLevel": 0,
+     "requiredRaces": 8589934770,
+     "requiredSpecialization": 0,
+     "requiredSpell": 0,
+     "sourceItemId": 0,
+     "specialFlags": 0,
+     "startedBy": [
+      [
+       16033
+      ]
+     ],
+     "zoneOrSort": 1637
+    },
+    "9015": {
+     "availableStartingWith": 0,
+     "availableUntilCompleted": 0,
+     "breadcrumbForQuestId": 0,
+     "disabledByQuest": 0,
+     "finishedBy": [
+      [
+       16016
+      ]
+     ],
+     "name": "The Challenge",
+     "nextQuestInChain": 9020,
+     "objectives": {
+      "1": [
+       {
+        "1": 16059,
+        "3": 3
+       }
+      ],
+      "3": [
+       {
+        "1": 22047,
+        "3": 0
+       }
+      ]
+     },
+     "objectivesText": [
+      "Travel to the Ring of the Law in Blackrock Depths and place the Banner of Provocation in its center as you are sentenced by High Justice Grimstone. Slay Theldren and his gladiators and return to Anthion Harmon in the Eastern Plaguelands with the first piece of Lord Valthalak's amulet."
+     ],
+     "parentQuest": 0,
+     "preQuestSingle": [
+      8950
+     ],
+     "questFlags": 0,
+     "questLevel": 60,
+     "requiredClasses": 0,
+     "requiredLevel": 58,
+     "requiredMaxLevel": 0,
+     "requiredRaces": 0,
+     "requiredSpecialization": 0,
+     "requiredSpell": 0,
+     "sourceItemId": 21986,
+     "specialFlags": 0,
+     "startedBy": [
+      [
+       16032
+      ]
+     ],
+     "zoneOrSort": 1584
+    }
+   }
+  },
+  "Horde/SHAMAN": {
+   "Quest": {
+    "78124": {
+     "availableStartingWith": 0,
+     "availableUntilCompleted": 0,
+     "breadcrumbForQuestId": 0,
+     "disabledByQuest": 0,
+     "finishedBy": [
+      [
+       211022
+      ]
+     ],
+     "name": "Nar'thalas Almanac",
+     "nextQuestInChain": 0,
+     "objectives": {
+      "3": [
+       {
+        "1": 209843,
+        "3": 0
+       }
+      ]
+     },
+     "objectivesText": [
+      "Collect 'Nar'thalas Almanac, Vol. 74' and bring it to Owen Thadd in Undercity."
+     ],
+     "parentQuest": 0,
+     "questFlags": 0,
+     "questLevel": 20,
+     "requiredClasses": 0,
+     "requiredLevel": 1,
+     "requiredMaxLevel": 0,
+     "requiredRaces": 0,
+     "requiredSpecialization": 0,
+     "requiredSpell": 0,
+     "sourceItemId": 0,
+     "specialFlags": 0,
+     "startedBy": [
+      [
+       211022
+      ],
+      [
+       409496
+      ]
+     ],
+     "zoneOrSort": 1497
+    },
+    "8315": {
+     "availableStartingWith": 0,
+     "availableUntilCompleted": 0,
+     "breadcrumbForQuestId": 0,
+     "disabledByQuest": 0,
+     "extraObjectives": [
+      [
+       {
+        "1377": [
+         [
+          47.5,
+          54.5
+         ]
+        ]
+       },
+       3,
+       "Draw the glyphs into the sand to summon the Qiraji Emissary.",
+       0
+      ]
+     ],
+     "finishedBy": [
+      [
+       15183
+      ]
+     ],
+     "name": "The Calling",
+     "nextQuestInChain": 8380,
+     "objectives": {
+      "3": [
+       {
+        "1": 20465,
+        "3": 0
+       }
+      ]
+     },
+     "objectivesText": [
+      "Geologist Larksbane at Cenarion Hold in Silithus wants you to recover the Crystal Unlocking Mechanism from the Qiraji Emissary.",
+      "",
+      "You have been instructed to take the Glyphs of Calling to the Bones of Grakkarond, south of Cenarion Hold, and draw them in the sand. Should the Qiraji Emissary appear, slay it and recover the Crystal Unlocking Mechanism. Return to Geologist Larksbane if you succeed.",
+      "",
+      "Assemble an army for this task, <Name>!"
+     ],
+     "parentQuest": 0,
+     "preQuestSingle": [
+      8314
+     ],
+     "questFlags": 64,
+     "questLevel": 60,
+     "reputationReward": [
+      [
+       609,
+       200
+      ]
+     ],
+     "requiredClasses": 0,
+     "requiredLevel": 58,
+     "requiredMaxLevel": 0,
+     "requiredRaces": 0,
+     "requiredSpecialization": 0,
+     "requiredSpell": 0,
+     "sourceItemId": 20464,
+     "specialFlags": 0,
+     "startedBy": [
+      [
+       15183
+      ]
+     ],
+     "zoneOrSort": 1377
+    },
+    "8978": {
+     "availableStartingWith": 0,
+     "availableUntilCompleted": 0,
+     "breadcrumbForQuestId": 0,
+     "disabledByQuest": 0,
+     "finishedBy": [
+      [
+       16012
+      ]
+     ],
+     "name": "Return to Mokvar",
+     "nextQuestInChain": 8942,
+     "objectives": {},
+     "objectivesText": [
+      "Return to Mokvar in Orgrimmar with the Extra-Dimensional Ghost Revealer."
+     ],
+     "parentQuest": 0,
+     "preQuestSingle": [
+      8928
+     ],
+     "questFlags": 0,
+     "questLevel": 60,
+     "requiredClasses": 0,
+     "requiredLevel": 58,
+     "requiredMaxLevel": 0,
+     "requiredRaces": 8589934770,
+     "requiredSpecialization": 0,
+     "requiredSpell": 0,
+     "sourceItemId": 22115,
+     "specialFlags": 0,
+     "startedBy": [
+      [
+       16014
+      ]
+     ],
+     "zoneOrSort": 1637
+    },
+    "8998": {
+     "availableStartingWith": 0,
+     "availableUntilCompleted": 0,
+     "breadcrumbForQuestId": 0,
+     "disabledByQuest": 0,
+     "finishedBy": [
+      [
+       16012
+      ]
+     ],
+     "name": "Back to the Beginning",
+     "nextQuestInChain": 9011,
+     "objectives": {},
+     "objectivesText": [
+      "Speak with Mokvar at Grommash Hold in Orgrimmar's Valley of Wisdom."
+     ],
+     "parentQuest": 0,
+     "preQuestSingle": [
+      8996
+     ],
+     "questFlags": 8,
+     "questLevel": 60,
+     "requiredClasses": 0,
+     "requiredLevel": 58,
+     "requiredMaxLevel": 0,
+     "requiredRaces": 8589934770,
+     "requiredSpecialization": 0,
+     "requiredSpell": 0,
+     "sourceItemId": 0,
+     "specialFlags": 0,
+     "startedBy": [
+      [
+       16033
+      ]
+     ],
+     "zoneOrSort": 1637
+    },
+    "9015": {
+     "availableStartingWith": 0,
+     "availableUntilCompleted": 0,
+     "breadcrumbForQuestId": 0,
+     "disabledByQuest": 0,
+     "finishedBy": [
+      [
+       16016
+      ]
+     ],
+     "name": "The Challenge",
+     "nextQuestInChain": 8957,
+     "objectives": {
+      "1": [
+       {
+        "1": 16059,
+        "3": 3
+       }
+      ],
+      "3": [
+       {
+        "1": 22047,
+        "3": 0
+       }
+      ]
+     },
+     "objectivesText": [
+      "Travel to the Ring of the Law in Blackrock Depths and place the Banner of Provocation in its center as you are sentenced by High Justice Grimstone. Slay Theldren and his gladiators and return to Anthion Harmon in the Eastern Plaguelands with the first piece of Lord Valthalak's amulet."
+     ],
+     "parentQuest": 0,
+     "preQuestSingle": [
+      8950
+     ],
+     "questFlags": 0,
+     "questLevel": 60,
+     "requiredClasses": 0,
+     "requiredLevel": 58,
+     "requiredMaxLevel": 0,
+     "requiredRaces": 0,
+     "requiredSpecialization": 0,
+     "requiredSpell": 0,
+     "sourceItemId": 21986,
+     "specialFlags": 0,
+     "startedBy": [
+      [
+       16032
+      ]
+     ],
+     "zoneOrSort": 1584
+    }
+   }
+  },
+  "Horde/WARLOCK": {
+   "Quest": {
+    "78124": {
+     "availableStartingWith": 0,
+     "availableUntilCompleted": 0,
+     "breadcrumbForQuestId": 0,
+     "disabledByQuest": 0,
+     "finishedBy": [
+      [
+       211022
+      ]
+     ],
+     "name": "Nar'thalas Almanac",
+     "nextQuestInChain": 0,
+     "objectives": {
+      "3": [
+       {
+        "1": 209843,
+        "3": 0
+       }
+      ]
+     },
+     "objectivesText": [
+      "Collect 'Nar'thalas Almanac, Vol. 74' and bring it to Owen Thadd in Undercity."
+     ],
+     "parentQuest": 0,
+     "questFlags": 0,
+     "questLevel": 20,
+     "requiredClasses": 0,
+     "requiredLevel": 1,
+     "requiredMaxLevel": 0,
+     "requiredRaces": 0,
+     "requiredSpecialization": 0,
+     "requiredSpell": 0,
+     "sourceItemId": 0,
+     "specialFlags": 0,
+     "startedBy": [
+      [
+       211022
+      ],
+      [
+       409496
+      ]
+     ],
+     "zoneOrSort": 1497
+    },
+    "8315": {
+     "availableStartingWith": 0,
+     "availableUntilCompleted": 0,
+     "breadcrumbForQuestId": 0,
+     "disabledByQuest": 0,
+     "extraObjectives": [
+      [
+       {
+        "1377": [
+         [
+          47.5,
+          54.5
+         ]
+        ]
+       },
+       3,
+       "Draw the glyphs into the sand to summon the Qiraji Emissary.",
+       0
+      ]
+     ],
+     "finishedBy": [
+      [
+       15183
+      ]
+     ],
+     "name": "The Calling",
+     "nextQuestInChain": 8381,
+     "objectives": {
+      "3": [
+       {
+        "1": 20465,
+        "3": 0
+       }
+      ]
+     },
+     "objectivesText": [
+      "Geologist Larksbane at Cenarion Hold in Silithus wants you to recover the Crystal Unlocking Mechanism from the Qiraji Emissary.",
+      "",
+      "You have been instructed to take the Glyphs of Calling to the Bones of Grakkarond, south of Cenarion Hold, and draw them in the sand. Should the Qiraji Emissary appear, slay it and recover the Crystal Unlocking Mechanism. Return to Geologist Larksbane if you succeed.",
+      "",
+      "Assemble an army for this task, <Name>!"
+     ],
+     "parentQuest": 0,
+     "preQuestSingle": [
+      8314
+     ],
+     "questFlags": 64,
+     "questLevel": 60,
+     "reputationReward": [
+      [
+       609,
+       200
+      ]
+     ],
+     "requiredClasses": 0,
+     "requiredLevel": 58,
+     "requiredMaxLevel": 0,
+     "requiredRaces": 0,
+     "requiredSpecialization": 0,
+     "requiredSpell": 0,
+     "sourceItemId": 20464,
+     "specialFlags": 0,
+     "startedBy": [
+      [
+       15183
+      ]
+     ],
+     "zoneOrSort": 1377
+    },
+    "8978": {
+     "availableStartingWith": 0,
+     "availableUntilCompleted": 0,
+     "breadcrumbForQuestId": 0,
+     "disabledByQuest": 0,
+     "finishedBy": [
+      [
+       16012
+      ]
+     ],
+     "name": "Return to Mokvar",
+     "nextQuestInChain": 8943,
+     "objectives": {},
+     "objectivesText": [
+      "Return to Mokvar in Orgrimmar with the Extra-Dimensional Ghost Revealer."
+     ],
+     "parentQuest": 0,
+     "preQuestSingle": [
+      8928
+     ],
+     "questFlags": 0,
+     "questLevel": 60,
+     "requiredClasses": 0,
+     "requiredLevel": 58,
+     "requiredMaxLevel": 0,
+     "requiredRaces": 8589934770,
+     "requiredSpecialization": 0,
+     "requiredSpell": 0,
+     "sourceItemId": 22115,
+     "specialFlags": 0,
+     "startedBy": [
+      [
+       16014
+      ]
+     ],
+     "zoneOrSort": 1637
+    },
+    "8998": {
+     "availableStartingWith": 0,
+     "availableUntilCompleted": 0,
+     "breadcrumbForQuestId": 0,
+     "disabledByQuest": 0,
+     "finishedBy": [
+      [
+       16012
+      ]
+     ],
+     "name": "Back to the Beginning",
+     "nextQuestInChain": 9012,
+     "objectives": {},
+     "objectivesText": [
+      "Speak with Mokvar at Grommash Hold in Orgrimmar's Valley of Wisdom."
+     ],
+     "parentQuest": 0,
+     "preQuestSingle": [
+      8996
+     ],
+     "questFlags": 8,
+     "questLevel": 60,
+     "requiredClasses": 0,
+     "requiredLevel": 58,
+     "requiredMaxLevel": 0,
+     "requiredRaces": 8589934770,
+     "requiredSpecialization": 0,
+     "requiredSpell": 0,
+     "sourceItemId": 0,
+     "specialFlags": 0,
+     "startedBy": [
+      [
+       16033
+      ]
+     ],
+     "zoneOrSort": 1637
+    },
+    "9015": {
+     "availableStartingWith": 0,
+     "availableUntilCompleted": 0,
+     "breadcrumbForQuestId": 0,
+     "disabledByQuest": 0,
+     "finishedBy": [
+      [
+       16016
+      ]
+     ],
+     "name": "The Challenge",
+     "nextQuestInChain": 9021,
+     "objectives": {
+      "1": [
+       {
+        "1": 16059,
+        "3": 3
+       }
+      ],
+      "3": [
+       {
+        "1": 22047,
+        "3": 0
+       }
+      ]
+     },
+     "objectivesText": [
+      "Travel to the Ring of the Law in Blackrock Depths and place the Banner of Provocation in its center as you are sentenced by High Justice Grimstone. Slay Theldren and his gladiators and return to Anthion Harmon in the Eastern Plaguelands with the first piece of Lord Valthalak's amulet."
+     ],
+     "parentQuest": 0,
+     "preQuestSingle": [
+      8950
+     ],
+     "questFlags": 0,
+     "questLevel": 60,
+     "requiredClasses": 0,
+     "requiredLevel": 58,
+     "requiredMaxLevel": 0,
+     "requiredRaces": 0,
+     "requiredSpecialization": 0,
+     "requiredSpell": 0,
+     "sourceItemId": 21986,
+     "specialFlags": 0,
+     "startedBy": [
+      [
+       16032
+      ]
+     ],
+     "zoneOrSort": 1584
+    }
+   }
+  },
+  "Horde/WARRIOR": {
+   "Quest": {
+    "78124": {
+     "availableStartingWith": 0,
+     "availableUntilCompleted": 0,
+     "breadcrumbForQuestId": 0,
+     "disabledByQuest": 0,
+     "finishedBy": [
+      [
+       211022
+      ]
+     ],
+     "name": "Nar'thalas Almanac",
+     "nextQuestInChain": 0,
+     "objectives": {
+      "3": [
+       {
+        "1": 209843,
+        "3": 0
+       }
+      ]
+     },
+     "objectivesText": [
+      "Collect 'Nar'thalas Almanac, Vol. 74' and bring it to Owen Thadd in Undercity."
+     ],
+     "parentQuest": 0,
+     "questFlags": 0,
+     "questLevel": 20,
+     "requiredClasses": 0,
+     "requiredLevel": 1,
+     "requiredMaxLevel": 0,
+     "requiredRaces": 0,
+     "requiredSpecialization": 0,
+     "requiredSpell": 0,
+     "sourceItemId": 0,
+     "specialFlags": 0,
+     "startedBy": [
+      [
+       211022
+      ],
+      [
+       409496
+      ]
+     ],
+     "zoneOrSort": 1497
+    },
+    "8315": {
+     "availableStartingWith": 0,
+     "availableUntilCompleted": 0,
+     "breadcrumbForQuestId": 0,
+     "disabledByQuest": 0,
+     "extraObjectives": [
+      [
+       {
+        "1377": [
+         [
+          47.5,
+          54.5
+         ]
+        ]
+       },
+       3,
+       "Draw the glyphs into the sand to summon the Qiraji Emissary.",
+       0
+      ]
+     ],
+     "finishedBy": [
+      [
+       15183
+      ]
+     ],
+     "name": "The Calling",
+     "nextQuestInChain": 8316,
+     "objectives": {
+      "3": [
+       {
+        "1": 20465,
+        "3": 0
+       }
+      ]
+     },
+     "objectivesText": [
+      "Geologist Larksbane at Cenarion Hold in Silithus wants you to recover the Crystal Unlocking Mechanism from the Qiraji Emissary.",
+      "",
+      "You have been instructed to take the Glyphs of Calling to the Bones of Grakkarond, south of Cenarion Hold, and draw them in the sand. Should the Qiraji Emissary appear, slay it and recover the Crystal Unlocking Mechanism. Return to Geologist Larksbane if you succeed.",
+      "",
+      "Assemble an army for this task, <Name>!"
+     ],
+     "parentQuest": 0,
+     "preQuestSingle": [
+      8314
+     ],
+     "questFlags": 64,
+     "questLevel": 60,
+     "reputationReward": [
+      [
+       609,
+       200
+      ]
+     ],
+     "requiredClasses": 0,
+     "requiredLevel": 58,
+     "requiredMaxLevel": 0,
+     "requiredRaces": 0,
+     "requiredSpecialization": 0,
+     "requiredSpell": 0,
+     "sourceItemId": 20464,
+     "specialFlags": 0,
+     "startedBy": [
+      [
+       15183
+      ]
+     ],
+     "zoneOrSort": 1377
+    },
+    "8978": {
+     "availableStartingWith": 0,
+     "availableUntilCompleted": 0,
+     "breadcrumbForQuestId": 0,
+     "disabledByQuest": 0,
+     "finishedBy": [
+      [
+       16012
+      ]
+     ],
+     "name": "Return to Mokvar",
+     "nextQuestInChain": 8944,
+     "objectives": {},
+     "objectivesText": [
+      "Return to Mokvar in Orgrimmar with the Extra-Dimensional Ghost Revealer."
+     ],
+     "parentQuest": 0,
+     "preQuestSingle": [
+      8928
+     ],
+     "questFlags": 0,
+     "questLevel": 60,
+     "requiredClasses": 0,
+     "requiredLevel": 58,
+     "requiredMaxLevel": 0,
+     "requiredRaces": 8589934770,
+     "requiredSpecialization": 0,
+     "requiredSpell": 0,
+     "sourceItemId": 22115,
+     "specialFlags": 0,
+     "startedBy": [
+      [
+       16014
+      ]
+     ],
+     "zoneOrSort": 1637
+    },
+    "8998": {
+     "availableStartingWith": 0,
+     "availableUntilCompleted": 0,
+     "breadcrumbForQuestId": 0,
+     "disabledByQuest": 0,
+     "finishedBy": [
+      [
+       16012
+      ]
+     ],
+     "name": "Back to the Beginning",
+     "nextQuestInChain": 9013,
+     "objectives": {},
+     "objectivesText": [
+      "Speak with Mokvar at Grommash Hold in Orgrimmar's Valley of Wisdom."
+     ],
+     "parentQuest": 0,
+     "preQuestSingle": [
+      8996
+     ],
+     "questFlags": 8,
+     "questLevel": 60,
+     "requiredClasses": 0,
+     "requiredLevel": 58,
+     "requiredMaxLevel": 0,
+     "requiredRaces": 8589934770,
+     "requiredSpecialization": 0,
+     "requiredSpell": 0,
+     "sourceItemId": 0,
+     "specialFlags": 0,
+     "startedBy": [
+      [
+       16033
+      ]
+     ],
+     "zoneOrSort": 1637
+    },
+    "9015": {
+     "availableStartingWith": 0,
+     "availableUntilCompleted": 0,
+     "breadcrumbForQuestId": 0,
+     "disabledByQuest": 0,
+     "finishedBy": [
+      [
+       16016
+      ]
+     ],
+     "name": "The Challenge",
+     "nextQuestInChain": 9022,
+     "objectives": {
+      "1": [
+       {
+        "1": 16059,
+        "3": 3
+       }
+      ],
+      "3": [
+       {
+        "1": 22047,
+        "3": 0
+       }
+      ]
+     },
+     "objectivesText": [
+      "Travel to the Ring of the Law in Blackrock Depths and place the Banner of Provocation in its center as you are sentenced by High Justice Grimstone. Slay Theldren and his gladiators and return to Anthion Harmon in the Eastern Plaguelands with the first piece of Lord Valthalak's amulet."
+     ],
+     "parentQuest": 0,
+     "preQuestSingle": [
+      8950
+     ],
+     "questFlags": 0,
+     "questLevel": 60,
+     "requiredClasses": 0,
+     "requiredLevel": 58,
+     "requiredMaxLevel": 0,
+     "requiredRaces": 0,
+     "requiredSpecialization": 0,
+     "requiredSpell": 0,
+     "sourceItemId": 21986,
+     "specialFlags": 0,
+     "startedBy": [
+      [
+       16032
+      ]
+     ],
+     "zoneOrSort": 1584
+    }
+   }
+  }
+ },
+ "areas": {
+  "1497": 1458,
+  "1519": 1453
+ }
+}

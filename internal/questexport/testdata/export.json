@@ -1,0 +1,98 @@
+{
+ "manifest": {
+  "artifactVersion": "1.0.6-test",
+  "buildCommit": "abc123",
+  "counts": {
+   "Quest": 2,
+   "Npc": 1,
+   "Object": 1,
+   "Item": 1
+  },
+  "variants": {
+   "Horde/DRUID": {},
+   "Horde/HUNTER": {},
+   "Horde/MAGE": {},
+   "Horde/PALADIN": {},
+   "Horde/PRIEST": {},
+   "Horde/ROGUE": {},
+   "Horde/SHAMAN": {},
+   "Horde/WARLOCK": {},
+   "Horde/WARRIOR": {
+    "Quest": 1
+   },
+   "Alliance/DRUID": {},
+   "Alliance/HUNTER": {},
+   "Alliance/MAGE": {},
+   "Alliance/PALADIN": {},
+   "Alliance/PRIEST": {},
+   "Alliance/ROGUE": {},
+   "Alliance/SHAMAN": {},
+   "Alliance/WARLOCK": {},
+   "Alliance/WARRIOR": {}
+  }
+ },
+ "base": {
+  "Quest": {
+   "78124": {
+    "name": "Nar'thalas Almanac",
+    "startedBy": [
+     [
+      211022,
+      211033
+     ],
+     [
+      409496
+     ]
+    ],
+    "questFlags": 8,
+    "specialFlags": 1,
+    "zoneOrSort": 1519
+   },
+   "2": {
+    "name": "Test Quest",
+    "questFlags": 0,
+    "specialFlags": 0,
+    "zoneOrSort": 0
+   }
+  },
+  "Npc": {
+   "211022": {
+    "name": "Owen Thadd"
+   }
+  },
+  "Object": {
+   "1": {
+    "name": "Chest"
+   }
+  },
+  "Item": {
+   "1": {
+    "name": "Bag"
+   }
+  }
+ },
+ "variants": {
+  "Horde/WARRIOR": {
+   "Quest": {
+    "78124": {
+     "name": "Nar'thalas Almanac",
+     "startedBy": [
+      [
+       211022
+      ],
+      [
+       409496
+      ]
+     ],
+     "questFlags": 8,
+     "specialFlags": 1,
+     "zoneOrSort": 1519
+    }
+   }
+  }
+ },
+ "areas": {
+  "1519": 1453,
+  "44": 1433
+ }
+}

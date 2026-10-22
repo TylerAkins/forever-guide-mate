@@ -2,27 +2,24 @@
   "guide": "loremaster-durotar",
   "title": "Durotar",
   "sources": {
-    "databaseCommit": "5c92953420ab4a710fda39581a405a72a89b8c0d",
-    "compilation": {
-      "schemaVersion": 1,
-      "compilationFormatVersion": 2,
-      "flavor": "forever",
-      "source": "compilation",
-      "sourceRevision": "991cc5841d7b79dc85613431aa8ecf6f4c34070753426d60f323e321532d4b66",
-      "recordCount": 107209,
-      "recordsSha256": "9ab82625871b9df3a0ac5781bb194be6d8211a4a6337258fbf82224e00416727",
-      "status": "generated"
+    "questiedb": {
+      "artifactVersion": "1.0.6-dev.f844007",
+      "buildCommit": "f844007b329b72f18cf2bda3d87540012294732a",
+      "counts": {
+        "Item": 21294,
+        "Npc": 13393,
+        "Object": 7035,
+        "Quest": 5232
+      }
     },
     "sourceHashes": {
-      "data/forever/raw/quest_index.json": "cb47391391cf9655e1f86b479aae60321ca78726482527c1d38074352baba0a7",
-      "data/forever/compilation/records.jsonl.gz": "35c74cb11823db372dc0bc289d5ffaf8296ca9d1c370e4f7b794a29af7f84b47"
-    }
+      "questiedb/export.json": "e26090e90df3aa2e94be4c13feb001390068b84c249ff2443c629d26a408e704",
+      "questiedb/policy.json": "835ba8f6361ef37bda275859bdb48852001c3ce2b6a2b3ecff586283633e2ad4"
+    },
+    "upstreamCommit": "9087c457e20fb96e73e5b362dd6fc50324b75718"
   },
   "sourcePriority": [
-    "wowhead",
-    "questiedb",
-    "allthethings",
-    "foreverclient"
+    "questiedb"
   ],
   "spine": "leveling-era-durotar",
   "spineActions": [
@@ -253,6 +250,7 @@
     "woven-turnin-97281-a-simmering-storm",
     "level-before-woven-accept-97282-stormy-potential",
     "woven-accept-97282-stormy-potential",
+    "woven-objective-97282-stormy-potential",
     "woven-turnin-97282-stormy-potential",
     "level-before-accept-816-lost-but-not-forgotten",
     "accept-816-lost-but-not-forgotten",
@@ -273,7 +271,6 @@
     "loot-starter-before-accept-96877-verified-pickup",
     "level-before-accept-96877-verified-pickup",
     "accept-96877-verified-pickup",
-    "woven-objective-97282-stormy-potential",
     "turnin-806-dark-storms",
     "level-before-woven-accept-828-margoz",
     "woven-accept-828-margoz",
@@ -1085,7 +1082,7 @@
       }
     },
     "802": {
-      "name": "<UNUSED>",
+      "name": "\u003cUNUSED\u003e",
       "status": "other-zone",
       "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
       "catalogs": [
@@ -1097,7 +1094,7 @@
       "locations": {}
     },
     "803": {
-      "name": "<UNUSED>",
+      "name": "\u003cUNUSED\u003e",
       "status": "other-zone",
       "reason": "Capital catalog membership or pickup alone does not establish target-zone ownership.",
       "catalogs": [
@@ -1258,7 +1255,7 @@
       }
     },
     "807": {
-      "name": "<UNUSED>",
+      "name": "\u003cUNUSED\u003e",
       "status": "excluded",
       "reason": "Unused source record.",
       "catalogs": [
@@ -1336,7 +1333,7 @@
       }
     },
     "810": {
-      "name": "<UNUSED>",
+      "name": "\u003cUNUSED\u003e",
       "status": "excluded",
       "reason": "Unused source record.",
       "catalogs": [
@@ -1414,7 +1411,7 @@
       }
     },
     "814": {
-      "name": "<UNUSED>",
+      "name": "\u003cUNUSED\u003e",
       "status": "excluded",
       "reason": "Unused source record.",
       "catalogs": [
@@ -1660,7 +1657,7 @@
       }
     },
     "820": {
-      "name": "<UNUSED>",
+      "name": "\u003cUNUSED\u003e",
       "status": "excluded",
       "reason": "Unused source record.",
       "catalogs": [
@@ -2033,70 +2030,88 @@
       }
     },
     "834": {
-      "name": "Winds in the Desert",
-      "status": "spine",
-      "reason": "Preserved from the leveling itinerary, including shared class actions.",
       "catalogs": [
         "durotar"
       ],
-      "recommendedLevel": 9,
-      "offerMinimum": 7,
-      "ownership": "preserved-spine",
-      "locations": {
-        "start": [
-          {
-            "areaID": 14,
-            "name": "Rezlak",
-            "coordinate": [
-              46.4,
-              23
-            ]
-          }
-        ],
-        "end": [
-          {
-            "areaID": 14,
-            "name": "Rezlak",
-            "coordinate": [
-              46.4,
-              23
-            ]
-          }
-        ]
-      }
+      "evidence": {
+        "artifactVersion": "1.0.6-dev.f844007",
+        "buildCommit": "f844007b329b72f18cf2bda3d87540012294732a",
+        "source": "QuestieDB"
+      },
+      "locations": [
+        {
+          "coord": [
+            46.37,
+            22.94
+          ],
+          "id": 3293,
+          "name": "Rezlak",
+          "point": "start",
+          "reactalliance": 1,
+          "reacthorde": 1,
+          "type": 1,
+          "zone": "Durotar"
+        },
+        {
+          "coord": [
+            46.37,
+            22.94
+          ],
+          "id": 3293,
+          "name": "Rezlak",
+          "point": "end",
+          "reactalliance": 1,
+          "reacthorde": 1,
+          "type": 1,
+          "zone": "Durotar"
+        }
+      ],
+      "supporting": false,
+      "status": "included",
+      "reason": "Authored for an applicable faction; other faction limitations are recorded separately.",
+      "factionNotes": "required collection materials lack complete acquisition sources and visits"
     },
     "835": {
-      "name": "Securing the Lines",
-      "status": "spine",
-      "reason": "Preserved from the leveling itinerary, including shared class actions.",
       "catalogs": [
         "durotar"
       ],
-      "recommendedLevel": 11,
-      "offerMinimum": 7,
-      "ownership": "preserved-spine",
-      "locations": {
-        "start": [
-          {
-            "areaID": 14,
-            "name": "Rezlak",
-            "coordinate": [
-              46.4,
-              23
-            ]
-          }
-        ],
-        "end": [
-          {
-            "areaID": 14,
-            "name": "Rezlak",
-            "coordinate": [
-              46.4,
-              23
-            ]
-          }
-        ]
-      }
+      "evidence": {
+        "artifactVersion": "1.0.6-dev.f844007",
+        "buildCommit": "f844007b329b72f18cf2bda3d87540012294732a",
+        "source": "QuestieDB"
+      },
+      "locations": [
+        {
+          "coord": [
+            46.37,
+            22.94
+          ],
+          "id": 3293,
+          "name": "Rezlak",
+          "point": "start",
+          "reactalliance": 1,
+          "reacthorde": 1,
+          "type": 1,
+          "zone": "Durotar"
+        },
+        {
+          "coord": [
+            46.37,
+            22.94
+          ],
+          "id": 3293,
+          "name": "Rezlak",
+          "point": "end",
+          "reactalliance": 1,
+          "reacthorde": 1,
+          "type": 1,
+          "zone": "Durotar"
+        }
+      ],
+      "supporting": false,
+      "status": "included",
+      "reason": "Authored for an applicable faction; other faction limitations are recorded separately.",
+      "factionNotes": "objective materials are named but acquisition sources and visits need review"
     },
     "837": {
       "name": "Encroachment",
@@ -6320,6 +6335,88 @@
           }
         ]
       }
+    },
+    "7664": {
+      "catalogs": [
+        "durotar"
+      ],
+      "evidence": {
+        "artifactVersion": "1.0.6-dev.f844007",
+        "buildCommit": "f844007b329b72f18cf2bda3d87540012294732a",
+        "source": "QuestieDB"
+      },
+      "locations": [
+        {
+          "coord": [
+            55.23,
+            75.65
+          ],
+          "id": 7952,
+          "name": "Zjolnir",
+          "point": "start",
+          "reactalliance": -1,
+          "reacthorde": 1,
+          "type": 1,
+          "zone": "Durotar"
+        },
+        {
+          "coord": [
+            55.23,
+            75.65
+          ],
+          "id": 7952,
+          "name": "Zjolnir",
+          "point": "end",
+          "reactalliance": -1,
+          "reacthorde": 1,
+          "type": 1,
+          "zone": "Durotar"
+        }
+      ],
+      "supporting": false,
+      "status": "excluded",
+      "reason": "Dungeon, raid, event/repeatable, or unused work is outside this outdoor itinerary."
+    },
+    "7665": {
+      "catalogs": [
+        "durotar"
+      ],
+      "evidence": {
+        "artifactVersion": "1.0.6-dev.f844007",
+        "buildCommit": "f844007b329b72f18cf2bda3d87540012294732a",
+        "source": "QuestieDB"
+      },
+      "locations": [
+        {
+          "coord": [
+            55.23,
+            75.65
+          ],
+          "id": 7952,
+          "name": "Zjolnir",
+          "point": "start",
+          "reactalliance": -1,
+          "reacthorde": 1,
+          "type": 1,
+          "zone": "Durotar"
+        },
+        {
+          "coord": [
+            55.23,
+            75.65
+          ],
+          "id": 7952,
+          "name": "Zjolnir",
+          "point": "end",
+          "reactalliance": -1,
+          "reacthorde": 1,
+          "type": 1,
+          "zone": "Durotar"
+        }
+      ],
+      "supporting": false,
+      "status": "excluded",
+      "reason": "Dungeon, raid, event/repeatable, or unused work is outside this outdoor itinerary."
     }
   },
   "clientWalkthrough": "Not performed.",
@@ -7223,5 +7320,525 @@
     1471,
     1478,
     1881
-  ]
+  ],
+  "coverageMode": "zone",
+  "orderingEligibility": {
+    "784": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "786": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "787": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "788": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "789": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "790": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "791": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "792": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "794": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "804": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "805": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "806": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "808": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "809": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "812": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "813": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "815": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "816": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "817": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "818": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "823": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "825": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "826": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "827": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "828": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "829": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "830": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "831": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "832": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "834": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "835": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "837": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "840": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "842": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "924": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "926": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "2161": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "4402": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "4641": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "5441": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "5726": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "5843": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "6394": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "7664": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "7665": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "96821": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "96822": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "96825": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "96873": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "96874": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "96875": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "96876": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "96877": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "97223": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "97225": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "97279": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "97281": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "97282": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "99048": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "99049": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "99051": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "99052": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "99123": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    }
+  },
+  "upstream": {
+    "repository": "https://github.com/ErebusAres/ZygorGuidesRemaster-3.3.5a_WOTLK",
+    "commit": "9087c457e20fb96e73e5b362dd6fc50324b75718",
+    "strict": false,
+    "sourceHashes": {
+      "ZygorGuidesViewerRM/Guides/Leveling/ZygorGuidesHorde.lua": "2eaf5adb4865936cdb4257451c3ce920fdaff1c0ec17216c36e055480f389e54",
+      "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-EasternKingdoms.lua": "8a5ec87d31698c612e50eb0655f5c1f28d723c3068552c1295d79ddcd934270f",
+      "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-Kalimdor.lua": "4fb7b7f5bb2702dfe36ed33de31b4d3105153bfba62b7a14a7ab73386e2087fa",
+      "ZygorGuidesViewerRM/Guides/Leveling/ZygorGuidesAlliance.lua": "ffb9b7828817e098d74ee5931e15a64ce773142a4c1e60f9775d0713121ba67d"
+    },
+    "matches": {}
+  },
+  "additionalSpines": []
 }

@@ -33,7 +33,15 @@ function M.Compare(ns, pairs)
                 source=M.Fingerprint(source.conditions), target=M.Fingerprint(target.conditions)}
         end
         local targets = {}
-        for i, goal in ipairs(target.goals) do targets[goal.id] = {index=i, goal=goal} end
+        local targetsBySourceAction = {}
+        for i, goal in ipairs(target.goals) do
+            targets[goal.id] = {index=i, goal=goal}
+            if goal.sourceActionID then
+                local matches = targetsBySourceAction[goal.sourceActionID] or {}
+                matches[#matches + 1] = {index=i, goal=goal}
+                targetsBySourceAction[goal.sourceActionID] = matches
+            end
+        end
         local sourceIDs, targetQuests = {}, {}
         local function quest(goal)
             local complete = goal.complete or {}
@@ -46,30 +54,54 @@ function M.Compare(ns, pairs)
         end
         for _, goal in ipairs(source.goals) do sourceIDs[goal.id]=true end
         for _, id in ipairs(pair.sharedActions or {}) do
-            if not sourceIDs[id] or not targets[id] then
+            if not sourceIDs[id] or (not targets[id] and not targetsBySourceAction[id]) then
                 differences[pair.source .. ':' .. pair.target .. ':missing:' .. id] = {
-                    source=tostring(sourceIDs[id]),target=tostring(targets[id] ~= nil)}
+                    source=tostring(sourceIDs[id]),
+                    target=tostring(targets[id] ~= nil or targetsBySourceAction[id] ~= nil)}
             end
         end
         local previous, previousID = 0, nil
         for _, goal in ipairs(source.goals) do
-            local match = targets[goal.id]
+            local sourceMatches = targetsBySourceAction[goal.id]
+            local guideMatch
+            for _, candidate in ipairs(sourceMatches or {}) do
+                if candidate.goal.sourceGuide == pair.source and candidate.index > previous then
+                    if not guideMatch or candidate.index < guideMatch.index then guideMatch = candidate end
+                end
+            end
+            local match = guideMatch or targets[goal.id]
+            local hasSourceGuideMatch = type(guideMatch) == 'table'
+            if not match and sourceMatches and #sourceMatches == 1 then match = sourceMatches[1] end
+            local isSourceActionMatch = hasSourceGuideMatch or (not targets[goal.id] and match ~= nil)
             if not match and targetQuests[quest(goal)] then
                 differences[pair.source .. ':' .. pair.target .. ':missing:' .. goal.id] = {
                     source=M.Fingerprint(goal), target='nil'}
             elseif match then
-                for _, field in ipairs(fields) do
+                local matchFields = fields
+                if isSourceActionMatch then
+                    -- These are route-local when an action is copied into a
+                    -- Loremaster itinerary. The zone checks cover the shared
+                    -- source fields, while the inventory owns local exclusions
+                    -- and dependency IDs.
+                    matchFields = {}
+                    for _, field in ipairs(fields) do
+                        if field ~= 'excludeWhen' and field ~= 'dependsOn' then
+                            matchFields[#matchFields + 1] = field
+                        end
+                    end
+                end
+                for _, field in ipairs(matchFields) do
                     local before, after = M.Serialize(goal[field]), M.Serialize(match.goal[field])
                     if before ~= after then
                         local key = pair.source .. ':' .. pair.target .. ':' .. goal.id .. ':' .. field
                         differences[key] = {source=M.Fingerprint(goal[field]), target=M.Fingerprint(match.goal[field])}
                     end
                 end
-                if match.index < previous then
+                if (hasSourceGuideMatch or targets[goal.id]) and match.index < previous then
                     differences[pair.source .. ':' .. pair.target .. ':order:' .. goal.id] = {
                         source=previousID .. ':' .. goal.id, target=goal.id .. ':' .. previousID}
                 end
-                previous, previousID = match.index, goal.id
+                if hasSourceGuideMatch or targets[goal.id] then previous, previousID = match.index, goal.id end
             end
         end
     end

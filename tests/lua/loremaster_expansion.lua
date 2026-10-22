@@ -140,7 +140,9 @@ for _,zone in ipairs({'westfall','loch-modan','darkshore','silverpine-forest','t
             local guardLevel=1
             for j=1,i-1 do
                 local prior=guide.goals[j]
-                if prior.checkpointQuest==quest then guardLevel=math.max(guardLevel,prior.requiredLevel or 1) end
+                if prior.checkpointQuest==quest or prior.visitSourceGuide==goal.sourceGuide then
+                    guardLevel=math.max(guardLevel,prior.requiredLevel or 1)
+                end
             end
             assert(guardLevel>=offerMinimum(goal.conditions),'A visit checkpoint cannot precede its offer minimum: '..zone..':'..quest)
         end

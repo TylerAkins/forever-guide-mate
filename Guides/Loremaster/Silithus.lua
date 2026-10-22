@@ -6,7 +6,7 @@ ns:RegisterGuide({
     id = "loremaster-silithus",
     title = "Silithus",
     category = "Loremaster Guides",
-    revision = 1,
+    revision = 2,
     routeMode = "ordered",
     loremasterExpanded = true,
     goals = {
@@ -1587,13 +1587,30 @@ ns:RegisterGuide({
             excludeWhen = {
                 any = {
                     {
-                        ["not"] = {
-                            any = {
-                                { quest = { id = 8321, state = "activeOrCompleted" } },
-                                {
+                        any = {
+                            {
+                                ["not"] = {
                                     any = {
                                         { quest = { id = 8321, state = "activeOrCompleted" } },
-                                        { all = { { any = { { any = { { quest = { id = 8320, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                        {
+                                            any = {
+                                                { quest = { id = 8321, state = "activeOrCompleted" } },
+                                                { all = { { any = { { any = { { quest = { id = 8320, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                            {
+                                ["not"] = {
+                                    any = {
+                                        { quest = { id = 8321, state = "activeOrCompleted" } },
+                                        {
+                                            any = {
+                                                { quest = { id = 8321, state = "activeOrCompleted" } },
+                                                { all = { { any = { { any = { { quest = { id = 8320, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                            },
+                                        },
                                     },
                                 },
                             },
@@ -1844,13 +1861,30 @@ ns:RegisterGuide({
             excludeWhen = {
                 any = {
                     {
-                        ["not"] = {
-                            any = {
-                                { quest = { id = 8321, state = "activeOrCompleted" } },
-                                {
+                        any = {
+                            {
+                                ["not"] = {
                                     any = {
                                         { quest = { id = 8321, state = "activeOrCompleted" } },
-                                        { all = { { any = { { any = { { quest = { id = 8320, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                        {
+                                            any = {
+                                                { quest = { id = 8321, state = "activeOrCompleted" } },
+                                                { all = { { any = { { any = { { quest = { id = 8320, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                            {
+                                ["not"] = {
+                                    any = {
+                                        { quest = { id = 8321, state = "activeOrCompleted" } },
+                                        {
+                                            any = {
+                                                { quest = { id = 8321, state = "activeOrCompleted" } },
+                                                { all = { { any = { { any = { { quest = { id = 8320, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                            },
+                                        },
                                     },
                                 },
                             },
@@ -1962,13 +1996,30 @@ ns:RegisterGuide({
             excludeWhen = {
                 any = {
                     {
-                        ["not"] = {
-                            any = {
-                                { quest = { id = 8321, state = "activeOrCompleted" } },
-                                {
+                        any = {
+                            {
+                                ["not"] = {
                                     any = {
                                         { quest = { id = 8321, state = "activeOrCompleted" } },
-                                        { all = { { any = { { any = { { quest = { id = 8320, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                        {
+                                            any = {
+                                                { quest = { id = 8321, state = "activeOrCompleted" } },
+                                                { all = { { any = { { any = { { quest = { id = 8320, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                            {
+                                ["not"] = {
+                                    any = {
+                                        { quest = { id = 8321, state = "activeOrCompleted" } },
+                                        {
+                                            any = {
+                                                { quest = { id = 8321, state = "activeOrCompleted" } },
+                                                { all = { { any = { { any = { { quest = { id = 8320, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                            },
+                                        },
                                     },
                                 },
                             },
@@ -2496,73 +2547,89 @@ ns:RegisterGuide({
             useQuestNavigation = true,
         },
         {
+            checkpointQuest = 8282,
+            complete = { level = { min = 54 } },
+            conditions = { all = { { faction = "Alliance" } } },
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 8282, state = "activeOrCompleted" } },
+                        {
+                            any = {
+                                { quest = { id = 8282, state = "activeOrCompleted" } },
+                                {
+                                    all = {
+                                        {
+                                            any = {
+                                                {
+                                                    any = {
+                                                        { quest = { id = 8278, state = "activeOrCompleted" } },
+                                                        { all = { { any = { { any = { { quest = { id = 8277, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
             id = "alliance-extra-8282-level",
             kind = "note",
-            checkpointQuest = 8282,
-            text = "Reach level 54 before this visit.",
-            conditions = { all = { { faction = "Alliance" } } },
-            complete = { level = { min = 54 } },
             requiredLevel = 54,
-            excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 8282, state = "activeOrCompleted" } },
-                        {
-                            any = {
-                                { quest = { id = 8282, state = "activeOrCompleted" } },
-                                {
-                                    all = {
-                                        {
-                                            any = {
-                                                {
-                                                    any = {
-                                                        { quest = { id = 8278, state = "activeOrCompleted" } },
-                                                        { all = { { any = { { any = { { quest = { id = 8277, state = "activeOrCompleted" } }, { all = {} } } } } } } },
-                                                    },
-                                                },
-                                            },
-                                        },
-                                    },
-                                },
-                            },
-                        },
-                    },
-                },
-            },
+            text = "Reach level 54 before this visit.",
         },
         {
-            id = "alliance-extra-8282-accept",
-            kind = "accept",
-            text = "Accept Noggle's Lost Satchel from Noggle Ficklespragg.",
-            conditions = { all = { { faction = "Alliance" }, { level = { min = 54 } } } },
-            route = {
-                {
-                    mapID = 1451,
-                    x = 0.516,
-                    y = 0.386,
-                    label = "Noggle Ficklespragg",
-                    offMapText = "Travel to Noggle Ficklespragg in Silithus.",
-                },
-            },
             complete = { quest = { id = 8282, state = "activeOrCompleted" } },
-            requiredQuests = { { mode = "any", quests = { 8278 } } },
-            useClientText = false,
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 54 } } } },
             dependsOn = { "alliance-extra-8282-level" },
             excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 8282, state = "activeOrCompleted" } },
-                        {
+                any = {
+                    {
+                        ["not"] = {
                             any = {
                                 { quest = { id = 8282, state = "activeOrCompleted" } },
                                 {
-                                    all = {
+                                    any = {
+                                        { quest = { id = 8282, state = "activeOrCompleted" } },
                                         {
-                                            any = {
+                                            all = {
                                                 {
                                                     any = {
-                                                        { quest = { id = 8278, state = "activeOrCompleted" } },
-                                                        { all = { { any = { { any = { { quest = { id = 8277, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 8278, state = "activeOrCompleted" } },
+                                                                { all = { { any = { { any = { { quest = { id = 8277, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 8282, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 8282, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 8278, state = "activeOrCompleted" } },
+                                                                { all = { { any = { { any = { { quest = { id = 8277, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                            },
+                                                        },
                                                     },
                                                 },
                                             },
@@ -2574,40 +2641,70 @@ ns:RegisterGuide({
                     },
                 },
             },
-        },
-        {
-            id = "alliance-extra-8282-objective",
-            kind = "objective",
-            text = "Collect Noggle's Satchel from the marked object.",
-            conditions = { all = { { faction = "Alliance" }, { level = { min = 54 } } } },
+            id = "alliance-extra-8282-accept",
+            kind = "accept",
+            requiredQuests = { { mode = "any", quests = { 8278 } } },
             route = {
                 {
+                    label = "Noggle Ficklespragg",
                     mapID = 1451,
-                    x = 0.446,
-                    y = 0.9129999999999999,
-                    label = "Noggle's Satchel",
-                    offMapText = "Travel to Noggle's Satchel in Silithus.",
+                    offMapText = "Travel to Noggle Ficklespragg in Silithus.",
+                    x = 0.516,
+                    y = 0.386,
                 },
             },
-            complete = { quest = { id = 8282, state = "complete" } },
-            requiredQuests = { { mode = "any", quests = { 8278 } } },
+            text = "Accept Noggle's Lost Satchel from Noggle Ficklespragg.",
             useClientText = false,
+        },
+        {
+            complete = { quest = { id = 8282, state = "complete" } },
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 54 } } } },
             dependsOn = { "alliance-extra-8282-accept" },
             excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 8282, state = "activeOrCompleted" } },
-                        {
+                any = {
+                    {
+                        ["not"] = {
                             any = {
                                 { quest = { id = 8282, state = "activeOrCompleted" } },
                                 {
-                                    all = {
+                                    any = {
+                                        { quest = { id = 8282, state = "activeOrCompleted" } },
                                         {
-                                            any = {
+                                            all = {
                                                 {
                                                     any = {
-                                                        { quest = { id = 8278, state = "activeOrCompleted" } },
-                                                        { all = { { any = { { any = { { quest = { id = 8277, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 8278, state = "activeOrCompleted" } },
+                                                                { all = { { any = { { any = { { quest = { id = 8277, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 8282, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 8282, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 8278, state = "activeOrCompleted" } },
+                                                                { all = { { any = { { any = { { quest = { id = 8277, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                            },
+                                                        },
                                                     },
                                                 },
                                             },
@@ -2619,6 +2716,21 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-extra-8282-objective",
+            kind = "objective",
+            requiredQuests = { { mode = "any", quests = { 8278 } } },
+            route = {
+                {
+                    label = "Noggle's Satchel",
+                    mapID = 1451,
+                    offMapText = "Travel to Noggle's Satchel in Silithus.",
+                    x = 0.446,
+                    y = 0.913,
+                },
+            },
+            text = "Collect Noggle's Satchel from the marked object.",
+            useClientPin = true,
+            useClientText = false,
         },
         {
             checkpointQuest = 8323,
@@ -2675,27 +2787,70 @@ ns:RegisterGuide({
             excludeWhen = {
                 any = {
                     {
-                        ["not"] = {
-                            any = {
-                                { quest = { id = 8323, state = "activeOrCompleted" } },
-                                {
+                        any = {
+                            {
+                                ["not"] = {
                                     any = {
                                         { quest = { id = 8323, state = "activeOrCompleted" } },
                                         {
-                                            all = {
+                                            any = {
+                                                { quest = { id = 8323, state = "activeOrCompleted" } },
                                                 {
-                                                    any = {
+                                                    all = {
                                                         {
                                                             any = {
-                                                                { quest = { id = 8279, state = "activeOrCompleted" } },
                                                                 {
-                                                                    all = {
+                                                                    any = {
+                                                                        { quest = { id = 8279, state = "activeOrCompleted" } },
                                                                         {
-                                                                            any = {
+                                                                            all = {
                                                                                 {
                                                                                     any = {
-                                                                                        { quest = { id = 8285, state = "activeOrCompleted" } },
-                                                                                        { all = { { any = { { any = { { quest = { id = 8284, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                                                        {
+                                                                                            any = {
+                                                                                                { quest = { id = 8285, state = "activeOrCompleted" } },
+                                                                                                { all = { { any = { { any = { { quest = { id = 8284, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                                                            },
+                                                                                        },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                            {
+                                ["not"] = {
+                                    any = {
+                                        { quest = { id = 8323, state = "activeOrCompleted" } },
+                                        {
+                                            any = {
+                                                { quest = { id = 8323, state = "activeOrCompleted" } },
+                                                {
+                                                    all = {
+                                                        {
+                                                            any = {
+                                                                {
+                                                                    any = {
+                                                                        { quest = { id = 8279, state = "activeOrCompleted" } },
+                                                                        {
+                                                                            all = {
+                                                                                {
+                                                                                    any = {
+                                                                                        {
+                                                                                            any = {
+                                                                                                { quest = { id = 8285, state = "activeOrCompleted" } },
+                                                                                                { all = { { any = { { any = { { quest = { id = 8284, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                                                            },
+                                                                                        },
                                                                                     },
                                                                                 },
                                                                             },
@@ -2764,38 +2919,54 @@ ns:RegisterGuide({
             useClientText = false,
         },
         {
-            id = "alliance-extra-8282-turnin",
-            kind = "turnin",
-            text = "Turn in Noggle's Lost Satchel to Noggle Ficklespragg.",
-            conditions = { all = { { faction = "Alliance" }, { level = { min = 54 } } } },
-            route = {
-                {
-                    mapID = 1451,
-                    x = 0.516,
-                    y = 0.386,
-                    label = "Noggle Ficklespragg",
-                    offMapText = "Travel to Noggle Ficklespragg in Silithus.",
-                },
-            },
             complete = { quest = { id = 8282, state = "completed" } },
-            requiredQuests = { { mode = "any", quests = { 8278 } } },
-            useClientText = false,
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 54 } } } },
             dependsOn = { "alliance-extra-8282-objective" },
             excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 8282, state = "activeOrCompleted" } },
-                        {
+                any = {
+                    {
+                        ["not"] = {
                             any = {
                                 { quest = { id = 8282, state = "activeOrCompleted" } },
                                 {
-                                    all = {
+                                    any = {
+                                        { quest = { id = 8282, state = "activeOrCompleted" } },
                                         {
-                                            any = {
+                                            all = {
                                                 {
                                                     any = {
-                                                        { quest = { id = 8278, state = "activeOrCompleted" } },
-                                                        { all = { { any = { { any = { { quest = { id = 8277, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 8278, state = "activeOrCompleted" } },
+                                                                { all = { { any = { { any = { { quest = { id = 8277, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 8282, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 8282, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 8278, state = "activeOrCompleted" } },
+                                                                { all = { { any = { { any = { { quest = { id = 8277, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                            },
+                                                        },
                                                     },
                                                 },
                                             },
@@ -2807,6 +2978,22 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "alliance-extra-8282-turnin",
+            kind = "turnin",
+            requiredQuests = { { mode = "any", quests = { 8278 } } },
+            route = {
+                {
+                    label = "Noggle Ficklespragg",
+                    mapID = 1451,
+                    offMapText = "Travel to Noggle Ficklespragg in Silithus.",
+                    x = 0.516,
+                    y = 0.386,
+                },
+            },
+            text = "Turn in Noggle's Lost Satchel to Noggle Ficklespragg.",
+            useClientPin = true,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             complete = { quest = { id = 8287, state = "completed" } },
@@ -2878,27 +3065,70 @@ ns:RegisterGuide({
             excludeWhen = {
                 any = {
                     {
-                        ["not"] = {
-                            any = {
-                                { quest = { id = 8323, state = "activeOrCompleted" } },
-                                {
+                        any = {
+                            {
+                                ["not"] = {
                                     any = {
                                         { quest = { id = 8323, state = "activeOrCompleted" } },
                                         {
-                                            all = {
+                                            any = {
+                                                { quest = { id = 8323, state = "activeOrCompleted" } },
                                                 {
-                                                    any = {
+                                                    all = {
                                                         {
                                                             any = {
-                                                                { quest = { id = 8279, state = "activeOrCompleted" } },
                                                                 {
-                                                                    all = {
+                                                                    any = {
+                                                                        { quest = { id = 8279, state = "activeOrCompleted" } },
                                                                         {
-                                                                            any = {
+                                                                            all = {
                                                                                 {
                                                                                     any = {
-                                                                                        { quest = { id = 8285, state = "activeOrCompleted" } },
-                                                                                        { all = { { any = { { any = { { quest = { id = 8284, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                                                        {
+                                                                                            any = {
+                                                                                                { quest = { id = 8285, state = "activeOrCompleted" } },
+                                                                                                { all = { { any = { { any = { { quest = { id = 8284, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                                                            },
+                                                                                        },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                            {
+                                ["not"] = {
+                                    any = {
+                                        { quest = { id = 8323, state = "activeOrCompleted" } },
+                                        {
+                                            any = {
+                                                { quest = { id = 8323, state = "activeOrCompleted" } },
+                                                {
+                                                    all = {
+                                                        {
+                                                            any = {
+                                                                {
+                                                                    any = {
+                                                                        { quest = { id = 8279, state = "activeOrCompleted" } },
+                                                                        {
+                                                                            all = {
+                                                                                {
+                                                                                    any = {
+                                                                                        {
+                                                                                            any = {
+                                                                                                { quest = { id = 8285, state = "activeOrCompleted" } },
+                                                                                                { all = { { any = { { any = { { quest = { id = 8284, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                                                            },
+                                                                                        },
                                                                                     },
                                                                                 },
                                                                             },
@@ -2974,27 +3204,70 @@ ns:RegisterGuide({
             excludeWhen = {
                 any = {
                     {
-                        ["not"] = {
-                            any = {
-                                { quest = { id = 8323, state = "activeOrCompleted" } },
-                                {
+                        any = {
+                            {
+                                ["not"] = {
                                     any = {
                                         { quest = { id = 8323, state = "activeOrCompleted" } },
                                         {
-                                            all = {
+                                            any = {
+                                                { quest = { id = 8323, state = "activeOrCompleted" } },
                                                 {
-                                                    any = {
+                                                    all = {
                                                         {
                                                             any = {
-                                                                { quest = { id = 8279, state = "activeOrCompleted" } },
                                                                 {
-                                                                    all = {
+                                                                    any = {
+                                                                        { quest = { id = 8279, state = "activeOrCompleted" } },
                                                                         {
-                                                                            any = {
+                                                                            all = {
                                                                                 {
                                                                                     any = {
-                                                                                        { quest = { id = 8285, state = "activeOrCompleted" } },
-                                                                                        { all = { { any = { { any = { { quest = { id = 8284, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                                                        {
+                                                                                            any = {
+                                                                                                { quest = { id = 8285, state = "activeOrCompleted" } },
+                                                                                                { all = { { any = { { any = { { quest = { id = 8284, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                                                            },
+                                                                                        },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                            {
+                                ["not"] = {
+                                    any = {
+                                        { quest = { id = 8323, state = "activeOrCompleted" } },
+                                        {
+                                            any = {
+                                                { quest = { id = 8323, state = "activeOrCompleted" } },
+                                                {
+                                                    all = {
+                                                        {
+                                                            any = {
+                                                                {
+                                                                    any = {
+                                                                        { quest = { id = 8279, state = "activeOrCompleted" } },
+                                                                        {
+                                                                            all = {
+                                                                                {
+                                                                                    any = {
+                                                                                        {
+                                                                                            any = {
+                                                                                                { quest = { id = 8285, state = "activeOrCompleted" } },
+                                                                                                { all = { { any = { { any = { { quest = { id = 8284, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                                                            },
+                                                                                        },
                                                                                     },
                                                                                 },
                                                                             },
@@ -3176,13 +3449,30 @@ ns:RegisterGuide({
             excludeWhen = {
                 any = {
                     {
-                        ["not"] = {
-                            any = {
-                                { quest = { id = 8306, state = "activeOrCompleted" } },
-                                {
+                        any = {
+                            {
+                                ["not"] = {
                                     any = {
                                         { quest = { id = 8306, state = "activeOrCompleted" } },
-                                        { all = { { any = { { any = { { quest = { id = 8304, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                        {
+                                            any = {
+                                                { quest = { id = 8306, state = "activeOrCompleted" } },
+                                                { all = { { any = { { any = { { quest = { id = 8304, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                            {
+                                ["not"] = {
+                                    any = {
+                                        { quest = { id = 8306, state = "activeOrCompleted" } },
+                                        {
+                                            any = {
+                                                { quest = { id = 8306, state = "activeOrCompleted" } },
+                                                { all = { { any = { { any = { { quest = { id = 8304, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                            },
+                                        },
                                     },
                                 },
                             },
@@ -3225,13 +3515,30 @@ ns:RegisterGuide({
             excludeWhen = {
                 any = {
                     {
-                        ["not"] = {
-                            any = {
-                                { quest = { id = 8306, state = "activeOrCompleted" } },
-                                {
+                        any = {
+                            {
+                                ["not"] = {
                                     any = {
                                         { quest = { id = 8306, state = "activeOrCompleted" } },
-                                        { all = { { any = { { any = { { quest = { id = 8304, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                        {
+                                            any = {
+                                                { quest = { id = 8306, state = "activeOrCompleted" } },
+                                                { all = { { any = { { any = { { quest = { id = 8304, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                            {
+                                ["not"] = {
+                                    any = {
+                                        { quest = { id = 8306, state = "activeOrCompleted" } },
+                                        {
+                                            any = {
+                                                { quest = { id = 8306, state = "activeOrCompleted" } },
+                                                { all = { { any = { { any = { { quest = { id = 8304, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                            },
+                                        },
                                     },
                                 },
                             },
@@ -3275,13 +3582,30 @@ ns:RegisterGuide({
             excludeWhen = {
                 any = {
                     {
-                        ["not"] = {
-                            any = {
-                                { quest = { id = 8306, state = "activeOrCompleted" } },
-                                {
+                        any = {
+                            {
+                                ["not"] = {
                                     any = {
                                         { quest = { id = 8306, state = "activeOrCompleted" } },
-                                        { all = { { any = { { any = { { quest = { id = 8304, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                        {
+                                            any = {
+                                                { quest = { id = 8306, state = "activeOrCompleted" } },
+                                                { all = { { any = { { any = { { quest = { id = 8304, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                            {
+                                ["not"] = {
+                                    any = {
+                                        { quest = { id = 8306, state = "activeOrCompleted" } },
+                                        {
+                                            any = {
+                                                { quest = { id = 8306, state = "activeOrCompleted" } },
+                                                { all = { { any = { { any = { { quest = { id = 8304, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                            },
+                                        },
                                     },
                                 },
                             },
@@ -3400,186 +3724,279 @@ ns:RegisterGuide({
             useQuestNavigation = true,
         },
         {
+            checkpointQuest = 8310,
+            complete = { level = { min = 58 } },
+            conditions = { all = { { faction = "Alliance" } } },
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 8310, state = "activeOrCompleted" } },
+                        {
+                            any = {
+                                { quest = { id = 8310, state = "activeOrCompleted" } },
+                                { all = { { any = { { any = { { quest = { id = 8304, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                            },
+                        },
+                    },
+                },
+            },
             id = "alliance-extra-8310-level",
             kind = "note",
-            checkpointQuest = 8310,
-            text = "Reach level 58 before this visit.",
-            conditions = { all = { { faction = "Alliance" } } },
-            complete = { level = { min = 58 } },
             requiredLevel = 58,
-            excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 8310, state = "activeOrCompleted" } },
-                        {
-                            any = {
-                                { quest = { id = 8310, state = "activeOrCompleted" } },
-                                { all = { { any = { { any = { { quest = { id = 8304, state = "activeOrCompleted" } }, { all = {} } } } } } } },
-                            },
-                        },
-                    },
-                },
-            },
+            text = "Reach level 58 before this visit.",
         },
         {
-            id = "alliance-extra-8310-accept",
-            kind = "accept",
-            text = "Accept Breaking the Code from Frankal Stonebridge.",
-            conditions = { all = { { faction = "Alliance" }, { level = { min = 58 } } } },
-            route = {
-                {
-                    mapID = 1451,
-                    x = 0.408,
-                    y = 0.8859999999999999,
-                    label = "Frankal Stonebridge",
-                    offMapText = "Travel to Frankal Stonebridge in Silithus.",
-                },
-            },
             complete = { quest = { id = 8310, state = "activeOrCompleted" } },
-            requiredQuests = { { mode = "any", quests = { 8304 } } },
-            useClientText = false,
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 58 } } } },
             dependsOn = { "alliance-extra-8310-level" },
             excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 8310, state = "activeOrCompleted" } },
-                        {
+                any = {
+                    {
+                        ["not"] = {
                             any = {
                                 { quest = { id = 8310, state = "activeOrCompleted" } },
-                                { all = { { any = { { any = { { quest = { id = 8304, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                {
+                                    any = {
+                                        { quest = { id = 8310, state = "activeOrCompleted" } },
+                                        { all = { { any = { { any = { { quest = { id = 8304, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 8310, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 8310, state = "activeOrCompleted" } },
+                                        { all = { { any = { { any = { { quest = { id = 8304, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                    },
+                                },
                             },
                         },
                     },
                 },
             },
+            id = "alliance-extra-8310-accept",
+            kind = "accept",
+            requiredQuests = { { mode = "any", quests = { 8304 } } },
+            route = {
+                {
+                    label = "Frankal Stonebridge",
+                    mapID = 1451,
+                    offMapText = "Travel to Frankal Stonebridge in Silithus.",
+                    x = 0.408,
+                    y = 0.886,
+                },
+            },
+            text = "Accept Breaking the Code from Frankal Stonebridge.",
+            useClientText = false,
         },
         {
+            complete = { questObjective = { count = 1, id = 8310, index = 1, text = "Hive'Ashi Silithid Brain" } },
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 58 } } } },
+            dependsOn = { "alliance-extra-8310-accept" },
+            excludeWhen = {
+                any = {
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 8310, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 8310, state = "activeOrCompleted" } },
+                                        { all = { { any = { { any = { { quest = { id = 8304, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 8310, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 8310, state = "activeOrCompleted" } },
+                                        { all = { { any = { { any = { { quest = { id = 8304, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
             id = "alliance-extra-8310-objective-1",
             kind = "objective",
-            text = "Defeat Hive'Ashi Stinger and loot Hive'Ashi Silithid Brain. This is an elite. Bring a group.",
-            conditions = { all = { { faction = "Alliance" }, { level = { min = 58 } } } },
+            requiredQuests = { { mode = "any", quests = { 8304 } } },
             route = {
                 {
+                    label = "Hive'Ashi Stinger",
                     mapID = 1451,
+                    offMapText = "Travel to Hive'Ashi Stinger in Silithus.",
                     x = 0.456,
                     y = 0.284,
-                    label = "Hive'Ashi Stinger",
-                    offMapText = "Travel to Hive'Ashi Stinger in Silithus.",
                 },
             },
-            complete = { questObjective = { id = 8310, index = 1, text = "Hive'Ashi Silithid Brain", count = 1 } },
-            requiredQuests = { { mode = "any", quests = { 8304 } } },
+            text = "Defeat Hive'Ashi Stinger and loot Hive'Ashi Silithid Brain. This is an elite. Bring a group.",
+            useClientPin = true,
             useClientText = false,
+            useQuestNavigation = true,
+        },
+        {
+            complete = { questObjective = { count = 1, id = 8310, index = 2, text = "Hive'Zora Silithid Brain" } },
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 58 } } } },
             dependsOn = { "alliance-extra-8310-accept" },
             excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 8310, state = "activeOrCompleted" } },
-                        {
+                any = {
+                    {
+                        ["not"] = {
                             any = {
                                 { quest = { id = 8310, state = "activeOrCompleted" } },
-                                { all = { { any = { { any = { { quest = { id = 8304, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                {
+                                    any = {
+                                        { quest = { id = 8310, state = "activeOrCompleted" } },
+                                        { all = { { any = { { any = { { quest = { id = 8304, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 8310, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 8310, state = "activeOrCompleted" } },
+                                        { all = { { any = { { any = { { quest = { id = 8304, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                    },
+                                },
                             },
                         },
                     },
                 },
             },
-        },
-        {
             id = "alliance-extra-8310-objective-2",
             kind = "objective",
-            text = "Defeat Hive'Zora Waywatcher and loot Hive'Zora Silithid Brain. This is an elite. Bring a group.",
-            conditions = { all = { { faction = "Alliance" }, { level = { min = 58 } } } },
+            requiredQuests = { { mode = "any", quests = { 8304 } } },
             route = {
                 {
+                    label = "Hive'Zora Waywatcher",
                     mapID = 1451,
+                    offMapText = "Travel to Hive'Zora Waywatcher in Silithus.",
                     x = 0.262,
                     y = 0.55,
-                    label = "Hive'Zora Waywatcher",
-                    offMapText = "Travel to Hive'Zora Waywatcher in Silithus.",
                 },
             },
-            complete = { questObjective = { id = 8310, index = 2, text = "Hive'Zora Silithid Brain", count = 1 } },
-            requiredQuests = { { mode = "any", quests = { 8304 } } },
+            text = "Defeat Hive'Zora Waywatcher and loot Hive'Zora Silithid Brain. This is an elite. Bring a group.",
+            useClientPin = true,
             useClientText = false,
+            useQuestNavigation = true,
+        },
+        {
+            complete = { questObjective = { count = 1, id = 8310, index = 3, text = "Hive'Regal Silithid Brain" } },
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 58 } } } },
             dependsOn = { "alliance-extra-8310-accept" },
             excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 8310, state = "activeOrCompleted" } },
-                        {
+                any = {
+                    {
+                        ["not"] = {
                             any = {
                                 { quest = { id = 8310, state = "activeOrCompleted" } },
-                                { all = { { any = { { any = { { quest = { id = 8304, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                {
+                                    any = {
+                                        { quest = { id = 8310, state = "activeOrCompleted" } },
+                                        { all = { { any = { { any = { { quest = { id = 8304, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 8310, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 8310, state = "activeOrCompleted" } },
+                                        { all = { { any = { { any = { { quest = { id = 8304, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                    },
+                                },
                             },
                         },
                     },
                 },
             },
-        },
-        {
             id = "alliance-extra-8310-objective-3",
             kind = "objective",
-            text = "Defeat Hive'Regal Ambusher and loot Hive'Regal Silithid Brain. This is an elite. Bring a group.",
-            conditions = { all = { { faction = "Alliance" }, { level = { min = 58 } } } },
+            requiredQuests = { { mode = "any", quests = { 8304 } } },
             route = {
                 {
+                    label = "Hive'Regal Ambusher",
                     mapID = 1451,
+                    offMapText = "Travel to Hive'Regal Ambusher in Silithus.",
                     x = 0.542,
                     y = 0.882,
-                    label = "Hive'Regal Ambusher",
-                    offMapText = "Travel to Hive'Regal Ambusher in Silithus.",
                 },
             },
-            complete = { questObjective = { id = 8310, index = 3, text = "Hive'Regal Silithid Brain", count = 1 } },
-            requiredQuests = { { mode = "any", quests = { 8304 } } },
+            text = "Defeat Hive'Regal Ambusher and loot Hive'Regal Silithid Brain. This is an elite. Bring a group.",
+            useClientPin = true,
             useClientText = false,
-            dependsOn = { "alliance-extra-8310-accept" },
-            excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 8310, state = "activeOrCompleted" } },
-                        {
-                            any = {
-                                { quest = { id = 8310, state = "activeOrCompleted" } },
-                                { all = { { any = { { any = { { quest = { id = 8304, state = "activeOrCompleted" } }, { all = {} } } } } } } },
-                            },
-                        },
-                    },
-                },
-            },
+            useQuestNavigation = true,
         },
         {
-            id = "alliance-extra-8310-turnin",
-            kind = "turnin",
-            text = "Turn in Breaking the Code to Frankal Stonebridge.",
-            conditions = { all = { { faction = "Alliance" }, { level = { min = 58 } } } },
-            route = {
-                {
-                    mapID = 1451,
-                    x = 0.408,
-                    y = 0.8859999999999999,
-                    label = "Frankal Stonebridge",
-                    offMapText = "Travel to Frankal Stonebridge in Silithus.",
-                },
-            },
             complete = { quest = { id = 8310, state = "completed" } },
-            requiredQuests = { { mode = "any", quests = { 8304 } } },
-            useClientText = false,
+            conditions = { all = { { faction = "Alliance" }, { level = { min = 58 } } } },
             dependsOn = { "alliance-extra-8310-objective-1", "alliance-extra-8310-objective-2", "alliance-extra-8310-objective-3" },
             excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 8310, state = "activeOrCompleted" } },
-                        {
+                any = {
+                    {
+                        ["not"] = {
                             any = {
                                 { quest = { id = 8310, state = "activeOrCompleted" } },
-                                { all = { { any = { { any = { { quest = { id = 8304, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                {
+                                    any = {
+                                        { quest = { id = 8310, state = "activeOrCompleted" } },
+                                        { all = { { any = { { any = { { quest = { id = 8304, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 8310, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 8310, state = "activeOrCompleted" } },
+                                        { all = { { any = { { any = { { quest = { id = 8304, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                    },
+                                },
                             },
                         },
                     },
                 },
             },
+            id = "alliance-extra-8310-turnin",
+            kind = "turnin",
+            requiredQuests = { { mode = "any", quests = { 8304 } } },
+            route = {
+                {
+                    label = "Frankal Stonebridge",
+                    mapID = 1451,
+                    offMapText = "Travel to Frankal Stonebridge in Silithus.",
+                    x = 0.408,
+                    y = 0.886,
+                },
+            },
+            text = "Turn in Breaking the Code to Frankal Stonebridge.",
+            useClientPin = true,
+            useClientText = false,
+            useQuestNavigation = true,
         },
         {
             id = "visit-entry-leveling-era-horde-ungoro-crater",
@@ -5760,13 +6177,30 @@ ns:RegisterGuide({
             excludeWhen = {
                 any = {
                     {
-                        ["not"] = {
-                            any = {
-                                { quest = { id = 8306, state = "activeOrCompleted" } },
-                                {
+                        any = {
+                            {
+                                ["not"] = {
                                     any = {
                                         { quest = { id = 8306, state = "activeOrCompleted" } },
-                                        { all = { { any = { { any = { { quest = { id = 8304, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                        {
+                                            any = {
+                                                { quest = { id = 8306, state = "activeOrCompleted" } },
+                                                { all = { { any = { { any = { { quest = { id = 8304, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                            {
+                                ["not"] = {
+                                    any = {
+                                        { quest = { id = 8306, state = "activeOrCompleted" } },
+                                        {
+                                            any = {
+                                                { quest = { id = 8306, state = "activeOrCompleted" } },
+                                                { all = { { any = { { any = { { quest = { id = 8304, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                            },
+                                        },
                                     },
                                 },
                             },
@@ -5809,13 +6243,30 @@ ns:RegisterGuide({
             excludeWhen = {
                 any = {
                     {
-                        ["not"] = {
-                            any = {
-                                { quest = { id = 8306, state = "activeOrCompleted" } },
-                                {
+                        any = {
+                            {
+                                ["not"] = {
                                     any = {
                                         { quest = { id = 8306, state = "activeOrCompleted" } },
-                                        { all = { { any = { { any = { { quest = { id = 8304, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                        {
+                                            any = {
+                                                { quest = { id = 8306, state = "activeOrCompleted" } },
+                                                { all = { { any = { { any = { { quest = { id = 8304, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                            {
+                                ["not"] = {
+                                    any = {
+                                        { quest = { id = 8306, state = "activeOrCompleted" } },
+                                        {
+                                            any = {
+                                                { quest = { id = 8306, state = "activeOrCompleted" } },
+                                                { all = { { any = { { any = { { quest = { id = 8304, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                            },
+                                        },
                                     },
                                 },
                             },
@@ -5859,13 +6310,30 @@ ns:RegisterGuide({
             excludeWhen = {
                 any = {
                     {
-                        ["not"] = {
-                            any = {
-                                { quest = { id = 8306, state = "activeOrCompleted" } },
-                                {
+                        any = {
+                            {
+                                ["not"] = {
                                     any = {
                                         { quest = { id = 8306, state = "activeOrCompleted" } },
-                                        { all = { { any = { { any = { { quest = { id = 8304, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                        {
+                                            any = {
+                                                { quest = { id = 8306, state = "activeOrCompleted" } },
+                                                { all = { { any = { { any = { { quest = { id = 8304, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                            {
+                                ["not"] = {
+                                    any = {
+                                        { quest = { id = 8306, state = "activeOrCompleted" } },
+                                        {
+                                            any = {
+                                                { quest = { id = 8306, state = "activeOrCompleted" } },
+                                                { all = { { any = { { any = { { quest = { id = 8304, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                            },
+                                        },
                                     },
                                 },
                             },
@@ -5988,13 +6456,30 @@ ns:RegisterGuide({
             excludeWhen = {
                 any = {
                     {
-                        ["not"] = {
-                            any = {
-                                { quest = { id = 8321, state = "activeOrCompleted" } },
-                                {
+                        any = {
+                            {
+                                ["not"] = {
                                     any = {
                                         { quest = { id = 8321, state = "activeOrCompleted" } },
-                                        { all = { { any = { { any = { { quest = { id = 8320, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                        {
+                                            any = {
+                                                { quest = { id = 8321, state = "activeOrCompleted" } },
+                                                { all = { { any = { { any = { { quest = { id = 8320, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                            {
+                                ["not"] = {
+                                    any = {
+                                        { quest = { id = 8321, state = "activeOrCompleted" } },
+                                        {
+                                            any = {
+                                                { quest = { id = 8321, state = "activeOrCompleted" } },
+                                                { all = { { any = { { any = { { quest = { id = 8320, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                            },
+                                        },
                                     },
                                 },
                             },
@@ -6031,13 +6516,30 @@ ns:RegisterGuide({
             excludeWhen = {
                 any = {
                     {
-                        ["not"] = {
-                            any = {
-                                { quest = { id = 8321, state = "activeOrCompleted" } },
-                                {
+                        any = {
+                            {
+                                ["not"] = {
                                     any = {
                                         { quest = { id = 8321, state = "activeOrCompleted" } },
-                                        { all = { { any = { { any = { { quest = { id = 8320, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                        {
+                                            any = {
+                                                { quest = { id = 8321, state = "activeOrCompleted" } },
+                                                { all = { { any = { { any = { { quest = { id = 8320, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                            {
+                                ["not"] = {
+                                    any = {
+                                        { quest = { id = 8321, state = "activeOrCompleted" } },
+                                        {
+                                            any = {
+                                                { quest = { id = 8321, state = "activeOrCompleted" } },
+                                                { all = { { any = { { any = { { quest = { id = 8320, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                            },
+                                        },
                                     },
                                 },
                             },
@@ -6075,13 +6577,30 @@ ns:RegisterGuide({
             excludeWhen = {
                 any = {
                     {
-                        ["not"] = {
-                            any = {
-                                { quest = { id = 8321, state = "activeOrCompleted" } },
-                                {
+                        any = {
+                            {
+                                ["not"] = {
                                     any = {
                                         { quest = { id = 8321, state = "activeOrCompleted" } },
-                                        { all = { { any = { { any = { { quest = { id = 8320, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                        {
+                                            any = {
+                                                { quest = { id = 8321, state = "activeOrCompleted" } },
+                                                { all = { { any = { { any = { { quest = { id = 8320, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                            {
+                                ["not"] = {
+                                    any = {
+                                        { quest = { id = 8321, state = "activeOrCompleted" } },
+                                        {
+                                            any = {
+                                                { quest = { id = 8321, state = "activeOrCompleted" } },
+                                                { all = { { any = { { any = { { quest = { id = 8320, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                            },
+                                        },
                                     },
                                 },
                             },
@@ -6168,27 +6687,70 @@ ns:RegisterGuide({
             excludeWhen = {
                 any = {
                     {
-                        ["not"] = {
-                            any = {
-                                { quest = { id = 8323, state = "activeOrCompleted" } },
-                                {
+                        any = {
+                            {
+                                ["not"] = {
                                     any = {
                                         { quest = { id = 8323, state = "activeOrCompleted" } },
                                         {
-                                            all = {
+                                            any = {
+                                                { quest = { id = 8323, state = "activeOrCompleted" } },
                                                 {
-                                                    any = {
+                                                    all = {
                                                         {
                                                             any = {
-                                                                { quest = { id = 8279, state = "activeOrCompleted" } },
                                                                 {
-                                                                    all = {
+                                                                    any = {
+                                                                        { quest = { id = 8279, state = "activeOrCompleted" } },
                                                                         {
-                                                                            any = {
+                                                                            all = {
                                                                                 {
                                                                                     any = {
-                                                                                        { quest = { id = 8285, state = "activeOrCompleted" } },
-                                                                                        { all = { { any = { { any = { { quest = { id = 8284, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                                                        {
+                                                                                            any = {
+                                                                                                { quest = { id = 8285, state = "activeOrCompleted" } },
+                                                                                                { all = { { any = { { any = { { quest = { id = 8284, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                                                            },
+                                                                                        },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                            {
+                                ["not"] = {
+                                    any = {
+                                        { quest = { id = 8323, state = "activeOrCompleted" } },
+                                        {
+                                            any = {
+                                                { quest = { id = 8323, state = "activeOrCompleted" } },
+                                                {
+                                                    all = {
+                                                        {
+                                                            any = {
+                                                                {
+                                                                    any = {
+                                                                        { quest = { id = 8279, state = "activeOrCompleted" } },
+                                                                        {
+                                                                            all = {
+                                                                                {
+                                                                                    any = {
+                                                                                        {
+                                                                                            any = {
+                                                                                                { quest = { id = 8285, state = "activeOrCompleted" } },
+                                                                                                { all = { { any = { { any = { { quest = { id = 8284, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                                                            },
+                                                                                        },
                                                                                     },
                                                                                 },
                                                                             },
@@ -6263,27 +6825,70 @@ ns:RegisterGuide({
             excludeWhen = {
                 any = {
                     {
-                        ["not"] = {
-                            any = {
-                                { quest = { id = 8323, state = "activeOrCompleted" } },
-                                {
+                        any = {
+                            {
+                                ["not"] = {
                                     any = {
                                         { quest = { id = 8323, state = "activeOrCompleted" } },
                                         {
-                                            all = {
+                                            any = {
+                                                { quest = { id = 8323, state = "activeOrCompleted" } },
                                                 {
-                                                    any = {
+                                                    all = {
                                                         {
                                                             any = {
-                                                                { quest = { id = 8279, state = "activeOrCompleted" } },
                                                                 {
-                                                                    all = {
+                                                                    any = {
+                                                                        { quest = { id = 8279, state = "activeOrCompleted" } },
                                                                         {
-                                                                            any = {
+                                                                            all = {
                                                                                 {
                                                                                     any = {
-                                                                                        { quest = { id = 8285, state = "activeOrCompleted" } },
-                                                                                        { all = { { any = { { any = { { quest = { id = 8284, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                                                        {
+                                                                                            any = {
+                                                                                                { quest = { id = 8285, state = "activeOrCompleted" } },
+                                                                                                { all = { { any = { { any = { { quest = { id = 8284, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                                                            },
+                                                                                        },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                            {
+                                ["not"] = {
+                                    any = {
+                                        { quest = { id = 8323, state = "activeOrCompleted" } },
+                                        {
+                                            any = {
+                                                { quest = { id = 8323, state = "activeOrCompleted" } },
+                                                {
+                                                    all = {
+                                                        {
+                                                            any = {
+                                                                {
+                                                                    any = {
+                                                                        { quest = { id = 8279, state = "activeOrCompleted" } },
+                                                                        {
+                                                                            all = {
+                                                                                {
+                                                                                    any = {
+                                                                                        {
+                                                                                            any = {
+                                                                                                { quest = { id = 8285, state = "activeOrCompleted" } },
+                                                                                                { all = { { any = { { any = { { quest = { id = 8284, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                                                            },
+                                                                                        },
                                                                                     },
                                                                                 },
                                                                             },
@@ -6359,27 +6964,70 @@ ns:RegisterGuide({
             excludeWhen = {
                 any = {
                     {
-                        ["not"] = {
-                            any = {
-                                { quest = { id = 8323, state = "activeOrCompleted" } },
-                                {
+                        any = {
+                            {
+                                ["not"] = {
                                     any = {
                                         { quest = { id = 8323, state = "activeOrCompleted" } },
                                         {
-                                            all = {
+                                            any = {
+                                                { quest = { id = 8323, state = "activeOrCompleted" } },
                                                 {
-                                                    any = {
+                                                    all = {
                                                         {
                                                             any = {
-                                                                { quest = { id = 8279, state = "activeOrCompleted" } },
                                                                 {
-                                                                    all = {
+                                                                    any = {
+                                                                        { quest = { id = 8279, state = "activeOrCompleted" } },
                                                                         {
-                                                                            any = {
+                                                                            all = {
                                                                                 {
                                                                                     any = {
-                                                                                        { quest = { id = 8285, state = "activeOrCompleted" } },
-                                                                                        { all = { { any = { { any = { { quest = { id = 8284, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                                                        {
+                                                                                            any = {
+                                                                                                { quest = { id = 8285, state = "activeOrCompleted" } },
+                                                                                                { all = { { any = { { any = { { quest = { id = 8284, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                                                            },
+                                                                                        },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                            {
+                                ["not"] = {
+                                    any = {
+                                        { quest = { id = 8323, state = "activeOrCompleted" } },
+                                        {
+                                            any = {
+                                                { quest = { id = 8323, state = "activeOrCompleted" } },
+                                                {
+                                                    all = {
+                                                        {
+                                                            any = {
+                                                                {
+                                                                    any = {
+                                                                        { quest = { id = 8279, state = "activeOrCompleted" } },
+                                                                        {
+                                                                            all = {
+                                                                                {
+                                                                                    any = {
+                                                                                        {
+                                                                                            any = {
+                                                                                                { quest = { id = 8285, state = "activeOrCompleted" } },
+                                                                                                { all = { { any = { { any = { { quest = { id = 8284, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                                                            },
+                                                                                        },
                                                                                     },
                                                                                 },
                                                                             },
@@ -6552,73 +7200,89 @@ ns:RegisterGuide({
             useQuestNavigation = true,
         },
         {
+            checkpointQuest = 8282,
+            complete = { level = { min = 54 } },
+            conditions = { all = { { faction = "Horde" } } },
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 8282, state = "activeOrCompleted" } },
+                        {
+                            any = {
+                                { quest = { id = 8282, state = "activeOrCompleted" } },
+                                {
+                                    all = {
+                                        {
+                                            any = {
+                                                {
+                                                    any = {
+                                                        { quest = { id = 8278, state = "activeOrCompleted" } },
+                                                        { all = { { any = { { any = { { quest = { id = 8277, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
             id = "horde-extra-8282-level",
             kind = "note",
-            checkpointQuest = 8282,
-            text = "Reach level 54 before this visit.",
-            conditions = { all = { { faction = "Horde" } } },
-            complete = { level = { min = 54 } },
             requiredLevel = 54,
-            excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 8282, state = "activeOrCompleted" } },
-                        {
-                            any = {
-                                { quest = { id = 8282, state = "activeOrCompleted" } },
-                                {
-                                    all = {
-                                        {
-                                            any = {
-                                                {
-                                                    any = {
-                                                        { quest = { id = 8278, state = "activeOrCompleted" } },
-                                                        { all = { { any = { { any = { { quest = { id = 8277, state = "activeOrCompleted" } }, { all = {} } } } } } } },
-                                                    },
-                                                },
-                                            },
-                                        },
-                                    },
-                                },
-                            },
-                        },
-                    },
-                },
-            },
+            text = "Reach level 54 before this visit.",
         },
         {
-            id = "horde-extra-8282-accept",
-            kind = "accept",
-            text = "Accept Noggle's Lost Satchel from Noggle Ficklespragg.",
-            conditions = { all = { { faction = "Horde" }, { level = { min = 54 } } } },
-            route = {
-                {
-                    mapID = 1451,
-                    x = 0.516,
-                    y = 0.386,
-                    label = "Noggle Ficklespragg",
-                    offMapText = "Travel to Noggle Ficklespragg in Silithus.",
-                },
-            },
             complete = { quest = { id = 8282, state = "activeOrCompleted" } },
-            requiredQuests = { { mode = "any", quests = { 8278 } } },
-            useClientText = false,
+            conditions = { all = { { faction = "Horde" }, { level = { min = 54 } } } },
             dependsOn = { "horde-extra-8282-level" },
             excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 8282, state = "activeOrCompleted" } },
-                        {
+                any = {
+                    {
+                        ["not"] = {
                             any = {
                                 { quest = { id = 8282, state = "activeOrCompleted" } },
                                 {
-                                    all = {
+                                    any = {
+                                        { quest = { id = 8282, state = "activeOrCompleted" } },
                                         {
-                                            any = {
+                                            all = {
                                                 {
                                                     any = {
-                                                        { quest = { id = 8278, state = "activeOrCompleted" } },
-                                                        { all = { { any = { { any = { { quest = { id = 8277, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 8278, state = "activeOrCompleted" } },
+                                                                { all = { { any = { { any = { { quest = { id = 8277, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 8282, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 8282, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 8278, state = "activeOrCompleted" } },
+                                                                { all = { { any = { { any = { { quest = { id = 8277, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                            },
+                                                        },
                                                     },
                                                 },
                                             },
@@ -6630,85 +7294,70 @@ ns:RegisterGuide({
                     },
                 },
             },
-        },
-        {
-            id = "horde-extra-8282-objective",
-            kind = "objective",
-            text = "Collect Noggle's Satchel from the marked object.",
-            conditions = { all = { { faction = "Horde" }, { level = { min = 54 } } } },
-            route = {
-                {
-                    mapID = 1451,
-                    x = 0.446,
-                    y = 0.9129999999999999,
-                    label = "Noggle's Satchel",
-                    offMapText = "Travel to Noggle's Satchel in Silithus.",
-                },
-            },
-            complete = { quest = { id = 8282, state = "complete" } },
+            id = "horde-extra-8282-accept",
+            kind = "accept",
             requiredQuests = { { mode = "any", quests = { 8278 } } },
-            useClientText = false,
-            dependsOn = { "horde-extra-8282-accept" },
-            excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 8282, state = "activeOrCompleted" } },
-                        {
-                            any = {
-                                { quest = { id = 8282, state = "activeOrCompleted" } },
-                                {
-                                    all = {
-                                        {
-                                            any = {
-                                                {
-                                                    any = {
-                                                        { quest = { id = 8278, state = "activeOrCompleted" } },
-                                                        { all = { { any = { { any = { { quest = { id = 8277, state = "activeOrCompleted" } }, { all = {} } } } } } } },
-                                                    },
-                                                },
-                                            },
-                                        },
-                                    },
-                                },
-                            },
-                        },
-                    },
-                },
-            },
-        },
-        {
-            id = "horde-extra-8282-turnin",
-            kind = "turnin",
-            text = "Turn in Noggle's Lost Satchel to Noggle Ficklespragg.",
-            conditions = { all = { { faction = "Horde" }, { level = { min = 54 } } } },
             route = {
                 {
+                    label = "Noggle Ficklespragg",
                     mapID = 1451,
+                    offMapText = "Travel to Noggle Ficklespragg in Silithus.",
                     x = 0.516,
                     y = 0.386,
-                    label = "Noggle Ficklespragg",
-                    offMapText = "Travel to Noggle Ficklespragg in Silithus.",
                 },
             },
-            complete = { quest = { id = 8282, state = "completed" } },
-            requiredQuests = { { mode = "any", quests = { 8278 } } },
+            text = "Accept Noggle's Lost Satchel from Noggle Ficklespragg.",
             useClientText = false,
-            dependsOn = { "horde-extra-8282-objective" },
+        },
+        {
+            complete = { quest = { id = 8282, state = "complete" } },
+            conditions = { all = { { faction = "Horde" }, { level = { min = 54 } } } },
+            dependsOn = { "horde-extra-8282-accept" },
             excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 8282, state = "activeOrCompleted" } },
-                        {
+                any = {
+                    {
+                        ["not"] = {
                             any = {
                                 { quest = { id = 8282, state = "activeOrCompleted" } },
                                 {
-                                    all = {
+                                    any = {
+                                        { quest = { id = 8282, state = "activeOrCompleted" } },
                                         {
-                                            any = {
+                                            all = {
                                                 {
                                                     any = {
-                                                        { quest = { id = 8278, state = "activeOrCompleted" } },
-                                                        { all = { { any = { { any = { { quest = { id = 8277, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 8278, state = "activeOrCompleted" } },
+                                                                { all = { { any = { { any = { { quest = { id = 8277, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 8282, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 8282, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 8278, state = "activeOrCompleted" } },
+                                                                { all = { { any = { { any = { { quest = { id = 8277, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                            },
+                                                        },
                                                     },
                                                 },
                                             },
@@ -6720,188 +7369,373 @@ ns:RegisterGuide({
                     },
                 },
             },
+            id = "horde-extra-8282-objective",
+            kind = "objective",
+            requiredQuests = { { mode = "any", quests = { 8278 } } },
+            route = {
+                {
+                    label = "Noggle's Satchel",
+                    mapID = 1451,
+                    offMapText = "Travel to Noggle's Satchel in Silithus.",
+                    x = 0.446,
+                    y = 0.913,
+                },
+            },
+            text = "Collect Noggle's Satchel from the marked object.",
+            useClientPin = true,
+            useClientText = false,
         },
         {
+            complete = { quest = { id = 8282, state = "completed" } },
+            conditions = { all = { { faction = "Horde" }, { level = { min = 54 } } } },
+            dependsOn = { "horde-extra-8282-objective" },
+            excludeWhen = {
+                any = {
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 8282, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 8282, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 8278, state = "activeOrCompleted" } },
+                                                                { all = { { any = { { any = { { quest = { id = 8277, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 8282, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 8282, state = "activeOrCompleted" } },
+                                        {
+                                            all = {
+                                                {
+                                                    any = {
+                                                        {
+                                                            any = {
+                                                                { quest = { id = 8278, state = "activeOrCompleted" } },
+                                                                { all = { { any = { { any = { { quest = { id = 8277, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
+            id = "horde-extra-8282-turnin",
+            kind = "turnin",
+            requiredQuests = { { mode = "any", quests = { 8278 } } },
+            route = {
+                {
+                    label = "Noggle Ficklespragg",
+                    mapID = 1451,
+                    offMapText = "Travel to Noggle Ficklespragg in Silithus.",
+                    x = 0.516,
+                    y = 0.386,
+                },
+            },
+            text = "Turn in Noggle's Lost Satchel to Noggle Ficklespragg.",
+            useClientPin = true,
+            useClientText = false,
+            useQuestNavigation = true,
+        },
+        {
+            checkpointQuest = 8310,
+            complete = { level = { min = 58 } },
+            conditions = { all = { { faction = "Horde" } } },
+            excludeWhen = {
+                ["not"] = {
+                    any = {
+                        { quest = { id = 8310, state = "activeOrCompleted" } },
+                        {
+                            any = {
+                                { quest = { id = 8310, state = "activeOrCompleted" } },
+                                { all = { { any = { { any = { { quest = { id = 8304, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                            },
+                        },
+                    },
+                },
+            },
             id = "horde-extra-8310-level",
             kind = "note",
-            checkpointQuest = 8310,
-            text = "Reach level 58 before this visit.",
-            conditions = { all = { { faction = "Horde" } } },
-            complete = { level = { min = 58 } },
             requiredLevel = 58,
-            excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 8310, state = "activeOrCompleted" } },
-                        {
-                            any = {
-                                { quest = { id = 8310, state = "activeOrCompleted" } },
-                                { all = { { any = { { any = { { quest = { id = 8304, state = "activeOrCompleted" } }, { all = {} } } } } } } },
-                            },
-                        },
-                    },
-                },
-            },
+            text = "Reach level 58 before this visit.",
         },
         {
-            id = "horde-extra-8310-accept",
-            kind = "accept",
-            text = "Accept Breaking the Code from Frankal Stonebridge.",
-            conditions = { all = { { faction = "Horde" }, { level = { min = 58 } } } },
-            route = {
-                {
-                    mapID = 1451,
-                    x = 0.408,
-                    y = 0.8859999999999999,
-                    label = "Frankal Stonebridge",
-                    offMapText = "Travel to Frankal Stonebridge in Silithus.",
-                },
-            },
             complete = { quest = { id = 8310, state = "activeOrCompleted" } },
-            requiredQuests = { { mode = "any", quests = { 8304 } } },
-            useClientText = false,
+            conditions = { all = { { faction = "Horde" }, { level = { min = 58 } } } },
             dependsOn = { "horde-extra-8310-level" },
             excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 8310, state = "activeOrCompleted" } },
-                        {
+                any = {
+                    {
+                        ["not"] = {
                             any = {
                                 { quest = { id = 8310, state = "activeOrCompleted" } },
-                                { all = { { any = { { any = { { quest = { id = 8304, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                {
+                                    any = {
+                                        { quest = { id = 8310, state = "activeOrCompleted" } },
+                                        { all = { { any = { { any = { { quest = { id = 8304, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 8310, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 8310, state = "activeOrCompleted" } },
+                                        { all = { { any = { { any = { { quest = { id = 8304, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                    },
+                                },
                             },
                         },
                     },
                 },
             },
+            id = "horde-extra-8310-accept",
+            kind = "accept",
+            requiredQuests = { { mode = "any", quests = { 8304 } } },
+            route = {
+                {
+                    label = "Frankal Stonebridge",
+                    mapID = 1451,
+                    offMapText = "Travel to Frankal Stonebridge in Silithus.",
+                    x = 0.408,
+                    y = 0.886,
+                },
+            },
+            text = "Accept Breaking the Code from Frankal Stonebridge.",
+            useClientText = false,
         },
         {
+            complete = { questObjective = { count = 1, id = 8310, index = 1, text = "Hive'Ashi Silithid Brain" } },
+            conditions = { all = { { faction = "Horde" }, { level = { min = 58 } } } },
+            dependsOn = { "horde-extra-8310-accept" },
+            excludeWhen = {
+                any = {
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 8310, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 8310, state = "activeOrCompleted" } },
+                                        { all = { { any = { { any = { { quest = { id = 8304, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 8310, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 8310, state = "activeOrCompleted" } },
+                                        { all = { { any = { { any = { { quest = { id = 8304, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
             id = "horde-extra-8310-objective-1",
             kind = "objective",
-            text = "Defeat Hive'Ashi Stinger and loot Hive'Ashi Silithid Brain. This is an elite. Bring a group.",
-            conditions = { all = { { faction = "Horde" }, { level = { min = 58 } } } },
+            requiredQuests = { { mode = "any", quests = { 8304 } } },
             route = {
                 {
+                    label = "Hive'Ashi Stinger",
                     mapID = 1451,
+                    offMapText = "Travel to Hive'Ashi Stinger in Silithus.",
                     x = 0.456,
                     y = 0.284,
-                    label = "Hive'Ashi Stinger",
-                    offMapText = "Travel to Hive'Ashi Stinger in Silithus.",
                 },
             },
-            complete = { questObjective = { id = 8310, index = 1, text = "Hive'Ashi Silithid Brain", count = 1 } },
-            requiredQuests = { { mode = "any", quests = { 8304 } } },
+            text = "Defeat Hive'Ashi Stinger and loot Hive'Ashi Silithid Brain. This is an elite. Bring a group.",
+            useClientPin = true,
             useClientText = false,
+            useQuestNavigation = true,
+        },
+        {
+            complete = { questObjective = { count = 1, id = 8310, index = 2, text = "Hive'Zora Silithid Brain" } },
+            conditions = { all = { { faction = "Horde" }, { level = { min = 58 } } } },
             dependsOn = { "horde-extra-8310-accept" },
             excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 8310, state = "activeOrCompleted" } },
-                        {
+                any = {
+                    {
+                        ["not"] = {
                             any = {
                                 { quest = { id = 8310, state = "activeOrCompleted" } },
-                                { all = { { any = { { any = { { quest = { id = 8304, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                {
+                                    any = {
+                                        { quest = { id = 8310, state = "activeOrCompleted" } },
+                                        { all = { { any = { { any = { { quest = { id = 8304, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 8310, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 8310, state = "activeOrCompleted" } },
+                                        { all = { { any = { { any = { { quest = { id = 8304, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                    },
+                                },
                             },
                         },
                     },
                 },
             },
-        },
-        {
             id = "horde-extra-8310-objective-2",
             kind = "objective",
-            text = "Defeat Hive'Zora Waywatcher and loot Hive'Zora Silithid Brain. This is an elite. Bring a group.",
-            conditions = { all = { { faction = "Horde" }, { level = { min = 58 } } } },
+            requiredQuests = { { mode = "any", quests = { 8304 } } },
             route = {
                 {
+                    label = "Hive'Zora Waywatcher",
                     mapID = 1451,
+                    offMapText = "Travel to Hive'Zora Waywatcher in Silithus.",
                     x = 0.262,
                     y = 0.55,
-                    label = "Hive'Zora Waywatcher",
-                    offMapText = "Travel to Hive'Zora Waywatcher in Silithus.",
                 },
             },
-            complete = { questObjective = { id = 8310, index = 2, text = "Hive'Zora Silithid Brain", count = 1 } },
-            requiredQuests = { { mode = "any", quests = { 8304 } } },
+            text = "Defeat Hive'Zora Waywatcher and loot Hive'Zora Silithid Brain. This is an elite. Bring a group.",
+            useClientPin = true,
             useClientText = false,
+            useQuestNavigation = true,
+        },
+        {
+            complete = { questObjective = { count = 1, id = 8310, index = 3, text = "Hive'Regal Silithid Brain" } },
+            conditions = { all = { { faction = "Horde" }, { level = { min = 58 } } } },
             dependsOn = { "horde-extra-8310-accept" },
             excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 8310, state = "activeOrCompleted" } },
-                        {
+                any = {
+                    {
+                        ["not"] = {
                             any = {
                                 { quest = { id = 8310, state = "activeOrCompleted" } },
-                                { all = { { any = { { any = { { quest = { id = 8304, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                {
+                                    any = {
+                                        { quest = { id = 8310, state = "activeOrCompleted" } },
+                                        { all = { { any = { { any = { { quest = { id = 8304, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 8310, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 8310, state = "activeOrCompleted" } },
+                                        { all = { { any = { { any = { { quest = { id = 8304, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                    },
+                                },
                             },
                         },
                     },
                 },
             },
-        },
-        {
             id = "horde-extra-8310-objective-3",
             kind = "objective",
-            text = "Defeat Hive'Regal Ambusher and loot Hive'Regal Silithid Brain. This is an elite. Bring a group.",
-            conditions = { all = { { faction = "Horde" }, { level = { min = 58 } } } },
+            requiredQuests = { { mode = "any", quests = { 8304 } } },
             route = {
                 {
+                    label = "Hive'Regal Ambusher",
                     mapID = 1451,
+                    offMapText = "Travel to Hive'Regal Ambusher in Silithus.",
                     x = 0.542,
                     y = 0.882,
-                    label = "Hive'Regal Ambusher",
-                    offMapText = "Travel to Hive'Regal Ambusher in Silithus.",
                 },
             },
-            complete = { questObjective = { id = 8310, index = 3, text = "Hive'Regal Silithid Brain", count = 1 } },
-            requiredQuests = { { mode = "any", quests = { 8304 } } },
+            text = "Defeat Hive'Regal Ambusher and loot Hive'Regal Silithid Brain. This is an elite. Bring a group.",
+            useClientPin = true,
             useClientText = false,
-            dependsOn = { "horde-extra-8310-accept" },
-            excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 8310, state = "activeOrCompleted" } },
-                        {
-                            any = {
-                                { quest = { id = 8310, state = "activeOrCompleted" } },
-                                { all = { { any = { { any = { { quest = { id = 8304, state = "activeOrCompleted" } }, { all = {} } } } } } } },
-                            },
-                        },
-                    },
-                },
-            },
+            useQuestNavigation = true,
         },
         {
-            id = "horde-extra-8310-turnin",
-            kind = "turnin",
-            text = "Turn in Breaking the Code to Frankal Stonebridge.",
-            conditions = { all = { { faction = "Horde" }, { level = { min = 58 } } } },
-            route = {
-                {
-                    mapID = 1451,
-                    x = 0.408,
-                    y = 0.8859999999999999,
-                    label = "Frankal Stonebridge",
-                    offMapText = "Travel to Frankal Stonebridge in Silithus.",
-                },
-            },
             complete = { quest = { id = 8310, state = "completed" } },
-            requiredQuests = { { mode = "any", quests = { 8304 } } },
-            useClientText = false,
+            conditions = { all = { { faction = "Horde" }, { level = { min = 58 } } } },
             dependsOn = { "horde-extra-8310-objective-1", "horde-extra-8310-objective-2", "horde-extra-8310-objective-3" },
             excludeWhen = {
-                ["not"] = {
-                    any = {
-                        { quest = { id = 8310, state = "activeOrCompleted" } },
-                        {
+                any = {
+                    {
+                        ["not"] = {
                             any = {
                                 { quest = { id = 8310, state = "activeOrCompleted" } },
-                                { all = { { any = { { any = { { quest = { id = 8304, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                {
+                                    any = {
+                                        { quest = { id = 8310, state = "activeOrCompleted" } },
+                                        { all = { { any = { { any = { { quest = { id = 8304, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        ["not"] = {
+                            any = {
+                                { quest = { id = 8310, state = "activeOrCompleted" } },
+                                {
+                                    any = {
+                                        { quest = { id = 8310, state = "activeOrCompleted" } },
+                                        { all = { { any = { { any = { { quest = { id = 8304, state = "activeOrCompleted" } }, { all = {} } } } } } } },
+                                    },
+                                },
                             },
                         },
                     },
                 },
             },
+            id = "horde-extra-8310-turnin",
+            kind = "turnin",
+            requiredQuests = { { mode = "any", quests = { 8304 } } },
+            route = {
+                {
+                    label = "Frankal Stonebridge",
+                    mapID = 1451,
+                    offMapText = "Travel to Frankal Stonebridge in Silithus.",
+                    x = 0.408,
+                    y = 0.886,
+                },
+            },
+            text = "Turn in Breaking the Code to Frankal Stonebridge.",
+            useClientPin = true,
+            useClientText = false,
+            useQuestNavigation = true,
         },
     },
 })

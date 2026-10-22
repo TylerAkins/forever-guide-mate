@@ -14,7 +14,7 @@ jobs:
   plan:
     runs-on: ubuntu-24.04
     outputs:
-      python: ${{ steps.select.outputs.python }}
+      go: ${{ steps.select.outputs.go }}
       lua: ${{ steps.select.outputs.lua }}
       journeys: ${{ steps.select.outputs.journeys }}
       package: ${{ steps.select.outputs.package }}
@@ -23,6 +23,9 @@ jobs:
         with:
           fetch-depth: 0
           persist-credentials: false
+      - uses: actions/setup-go@924ae3a1cded613372ab5595356fb5720e22ba16 # v6
+        with:
+          go-version: '1.27.3'
       - name: Select checks from the PR diff
         id: select
         env:
@@ -31,12 +34,12 @@ jobs:
           HEAD_SHA: ${{ github.event.pull_request.head.sha }}
         run: |
           if [[ "$EVENT_NAME" == "pull_request" ]]; then
-            python3 tools/ci_checks.py --base "$BASE_SHA" --head "$HEAD_SHA" --output "$GITHUB_OUTPUT"
+            go run ./cmd/ci-checks --base "$BASE_SHA" --head "$HEAD_SHA" --output "$GITHUB_OUTPUT"
           else
-            python3 tools/ci_checks.py --full --output "$GITHUB_OUTPUT"
+            go run ./cmd/ci-checks --full --output "$GITHUB_OUTPUT"
           fi
       - name: Validate current release notes
-        run: python3 tools/guide_release.py validate-notes --version "$(tr -d '[:space:]' < VERSION)"
+        run: go run ./cmd/guide-release validate-notes --version "$(tr -d '[:space:]' < VERSION)"
       - name: Validate automated release intent
         if: github.event_name == 'pull_request'
         env:
@@ -56,26 +59,30 @@ jobs:
           fi
           PREVIOUS_VERSION="$(git show "${BASE_SHA}:VERSION" | tr -d '[:space:]')"
           CURRENT_VERSION="$(tr -d '[:space:]' < VERSION)"
-          python3 tools/guide_release.py validate \
+          go run ./cmd/guide-release validate \
             --previous-version "$PREVIOUS_VERSION" \
             --current-version "$CURRENT_VERSION" \
             --release-content-changed
           grep -qF "## ${CURRENT_VERSION} " CHANGELOG.md
 
-  python:
+  go:
     needs: plan
-    if: needs.plan.outputs.python == 'true'
+    if: needs.plan.outputs.go == 'true'
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
-      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+      - uses: actions/setup-go@924ae3a1cded613372ab5595356fb5720e22ba16 # v6
         with:
-          python-version: '3.12'
-      - run: python3 -m pip install -r tests/requirements.txt
-      - name: Python tests
-        run: python3 -m unittest discover -s tests
+          go-version: '1.27.3'
+      - run: sudo apt-get update && sudo apt-get install --yes luajit
+      - name: Go tests
+        run: go test $(go list ./... | grep -v '/internal/luatests$')
+      - name: LuaJIT dependency failure check
+        run: go test ./internal/luatests -run TestMissingLuaJITFailsWithActionableMessage -count=1
+      - name: Go vet
+        run: go vet ./...
 
   lua:
     needs: plan
@@ -85,23 +92,27 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
-      - run: sudo apt-get update && sudo apt-get install --yes lua5.1
+      - run: sudo apt-get update && sudo apt-get install --yes luajit
       - name: Engine regressions
-        run: lua5.1 tests/lua/run.lua
+        run: luajit -joff tests/lua/run.lua
       - name: Authored guide contracts
-        run: lua5.1 tests/lua/authored.lua
+        run: luajit -joff tests/lua/authored.lua
       - name: Ordered route behavior
-        run: lua5.1 tests/lua/ordered.lua
+        run: luajit -joff tests/lua/ordered.lua
       - name: Catalog and prerequisite coverage
-        run: lua5.1 tests/lua/catalog.lua
+        run: luajit -joff tests/lua/catalog.lua
       - name: Dungeon and raid itineraries
-        run: FGM_DUNGEONS=1 lua5.1 tests/lua/journeys.lua
+        run: FGM_DUNGEONS=1 luajit -joff tests/lua/journeys.lua
       - name: UI behavior
-        run: lua5.1 tests/lua/ui.lua
+        run: luajit -joff tests/lua/ui.lua
       - name: Guide data lint
-        run: lua5.1 tests/lua/lint.lua
+        run: luajit -joff tests/lua/lint.lua
       - name: Accept-chain audit
-        run: lua5.1 tests/lua/audit_accept_chains.lua
+        run: luajit -joff tests/lua/audit_accept_chains.lua
+      - name: QuestieDB baked store decoder
+        run: luajit -joff tests/lua/questiedb_baked.lua
+      - name: QuestieDB zone area table
+        run: luajit -joff tests/lua/questiedb_areas.lua
 
   journeys:
     needs: plan
@@ -115,12 +126,12 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
-      - run: sudo apt-get update && sudo apt-get install --yes lua5.1
+      - run: sudo apt-get update && sudo apt-get install --yes luajit
       - name: Full race matrix for class ${{ matrix.class }}
         env:
           FGM_FULL_MATRIX: '1'
           FGM_MATRIX_CLASS: ${{ matrix.class }}
-        run: lua5.1 tests/lua/journeys.lua
+        run: luajit -joff tests/lua/journeys.lua
 
   package:
     needs: plan
@@ -131,12 +142,12 @@ jobs:
         with:
           fetch-depth: 0
           persist-credentials: false
-      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+      - uses: actions/setup-go@924ae3a1cded613372ab5595356fb5720e22ba16 # v6
         with:
-          python-version: '3.12'
+          go-version: '1.27.3'
       - name: Compile install tree
         run: |
-          python3 tools/compile_addon.py
+          go run ./cmd/compile-addon
           test -f .compiled/ForeverGuideMate/ForeverGuideMate.toc
           test -f .compiled/ForeverGuideMate/Core.lua
           test -f .compiled/ForeverGuideMate/RELEASE_NOTES.md
@@ -146,7 +157,7 @@ jobs:
           test ! -e .compiled/ForeverGuideMate/tests
           test ! -e .compiled/ForeverGuideMate/tools
       - name: Verify build file selection
-        run: python3 tools/compile_addon.py --dry-run
+        run: go run ./cmd/compile-addon --dry-run
       - name: Dry-run package
         uses: BigWigsMods/packager@e50a250f8705041e40f2fa1ddcb280a686d65aa0 # v2.6.1
         with:
@@ -155,7 +166,7 @@ jobs:
   # Keep the existing required check name, including when some jobs are skipped.
   validate:
     if: ${{ always() }}
-    needs: [plan, python, lua, journeys, package]
+    needs: [plan, go, lua, journeys, package]
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
@@ -164,4 +175,4 @@ jobs:
       - name: Require every selected check to pass
         env:
           NEEDS_JSON: ${{ toJSON(needs) }}
-        run: python3 tools/ci_checks.py --check-results
+        run: go run ./cmd/ci-checks --check-results

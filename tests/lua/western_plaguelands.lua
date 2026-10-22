@@ -5,7 +5,11 @@ end
 for _, id in ipairs({'leveling-era-alliance-burning-steppes','loremaster-western-plaguelands'}) do
     local found = false
     for _, goal in ipairs(ns.guides[id].goals) do
-        if goal.kind=='accept' and ns.Engine:GetGoalQuestID(goal)==5050 then
+        local alliance = goal.conditions and goal.conditions.faction == 'Alliance'
+        for _, condition in ipairs((goal.conditions and goal.conditions.all) or {}) do
+            alliance = alliance or condition.faction == 'Alliance'
+        end
+        if alliance and goal.kind=='accept' and ns.Engine:GetGoalQuestID(goal)==5050 then
             found = true
             assert(goal.text:find("Ol' Emma",1,true), 'Good Luck Charm starts at its observed NPC')
             assert(goal.route and goal.route[1].mapID==1453, 'The pickup directs players to Stormwind')

@@ -13158,7 +13158,7 @@
             ]
           ],
           "id": 179827,
-          "name": "Wanted/Missing/Lost & Found",
+          "name": "Wanted/Missing/Lost \u0026 Found",
           "point": "start",
           "type": 2,
           "zone": "Searing Gorge"
@@ -15883,7 +15883,7 @@
             ]
           ],
           "id": 179827,
-          "name": "Wanted/Missing/Lost & Found",
+          "name": "Wanted/Missing/Lost \u0026 Found",
           "point": "start",
           "type": 2,
           "zone": "Searing Gorge"
@@ -16266,7 +16266,7 @@
             ]
           ],
           "id": 179827,
-          "name": "Wanted/Missing/Lost & Found",
+          "name": "Wanted/Missing/Lost \u0026 Found",
           "point": "start",
           "type": 2,
           "zone": "Searing Gorge"
@@ -28412,412 +28412,281 @@
   "supportingQuests": [],
   "clientWalkthrough": "unverified",
   "sourcePriority": [
-    "wowhead",
-    "questiedb",
-    "allthethings",
-    "foreverclient"
+    "questiedb"
   ],
   "sources": {
-    "databaseCommit": "5c92953420ab4a710fda39581a405a72a89b8c0d",
-    "compilation": {
-      "schemaVersion": 1,
-      "compilationFormatVersion": 2,
-      "flavor": "forever",
-      "source": "compilation",
-      "sourceRevision": "991cc5841d7b79dc85613431aa8ecf6f4c34070753426d60f323e321532d4b66",
-      "recordCount": 107209,
-      "recordsSha256": "9ab82625871b9df3a0ac5781bb194be6d8211a4a6337258fbf82224e00416727",
-      "status": "generated"
+    "questiedb": {
+      "artifactVersion": "1.0.6-dev.f844007",
+      "buildCommit": "f844007b329b72f18cf2bda3d87540012294732a",
+      "counts": {
+        "Item": 21294,
+        "Npc": 13393,
+        "Object": 7035,
+        "Quest": 5232
+      }
     },
     "sourceHashes": {
-      "data/forever/compilation/records.jsonl.gz": "35c74cb11823db372dc0bc289d5ffaf8296ca9d1c370e4f7b794a29af7f84b47"
+      "questiedb/export.json": "e26090e90df3aa2e94be4c13feb001390068b84c249ff2443c629d26a408e704",
+      "questiedb/policy.json": "835ba8f6361ef37bda275859bdb48852001c3ce2b6a2b3ecff586283633e2ad4"
     },
     "upstreamCommit": "9087c457e20fb96e73e5b362dd6fc50324b75718"
   },
   "coverageMode": "zone",
   "orderingEligibility": {
-    "3462": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
+    "3181": {
       "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      }
-    },
-    "3463": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
+        "inCasual": false
       },
-      "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      }
-    },
-    "7701": {
       "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "7704": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "3481": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
+        "inCasual": true
       }
     },
     "3367": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
       }
     },
     "3368": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "7722": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
       },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "7723": {
       "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      }
-    },
-    "3372": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "7724": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
+        "inCasual": true
       }
     },
     "3371": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
       }
     },
-    "7727": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
+    "3372": {
       "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      }
-    },
-    "7728": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
+        "inCasual": false
       },
-      "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
+      "Alliance": {
+        "inCasual": false
       }
     },
     "3377": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
       }
     },
     "3378": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "7729": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
+        "inCasual": false
       },
-      "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      }
-    },
-    "8241": {
       "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "8242": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "7736": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "7737": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "4449": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      }
-    },
-    "4450": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "4451": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      }
-    },
-    "3181": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "3566": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
       }
     },
     "3441": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": true
       }
     },
     "3442": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": true
       }
     },
     "3443": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": true
       }
     },
     "3452": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": true
       }
     },
     "3453": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": true
       }
     },
     "3454": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "3462": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "3463": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "3481": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "3566": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "4449": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "4450": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "4451": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "7701": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "7704": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "7722": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "7723": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "7724": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "7727": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "7728": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "7729": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "7736": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "7737": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "8241": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "8242": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
       }
     }
   },
@@ -28826,84 +28695,12 @@
     "commit": "9087c457e20fb96e73e5b362dd6fc50324b75718",
     "strict": false,
     "sourceHashes": {
+      "ZygorGuidesViewerRM/Guides/Leveling/ZygorGuidesHorde.lua": "2eaf5adb4865936cdb4257451c3ce920fdaff1c0ec17216c36e055480f389e54",
       "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-EasternKingdoms.lua": "8a5ec87d31698c612e50eb0655f5c1f28d723c3068552c1295d79ddcd934270f",
       "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-Kalimdor.lua": "4fb7b7f5bb2702dfe36ed33de31b4d3105153bfba62b7a14a7ab73386e2087fa",
-      "ZygorGuidesViewerRM/Guides/Leveling/ZygorGuidesAlliance.lua": "ffb9b7828817e098d74ee5931e15a64ce773142a4c1e60f9775d0713121ba67d",
-      "ZygorGuidesViewerRM/Guides/Leveling/ZygorGuidesHorde.lua": "2eaf5adb4865936cdb4257451c3ce920fdaff1c0ec17216c36e055480f389e54"
+      "ZygorGuidesViewerRM/Guides/Leveling/ZygorGuidesAlliance.lua": "ffb9b7828817e098d74ee5931e15a64ce773142a4c1e60f9775d0713121ba67d"
     },
     "matches": {
-      "alliance-extra-7701-level": {
-        "quest": 7701,
-        "kind": "accept",
-        "index": 0,
-        "faction": "Alliance",
-        "chapter": "Ding80's Loremaster Alliance Guides\\\\Eastern Kingdoms\\\\[50] Searing Gorge",
-        "source": "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-EasternKingdoms.lua",
-        "line": 2765
-      },
-      "alliance-extra-7701-accept": {
-        "quest": 7701,
-        "kind": "accept",
-        "index": 0,
-        "faction": "Alliance",
-        "chapter": "Ding80's Loremaster Alliance Guides\\\\Eastern Kingdoms\\\\[50] Searing Gorge",
-        "source": "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-EasternKingdoms.lua",
-        "line": 2765
-      },
-      "alliance-extra-7701-objective": {
-        "quest": 7701,
-        "kind": "objective",
-        "index": 1,
-        "faction": "Alliance",
-        "chapter": "Ding80's Loremaster Alliance Guides\\\\Eastern Kingdoms\\\\[50] Searing Gorge",
-        "source": "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-EasternKingdoms.lua",
-        "line": 2930
-      },
-      "alliance-extra-7701-turnin": {
-        "quest": 7701,
-        "kind": "turnin",
-        "index": 0,
-        "faction": "Alliance",
-        "chapter": "Ding80's Loremaster Alliance Guides\\\\Eastern Kingdoms\\\\[50] Searing Gorge",
-        "source": "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-EasternKingdoms.lua",
-        "line": 2949
-      },
-      "alliance-extra-7722-level": {
-        "quest": 7722,
-        "kind": "accept",
-        "index": 0,
-        "faction": "Alliance",
-        "chapter": "Ding80's Loremaster Alliance Guides\\\\Eastern Kingdoms\\\\[50] Searing Gorge",
-        "source": "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-EasternKingdoms.lua",
-        "line": 2781
-      },
-      "alliance-extra-7722-accept": {
-        "quest": 7722,
-        "kind": "accept",
-        "index": 0,
-        "faction": "Alliance",
-        "chapter": "Ding80's Loremaster Alliance Guides\\\\Eastern Kingdoms\\\\[50] Searing Gorge",
-        "source": "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-EasternKingdoms.lua",
-        "line": 2781
-      },
-      "alliance-extra-7722-objective": {
-        "quest": 7722,
-        "kind": "objective",
-        "index": 1,
-        "faction": "Alliance",
-        "chapter": "Ding80's Loremaster Alliance Guides\\\\Eastern Kingdoms\\\\[50] Searing Gorge",
-        "source": "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-EasternKingdoms.lua",
-        "line": 2933
-      },
-      "alliance-extra-7722-turnin": {
-        "quest": 7722,
-        "kind": "turnin",
-        "index": 0,
-        "faction": "Alliance",
-        "chapter": "Ding80's Loremaster Alliance Guides\\\\Eastern Kingdoms\\\\[50] Searing Gorge",
-        "source": "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-EasternKingdoms.lua",
-        "line": 2965
-      },
       "horde-extra-7701-level": {
         "quest": 7701,
         "kind": "accept",
@@ -28921,24 +28718,6 @@
         "chapter": "Zygor's Horde Leveling Guides\\\\Levels (50-55)",
         "source": "ZygorGuidesViewerRM/Guides/Leveling/ZygorGuidesHorde.lua",
         "line": 10412
-      },
-      "horde-extra-7701-objective": {
-        "quest": 7701,
-        "kind": "objective",
-        "index": 1,
-        "faction": "Horde",
-        "chapter": "Zygor's Horde Leveling Guides\\\\Levels (50-55)",
-        "source": "ZygorGuidesViewerRM/Guides/Leveling/ZygorGuidesHorde.lua",
-        "line": 10513
-      },
-      "horde-extra-7701-turnin": {
-        "quest": 7701,
-        "kind": "turnin",
-        "index": 0,
-        "faction": "Horde",
-        "chapter": "Zygor's Horde Leveling Guides\\\\Levels (50-55)",
-        "source": "ZygorGuidesViewerRM/Guides/Leveling/ZygorGuidesHorde.lua",
-        "line": 10530
       },
       "horde-extra-7722-level": {
         "quest": 7722,
@@ -28958,6 +28737,15 @@
         "source": "ZygorGuidesViewerRM/Guides/Leveling/ZygorGuidesHorde.lua",
         "line": 10423
       },
+      "horde-extra-7701-objective": {
+        "quest": 7701,
+        "kind": "objective",
+        "index": 1,
+        "faction": "Horde",
+        "chapter": "Zygor's Horde Leveling Guides\\\\Levels (50-55)",
+        "source": "ZygorGuidesViewerRM/Guides/Leveling/ZygorGuidesHorde.lua",
+        "line": 10513
+      },
       "horde-extra-7722-objective": {
         "quest": 7722,
         "kind": "objective",
@@ -28967,6 +28755,15 @@
         "source": "ZygorGuidesViewerRM/Guides/Leveling/ZygorGuidesHorde.lua",
         "line": 10519
       },
+      "horde-extra-7701-turnin": {
+        "quest": 7701,
+        "kind": "turnin",
+        "index": 0,
+        "faction": "Horde",
+        "chapter": "Zygor's Horde Leveling Guides\\\\Levels (50-55)",
+        "source": "ZygorGuidesViewerRM/Guides/Leveling/ZygorGuidesHorde.lua",
+        "line": 10530
+      },
       "horde-extra-7722-turnin": {
         "quest": 7722,
         "kind": "turnin",
@@ -28975,6 +28772,78 @@
         "chapter": "Zygor's Horde Leveling Guides\\\\Levels (50-55)",
         "source": "ZygorGuidesViewerRM/Guides/Leveling/ZygorGuidesHorde.lua",
         "line": 10545
+      },
+      "alliance-extra-7701-level": {
+        "quest": 7701,
+        "kind": "accept",
+        "index": 0,
+        "faction": "Alliance",
+        "chapter": "Ding80's Loremaster Alliance Guides\\\\Eastern Kingdoms\\\\[50] Searing Gorge",
+        "source": "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-EasternKingdoms.lua",
+        "line": 2765
+      },
+      "alliance-extra-7701-accept": {
+        "quest": 7701,
+        "kind": "accept",
+        "index": 0,
+        "faction": "Alliance",
+        "chapter": "Ding80's Loremaster Alliance Guides\\\\Eastern Kingdoms\\\\[50] Searing Gorge",
+        "source": "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-EasternKingdoms.lua",
+        "line": 2765
+      },
+      "alliance-extra-7722-level": {
+        "quest": 7722,
+        "kind": "accept",
+        "index": 0,
+        "faction": "Alliance",
+        "chapter": "Ding80's Loremaster Alliance Guides\\\\Eastern Kingdoms\\\\[50] Searing Gorge",
+        "source": "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-EasternKingdoms.lua",
+        "line": 2781
+      },
+      "alliance-extra-7722-accept": {
+        "quest": 7722,
+        "kind": "accept",
+        "index": 0,
+        "faction": "Alliance",
+        "chapter": "Ding80's Loremaster Alliance Guides\\\\Eastern Kingdoms\\\\[50] Searing Gorge",
+        "source": "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-EasternKingdoms.lua",
+        "line": 2781
+      },
+      "alliance-extra-7701-objective": {
+        "quest": 7701,
+        "kind": "objective",
+        "index": 1,
+        "faction": "Alliance",
+        "chapter": "Ding80's Loremaster Alliance Guides\\\\Eastern Kingdoms\\\\[50] Searing Gorge",
+        "source": "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-EasternKingdoms.lua",
+        "line": 2930
+      },
+      "alliance-extra-7722-objective": {
+        "quest": 7722,
+        "kind": "objective",
+        "index": 1,
+        "faction": "Alliance",
+        "chapter": "Ding80's Loremaster Alliance Guides\\\\Eastern Kingdoms\\\\[50] Searing Gorge",
+        "source": "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-EasternKingdoms.lua",
+        "line": 2933
+      },
+      "alliance-extra-7701-turnin": {
+        "quest": 7701,
+        "kind": "turnin",
+        "index": 0,
+        "faction": "Alliance",
+        "chapter": "Ding80's Loremaster Alliance Guides\\\\Eastern Kingdoms\\\\[50] Searing Gorge",
+        "source": "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-EasternKingdoms.lua",
+        "line": 2949
+      },
+      "alliance-extra-7722-turnin": {
+        "quest": 7722,
+        "kind": "turnin",
+        "index": 0,
+        "faction": "Alliance",
+        "chapter": "Ding80's Loremaster Alliance Guides\\\\Eastern Kingdoms\\\\[50] Searing Gorge",
+        "source": "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-EasternKingdoms.lua",
+        "line": 2965
       }
     }
   }

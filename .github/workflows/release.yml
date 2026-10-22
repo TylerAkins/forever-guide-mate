@@ -29,6 +29,11 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Set up Go
+        uses: actions/setup-go@924ae3a1cded613372ab5595356fb5720e22ba16 # v6
+        with:
+          go-version: "1.27.3"
+
       - name: Validate release version
         id: release
         env:
@@ -40,7 +45,7 @@ jobs:
             echo "VERSION ${VERSION} does not match tag ${GITHUB_REF_NAME}" >&2
             exit 1
           fi
-          python3 tools/guide_release.py validate-notes --version "$VERSION"
+          go run ./cmd/guide-release validate-notes --version "$VERSION"
           if gh release view "$GITHUB_REF_NAME" >/dev/null 2>&1; then
             echo "exists=true" >> "$GITHUB_OUTPUT"
           else
@@ -70,10 +75,10 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Set up Python
-        uses: actions/setup-python@v7
+      - name: Set up Go
+        uses: actions/setup-go@924ae3a1cded613372ab5595356fb5720e22ba16 # v6
         with:
-          python-version: "3.12"
+          go-version: "1.27.3"
 
       - name: Plan automated release
         id: release
@@ -105,7 +110,7 @@ jobs:
           fi
           PREVIOUS_VERSION="$(git show "${BEFORE_SHA}:VERSION" | tr -d '[:space:]')"
           CURRENT_VERSION="$(tr -d '[:space:]' < VERSION)"
-          TAG="$(python3 tools/guide_release.py validate \
+          TAG="$(go run ./cmd/guide-release validate \
             --previous-version "$PREVIOUS_VERSION" \
             --current-version "$CURRENT_VERSION" \
             --release-content-changed)"
@@ -121,11 +126,11 @@ jobs:
           git fetch --force --tags origin
           if git show-ref --verify --quiet "refs/tags/${RELEASE_TAG}"; then
             EXISTING_SHA="$(git rev-list -n 1 "$RELEASE_TAG")"
-            TAG_ACTION="$(python3 tools/guide_release.py validate-tag \
+            TAG_ACTION="$(go run ./cmd/guide-release validate-tag \
               --existing-sha "$EXISTING_SHA" \
               --target-sha "$GITHUB_SHA")"
           else
-            TAG_ACTION="$(python3 tools/guide_release.py validate-tag \
+            TAG_ACTION="$(go run ./cmd/guide-release validate-tag \
               --target-sha "$GITHUB_SHA")"
           fi
 
@@ -153,17 +158,15 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Set up Python
-        uses: actions/setup-python@v7
+      - name: Set up Go
+        uses: actions/setup-go@924ae3a1cded613372ab5595356fb5720e22ba16 # v6
         with:
-          python-version: "3.12"
+          go-version: "1.27.3"
 
-      - name: Python tests
-        run: |
-          python3 -m pip install -r tests/requirements.txt
-          python3 -m unittest discover -s tests
-          python3 tests/test_guide_release.py
-          python3 tests/test_update_forever_interface.py
+      - run: sudo apt-get update && sudo apt-get install --yes luajit
+
+      - name: Go tests
+        run: go test $(go list ./... | grep -v '/internal/luatests$')
 
       - name: Package addon zip
         uses: BigWigsMods/packager@v2

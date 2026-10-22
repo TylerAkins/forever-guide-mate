@@ -10,9 +10,13 @@
     "leveling-era-horde-felwood-and-winterspring",
     "leveling-era-horde-ungoro-crater",
     "leveling-era-horde-felwood-and-winterspring-part-2",
-    "leveling-era-horde-winterspring"
+    "leveling-era-horde-winterspring",
+    "leveling-era-alliance-blasted-lands-and-burning-steppes",
+    "leveling-era-alliance-burning-steppes",
+    "leveling-era-alliance-winterspring"
   ],
   "spineActions": [
+    "alliance-leveling-era-alliance-blasted-lands-and-burning-steppes-accept-4512-a-little-slime-goes-a-long-way",
     "alliance-leveling-era-alliance-azshara-and-felwood-accept-4101-cleansing-felwood",
     "alliance-leveling-era-alliance-azshara-and-felwood-level-before-accept-5155-forces-of-jaedenar",
     "alliance-leveling-era-alliance-azshara-and-felwood-accept-5155-forces-of-jaedenar",
@@ -23,10 +27,13 @@
     "alliance-leveling-era-alliance-azshara-and-felwood-objective-8460-3-deadwood-gardener",
     "alliance-leveling-era-alliance-azshara-and-felwood-turnin-8460-timbermaw-ally",
     "alliance-leveling-era-alliance-azshara-and-felwood-accept-8462-speak-to-nafien",
+    "alliance-leveling-era-alliance-azshara-and-felwood-objective-4512-1-package-of-empty-ooze-containers",
     "alliance-leveling-era-alliance-azshara-and-felwood-objective-4421-reviewed-4",
     "alliance-leveling-era-alliance-azshara-and-felwood-objective-4421-2-jadefire-shadowstalker",
+    "alliance-leveling-era-alliance-azshara-and-felwood-objective-4512-1-cursed-ooze",
     "alliance-leveling-era-alliance-azshara-and-felwood-objective-4421-3-jadefire-rogue",
     "alliance-leveling-era-alliance-azshara-and-felwood-objective-4421-1-jadefire-felsworn",
+    "alliance-leveling-era-alliance-azshara-and-felwood-objective-4512-2-tainted-ooze",
     "alliance-leveling-era-alliance-azshara-and-felwood-objective-5155-1-jaedenar-hound",
     "alliance-leveling-era-alliance-azshara-and-felwood-objective-5155-2-jaedenar-guardian",
     "alliance-leveling-era-alliance-azshara-and-felwood-objective-5155-3-jaedenar-adept",
@@ -84,10 +91,18 @@
     "alliance-leveling-era-alliance-winterspring-and-felwood-objective-5165-3-authored-Brazier-of-Suffering",
     "alliance-leveling-era-alliance-winterspring-and-felwood-objective-5165-2-authored-Brazier-of-Malice",
     "alliance-leveling-era-alliance-winterspring-and-felwood-turnin-5165-dousing-the-flames-of-protection",
+    "alliance-leveling-era-alliance-winterspring-and-felwood-accept-8464-winterfall-activity",
     "alliance-leveling-era-alliance-winterspring-and-felwood-loot-starter-before-accept-8470-deadwood-ritual-totem",
     "alliance-leveling-era-alliance-winterspring-and-felwood-accept-8470-deadwood-ritual-totem",
     "alliance-leveling-era-alliance-winterspring-and-felwood-objective-8470-quest-work",
     "alliance-leveling-era-alliance-winterspring-and-felwood-turnin-8470-deadwood-ritual-totem",
+    "alliance-leveling-era-alliance-winterspring-and-felwood-objective-4512-1-filled-cursed-ooze-jar",
+    "alliance-leveling-era-alliance-burning-steppes-objective-4512-quest-work",
+    "alliance-leveling-era-alliance-burning-steppes-turnin-4512-a-little-slime-goes-a-long-way",
+    "alliance-leveling-era-alliance-winterspring-objective-8464-1-winterfall-shaman",
+    "alliance-leveling-era-alliance-winterspring-objective-8464-2-winterfall-den-watcher",
+    "alliance-leveling-era-alliance-winterspring-objective-8464-3-winterfall-ursa",
+    "alliance-leveling-era-alliance-winterspring-turnin-8464-winterfall-activity",
     "horde-leveling-era-horde-felwood-and-winterspring-level-before-accept-5155-forces-of-jaedenar",
     "horde-leveling-era-horde-felwood-and-winterspring-accept-5155-forces-of-jaedenar",
     "horde-leveling-era-horde-felwood-and-winterspring-accept-5156-verifying-the-corruption",
@@ -150,7 +165,15 @@
     "horde-leveling-era-horde-felwood-and-winterspring-part-2-loot-starter-before-accept-8470-deadwood-ritual-totem",
     "horde-leveling-era-horde-felwood-and-winterspring-part-2-accept-8470-deadwood-ritual-totem",
     "horde-leveling-era-horde-felwood-and-winterspring-part-2-objective-8470-quest-work",
-    "horde-leveling-era-horde-felwood-and-winterspring-part-2-turnin-8470-deadwood-ritual-totem"
+    "horde-leveling-era-horde-felwood-and-winterspring-part-2-turnin-8470-deadwood-ritual-totem",
+    "horde-leveling-era-horde-felwood-and-winterspring-part-2-accept-8464-winterfall-activity",
+    "horde-leveling-era-horde-winterspring-objective-8464-1-winterfall-shaman",
+    "horde-leveling-era-horde-winterspring-objective-8464-2-winterfall-den-watcher",
+    "horde-leveling-era-horde-winterspring-objective-8464-3-winterfall-ursa",
+    "horde-leveling-era-horde-winterspring-turnin-8464-winterfall-activity",
+    "horde-leveling-era-horde-winterspring-objective-6031-1-deadwood-den-watcher",
+    "horde-leveling-era-horde-winterspring-accept-6031-runecloth",
+    "horde-leveling-era-horde-winterspring-turnin-6031-runecloth"
   ],
   "placements": [
     {
@@ -1278,6 +1301,167 @@
       "actions": [
         "horde-extra-5242-turnin"
       ],
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "visit-entry-leveling-era-alliance-blasted-lands-and-burning-steppes"
+      ],
+      "anchor": "visit-entry-leveling-era-alliance-blasted-lands-and-burning-steppes",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "alliance-leveling-era-alliance-blasted-lands-and-burning-steppes-accept-4512-a-little-slime-goes-a-long-way"
+      ],
+      "anchor": "visit-entry-leveling-era-alliance-blasted-lands-and-burning-steppes",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "alliance-leveling-era-alliance-azshara-and-felwood-objective-4512-1-package-of-empty-ooze-containers"
+      ],
+      "anchor": "alliance-leveling-era-alliance-azshara-and-felwood-accept-8462-speak-to-nafien",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "alliance-leveling-era-alliance-azshara-and-felwood-objective-4512-1-cursed-ooze"
+      ],
+      "anchor": "alliance-leveling-era-alliance-azshara-and-felwood-objective-4421-2-jadefire-shadowstalker",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "alliance-leveling-era-alliance-azshara-and-felwood-objective-4512-2-tainted-ooze"
+      ],
+      "anchor": "alliance-leveling-era-alliance-azshara-and-felwood-objective-4421-1-jadefire-felsworn",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "alliance-leveling-era-alliance-winterspring-and-felwood-accept-8464-winterfall-activity"
+      ],
+      "anchor": "alliance-leveling-era-alliance-winterspring-and-felwood-turnin-5165-dousing-the-flames-of-protection",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "alliance-leveling-era-alliance-winterspring-and-felwood-objective-4512-1-filled-cursed-ooze-jar"
+      ],
+      "anchor": "alliance-leveling-era-alliance-winterspring-and-felwood-turnin-8470-deadwood-ritual-totem",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "visit-entry-leveling-era-alliance-burning-steppes"
+      ],
+      "anchor": "alliance-leveling-era-alliance-winterspring-and-felwood-objective-4512-1-filled-cursed-ooze-jar",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "alliance-leveling-era-alliance-burning-steppes-objective-4512-quest-work"
+      ],
+      "anchor": "visit-entry-leveling-era-alliance-burning-steppes",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "alliance-leveling-era-alliance-burning-steppes-turnin-4512-a-little-slime-goes-a-long-way"
+      ],
+      "anchor": "alliance-leveling-era-alliance-burning-steppes-objective-4512-quest-work",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "visit-entry-leveling-era-alliance-winterspring"
+      ],
+      "anchor": "alliance-leveling-era-alliance-burning-steppes-turnin-4512-a-little-slime-goes-a-long-way",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "alliance-leveling-era-alliance-winterspring-objective-8464-1-winterfall-shaman"
+      ],
+      "anchor": "visit-entry-leveling-era-alliance-winterspring",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "alliance-leveling-era-alliance-winterspring-objective-8464-2-winterfall-den-watcher"
+      ],
+      "anchor": "alliance-extra-5242-turnin",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "alliance-leveling-era-alliance-winterspring-objective-8464-3-winterfall-ursa"
+      ],
+      "anchor": "alliance-leveling-era-alliance-winterspring-objective-8464-2-winterfall-den-watcher",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "alliance-leveling-era-alliance-winterspring-turnin-8464-winterfall-activity"
+      ],
+      "anchor": "alliance-leveling-era-alliance-winterspring-objective-8464-3-winterfall-ursa",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "horde-leveling-era-horde-felwood-and-winterspring-part-2-accept-8464-winterfall-activity"
+      ],
+      "anchor": "horde-leveling-era-horde-felwood-and-winterspring-part-2-turnin-8470-deadwood-ritual-totem",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "horde-leveling-era-horde-winterspring-objective-8464-1-winterfall-shaman"
+      ],
+      "anchor": "visit-entry-leveling-era-horde-winterspring",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "horde-leveling-era-horde-winterspring-objective-8464-2-winterfall-den-watcher"
+      ],
+      "anchor": "horde-leveling-era-horde-winterspring-objective-8464-1-winterfall-shaman",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "horde-leveling-era-horde-winterspring-objective-8464-3-winterfall-ursa"
+      ],
+      "anchor": "horde-leveling-era-horde-winterspring-objective-8464-2-winterfall-den-watcher",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "horde-leveling-era-horde-winterspring-turnin-8464-winterfall-activity"
+      ],
+      "anchor": "horde-leveling-era-horde-winterspring-objective-8464-3-winterfall-ursa",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "horde-leveling-era-horde-winterspring-objective-6031-1-deadwood-den-watcher"
+      ],
+      "anchor": "horde-leveling-era-horde-winterspring-turnin-8464-winterfall-activity",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "horde-leveling-era-horde-winterspring-accept-6031-runecloth"
+      ],
+      "anchor": "horde-leveling-era-horde-winterspring-objective-6031-1-deadwood-den-watcher",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "horde-leveling-era-horde-winterspring-turnin-6031-runecloth"
+      ],
+      "anchor": "horde-leveling-era-horde-winterspring-accept-6031-runecloth",
       "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
     }
   ],
@@ -18160,7 +18344,7 @@
             "sharable": true,
             "weekly": false
           },
-          "name": "<NYI> <TXT> The True Summoner",
+          "name": "\u003cNYI\u003e \u003cTXT\u003e The True Summoner",
           "prerequisiteReferences": [],
           "questLevel": 49,
           "races": [],
@@ -18196,7 +18380,7 @@
             "sharable": true,
             "weekly": false
           },
-          "name": "<NYI> <TXT> The Blessing of Evil",
+          "name": "\u003cNYI\u003e \u003cTXT\u003e The Blessing of Evil",
           "prerequisiteReferences": [],
           "questLevel": 49,
           "races": [],
@@ -18232,7 +18416,7 @@
             "sharable": true,
             "weekly": false
           },
-          "name": "<UNUSED>",
+          "name": "\u003cUNUSED\u003e",
           "prerequisiteReferences": [],
           "questLevel": 49,
           "races": [],
@@ -54036,6 +54220,1106 @@
       "supporting": false,
       "status": "spine",
       "reason": "Preserved faction Casual actions."
+    },
+    "6031": {
+      "catalogs": [
+        "felwood"
+      ],
+      "evidence": {
+        "artifactVersion": "1.0.6-dev.f844007",
+        "buildCommit": "f844007b329b72f18cf2bda3d87540012294732a",
+        "source": "QuestieDB"
+      },
+      "locations": [
+        {
+          "coord": [
+            65.69,
+            2.81
+          ],
+          "id": 11557,
+          "name": "Meilosh",
+          "point": "start",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Felwood"
+        },
+        {
+          "coord": [
+            65.69,
+            2.81
+          ],
+          "id": 11557,
+          "name": "Meilosh",
+          "point": "end",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Felwood"
+        }
+      ],
+      "supporting": false,
+      "status": "included",
+      "reason": "Authored for an applicable faction; other faction limitations are recorded separately.",
+      "factionNotes": "requiredMinRep requires reviewed mechanics not represented by this authoring tool"
+    },
+    "6032": {
+      "catalogs": [
+        "felwood"
+      ],
+      "evidence": {
+        "artifactVersion": "1.0.6-dev.f844007",
+        "buildCommit": "f844007b329b72f18cf2bda3d87540012294732a",
+        "source": "QuestieDB"
+      },
+      "locations": [
+        {
+          "coord": [
+            65.69,
+            2.81
+          ],
+          "id": 11557,
+          "name": "Meilosh",
+          "point": "start",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Felwood"
+        },
+        {
+          "coord": [
+            65.69,
+            2.81
+          ],
+          "id": 11557,
+          "name": "Meilosh",
+          "point": "end",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Felwood"
+        }
+      ],
+      "supporting": false,
+      "status": "unresolved",
+      "reason": "requiredMinRep requires reviewed mechanics not represented by this authoring tool"
+    },
+    "8464": {
+      "catalogs": [
+        "felwood"
+      ],
+      "evidence": {
+        "artifactVersion": "1.0.6-dev.f844007",
+        "buildCommit": "f844007b329b72f18cf2bda3d87540012294732a",
+        "source": "QuestieDB"
+      },
+      "locations": [
+        {
+          "coord": [
+            27.73,
+            34.5
+          ],
+          "id": 11556,
+          "name": "Salfa",
+          "point": "start",
+          "reactalliance": 1,
+          "reacthorde": 1,
+          "type": 1,
+          "zone": "Winterspring"
+        },
+        {
+          "coord": [
+            27.73,
+            34.5
+          ],
+          "id": 11556,
+          "name": "Salfa",
+          "point": "end",
+          "reactalliance": 1,
+          "reacthorde": 1,
+          "type": 1,
+          "zone": "Winterspring"
+        }
+      ],
+      "supporting": false,
+      "status": "spine",
+      "reason": "Preserved faction Casual actions."
+    },
+    "8481": {
+      "catalogs": [
+        "felwood"
+      ],
+      "evidence": {
+        "artifactVersion": "1.0.6-dev.f844007",
+        "buildCommit": "f844007b329b72f18cf2bda3d87540012294732a",
+        "source": "QuestieDB"
+      },
+      "locations": [
+        {
+          "coord": [
+            65.18,
+            2.68
+          ],
+          "id": 11555,
+          "name": "Gorn One Eye",
+          "point": "start",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Felwood"
+        },
+        {
+          "coord": [
+            65.18,
+            2.68
+          ],
+          "id": 11555,
+          "name": "Gorn One Eye",
+          "point": "end",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Felwood"
+        }
+      ],
+      "supporting": false,
+      "status": "unresolved",
+      "reason": "requiredMinRep requires reviewed mechanics not represented by this authoring tool; extraObjectives requires reviewed mechanics not represented by this authoring tool"
+    },
+    "8485": {
+      "catalogs": [
+        "felwood"
+      ],
+      "evidence": {
+        "artifactVersion": "1.0.6-dev.f844007",
+        "buildCommit": "f844007b329b72f18cf2bda3d87540012294732a",
+        "source": "QuestieDB"
+      },
+      "locations": [
+        {
+          "coord": [
+            65.18,
+            2.68
+          ],
+          "id": 11555,
+          "name": "Gorn One Eye",
+          "point": "start",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Felwood"
+        },
+        {
+          "coord": [
+            31.73,
+            37.82
+          ],
+          "id": 4949,
+          "name": "Thrall",
+          "point": "end",
+          "reactalliance": -1,
+          "reacthorde": 1,
+          "type": 1,
+          "zone": "Orgrimmar"
+        }
+      ],
+      "supporting": false,
+      "status": "unresolved",
+      "reason": "requiredMinRep requires reviewed mechanics not represented by this authoring tool"
+    },
+    "4512": {
+      "catalogs": [
+        "ironforge"
+      ],
+      "evidence": {
+        "artifactVersion": "1.0.6-dev.f844007",
+        "buildCommit": "f844007b329b72f18cf2bda3d87540012294732a",
+        "source": "QuestieDB"
+      },
+      "locations": [
+        {
+          "coord": [
+            75.77,
+            23.38
+          ],
+          "id": 9616,
+          "name": "Laris Geardawdle",
+          "point": "start",
+          "reactalliance": 1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Ironforge"
+        },
+        {
+          "coord": [
+            75.77,
+            23.38
+          ],
+          "id": 9616,
+          "name": "Laris Geardawdle",
+          "point": "end",
+          "reactalliance": 1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Ironforge"
+        },
+        {
+          "coord": [
+            41.19,
+            70.9
+          ],
+          "id": 7086,
+          "item": "Filled Cursed Ooze Jar",
+          "name": "Cursed Ooze",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Felwood"
+        },
+        {
+          "coord": [
+            40.65,
+            71.26
+          ],
+          "id": 7086,
+          "item": "Filled Cursed Ooze Jar",
+          "name": "Cursed Ooze",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Felwood"
+        },
+        {
+          "coord": [
+            40.72,
+            71.9
+          ],
+          "id": 7086,
+          "item": "Filled Cursed Ooze Jar",
+          "name": "Cursed Ooze",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Felwood"
+        },
+        {
+          "coord": [
+            39.22,
+            71.05
+          ],
+          "id": 7086,
+          "item": "Filled Cursed Ooze Jar",
+          "name": "Cursed Ooze",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Felwood"
+        },
+        {
+          "coord": [
+            39.67,
+            71.22
+          ],
+          "id": 7086,
+          "item": "Filled Cursed Ooze Jar",
+          "name": "Cursed Ooze",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Felwood"
+        },
+        {
+          "coord": [
+            39.94,
+            72.49
+          ],
+          "id": 7086,
+          "item": "Filled Cursed Ooze Jar",
+          "name": "Cursed Ooze",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Felwood"
+        },
+        {
+          "coord": [
+            38.69,
+            72.74
+          ],
+          "id": 7086,
+          "item": "Filled Cursed Ooze Jar",
+          "name": "Cursed Ooze",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Felwood"
+        },
+        {
+          "coord": [
+            40.38,
+            72.48
+          ],
+          "id": 7086,
+          "item": "Filled Cursed Ooze Jar",
+          "name": "Cursed Ooze",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Felwood"
+        },
+        {
+          "coord": [
+            40.17,
+            70.82
+          ],
+          "id": 7086,
+          "item": "Filled Cursed Ooze Jar",
+          "name": "Cursed Ooze",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Felwood"
+        },
+        {
+          "coord": [
+            40.23,
+            65.75
+          ],
+          "id": 7086,
+          "item": "Filled Cursed Ooze Jar",
+          "name": "Cursed Ooze",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Felwood"
+        },
+        {
+          "coord": [
+            40.06,
+            67.52
+          ],
+          "id": 7086,
+          "item": "Filled Cursed Ooze Jar",
+          "name": "Cursed Ooze",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Felwood"
+        },
+        {
+          "coord": [
+            40.47,
+            67.56
+          ],
+          "id": 7086,
+          "item": "Filled Cursed Ooze Jar",
+          "name": "Cursed Ooze",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Felwood"
+        },
+        {
+          "coord": [
+            40.92,
+            66.13
+          ],
+          "id": 7086,
+          "item": "Filled Cursed Ooze Jar",
+          "name": "Cursed Ooze",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Felwood"
+        },
+        {
+          "coord": [
+            41.85,
+            67.16
+          ],
+          "id": 7086,
+          "item": "Filled Cursed Ooze Jar",
+          "name": "Cursed Ooze",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Felwood"
+        },
+        {
+          "coord": [
+            41.1,
+            66.9
+          ],
+          "id": 7086,
+          "item": "Filled Cursed Ooze Jar",
+          "name": "Cursed Ooze",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Felwood"
+        },
+        {
+          "coord": [
+            41.57,
+            66.7
+          ],
+          "id": 7086,
+          "item": "Filled Cursed Ooze Jar",
+          "name": "Cursed Ooze",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Felwood"
+        },
+        {
+          "coord": [
+            41.69,
+            67.91
+          ],
+          "id": 7086,
+          "item": "Filled Cursed Ooze Jar",
+          "name": "Cursed Ooze",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Felwood"
+        },
+        {
+          "coord": [
+            42.22,
+            67.66
+          ],
+          "id": 7086,
+          "item": "Filled Cursed Ooze Jar",
+          "name": "Cursed Ooze",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Felwood"
+        },
+        {
+          "coord": [
+            40.63,
+            70.6
+          ],
+          "id": 7086,
+          "item": "Filled Cursed Ooze Jar",
+          "name": "Cursed Ooze",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Felwood"
+        },
+        {
+          "coord": [
+            38.76,
+            71.47
+          ],
+          "id": 7086,
+          "item": "Filled Cursed Ooze Jar",
+          "name": "Cursed Ooze",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Felwood"
+        },
+        {
+          "coord": [
+            38.94,
+            71.94
+          ],
+          "id": 7086,
+          "item": "Filled Cursed Ooze Jar",
+          "name": "Cursed Ooze",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Felwood"
+        },
+        {
+          "coord": [
+            39.02,
+            72.59
+          ],
+          "id": 7086,
+          "item": "Filled Cursed Ooze Jar",
+          "name": "Cursed Ooze",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Felwood"
+        },
+        {
+          "coord": [
+            40.12,
+            68.22
+          ],
+          "id": 7086,
+          "item": "Filled Cursed Ooze Jar",
+          "name": "Cursed Ooze",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Felwood"
+        },
+        {
+          "coord": [
+            40.4,
+            66.64
+          ],
+          "id": 7086,
+          "item": "Filled Cursed Ooze Jar",
+          "name": "Cursed Ooze",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Felwood"
+        },
+        {
+          "coord": [
+            42.64,
+            47.58
+          ],
+          "id": 7092,
+          "item": "Filled Tainted Ooze Jar",
+          "name": "Tainted Ooze",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Felwood"
+        },
+        {
+          "coord": [
+            42.2,
+            46.46
+          ],
+          "id": 7092,
+          "item": "Filled Tainted Ooze Jar",
+          "name": "Tainted Ooze",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Felwood"
+        },
+        {
+          "coord": [
+            39.99,
+            56.04
+          ],
+          "id": 7092,
+          "item": "Filled Tainted Ooze Jar",
+          "name": "Tainted Ooze",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Felwood"
+        },
+        {
+          "coord": [
+            40.5,
+            55.71
+          ],
+          "id": 7092,
+          "item": "Filled Tainted Ooze Jar",
+          "name": "Tainted Ooze",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Felwood"
+        },
+        {
+          "coord": [
+            39.72,
+            54.88
+          ],
+          "id": 7092,
+          "item": "Filled Tainted Ooze Jar",
+          "name": "Tainted Ooze",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Felwood"
+        },
+        {
+          "coord": [
+            39.28,
+            54.48
+          ],
+          "id": 7092,
+          "item": "Filled Tainted Ooze Jar",
+          "name": "Tainted Ooze",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Felwood"
+        },
+        {
+          "coord": [
+            40.09,
+            55.38
+          ],
+          "id": 7092,
+          "item": "Filled Tainted Ooze Jar",
+          "name": "Tainted Ooze",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Felwood"
+        },
+        {
+          "coord": [
+            40.1,
+            54.72
+          ],
+          "id": 7092,
+          "item": "Filled Tainted Ooze Jar",
+          "name": "Tainted Ooze",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Felwood"
+        },
+        {
+          "coord": [
+            39.54,
+            54.04
+          ],
+          "id": 7092,
+          "item": "Filled Tainted Ooze Jar",
+          "name": "Tainted Ooze",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Felwood"
+        },
+        {
+          "coord": [
+            39.14,
+            54.59
+          ],
+          "id": 7092,
+          "item": "Filled Tainted Ooze Jar",
+          "name": "Tainted Ooze",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Felwood"
+        },
+        {
+          "coord": [
+            40.45,
+            54.14
+          ],
+          "id": 7092,
+          "item": "Filled Tainted Ooze Jar",
+          "name": "Tainted Ooze",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Felwood"
+        },
+        {
+          "coord": [
+            40.3,
+            58.93
+          ],
+          "id": 7092,
+          "item": "Filled Tainted Ooze Jar",
+          "name": "Tainted Ooze",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Felwood"
+        },
+        {
+          "coord": [
+            40.62,
+            59.41
+          ],
+          "id": 7092,
+          "item": "Filled Tainted Ooze Jar",
+          "name": "Tainted Ooze",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Felwood"
+        },
+        {
+          "coord": [
+            40.01,
+            48.09
+          ],
+          "id": 7092,
+          "item": "Filled Tainted Ooze Jar",
+          "name": "Tainted Ooze",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Felwood"
+        },
+        {
+          "coord": [
+            39.5,
+            49.25
+          ],
+          "id": 7092,
+          "item": "Filled Tainted Ooze Jar",
+          "name": "Tainted Ooze",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Felwood"
+        },
+        {
+          "coord": [
+            39.61,
+            48.35
+          ],
+          "id": 7092,
+          "item": "Filled Tainted Ooze Jar",
+          "name": "Tainted Ooze",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Felwood"
+        },
+        {
+          "coord": [
+            39.21,
+            48.31
+          ],
+          "id": 7092,
+          "item": "Filled Tainted Ooze Jar",
+          "name": "Tainted Ooze",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Felwood"
+        },
+        {
+          "coord": [
+            34.85,
+            48.41
+          ],
+          "id": 7092,
+          "item": "Filled Tainted Ooze Jar",
+          "name": "Tainted Ooze",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Felwood"
+        },
+        {
+          "coord": [
+            34.18,
+            48.46
+          ],
+          "id": 7092,
+          "item": "Filled Tainted Ooze Jar",
+          "name": "Tainted Ooze",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Felwood"
+        },
+        {
+          "coord": [
+            40.72,
+            59.74
+          ],
+          "id": 7092,
+          "item": "Filled Tainted Ooze Jar",
+          "name": "Tainted Ooze",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Felwood"
+        },
+        {
+          "coord": [
+            40.54,
+            59.07
+          ],
+          "id": 7092,
+          "item": "Filled Tainted Ooze Jar",
+          "name": "Tainted Ooze",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Felwood"
+        },
+        {
+          "coord": [
+            40.89,
+            59.03
+          ],
+          "id": 7092,
+          "item": "Filled Tainted Ooze Jar",
+          "name": "Tainted Ooze",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Felwood"
+        },
+        {
+          "coord": [
+            41.4,
+            45.49
+          ],
+          "id": 7092,
+          "item": "Filled Tainted Ooze Jar",
+          "name": "Tainted Ooze",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Felwood"
+        },
+        {
+          "coord": [
+            43.99,
+            46.35
+          ],
+          "id": 7092,
+          "item": "Filled Tainted Ooze Jar",
+          "name": "Tainted Ooze",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Felwood"
+        },
+        {
+          "coord": [
+            41.93,
+            49.51
+          ],
+          "id": 7092,
+          "item": "Filled Tainted Ooze Jar",
+          "name": "Tainted Ooze",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Felwood"
+        },
+        {
+          "coord": [
+            43.86,
+            48.58
+          ],
+          "id": 7092,
+          "item": "Filled Tainted Ooze Jar",
+          "name": "Tainted Ooze",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Felwood"
+        },
+        {
+          "coord": [
+            42.6,
+            50.43
+          ],
+          "id": 7092,
+          "item": "Filled Tainted Ooze Jar",
+          "name": "Tainted Ooze",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Felwood"
+        },
+        {
+          "coord": [
+            43.47,
+            48.33
+          ],
+          "id": 7092,
+          "item": "Filled Tainted Ooze Jar",
+          "name": "Tainted Ooze",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Felwood"
+        },
+        {
+          "coord": [
+            41.22,
+            47.39
+          ],
+          "id": 7092,
+          "item": "Filled Tainted Ooze Jar",
+          "name": "Tainted Ooze",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Felwood"
+        },
+        {
+          "coord": [
+            42.8,
+            51.07
+          ],
+          "id": 7092,
+          "item": "Filled Tainted Ooze Jar",
+          "name": "Tainted Ooze",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Felwood"
+        },
+        {
+          "coord": [
+            41.74,
+            48.88
+          ],
+          "id": 7092,
+          "item": "Filled Tainted Ooze Jar",
+          "name": "Tainted Ooze",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Felwood"
+        },
+        {
+          "coord": [
+            41.4,
+            50.23
+          ],
+          "id": 7092,
+          "item": "Filled Tainted Ooze Jar",
+          "name": "Tainted Ooze",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Felwood"
+        },
+        {
+          "coord": [
+            38.46,
+            49.16
+          ],
+          "id": 7092,
+          "item": "Filled Tainted Ooze Jar",
+          "name": "Tainted Ooze",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Felwood"
+        },
+        {
+          "coord": [
+            40.94,
+            45.68
+          ],
+          "id": 7092,
+          "item": "Filled Tainted Ooze Jar",
+          "name": "Tainted Ooze",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Felwood"
+        }
+      ],
+      "supporting": false,
+      "status": "spine",
+      "reason": "Preserved faction Casual actions."
+    },
+    "8484": {
+      "catalogs": [
+        "felwood"
+      ],
+      "evidence": {
+        "artifactVersion": "1.0.6-dev.f844007",
+        "buildCommit": "f844007b329b72f18cf2bda3d87540012294732a",
+        "source": "QuestieDB"
+      },
+      "locations": [
+        {
+          "coord": [
+            65.18,
+            2.68
+          ],
+          "id": 11555,
+          "name": "Gorn One Eye",
+          "point": "start",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Felwood"
+        },
+        {
+          "coord": [
+            39.09,
+            56.2
+          ],
+          "id": 2784,
+          "name": "King Magni Bronzebeard",
+          "point": "end",
+          "reactalliance": 1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Ironforge"
+        }
+      ],
+      "supporting": false,
+      "status": "unresolved",
+      "reason": "requiredMinRep requires reviewed mechanics not represented by this authoring tool"
     }
   },
   "supportingQuests": [
@@ -54043,1072 +55327,753 @@
   ],
   "clientWalkthrough": "unverified",
   "sourcePriority": [
-    "wowhead",
-    "questiedb",
-    "allthethings",
-    "foreverclient"
+    "questiedb"
   ],
   "sources": {
-    "databaseCommit": "5c92953420ab4a710fda39581a405a72a89b8c0d",
-    "compilation": {
-      "schemaVersion": 1,
-      "compilationFormatVersion": 2,
-      "flavor": "forever",
-      "source": "compilation",
-      "sourceRevision": "991cc5841d7b79dc85613431aa8ecf6f4c34070753426d60f323e321532d4b66",
-      "recordCount": 107209,
-      "recordsSha256": "9ab82625871b9df3a0ac5781bb194be6d8211a4a6337258fbf82224e00416727",
-      "status": "generated"
+    "questiedb": {
+      "artifactVersion": "1.0.6-dev.f844007",
+      "buildCommit": "f844007b329b72f18cf2bda3d87540012294732a",
+      "counts": {
+        "Item": 21294,
+        "Npc": 13393,
+        "Object": 7035,
+        "Quest": 5232
+      }
     },
     "sourceHashes": {
-      "data/forever/compilation/records.jsonl.gz": "35c74cb11823db372dc0bc289d5ffaf8296ca9d1c370e4f7b794a29af7f84b47"
+      "questiedb/export.json": "e26090e90df3aa2e94be4c13feb001390068b84c249ff2443c629d26a408e704",
+      "questiedb/policy.json": "835ba8f6361ef37bda275859bdb48852001c3ce2b6a2b3ecff586283633e2ad4"
     },
     "upstreamCommit": "9087c457e20fb96e73e5b362dd6fc50324b75718"
   },
   "coverageMode": "zone",
   "orderingEligibility": {
-    "4101": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "4102": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      }
-    },
-    "4103": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "4104": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "4105": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "4106": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "4107": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "4108": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "4109": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "4110": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "4111": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "4112": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "4113": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "4114": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "4115": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "4116": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "4117": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "4118": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "4119": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "6162": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      }
-    },
-    "5155": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      }
-    },
-    "5156": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      }
-    },
-    "5157": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      }
-    },
-    "5158": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      }
-    },
-    "5159": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      }
-    },
-    "5165": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      }
-    },
-    "5202": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      }
-    },
-    "5203": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "5204": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "5207": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "5208": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "5209": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "4721": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      }
-    },
-    "5242": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "4221": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "4222": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "5249": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "4741": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      }
-    },
-    "4261": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "4343": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "5882": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "5883": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "5884": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "5885": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "5886": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "5887": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      }
-    },
-    "5888": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "5889": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "5890": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "5891": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "5385": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "8460": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      }
-    },
-    "8462": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      }
-    },
-    "8465": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      }
-    },
-    "8466": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "8467": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      }
-    },
-    "8469": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "8470": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      }
-    },
-    "3363": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "4906": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "4401": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "4403": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "2878": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "4421": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "4441": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "4442": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "4443": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "4444": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "4445": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "4446": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "4447": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "4448": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "4461": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "4462": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "4464": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "4465": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "4466": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "4467": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "4505": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      }
-    },
-    "4506": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      }
-    },
-    "4521": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
-      "Horde": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      }
-    },
     "939": {
-      "Alliance": {
-        "inCasual": true,
-        "foreverSpecific": false,
-        "upstreamAdvisory": false
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      }
-    },
-    "2523": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
       },
-      "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+      "Alliance": {
+        "inCasual": true
       }
     },
     "996": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
       }
     },
     "998": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
       }
     },
     "1514": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
       }
     },
-    "6131": {
-      "Alliance": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
-      },
+    "2523": {
       "Horde": {
-        "inCasual": false,
-        "foreverSpecific": false,
-        "upstreamAdvisory": true
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "2878": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "3363": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "4101": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "4102": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "4103": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "4104": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "4105": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "4106": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "4107": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "4108": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "4109": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "4110": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "4111": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "4112": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "4113": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "4114": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "4115": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "4116": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "4117": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "4118": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "4119": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "4221": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "4222": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "4261": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "4343": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "4401": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "4403": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "4421": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "4441": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "4442": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "4443": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "4444": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "4445": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "4446": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "4447": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "4448": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "4461": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "4462": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "4464": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "4465": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "4466": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "4467": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "4505": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "4506": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "4512": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "4521": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "4721": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "4741": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "4906": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "5155": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "5156": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "5157": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "5158": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "5159": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "5165": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "5202": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "5203": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "5204": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "5242": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "5249": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "5385": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "5882": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "5883": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "5884": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "5885": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "5886": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "5887": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "5888": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "5889": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "5890": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "5891": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "6031": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "6032": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "6162": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "8460": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "8461": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "8462": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "8464": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "8465": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "8466": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "8467": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "8469": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "8470": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": true
+      }
+    },
+    "8481": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "8484": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "8485": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
       }
     }
   },
@@ -55117,12 +56082,30 @@
     "commit": "9087c457e20fb96e73e5b362dd6fc50324b75718",
     "strict": false,
     "sourceHashes": {
+      "ZygorGuidesViewerRM/Guides/Leveling/ZygorGuidesHorde.lua": "2eaf5adb4865936cdb4257451c3ce920fdaff1c0ec17216c36e055480f389e54",
       "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-EasternKingdoms.lua": "8a5ec87d31698c612e50eb0655f5c1f28d723c3068552c1295d79ddcd934270f",
       "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-Kalimdor.lua": "4fb7b7f5bb2702dfe36ed33de31b4d3105153bfba62b7a14a7ab73386e2087fa",
-      "ZygorGuidesViewerRM/Guides/Leveling/ZygorGuidesAlliance.lua": "ffb9b7828817e098d74ee5931e15a64ce773142a4c1e60f9775d0713121ba67d",
-      "ZygorGuidesViewerRM/Guides/Leveling/ZygorGuidesHorde.lua": "2eaf5adb4865936cdb4257451c3ce920fdaff1c0ec17216c36e055480f389e54"
+      "ZygorGuidesViewerRM/Guides/Leveling/ZygorGuidesAlliance.lua": "ffb9b7828817e098d74ee5931e15a64ce773142a4c1e60f9775d0713121ba67d"
     },
     "matches": {
+      "alliance-extra-5249-level": {
+        "quest": 5249,
+        "kind": "accept",
+        "index": 0,
+        "faction": "Alliance",
+        "chapter": "Zygor's Alliance Leveling Guides\\\\Levels (50-55)",
+        "source": "ZygorGuidesViewerRM/Guides/Leveling/ZygorGuidesAlliance.lua",
+        "line": 11061
+      },
+      "alliance-extra-5249-accept": {
+        "quest": 5249,
+        "kind": "accept",
+        "index": 0,
+        "faction": "Alliance",
+        "chapter": "Zygor's Alliance Leveling Guides\\\\Levels (50-55)",
+        "source": "ZygorGuidesViewerRM/Guides/Leveling/ZygorGuidesAlliance.lua",
+        "line": 11061
+      },
       "alliance-extra-4261-level": {
         "quest": 4261,
         "kind": "accept",
@@ -55194,24 +56177,6 @@
         "chapter": "Ding80's Loremaster Alliance Guides\\\\Kalimdor\\\\[60] Felwood",
         "source": "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-Kalimdor.lua",
         "line": 5587
-      },
-      "alliance-extra-5249-level": {
-        "quest": 5249,
-        "kind": "accept",
-        "index": 0,
-        "faction": "Alliance",
-        "chapter": "Zygor's Alliance Leveling Guides\\\\Levels (50-55)",
-        "source": "ZygorGuidesViewerRM/Guides/Leveling/ZygorGuidesAlliance.lua",
-        "line": 11061
-      },
-      "alliance-extra-5249-accept": {
-        "quest": 5249,
-        "kind": "accept",
-        "index": 0,
-        "faction": "Alliance",
-        "chapter": "Zygor's Alliance Leveling Guides\\\\Levels (50-55)",
-        "source": "ZygorGuidesViewerRM/Guides/Leveling/ZygorGuidesAlliance.lua",
-        "line": 11061
       },
       "alliance-extra-5249-turnin": {
         "quest": 5249,

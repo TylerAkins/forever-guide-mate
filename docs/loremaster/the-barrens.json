@@ -2,30 +2,30 @@
   "guide": "loremaster-the-barrens",
   "title": "The Barrens",
   "sources": {
-    "databaseCommit": "5c92953420ab4a710fda39581a405a72a89b8c0d",
-    "compilation": {
-      "schemaVersion": 1,
-      "compilationFormatVersion": 2,
-      "flavor": "forever",
-      "source": "compilation",
-      "sourceRevision": "991cc5841d7b79dc85613431aa8ecf6f4c34070753426d60f323e321532d4b66",
-      "recordCount": 107209,
-      "recordsSha256": "9ab82625871b9df3a0ac5781bb194be6d8211a4a6337258fbf82224e00416727",
-      "status": "generated"
+    "questiedb": {
+      "artifactVersion": "1.0.6-dev.f844007",
+      "buildCommit": "f844007b329b72f18cf2bda3d87540012294732a",
+      "counts": {
+        "Item": 21294,
+        "Npc": 13393,
+        "Object": 7035,
+        "Quest": 5232
+      }
     },
     "sourceHashes": {
-      "data/forever/raw/quest_index.json": "cb47391391cf9655e1f86b479aae60321ca78726482527c1d38074352baba0a7",
-      "data/forever/compilation/records.jsonl.gz": "35c74cb11823db372dc0bc289d5ffaf8296ca9d1c370e4f7b794a29af7f84b47"
-    }
+      "questiedb/export.json": "e26090e90df3aa2e94be4c13feb001390068b84c249ff2443c629d26a408e704",
+      "questiedb/policy.json": "835ba8f6361ef37bda275859bdb48852001c3ce2b6a2b3ecff586283633e2ad4"
+    },
+    "upstreamCommit": "9087c457e20fb96e73e5b362dd6fc50324b75718"
   },
   "sourcePriority": [
-    "wowhead",
-    "questiedb",
-    "allthethings",
-    "foreverclient"
+    "questiedb"
   ],
   "spine": "leveling-era-horde-the-barrens-and-stonetalon-mountain",
-  "additionalSpines": [],
+  "additionalSpines": [
+    "leveling-era-horde-silverpine-forest",
+    "leveling-era-horde-the-barrens-and-stonetalon-mountain"
+  ],
   "spineActions": [
     "accept-854-journey-to-the-crossroads",
     "turnin-854-journey-to-the-crossroads",
@@ -44,6 +44,16 @@
     "turnin-886-the-barrens-oases",
     "turnin-6364-return-to-jahan",
     "woven-turnin-860-sergra-darkthorn",
+    "horde-leveling-era-horde-silverpine-forest-level-before-accept-435-escorting-erland",
+    "horde-leveling-era-horde-silverpine-forest-accept-435-escorting-erland",
+    "horde-leveling-era-horde-silverpine-forest-turnin-435-escorting-erland",
+    "horde-leveling-era-horde-silverpine-forest-accept-449-the-deathstalkers-report",
+    "horde-leveling-era-horde-silverpine-forest-turnin-449-the-deathstalkers-report",
+    "horde-leveling-era-horde-silverpine-forest-accept-3221-speak-with-renferrel",
+    "horde-leveling-era-horde-silverpine-forest-turnin-3221-speak-with-renferrel",
+    "horde-leveling-era-horde-silverpine-forest-accept-1359-zinge-s-delivery",
+    "horde-leveling-era-horde-silverpine-forest-turnin-1359-zinge-s-delivery",
+    "horde-leveling-era-horde-silverpine-forest-accept-1358-sample-for-helbrim",
     "accept-6365-meats-to-orgrimmar",
     "accept-869-raptor-thieves",
     "accept-844-plainstrider-menace",
@@ -55,6 +65,7 @@
     "accept-6385-doras-the-wind-rider-master",
     "turnin-6385-doras-the-wind-rider-master",
     "accept-6386-return-to-the-crossroads",
+    "horde-leveling-era-horde-the-barrens-and-stonetalon-mountain-turnin-1358-sample-for-helbrim",
     "accept-848-fungal-spores",
     "accept-1492-wharfmaster-dizzywig",
     "turnin-6386-return-to-the-crossroads",
@@ -77,20 +88,45 @@
     "accept-887-southsea-freebooters",
     "accept-894-samophlange",
     "accept-895-wanted-baron-longshore",
-    "turnin-819-chen-s-empty-keg",
-    "accept-821-chen-s-empty-keg",
     "objective-895-1-baron-longshore",
     "objective-887-2-southsea-cannoneer",
     "objective-887-1-southsea-brigand",
     "turnin-887-southsea-freebooters",
     "accept-890-the-missing-shipment",
     "turnin-895-wanted-baron-longshore",
-    "turnin-1492-wharfmaster-dizzywig",
     "turnin-890-the-missing-shipment",
     "accept-892-the-missing-shipment",
     "accept-896-miner-s-fortune",
     "turnin-892-the-missing-shipment",
     "accept-888-stolen-booty",
+    "turnin-894-samophlange",
+    "accept-900-samophlange",
+    "objective-900-2-authored-Fuel-Control-Valve",
+    "objective-900-3-authored-Regulator-Valve",
+    "objective-900-1-authored-Main-Control-Valve",
+    "turnin-900-samophlange",
+    "accept-901-samophlange",
+    "objective-901-1-tinkerer-sniggles",
+    "turnin-901-samophlange",
+    "accept-902-samophlange",
+    "objective-896-1-cats-eye-emerald",
+    "turnin-896-miner-s-fortune",
+    "turnin-902-samophlange",
+    "accept-858-ignition",
+    "objective-858-1-supervisor-lugwizzle",
+    "turnin-858-ignition",
+    "accept-863-the-escape",
+    "objective-863-the-escape",
+    "turnin-863-the-escape",
+    "accept-865-raptor-horns",
+    "objective-888-2-telescopic-lens",
+    "objective-888-1-shipment-of-boots",
+    "objective-865-1-intact-raptor-horn",
+    "turnin-888-stolen-booty",
+    "turnin-865-raptor-horns",
+    "turnin-819-chen-s-empty-keg",
+    "accept-821-chen-s-empty-keg",
+    "turnin-1492-wharfmaster-dizzywig",
     "turnin-872-the-disruption-ends",
     "turnin-5041-supplies-for-the-crossroads",
     "objective-845-1-zhevra-hooves",
@@ -107,20 +143,7 @@
     "objective-821-1-savannah-prowler",
     "objective-903-1-prowler-claws",
     "objective-867-1-witchwing-harpy",
-    "turnin-894-samophlange",
-    "accept-900-samophlange",
-    "objective-900-2-authored-Fuel-Control-Valve",
-    "objective-900-3-authored-Regulator-Valve",
-    "objective-900-1-authored-Main-Control-Valve",
-    "turnin-900-samophlange",
-    "accept-901-samophlange",
-    "objective-901-1-tinkerer-sniggles",
-    "turnin-901-samophlange",
-    "accept-902-samophlange",
     "objective-869-1-raptor-head",
-    "objective-896-1-cats-eye-emerald",
-    "turnin-896-miner-s-fortune",
-    "turnin-902-samophlange",
     "accept-3921-wenikee-boltbucket",
     "turnin-848-fungal-spores",
     "turnin-867-harpy-raiders",
@@ -133,12 +156,7 @@
     "accept-3281-stolen-silver",
     "turnin-3921-wenikee-boltbucket",
     "accept-3922-nugget-slugs",
-    "accept-858-ignition",
-    "objective-858-1-supervisor-lugwizzle",
-    "turnin-858-ignition",
-    "accept-863-the-escape",
     "objective-3922-1-nugget-slug",
-    "objective-863-the-escape",
     "objective-881-1-horn-of-echeyakee",
     "turnin-3922-nugget-slugs",
     "objective-821-2-plainstrider-kidney",
@@ -148,12 +166,7 @@
     "accept-4921-lost-in-battle",
     "turnin-875-harpy-lieutenants",
     "accept-876-serena-bloodfeather",
-    "turnin-863-the-escape",
-    "accept-865-raptor-horns",
-    "objective-888-2-telescopic-lens",
-    "objective-888-1-shipment-of-boots",
     "objective-3281-1-stolen-silver",
-    "objective-865-1-intact-raptor-horn",
     "objective-851-1-verog-the-dervish",
     "objective-4921-quest-work",
     "turnin-4921-lost-in-battle",
@@ -185,9 +198,7 @@
     "objective-880-1-oasis-snapjaw",
     "objective-882-1-zhevra-charger",
     "objective-882-1-fresh-zhevra-carcass",
-    "turnin-888-stolen-booty",
     "objective-821-1-plainstrider-kidney",
-    "turnin-865-raptor-horns",
     "turnin-821-chen-s-empty-keg",
     "turnin-876-serena-bloodfeather",
     "turnin-899-consumed-by-hatred",
@@ -363,6 +374,97 @@
         "turnin-97005-loremaster"
       ],
       "reason": "Placed with the suitable giver visit after verified predecessors and before later return checkpoints."
+    },
+    {
+      "actions": [
+        "visit-entry-leveling-era-horde-silverpine-forest"
+      ],
+      "anchor": "woven-turnin-860-sergra-darkthorn",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "horde-leveling-era-horde-silverpine-forest-level-before-accept-435-escorting-erland"
+      ],
+      "anchor": "visit-entry-leveling-era-horde-silverpine-forest",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "horde-leveling-era-horde-silverpine-forest-accept-435-escorting-erland"
+      ],
+      "anchor": "horde-leveling-era-horde-silverpine-forest-level-before-accept-435-escorting-erland",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "horde-leveling-era-horde-silverpine-forest-turnin-435-escorting-erland"
+      ],
+      "anchor": "horde-leveling-era-horde-silverpine-forest-accept-435-escorting-erland",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "horde-leveling-era-horde-silverpine-forest-accept-449-the-deathstalkers-report"
+      ],
+      "anchor": "horde-leveling-era-horde-silverpine-forest-turnin-435-escorting-erland",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "horde-leveling-era-horde-silverpine-forest-turnin-449-the-deathstalkers-report"
+      ],
+      "anchor": "horde-leveling-era-horde-silverpine-forest-accept-449-the-deathstalkers-report",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "horde-leveling-era-horde-silverpine-forest-accept-3221-speak-with-renferrel"
+      ],
+      "anchor": "horde-leveling-era-horde-silverpine-forest-turnin-449-the-deathstalkers-report",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "horde-leveling-era-horde-silverpine-forest-turnin-3221-speak-with-renferrel"
+      ],
+      "anchor": "horde-leveling-era-horde-silverpine-forest-accept-3221-speak-with-renferrel",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "horde-leveling-era-horde-silverpine-forest-accept-1359-zinge-s-delivery"
+      ],
+      "anchor": "horde-leveling-era-horde-silverpine-forest-turnin-3221-speak-with-renferrel",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "horde-leveling-era-horde-silverpine-forest-turnin-1359-zinge-s-delivery"
+      ],
+      "anchor": "horde-leveling-era-horde-silverpine-forest-accept-1359-zinge-s-delivery",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "horde-leveling-era-horde-silverpine-forest-accept-1358-sample-for-helbrim"
+      ],
+      "anchor": "horde-leveling-era-horde-silverpine-forest-turnin-1359-zinge-s-delivery",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "visit-entry-leveling-era-horde-the-barrens-and-stonetalon-mountain"
+      ],
+      "anchor": "accept-6386-return-to-the-crossroads",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
+    },
+    {
+      "actions": [
+        "horde-leveling-era-horde-the-barrens-and-stonetalon-mountain-turnin-1358-sample-for-helbrim"
+      ],
+      "anchor": "visit-entry-leveling-era-horde-the-barrens-and-stonetalon-mountain",
+      "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
     }
   ],
   "quests": {
@@ -2752,7 +2854,7 @@
             "sharable": true,
             "weekly": false
           },
-          "name": "<UNUSED>",
+          "name": "\u003cUNUSED\u003e",
           "prerequisiteReferences": [],
           "questLevel": 18,
           "races": [],
@@ -15774,11 +15876,1416 @@
           "zone": "The Barrens"
         }
       ]
+    },
+    "1102": {
+      "catalogs": [
+        "the-barrens"
+      ],
+      "evidence": {
+        "artifactVersion": "1.0.6-dev.f844007",
+        "buildCommit": "f844007b329b72f18cf2bda3d87540012294732a",
+        "source": "QuestieDB"
+      },
+      "locations": [
+        {
+          "coord": [
+            35.97,
+            59.92
+          ],
+          "id": 4451,
+          "name": "Auld Stonespire",
+          "point": "start",
+          "reactalliance": -1,
+          "reacthorde": 1,
+          "type": 1,
+          "zone": "Thunder Bluff"
+        },
+        {
+          "coord": [
+            35.97,
+            59.92
+          ],
+          "id": 4451,
+          "name": "Auld Stonespire",
+          "point": "end",
+          "reactalliance": -1,
+          "reacthorde": 1,
+          "type": 1,
+          "zone": "Thunder Bluff"
+        },
+        {
+          "coord": [
+            -1,
+            -1
+          ],
+          "id": 4421,
+          "item": "Razorflank's Heart",
+          "name": "Charlga Razorflank",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": ""
+        }
+      ],
+      "supporting": false,
+      "status": "excluded",
+      "reason": "Dungeon, raid, event/repeatable, or unused work is outside this outdoor itinerary."
+    },
+    "1109": {
+      "catalogs": [
+        "the-barrens"
+      ],
+      "evidence": {
+        "artifactVersion": "1.0.6-dev.f844007",
+        "buildCommit": "f844007b329b72f18cf2bda3d87540012294732a",
+        "source": "QuestieDB"
+      },
+      "locations": [
+        {
+          "coord": [
+            48.82,
+            69.28
+          ],
+          "id": 2055,
+          "name": "Master Apothecary Faranell",
+          "point": "start",
+          "reactalliance": -1,
+          "reacthorde": 1,
+          "type": 1,
+          "zone": "Undercity"
+        },
+        {
+          "coord": [
+            48.82,
+            69.28
+          ],
+          "id": 2055,
+          "name": "Master Apothecary Faranell",
+          "point": "end",
+          "reactalliance": -1,
+          "reacthorde": 1,
+          "type": 1,
+          "zone": "Undercity"
+        },
+        {
+          "coord": [
+            -1,
+            -1
+          ],
+          "id": 4538,
+          "item": "Kraul Guano",
+          "name": "Kraul Bat",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": ""
+        },
+        {
+          "coord": [
+            -1,
+            -1
+          ],
+          "id": 4539,
+          "item": "Kraul Guano",
+          "name": "Greater Kraul Bat",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": ""
+        },
+        {
+          "coord": [
+            -1,
+            -1
+          ],
+          "id": 4425,
+          "item": "Kraul Guano",
+          "name": "Blind Hunter",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": ""
+        }
+      ],
+      "supporting": false,
+      "status": "excluded",
+      "reason": "Dungeon, raid, event/repeatable, or unused work is outside this outdoor itinerary."
+    },
+    "1144": {
+      "catalogs": [
+        "the-barrens"
+      ],
+      "evidence": {
+        "artifactVersion": "1.0.6-dev.f844007",
+        "buildCommit": "f844007b329b72f18cf2bda3d87540012294732a",
+        "source": "QuestieDB"
+      },
+      "locations": [
+        {
+          "coord": [
+            -1,
+            -1
+          ],
+          "id": 4508,
+          "name": "Willix the Importer",
+          "point": "start",
+          "reactalliance": 1,
+          "reacthorde": 1,
+          "type": 1,
+          "zone": ""
+        },
+        {
+          "coord": [
+            -1,
+            -1
+          ],
+          "id": 4508,
+          "name": "Willix the Importer",
+          "point": "end",
+          "reactalliance": 1,
+          "reacthorde": 1,
+          "type": 1,
+          "zone": ""
+        }
+      ],
+      "supporting": false,
+      "status": "excluded",
+      "reason": "Dungeon, raid, event/repeatable, or unused work is outside this outdoor itinerary."
+    },
+    "1221": {
+      "catalogs": [
+        "the-barrens"
+      ],
+      "evidence": {
+        "artifactVersion": "1.0.6-dev.f844007",
+        "buildCommit": "f844007b329b72f18cf2bda3d87540012294732a",
+        "source": "QuestieDB"
+      },
+      "locations": [
+        {
+          "coord": [
+            62.37,
+            37.62
+          ],
+          "id": 3446,
+          "name": "Mebok Mizzyrix",
+          "point": "start",
+          "reactalliance": 1,
+          "reacthorde": 1,
+          "type": 1,
+          "zone": "The Barrens"
+        },
+        {
+          "coord": [
+            62.37,
+            37.62
+          ],
+          "id": 3446,
+          "name": "Mebok Mizzyrix",
+          "point": "end",
+          "reactalliance": 1,
+          "reacthorde": 1,
+          "type": 1,
+          "zone": "The Barrens"
+        },
+        {
+          "coord": [
+            -1,
+            -1
+          ],
+          "id": 20920,
+          "item": "Blueleaf Tuber",
+          "name": "Blueleaf Tuber",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": ""
+        },
+        {
+          "coord": [
+            62.32,
+            37.61
+          ],
+          "id": 21277,
+          "item": "Crate With Holes",
+          "name": "Crate with Holes",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "The Barrens"
+        },
+        {
+          "coord": [
+            62.32,
+            37.62
+          ],
+          "id": 21277,
+          "item": "Crate With Holes",
+          "name": "Crate with Holes",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "The Barrens"
+        },
+        {
+          "coord": [
+            62.33,
+            37.61
+          ],
+          "id": 21277,
+          "item": "Crate With Holes",
+          "name": "Crate with Holes",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "The Barrens"
+        },
+        {
+          "coord": [
+            62.33,
+            37.64
+          ],
+          "id": 21277,
+          "item": "Crate With Holes",
+          "name": "Crate with Holes",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "The Barrens"
+        },
+        {
+          "coord": [
+            62.31,
+            37.63
+          ],
+          "id": 21277,
+          "item": "Crate With Holes",
+          "name": "Crate with Holes",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "The Barrens"
+        },
+        {
+          "coord": [
+            62.33,
+            37.62
+          ],
+          "id": 21530,
+          "item": "Snufflenose Owner's Manual",
+          "name": "Snufflenose Owner's Manual",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "The Barrens"
+        },
+        {
+          "coord": [
+            62.33,
+            37.62
+          ],
+          "id": 21530,
+          "item": "Snufflenose Owner's Manual",
+          "name": "Snufflenose Owner's Manual",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "The Barrens"
+        },
+        {
+          "coord": [
+            62.34,
+            37.6
+          ],
+          "id": 68865,
+          "item": "Snufflenose Command Stick",
+          "name": "Snufflenose Command Sticks",
+          "point": "sourcerequirement",
+          "type": 2,
+          "zone": "The Barrens"
+        }
+      ],
+      "supporting": false,
+      "status": "excluded",
+      "reason": "Dungeon, raid, event/repeatable, or unused work is outside this outdoor itinerary."
+    },
+    "1358": {
+      "catalogs": [
+        "undercity"
+      ],
+      "evidence": {
+        "artifactVersion": "1.0.6-dev.f844007",
+        "buildCommit": "f844007b329b72f18cf2bda3d87540012294732a",
+        "source": "QuestieDB"
+      },
+      "locations": [
+        {
+          "coord": [
+            50.14,
+            67.97
+          ],
+          "id": 5204,
+          "name": "Apothecary Zinge",
+          "point": "start",
+          "reactalliance": -1,
+          "reacthorde": 1,
+          "type": 1,
+          "zone": "Undercity"
+        },
+        {
+          "coord": [
+            51.44,
+            30.15
+          ],
+          "id": 3390,
+          "name": "Apothecary Helbrim",
+          "point": "end",
+          "reactalliance": -1,
+          "reacthorde": 1,
+          "type": 1,
+          "zone": "The Barrens"
+        }
+      ],
+      "supporting": false,
+      "status": "spine",
+      "reason": "Preserved faction Casual actions."
+    },
+    "8367": {
+      "catalogs": [
+        "orgrimmar"
+      ],
+      "evidence": {
+        "artifactVersion": "1.0.6-dev.f844007",
+        "buildCommit": "f844007b329b72f18cf2bda3d87540012294732a",
+        "source": "QuestieDB"
+      },
+      "locations": [
+        {
+          "coord": [
+            46.71,
+            8.68
+          ],
+          "id": 15350,
+          "name": "Horde Warbringer",
+          "point": "start",
+          "reactalliance": -1,
+          "reacthorde": 1,
+          "type": 1,
+          "zone": "The Barrens"
+        },
+        {
+          "coord": [
+            63.09,
+            59.87
+          ],
+          "id": 15350,
+          "name": "Horde Warbringer",
+          "point": "start",
+          "reactalliance": -1,
+          "reacthorde": 1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            73.5,
+            29.13
+          ],
+          "id": 15350,
+          "name": "Horde Warbringer",
+          "point": "start",
+          "reactalliance": -1,
+          "reacthorde": 1,
+          "type": 1,
+          "zone": "Arathi Highlands"
+        },
+        {
+          "coord": [
+            50.33,
+            89.57
+          ],
+          "id": 15350,
+          "name": "Horde Warbringer",
+          "point": "start",
+          "reactalliance": -1,
+          "reacthorde": 1,
+          "type": 1,
+          "zone": "The Hinterlands"
+        },
+        {
+          "coord": [
+            58.27,
+            97.9
+          ],
+          "id": 15350,
+          "name": "Horde Warbringer",
+          "point": "start",
+          "reactalliance": -1,
+          "reacthorde": 1,
+          "type": 1,
+          "zone": "Undercity"
+        },
+        {
+          "coord": [
+            80.68,
+            30.51
+          ],
+          "id": 15350,
+          "name": "Horde Warbringer",
+          "point": "start",
+          "reactalliance": -1,
+          "reacthorde": 1,
+          "type": 1,
+          "zone": "Orgrimmar"
+        },
+        {
+          "coord": [
+            57.8,
+            76.4
+          ],
+          "id": 15350,
+          "name": "Horde Warbringer",
+          "point": "start",
+          "reactalliance": -1,
+          "reacthorde": 1,
+          "type": 1,
+          "zone": "Thunder Bluff"
+        },
+        {
+          "coord": [
+            46.71,
+            8.68
+          ],
+          "id": 15350,
+          "name": "Horde Warbringer",
+          "point": "end",
+          "reactalliance": -1,
+          "reacthorde": 1,
+          "type": 1,
+          "zone": "The Barrens"
+        },
+        {
+          "coord": [
+            63.09,
+            59.87
+          ],
+          "id": 15350,
+          "name": "Horde Warbringer",
+          "point": "end",
+          "reactalliance": -1,
+          "reacthorde": 1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            73.5,
+            29.13
+          ],
+          "id": 15350,
+          "name": "Horde Warbringer",
+          "point": "end",
+          "reactalliance": -1,
+          "reacthorde": 1,
+          "type": 1,
+          "zone": "Arathi Highlands"
+        },
+        {
+          "coord": [
+            50.33,
+            89.57
+          ],
+          "id": 15350,
+          "name": "Horde Warbringer",
+          "point": "end",
+          "reactalliance": -1,
+          "reacthorde": 1,
+          "type": 1,
+          "zone": "The Hinterlands"
+        },
+        {
+          "coord": [
+            58.27,
+            97.9
+          ],
+          "id": 15350,
+          "name": "Horde Warbringer",
+          "point": "end",
+          "reactalliance": -1,
+          "reacthorde": 1,
+          "type": 1,
+          "zone": "Undercity"
+        },
+        {
+          "coord": [
+            80.68,
+            30.51
+          ],
+          "id": 15350,
+          "name": "Horde Warbringer",
+          "point": "end",
+          "reactalliance": -1,
+          "reacthorde": 1,
+          "type": 1,
+          "zone": "Orgrimmar"
+        },
+        {
+          "coord": [
+            57.8,
+            76.4
+          ],
+          "id": 15350,
+          "name": "Horde Warbringer",
+          "point": "end",
+          "reactalliance": -1,
+          "reacthorde": 1,
+          "type": 1,
+          "zone": "Thunder Bluff"
+        }
+      ],
+      "supporting": false,
+      "status": "unresolved",
+      "reason": "required collection materials lack complete acquisition sources and visits"
+    },
+    "8388": {
+      "catalogs": [
+        "orgrimmar"
+      ],
+      "evidence": {
+        "artifactVersion": "1.0.6-dev.f844007",
+        "buildCommit": "f844007b329b72f18cf2bda3d87540012294732a",
+        "source": "QuestieDB"
+      },
+      "locations": [
+        {
+          "coord": [
+            46.71,
+            8.68
+          ],
+          "id": 15350,
+          "name": "Horde Warbringer",
+          "point": "start",
+          "reactalliance": -1,
+          "reacthorde": 1,
+          "type": 1,
+          "zone": "The Barrens"
+        },
+        {
+          "coord": [
+            63.09,
+            59.87
+          ],
+          "id": 15350,
+          "name": "Horde Warbringer",
+          "point": "start",
+          "reactalliance": -1,
+          "reacthorde": 1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            73.5,
+            29.13
+          ],
+          "id": 15350,
+          "name": "Horde Warbringer",
+          "point": "start",
+          "reactalliance": -1,
+          "reacthorde": 1,
+          "type": 1,
+          "zone": "Arathi Highlands"
+        },
+        {
+          "coord": [
+            50.33,
+            89.57
+          ],
+          "id": 15350,
+          "name": "Horde Warbringer",
+          "point": "start",
+          "reactalliance": -1,
+          "reacthorde": 1,
+          "type": 1,
+          "zone": "The Hinterlands"
+        },
+        {
+          "coord": [
+            58.27,
+            97.9
+          ],
+          "id": 15350,
+          "name": "Horde Warbringer",
+          "point": "start",
+          "reactalliance": -1,
+          "reacthorde": 1,
+          "type": 1,
+          "zone": "Undercity"
+        },
+        {
+          "coord": [
+            80.68,
+            30.51
+          ],
+          "id": 15350,
+          "name": "Horde Warbringer",
+          "point": "start",
+          "reactalliance": -1,
+          "reacthorde": 1,
+          "type": 1,
+          "zone": "Orgrimmar"
+        },
+        {
+          "coord": [
+            57.8,
+            76.4
+          ],
+          "id": 15350,
+          "name": "Horde Warbringer",
+          "point": "start",
+          "reactalliance": -1,
+          "reacthorde": 1,
+          "type": 1,
+          "zone": "Thunder Bluff"
+        },
+        {
+          "coord": [
+            46.71,
+            8.68
+          ],
+          "id": 15350,
+          "name": "Horde Warbringer",
+          "point": "end",
+          "reactalliance": -1,
+          "reacthorde": 1,
+          "type": 1,
+          "zone": "The Barrens"
+        },
+        {
+          "coord": [
+            63.09,
+            59.87
+          ],
+          "id": 15350,
+          "name": "Horde Warbringer",
+          "point": "end",
+          "reactalliance": -1,
+          "reacthorde": 1,
+          "type": 1,
+          "zone": "Alterac Mountains"
+        },
+        {
+          "coord": [
+            73.5,
+            29.13
+          ],
+          "id": 15350,
+          "name": "Horde Warbringer",
+          "point": "end",
+          "reactalliance": -1,
+          "reacthorde": 1,
+          "type": 1,
+          "zone": "Arathi Highlands"
+        },
+        {
+          "coord": [
+            50.33,
+            89.57
+          ],
+          "id": 15350,
+          "name": "Horde Warbringer",
+          "point": "end",
+          "reactalliance": -1,
+          "reacthorde": 1,
+          "type": 1,
+          "zone": "The Hinterlands"
+        },
+        {
+          "coord": [
+            58.27,
+            97.9
+          ],
+          "id": 15350,
+          "name": "Horde Warbringer",
+          "point": "end",
+          "reactalliance": -1,
+          "reacthorde": 1,
+          "type": 1,
+          "zone": "Undercity"
+        },
+        {
+          "coord": [
+            80.68,
+            30.51
+          ],
+          "id": 15350,
+          "name": "Horde Warbringer",
+          "point": "end",
+          "reactalliance": -1,
+          "reacthorde": 1,
+          "type": 1,
+          "zone": "Orgrimmar"
+        },
+        {
+          "coord": [
+            57.8,
+            76.4
+          ],
+          "id": 15350,
+          "name": "Horde Warbringer",
+          "point": "end",
+          "reactalliance": -1,
+          "reacthorde": 1,
+          "type": 1,
+          "zone": "Thunder Bluff"
+        }
+      ],
+      "supporting": false,
+      "status": "excluded",
+      "reason": "Dungeon, raid, event/repeatable, or unused work is outside this outdoor itinerary."
+    },
+    "1359": {
+      "catalogs": [
+        "undercity"
+      ],
+      "supporting": true,
+      "evidence": {
+        "artifactVersion": "1.0.6-dev.f844007",
+        "buildCommit": "f844007b329b72f18cf2bda3d87540012294732a",
+        "source": "QuestieDB"
+      },
+      "locations": [
+        {
+          "coord": [
+            42.8,
+            40.86
+          ],
+          "id": 1937,
+          "name": "Apothecary Renferrel",
+          "point": "start",
+          "reactalliance": -1,
+          "reacthorde": 1,
+          "type": 1,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "coord": [
+            50.14,
+            67.97
+          ],
+          "id": 5204,
+          "name": "Apothecary Zinge",
+          "point": "end",
+          "reactalliance": -1,
+          "reacthorde": 1,
+          "type": 1,
+          "zone": "Undercity"
+        }
+      ],
+      "status": "spine",
+      "reason": "Preserved faction Casual actions."
+    },
+    "3221": {
+      "catalogs": [
+        "silverpine-forest"
+      ],
+      "supporting": true,
+      "evidence": {
+        "artifactVersion": "1.0.6-dev.f844007",
+        "buildCommit": "f844007b329b72f18cf2bda3d87540012294732a",
+        "source": "QuestieDB"
+      },
+      "locations": [
+        {
+          "coord": [
+            43.42,
+            40.86
+          ],
+          "id": 1952,
+          "name": "High Executor Hadrec",
+          "point": "start",
+          "reactalliance": -1,
+          "reacthorde": 1,
+          "type": 1,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "coord": [
+            42.8,
+            40.86
+          ],
+          "id": 1937,
+          "name": "Apothecary Renferrel",
+          "point": "end",
+          "reactalliance": -1,
+          "reacthorde": 1,
+          "type": 1,
+          "zone": "Silverpine Forest"
+        }
+      ],
+      "status": "spine",
+      "reason": "Preserved faction Casual actions."
+    },
+    "449": {
+      "catalogs": [
+        "silverpine-forest"
+      ],
+      "supporting": true,
+      "evidence": {
+        "artifactVersion": "1.0.6-dev.f844007",
+        "buildCommit": "f844007b329b72f18cf2bda3d87540012294732a",
+        "source": "QuestieDB"
+      },
+      "locations": [
+        {
+          "coord": [
+            53.46,
+            13.43
+          ],
+          "id": 1950,
+          "name": "Rane Yorick",
+          "point": "start",
+          "reactalliance": -1,
+          "reacthorde": 1,
+          "type": 1,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "coord": [
+            43.42,
+            40.86
+          ],
+          "id": 1952,
+          "name": "High Executor Hadrec",
+          "point": "end",
+          "reactalliance": -1,
+          "reacthorde": 1,
+          "type": 1,
+          "zone": "Silverpine Forest"
+        }
+      ],
+      "status": "spine",
+      "reason": "Preserved faction Casual actions."
+    },
+    "435": {
+      "catalogs": [
+        "silverpine-forest"
+      ],
+      "supporting": true,
+      "evidence": {
+        "artifactVersion": "1.0.6-dev.f844007",
+        "buildCommit": "f844007b329b72f18cf2bda3d87540012294732a",
+        "source": "QuestieDB"
+      },
+      "locations": [
+        {
+          "coord": [
+            56.18,
+            9.18
+          ],
+          "id": 1978,
+          "name": "Deathstalker Erland",
+          "point": "start",
+          "reactalliance": -1,
+          "reacthorde": 1,
+          "type": 1,
+          "zone": "Silverpine Forest"
+        },
+        {
+          "coord": [
+            53.46,
+            13.43
+          ],
+          "id": 1950,
+          "name": "Rane Yorick",
+          "point": "end",
+          "reactalliance": -1,
+          "reacthorde": 1,
+          "type": 1,
+          "zone": "Silverpine Forest"
+        }
+      ],
+      "status": "spine",
+      "reason": "Preserved faction Casual actions."
+    },
+    "1101": {
+      "catalogs": [
+        "the-barrens"
+      ],
+      "evidence": {
+        "artifactVersion": "1.0.6-dev.f844007",
+        "buildCommit": "f844007b329b72f18cf2bda3d87540012294732a",
+        "source": "QuestieDB"
+      },
+      "locations": [
+        {
+          "coord": [
+            89.64,
+            46.57
+          ],
+          "id": 4048,
+          "name": "Falfindel Waywarder",
+          "point": "start",
+          "reactalliance": 1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Feralas"
+        },
+        {
+          "coord": [
+            89.64,
+            46.57
+          ],
+          "id": 4048,
+          "name": "Falfindel Waywarder",
+          "point": "end",
+          "reactalliance": 1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Feralas"
+        },
+        {
+          "coord": [
+            -1,
+            -1
+          ],
+          "id": 4421,
+          "item": "Razorflank's Medallion",
+          "name": "Charlga Razorflank",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": ""
+        }
+      ],
+      "supporting": false,
+      "status": "excluded",
+      "reason": "Dungeon, raid, event/repeatable, or unused work is outside this outdoor itinerary."
+    },
+    "1142": {
+      "catalogs": [
+        "the-barrens"
+      ],
+      "evidence": {
+        "artifactVersion": "1.0.6-dev.f844007",
+        "buildCommit": "f844007b329b72f18cf2bda3d87540012294732a",
+        "source": "QuestieDB"
+      },
+      "locations": [
+        {
+          "coord": [
+            -1,
+            -1
+          ],
+          "id": 4510,
+          "name": "Heralath Fallowbrook",
+          "point": "start",
+          "reactalliance": 1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": ""
+        },
+        {
+          "coord": [
+            69.54,
+            67.75
+          ],
+          "id": 4521,
+          "name": "Treshala Fallowbrook",
+          "point": "end",
+          "reactalliance": 1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": "Darnassus"
+        },
+        {
+          "coord": [
+            -1,
+            -1
+          ],
+          "id": 4420,
+          "item": "Treshala's Pendant",
+          "name": "Overlord Ramtusk",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": ""
+        },
+        {
+          "coord": [
+            -1,
+            -1
+          ],
+          "id": 4421,
+          "item": "Treshala's Pendant",
+          "name": "Charlga Razorflank",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": ""
+        },
+        {
+          "coord": [
+            -1,
+            -1
+          ],
+          "id": 4424,
+          "item": "Treshala's Pendant",
+          "name": "Aggem Thorncurse",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": ""
+        },
+        {
+          "coord": [
+            -1,
+            -1
+          ],
+          "id": 4427,
+          "item": "Treshala's Pendant",
+          "name": "Ward Guardian",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": ""
+        },
+        {
+          "coord": [
+            -1,
+            -1
+          ],
+          "id": 4428,
+          "item": "Treshala's Pendant",
+          "name": "Death Speaker Jargba",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": ""
+        },
+        {
+          "coord": [
+            -1,
+            -1
+          ],
+          "id": 4435,
+          "item": "Treshala's Pendant",
+          "name": "Razorfen Warrior",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": ""
+        },
+        {
+          "coord": [
+            -1,
+            -1
+          ],
+          "id": 4436,
+          "item": "Treshala's Pendant",
+          "name": "Razorfen Quilguard",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": ""
+        },
+        {
+          "coord": [
+            -1,
+            -1
+          ],
+          "id": 4437,
+          "item": "Treshala's Pendant",
+          "name": "Razorfen Warden",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": ""
+        },
+        {
+          "coord": [
+            -1,
+            -1
+          ],
+          "id": 4438,
+          "item": "Treshala's Pendant",
+          "name": "Razorfen Spearhide",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": ""
+        },
+        {
+          "coord": [
+            -1,
+            -1
+          ],
+          "id": 4440,
+          "item": "Treshala's Pendant",
+          "name": "Razorfen Totemic",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": ""
+        },
+        {
+          "coord": [
+            -1,
+            -1
+          ],
+          "id": 4442,
+          "item": "Treshala's Pendant",
+          "name": "Razorfen Defender",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": ""
+        },
+        {
+          "coord": [
+            -1,
+            -1
+          ],
+          "id": 4515,
+          "item": "Treshala's Pendant",
+          "name": "Death's Head Acolyte",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": ""
+        },
+        {
+          "coord": [
+            -1,
+            -1
+          ],
+          "id": 4516,
+          "item": "Treshala's Pendant",
+          "name": "Death's Head Adept",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": ""
+        },
+        {
+          "coord": [
+            -1,
+            -1
+          ],
+          "id": 4517,
+          "item": "Treshala's Pendant",
+          "name": "Death's Head Priest",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": ""
+        },
+        {
+          "coord": [
+            -1,
+            -1
+          ],
+          "id": 4518,
+          "item": "Treshala's Pendant",
+          "name": "Death's Head Sage",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": ""
+        },
+        {
+          "coord": [
+            -1,
+            -1
+          ],
+          "id": 4519,
+          "item": "Treshala's Pendant",
+          "name": "Death's Head Seer",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": ""
+        },
+        {
+          "coord": [
+            -1,
+            -1
+          ],
+          "id": 4520,
+          "item": "Treshala's Pendant",
+          "name": "Razorfen Geomancer",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": ""
+        },
+        {
+          "coord": [
+            -1,
+            -1
+          ],
+          "id": 4522,
+          "item": "Treshala's Pendant",
+          "name": "Razorfen Dustweaver",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": ""
+        },
+        {
+          "coord": [
+            -1,
+            -1
+          ],
+          "id": 4523,
+          "item": "Treshala's Pendant",
+          "name": "Razorfen Groundshaker",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": ""
+        },
+        {
+          "coord": [
+            -1,
+            -1
+          ],
+          "id": 4525,
+          "item": "Treshala's Pendant",
+          "name": "Razorfen Earthbreaker",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": ""
+        },
+        {
+          "coord": [
+            -1,
+            -1
+          ],
+          "id": 4530,
+          "item": "Treshala's Pendant",
+          "name": "Razorfen Handler",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": ""
+        },
+        {
+          "coord": [
+            -1,
+            -1
+          ],
+          "id": 4531,
+          "item": "Treshala's Pendant",
+          "name": "Razorfen Beast Trainer",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": ""
+        },
+        {
+          "coord": [
+            -1,
+            -1
+          ],
+          "id": 4532,
+          "item": "Treshala's Pendant",
+          "name": "Razorfen Beastmaster",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": ""
+        },
+        {
+          "coord": [
+            -1,
+            -1
+          ],
+          "id": 4623,
+          "item": "Treshala's Pendant",
+          "name": "Quilguard Champion",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": ""
+        },
+        {
+          "coord": [
+            -1,
+            -1
+          ],
+          "id": 4842,
+          "item": "Treshala's Pendant",
+          "name": "Earthcaller Halmgar",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": ""
+        },
+        {
+          "coord": [
+            -1,
+            -1
+          ],
+          "id": 6035,
+          "item": "Treshala's Pendant",
+          "name": "Razorfen Stalker",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": ""
+        },
+        {
+          "coord": [
+            -1,
+            -1
+          ],
+          "id": 6168,
+          "item": "Treshala's Pendant",
+          "name": "Roogug",
+          "point": "sourcerequirement",
+          "reactalliance": -1,
+          "reacthorde": -1,
+          "type": 1,
+          "zone": ""
+        }
+      ],
+      "supporting": false,
+      "status": "excluded",
+      "reason": "Dungeon, raid, event/repeatable, or unused work is outside this outdoor itinerary."
     }
   },
   "supportingQuests": [
+    435,
+    449,
     854,
-    861
+    861,
+    1359,
+    3221
   ],
   "clientWalkthrough": "unverified",
   "orderingCorrections": [
@@ -15786,5 +17293,1028 @@
       "quest": 855,
       "reason": "Collect the required drops before reaching the turn-in. Matching Casual actions are corrected together."
     }
-  ]
+  ],
+  "coverageMode": "zone",
+  "orderingEligibility": {
+    "819": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "821": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "822": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "843": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "844": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "845": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "846": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "848": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "849": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "850": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "851": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "852": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "853": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "855": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "857": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "858": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "860": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "863": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "865": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "867": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "868": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "869": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "870": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "871": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "872": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "873": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "874": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "875": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "876": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "877": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "878": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "879": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "880": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "881": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "882": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "883": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "884": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "885": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "886": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "887": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "888": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "889": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "890": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "891": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "892": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "893": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "894": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "895": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "896": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "897": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "898": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "899": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "900": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "901": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "902": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "903": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "905": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "906": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "907": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "913": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "1060": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "1069": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "1101": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "1102": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "1109": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "1142": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "1144": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "1145": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "1153": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "1221": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "1358": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "1483": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "1492": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "3261": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "3281": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "3301": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "3369": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "3370": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "3513": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "3514": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "3921": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "3922": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "3923": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "3924": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "4021": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "4921": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "5041": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "5042": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "5043": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "5044": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "5045": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "5046": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "5052": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "6361": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "6362": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "6363": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "6364": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "6365": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "6382": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "6384": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "6385": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "6386": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "6541": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "6543": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "8367": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "8388": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "9267": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "79192": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "92706": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "95494": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "95495": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "95507": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "95508": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "95621": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "95774": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "95819": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "96339": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "96383": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "97003": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "97005": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "97250": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "97253": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "98024": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "98093": {
+      "Horde": {
+        "inCasual": true
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "98094": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    },
+    "98095": {
+      "Horde": {
+        "inCasual": false
+      },
+      "Alliance": {
+        "inCasual": false
+      }
+    }
+  },
+  "upstream": {
+    "repository": "https://github.com/ErebusAres/ZygorGuidesRemaster-3.3.5a_WOTLK",
+    "commit": "9087c457e20fb96e73e5b362dd6fc50324b75718",
+    "strict": false,
+    "sourceHashes": {
+      "ZygorGuidesViewerRM/Guides/Leveling/ZygorGuidesHorde.lua": "2eaf5adb4865936cdb4257451c3ce920fdaff1c0ec17216c36e055480f389e54",
+      "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-EasternKingdoms.lua": "8a5ec87d31698c612e50eb0655f5c1f28d723c3068552c1295d79ddcd934270f",
+      "ZygorGuidesViewerRM/Guides/Achievements/A-Loremaster-Kalimdor.lua": "4fb7b7f5bb2702dfe36ed33de31b4d3105153bfba62b7a14a7ab73386e2087fa",
+      "ZygorGuidesViewerRM/Guides/Leveling/ZygorGuidesAlliance.lua": "ffb9b7828817e098d74ee5931e15a64ce773142a4c1e60f9775d0713121ba67d"
+    },
+    "matches": {}
+  }
 }

@@ -89,7 +89,20 @@ for _, id in ipairs(ns.guideOrder) do
                     for _, group in ipairs(goal.requiredQuests or {}) do
                         local earlier = 0
                         for _, predecessor in ipairs(group.quests) do
-                            if finishes[predecessor] and finishes[predecessor] < i then earlier = earlier + 1 end
+                            local completedBeforePickup = finishes[predecessor] and finishes[predecessor] < i
+                            if not completedBeforePickup and goal.sourceGuide then
+                                local sourcePickup = sourcePositions[goal.sourceGuide .. ':' .. goal.sourceActionID]
+                                for sourceKey, sourceGoal in pairs(sourceGoals) do
+                                    if sourceKey:sub(1, #goal.sourceGuide + 1) == goal.sourceGuide .. ':'
+                                        and sourceGoal.kind == 'turnin'
+                                        and ns.Engine:GetGoalQuestID(sourceGoal) == predecessor
+                                        and sourcePositions[sourceKey] < sourcePickup then
+                                        completedBeforePickup = true
+                                        break
+                                    end
+                                end
+                            end
+                            if completedBeforePickup then earlier = earlier + 1 end
                         end
                         check(group.mode == 'all' and earlier == #group.quests or group.mode == 'any' and earlier > 0
                             or group.conditions and goal.unresolvedPrerequisites and goal.excludeWhen,
