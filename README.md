@@ -43,7 +43,7 @@ Classic dungeon guides ship for RFC through Sunken Temple (plus Forever HoT / Ro
 
 ### Era chapters still needing a Forever weave
 
-The 1–60 Casual spine lives entirely under `Guides/Leveling/`. Forever weaves for each zone follow `.cursor/skills/era-forever-weave/SKILL.md` and stay in that folder.
+The 1–60 Casual spine lives entirely under `Guides/Leveling/`. Forever weaves for each zone follow `.agents/skills/era-forever-weave/SKILL.md` and stay in that folder.
 
 ## Installation and navigation
 

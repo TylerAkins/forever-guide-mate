@@ -1,6 +1,6 @@
 # Zone Loremaster guides
 
-Use the [Loremaster authoring skill](../.cursor/skills/zone-loremaster-guide/SKILL.md)
+Use the [Loremaster authoring skill](../.agents/skills/zone-loremaster-guide/SKILL.md)
 and [guide authoring rules](guide-authoring.md). Guides use explicit ordered action
 arrays, preserving the leveling spine while adding permanent zone quests.
 

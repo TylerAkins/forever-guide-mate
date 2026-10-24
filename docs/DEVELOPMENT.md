@@ -37,7 +37,7 @@ Forever GuideMate is a local-development guide addon for World of Warcraft: Fore
 
 ## Guides
 
-Quest-step rules are in [guide-authoring.md](guide-authoring.md). Class quests are supported: one guide per class in `Guides/Class/`, with race and faction on every step. Loremaster weave rules are in [zone-loremaster-guides.md](zone-loremaster-guides.md) and `.cursor/skills/zone-loremaster-guide/SKILL.md`. Era chapter conversion rules are in `.cursor/skills/era-forever-weave/SKILL.md`.
+Quest-step rules are in [guide-authoring.md](guide-authoring.md). Class quests are supported: one guide per class in `Guides/Class/`, with race and faction on every step. Loremaster weave rules are in [zone-loremaster-guides.md](zone-loremaster-guides.md) and `.agents/skills/zone-loremaster-guide/SKILL.md`. Era chapter conversion rules are in `.agents/skills/era-forever-weave/SKILL.md`.
 
 Loremaster facts and levels come from the Forever QuestieDB preview artifact and Questie's Forever policy files. The Go tools read generated JSON; LuaJIT is the only adapter for the QuestieDB baked store and policy code. From the repository root, create `.compiled/questiedb/export.json` and `.compiled/questiedb/policy.json` with matching QuestieDB and Questie checkouts:
 

@@ -123,7 +123,7 @@ Part numbers are **per faction**, not shared across Alliance and Horde. If only 
 
 Example: Horde Stonetalon is `(Part 1)` then `(Part 2)`; Alliance Stonetalon is a single chapter titled `Stonetalon Mountains` with no part suffix. Internal chapter ids and filenames may still use `part-1`, `part-2` slugs for load order; only the displayed `title` follows this rule.
 
-Leveling chapters use zone/faction slugs under `Guides/Leveling/` (for example `horde-desolace.lua`, id `leveling-era-horde-desolace`). Forever weave rules are in `.cursor/skills/era-forever-weave/SKILL.md`.
+Leveling chapters use zone/faction slugs under `Guides/Leveling/` (for example `horde-desolace.lua`, id `leveling-era-horde-desolace`). Forever weave rules are in `.agents/skills/era-forever-weave/SKILL.md`.
 
 ## `dependsOn` and conditions
 
@@ -236,6 +236,6 @@ Changing a turn-in’s `dependsOn` or splitting objectives can leave **stale com
 
 The addon saves **active step per guide** (`activeGoalByGuide`). Reload and switching away and back should return to the same step, not the first open quest in the chapter.
 
-Loremaster-specific weave rules stay in [zone-loremaster-guides.md](zone-loremaster-guides.md) and `.cursor/skills/zone-loremaster-guide/SKILL.md`. Era chapter conversion rules are in `.cursor/skills/era-forever-weave/SKILL.md`. Loremaster facts and levels come from the QuestieDB Forever preview export and Questie's Forever policy export; see [DEVELOPMENT.md](DEVELOPMENT.md) for generation commands and the [migration review](loremaster/questiedb-migration.md) for source gaps. Existing Casual level fixtures retain their documented Questie policy.
+Loremaster-specific weave rules stay in [zone-loremaster-guides.md](zone-loremaster-guides.md) and `.agents/skills/zone-loremaster-guide/SKILL.md`. Era chapter conversion rules are in `.agents/skills/era-forever-weave/SKILL.md`. Loremaster facts and levels come from the QuestieDB Forever preview export and Questie's Forever policy export; see [DEVELOPMENT.md](DEVELOPMENT.md) for generation commands and the [migration review](loremaster/questiedb-migration.md) for source gaps. Existing Casual level fixtures retain their documented Questie policy.
 
 Ordered routes keep authored instructions and fallback pins. Registration enables `useQuestNavigation` for ordinary quest objectives and turn-ins independently of `useClientPin`. Blizzard navigation is selected when the current objective is unfinished or the quest is ready to turn in, with authored coordinates as fallback if the client has no quest destination. Travel and checkpoint instructions retain their explicit destination. Set `useQuestNavigation = false` for an interaction requiring a specific authored destination.

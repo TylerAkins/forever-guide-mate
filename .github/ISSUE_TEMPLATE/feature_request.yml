@@ -1,0 +1,22 @@
+name: Feature request
+description: Suggest an improvement to Forever GuideMate.
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem should this solve?
+      description: Describe the task or limitation you encountered.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: What would you like to happen?
+      description: Describe the behavior or improvement you have in mind.
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional context
+      description: Add screenshots, examples, or other context that may help.
