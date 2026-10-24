@@ -1,0 +1,40 @@
+name: Guide or quest request
+description: Request a quest addition or a change to a guide.
+body:
+  - type: input
+    id: guide
+    attributes:
+      label: Guide, zone, or route
+      description: Name the guide or the location where the quest should appear.
+    validations:
+      required: true
+  - type: input
+    id: quest
+    attributes:
+      label: Quest name or ID
+      description: Include the quest ID if you know it.
+    validations:
+      required: true
+  - type: dropdown
+    id: faction
+    attributes:
+      label: Faction
+      options:
+        - Alliance
+        - Horde
+        - Both
+        - Not applicable
+    validations:
+      required: true
+  - type: textarea
+    id: request
+    attributes:
+      label: What should the guide do?
+      description: Explain what is missing or incorrect and where the quest fits in the route.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Sources or supporting details
+      description: Add source links and any known prerequisites, level requirements, or relevant steps.

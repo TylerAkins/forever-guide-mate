@@ -8,7 +8,7 @@ manual-changelog:
 ignore:
   - .git
   - .github
-  - .cursor
+  - .agents
   - .gitignore
   - .pkgmeta
   - VERSION
