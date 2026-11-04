@@ -69,6 +69,10 @@ func TestRepositoryQuestLevelsAndPickupMinimums(t *testing.T) {
 	if watching.Step != 20 || watching.Offer == nil || *watching.Offer != 10 {
 		t.Errorf("Watching the Roads levels = %#v, want step 20 and offer 10", watching)
 	}
+	silver := levels["86614"]
+	if silver.Step != 20 || silver.Offer == nil || *silver.Offer != 13 {
+		t.Errorf("Silver of the Waves levels = %#v, want step 20 and offer 13", silver)
+	}
 	if len(conflicts) == 0 {
 		t.Fatal("source conflicts fixture unexpectedly empty")
 	}
