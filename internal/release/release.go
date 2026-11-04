@@ -44,9 +44,10 @@ func PlanAutomatedRelease(previous, current string, contentChanged bool) (string
 		return "", err
 	}
 	patch := Version{old.Major, old.Minor, old.Patch + 1}
-	minor := Version{old.Major, old.Minor + 1, 0}
-	if next != patch && next != minor {
-		return "", fmt.Errorf("release content changed, but VERSION must advance from %s to %s or %s; found %s", old, patch, minor, next)
+	laterMinor := next.Major == old.Major && next.Minor > old.Minor && next.Patch == 0
+	if next != patch && !laterMinor {
+		minor := Version{old.Major, old.Minor + 1, 0}
+		return "", fmt.Errorf("release content changed, but VERSION must advance from %s to %s or a later minor release within the same major ending in .0 (such as %s); found %s", old, patch, minor, next)
 	}
 	return "v" + next.String(), nil
 }

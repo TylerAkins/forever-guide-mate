@@ -33742,7 +33742,18 @@
           "Marek Ironheart"
         ],
         "actions": [
-          "accept-385-crocolisk-hunting"
+          "accept-385-crocolisk-hunting",
+          "accept-86758-twisting-the-knife"
+        ]
+      },
+      {
+        "boundary": [
+          10,
+          1432,
+          "Daggerfang"
+        ],
+        "actions": [
+          "objective-86758-twisting-the-knife"
         ]
       },
       {
@@ -33772,7 +33783,59 @@
           "Marek Ironheart"
         ],
         "actions": [
-          "turnin-385-crocolisk-hunting"
+          "turnin-385-crocolisk-hunting",
+          "turnin-86758-twisting-the-knife"
+        ]
+      },
+      {
+        "boundary": [
+          12,
+          1432,
+          "Daryl the Youngling"
+        ],
+        "actions": [
+          "accept-257-a-hunter-s-boast"
+        ]
+      },
+      {
+        "boundary": [
+          12,
+          1432,
+          "Mountain Buzzard"
+        ],
+        "actions": [
+          "objective-257-a-hunter-s-boast"
+        ]
+      },
+      {
+        "boundary": [
+          12,
+          1432,
+          "Daryl the Youngling"
+        ],
+        "actions": [
+          "turnin-257-a-hunter-s-boast",
+          "accept-258-a-hunter-s-challenge"
+        ]
+      },
+      {
+        "boundary": [
+          12,
+          1432,
+          "Elder Mountain Boar"
+        ],
+        "actions": [
+          "objective-258-a-hunter-s-challenge"
+        ]
+      },
+      {
+        "boundary": [
+          12,
+          1432,
+          "Daryl the Youngling"
+        ],
+        "actions": [
+          "turnin-258-a-hunter-s-challenge"
         ]
       },
       {
@@ -35300,7 +35363,7 @@
     ]
   },
   "leveling-era-alliance-westfall": {
-    "revision": 17,
+    "revision": 18,
     "visits": [
       {
         "boundary": [
@@ -46403,6 +46466,46 @@
         ],
         "actions": [
           "woven-turnin-98197-spoils-of-war"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-98282-alchemical-hazards"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1437,
+          "Caitlin Grassman"
+        ],
+        "actions": [
+          "woven-accept-98282-alchemical-hazards"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1437,
+          "Leech Stalker"
+        ],
+        "actions": [
+          "woven-objective-98282-alchemical-hazards"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1437,
+          "Caitlin Grassman"
+        ],
+        "actions": [
+          "woven-turnin-98282-alchemical-hazards"
         ]
       }
     ]
@@ -82763,6 +82866,16 @@
       {
         "boundary": [
           null,
+          1453,
+          "Borgus Steelhand"
+        ],
+        "actions": [
+          "accept-97894-business-in-auberdine"
+        ]
+      },
+      {
+        "boundary": [
+          null,
           1455,
           "Hulfdan Blackbeard"
         ],
@@ -83688,6 +83801,7 @@
           "Gorbold Steelhand"
         ],
         "actions": [
+          "turnin-97894-business-in-auberdine",
           "accept-982-deep-ocean-vast-sea"
         ]
       },
@@ -89596,7 +89710,7 @@
     ]
   },
   "leveling-era-elwynn-forest": {
-    "revision": 10,
+    "revision": 11,
     "visits": [
       {
         "boundary": [
@@ -130345,7 +130459,7 @@
     ]
   },
   "loremaster-loch-modan": {
-    "revision": 1,
+    "revision": 3,
     "visits": [
       {
         "boundary": [
@@ -131837,7 +131951,7 @@
     ]
   },
   "loremaster-darkshore": {
-    "revision": 1,
+    "revision": 3,
     "visits": [
       {
         "boundary": [
@@ -142835,7 +142949,7 @@
     ]
   },
   "loremaster-wetlands": {
-    "revision": 1,
+    "revision": 3,
     "visits": [
       {
         "boundary": [

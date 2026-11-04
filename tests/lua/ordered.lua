@@ -50,6 +50,65 @@ for _, goalID in ipairs({ 'travel-tirisfal-to-durotar', 'travel-durotar-to-tiris
 end
 do
     local guide = ns.guides['leveling-casual-alliance']
+    local accept, acceptIndex = ns.Engine:GetGoal(guide,
+        'leveling-era-alliance-darkshore:accept-97894-business-in-auberdine')
+    local turnin, turninIndex = ns.Engine:GetGoal(guide,
+        'leveling-era-alliance-darkshore:turnin-97894-business-in-auberdine')
+    local followup, followupIndex = ns.Engine:GetGoal(guide,
+        'leveling-era-alliance-darkshore:accept-982-deep-ocean-vast-sea')
+    equal(accept ~= nil, true, 'Darkshore route accepts Business in Auberdine in Stormwind')
+    equal(turnin ~= nil, true, 'Darkshore route turns in Business in Auberdine')
+    equal(acceptIndex < turninIndex and turninIndex < followupIndex, true,
+        'Business in Auberdine is turned in before Deep Ocean, Vast Sea')
+    equal(accept.route[1].mapID, 1453, 'Business in Auberdine starts in Stormwind')
+    equal(turnin.route[1].mapID, 1439, 'Business in Auberdine turns in at Auberdine')
+    equal(ns.Engine:GetGoalQuestID(accept), 97894, 'Business in Auberdine accept uses its quest id')
+    equal(ns.Engine:GetGoalQuestID(turnin), 97894, 'Business in Auberdine turn-in uses its quest id')
+    for _, goal in ipairs({ accept, turnin }) do
+        equal(ns.OrderedRoutes:ExcludedAction(goal, state(3, 1, 'Alliance', 17)), false,
+            'Business in Auberdine applies to eligible Alliance races')
+        equal(ns.OrderedRoutes:ExcludedAction(goal, state(1, 1, 'Alliance', 17)), true,
+            'Business in Auberdine excludes unsupported races')
+    end
+    local breadcrumbGates = dofile('tests/lua/guide_data_checks.lua').BreadcrumbTurninGates
+    equal(followup.dependsOn == nil or #followup.dependsOn == 0, true,
+        'Deep Ocean uses its conditional breadcrumb requirement instead of an unconditional action dependency')
+    equal(ns.Engine:GetGoalQuestID(turnin), breadcrumbGates[982],
+        'Deep Ocean uses its recorded Business in Auberdine breadcrumb')
+    local eligible = state(3, 1, 'Alliance', 17)
+    local ready = ns.OrderedRoutes:Prerequisites(followup, eligible)
+    equal(ready, false, 'eligible races must complete Business in Auberdine before Deep Ocean')
+    eligible.completedQuests[97894] = true
+    ready = ns.OrderedRoutes:Prerequisites(followup, eligible)
+    equal(ready, true, 'Business in Auberdine unlocks Deep Ocean for eligible races')
+    ready = ns.OrderedRoutes:Prerequisites(followup, state(1, 1, 'Alliance', 17))
+    equal(ready, true, 'unsupported races are not blocked by the optional breadcrumb')
+end
+do
+    local guide = ns.guides['leveling-casual-alliance']
+    local accept, acceptIndex = ns.Engine:GetGoal(guide,
+        'leveling-era-alliance-wetlands:woven-accept-98282-alchemical-hazards')
+    local objective, objectiveIndex = ns.Engine:GetGoal(guide,
+        'leveling-era-alliance-wetlands:woven-objective-98282-alchemical-hazards')
+    local turnin, turninIndex = ns.Engine:GetGoal(guide,
+        'leveling-era-alliance-wetlands:woven-turnin-98282-alchemical-hazards')
+    equal(accept ~= nil, true, 'Wetlands route accepts Alchemical Hazards')
+    equal(objective ~= nil, true, 'Wetlands route includes Alchemical Hazards objective')
+    equal(turnin ~= nil, true, 'Wetlands route turns in Alchemical Hazards')
+    equal(acceptIndex < objectiveIndex and objectiveIndex < turninIndex, true,
+        'Alchemical Hazards follows accept, objective, turn-in order')
+    equal(ns.Engine:GetGoalQuestID(accept), 98282, 'Alchemical Hazards accept uses its quest id')
+    equal(ns.Engine:GetGoalQuestID(objective), 98282, 'Alchemical Hazards objective uses its quest id')
+    equal(ns.Engine:GetGoalQuestID(turnin), 98282, 'Alchemical Hazards turn-in uses its quest id')
+    for _, goal in ipairs({ accept, objective, turnin }) do
+        equal(ns.OrderedRoutes:ExcludedAction(goal, state(4, 1, 'Alliance', 24)), false,
+            'Alchemical Hazards applies to eligible Alliance races')
+        equal(ns.OrderedRoutes:ExcludedAction(goal, state(1, 1, 'Alliance', 24)), true,
+            'Alchemical Hazards excludes unsupported races')
+    end
+end
+do
+    local guide = ns.guides['leveling-casual-alliance']
     for _, goalID in ipairs({ 'level-before-turnin-353-stormpike-s-delivery', 'turnin-353-stormpike-s-delivery' }) do
         local goal = ns.Engine:GetGoal(guide, 'leveling-era-alliance-loch-modan:' .. goalID)
         local snapshot = state(4, 1, 'Alliance', 18)
@@ -121,6 +180,67 @@ local function journey(guideID, snapshot, expected)
         equal(signature(ns.Engine.currentGoal), action, guideID .. ' authored journey')
         equal(ns.UI:GoalInstruction(ns.Engine), ns.Engine.currentGoal.text, 'walkthrough remains authored')
         observe(ns.Engine.currentGoal, snapshot)
+    end
+end
+do
+    local source = ns.guides['leveling-casual-alliance']
+    local actionIDs = {
+        'leveling-era-alliance-loch-modan:accept-385-crocolisk-hunting',
+        'leveling-era-alliance-loch-modan:accept-86758-twisting-the-knife',
+        'leveling-era-alliance-loch-modan:objective-86758-twisting-the-knife',
+        'leveling-era-alliance-loch-modan:objective-385-2-loch-crocolisk',
+        'leveling-era-alliance-loch-modan:objective-385-1-crocolisk-meat',
+        'leveling-era-alliance-loch-modan:turnin-385-crocolisk-hunting',
+        'leveling-era-alliance-loch-modan:turnin-86758-twisting-the-knife',
+        'leveling-era-alliance-loch-modan:accept-257-a-hunter-s-boast',
+        'leveling-era-alliance-loch-modan:objective-257-a-hunter-s-boast',
+        'leveling-era-alliance-loch-modan:turnin-257-a-hunter-s-boast',
+        'leveling-era-alliance-loch-modan:accept-258-a-hunter-s-challenge',
+        'leveling-era-alliance-loch-modan:objective-258-a-hunter-s-challenge',
+        'leveling-era-alliance-loch-modan:turnin-258-a-hunter-s-challenge',
+    }
+    local goals, mappedIDs = {}, {}
+    for _, actionID in ipairs(actionIDs) do
+        local goal, index = ns.Engine:GetGoal(source, actionID)
+        equal(goal ~= nil, true, 'Loch Modan includes ' .. actionID)
+        mappedIDs[actionID] = 'test-loch-modan-crocolisk:' .. actionID
+        goals[#goals + 1] = goal
+        if actionID == 'accept-385-crocolisk-hunting' then
+            local _, objectiveIndex = ns.Engine:GetGoal(source,
+                'leveling-era-alliance-loch-modan:objective-385-2-loch-crocolisk')
+            equal(index < objectiveIndex, true, 'Crocolisk Hunting is accepted before the shared outing')
+        end
+    end
+    for index, goal in ipairs(goals) do
+        local copy = {}
+        for key, value in pairs(goal) do copy[key] = value end
+        copy.id = mappedIDs[goal.id]
+        if goal.dependsOn then
+            copy.dependsOn = {}
+            for _, dependency in ipairs(goal.dependsOn) do
+                copy.dependsOn[#copy.dependsOn + 1] = mappedIDs[dependency] or dependency
+            end
+        end
+        goals[index] = copy
+    end
+    ns:RegisterGuide({ id = 'test-loch-modan-crocolisk', title = 'Loch Modan crocolisk outing',
+        category = 'Leveling Quest Guides', revision = 1, routeMode = 'ordered',
+        conditions = { faction = 'Alliance' }, goals = goals })
+    for _, race in ipairs({ 1, 3, 4, 7, 95 }) do
+        local snapshot = state(race, 1, 'Alliance', 18)
+        if race == 1 then
+            journey('test-loch-modan-crocolisk', snapshot, {
+                'accept:385', 'objective:385:2', 'objective:385:1', 'turnin:385',
+                'accept:257', 'objective:257', 'turnin:257', 'accept:258',
+                'objective:258', 'turnin:258',
+            })
+        else
+            journey('test-loch-modan-crocolisk', snapshot, {
+                'accept:385', 'accept:86758', 'objective:86758', 'objective:385:2',
+                'objective:385:1', 'turnin:385', 'turnin:86758', 'accept:257',
+                'objective:257', 'turnin:257', 'accept:258', 'objective:258', 'turnin:258',
+            })
+        end
     end
 end
 do

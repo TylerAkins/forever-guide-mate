@@ -124,7 +124,7 @@ Only stable tags are distributed to players. Preview builds are for testing and 
 
 The packager uploads `RELEASE_NOTES.md` as the release changelog instead of generating notes from Git commits. This prevents commit metadata from appearing on CurseForge and avoids publishing the full release history. Automated Forever Interface PRs replace this file with only their prepared release entry. CI requires that entry to match `VERSION` and rejects email addresses.
 
-All stable releases must update `VERSION` to match the tag. Automated Forever Interface PRs do this, and merging a release-content PR that bumps `VERSION` by exactly one patch creates the tag. If two release PRs prepare the same patch concurrently, merge one and manually refresh the other so its fixed PR updates against the new `main`. For other releases, update `VERSION`, `CHANGELOG.md`, and `RELEASE_NOTES.md` in the release PR before creating the tag.
+All stable releases must update `VERSION` to match the tag. Automated Forever Interface PRs prepare the next patch. For other release-content PRs, CI accepts the next patch or a later minor version within the same major ending in `.0`; merging a valid release-content PR creates the tag. If two release PRs prepare the same patch concurrently, merge one and manually refresh the other so its fixed PR updates against the new `main`. Update `VERSION`, `CHANGELOG.md`, and `RELEASE_NOTES.md` in the release PR before creating the tag.
 
 ## CurseForge
 

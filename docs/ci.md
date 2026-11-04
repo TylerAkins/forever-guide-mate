@@ -17,7 +17,7 @@ Mixed changes take the union of these checks. Unknown paths retain full coverage
 
 Go owns the whole test suite, including release validation, Forever interface updates, addon compilation, CI selection, Loremaster reporting, legacy quest-level stamping, the live zone-quest review audit, and the one-zone Loremaster authoring flow. The Go job runs every Go package's tests except `internal/luatests`, which the LuaJIT job runs as its suites; the Go job keeps the missing-LuaJIT message check. LuaJIT is installed in jobs that run Lua scripts, with Lua 5.1 compatibility verified by the test suite.
 
-Current release notes are validated in the planning job on every run. On PRs, the existing release-intent gate still checks shipped addon changes against the base version and requires the matching changelog entry. It also includes `SkipLineage.lua`, a shipped runtime file missing from the old path list. The current validator accepts the next patch or next minor version.
+Current release notes are validated in the planning job on every run. On PRs, the existing release-intent gate still checks shipped addon changes against the base version and requires the matching changelog entry. It also includes `SkipLineage.lua`, a shipped runtime file missing from the old path list. The validator accepts the next patch version or any later minor version within the same major ending in `.0`.
 
 ## PR revisions and job boundaries
 

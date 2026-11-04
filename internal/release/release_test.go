@@ -13,6 +13,18 @@ func TestValidateAutomatedRelease(t *testing.T) {
 	if tag, err := PlanAutomatedRelease("0.7.0", "0.8.0", true); err != nil || tag != "v0.8.0" {
 		t.Fatalf("minor release = %q, %v", tag, err)
 	}
+	if tag, err := PlanAutomatedRelease("0.7.2", "0.9.0", true); err != nil || tag != "v0.9.0" {
+		t.Fatalf("later minor release = %q, %v", tag, err)
+	}
+	if _, err := PlanAutomatedRelease("0.7.2", "0.9.1", true); err == nil {
+		t.Fatal("later minor release with a nonzero patch accepted")
+	}
+	if _, err := PlanAutomatedRelease("0.7.2", "0.7.1", true); err == nil {
+		t.Fatal("version downgrade accepted")
+	}
+	if _, err := PlanAutomatedRelease("0.7.2", "1.0.0", true); err == nil {
+		t.Fatal("major version change accepted")
+	}
 	if tag, err := PlanAutomatedRelease("0.7.0", "0.7.0", false); err != nil || tag != "" {
 		t.Fatalf("unchanged content = %q, %v", tag, err)
 	}
