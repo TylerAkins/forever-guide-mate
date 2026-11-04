@@ -13,6 +13,11 @@ M.DalaranDungeonTurninGates = {
     [97287] = 96984,
 }
 
+-- Alliance Darkshore breadcrumb pickup precedes the gated Deep Ocean follow-up.
+M.BreadcrumbTurninGates = {
+    [982] = 97894,
+}
+
 -- Single-predecessor, same-title chains verified against wow-database Forever exports.
 M.SameTitleQuestChains = {
     [630] = 594,

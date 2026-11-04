@@ -368,6 +368,52 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
+            route = {
+                { y = 0.6166, mapID = 1432, label = "Marek Ironheart", offMapText = "Travel to Marek Ironheart in Loch Modan.", x = 0.8175 },
+            },
+            text = "Accept Twisting the Knife from Marek Ironheart.",
+            id = "accept-86758-twisting-the-knife",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 12 } },
+                    { race = { 3, 4, 7, 95 } },
+                },
+            },
+            complete = {
+                quest = { id = 86758, state = "activeOrCompleted" },
+            },
+            sourceStep = 9,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+        },
+        {
+            text = "Find and defeat Daggerfang and bring Marek's knife back.",
+            route = {
+                { mapID = 1432, x = 0.628, y = 0.514, label = "Daggerfang", offMapText = "Travel to Daggerfang in Loch Modan." },
+            },
+            dependsOn = { "accept-86758-twisting-the-knife" },
+            id = "objective-86758-twisting-the-knife",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 12 } },
+                    { race = { 3, 4, 7, 95 } },
+                },
+            },
+            complete = {
+                quest = { id = 86758, state = "complete" },
+            },
+            sourceStep = 10,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+        },
+        {
             text = "Collect 6 Crocolisk Skin.",
             route = {
                 { y = 0.396, mapID = 1432, label = "Loch Crocolisk", offMapText = "Travel to Loch Crocolisk.", x = 0.566 },
@@ -445,6 +491,167 @@ ns:RegisterGuide({
             },
             sourceStep = 11,
             requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+        },
+        {
+            text = "Turn in Twisting the Knife to Marek Ironheart.",
+            route = {
+                { mapID = 1432, x = 0.8175, y = 0.6166, label = "Marek Ironheart", offMapText = "Travel to Marek Ironheart in Loch Modan." },
+            },
+            dependsOn = { "accept-86758-twisting-the-knife", "objective-86758-twisting-the-knife" },
+            id = "turnin-86758-twisting-the-knife",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 12 } },
+                    { race = { 3, 4, 7, 95 } },
+                },
+            },
+            complete = {
+                quest = { id = 86758, state = "completed" },
+            },
+            sourceStep = 11,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+        },
+        {
+            route = {
+                { mapID = 1432, x = 0.834, y = 0.652, label = "Daryl the Youngling", offMapText = "Travel to Daryl the Youngling in Loch Modan." },
+            },
+            text = "Accept A Hunter's Boast from Daryl the Youngling.",
+            id = "accept-257-a-hunter-s-boast",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 11 } },
+                },
+            },
+            complete = {
+                quest = { id = 257, state = "activeOrCompleted" },
+            },
+            sourceStep = 12,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+        },
+        {
+            text = "Kill 6 Mountain Buzzards and return to Daryl the Youngling in the Farstrider Lodge within 15 minutes.",
+            route = {
+                { mapID = 1432, x = 0.712, y = 0.735, label = "Mountain Buzzard", offMapText = "Travel to Mountain Buzzards in Loch Modan." },
+            },
+            dependsOn = { "accept-257-a-hunter-s-boast" },
+            id = "objective-257-a-hunter-s-boast",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 11 } },
+                },
+            },
+            complete = {
+                quest = { id = 257, state = "complete" },
+            },
+            sourceStep = 12,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+        },
+        {
+            text = "Turn in A Hunter's Boast to Daryl the Youngling.",
+            route = {
+                { mapID = 1432, x = 0.834, y = 0.652, label = "Daryl the Youngling", offMapText = "Travel to Daryl the Youngling in Loch Modan." },
+            },
+            dependsOn = { "accept-257-a-hunter-s-boast", "objective-257-a-hunter-s-boast" },
+            id = "turnin-257-a-hunter-s-boast",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 11 } },
+                },
+            },
+            complete = {
+                quest = { id = 257, state = "completed" },
+            },
+            sourceStep = 12,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+        },
+        {
+            route = {
+                { mapID = 1432, x = 0.834, y = 0.652, label = "Daryl the Youngling", offMapText = "Travel to Daryl the Youngling in Loch Modan." },
+            },
+            text = "Accept A Hunter's Challenge from Daryl the Youngling.",
+            id = "accept-258-a-hunter-s-challenge",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 11 } },
+                },
+            },
+            complete = {
+                quest = { id = 258, state = "activeOrCompleted" },
+            },
+            sourceStep = 12,
+            dependsOn = { "turnin-257-a-hunter-s-boast" },
+            requiredQuests = {
+                { mode = "any", quests = { 257 }, conditions = {} },
+            },
+            useClientText = false,
+            useClientPin = false,
+        },
+        {
+            text = "Kill 5 Elder Mountain Boars and return to Daryl the Youngling in the Farstrider Lodge within 12 minutes.",
+            route = {
+                { mapID = 1432, x = 0.762, y = 0.452, label = "Elder Mountain Boar", offMapText = "Travel to Elder Mountain Boars in Loch Modan." },
+            },
+            dependsOn = { "accept-258-a-hunter-s-challenge" },
+            id = "objective-258-a-hunter-s-challenge",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 11 } },
+                },
+            },
+            complete = {
+                quest = { id = 258, state = "complete" },
+            },
+            sourceStep = 12,
+            requiredQuests = {
+                { mode = "any", quests = { 257 }, conditions = {} },
+            },
+            useClientText = false,
+            useClientPin = false,
+        },
+        {
+            text = "Turn in A Hunter's Challenge to Daryl the Youngling.",
+            route = {
+                { mapID = 1432, x = 0.834, y = 0.652, label = "Daryl the Youngling", offMapText = "Travel to Daryl the Youngling in Loch Modan." },
+            },
+            dependsOn = { "accept-258-a-hunter-s-challenge", "objective-258-a-hunter-s-challenge" },
+            id = "turnin-258-a-hunter-s-challenge",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 11 } },
+                },
+            },
+            complete = {
+                quest = { id = 258, state = "completed" },
+            },
+            sourceStep = 12,
+            requiredQuests = {
+                { mode = "any", quests = { 257 }, conditions = {} },
+            },
             useClientText = false,
             useClientPin = false,
         },

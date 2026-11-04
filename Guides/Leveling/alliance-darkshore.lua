@@ -89,6 +89,26 @@ ns:RegisterGuide({
         },
         {
             route = {
+                { mapID = 1453, x = 0.594, y = 0.3426, label = "Borgus Steelhand", offMapText = "Travel to Borgus Steelhand in Stormwind City." },
+            },
+            text = "Accept Business in Auberdine from Borgus Steelhand.",
+            id = "accept-97894-business-in-auberdine",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { race = { 3, 4, 7, 95 } },
+                    { level = { min = 13 } },
+                },
+            },
+            complete = { quest = { id = 97894, state = "activeOrCompleted" } },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+        },
+        {
+            route = {
                 { y = 0.148, mapID = 1455, label = "Hulfdan Blackbeard", x = 0.516, offMapText = "Travel to Hulfdan Blackbeard in Ironforge." },
             },
             dependsOn = {},
@@ -3288,6 +3308,26 @@ ns:RegisterGuide({
             route = {
                 { y = 0.4117, mapID = 1439, label = "Gorbold Steelhand", offMapText = "Travel to Gorbold Steelhand in Darkshore.", x = 0.3811 },
             },
+            text = "Turn in Business in Auberdine to Gorbold Steelhand.",
+            id = "turnin-97894-business-in-auberdine",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { race = { 3, 4, 7, 95 } },
+                    { level = { min = 13 } },
+                },
+            },
+            complete = { quest = { id = 97894, state = "completed" } },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "accept-97894-business-in-auberdine" },
+        },
+        {
+            route = {
+                { y = 0.4117, mapID = 1439, label = "Gorbold Steelhand", offMapText = "Travel to Gorbold Steelhand in Darkshore.", x = 0.3811 },
+            },
             text = "Accept Deep Ocean, Vast Sea from Gorbold Steelhand.",
             id = "accept-982-deep-ocean-vast-sea",
             kind = "accept",
@@ -3306,7 +3346,13 @@ ns:RegisterGuide({
                 quest = { id = 982, state = "activeOrCompleted" },
             },
             sourceStep = 81,
-            requiredQuests = {},
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 97894 },
+                    conditions = { all = { { faction = "Alliance" }, { race = { 3, 4, 7, 95 } } } },
+                },
+            },
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
