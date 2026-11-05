@@ -95023,7 +95023,7 @@
     ]
   },
   "dungeons-ruins-of-lordaeron": {
-    "revision": 4,
+    "revision": 5,
     "visits": [
       {
         "boundary": [
@@ -95033,6 +95033,57 @@
         ],
         "actions": [
           "accept-frightened-request"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1420,
+          "Deathguard Linnea"
+        ],
+        "actions": [
+          "accept-356-rear-guard"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "objective-356-rear-guard"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1420,
+          "Deathguard Linnea"
+        ],
+        "actions": [
+          "turnin-356-rear-guard",
+          "accept-99156-rear-guard"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1420,
+          "Riptear"
+        ],
+        "actions": [
+          "objective-99156-rear-guard"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1420,
+          "Deathguard Linnea"
+        ],
+        "actions": [
+          "turnin-99156-rear-guard"
         ]
       },
       {
@@ -95053,6 +95104,78 @@
         ],
         "actions": [
           "accept-lights-justice"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1421,
+          "Apothecary Renferrel"
+        ],
+        "actions": [
+          "accept-447-recipe"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "objective-447-recipe"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1458,
+          "Master Apothecary Faranell"
+        ],
+        "actions": [
+          "turnin-447-recipe",
+          "accept-450-recipe"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "objective-450-recipe"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1421,
+          "Apothecary Renferrel"
+        ],
+        "actions": [
+          "turnin-450-recipe",
+          "accept-451-recipe"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1421,
+          "Vile Fin Shredder"
+        ],
+        "actions": [
+          "objective-451-recipe"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1458,
+          "Master Apothecary Faranell"
+        ],
+        "actions": [
+          "turnin-451-recipe"
         ]
       },
       {
