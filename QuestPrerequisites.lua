@@ -1250,3 +1250,7 @@ ns:RegisterQuestPrerequisite({ quest = 8306, mode = "any", quests = { 8304 } })
 ns:RegisterQuestPrerequisite({ quest = 8310, mode = "any", quests = { 8304 } })
 ns:RegisterQuestPrerequisite({ quest = 8321, mode = "any", quests = { 8320 } })
 ns:RegisterQuestPrerequisite({ quest = 8323, mode = "any", quests = { 8279 } })
+
+-- Live Ruins of Lordaeron dungeon quest prerequisites.
+ns:RegisterQuestPrerequisite({ quest = 92422, mode = "all", quests = { 99156 }, conditions = { faction = "Horde" } })
+ns:RegisterQuestPrerequisite({ quest = 95216, mode = "all", quests = { 451 }, conditions = { faction = "Horde" } })

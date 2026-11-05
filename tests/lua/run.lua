@@ -2416,6 +2416,24 @@ TestWailingCavernsRoute()
 local ruins = ns.guides["dungeons-ruins-of-lordaeron"]
 Check(ruins ~= nil, "ruins of lordaeron guide is registered")
 Equal(ruins.conditions.all[1].level.min, 16, "ruins of lordaeron uses the highest quest required level")
+do
+local ruinsSteps = {}
+for index, goal in ipairs(ruins.goals) do
+    ruinsSteps[goal.id] = { index = index, goal = goal }
+end
+for _, chain in ipairs({
+    { "turnin-356-rear-guard", "accept-99156-rear-guard", 356 },
+    { "turnin-99156-rear-guard", "accept-wrath-of-rathmael", 99156 },
+    { "turnin-447-recipe", "accept-450-recipe", 447 },
+    { "turnin-450-recipe", "accept-451-recipe", 450 },
+    { "turnin-451-recipe", "accept-new-plague", 451 },
+}) do
+    local turnin, accept = ruinsSteps[chain[1]], ruinsSteps[chain[2]]
+    Check(turnin.index < accept.index, chain[1] .. " precedes " .. chain[2])
+    Equal(accept.goal.requiredQuests[1].quests[1], chain[3], chain[2] .. " requires the preceding quest")
+    Equal(accept.goal.dependsOn[1], chain[1], chain[2] .. " follows its turn-in")
+end
+end
 local allianceRuins = {}
 for key, value in pairs(baseState) do allianceRuins[key] = value end
 allianceRuins.faction = "Alliance"

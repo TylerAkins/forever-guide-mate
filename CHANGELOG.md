@@ -2,6 +2,9 @@
 
 All notable changes to this project are documented here.
 
+## 0.9.1 - 2026-11-05
+- Add the live prerequisite chains for two Horde Ruins of Lordaeron dungeon quests.
+
 ## 0.7.2 - 2026-10-22
 - Move Wayward Weapons into the Durotar starter boar outing and allow all Horde races to take it at level 1.
 
