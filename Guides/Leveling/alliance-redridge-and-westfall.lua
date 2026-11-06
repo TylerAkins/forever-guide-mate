@@ -90,6 +90,53 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
+            id = "level-before-woven-accept-98407-show-of-force",
+            kind = "note",
+            text = "Reach level 11 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 11 },
+            },
+            requiredLevel = 11,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 98407,
+        },
+        {
+            route = {
+                { y = 0.6, mapID = 1433, label = "Deputy Feldon", offMapText = "Travel to Deputy Feldon.", x = 0.256 },
+            },
+            text = "Accept Show of Force from Deputy Feldon.",
+            id = "woven-accept-98407-show-of-force",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 11 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 98407, state = "activeOrCompleted" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+        },
+        {
             id = "level-before-accept-125-the-lost-tools",
             kind = "note",
             text = "Reach level 15 before continuing. Choose how to gain XP, then return to this route.",
@@ -1128,6 +1175,32 @@ ns:RegisterGuide({
             dependsOn = { "accept-246-assessing-the-threat" },
         },
         {
+            route = {
+                { y = 0.812, mapID = 1433, label = "Redridge Thrasher", offMapText = "Travel to Redridge Thrasher.", x = 0.3 },
+            },
+            text = "Show of Force: collect 5 Spiked Collars from Redridge Thrashers.",
+            id = "woven-objective-98407-show-of-force",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 11 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 98407, state = "complete" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-98407-show-of-force" },
+        },
+        {
             id = "objective-92-3-crisp-spider-meat",
             kind = "objective",
             conditions = {
@@ -1186,6 +1259,32 @@ ns:RegisterGuide({
             },
             useClientText = false,
             useClientPin = false,
+        },
+        {
+            route = {
+                { y = 0.6, mapID = 1433, label = "Deputy Feldon", offMapText = "Travel to Deputy Feldon.", x = 0.308 },
+            },
+            text = "Turn in Show of Force to Deputy Feldon.",
+            id = "woven-turnin-98407-show-of-force",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 11 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 98407, state = "completed" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-98407-show-of-force", "woven-objective-98407-show-of-force" },
         },
         {
             id = "level-before-accept-2360-mathias-and-the-defias",
@@ -2488,105 +2587,6 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-        },
-        {
-            id = "level-before-woven-accept-98407-show-of-force",
-            kind = "note",
-            text = "Reach level 11 before continuing. Choose how to gain XP, then return to this route.",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                level = { min = 11 },
-            },
-            requiredLevel = 11,
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            checkpointQuest = 98407,
-        },
-        {
-            route = {
-                { y = 0.6, mapID = 1433, label = "Deputy Feldon", offMapText = "Travel to Deputy Feldon.", x = 0.256 },
-            },
-            text = "Accept Show of Force from Deputy Feldon.",
-            id = "woven-accept-98407-show-of-force",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 11 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 98407, state = "activeOrCompleted" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
-        },
-        {
-            route = {
-                { y = 0.812, mapID = 1433, label = "Redridge Thrasher", offMapText = "Travel to Redridge Thrasher.", x = 0.3 },
-            },
-            text = "Show of Force: collect 5 Spiked Collars from Redridge Thrashers.",
-            id = "woven-objective-98407-show-of-force",
-            kind = "objective",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 11 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 98407, state = "complete" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-98407-show-of-force" },
-        },
-        {
-            route = {
-                { y = 0.6, mapID = 1433, label = "Deputy Feldon", offMapText = "Travel to Deputy Feldon.", x = 0.308 },
-            },
-            text = "Turn in Show of Force to Deputy Feldon.",
-            id = "woven-turnin-98407-show-of-force",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 11 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 98407, state = "completed" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-98407-show-of-force", "woven-objective-98407-show-of-force" },
         },
     },
     casualSpine = true,

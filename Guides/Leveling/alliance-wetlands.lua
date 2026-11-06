@@ -467,6 +467,43 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
+            id = "level-before-woven-accept-98282-alchemical-hazards",
+            kind = "note",
+            text = "Reach level 20 before this visit.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { race = { 3, 4, 7, 95 } },
+                },
+            },
+            complete = { level = { min = 20 } },
+            requiredLevel = 20,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 98282,
+        },
+        {
+            route = {
+                { mapID = 1437, x = 0.1188, y = 0.5882, label = "Caitlin Grassman", offMapText = "Travel to Caitlin Grassman in Menethil Harbor." },
+            },
+            text = "Accept Alchemical Hazards from Caitlin Grassman in Menethil Harbor.",
+            id = "woven-accept-98282-alchemical-hazards",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 20 } },
+                    { race = { 3, 4, 7, 95 } },
+                },
+            },
+            complete = { quest = { id = 98282, state = "activeOrCompleted" } },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "level-before-woven-accept-98282-alchemical-hazards" },
+        },
+        {
             route = {
                 { y = 0.5214, mapID = 1437, label = "Tarrel Rockweaver", offMapText = "Travel to Tarrel Rockweaver in Wetlands.", x = 0.115 },
             },
@@ -917,6 +954,26 @@ ns:RegisterGuide({
             dependsOn = { "accept-276-tramping-paws" },
         },
         {
+            route = {
+                { mapID = 1437, x = 0.5266, y = 0.6302, label = "Leech Stalker", offMapText = "Travel to Leech Stalkers at Thelgen Rock." },
+            },
+            text = "Collect an Unruptured Stalker Gland from Thelgen Rock for Caitlin Grassman in Menethil Harbor.",
+            id = "woven-objective-98282-alchemical-hazards",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 20 } },
+                    { race = { 3, 4, 7, 95 } },
+                },
+            },
+            complete = { questObjective = { id = 98282, index = 1, text = "Unruptured Stalker Gland", count = 1 } },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = true,
+            dependsOn = { "woven-accept-98282-alchemical-hazards" },
+        },
+        {
             id = "objective-484-1-young-crocolisk-skin",
             kind = "objective",
             conditions = {
@@ -1093,6 +1150,26 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
+        },
+        {
+            route = {
+                { mapID = 1437, x = 0.1188, y = 0.5882, label = "Caitlin Grassman", offMapText = "Travel to Caitlin Grassman in Menethil Harbor." },
+            },
+            text = "Turn in Alchemical Hazards to Caitlin Grassman.",
+            id = "woven-turnin-98282-alchemical-hazards",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    { level = { min = 20 } },
+                    { race = { 3, 4, 7, 95 } },
+                },
+            },
+            complete = { quest = { id = 98282, state = "completed" } },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-objective-98282-alchemical-hazards" },
         },
         {
             text = "Turn in In Search of The Excavation Team to Tarrel Rockweaver.",
@@ -1851,83 +1928,6 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = { "woven-accept-98197-spoils-of-war", "woven-objective-98197-spoils-of-war" },
-        },
-        {
-            id = "level-before-woven-accept-98282-alchemical-hazards",
-            kind = "note",
-            text = "Reach level 20 before this visit.",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { race = { 3, 4, 7, 95 } },
-                },
-            },
-            complete = { level = { min = 20 } },
-            requiredLevel = 20,
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            checkpointQuest = 98282,
-        },
-        {
-            route = {
-                { mapID = 1437, x = 0.1188, y = 0.5882, label = "Caitlin Grassman", offMapText = "Travel to Caitlin Grassman in Menethil Harbor." },
-            },
-            text = "Accept Alchemical Hazards from Caitlin Grassman in Menethil Harbor.",
-            id = "woven-accept-98282-alchemical-hazards",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 20 } },
-                    { race = { 3, 4, 7, 95 } },
-                },
-            },
-            complete = { quest = { id = 98282, state = "activeOrCompleted" } },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "level-before-woven-accept-98282-alchemical-hazards" },
-        },
-        {
-            route = {
-                { mapID = 1437, x = 0.5266, y = 0.6302, label = "Leech Stalker", offMapText = "Travel to Leech Stalkers at Thelgen Rock." },
-            },
-            text = "Collect an Unruptured Stalker Gland from Thelgen Rock for Caitlin Grassman in Menethil Harbor.",
-            id = "woven-objective-98282-alchemical-hazards",
-            kind = "objective",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 20 } },
-                    { race = { 3, 4, 7, 95 } },
-                },
-            },
-            complete = { questObjective = { id = 98282, index = 1, text = "Unruptured Stalker Gland", count = 1 } },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = true,
-            dependsOn = { "woven-accept-98282-alchemical-hazards" },
-        },
-        {
-            route = {
-                { mapID = 1437, x = 0.1188, y = 0.5882, label = "Caitlin Grassman", offMapText = "Travel to Caitlin Grassman in Menethil Harbor." },
-            },
-            text = "Turn in Alchemical Hazards to Caitlin Grassman.",
-            id = "woven-turnin-98282-alchemical-hazards",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    { level = { min = 20 } },
-                    { race = { 3, 4, 7, 95 } },
-                },
-            },
-            complete = { quest = { id = 98282, state = "completed" } },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-objective-98282-alchemical-hazards" },
         },
     },
     casualSpine = true,

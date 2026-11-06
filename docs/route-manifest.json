@@ -12157,6 +12157,26 @@
           null
         ],
         "actions": [
+          "level-before-woven-accept-97253-parts-and-pieces"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1413,
+          "Wrenix the Wretched"
+        ],
+        "actions": [
+          "woven-accept-97253-parts-and-pieces"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
           "level-before-accept-894-samophlange"
         ]
       },
@@ -12243,12 +12263,41 @@
       },
       {
         "boundary": [
+          null,
+          1413,
+          "Complicated Parts"
+        ],
+        "actions": [
+          "woven-objective-97253-parts-and-pieces"
+        ]
+      },
+      {
+        "boundary": [
           40,
           1413,
           "Gazlowe"
         ],
         "actions": [
-          "turnin-887-southsea-freebooters",
+          "turnin-887-southsea-freebooters"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1413,
+          "Wrenix the Wretched"
+        ],
+        "actions": [
+          "woven-turnin-97253-parts-and-pieces"
+        ]
+      },
+      {
+        "boundary": [
+          40,
+          1413,
+          "Gazlowe"
+        ],
+        "actions": [
           "accept-890-the-missing-shipment",
           "turnin-895-wanted-baron-longshore"
         ]
@@ -13966,46 +14015,6 @@
         ],
         "actions": [
           "woven-turnin-98024-journey-to-the-crossroads"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          null,
-          null
-        ],
-        "actions": [
-          "level-before-woven-accept-97253-parts-and-pieces"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1413,
-          "Wrenix the Wretched"
-        ],
-        "actions": [
-          "woven-accept-97253-parts-and-pieces"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1413,
-          "Complicated Parts"
-        ],
-        "actions": [
-          "woven-objective-97253-parts-and-pieces"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1413,
-          "Wrenix the Wretched"
-        ],
-        "actions": [
-          "woven-turnin-97253-parts-and-pieces"
         ]
       },
       {
@@ -18933,6 +18942,26 @@
           null
         ],
         "actions": [
+          "level-before-woven-accept-98407-show-of-force"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1433,
+          "Deputy Feldon"
+        ],
+        "actions": [
+          "woven-accept-98407-show-of-force"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
           "level-before-accept-125-the-lost-tools"
         ]
       },
@@ -19244,6 +19273,16 @@
       },
       {
         "boundary": [
+          null,
+          1433,
+          "Redridge Thrasher"
+        ],
+        "actions": [
+          "woven-objective-98407-show-of-force"
+        ]
+      },
+      {
+        "boundary": [
           32,
           1433,
           "Crisp Spider Meat"
@@ -19260,6 +19299,16 @@
         ],
         "actions": [
           "turnin-246-assessing-the-threat"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1433,
+          "Deputy Feldon"
+        ],
+        "actions": [
+          "woven-turnin-98407-show-of-force"
         ]
       },
       {
@@ -19646,46 +19695,6 @@
         ],
         "actions": [
           "turnin-373-the-unsent-letter"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          null,
-          null
-        ],
-        "actions": [
-          "level-before-woven-accept-98407-show-of-force"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1433,
-          "Deputy Feldon"
-        ],
-        "actions": [
-          "woven-accept-98407-show-of-force"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1433,
-          "Redridge Thrasher"
-        ],
-        "actions": [
-          "woven-objective-98407-show-of-force"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1433,
-          "Deputy Feldon"
-        ],
-        "actions": [
-          "woven-turnin-98407-show-of-force"
         ]
       }
     ]
@@ -35363,7 +35372,7 @@
     ]
   },
   "leveling-era-alliance-westfall": {
-    "revision": 18,
+    "revision": 19,
     "visits": [
       {
         "boundary": [
@@ -39147,16 +39156,6 @@
         ],
         "actions": [
           "turnin-153-red-leather-bandanas"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1455,
-          "Darkshore Grouper"
-        ],
-        "actions": [
-          "collect-before-pickup-objective-1141-1-darkshore-grouper"
         ]
       },
       {
@@ -46045,6 +46044,26 @@
       },
       {
         "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-98282-alchemical-hazards"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1437,
+          "Caitlin Grassman"
+        ],
+        "actions": [
+          "woven-accept-98282-alchemical-hazards"
+        ]
+      },
+      {
+        "boundary": [
           17,
           1437,
           "Tarrel Rockweaver"
@@ -46187,6 +46206,16 @@
       },
       {
         "boundary": [
+          null,
+          1437,
+          "Leech Stalker"
+        ],
+        "actions": [
+          "woven-objective-98282-alchemical-hazards"
+        ]
+      },
+      {
+        "boundary": [
           30,
           1437,
           "Young Crocolisk Skin"
@@ -46234,6 +46263,16 @@
         ],
         "actions": [
           "turnin-470-digging-through-the-ooze"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1437,
+          "Caitlin Grassman"
+        ],
+        "actions": [
+          "woven-turnin-98282-alchemical-hazards"
         ]
       },
       {
@@ -46466,46 +46505,6 @@
         ],
         "actions": [
           "woven-turnin-98197-spoils-of-war"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          null,
-          null
-        ],
-        "actions": [
-          "level-before-woven-accept-98282-alchemical-hazards"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1437,
-          "Caitlin Grassman"
-        ],
-        "actions": [
-          "woven-accept-98282-alchemical-hazards"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1437,
-          "Leech Stalker"
-        ],
-        "actions": [
-          "woven-objective-98282-alchemical-hazards"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1437,
-          "Caitlin Grassman"
-        ],
-        "actions": [
-          "woven-turnin-98282-alchemical-hazards"
         ]
       }
     ]
@@ -71397,7 +71396,7 @@
     ]
   },
   "leveling-era-horde-silverpine-forest": {
-    "revision": 21,
+    "revision": 23,
     "visits": [
       {
         "boundary": [
@@ -83549,7 +83548,36 @@
           "Sentinel Glynda Nal'Shea"
         ],
         "actions": [
-          "turnin-4811-the-red-crystal",
+          "turnin-4811-the-red-crystal"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "level-before-woven-accept-98025-wanted-jaivhanel"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1439,
+          "WANTED: Jai'vhanel"
+        ],
+        "actions": [
+          "woven-accept-98025-wanted-jaivhanel"
+        ]
+      },
+      {
+        "boundary": [
+          56,
+          1439,
+          "Sentinel Glynda Nal'Shea"
+        ],
+        "actions": [
           "accept-4812-as-water-cascades"
         ]
       },
@@ -83641,6 +83669,16 @@
         ],
         "actions": [
           "accept-953-the-fall-of-ameth-aran"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1439,
+          "Jai'vhanel"
+        ],
+        "actions": [
+          "woven-objective-98025-wanted-jaivhanel"
         ]
       },
       {
@@ -83772,6 +83810,16 @@
         ],
         "actions": [
           "turnin-4813-the-fragments-within"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1439,
+          "Sentinel Glynda Nal'Shea"
+        ],
+        "actions": [
+          "woven-turnin-98025-wanted-jaivhanel"
         ]
       },
       {
@@ -83915,46 +83963,6 @@
         ],
         "actions": [
           "turnin-982-deep-ocean-vast-sea"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          null,
-          null
-        ],
-        "actions": [
-          "level-before-woven-accept-98025-wanted-jaivhanel"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1439,
-          "WANTED: Jai'vhanel"
-        ],
-        "actions": [
-          "woven-accept-98025-wanted-jaivhanel"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1439,
-          "Jai'vhanel"
-        ],
-        "actions": [
-          "woven-objective-98025-wanted-jaivhanel"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1439,
-          "Sentinel Glynda Nal'Shea"
-        ],
-        "actions": [
-          "woven-turnin-98025-wanted-jaivhanel"
         ]
       }
     ]
@@ -89710,7 +89718,7 @@
     ]
   },
   "leveling-era-elwynn-forest": {
-    "revision": 11,
+    "revision": 12,
     "visits": [
       {
         "boundary": [
@@ -89836,22 +89844,28 @@
       },
       {
         "boundary": [
+          20,
+          1429,
+          "Marshal McBride"
+        ],
+        "actions": [
+          "accept-3104-glyphic-letter",
+          "accept-3100-simple-letter",
+          "accept-3105-tainted-letter",
+          "accept-3102-encrypted-letter",
+          "accept-3103-hallowed-letter",
+          "accept-3101-consecrated-letter",
+          "accept-15-investigate-echo-ridge"
+        ]
+      },
+      {
+        "boundary": [
           null,
           1429,
           "Tordrin Sternblade"
         ],
         "actions": [
           "woven-turnin-92479-a-scribbled-letter"
-        ]
-      },
-      {
-        "boundary": [
-          20,
-          1429,
-          "Marshal McBride"
-        ],
-        "actions": [
-          "accept-15-investigate-echo-ridge"
         ]
       },
       {
@@ -89872,13 +89886,7 @@
         ],
         "actions": [
           "turnin-15-investigate-echo-ridge",
-          "accept-21-skirmish-at-echo-ridge",
-          "accept-3104-glyphic-letter",
-          "accept-3100-simple-letter",
-          "accept-3105-tainted-letter",
-          "accept-3102-encrypted-letter",
-          "accept-3103-hallowed-letter",
-          "accept-3101-consecrated-letter"
+          "accept-21-skirmish-at-echo-ridge"
         ]
       },
       {
@@ -108402,7 +108410,7 @@
     ]
   },
   "loremaster-elwynn-forest": {
-    "revision": 1,
+    "revision": 3,
     "visits": [
       {
         "boundary": [
@@ -108528,22 +108536,28 @@
       },
       {
         "boundary": [
+          20,
+          1429,
+          "Marshal McBride"
+        ],
+        "actions": [
+          "accept-3104-glyphic-letter",
+          "accept-3100-simple-letter",
+          "accept-3105-tainted-letter",
+          "accept-3102-encrypted-letter",
+          "accept-3103-hallowed-letter",
+          "accept-3101-consecrated-letter",
+          "accept-15-investigate-echo-ridge"
+        ]
+      },
+      {
+        "boundary": [
           null,
           1429,
           "Tordrin Sternblade"
         ],
         "actions": [
           "woven-turnin-92479-a-scribbled-letter"
-        ]
-      },
-      {
-        "boundary": [
-          20,
-          1429,
-          "Marshal McBride"
-        ],
-        "actions": [
-          "accept-15-investigate-echo-ridge"
         ]
       },
       {
@@ -108564,13 +108578,7 @@
         ],
         "actions": [
           "turnin-15-investigate-echo-ridge",
-          "accept-21-skirmish-at-echo-ridge",
-          "accept-3104-glyphic-letter",
-          "accept-3100-simple-letter",
-          "accept-3105-tainted-letter",
-          "accept-3102-encrypted-letter",
-          "accept-3103-hallowed-letter",
-          "accept-3101-consecrated-letter"
+          "accept-21-skirmish-at-echo-ridge"
         ]
       },
       {
@@ -132074,7 +132082,7 @@
     ]
   },
   "loremaster-darkshore": {
-    "revision": 3,
+    "revision": 4,
     "visits": [
       {
         "boundary": [
@@ -133075,6 +133083,26 @@
           null
         ],
         "actions": [
+          "level-before-woven-accept-98025-wanted-jaivhanel"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1439,
+          "WANTED: Jai'vhanel"
+        ],
+        "actions": [
+          "woven-accept-98025-wanted-jaivhanel"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
           "level-before-accept-4812-as-water-cascades"
         ]
       },
@@ -133166,6 +133194,16 @@
         ],
         "actions": [
           "accept-953-the-fall-of-ameth-aran"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1439,
+          "Jai'vhanel"
+        ],
+        "actions": [
+          "woven-objective-98025-wanted-jaivhanel"
         ]
       },
       {
@@ -133347,6 +133385,16 @@
         ],
         "actions": [
           "turnin-4813-the-fragments-within"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1439,
+          "Sentinel Glynda Nal'Shea"
+        ],
+        "actions": [
+          "woven-turnin-98025-wanted-jaivhanel"
         ]
       },
       {
@@ -133637,46 +133685,6 @@
         ],
         "actions": [
           "turnin-982-deep-ocean-vast-sea"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          null,
-          null
-        ],
-        "actions": [
-          "level-before-woven-accept-98025-wanted-jaivhanel"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1439,
-          "WANTED: Jai'vhanel"
-        ],
-        "actions": [
-          "woven-accept-98025-wanted-jaivhanel"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1439,
-          "Jai'vhanel"
-        ],
-        "actions": [
-          "woven-objective-98025-wanted-jaivhanel"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1439,
-          "Sentinel Glynda Nal'Shea"
-        ],
-        "actions": [
-          "woven-turnin-98025-wanted-jaivhanel"
         ]
       },
       {
@@ -136651,7 +136659,7 @@
     ]
   },
   "loremaster-the-barrens": {
-    "revision": 1,
+    "revision": 3,
     "visits": [
       {
         "boundary": [
@@ -137372,6 +137380,26 @@
           null
         ],
         "actions": [
+          "level-before-woven-accept-97253-parts-and-pieces"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1413,
+          "Wrenix the Wretched"
+        ],
+        "actions": [
+          "woven-accept-97253-parts-and-pieces"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
           "level-before-accept-894-samophlange"
         ]
       },
@@ -137467,12 +137495,32 @@
       },
       {
         "boundary": [
+          null,
+          1413,
+          "Complicated Parts"
+        ],
+        "actions": [
+          "woven-objective-97253-parts-and-pieces"
+        ]
+      },
+      {
+        "boundary": [
           40,
           1413,
           "Gazlowe"
         ],
         "actions": [
           "turnin-887-southsea-freebooters"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1413,
+          "Wrenix the Wretched"
+        ],
+        "actions": [
+          "woven-turnin-97253-parts-and-pieces"
         ]
       },
       {
@@ -139120,46 +139168,6 @@
           null
         ],
         "actions": [
-          "level-before-woven-accept-97253-parts-and-pieces"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1413,
-          "Wrenix the Wretched"
-        ],
-        "actions": [
-          "woven-accept-97253-parts-and-pieces"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1413,
-          "Complicated Parts"
-        ],
-        "actions": [
-          "woven-objective-97253-parts-and-pieces"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1413,
-          "Wrenix the Wretched"
-        ],
-        "actions": [
-          "woven-turnin-97253-parts-and-pieces"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          null,
-          null
-        ],
-        "actions": [
           "level-before-woven-accept-95507-vrangs-game"
         ]
       },
@@ -140233,7 +140241,7 @@
     ]
   },
   "loremaster-redridge-mountains": {
-    "revision": 1,
+    "revision": 3,
     "visits": [
       {
         "boundary": [
@@ -140263,6 +140271,26 @@
         ],
         "actions": [
           "alliance-leveling-era-alliance-redridge-and-westfall-turnin-244-encroaching-gnolls"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-redridge-and-westfall-level-before-woven-accept-98407-show-of-force"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1433,
+          "Deputy Feldon"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-redridge-and-westfall-woven-accept-98407-show-of-force"
         ]
       },
       {
@@ -140419,6 +140447,16 @@
       },
       {
         "boundary": [
+          null,
+          1433,
+          "Redridge Thrasher"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-redridge-and-westfall-woven-objective-98407-show-of-force"
+        ]
+      },
+      {
+        "boundary": [
           32,
           1433,
           "Crisp Spider Meat"
@@ -140435,6 +140473,16 @@
         ],
         "actions": [
           "alliance-leveling-era-alliance-redridge-and-westfall-turnin-246-assessing-the-threat"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1433,
+          "Deputy Feldon"
+        ],
+        "actions": [
+          "alliance-leveling-era-alliance-redridge-and-westfall-woven-turnin-98407-show-of-force"
         ]
       },
       {
@@ -140660,46 +140708,6 @@
         ],
         "actions": [
           "alliance-leveling-era-alliance-redridge-and-westfall-turnin-89-the-everstill-bridge"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          null,
-          null
-        ],
-        "actions": [
-          "alliance-leveling-era-alliance-redridge-and-westfall-level-before-woven-accept-98407-show-of-force"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1433,
-          "Deputy Feldon"
-        ],
-        "actions": [
-          "alliance-leveling-era-alliance-redridge-and-westfall-woven-accept-98407-show-of-force"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1433,
-          "Redridge Thrasher"
-        ],
-        "actions": [
-          "alliance-leveling-era-alliance-redridge-and-westfall-woven-objective-98407-show-of-force"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1433,
-          "Deputy Feldon"
-        ],
-        "actions": [
-          "alliance-leveling-era-alliance-redridge-and-westfall-woven-turnin-98407-show-of-force"
         ]
       },
       {
@@ -143072,7 +143080,7 @@
     ]
   },
   "loremaster-wetlands": {
-    "revision": 3,
+    "revision": 4,
     "visits": [
       {
         "boundary": [
@@ -143198,6 +143206,26 @@
       },
       {
         "boundary": [
+          null,
+          null,
+          null
+        ],
+        "actions": [
+          "alliance-extra-98282-level"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1437,
+          "Caitlin Grassman"
+        ],
+        "actions": [
+          "alliance-extra-98282-accept"
+        ]
+      },
+      {
+        "boundary": [
           17,
           1437,
           "Tarrel Rockweaver"
@@ -143280,6 +143308,16 @@
       },
       {
         "boundary": [
+          null,
+          1437,
+          "Leech Stalker"
+        ],
+        "actions": [
+          "alliance-extra-98282-objective"
+        ]
+      },
+      {
+        "boundary": [
           30,
           1437,
           "Young Crocolisk Skin"
@@ -143317,6 +143355,16 @@
         ],
         "actions": [
           "alliance-leveling-era-alliance-wetlands-turnin-470-digging-through-the-ooze"
+        ]
+      },
+      {
+        "boundary": [
+          null,
+          1437,
+          "Caitlin Grassman"
+        ],
+        "actions": [
+          "alliance-extra-98282-turnin"
         ]
       },
       {
@@ -144387,46 +144435,6 @@
         ],
         "actions": [
           "alliance-extra-98221-turnin"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          null,
-          null
-        ],
-        "actions": [
-          "alliance-extra-98282-level"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1437,
-          "Caitlin Grassman"
-        ],
-        "actions": [
-          "alliance-extra-98282-accept"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1437,
-          "Leech Stalker"
-        ],
-        "actions": [
-          "alliance-extra-98282-objective"
-        ]
-      },
-      {
-        "boundary": [
-          null,
-          1437,
-          "Caitlin Grassman"
-        ],
-        "actions": [
-          "alliance-extra-98282-turnin"
         ]
       },
       {

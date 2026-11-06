@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 11,
+    revision = 12,
     title = "Human Starter",
     category = "Leveling Quest Guides",
     id = "leveling-era-elwynn-forest",
@@ -400,169 +400,6 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            text = "Read Scribbled Letter in your bags. Turn in A Scribbled Letter to Tordrin Sternblade in Northshire Abbey.",
-            route = {
-                { y = 0.408, mapID = 1429, label = "Tordrin Sternblade", offMapText = "Travel to Tordrin Sternblade.", x = 0.512 },
-            },
-            dependsOn = { "woven-accept-92479-a-scribbled-letter" },
-            id = "woven-turnin-92479-a-scribbled-letter",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { class = 3 },
-                    {
-                        class = { 3 },
-                    },
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 1 },
-                    },
-                    { race = 1 },
-                    {
-                        race = { 1 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 92479, state = "completed" },
-            },
-            requiredQuests = { { mode = "all", quests = { 7 } } },
-            useClientText = false,
-            useClientPin = false,
-        },
-        {
-            route = {
-                { y = 0.4161, mapID = 1429, label = "Marshal McBride", offMapText = "Travel to Marshal McBride in Elwynn Forest.", x = 0.4892 },
-            },
-            text = "Accept Investigate Echo Ridge from Marshal McBride.",
-            id = "accept-15-investigate-echo-ridge",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 1 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 15, state = "activeOrCompleted" },
-            },
-            sourceStep = 20,
-            requiredQuests = {
-                {
-                    mode = "any",
-                    quests = { 7 },
-                    conditions = {},
-                },
-            },
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "turnin-7-kobold-camp-cleanup" },
-        },
-        {
-            text = "Kill 10 Kobold Worker.",
-            route = {
-                { y = 0.37, mapID = 1429, label = "Kobold Worker", offMapText = "Travel to Kobold Worker.", x = 0.474 },
-            },
-            dependsOn = { "accept-15-investigate-echo-ridge" },
-            id = "objective-15-1-kobold-worker",
-            kind = "objective",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 1 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                questObjective = { id = 15, text = "Kobold Worker", index = 1, count = 10 },
-            },
-            sourceStep = 21,
-            requiredQuests = {
-                {
-                    mode = "any",
-                    quests = { 7 },
-                    conditions = {},
-                },
-            },
-            useClientText = false,
-            useClientPin = false,
-        },
-        {
-            text = "Turn in Investigate Echo Ridge to Marshal McBride.",
-            route = {
-                { y = 0.4161, mapID = 1429, label = "Marshal McBride", offMapText = "Travel to Marshal McBride in Elwynn Forest.", x = 0.4892 },
-            },
-            dependsOn = { "accept-15-investigate-echo-ridge", "objective-15-1-kobold-worker" },
-            id = "turnin-15-investigate-echo-ridge",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 1 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 15, state = "completed" },
-            },
-            sourceStep = 23,
-            requiredQuests = {
-                {
-                    mode = "any",
-                    quests = { 7 },
-                    conditions = {},
-                },
-            },
-            useClientText = false,
-            useClientPin = false,
-        },
-        {
-            route = {
-                { y = 0.4161, mapID = 1429, label = "Marshal McBride", offMapText = "Travel to Marshal McBride in Elwynn Forest.", x = 0.4892 },
-            },
-            text = "Accept Skirmish at Echo Ridge from Marshal McBride.",
-            id = "accept-21-skirmish-at-echo-ridge",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 1 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 21, state = "activeOrCompleted" },
-            },
-            sourceStep = 23,
-            requiredQuests = {
-                {
-                    mode = "any",
-                    quests = { 15 },
-                    conditions = {},
-                },
-            },
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "turnin-15-investigate-echo-ridge" },
-        },
-        {
             route = {
                 { y = 0.4161, mapID = 1429, label = "Marshal McBride", offMapText = "Travel to Marshal McBride in Elwynn Forest.", x = 0.4892 },
             },
@@ -777,6 +614,169 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
+        },
+        {
+            route = {
+                { y = 0.4161, mapID = 1429, label = "Marshal McBride", offMapText = "Travel to Marshal McBride in Elwynn Forest.", x = 0.4892 },
+            },
+            text = "Accept Investigate Echo Ridge from Marshal McBride.",
+            id = "accept-15-investigate-echo-ridge",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 15, state = "activeOrCompleted" },
+            },
+            sourceStep = 20,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 7 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "turnin-7-kobold-camp-cleanup" },
+        },
+        {
+            text = "Read Scribbled Letter in your bags. Turn in A Scribbled Letter to Tordrin Sternblade in Northshire Abbey.",
+            route = {
+                { y = 0.408, mapID = 1429, label = "Tordrin Sternblade", offMapText = "Travel to Tordrin Sternblade.", x = 0.512 },
+            },
+            dependsOn = { "woven-accept-92479-a-scribbled-letter" },
+            id = "woven-turnin-92479-a-scribbled-letter",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { class = 3 },
+                    {
+                        class = { 3 },
+                    },
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
+                    { race = 1 },
+                    {
+                        race = { 1 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 92479, state = "completed" },
+            },
+            requiredQuests = { { mode = "all", quests = { 7 } } },
+            useClientText = false,
+            useClientPin = false,
+        },
+        {
+            text = "Kill 10 Kobold Worker.",
+            route = {
+                { y = 0.37, mapID = 1429, label = "Kobold Worker", offMapText = "Travel to Kobold Worker.", x = 0.474 },
+            },
+            dependsOn = { "accept-15-investigate-echo-ridge" },
+            id = "objective-15-1-kobold-worker",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                questObjective = { id = 15, text = "Kobold Worker", index = 1, count = 10 },
+            },
+            sourceStep = 21,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 7 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+        },
+        {
+            text = "Turn in Investigate Echo Ridge to Marshal McBride.",
+            route = {
+                { y = 0.4161, mapID = 1429, label = "Marshal McBride", offMapText = "Travel to Marshal McBride in Elwynn Forest.", x = 0.4892 },
+            },
+            dependsOn = { "accept-15-investigate-echo-ridge", "objective-15-1-kobold-worker" },
+            id = "turnin-15-investigate-echo-ridge",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 15, state = "completed" },
+            },
+            sourceStep = 23,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 7 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+        },
+        {
+            route = {
+                { y = 0.4161, mapID = 1429, label = "Marshal McBride", offMapText = "Travel to Marshal McBride in Elwynn Forest.", x = 0.4892 },
+            },
+            text = "Accept Skirmish at Echo Ridge from Marshal McBride.",
+            id = "accept-21-skirmish-at-echo-ridge",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 1 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 21, state = "activeOrCompleted" },
+            },
+            sourceStep = 23,
+            requiredQuests = {
+                {
+                    mode = "any",
+                    quests = { 15 },
+                    conditions = {},
+                },
+            },
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "turnin-15-investigate-echo-ridge" },
         },
         {
             text = "Read Simple Letter in your bags. Turn in Simple Letter to Llane Beshere.",

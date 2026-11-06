@@ -10,6 +10,8 @@
     "alliance-leveling-era-alliance-redridge-and-westfall-level-before-accept-244-encroaching-gnolls",
     "alliance-leveling-era-alliance-redridge-and-westfall-accept-244-encroaching-gnolls",
     "alliance-leveling-era-alliance-redridge-and-westfall-turnin-244-encroaching-gnolls",
+    "alliance-leveling-era-alliance-redridge-and-westfall-level-before-woven-accept-98407-show-of-force",
+    "alliance-leveling-era-alliance-redridge-and-westfall-woven-accept-98407-show-of-force",
     "alliance-leveling-era-alliance-redridge-and-westfall-level-before-accept-125-the-lost-tools",
     "alliance-leveling-era-alliance-redridge-and-westfall-accept-125-the-lost-tools",
     "alliance-leveling-era-alliance-redridge-and-westfall-accept-118-the-price-of-shoes",
@@ -27,8 +29,10 @@
     "alliance-leveling-era-alliance-redridge-and-westfall-accept-130-visit-the-herbalist",
     "alliance-leveling-era-alliance-redridge-and-westfall-objective-246-2-redridge-poacher",
     "alliance-leveling-era-alliance-redridge-and-westfall-objective-246-1-redridge-mongrel",
+    "alliance-leveling-era-alliance-redridge-and-westfall-woven-objective-98407-show-of-force",
     "alliance-leveling-era-alliance-redridge-and-westfall-objective-92-3-crisp-spider-meat",
     "alliance-leveling-era-alliance-redridge-and-westfall-turnin-246-assessing-the-threat",
+    "alliance-leveling-era-alliance-redridge-and-westfall-woven-turnin-98407-show-of-force",
     "alliance-leveling-era-alliance-redridge-and-westfall-turnin-118-the-price-of-shoes",
     "alliance-leveling-era-alliance-redridge-and-westfall-accept-119-return-to-verner",
     "alliance-leveling-era-alliance-redridge-and-westfall-level-before-accept-94-a-watchful-eye",
@@ -54,10 +58,6 @@
     "alliance-leveling-era-alliance-redridge-and-westfall-objective-124-1-redridge-brute",
     "alliance-leveling-era-alliance-redridge-and-westfall-turnin-124-a-baying-of-gnolls",
     "alliance-leveling-era-alliance-redridge-and-westfall-turnin-89-the-everstill-bridge",
-    "alliance-leveling-era-alliance-redridge-and-westfall-level-before-woven-accept-98407-show-of-force",
-    "alliance-leveling-era-alliance-redridge-and-westfall-woven-accept-98407-show-of-force",
-    "alliance-leveling-era-alliance-redridge-and-westfall-woven-objective-98407-show-of-force",
-    "alliance-leveling-era-alliance-redridge-and-westfall-woven-turnin-98407-show-of-force",
     "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-accept-20-blackrock-menace",
     "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-accept-127-selling-fish",
     "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-accept-150-murloc-poachers",
@@ -439,7 +439,7 @@
       "reason": "Preserve the Casual source subsequence."
     },
     {
-      "anchor": "alliance-leveling-era-alliance-redridge-and-westfall-turnin-89-the-everstill-bridge",
+      "anchor": "alliance-leveling-era-alliance-redridge-and-westfall-turnin-244-encroaching-gnolls",
       "actions": [
         "alliance-leveling-era-alliance-redridge-and-westfall-level-before-woven-accept-98407-show-of-force"
       ],
@@ -453,21 +453,21 @@
       "reason": "Preserve the Casual source subsequence."
     },
     {
-      "anchor": "alliance-leveling-era-alliance-redridge-and-westfall-woven-accept-98407-show-of-force",
+      "anchor": "alliance-leveling-era-alliance-redridge-and-westfall-objective-246-1-redridge-mongrel",
       "actions": [
         "alliance-leveling-era-alliance-redridge-and-westfall-woven-objective-98407-show-of-force"
       ],
       "reason": "Preserve the Casual source subsequence."
     },
     {
-      "anchor": "alliance-leveling-era-alliance-redridge-and-westfall-woven-objective-98407-show-of-force",
+      "anchor": "alliance-leveling-era-alliance-redridge-and-westfall-turnin-246-assessing-the-threat",
       "actions": [
         "alliance-leveling-era-alliance-redridge-and-westfall-woven-turnin-98407-show-of-force"
       ],
       "reason": "Preserve the Casual source subsequence."
     },
     {
-      "anchor": "alliance-leveling-era-alliance-redridge-and-westfall-woven-turnin-98407-show-of-force",
+      "anchor": "visit-entry-leveling-era-alliance-duskwood-and-redridge-mountains",
       "actions": [
         "alliance-leveling-era-alliance-duskwood-and-redridge-mountains-accept-20-blackrock-menace"
       ],
@@ -1100,7 +1100,7 @@
       "actions": [
         "visit-entry-leveling-era-alliance-duskwood-and-redridge-mountains"
       ],
-      "anchor": "alliance-leveling-era-alliance-redridge-and-westfall-woven-turnin-98407-show-of-force",
+      "anchor": "alliance-leveling-era-alliance-redridge-and-westfall-turnin-89-the-everstill-bridge",
       "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
     },
     {

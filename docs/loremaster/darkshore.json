@@ -97,6 +97,7 @@
     "turnin-4727-beached-sea-turtle",
     "objective-4811-quest-work",
     "turnin-4811-the-red-crystal",
+    "woven-accept-98025-wanted-jaivhanel",
     "accept-4812-as-water-cascades",
     "objective-4812-1-empty-water-tube",
     "turnin-4762-the-cliffspring-river",
@@ -104,6 +105,7 @@
     "turnin-4812-as-water-cascades",
     "accept-4813-the-fragments-within",
     "accept-953-the-fall-of-ameth-aran",
+    "woven-objective-98025-wanted-jaivhanel",
     "objective-963-1-anaya-s-pendant",
     "objective-958-1-highborne-relic",
     "objective-953-quest-work",
@@ -117,6 +119,7 @@
     "accept-1138-fruit-of-the-sea",
     "turnin-963-for-love-eternal",
     "turnin-4813-the-fragments-within",
+    "woven-turnin-98025-wanted-jaivhanel",
     "turnin-985-how-big-a-threat",
     "accept-965-the-tower-of-althalaxx",
     "accept-982-deep-ocean-vast-sea",
@@ -133,9 +136,6 @@
     "accept-967-the-tower-of-althalaxx",
     "turnin-1138-fruit-of-the-sea",
     "turnin-982-deep-ocean-vast-sea",
-    "woven-accept-98025-wanted-jaivhanel",
-    "woven-objective-98025-wanted-jaivhanel",
-    "woven-turnin-98025-wanted-jaivhanel",
     "alliance-leveling-era-alliance-redridge-and-westfall-level-before-accept-3765-the-corruption-abroad",
     "alliance-leveling-era-alliance-redridge-and-westfall-accept-3765-the-corruption-abroad",
     "accept-947-cave-mushrooms",
@@ -330,7 +330,7 @@
       "actions": [
         "visit-entry-leveling-era-alliance-redridge-and-westfall"
       ],
-      "anchor": "woven-turnin-98025-wanted-jaivhanel",
+      "anchor": "turnin-982-deep-ocean-vast-sea",
       "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
     },
     {

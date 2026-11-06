@@ -1,7 +1,7 @@
 local _, ns = ...
 
 ns:RegisterGuide({
-    revision = 18,
+    revision = 19,
     title = "Westfall",
     category = "Leveling Quest Guides",
     id = "leveling-era-alliance-westfall",
@@ -11464,30 +11464,6 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-        },
-        {
-            route = {
-                { y = 0.7467, mapID = 1455, label = "Darkshore Grouper", offMapText = "Travel to Darkshore Grouper.", x = 0.2416 },
-            },
-            text = "Collect 6 Darkshore Grouper. Keep 6 Darkshore Grouper for the later quest pickup.",
-            id = "collect-before-pickup-objective-1141-1-darkshore-grouper",
-            kind = "note",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                item = { name = "Darkshore Grouper", minCount = 6 },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
-            referenceQuest = 1141,
         },
         {
             route = {

@@ -757,7 +757,7 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
-            text = "For The Family and the Fishing Pole: Catch 6 Darkshore Grouper for Gubber Blump in Auberdine. Keep 6 Darkshore Grouper for the later quest pickup.",
+            text = "For The Family and the Fishing Pole: Catch 6 Darkshore Grouper for Gubber Blump in Auberdine.",
             id = "collect-before-pickup-objective-1141-quest-work",
             kind = "note",
             conditions = {
@@ -2531,6 +2531,53 @@ ns:RegisterGuide({
             useClientPin = false,
         },
         {
+            id = "level-before-woven-accept-98025-wanted-jaivhanel",
+            kind = "note",
+            text = "Reach level 10 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 10 },
+            },
+            requiredLevel = 10,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 98025,
+        },
+        {
+            route = {
+                { y = 0.442, mapID = 1439, label = "WANTED: Jai'vhanel", offMapText = "Travel to WANTED: Jai'vhanel.", x = 0.372 },
+            },
+            text = "Accept WANTED: Jai'vhanel from the poster beside Sentinel Glynda Nal'Shea in Auberdine.",
+            id = "woven-accept-98025-wanted-jaivhanel",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 98025, state = "activeOrCompleted" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+        },
+        {
             route = {
                 { y = 0.4339, mapID = 1439, label = "Sentinel Glynda Nal'Shea", offMapText = "Travel to Sentinel Glynda Nal'Shea in Darkshore.", x = 0.3771 },
             },
@@ -2832,6 +2879,32 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = {},
+        },
+        {
+            route = {
+                { y = 0.582, mapID = 1439, label = "Jai'vhanel", offMapText = "Travel to Jai'vhanel.", x = 0.45 },
+            },
+            text = "WANTED: Jai'vhanel: slay the owl north of Ameth'Aran and take a feather.",
+            id = "woven-objective-98025-wanted-jaivhanel",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 98025, state = "complete" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-98025-wanted-jaivhanel" },
         },
         {
             id = "objective-963-1-anaya-s-pendant",
@@ -3243,6 +3316,32 @@ ns:RegisterGuide({
             },
             useClientText = false,
             useClientPin = false,
+        },
+        {
+            route = {
+                { y = 0.434, mapID = 1439, label = "Sentinel Glynda Nal'Shea", offMapText = "Travel to Sentinel Glynda Nal'Shea.", x = 0.376 },
+            },
+            text = "Turn in WANTED: Jai'vhanel to Sentinel Glynda Nal'Shea in Auberdine.",
+            id = "woven-turnin-98025-wanted-jaivhanel",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { faction = "Alliance" },
+                    {
+                        level = { min = 10 },
+                    },
+                    {
+                        race = { 1, 3, 4, 7, 95 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 98025, state = "completed" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-98025-wanted-jaivhanel", "woven-objective-98025-wanted-jaivhanel" },
         },
         {
             text = "Turn in How Big a Threat? to Terenthis.",
@@ -3744,105 +3843,6 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
-        },
-        {
-            id = "level-before-woven-accept-98025-wanted-jaivhanel",
-            kind = "note",
-            text = "Reach level 10 before continuing. Choose how to gain XP, then return to this route.",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                level = { min = 10 },
-            },
-            requiredLevel = 10,
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            checkpointQuest = 98025,
-        },
-        {
-            route = {
-                { y = 0.442, mapID = 1439, label = "WANTED: Jai'vhanel", offMapText = "Travel to WANTED: Jai'vhanel.", x = 0.372 },
-            },
-            text = "Accept WANTED: Jai'vhanel from the poster beside Sentinel Glynda Nal'Shea in Auberdine.",
-            id = "woven-accept-98025-wanted-jaivhanel",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 10 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 98025, state = "activeOrCompleted" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
-        },
-        {
-            route = {
-                { y = 0.582, mapID = 1439, label = "Jai'vhanel", offMapText = "Travel to Jai'vhanel.", x = 0.45 },
-            },
-            text = "WANTED: Jai'vhanel: slay the owl north of Ameth'Aran and take a feather.",
-            id = "woven-objective-98025-wanted-jaivhanel",
-            kind = "objective",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 10 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 98025, state = "complete" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-98025-wanted-jaivhanel" },
-        },
-        {
-            route = {
-                { y = 0.434, mapID = 1439, label = "Sentinel Glynda Nal'Shea", offMapText = "Travel to Sentinel Glynda Nal'Shea.", x = 0.376 },
-            },
-            text = "Turn in WANTED: Jai'vhanel to Sentinel Glynda Nal'Shea in Auberdine.",
-            id = "woven-turnin-98025-wanted-jaivhanel",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { faction = "Alliance" },
-                    {
-                        level = { min = 10 },
-                    },
-                    {
-                        race = { 1, 3, 4, 7, 95 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 98025, state = "completed" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-98025-wanted-jaivhanel", "woven-objective-98025-wanted-jaivhanel" },
         },
     },
     casualSpine = true,
