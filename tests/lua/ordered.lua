@@ -43,6 +43,58 @@ for chapter, quests in pairs({
         equal(kinds[questID] and kinds[questID].turnin, true, chapter .. ' retains delivery ' .. questID)
     end
 end
+for _, guideID in ipairs({ 'leveling-era-elwynn-forest', 'loremaster-elwynn-forest' }) do
+    local guide = ns.guides[guideID]
+    local _, cleanup = ns.Engine:GetGoal(guide, 'turnin-7-kobold-camp-cleanup')
+    local _, hunterTurnin = ns.Engine:GetGoal(guide, 'woven-turnin-92479-a-scribbled-letter')
+    local _, outing = ns.Engine:GetGoal(guide, 'objective-15-1-kobold-worker')
+    for _, goalID in ipairs({ 'accept-15-investigate-echo-ridge', 'accept-3104-glyphic-letter',
+        'accept-3100-simple-letter', 'accept-3105-tainted-letter', 'accept-3102-encrypted-letter',
+        'accept-3103-hallowed-letter', 'accept-3101-consecrated-letter' }) do
+        local goal, index = ns.Engine:GetGoal(guide, goalID)
+        equal(cleanup < index and index < hunterTurnin and index < outing, true,
+            guideID .. ' picks up ' .. goalID .. ' at the first McBride return')
+        equal(goal.requiredQuests[1].quests[1], 7, goalID .. ' requires Kobold Camp Cleanup')
+    end
+end
+do
+    local cases = {
+        { 'leveling-casual-horde', 'leveling-era-horde-the-barrens-and-stonetalon-mountain:',
+            { 'accept-887-southsea-freebooters', 'woven-accept-97253-parts-and-pieces', 'objective-887-1-southsea-brigand', 'woven-objective-97253-parts-and-pieces', 'turnin-887-southsea-freebooters', 'woven-turnin-97253-parts-and-pieces' } },
+        { 'loremaster-the-barrens', '',
+            { 'accept-887-southsea-freebooters', 'woven-accept-97253-parts-and-pieces', 'objective-887-1-southsea-brigand', 'woven-objective-97253-parts-and-pieces', 'turnin-887-southsea-freebooters', 'woven-turnin-97253-parts-and-pieces' } },
+        { 'leveling-casual-alliance', 'leveling-era-alliance-darkshore:',
+            { 'turnin-4811-the-red-crystal', 'woven-accept-98025-wanted-jaivhanel', 'accept-953-the-fall-of-ameth-aran', 'woven-objective-98025-wanted-jaivhanel', 'turnin-4813-the-fragments-within', 'woven-turnin-98025-wanted-jaivhanel' } },
+        { 'loremaster-darkshore', '',
+            { 'turnin-4811-the-red-crystal', 'woven-accept-98025-wanted-jaivhanel', 'accept-953-the-fall-of-ameth-aran', 'woven-objective-98025-wanted-jaivhanel', 'turnin-4813-the-fragments-within', 'woven-turnin-98025-wanted-jaivhanel' } },
+        { 'leveling-casual-alliance', 'leveling-era-alliance-wetlands:',
+            { 'accept-470-digging-through-the-ooze', 'woven-accept-98282-alchemical-hazards', 'objective-276-1-mosshide-gnoll', 'woven-objective-98282-alchemical-hazards', 'turnin-470-digging-through-the-ooze', 'woven-turnin-98282-alchemical-hazards' } },
+        { 'leveling-casual-alliance', 'leveling-era-alliance-redridge-and-westfall:',
+            { 'turnin-244-encroaching-gnolls', 'woven-accept-98407-show-of-force', 'objective-246-1-redridge-mongrel', 'woven-objective-98407-show-of-force', 'turnin-246-assessing-the-threat', 'woven-turnin-98407-show-of-force' } },
+    }
+    cases[#cases + 1] = { 'loremaster-wetlands', '', {
+        'alliance-leveling-era-alliance-wetlands-accept-470-digging-through-the-ooze',
+        'alliance-extra-98282-accept', 'alliance-leveling-era-alliance-wetlands-objective-276-1-mosshide-gnoll',
+        'alliance-extra-98282-objective', 'alliance-leveling-era-alliance-wetlands-turnin-470-digging-through-the-ooze',
+        'alliance-extra-98282-turnin' } }
+    cases[#cases + 1] = { 'loremaster-redridge-mountains', 'alliance-leveling-era-alliance-redridge-and-westfall-', {
+        'turnin-244-encroaching-gnolls', 'woven-accept-98407-show-of-force', 'objective-246-1-redridge-mongrel',
+        'woven-objective-98407-show-of-force', 'turnin-246-assessing-the-threat', 'woven-turnin-98407-show-of-force' } }
+    for _, case in ipairs(cases) do
+        local guide, previous = ns.guides[case[1]], 0
+        for _, id in ipairs(case[3]) do
+            local goal, index = ns.Engine:GetGoal(guide, case[2] .. id)
+            equal(goal ~= nil and index > previous, true, case[1] .. ' visits ' .. id .. ' in outing order')
+            previous = index
+        end
+    end
+    equal(ns.Engine:GetGoal(ns.guides['leveling-casual-alliance'],
+        'leveling-era-alliance-westfall:collect-before-pickup-objective-1141-1-darkshore-grouper') == nil, true,
+        'Westfall does not require Darkshore fish')
+    equal(ns.Engine:GetGoal(ns.guides['leveling-casual-alliance'],
+        'leveling-era-alliance-darkshore:accept-1141-the-family-and-the-fishing-pole') ~= nil, true,
+        'Darkshore retains the fishing quest')
+end
 for _, goalID in ipairs({ 'travel-tirisfal-to-durotar', 'travel-durotar-to-tirisfal' }) do
     local goal = ns.Engine:GetGoal(ns.guides['leveling-era-tirisfal-glades'], goalID)
     equal(ns.OrderedRoutes:ExcludedAction(goal, state(5, 1, 'Horde', 13)), true, goalID .. ' excludes non-priests')
@@ -181,6 +233,33 @@ local function journey(guideID, snapshot, expected)
         equal(ns.UI:GoalInstruction(ns.Engine), ns.Engine.currentGoal.text, 'walkthrough remains authored')
         observe(ns.Engine.currentGoal, snapshot)
     end
+end
+do
+    local source = ns.guides['leveling-casual-horde']
+    local prefix = 'leveling-era-horde-the-barrens-and-stonetalon-mountain:'
+    local ids = { 'accept-887-southsea-freebooters', 'woven-accept-97253-parts-and-pieces',
+        'objective-887-2-southsea-cannoneer', 'objective-887-1-southsea-brigand',
+        'woven-objective-97253-parts-and-pieces', 'turnin-887-southsea-freebooters',
+        'woven-turnin-97253-parts-and-pieces' }
+    local goals, mapped = {}, {}
+    for _, id in ipairs(ids) do mapped[prefix .. id] = 'ratchet-test:' .. id end
+    for _, id in ipairs(ids) do
+        local original = assert(ns.Engine:GetGoal(source, prefix .. id))
+        local copy = {}
+        for key, value in pairs(original) do copy[key] = value end
+        copy.id = mapped[original.id]
+        if original.dependsOn then
+            copy.dependsOn = {}
+            for _, dep in ipairs(original.dependsOn) do copy.dependsOn[#copy.dependsOn + 1] = mapped[dep] or dep end
+        end
+        goals[#goals + 1] = copy
+    end
+    ns:RegisterGuide({ id = 'ratchet-test', title = 'Ratchet outing', category = 'Leveling Quest Guides',
+        revision = 1, routeMode = 'ordered', conditions = { faction = 'Horde' }, goals = goals })
+    journey('ratchet-test', state(2, 1, 'Horde', 15), {
+        'accept:887', 'accept:97253', 'objective:887:2', 'objective:887:1', 'objective:97253',
+        'turnin:887', 'turnin:97253',
+    })
 end
 do
     local source = ns.guides['leveling-casual-alliance']

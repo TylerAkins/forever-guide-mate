@@ -31,6 +31,10 @@ local intentionalOutingReorders = {
  ['leveling-era-horde-hillsbrad-foothills'] = {
   ['accept:501:0:10']=true,
  },
+ ['leveling-era-elwynn-forest'] = {
+  ['accept:3104:0:23']=true, ['accept:3100:0:23']=true, ['accept:3105:0:23']=true,
+  ['accept:3102:0:23']=true, ['accept:3103:0:23']=true, ['accept:3101:0:23']=true,
+ },
  ['leveling-era-mulgore'] = {
   ['accept:749:0:79']=true, ['turnin:749:0:80']=true, ['accept:751:0:80']=true,
   ['turnin:751:0:119']=true,

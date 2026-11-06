@@ -1,2 +1,3 @@
-## 0.9.1 - 2026-11-05
-- Add the live prerequisite chains for two Horde Ruins of Lordaeron dungeon quests.
+## 0.9.2 - 2026-11-06
+- Pick up the Northshire class letters and Investigate Echo Ridge together after Kobold Camp Cleanup.
+- Weave early Darkshore, Barrens, Wetlands, and Redridge quests into their existing outings and collect Darkshore fish after arriving in Auberdine.

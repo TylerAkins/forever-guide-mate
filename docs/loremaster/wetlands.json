@@ -1213,7 +1213,7 @@
       "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
     },
     {
-      "anchor": "alliance-extra-98221-turnin",
+      "anchor": "alliance-leveling-era-alliance-wetlands-accept-470-digging-through-the-ooze",
       "actions": [
         "alliance-extra-98282-level"
       ],
@@ -1227,14 +1227,14 @@
       "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
     },
     {
-      "anchor": "alliance-extra-98282-accept",
+      "anchor": "alliance-leveling-era-alliance-wetlands-objective-276-1-mosshide-gnoll",
       "actions": [
         "alliance-extra-98282-objective"
       ],
       "reason": "Preserved Casual source order or constrained advisory insertion; Forever observations govern quest facts."
     },
     {
-      "anchor": "alliance-extra-98282-objective",
+      "anchor": "alliance-leveling-era-alliance-wetlands-turnin-470-digging-through-the-ooze",
       "actions": [
         "alliance-extra-98282-turnin"
       ],

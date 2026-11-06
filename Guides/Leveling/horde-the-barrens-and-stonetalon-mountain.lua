@@ -2352,6 +2352,53 @@ ns:RegisterGuide({
             dependsOn = {},
         },
         {
+            id = "level-before-woven-accept-97253-parts-and-pieces",
+            kind = "note",
+            text = "Reach level 9 before continuing. Choose how to gain XP, then return to this route.",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                level = { min = 9 },
+            },
+            requiredLevel = 9,
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            checkpointQuest = 97253,
+        },
+        {
+            route = {
+                { y = 0.364, mapID = 1413, label = "Wrenix the Wretched", offMapText = "Travel to Wrenix the Wretched.", x = 0.63 },
+            },
+            text = "Accept Parts and Pieces from Wrenix the Wretched in Ratchet.",
+            id = "woven-accept-97253-parts-and-pieces",
+            kind = "accept",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 9 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 97253, state = "activeOrCompleted" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = {},
+        },
+        {
             id = "level-before-accept-894-samophlange",
             kind = "note",
             text = "Reach level 10 before continuing. Choose how to gain XP, then return to this route.",
@@ -2590,6 +2637,32 @@ ns:RegisterGuide({
             dependsOn = { "accept-887-southsea-freebooters" },
         },
         {
+            route = {
+                { y = 0.4572, mapID = 1413, label = "Complicated Parts", offMapText = "Travel to Complicated Parts.", x = 0.6139 },
+            },
+            text = "Parts and Pieces: collect 5 Handfuls of Complicated Parts from the upper pirate camp south of Ratchet.",
+            id = "woven-objective-97253-parts-and-pieces",
+            kind = "objective",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 9 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 97253, state = "complete" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-97253-parts-and-pieces" },
+        },
+        {
             text = "Turn in Southsea Freebooters to Gazlowe.",
             route = {
                 { y = 0.3623, mapID = 1413, label = "Gazlowe", offMapText = "Travel to Gazlowe in The Barrens.", x = 0.6268 },
@@ -2612,6 +2685,32 @@ ns:RegisterGuide({
             requiredQuests = {},
             useClientText = false,
             useClientPin = false,
+        },
+        {
+            route = {
+                { y = 0.364, mapID = 1413, label = "Wrenix the Wretched", offMapText = "Travel to Wrenix the Wretched.", x = 0.63 },
+            },
+            text = "Turn in Parts and Pieces to Wrenix the Wretched in Ratchet.",
+            id = "woven-turnin-97253-parts-and-pieces",
+            kind = "turnin",
+            conditions = {
+                all = {
+                    { faction = "Horde" },
+                    {
+                        level = { min = 9 },
+                    },
+                    {
+                        race = { 2, 5, 6, 8, 96 },
+                    },
+                },
+            },
+            complete = {
+                quest = { id = 97253, state = "completed" },
+            },
+            requiredQuests = {},
+            useClientText = false,
+            useClientPin = false,
+            dependsOn = { "woven-accept-97253-parts-and-pieces", "woven-objective-97253-parts-and-pieces" },
         },
         {
             route = {
@@ -9355,105 +9454,6 @@ ns:RegisterGuide({
             useClientText = false,
             useClientPin = false,
             dependsOn = { "woven-accept-98024-journey-to-the-crossroads" },
-        },
-        {
-            id = "level-before-woven-accept-97253-parts-and-pieces",
-            kind = "note",
-            text = "Reach level 9 before continuing. Choose how to gain XP, then return to this route.",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                level = { min = 9 },
-            },
-            requiredLevel = 9,
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            checkpointQuest = 97253,
-        },
-        {
-            route = {
-                { y = 0.364, mapID = 1413, label = "Wrenix the Wretched", offMapText = "Travel to Wrenix the Wretched.", x = 0.63 },
-            },
-            text = "Accept Parts and Pieces from Wrenix the Wretched in Ratchet.",
-            id = "woven-accept-97253-parts-and-pieces",
-            kind = "accept",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 9 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 97253, state = "activeOrCompleted" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = {},
-        },
-        {
-            route = {
-                { y = 0.4572, mapID = 1413, label = "Complicated Parts", offMapText = "Travel to Complicated Parts.", x = 0.6139 },
-            },
-            text = "Parts and Pieces: collect 5 Handfuls of Complicated Parts from the upper pirate camp south of Ratchet.",
-            id = "woven-objective-97253-parts-and-pieces",
-            kind = "objective",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 9 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 97253, state = "complete" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-97253-parts-and-pieces" },
-        },
-        {
-            route = {
-                { y = 0.364, mapID = 1413, label = "Wrenix the Wretched", offMapText = "Travel to Wrenix the Wretched.", x = 0.63 },
-            },
-            text = "Turn in Parts and Pieces to Wrenix the Wretched in Ratchet.",
-            id = "woven-turnin-97253-parts-and-pieces",
-            kind = "turnin",
-            conditions = {
-                all = {
-                    { faction = "Horde" },
-                    {
-                        level = { min = 9 },
-                    },
-                    {
-                        race = { 2, 5, 6, 8, 96 },
-                    },
-                },
-            },
-            complete = {
-                quest = { id = 97253, state = "completed" },
-            },
-            requiredQuests = {},
-            useClientText = false,
-            useClientPin = false,
-            dependsOn = { "woven-accept-97253-parts-and-pieces", "woven-objective-97253-parts-and-pieces" },
         },
         {
             id = "level-before-woven-accept-95507-vrangs-game",
