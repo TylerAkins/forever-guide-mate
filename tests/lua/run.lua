@@ -2421,6 +2421,13 @@ local ruinsSteps = {}
 for index, goal in ipairs(ruins.goals) do
     ruinsSteps[goal.id] = { index = index, goal = goal }
 end
+local frightenedTurnin = ruinsSteps["turnin-frightened-request"].goal
+Check(ruinsSteps["complete-frightened-request"].index < ruinsSteps["turnin-frightened-request"].index,
+    "A Frightened Request returns to Tabitha after finding Edward")
+Equal(frightenedTurnin.complete.quest.id, 92401, "A Frightened Request turn-in tracks the right quest")
+Equal(frightenedTurnin.complete.quest.state, "completed", "A Frightened Request requires a turn-in")
+Equal(ns.Navigation:QuestDestinationID(frightenedTurnin, { quests = { [92401] = { complete = true } } }), nil,
+    "A Frightened Request uses Tabitha's authored location instead of the client quest pin")
 for _, chain in ipairs({
     { "turnin-356-rear-guard", "accept-99156-rear-guard", 356 },
     { "turnin-99156-rear-guard", "accept-wrath-of-rathmael", 99156 },
