@@ -57,7 +57,7 @@ ns:RegisterGuide({
     id = "dungeons-ruins-of-lordaeron",
     title = "Ruins of Lordaeron",
     category = "Dungeon Quest Guides",
-    revision = 5,
+    revision = 6,
     conditions = {
         all = {
             { level = { min = 16 } },
@@ -465,6 +465,8 @@ ns:RegisterGuide({
             text = "Return to Tabitha Heartweaver in the Sepulcher.",
             dependsOn = { "complete-frightened-request" },
             taxiDestination = "The Sepulcher",
+            useClientPin = false,
+            useQuestNavigation = false,
             complete = QuestState(92401, "completed"),
             route = {
                 Point(MAP.SILVERPINE, 0.446, 0.428, "Tabitha Heartweaver in the Sepulcher",

@@ -2,6 +2,9 @@
 
 All notable changes to this project are documented here.
 
+## 0.9.3 - 2026-11-07
+- Keep the Ruins of Lordaeron return to Tabitha on its authored Silverpine location.
+
 ## 0.9.2 - 2026-11-06
 - Pick up the Northshire class letters and Investigate Echo Ridge together after Kobold Camp Cleanup.
 - Weave early Darkshore, Barrens, Wetlands, and Redridge quests into their existing outings and collect Darkshore fish after arriving in Auberdine.
