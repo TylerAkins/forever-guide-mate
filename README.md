@@ -1,5 +1,7 @@
 # Forever GuideMate
 
+> **This project is archived.** Forever GuideMate is no longer maintained. The repository is read-only, and issues and pull requests are closed. Guides from this addon are being ported to RestedXP soon. No date is set.
+
 **Forever GuideMate is a minimalist, free, open-source questing guide for World of Warcraft: Forever. It shows the next quest step and tracks destinations with Blizzard Map Pins or optional [TomTom](https://www.curseforge.com/wow/addons/tomtom). It reads your quest log.**
 
 Blizzard Map Pins is the default waypoint provider. Choose optional TomTom under Navigation in addon settings.
@@ -50,6 +52,8 @@ The 1–60 Casual spine lives entirely under `Guides/Leveling/`. Forever weaves 
 Copy the compiled `ForeverGuideMate` folder into `World of Warcraft/Interface/AddOns`. TomTom is optional. Navigation settings also expose Blizzard's shared in-world destination marker setting.
 
 Close the tracker to clear GuideMate’s owned destination, then reopen it from the AddOn compartment, the minimap fallback, or the AddOns settings panel. On the same continent, a flight path the character already has says to take the flight path there. If that path is not known, the guide stays on the road, boat, or zeppelin. Across continents, a known flight path is used to reach the dock. Otherwise the guide walks. Boats, zeppelins, and flight masters follow Wowhead's Forever world map, including the Riverglades gryphon and wind rider and the Zephras Isle zeppelins.
+
+The steps above still apply to existing builds. No further fixes or updates will be released.
 
 ## Development
 
